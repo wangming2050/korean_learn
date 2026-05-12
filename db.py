@@ -15,14 +15,10 @@ import pymysql
 # 从环境变量读取数据库配置；如果没有设置，就使用本机常见默认值。
 # 这样初学者可以先改这里，也可以以后用环境变量部署。
 DB_CONFIG = {
-    # 数据库服务器地址，默认连接本机。
-    "host": os.getenv("MYSQL_HOST", "127.0.0.1"),
-    # 数据库端口，MySQL 默认是 3306；环境变量读出来是字符串，所以要转成 int。
-    "port": int(os.getenv("MYSQL_PORT", "3306")),
     # 数据库用户名，默认 root。
     "user": os.getenv("MYSQL_USER", "root"),
     # 数据库密码，默认空字符串；如果本机 MySQL 有密码，需要设置环境变量。
-    "password": os.getenv("MYSQL_PASSWORD", ""),
+    "password": os.getenv("MYSQL_PASSWORD", "Leo@2050."),
     # 要连接的数据库名称，对应 sql/schema.sql 里创建的 korean_learn。
     "database": os.getenv("MYSQL_DATABASE", "korean_learn"),
     # utf8mb4 可以同时保存中文、韩文、emoji 等字符。
@@ -32,6 +28,17 @@ DB_CONFIG = {
     # autocommit=True 表示 INSERT/UPDATE/DELETE 后自动提交，不需要每次手动 commit。
     "autocommit": True,
 }
+
+MYSQL_SOCKET = os.getenv("MYSQL_SOCKET")
+
+if MYSQL_SOCKET:
+    # macOS 官方安装版 MySQL 可能只开启 socket，不监听 3306 端口。
+    DB_CONFIG["unix_socket"] = MYSQL_SOCKET
+else:
+    # 数据库服务器地址，默认连接本机。
+    DB_CONFIG["host"] = os.getenv("MYSQL_HOST", "127.0.0.1")
+    # 数据库端口，MySQL 默认是 3306；环境变量读出来是字符串，所以要转成 int。
+    DB_CONFIG["port"] = int(os.getenv("MYSQL_PORT", "3306"))
 
 
 def get_connection():
