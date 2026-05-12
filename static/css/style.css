@@ -1,0 +1,244 @@
+/*
+  style.css
+
+  这里是整个网站的样式文件。
+  前端不使用任何 UI 框架，所以布局、颜色、按钮、卡片都用原生 CSS 编写。
+*/
+
+/* 使用 border-box 可以让元素宽度更容易计算：width 会包含 padding 和 border。 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  color: #172026;
+  background: #f6f7f2;
+}
+
+/* 顶部区域包含标题和导航按钮。 */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 36px;
+  background: #ffffff;
+  border-bottom: 1px solid #d9ded6;
+}
+
+.topbar h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+}
+
+.topbar p {
+  margin: 0;
+  color: #60706a;
+}
+
+/* tabs 是页面切换按钮区域。 */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tab,
+button {
+  border: 1px solid #9ca99f;
+  background: #ffffff;
+  color: #172026;
+  border-radius: 6px;
+  padding: 9px 14px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.tab.active,
+button:hover {
+  background: #1f6f5b;
+  color: #ffffff;
+  border-color: #1f6f5b;
+}
+
+main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* 页面默认隐藏；拥有 active 类的页面才显示。 */
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+/* 全站共用一个 audio 标签，点击不同内容时动态切换 src。 */
+#player {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 12px 0 18px;
+}
+
+.section-title h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid #b8c1bb;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font: inherit;
+  background: #ffffff;
+}
+
+.section-title input,
+.section-title select {
+  max-width: 320px;
+}
+
+/* 40 个韩文字母用网格展示，屏幕变窄时自动换列。 */
+.letter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.letter-card,
+.sentence-card,
+.panel {
+  background: #ffffff;
+  border: 1px solid #d9ded6;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.letter-card {
+  cursor: pointer;
+}
+
+.letter-card strong {
+  display: block;
+  font-size: 34px;
+  margin-bottom: 8px;
+}
+
+.letter-card span {
+  display: block;
+  color: #60706a;
+  line-height: 1.5;
+}
+
+.play-options {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 14px;
+  color: #43514d;
+}
+
+.play-options label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.play-options input {
+  width: auto;
+}
+
+.sentence-list {
+  display: grid;
+  gap: 12px;
+}
+
+.sentence-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: center;
+}
+
+.sentence-card h3 {
+  margin: 0 0 6px;
+  font-size: 20px;
+}
+
+.sentence-card p {
+  margin: 0;
+  color: #60706a;
+}
+
+.meta {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #7a8882;
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.panel {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.panel h3 {
+  margin: 0 0 4px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.message {
+  min-height: 24px;
+  color: #1f6f5b;
+}
+
+@media (max-width: 760px) {
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  main {
+    padding: 16px;
+  }
+
+  .section-title {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .section-title input,
+  .section-title select {
+    max-width: none;
+  }
+
+  .sentence-card {
+    grid-template-columns: 1fr;
+  }
+}

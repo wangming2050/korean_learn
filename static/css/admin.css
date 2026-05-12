@@ -1,0 +1,304 @@
+/*
+  admin.css
+
+  后台管理系统独立样式文件。
+  用户端页面不引用它，后台页面也不引用用户端 style.css。
+*/
+
+* {
+  /* border-box 让 width 包含 padding 和 border，更方便计算布局。 */
+  box-sizing: border-box;
+}
+
+body {
+  /* 去掉浏览器默认外边距，让顶部栏贴齐窗口。 */
+  margin: 0;
+  /* 后台使用清晰的系统字体，中文和韩文都能显示。 */
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  /* 设置后台主文字颜色。 */
+  color: #18211f;
+  /* 使用浅灰绿色背景，让白色面板更明显。 */
+  background: #f3f5f1;
+}
+
+button,
+input,
+select,
+textarea {
+  /* 表单控件继承 body 字体，避免不同浏览器默认字体不一致。 */
+  font: inherit;
+}
+
+button {
+  /* 后台按钮使用深绿色，和用户端有轻微统一感。 */
+  background: #1f6f5b;
+  /* 按钮文字用白色提高对比。 */
+  color: #ffffff;
+  /* 去掉浏览器默认边框。 */
+  border: 0;
+  /* 控制按钮高度和左右留白。 */
+  padding: 10px 14px;
+  /* 圆角保持克制，后台看起来更工具化。 */
+  border-radius: 6px;
+  /* 鼠标移上去显示可点击。 */
+  cursor: pointer;
+}
+
+button.secondary {
+  /* 次要按钮用于编辑。 */
+  background: #52615c;
+}
+
+button.danger {
+  /* 删除按钮使用红色，提示这是危险操作。 */
+  background: #b13a32;
+}
+
+input,
+select,
+textarea {
+  /* 表单控件宽度撑满父容器。 */
+  width: 100%;
+  /* 边框使用低对比灰色。 */
+  border: 1px solid #b9c3bc;
+  /* 控制输入框内部留白。 */
+  padding: 10px 12px;
+  /* 输入框圆角与按钮一致。 */
+  border-radius: 6px;
+  /* 背景白色，和页面底色区分。 */
+  background: #ffffff;
+}
+
+label {
+  /* label 变成纵向布局，上面是字段名，下面是输入框。 */
+  display: grid;
+  /* 字段名和输入框之间留一点间距。 */
+  gap: 6px;
+  /* 字段名颜色稍浅。 */
+  color: #43514d;
+}
+
+.admin-topbar {
+  /* 顶部栏使用 flex，让标题和退出按钮左右分布。 */
+  display: flex;
+  /* 垂直居中。 */
+  align-items: center;
+  /* 左右两端对齐。 */
+  justify-content: space-between;
+  /* 顶部栏内边距。 */
+  padding: 18px 24px;
+  /* 顶部栏背景白色。 */
+  background: #ffffff;
+  /* 底部边线区分内容区域。 */
+  border-bottom: 1px solid #d8ded8;
+}
+
+.admin-topbar h1 {
+  /* 去掉 h1 默认外边距。 */
+  margin: 0;
+  /* 后台标题不需要太大。 */
+  font-size: 22px;
+}
+
+.admin-shell {
+  /* 后台主体左右两列：菜单固定宽度，内容自动占满。 */
+  display: grid;
+  /* 左侧 220px，右侧 1fr。 */
+  grid-template-columns: 220px 1fr;
+  /* 最小高度撑满视口减去顶部栏附近高度。 */
+  min-height: calc(100vh - 65px);
+}
+
+.admin-sidebar {
+  /* 侧边栏背景白色。 */
+  background: #ffffff;
+  /* 右侧边线。 */
+  border-right: 1px solid #d8ded8;
+  /* 内边距。 */
+  padding: 18px;
+  /* 菜单项纵向排列。 */
+  display: grid;
+  /* 每个链接之间留间距。 */
+  gap: 8px;
+  /* 内容从顶部开始，不拉伸到全高。 */
+  align-content: start;
+}
+
+.admin-sidebar a {
+  /* 链接显示为块状按钮。 */
+  display: block;
+  /* 去掉下划线。 */
+  text-decoration: none;
+  /* 默认文字颜色。 */
+  color: #25312d;
+  /* 链接内部留白。 */
+  padding: 10px 12px;
+  /* 链接圆角。 */
+  border-radius: 6px;
+}
+
+.admin-sidebar a.active,
+.admin-sidebar a:hover {
+  /* 当前页面和 hover 使用绿色底。 */
+  background: #1f6f5b;
+  /* 当前页面文字变白。 */
+  color: #ffffff;
+}
+
+.admin-content {
+  /* 内容区内边距。 */
+  padding: 24px;
+  /* 内容区最大宽度，避免宽屏上表格太散。 */
+  max-width: 1180px;
+}
+
+.page-heading h2 {
+  /* 去掉标题默认上边距。 */
+  margin: 0 0 8px;
+}
+
+.page-heading p {
+  /* 去掉段落默认上边距。 */
+  margin: 0 0 18px;
+  /* 副标题颜色降低一点。 */
+  color: #60706a;
+}
+
+.toolbar {
+  /* 工具栏下方留距离。 */
+  margin-bottom: 16px;
+}
+
+.panel {
+  /* 面板背景白色。 */
+  background: #ffffff;
+  /* 面板边框。 */
+  border: 1px solid #d8ded8;
+  /* 面板圆角。 */
+  border-radius: 8px;
+  /* 面板内部留白。 */
+  padding: 18px;
+  /* 每个面板之间留距离。 */
+  margin-bottom: 16px;
+}
+
+.panel h3 {
+  /* 去掉 h3 默认上边距。 */
+  margin: 0 0 14px;
+}
+
+.form-grid {
+  /* 表单字段用响应式网格排列。 */
+  display: grid;
+  /* 每列至少 220px，空间够时自动多列。 */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  /* 字段之间间距。 */
+  gap: 12px;
+}
+
+.form-actions {
+  /* 表单按钮单独占一行。 */
+  display: flex;
+  /* 按钮之间留间距。 */
+  gap: 10px;
+  /* 表单按钮顶部留距离。 */
+  margin-top: 14px;
+}
+
+.table {
+  /* 表格容器允许横向滚动，防止小屏挤坏。 */
+  overflow-x: auto;
+}
+
+table {
+  /* 表格宽度撑满容器。 */
+  width: 100%;
+  /* 合并单元格边框。 */
+  border-collapse: collapse;
+}
+
+th,
+td {
+  /* 单元格底部边线。 */
+  border-bottom: 1px solid #e2e6e1;
+  /* 单元格内边距。 */
+  padding: 10px;
+  /* 文本左对齐。 */
+  text-align: left;
+  /* 表格内容顶部对齐，长文本更易读。 */
+  vertical-align: top;
+}
+
+th {
+  /* 表头背景。 */
+  background: #f7f8f5;
+}
+
+.actions {
+  /* 操作按钮横向排列。 */
+  display: flex;
+  /* 按钮之间留间距。 */
+  gap: 8px;
+}
+
+.message {
+  /* 提示信息颜色。 */
+  color: #1f6f5b;
+  /* 给提示保留高度，避免出现时页面跳动。 */
+  min-height: 22px;
+}
+
+.login-body {
+  /* 登录页使用 flex 居中登录框。 */
+  display: flex;
+  /* 水平居中。 */
+  justify-content: center;
+  /* 垂直方向留出上方空间。 */
+  align-items: flex-start;
+  /* 登录框距离顶部。 */
+  padding-top: 12vh;
+}
+
+.login-panel {
+  /* 登录面板宽度。 */
+  width: min(420px, calc(100% - 32px));
+  /* 登录面板背景。 */
+  background: #ffffff;
+  /* 登录面板边框。 */
+  border: 1px solid #d8ded8;
+  /* 登录面板圆角。 */
+  border-radius: 8px;
+  /* 登录面板内边距。 */
+  padding: 28px;
+}
+
+.login-panel h1 {
+  /* 去掉标题默认上边距。 */
+  margin: 0 0 8px;
+}
+
+.login-panel form {
+  /* 登录表单纵向排列。 */
+  display: grid;
+  /* 输入框和按钮之间留距离。 */
+  gap: 12px;
+}
+
+@media (max-width: 760px) {
+  .admin-shell {
+    /* 小屏改成单列，侧边栏在上，内容在下。 */
+    grid-template-columns: 1fr;
+  }
+
+  .admin-content {
+    /* 小屏减少内容内边距。 */
+    padding: 16px;
+  }
+
+  .admin-sidebar {
+    /* 小屏菜单改成横向滚动。 */
+    display: flex;
+    /* 允许横向滚动。 */
+    overflow-x: auto;
+  }
+}

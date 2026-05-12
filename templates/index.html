@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>韩语句子跟读学习</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>韩语句子跟读学习</h1>
+      <p>以句子为核心，围绕发音、场景、词汇和教材时间轴练习。</p>
+    </div>
+    <nav class="tabs" aria-label="页面导航">
+      <button class="tab active" data-page="letters">音标</button>
+      <button class="tab" data-page="scenes">场景句子</button>
+      <button class="tab" data-page="vocabulary">词汇</button>
+      <button class="tab" data-page="materials">教材</button>
+    </nav>
+  </header>
+
+  <main>
+    <audio id="player" controls></audio>
+
+    <section id="letters" class="page active">
+      <div class="section-title">
+        <h2>40 个韩文字母</h2>
+      </div>
+      <div id="letterGrid" class="letter-grid"></div>
+    </section>
+
+    <section id="scenes" class="page">
+      <div class="section-title">
+        <h2>场景句子</h2>
+        <select id="sceneSelect"></select>
+      </div>
+      <div class="play-options">
+        <label><input type="checkbox" id="sentenceLoop"> 单句循环</label>
+        <label><input type="checkbox" id="sentenceSlow"> 慢速播放</label>
+      </div>
+      <div id="sentenceList" class="sentence-list"></div>
+    </section>
+
+    <section id="vocabulary" class="page">
+      <div class="section-title">
+        <h2>词汇例句</h2>
+        <input id="vocabSearch" type="search" placeholder="搜索韩文或中文">
+      </div>
+      <div id="vocabList" class="sentence-list"></div>
+    </section>
+
+    <section id="materials" class="page">
+      <div class="section-title">
+        <h2>教材时间轴</h2>
+        <select id="materialSelect"></select>
+      </div>
+      <div class="play-options">
+        <label><input type="checkbox" id="materialLoop"> 单句循环</label>
+      </div>
+      <div id="materialContent" class="sentence-list"></div>
+    </section>
+
+  </main>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
