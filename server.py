@@ -225,8 +225,8 @@ class KoreanLearnHandler(BaseHTTPRequestHandler):
 
 def run():
     """启动 HTTP 服务。"""
-    host = "127.0.0.1"
-    port = 8000
+    host = os.getenv("HOST", "127.0.0.1")
+    port = int(os.getenv("PORT", "8000"))
     server = HTTPServer((host, port), KoreanLearnHandler)
     print(f"韩语学习网站已启动：http://{host}:{port}")
     server.serve_forever()

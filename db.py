@@ -7,38 +7,54 @@ db.py
 
 # os 用来读取环境变量，例如 MYSQL_HOST、MYSQL_USER。
 import os
+from urllib.parse import urlparse
 
 # pymysql 是 Python 连接 MySQL 的第三方库，本项目不用 ORM。
 import pymysql
 
 
-# 从环境变量读取数据库配置；如果没有设置，就使用本机常见默认值。
-# 这样初学者可以先改这里，也可以以后用环境变量部署。
-DB_CONFIG = {
-    # 数据库用户名，默认 root。
-    "user": os.getenv("MYSQL_USER", "root"),
-    # 数据库密码，默认空字符串；如果本机 MySQL 有密码，需要设置环境变量。
-    "password": os.getenv("MYSQL_PASSWORD", "Leo@2050."),
-    # 要连接的数据库名称，对应 sql/schema.sql 里创建的 korean_learn。
-    "database": os.getenv("MYSQL_DATABASE", "korean_learn"),
+MYSQL_URL = os.getenv("MYSQL_URL") or os.getenv("DATABASE_URL")
+
+if MYSQL_URL:
+    parsed = urlparse(MYSQL_URL)
+    DB_CONFIG = {
+        "host": parsed.hostname or "127.0.0.1",
+        "port": parsed.port or 3306,
+        "user": parsed.username or "root",
+        "password": parsed.password or "",
+        "database": parsed.path.lstrip("/") or "korean_learn",
+    }
+else:
+    # 从环境变量读取数据库配置；如果没有设置，就使用本机常见默认值。
+    # Railway MySQL 会提供 MYSQLHOST、MYSQLPORT 等变量；本地开发使用 MYSQL_HOST、MYSQL_PORT。
+    DB_CONFIG = {
+        # 数据库用户名，默认 root。
+        "user": os.getenv("MYSQL_USER") or os.getenv("MYSQLUSER", "root"),
+        # 数据库密码，默认空字符串；如果本机 MySQL 有密码，需要设置环境变量。
+        "password": os.getenv("MYSQL_PASSWORD") or os.getenv("MYSQLPASSWORD", ""),
+        # 要连接的数据库名称，对应 sql/schema.sql 里创建的 korean_learn。
+        "database": os.getenv("MYSQL_DATABASE") or os.getenv("MYSQLDATABASE", "korean_learn"),
+    }
+
+DB_CONFIG.update({
     # utf8mb4 可以同时保存中文、韩文、emoji 等字符。
     "charset": "utf8mb4",
     # DictCursor 会把查询结果变成字典，例如 row["korean"]，比 tuple 更适合返回 JSON。
     "cursorclass": pymysql.cursors.DictCursor,
     # autocommit=True 表示 INSERT/UPDATE/DELETE 后自动提交，不需要每次手动 commit。
     "autocommit": True,
-}
+})
 
 MYSQL_SOCKET = os.getenv("MYSQL_SOCKET")
 
 if MYSQL_SOCKET:
     # macOS 官方安装版 MySQL 可能只开启 socket，不监听 3306 端口。
     DB_CONFIG["unix_socket"] = MYSQL_SOCKET
-else:
+elif not MYSQL_URL:
     # 数据库服务器地址，默认连接本机。
-    DB_CONFIG["host"] = os.getenv("MYSQL_HOST", "127.0.0.1")
+    DB_CONFIG["host"] = os.getenv("MYSQL_HOST") or os.getenv("MYSQLHOST", "127.0.0.1")
     # 数据库端口，MySQL 默认是 3306；环境变量读出来是字符串，所以要转成 int。
-    DB_CONFIG["port"] = int(os.getenv("MYSQL_PORT", "3306"))
+    DB_CONFIG["port"] = int(os.getenv("MYSQL_PORT") or os.getenv("MYSQLPORT", "3306"))
 
 
 def get_connection():

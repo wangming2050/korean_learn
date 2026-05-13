@@ -37,8 +37,10 @@ admin123
 也可以通过环境变量修改：
 
 ```bash
-set ADMIN_PASSWORD=你的后台密码
+export ADMIN_PASSWORD=你的后台密码
 ```
+
+如果使用本项目推荐的 `.env` 启动方式，也可以在 `.env` 中修改 `ADMIN_PASSWORD`。
 
 ## 功能说明
 
@@ -58,40 +60,353 @@ set ADMIN_PASSWORD=你的后台密码
 
 ## 运行步骤
 
-1. 安装依赖：
+下面步骤以 macOS / Linux 终端为例。
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+Windows 用户可以使用 PowerShell 或 Git Bash，核心步骤相同，只是环境变量写法略有不同。
 
-2. 创建 MySQL 数据库并导入示例数据：
+### 1. 克隆项目
 
-   ```bash
-   mysql -u root -p < sql/schema.sql
-   ```
+```bash
+git clone https://github.com/testerwm/korean_learn.git
+cd korean_learn
+```
 
-3. 如果你的 MySQL 配置不是默认值，可以设置环境变量：
+如果你已经下载了项目源码，只需要进入项目目录即可。
 
-   ```bash
-   set MYSQL_HOST=127.0.0.1
-   set MYSQL_PORT=3306
-   set MYSQL_USER=root
-   set MYSQL_PASSWORD=你的数据库密码
-   set MYSQL_DATABASE=korean_learn
-   ```
+### 2. 准备 Python 环境
 
-4. 启动服务：
+建议使用 Python 3.9 或更高版本。
 
-   ```bash
-   python server.py
-   ```
+查看本机 Python 版本：
 
-5. 打开用户端或后台：
+```bash
+python3 --version
+```
 
-   ```text
-   http://127.0.0.1:8000/
-   http://127.0.0.1:8000/admin
-   ```
+创建虚拟环境：
+
+```bash
+python3 -m venv .venv
+```
+
+激活虚拟环境：
+
+```bash
+source .venv/bin/activate
+```
+
+安装项目依赖：
+
+```bash
+python3 -m pip install -r requirements.txt
+```
+
+依赖说明：
+
+- `pymysql`：Python 连接 MySQL。
+- `cryptography`：MySQL 8/9 默认认证方式可能需要它，否则可能出现 `cryptography package is required` 报错。
+
+### 3. 确认 MySQL 已安装并启动
+
+如果你已经安装并启动了 MySQL，可以先检查：
+
+```bash
+mysql --version
+```
+
+尝试登录 MySQL：
+
+```bash
+mysql -u root -p
+```
+
+输入你的 MySQL root 密码后，如果能进入 `mysql>` 界面，说明 MySQL 可以正常使用。
+
+如果 macOS 上没有 `mysql` 命令，但你安装的是官方 MySQL，可以尝试：
+
+```bash
+/usr/local/mysql/bin/mysql -u root -p
+```
+
+如果使用 Homebrew 安装 MySQL：
+
+```bash
+brew install mysql
+brew services start mysql
+```
+
+### 4. 创建数据库并导入表结构和示例数据
+
+项目提供了初始化 SQL：
+
+```text
+sql/schema.sql
+```
+
+执行：
+
+```bash
+mysql -u root -p < sql/schema.sql
+```
+
+如果你使用的是 macOS 官方 MySQL，并且 `mysql` 命令不在 PATH 中，可以执行：
+
+```bash
+/usr/local/mysql/bin/mysql -u root -p < sql/schema.sql
+```
+
+这一步会创建：
+
+- 数据库：`korean_learn`
+- 数据表：`scene`、`sentence`、`vocabulary`、`material`
+- 示例数据：场景、句子、词汇、教材
+
+### 5. 创建项目专用 MySQL 用户
+
+不建议项目直接使用 root 用户连接数据库。
+
+先登录 MySQL：
+
+```bash
+mysql -u root -p
+```
+
+如果使用 macOS 官方 MySQL：
+
+```bash
+/usr/local/mysql/bin/mysql -u root -p
+```
+
+进入 `mysql>` 后执行下面 SQL。
+
+请把 `你的数据库密码` 改成你自己的密码：
+
+```sql
+CREATE USER IF NOT EXISTS 'korean_user'@'localhost' IDENTIFIED BY '你的数据库密码';
+CREATE USER IF NOT EXISTS 'korean_user'@'127.0.0.1' IDENTIFIED BY '你的数据库密码';
+
+GRANT ALL PRIVILEGES ON korean_learn.* TO 'korean_user'@'localhost';
+GRANT ALL PRIVILEGES ON korean_learn.* TO 'korean_user'@'127.0.0.1';
+
+FLUSH PRIVILEGES;
+```
+
+退出 MySQL：
+
+```sql
+exit;
+```
+
+### 6. 配置项目数据库连接
+
+复制环境变量示例文件：
+
+```bash
+cp .env.example .env
+```
+
+打开 `.env`，把数据库密码改成你刚才创建用户时使用的密码：
+
+```text
+MYSQL_HOST=127.0.0.1
+MYSQL_PORT=3306
+MYSQL_USER=korean_user
+MYSQL_PASSWORD=你的数据库密码
+MYSQL_DATABASE=korean_learn
+ADMIN_PASSWORD=admin123
+```
+
+`.env` 是本地配置文件，不应该提交到 GitHub。
+
+### 7. 测试数据库连接
+
+执行：
+
+```bash
+set -a
+. ./.env
+set +a
+
+python3 - <<'PY'
+from db import fetch_all
+print(fetch_all("SELECT id, name FROM scene"))
+PY
+```
+
+如果看到类似输出，说明 Python 已经能连接 MySQL：
+
+```text
+[{'id': 1, 'name': '打招呼'}, {'id': 2, 'name': '问路'}, {'id': 3, 'name': '购物'}, {'id': 4, 'name': '餐厅'}]
+```
+
+### 8. 启动服务
+
+推荐使用启动脚本：
+
+```bash
+chmod +x start.sh
+./start.sh
+```
+
+也可以手动启动：
+
+```bash
+set -a
+. ./.env
+set +a
+
+python3 server.py
+```
+
+启动成功后会看到：
+
+```text
+韩语学习网站已启动：http://127.0.0.1:8000
+```
+
+### 9. 打开页面
+
+用户端：
+
+```text
+http://127.0.0.1:8000/
+```
+
+后台：
+
+```text
+http://127.0.0.1:8000/admin
+```
+
+后台默认密码：
+
+```text
+admin123
+```
+
+如果你在 `.env` 中设置了 `ADMIN_PASSWORD`，则使用你自己设置的后台密码。
+
+## 常见 MySQL 问题
+
+### 1. `Can't connect to MySQL server on '127.0.0.1'`
+
+常见原因：
+
+- MySQL 没启动。
+- MySQL 没监听 3306 端口。
+- MySQL 只开启了 socket 连接。
+
+先检查 MySQL 是否启动：
+
+```bash
+mysql -u root -p
+```
+
+再检查端口：
+
+```bash
+mysql -u root -p -e "SHOW VARIABLES LIKE 'port';"
+```
+
+如果结果是：
+
+```text
+port | 3306
+```
+
+说明 MySQL 正在监听 3306。
+
+如果结果是：
+
+```text
+port | 0
+```
+
+说明 MySQL 没有开启 TCP 端口，通常只能通过 socket 连接。
+
+### 2. macOS 官方 MySQL 只走 socket
+
+macOS 官方安装版 MySQL 有时会使用 socket，例如：
+
+```text
+/tmp/mysql.sock
+```
+
+查看 socket 路径：
+
+```bash
+/usr/local/mysql/bin/mysql -u root -p -e "SHOW VARIABLES LIKE 'socket';"
+```
+
+如果你不想开启 3306 端口，可以在 `.env` 中配置：
+
+```text
+MYSQL_SOCKET=/tmp/mysql.sock
+MYSQL_USER=korean_user
+MYSQL_PASSWORD=你的数据库密码
+MYSQL_DATABASE=korean_learn
+```
+
+配置了 `MYSQL_SOCKET` 后，项目会优先使用 socket 连接，不再使用 `MYSQL_HOST` 和 `MYSQL_PORT`。
+
+### 3. `Access denied for user`
+
+表示用户名或密码不对，或者该用户没有权限访问 `korean_learn` 数据库。
+
+可以重新登录 MySQL 后执行授权：
+
+```sql
+CREATE USER IF NOT EXISTS 'korean_user'@'localhost' IDENTIFIED BY '你的数据库密码';
+CREATE USER IF NOT EXISTS 'korean_user'@'127.0.0.1' IDENTIFIED BY '你的数据库密码';
+
+GRANT ALL PRIVILEGES ON korean_learn.* TO 'korean_user'@'localhost';
+GRANT ALL PRIVILEGES ON korean_learn.* TO 'korean_user'@'127.0.0.1';
+
+FLUSH PRIVILEGES;
+```
+
+然后确认 `.env` 中的配置一致：
+
+```text
+MYSQL_USER=korean_user
+MYSQL_PASSWORD=你的数据库密码
+```
+
+### 4. `Unknown database 'korean_learn'`
+
+说明 MySQL 连接成功了，但数据库还没创建。
+
+执行：
+
+```bash
+mysql -u root -p < sql/schema.sql
+```
+
+### 5. `cryptography package is required`
+
+MySQL 8/9 默认认证方式可能需要 `cryptography`。
+
+执行：
+
+```bash
+python3 -m pip install -r requirements.txt
+```
+
+或单独安装：
+
+```bash
+python3 -m pip install cryptography
+```
+
+### 6. 8000 端口被占用
+
+如果启动时报端口占用，可以查看占用进程：
+
+```bash
+lsof -nP -iTCP:8000 -sTCP:LISTEN
+```
+
+停止对应进程后再启动。
 
 ## 项目结构详细讲解
 
@@ -363,3 +678,143 @@ POST /api/admin/login
 - `static/css/admin.css`：接近逐段逐属性解释后台样式。
 
 建议学习时先从 `server.py` 的 `handle_request` 开始读，因为它是整个项目的入口地图。然后顺着一个接口，例如 `/api/scenes`，读到 `router.py`、`handler/scene.py`、`db.py`，最后回到前端 `app.js` 或 `admin.js`。
+
+## 技术版本迭代计划
+
+这个项目适合作为一个循序渐进的 Web 学习项目。
+
+建议每一版只引入一个核心新概念，避免同时学习太多工具导致看不清每个技术解决的问题。
+
+### V1：当前原生版本
+
+技术结构：
+
+```text
+HTML + CSS + 原生 JavaScript
+Python 原生 http.server
+pymysql + MySQL
+无前端框架
+无后端框架
+无 ORM
+```
+
+学习目标：
+
+- 理解浏览器如何请求 HTML、CSS、JS。
+- 理解前端如何通过 `fetch` 调用后端接口。
+- 理解后端如何接收请求、分发路由、返回 HTML 或 JSON。
+- 理解 Python 如何通过 `pymysql` 连接 MySQL。
+- 理解最基础的 SQL 查询、新增、修改、删除。
+
+这一版的重点不是写得最省代码，而是看清 Web 项目的底层流程。
+
+### V2：引入 jQuery
+
+技术结构：
+
+```text
+HTML + CSS + jQuery
+Python 原生 http.server
+pymysql + MySQL
+```
+
+学习目标：
+
+- 理解前端工具库和原生 JavaScript 的区别。
+- 用 jQuery 简化 DOM 查询、事件绑定、Ajax 请求、表单处理。
+- 在不改变后端结构的情况下，优化前端交互代码。
+
+jQuery 严格来说不是框架，而是 JavaScript 工具库。
+
+它适合作为第二版，因为它不会大幅改变项目架构，但可以帮助理解“前端库”为什么会出现。
+
+### V3：引入 Flask
+
+技术结构：
+
+```text
+HTML + CSS + jQuery
+Flask
+pymysql + MySQL
+```
+
+学习目标：
+
+- 理解后端 Web 框架的价值。
+- 学习 Flask 路由、请求参数、响应、模板渲染、Cookie、Session。
+- 用 Flask 替代当前手写的 `http.server`、路由分发和响应封装。
+
+这一版的重点是看清：框架并不是魔法，它主要是在帮我们规范和简化重复的后端流程。
+
+### V4：引入 ORM
+
+技术结构：
+
+```text
+HTML + CSS + jQuery
+Flask
+SQLAlchemy + MySQL
+```
+
+学习目标：
+
+- 理解 ORM 的作用。
+- 把手写 SQL 查询逐步改成模型对象查询。
+- 学习模型关系、字段定义、基础查询、事务和数据迁移。
+
+这一版适合对比 `pymysql` 直写 SQL 和 SQLAlchemy 模型查询的差异。
+
+### V5：前后端分离
+
+技术结构：
+
+```text
+Vue 或 React
+Flask API
+SQLAlchemy + MySQL
+```
+
+学习目标：
+
+- 理解现代前端组件化开发。
+- 后端只提供 JSON API，前端负责页面渲染和交互状态。
+- 学习组件、状态、路由、表单、接口封装。
+
+这一版开始接近真实的现代 Web 应用结构。
+
+### V6：工程化和部署
+
+技术结构：
+
+```text
+Vue/React + Vite
+Flask 或 FastAPI
+SQLAlchemy + MySQL
+Docker
+Nginx
+```
+
+学习目标：
+
+- 理解前端构建工具和生产环境打包。
+- 理解后端配置管理、日志、错误处理。
+- 学习 Docker 环境隔离。
+- 学习 Nginx 反向代理和静态资源部署。
+- 为项目增加更完整的部署流程。
+
+这一版的目标是把学习项目推进到接近真实上线项目的形态。
+
+### 推荐学习顺序
+
+```text
+V1：当前原生版，打基础
+V2：jQuery 版，理解前端库
+V3：Flask 版，理解后端框架
+V4：SQLAlchemy 版，理解 ORM
+V5：Vue 或 React 版，理解前后端分离
+V6：Docker 部署版，形成完整项目经验
+```
+
+不要急着直接跳到 Vue、React 或 FastAPI。
+
+先把 V1 到 V3 走扎实，后面学习框架时就会更清楚：框架到底帮我们省掉了什么、规范了什么、隐藏了什么。

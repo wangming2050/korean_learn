@@ -1,10 +1,18 @@
 #!/bin/bash
 
-cd /Users/king/Documents/Codex/2026-05-07/korean_learn || exit 1
+set -e
 
-export MYSQL_HOST=127.0.0.1
-export MYSQL_PORT=3306
-export MYSQL_USER=korean_user
-export MYSQL_PASSWORD='Leo@2050.'
+cd "$(dirname "$0")"
 
-/Users/king/.pyenv/versions/3.9.6/bin/python3 server.py
+if [ -f ".env" ]; then
+  set -a
+  # shellcheck disable=SC1091
+  . ./.env
+  set +a
+fi
+
+if [ -x ".venv/bin/python" ]; then
+  .venv/bin/python server.py
+else
+  python3 server.py
+fi
