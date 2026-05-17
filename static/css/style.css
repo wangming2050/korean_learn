@@ -10,11 +10,49 @@
   box-sizing: border-box;
 }
 
+:root {
+  color-scheme: light;
+  --bg: #f4f6f8;
+  --surface: #ffffff;
+  --surface-soft: #f9faf7;
+  --text: #172026;
+  --muted: #63706d;
+  --subtle: #7c8784;
+  --line: #dfe4e2;
+  --line-strong: #bdc7c3;
+  --brand: #216b5a;
+  --brand-strong: #174d42;
+  --accent: #d97b43;
+  --shadow: 0 12px 34px rgba(22, 33, 39, 0.08);
+  --control-shadow: 0 1px 2px rgba(22, 33, 39, 0.08);
+}
+
+body[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #121619;
+  --surface: #1b2226;
+  --surface-soft: #151b1f;
+  --text: #eef3f1;
+  --muted: #a9b6b2;
+  --subtle: #8f9e99;
+  --line: #2d393d;
+  --line-strong: #46575d;
+  --brand: #70c4a8;
+  --brand-strong: #9bd8c3;
+  --accent: #f0a56b;
+  --shadow: 0 16px 40px rgba(0, 0, 0, 0.26);
+  --control-shadow: 0 1px 2px rgba(0, 0, 0, 0.22);
+}
+
 body {
   margin: 0;
   font-family: Arial, "Microsoft YaHei", sans-serif;
-  color: #172026;
-  background: #f6f7f2;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, color-mix(in srgb, var(--accent) 10%, transparent), transparent 32rem),
+    linear-gradient(180deg, var(--surface-soft), var(--bg) 280px);
+  min-height: 100vh;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 /* 顶部区域包含标题和导航按钮。 */
@@ -23,19 +61,26 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding: 24px 36px;
-  background: #ffffff;
-  border-bottom: 1px solid #d9ded6;
+  padding: 22px 36px;
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  border-bottom: 1px solid var(--line);
+  box-shadow: var(--control-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(16px);
 }
 
 .topbar h1 {
   margin: 0 0 8px;
-  font-size: 28px;
+  font-size: 26px;
+  letter-spacing: 0;
 }
 
 .topbar p {
   margin: 0;
-  color: #60706a;
+  color: var(--muted);
+  line-height: 1.6;
 }
 
 /* tabs 是页面切换按钮区域。 */
@@ -43,30 +88,71 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  align-items: center;
 }
 
 .tab,
 button {
-  border: 1px solid #9ca99f;
-  background: #ffffff;
-  color: #172026;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  color: var(--text);
   border-radius: 6px;
   padding: 9px 14px;
   cursor: pointer;
   font-size: 14px;
+  box-shadow: var(--control-shadow);
+  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
 }
 
 .tab.active,
 button:hover {
-  background: #1f6f5b;
-  color: #ffffff;
-  border-color: #1f6f5b;
+  background: var(--brand);
+  color: var(--surface);
+  border-color: var(--brand);
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+.theme-toggle {
+  width: 44px;
+  min-width: 44px;
+  height: 40px;
+  display: inline-grid;
+  place-items: center;
+  padding: 0;
+}
+
+.theme-icon {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.theme-icon-moon {
+  display: none;
+}
+
+body[data-theme="dark"] .theme-icon-sun {
+  display: none;
+}
+
+body[data-theme="dark"] .theme-icon-moon {
+  display: block;
+  width: 25px;
+  height: 25px;
+  stroke-width: 2.2;
 }
 
 main {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 24px;
+  padding: 28px 24px 40px;
 }
 
 /* 页面默认隐藏；拥有 active 类的页面才显示。 */
@@ -81,7 +167,9 @@ main {
 /* 全站共用一个 audio 标签，点击不同内容时动态切换 src。 */
 #player {
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
+  border-radius: 8px;
+  box-shadow: var(--control-shadow);
 }
 
 .section-title {
@@ -95,17 +183,28 @@ main {
 .section-title h2 {
   margin: 0;
   font-size: 22px;
+  letter-spacing: 0;
 }
 
 input,
 select,
 textarea {
   width: 100%;
-  border: 1px solid #b8c1bb;
+  border: 1px solid var(--line-strong);
   border-radius: 6px;
   padding: 10px 12px;
   font: inherit;
-  background: #ffffff;
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--control-shadow);
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--brand) 45%, transparent);
+  outline-offset: 2px;
 }
 
 .section-title input,
@@ -123,33 +222,43 @@ textarea {
 .letter-card,
 .sentence-card,
 .panel {
-  background: #ffffff;
-  border: 1px solid #d9ded6;
+  background: color-mix(in srgb, var(--surface) 96%, var(--surface-soft));
+  border: 1px solid var(--line);
   border-radius: 8px;
   padding: 16px;
+  box-shadow: var(--shadow);
 }
 
 .letter-card {
   cursor: pointer;
+  min-height: 130px;
+  transition: border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.letter-card:hover {
+  border-color: var(--brand);
+  transform: translateY(-2px);
 }
 
 .letter-card strong {
   display: block;
   font-size: 34px;
   margin-bottom: 8px;
+  color: var(--brand-strong);
 }
 
 .letter-card span {
   display: block;
-  color: #60706a;
+  color: var(--muted);
   line-height: 1.5;
 }
 
 .play-options {
   display: flex;
+  flex-wrap: wrap;
   gap: 18px;
   margin-bottom: 14px;
-  color: #43514d;
+  color: var(--muted);
 }
 
 .play-options label {
@@ -170,7 +279,7 @@ textarea {
 .sentence-card {
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 12px;
+  gap: 16px;
   align-items: center;
 }
 
@@ -181,13 +290,14 @@ textarea {
 
 .sentence-card p {
   margin: 0;
-  color: #60706a;
+  color: var(--muted);
+  line-height: 1.6;
 }
 
 .meta {
   margin-top: 8px;
   font-size: 13px;
-  color: #7a8882;
+  color: var(--subtle);
 }
 
 .admin-grid {
@@ -214,14 +324,19 @@ textarea {
 
 .message {
   min-height: 24px;
-  color: #1f6f5b;
+  color: var(--brand);
 }
 
 @media (max-width: 760px) {
   .topbar {
     align-items: flex-start;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr auto;
     padding: 20px;
+  }
+
+  .tabs {
+    grid-column: 1 / -1;
   }
 
   main {

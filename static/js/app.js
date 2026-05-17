@@ -17,6 +17,12 @@ let currentLoopStart = 0;
 // 标记当前是否开启片段循环。
 let loopEnabled = false;
 
+// 明暗背景偏好保存在浏览器本地；刷新页面后保持上次选择。
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "dark") {
+  document.body.dataset.theme = "dark";
+}
+
 
 /**
  * 封装 fetch，统一处理 JSON。
@@ -93,6 +99,20 @@ function initTabs() {
 }
 
 
+function initThemeToggle() {
+  const themeToggle = document.querySelector(".theme-toggle");
+  if (!themeToggle) {
+    return;
+  }
+
+  themeToggle.addEventListener("click", () => {
+    const isDark = document.body.dataset.theme === "dark";
+    document.body.dataset.theme = isDark ? "light" : "dark";
+    localStorage.setItem("theme", document.body.dataset.theme);
+  });
+}
+
+
 /**
  * 加载 40 个韩文字母。
  * 字母数据由 /api/letters 返回，点击卡片播放对应音频。
@@ -139,10 +159,15 @@ async function loadScenes() {
 }
 
 
+
+
+
 /**
  * 按场景加载句子。
  * 每个句子显示韩文、中文和播放按钮。
  */
+
+
 async function loadSentences(sceneId) {
   const result = await api(`/api/sentences?scene_id=${encodeURIComponent(sceneId)}`);
   const list = document.querySelector("#sentenceList");
@@ -167,6 +192,11 @@ async function loadSentences(sceneId) {
     </article>
   `).join("");
 
+
+//   点击播放按钮时
+// 读取 sentenceLoop 是否勾选
+// 读取 sentenceSlow 是否勾选
+// 然后传给 playAudio
   list.querySelectorAll("button").forEach((button) => {
     button.addEventListener("click", () => {
       playAudio(
@@ -285,12 +315,50 @@ function initEvents() {
 }
 
 
+
+
 /**
  * 页面启动函数。
  * DOMContentLoaded 表示 HTML 已经被浏览器解析完成，可以安全地 querySelector。
  */
+
+
+/*
+  document is current page
+  DOMContentLoaded = Document Object Model  + Content + Loaded   
+  DOMcontentLoaded means is   Html has been parsed by browser, and we can safely use querySelector to get elements from the page.
+
+  addEventListener = add + Event + Listener 
+  addEventListener is a method that allows us to listen for specific events on an element. 
+  addEventListener 是事件监听器的意思，表示我们可以监听元素上的特定事件，例如点击、输入等。当事件发生时，我们可以执行相应的函数来处理这些事件。
+  表示在当前html页面监听 Html解析事件（DOMContentLoaded）是否完成，如果完成了就执行后面的函数。
+  async () => { ... } 是一个异步函数，表示函数内部可能会有异步操作，例如 fetch 请求。我们使用 async/await 来处理这些异步操作，使代码更清晰易读。
+  async function 表示时间出发后要执行的函数，html页面解析完成后要执行这个函数。它不是立刻执行，而是等浏览器触发 DOMContentLoaded 后执行。
+
+  HTML 被浏览器解析 
+        ｜
+  浏览器生成DOM树 
+        ｜          
+  浏览器触发 DOMContentLoaded 事件
+        ｜
+  JS监听  DOMContentLoaded 事件
+        ｜
+  执行回调函数（初始化页面、加载数据等）
+
+
+
+  */
+
+
+
 document.addEventListener("DOMContentLoaded", async () => {
+
+  /* 
+    
+  
+  */
   initTabs();
+  initThemeToggle();
   initEvents();
 
   try {
