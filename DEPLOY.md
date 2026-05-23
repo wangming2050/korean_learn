@@ -102,10 +102,10 @@ Railway 提供的变量可以直接使用。
 
 MySQL 服务创建好以后，需要把本项目的表结构和示例数据导入线上数据库。
 
-可以在本机终端连接 Railway MySQL 后导入：
+Railway 通常已经创建了默认数据库，所以推荐导入云端专用脚本：
 
 ```bash
-mysql -h 线上MYSQLHOST -P 线上MYSQLPORT -u 线上MYSQLUSER -p 线上MYSQLDATABASE < sql/schema.sql
+mysql -h 线上MYSQLHOST -P 线上MYSQLPORT -u 线上MYSQLUSER -p 线上MYSQLDATABASE < sql/schema-cloud.sql
 ```
 
 其中：
@@ -116,6 +116,12 @@ mysql -h 线上MYSQLHOST -P 线上MYSQLPORT -u 线上MYSQLUSER -p 线上MYSQLDAT
 - `线上MYSQLDATABASE`：Railway 提供的 `MYSQLDATABASE`
 
 执行时会提示输入密码，输入 Railway 的 `MYSQLPASSWORD`。
+
+如果是本机 MySQL，可以继续使用：
+
+```bash
+mysql -u root -p < sql/schema.sql
+```
 
 ## 5. 设置后台密码
 

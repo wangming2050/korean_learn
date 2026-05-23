@@ -8,6 +8,53 @@
 // 获取全站唯一的 audio 播放器。后面所有播放按钮都会复用它。
 const player = document.querySelector("#player");
 
+const LETTER_DETAILS = {
+  "ㄱ": { sound: "기역", examples: [["가방", "书包"], ["고기", "肉"], ["기차", "火车"], ["가게", "商店"]] },
+  "ㄴ": { sound: "니은", examples: [["나무", "树"], ["누나", "姐姐"], ["나라", "国家"], ["노래", "歌曲"]] },
+  "ㄷ": { sound: "디귿", examples: [["다리", "腿/桥"], ["두부", "豆腐"], ["도서관", "图书馆"], ["달", "月亮"]] },
+  "ㄹ": { sound: "리을", examples: [["라면", "拉面"], ["리본", "丝带"], ["로봇", "机器人"], ["러시아", "俄罗斯"]] },
+  "ㅁ": { sound: "미음", examples: [["모자", "帽子"], ["물", "水"], ["마을", "村庄"], ["문", "门"]] },
+  "ㅂ": { sound: "비읍", examples: [["바다", "大海"], ["바지", "裤子"], ["밥", "饭"], ["버스", "公交车"]] },
+  "ㅅ": { sound: "시옷", examples: [["사과", "苹果"], ["산", "山"], ["손", "手"], ["선생님", "老师"]] },
+  "ㅇ": { sound: "이응", examples: [["아이", "孩子"], ["우유", "牛奶"], ["오이", "黄瓜"], ["이름", "名字"]] },
+  "ㅈ": { sound: "지읒", examples: [["지도", "地图"], ["지하철", "地铁"], ["전화", "电话"], ["집", "家"]] },
+  "ㅊ": { sound: "치읓", examples: [["차", "车/茶"], ["친구", "朋友"], ["책", "书"], ["치마", "裙子"]] },
+  "ㅋ": { sound: "키읔", examples: [["코", "鼻子"], ["커피", "咖啡"], ["카드", "卡片"], ["키", "身高/钥匙"]] },
+  "ㅌ": { sound: "티읕", examples: [["토마토", "番茄"], ["택시", "出租车"], ["텔레비전", "电视"], ["타다", "乘坐"]] },
+  "ㅍ": { sound: "피읖", examples: [["포도", "葡萄"], ["피자", "披萨"], ["팔", "胳膊/八"], ["편지", "信"]] },
+  "ㅎ": { sound: "히읗", examples: [["하늘", "天空"], ["학교", "学校"], ["한국", "韩国"], ["호텔", "酒店"]] },
+  "ㄲ": { sound: "쌍기역", examples: [["꼬리", "尾巴"], ["꽃", "花"], ["꿈", "梦"], ["까치", "喜鹊"]] },
+  "ㄸ": { sound: "쌍디귿", examples: [["딸기", "草莓"], ["떡", "年糕"], ["따뜻해요", "暖和"], ["뜨다", "浮起"]] },
+  "ㅃ": { sound: "쌍비읍", examples: [["빵", "面包"], ["뿌리", "根"], ["빨래", "洗衣"], ["뽀뽀", "亲亲"]] },
+  "ㅆ": { sound: "쌍시옷", examples: [["쌀", "米"], ["쓰다", "写/苦"], ["씨", "先生/种子"], ["싸다", "便宜"]] },
+  "ㅉ": { sound: "쌍지읒", examples: [["짜다", "咸"], ["찌개", "炖汤"], ["쪽", "页/边"], ["짝", "只/双的一方"]] },
+  "ㅏ": { sound: "아", examples: [["아기", "婴儿"], ["아빠", "爸爸"], ["바다", "大海"], ["사과", "苹果"]] },
+  "ㅑ": { sound: "야", examples: [["야구", "棒球"], ["야채", "蔬菜"], ["이야기", "故事"], ["야간", "夜间"]] },
+  "ㅓ": { sound: "어", examples: [["어머니", "妈妈"], ["어디", "哪里"], ["버스", "公交车"], ["저", "我/那个"]] },
+  "ㅕ": { sound: "여", examples: [["여자", "女人"], ["여름", "夏天"], ["병원", "医院"], ["여행", "旅行"]] },
+  "ㅗ": { sound: "오", examples: [["오이", "黄瓜"], ["오늘", "今天"], ["고기", "肉"], ["모자", "帽子"]] },
+  "ㅛ": { sound: "요", examples: [["요리", "料理"], ["요일", "星期"], ["교실", "教室"], ["표", "票/表"]] },
+  "ㅜ": { sound: "우", examples: [["우유", "牛奶"], ["문", "门"], ["구두", "皮鞋"], ["누나", "姐姐"]] },
+  "ㅠ": { sound: "유", examples: [["유리", "玻璃"], ["휴지", "纸巾"], ["유명해요", "有名"], ["뉴스", "新闻"]] },
+  "ㅡ": { sound: "으", examples: [["음악", "音乐"], ["은행", "银行"], ["흐리다", "阴沉"], ["그", "那个"]] },
+  "ㅣ": { sound: "이", examples: [["이름", "名字"], ["이불", "被子"], ["기차", "火车"], ["지도", "地图"]] },
+  "ㅐ": { sound: "애", examples: [["개", "狗"], ["새", "鸟/新"], ["책", "书"], ["배", "梨/船"]] },
+  "ㅒ": { sound: "얘", examples: [["얘기", "故事/聊天"], ["얘", "这个孩子"], ["걔", "那个孩子"], ["쟤", "那个孩子"]] },
+  "ㅔ": { sound: "에", examples: [["게", "螃蟹"], ["세수", "洗脸"], ["메뉴", "菜单"], ["네", "是"]] },
+  "ㅖ": { sound: "예", examples: [["예", "是/例"], ["시계", "钟表"], ["계단", "楼梯"], ["예약", "预约"]] },
+  "ㅘ": { sound: "와", examples: [["과자", "点心"], ["사과", "苹果"], ["화장실", "洗手间"], ["와요", "来"]] },
+  "ㅙ": { sound: "왜", examples: [["왜", "为什么"], ["돼지", "猪"], ["괜찮아요", "没关系"], ["왜요", "为什么呢"]] },
+  "ㅚ": { sound: "외", examples: [["외국", "外国"], ["회사", "公司"], ["죄송합니다", "对不起"], ["외워요", "背诵"]] },
+  "ㅝ": { sound: "워", examples: [["워터", "水/water"], ["원", "韩元/圆"], ["권", "册/权"], ["뭐", "什么"]] },
+  "ㅞ": { sound: "웨", examples: [["웨이터", "服务员"], ["웬일", "怎么回事"], ["궤도", "轨道"], ["웨딩", "婚礼"]] },
+  "ㅟ": { sound: "위", examples: [["위", "上面"], ["귀", "耳朵"], ["쉬다", "休息"], ["뒤", "后面"]] },
+  "ㅢ": { sound: "의", examples: [["의자", "椅子"], ["의사", "医生"], ["회의", "会议"], ["의미", "意思"]] },
+};
+
+let letterItems = [];
+let selectedLetterIndex = null;
+let playbackRunId = 0;
+
 // 保存当前正在做“片段循环”的结束时间，timeupdate 事件里会用到。
 let currentLoopEnd = 0;
 
@@ -57,6 +104,7 @@ function playAudio(audioUrl, start = 0, end = 0, shouldLoop = false, slow = fals
     return;
   }
 
+  stopPlaybackQueue();
   currentLoopStart = Number(start) || 0;
   currentLoopEnd = Number(end) || 0;
   loopEnabled = shouldLoop;
@@ -72,6 +120,178 @@ function playAudio(audioUrl, start = 0, end = 0, shouldLoop = false, slow = fals
 }
 
 
+function stopPlaybackQueue() {
+  playbackRunId += 1;
+  player.pause();
+  if ("speechSynthesis" in window) {
+    window.speechSynthesis.cancel();
+  }
+}
+
+
+function wait(ms, runId) {
+  return new Promise((resolve) => {
+    window.setTimeout(() => {
+      resolve(playbackRunId === runId);
+    }, ms);
+  });
+}
+
+
+function playUrlOnce(audioUrl, runId) {
+  return new Promise((resolve) => {
+    if (!audioUrl || playbackRunId !== runId) {
+      resolve(false);
+      return;
+    }
+
+    player.loop = false;
+    loopEnabled = false;
+    player.playbackRate = 1;
+    player.src = audioUrl;
+    player.currentTime = 0;
+
+    const cleanup = () => {
+      player.removeEventListener("ended", onEnded);
+      player.removeEventListener("error", onError);
+    };
+
+    const onEnded = () => {
+      cleanup();
+      resolve(true);
+    };
+
+    const onError = () => {
+      cleanup();
+      resolve(false);
+    };
+
+    player.addEventListener("ended", onEnded, { once: true });
+    player.addEventListener("error", onError, { once: true });
+
+    player.play().catch(() => {
+      cleanup();
+      resolve(false);
+    });
+  });
+}
+
+
+function speakKorean(text, runId) {
+  return new Promise((resolve) => {
+    if (!text || playbackRunId !== runId || !("speechSynthesis" in window)) {
+      resolve(false);
+      return;
+    }
+
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = "ko-KR";
+    utterance.rate = 0.86;
+    utterance.pitch = 1;
+
+    const voices = window.speechSynthesis.getVoices();
+    const koreanVoice = voices.find((voice) => voice.lang && voice.lang.toLowerCase().startsWith("ko"));
+    if (koreanVoice) {
+      utterance.voice = koreanVoice;
+    }
+
+    utterance.onend = () => resolve(true);
+    utterance.onerror = () => resolve(false);
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utterance);
+  });
+}
+
+
+async function playPronunciationItem(item, runId) {
+  let played = false;
+
+  if (item.audioUrl) {
+    played = await playUrlOnce(item.audioUrl, runId);
+  }
+
+  if (!played && item.text) {
+    played = await speakKorean(item.text, runId);
+  }
+
+  return played;
+}
+
+
+function getRepeatCount() {
+  const input = document.querySelector("#letterRepeatCount");
+  const count = Number.parseInt(input?.value || "1", 10);
+
+  if (!Number.isFinite(count) || count < 1) {
+    if (input) {
+      input.value = "1";
+    }
+    return 1;
+  }
+
+  return count;
+}
+
+
+function buildLetterPlaybackQueue(letterData) {
+  const includeLetter = document.querySelector("#playLetterSound")?.checked;
+  const includeWords = document.querySelector("#playExampleWords")?.checked;
+  const queue = [];
+
+  if (includeLetter) {
+    queue.push({
+      label: "音标",
+      text: letterData.sound,
+      audioUrl: letterData.letterAudioUrl,
+    });
+  }
+
+  if (includeWords) {
+    letterData.examples.forEach((example) => {
+      queue.push({
+        label: "示例单词",
+        text: example.word,
+        audioUrl: example.audioUrl,
+      });
+    });
+  }
+
+  return queue;
+}
+
+
+async function playLetterQueue(letterData) {
+  stopPlaybackQueue();
+
+  const runId = playbackRunId;
+  const repeatCount = getRepeatCount();
+  const queue = buildLetterPlaybackQueue(letterData);
+
+  if (queue.length === 0) {
+    alert("请至少选择“音标”或“示例单词”。");
+    return;
+  }
+
+  for (const item of queue) {
+    for (let index = 0; index < repeatCount; index += 1) {
+      if (playbackRunId !== runId) {
+        return;
+      }
+
+      await playPronunciationItem(item, runId);
+
+      if (playbackRunId !== runId) {
+        return;
+      }
+
+      await wait(1300, runId);
+    }
+
+    await wait(500, runId);
+  }
+}
+
+
 // timeupdate 会在音频播放过程中持续触发。
 // 如果开启了单句循环，并且播放到片段结束时间，就跳回片段开始时间。
 player.addEventListener("timeupdate", () => {
@@ -83,21 +303,45 @@ player.addEventListener("timeupdate", () => {
 
 
 /**
+ * 切换页面栏目。
+ */
+function activatePage(pageId) {
+  document.querySelectorAll(".tab").forEach((item) => {
+    item.classList.toggle("active", item.dataset.page === pageId);
+  });
+
+  document.querySelectorAll(".page").forEach((page) => {
+    page.classList.toggle("active", page.id === pageId);
+  });
+
+  document.body.dataset.activePage = pageId;
+}
+
+
+function initDefaultPage() {
+  const hasSeenGuide = localStorage.getItem("hasSeenGuide") === "true";
+  const defaultPage = hasSeenGuide ? "letters" : "guide";
+
+  activatePage(defaultPage);
+
+  if (!hasSeenGuide) {
+    localStorage.setItem("hasSeenGuide", "true");
+  }
+}
+
+
+/**
  * 初始化顶部 tab 切换。
- * 点击按钮时隐藏所有 page，再显示目标 page。
  */
 function initTabs() {
   document.querySelectorAll(".tab").forEach((tab) => {
-    tab.addEventListener("click", () => {
-      document.querySelectorAll(".tab").forEach((item) => item.classList.remove("active"));
-      document.querySelectorAll(".page").forEach((page) => page.classList.remove("active"));
+    tab.addEventListener("click", () => activatePage(tab.dataset.page));
+  });
 
-      tab.classList.add("active");
-      document.querySelector(`#${tab.dataset.page}`).classList.add("active");
-    });
+  document.querySelectorAll("[data-open-page]").forEach((button) => {
+    button.addEventListener("click", () => activatePage(button.dataset.openPage));
   });
 }
-
 
 function initThemeToggle() {
   const themeToggle = document.querySelector(".theme-toggle");
@@ -113,6 +357,98 @@ function initThemeToggle() {
 }
 
 
+function normalizeLetterItem(item) {
+  const details = LETTER_DETAILS[item.letter] || {};
+  const primaryExample = {
+    word: item.word,
+    meaning: item.meaning,
+    audioUrl: item.audio_url || "",
+    primary: true,
+  };
+
+  const examples = (details.examples || [[item.word, item.meaning]]).map(([word, meaning], index) => ({
+    word,
+    meaning,
+    audioUrl: index === 0 ? item.audio_url || "" : "",
+    primary: index === 0,
+  }));
+
+  if (!examples.some((example) => example.word === primaryExample.word)) {
+    examples.unshift(primaryExample);
+  }
+
+  return {
+    ...item,
+    sound: details.sound || item.letter,
+    letterAudioUrl: item.letter_audio_url || "",
+    examples,
+  };
+}
+
+
+function renderLetterDetail(letterData) {
+  const detail = document.querySelector("#letterDetail");
+  if (!detail) {
+    return;
+  }
+
+  detail.hidden = false;
+  detail.innerHTML = `
+    <div class="letter-detail-head">
+      <div>
+        <span class="eyebrow">Selected Sound</span>
+        <h3>${letterData.letter} <span>${letterData.sound}</span></h3>
+      </div>
+      <button class="detail-close" type="button" aria-label="收起示范详情">×</button>
+    </div>
+    <div class="detail-summary">
+      <span>当前点击卡片会按上方设置依次朗读。</span>
+      <span>示例单词共 ${letterData.examples.length} 个。</span>
+    </div>
+    <div class="example-list">
+      ${letterData.examples.map((example) => `
+        <article class="example-word${example.primary ? " primary" : ""}">
+          <strong>${example.word}</strong>
+          <span>${example.meaning}</span>
+        </article>
+      `).join("")}
+    </div>
+  `;
+
+  detail.querySelector(".detail-close").addEventListener("click", () => {
+    selectedLetterIndex = null;
+    detail.hidden = true;
+    document.querySelectorAll(".letter-card").forEach((card) => card.classList.remove("selected"));
+    stopPlaybackQueue();
+  });
+}
+
+
+function selectLetter(index) {
+  const detail = document.querySelector("#letterDetail");
+
+  if (selectedLetterIndex === index) {
+    selectedLetterIndex = null;
+    if (detail) {
+      detail.hidden = true;
+    }
+    document.querySelectorAll(".letter-card").forEach((card) => card.classList.remove("selected"));
+    stopPlaybackQueue();
+    return;
+  }
+
+  selectedLetterIndex = index;
+  const letterData = letterItems[index];
+
+  document.querySelectorAll(".letter-card").forEach((card) => {
+    card.classList.toggle("selected", Number(card.dataset.index) === index);
+  });
+
+  renderLetterDetail(letterData);
+  playLetterQueue(letterData);
+}
+
+
 /**
  * 加载 40 个韩文字母。
  * 字母数据由 /api/letters 返回，点击卡片播放对应音频。
@@ -120,18 +456,20 @@ function initThemeToggle() {
 async function loadLetters() {
   const result = await api("/api/letters");
   const grid = document.querySelector("#letterGrid");
+  letterItems = result.data.map(normalizeLetterItem);
 
-  grid.innerHTML = result.data.map((item) => `
-    <article class="letter-card" data-audio="${item.audio_url}">
+  grid.innerHTML = letterItems.map((item, index) => `
+    <article class="letter-card" data-index="${index}">
       <strong>${item.letter}</strong>
-      <span>${item.word}</span>
+      <span class="letter-word">${item.word}</span>
       <span>${item.meaning}</span>
+      <small>${item.examples.length} 个示例</small>
     </article>
   `).join("");
 
   grid.querySelectorAll(".letter-card").forEach((card) => {
     card.addEventListener("click", () => {
-      playAudio(card.dataset.audio);
+      selectLetter(Number(card.dataset.index));
     });
   });
 }
@@ -158,16 +496,10 @@ async function loadScenes() {
   }
 }
 
-
-
-
-
 /**
  * 按场景加载句子。
  * 每个句子显示韩文、中文和播放按钮。
  */
-
-
 async function loadSentences(sceneId) {
   const result = await api(`/api/sentences?scene_id=${encodeURIComponent(sceneId)}`);
   const list = document.querySelector("#sentenceList");
@@ -191,12 +523,6 @@ async function loadSentences(sceneId) {
       >播放</button>
     </article>
   `).join("");
-
-
-//   点击播放按钮时
-// 读取 sentenceLoop 是否勾选
-// 读取 sentenceSlow 是否勾选
-// 然后传给 playAudio
   list.querySelectorAll("button").forEach((button) => {
     button.addEventListener("click", () => {
       playAudio(
@@ -314,50 +640,13 @@ function initEvents() {
   });
 }
 
-
-
-
 /**
  * 页面启动函数。
  * DOMContentLoaded 表示 HTML 已经被浏览器解析完成，可以安全地 querySelector。
  */
-
-
-/*
-  document is current page
-  DOMContentLoaded = Document Object Model  + Content + Loaded   
-  DOMcontentLoaded means is   Html has been parsed by browser, and we can safely use querySelector to get elements from the page.
-
-  addEventListener = add + Event + Listener 
-  addEventListener is a method that allows us to listen for specific events on an element. 
-  addEventListener 是事件监听器的意思，表示我们可以监听元素上的特定事件，例如点击、输入等。当事件发生时，我们可以执行相应的函数来处理这些事件。
-  表示在当前html页面监听 Html解析事件（DOMContentLoaded）是否完成，如果完成了就执行后面的函数。
-  async () => { ... } 是一个异步函数，表示函数内部可能会有异步操作，例如 fetch 请求。我们使用 async/await 来处理这些异步操作，使代码更清晰易读。
-  async function 表示时间出发后要执行的函数，html页面解析完成后要执行这个函数。它不是立刻执行，而是等浏览器触发 DOMContentLoaded 后执行。
-
-  HTML 被浏览器解析 
-        ｜
-  浏览器生成DOM树 
-        ｜          
-  浏览器触发 DOMContentLoaded 事件
-        ｜
-  JS监听  DOMContentLoaded 事件
-        ｜
-  执行回调函数（初始化页面、加载数据等）
-
-
-
-  */
-
-
-
 document.addEventListener("DOMContentLoaded", async () => {
-
-  /* 
-    
-  
-  */
   initTabs();
+  initDefaultPage();
   initThemeToggle();
   initEvents();
 

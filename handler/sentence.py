@@ -54,6 +54,11 @@ KOREAN_LETTERS = [
     {"letter": "ㅢ", "word": "의자", "meaning": "椅子", "audio_url": "/static/audio/letters/ui.mp3"},
 ]
 
+for item in KOREAN_LETTERS:
+    audio_url = item.get("audio_url") or ""
+    directory, filename = audio_url.rsplit("/", 1)
+    item["letter_audio_url"] = f"{directory}/letter_{filename}"
+
 
 def handle_sentence_request(handler, method, path, query):
     """处理句子、词汇、字母相关接口。"""

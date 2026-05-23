@@ -1,3 +1,4 @@
+
 """
 db.py
 
@@ -6,24 +7,39 @@ db.py
 """
 
 # os 用来读取环境变量，例如 MYSQL_HOST、MYSQL_USER。
+# import os
+# from urllib.parse import urlparse
+
+# # pymysql 是 Python 连接 MySQL 的第三方库，本项目不用 ORM。
+# import pymysql
+
+
 import os
 from urllib.parse import urlparse
+from dotenv import load_dotenv  # ← 加这行
 
-# pymysql 是 Python 连接 MySQL 的第三方库，本项目不用 ORM。
+load_dotenv()  # ← 加这行，放在所有 os.getenv 之前
+
 import pymysql
-
 
 MYSQL_URL = os.getenv("MYSQL_URL") or os.getenv("DATABASE_URL")
 
 if MYSQL_URL:
     parsed = urlparse(MYSQL_URL)
+    # DB_CONFIG = {
+    #     "host": parsed.hostname or "127.0.0.1",
+    #     "port": parsed.port or 3306,
+    #     "user": parsed.username or "root",
+    #     "password": parsed.password or "",
+    #     "database": parsed.path.lstrip("/") or "korean_learn",
+    # }
     DB_CONFIG = {
-        "host": parsed.hostname or "127.0.0.1",
-        "port": parsed.port or 3306,
-        "user": parsed.username or "root",
-        "password": parsed.password or "",
-        "database": parsed.path.lstrip("/") or "korean_learn",
-    }
+    "host": os.getenv("MYSQL_HOST") or os.getenv("MYSQLHOST", "127.0.0.1"),
+    "port": int(os.getenv("MYSQL_PORT") or os.getenv("MYSQLPORT", 3306)),
+    "user": os.getenv("MYSQL_USER") or os.getenv("MYSQLUSER", "root"),
+    "password": os.getenv("MYSQL_PASSWORD") or os.getenv("MYSQLPASSWORD", ""),
+    "database": os.getenv("MYSQL_DATABASE") or os.getenv("MYSQLDATABASE", "korean_learn"),
+        }
 else:
     # 从环境变量读取数据库配置；如果没有设置，就使用本机常见默认值。
     # Railway MySQL 会提供 MYSQLHOST、MYSQLPORT 等变量；本地开发使用 MYSQL_HOST、MYSQL_PORT。

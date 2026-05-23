@@ -8,13 +8,18 @@
 </head>
 <body>
   <header class="topbar">
-    <div>
-      <h1>韩语句子跟读学习</h1>
-      <p>以句子为核心，围绕发音、场景、词汇和教材时间轴练习。</p>
-    </div>
-    <nav class="tabs" aria-label="页面导航">
-      <button class="tab active" data-page="letters">音标</button>
-      <button class="tab" data-page="scenes">Scenes</button>
+    <a class="brand" href="/" aria-label="韩语练习台首页">
+      <span class="brand-mark" aria-hidden="true">한</span>
+      <span>
+        <span class="brand-title">韩语练习台</span>
+        <span class="brand-subtitle">小单位，高频练</span>
+      </span>
+    </a>
+
+    <nav class="tabs" aria-label="学习模块">
+      <button class="tab active" data-page="guide">学习路径</button>
+      <button class="tab" data-page="letters">音标</button>
+      <button class="tab" data-page="scenes">场景</button>
       <button class="tab" data-page="vocabulary">词汇</button>
       <button class="tab" data-page="materials">教材</button>
       <button class="theme-toggle" type="button" aria-label="切换明暗背景" title="切换明暗背景">
@@ -29,84 +34,115 @@
     </nav>
   </header>
 
-
-  
   <main>
-    <audio id="player" controls></audio>
+    <section id="guide" class="page guide-page active">
+      <div class="guide-hero">
+        <span class="eyebrow">Learning Path</span>
+        <h1>先知道怎么练，再选择今天练什么。</h1>
+        <p>这里不替你安排计划，只给出一条清晰的学习思路和网站使用方法。你可以按自己的节奏，从音标、场景、词汇或教材进入训练。</p>
+      </div>
+
+      <div class="guide-grid">
+        <article class="guide-panel">
+          <span class="guide-index">01</span>
+          <h2>语音靠模仿</h2>
+          <p>先听标准音，再跟着读。不要急着学很多，先把一个音、一个词听准。</p>
+          <ul>
+            <li>寻找清晰音频材料</li>
+            <li>熟读多听，逐段模仿语音语调</li>
+            <li>后续可加入录音、回放、对比和调整</li>
+          </ul>
+        </article>
+
+        <article class="guide-panel">
+          <span class="guide-index">02</span>
+          <h2>语法靠句子</h2>
+          <p>韩语语法不要脱离句子看。先理解助词、词序和简单句，再进入复杂表达。</p>
+          <ul>
+            <li>从场景句子里观察 은/는、이/가、을/를</li>
+            <li>对照中文理解韩语语序</li>
+            <li>读懂简单句，再尝试自己造句</li>
+          </ul>
+        </article>
+
+        <article class="guide-panel">
+          <span class="guide-index">03</span>
+          <h2>词汇靠积累</h2>
+          <p>单词不要孤立背。把词放到例句里，听发音、看用法、反复复现。</p>
+          <ul>
+            <li>用例句记词，不只记中文意思</li>
+            <li>搜索韩文或中文，回到句子里理解</li>
+            <li>把模糊的词留给下一轮复习</li>
+          </ul>
+        </article>
+
+        <article class="guide-panel">
+          <span class="guide-index">04</span>
+          <h2>这个网站怎么用</h2>
+          <p>四个栏目分别解决不同问题。你可以按需要进入，不需要一次全部完成。</p>
+          <ul>
+            <li>音标：点击字母听标准音</li>
+            <li>场景：选择场景，循环或慢速跟读句子</li>
+            <li>词汇：搜索词汇，通过例句理解用法</li>
+            <li>教材：按时间轴逐句播放和跟读</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="guide-next">
+        <div>
+          <strong>开始练习</strong>
+          <span>如果你是第一次打开，可以先从音标开始。</span>
+        </div>
+        <button class="secondary-action" type="button" data-open-page="letters">进入音标</button>
+      </div>
+    </section>
+
+    <section class="player-shell" aria-label="音频播放器">
+      <span>播放器</span>
+      <audio id="player" controls></audio>
+    </section>
 
     <section id="letters" class="page active">
       <div class="section-title">
-        <h2>40 个韩文字母</h2>
+        <div>
+          <span class="eyebrow">Pronunciation</span>
+          <h2>40 个韩文字母</h2>
+        </div>
+      </div>
+      <div class="letter-controls" aria-label="音标朗读设置">
+        <label><input type="checkbox" id="playLetterSound" checked> 音标</label>
+        <label><input type="checkbox" id="playExampleWords"> 示例单词</label>
+        <label class="repeat-control">
+          播放次数
+          <input id="letterRepeatCount" type="number" min="1" step="1" value="1" inputmode="numeric">
+        </label>
       </div>
       <div id="letterGrid" class="letter-grid"></div>
+      <section id="letterDetail" class="letter-detail" hidden></section>
     </section>
-
-
-    <!-- <section id="scenes" class="page">
-      <div class="section-title">
-        <h2>场景句子1</h2>
-        <select id="sceneSelect"></select>
-      </div>
-      <div class="play-options">
-        <label><input type="checkbox" id="sentenceLoop"> 单句循环1</label>
-        <label><input type="checkbox" id="sentenceSlow"> 慢速播放1</label>
-      </div>
-      <div id="sentenceList" class="sentence-list"></div>
-    </section> -->
-
-<!-- 
-<section id="scenes">
-  ↓
-<script src="/static/js/app.js">
-  ↓
-DOMContentLoaded
-  ↓
-initEvents()
-  ↓
-给 #sceneSelect 绑定 change 事件
-  ↓
-loadScenes()
-  ↓
-api("/api/scenes")
-  ↓
-后端查 scene 表
-  ↓
-生成 <option>
-  ↓
-放入 #sceneSelect
-  ↓
-loadSentences(第一个 scene.id)
-  ↓
-api("/api/sentences?scene_id=1")
-  ↓
-后端查 sentence 表
-  ↓
-生成句子卡片
-  ↓
-放入 #sentenceList
-  ↓
-播放按钮读取 #sentenceLoop 和 #sentenceSlow
-    
-
--->
 
     <section id="scenes" class="page">
       <div class="section-title">
-        <h2>Scenes</h2>
+        <div>
+          <span class="eyebrow">Sentences</span>
+          <h2>场景句子</h2>
+        </div>
         <select id="sceneSelect"></select>
       </div>
       <div class="play-options">
-        <label><input type="checkbox" id="sentenceLoop">Sentence Loop</label>
-        <label><input type="checkbox" id="sentenceSlow">Slow motion playback</label>
+        <label><input type="checkbox" id="sentenceLoop"> 单句循环</label>
+        <label><input type="checkbox" id="sentenceSlow"> 慢速播放</label>
       </div>
       <div id="sentenceList" class="sentence-list"></div>
     </section>
 
-
-
     <section id="vocabulary" class="page">
       <div class="section-title">
-        <h2>词汇例句</h2>
+        <div>
+          <span class="eyebrow">Vocabulary</span>
+          <h2>词汇例句</h2>
+        </div>
         <input id="vocabSearch" type="search" placeholder="搜索韩文或中文">
       </div>
       <div id="vocabList" class="sentence-list"></div>
@@ -114,7 +150,10 @@ api("/api/sentences?scene_id=1")
 
     <section id="materials" class="page">
       <div class="section-title">
-        <h2>教材时间轴</h2>
+        <div>
+          <span class="eyebrow">Timeline</span>
+          <h2>教材时间轴</h2>
+        </div>
         <select id="materialSelect"></select>
       </div>
       <div class="play-options">
@@ -122,7 +161,6 @@ api("/api/sentences?scene_id=1")
       </div>
       <div id="materialContent" class="sentence-list"></div>
     </section>
-
   </main>
 
   <script src="/static/js/app.js"></script>

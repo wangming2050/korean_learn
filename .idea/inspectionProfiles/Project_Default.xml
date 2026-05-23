@@ -1,0 +1,18 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyInterpreterInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="apicase.HttpSession" />
+          <option value="src.web_admin.case.test_member_dept.web_admin" />
+          <option value="config.*" />
+          <option value="backend.service.api_open.*" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

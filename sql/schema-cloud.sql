@@ -1,24 +1,16 @@
--- schema.sql
--- 创建数据库、数据表，并插入一些演示数据。
-
-CREATE DATABASE IF NOT EXISTS korean_learn
-  DEFAULT CHARACTER SET utf8mb4
-  DEFAULT COLLATE utf8mb4_unicode_ci;
-
-USE korean_learn;
+-- schema-cloud.sql
+-- 用于 Railway 等云 MySQL。
+-- 云平台通常已经创建好了默认数据库，所以这里不再 CREATE DATABASE / USE。
 
 DROP TABLE IF EXISTS sentence;
 DROP TABLE IF EXISTS vocabulary;
 DROP TABLE IF EXISTS material;
 DROP TABLE IF EXISTS scene;
 
-uvLfgXuWyvjyTROKpZKIcXTjRhaoESvK
 CREATE TABLE scene (
   id INT PRIMARY KEY AUTO_INCREMENT,
   name VARCHAR(50)
 );
-
-sgUlHjfQlkSJIBmKcfZhVDsFMZYFnrPP
 
 CREATE TABLE sentence (
   id INT PRIMARY KEY AUTO_INCREMENT,
