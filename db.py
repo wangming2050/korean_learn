@@ -47,7 +47,7 @@ else:
         # 数据库用户名，默认 root。
         "user": os.getenv("MYSQL_USER") or os.getenv("MYSQLUSER", "root"),
         # 数据库密码，默认空字符串；如果本机 MySQL 有密码，需要设置环境变量。
-        "password": os.getenv("MYSQL_PASSWORD") or os.getenv("MYSQLPASSWORD", ""),
+        "password": os.getenv("MYSQL_PASSWORD") or os.getenv("MYSQLPASSWORD", "bx20010204"),
         # 要连接的数据库名称，对应 sql/schema.sql 里创建的 korean_learn。
         "database": os.getenv("MYSQL_DATABASE") or os.getenv("MYSQLDATABASE", "korean_learn"),
     }
