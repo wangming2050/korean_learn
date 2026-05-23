@@ -51,6 +51,92 @@ const LETTER_DETAILS = {
   "ㅢ": { sound: "의", examples: [["의자", "椅子"], ["의사", "医生"], ["회의", "会议"], ["의미", "意思"]] },
 };
 
+const CONSONANT_LETTERS = new Set([
+  "ㄱ", "ㄴ", "ㄷ", "ㄹ", "ㅁ", "ㅂ", "ㅅ", "ㅇ", "ㅈ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ", "ㄲ", "ㄸ", "ㅃ", "ㅆ", "ㅉ",
+]);
+
+const PHONETIC_SECTIONS = [
+  {
+    id: "consonants",
+    label: "辅音",
+    note: "先听松音，再对比紧音和送气音。",
+    groups: [
+      { id: "plain", label: "松音", note: "先按基础辅音建立听感", kind: "consonant", letters: ["ㄱ", "ㄴ", "ㄷ", "ㄹ", "ㅁ", "ㅂ", "ㅅ", "ㅇ", "ㅈ"] },
+      { id: "tense", label: "紧音", note: "声音更紧，气流更短", kind: "consonant", letters: ["ㄲ", "ㄸ", "ㅃ", "ㅆ", "ㅉ"] },
+      { id: "aspirated", label: "送气音", note: "重点听明显送气", kind: "consonant", letters: ["ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"] },
+    ],
+  },
+  {
+    id: "vowels",
+    label: "元音",
+    note: "先稳定单元音，再练组合后的双元音。",
+    groups: [
+      { id: "single-vowels", label: "单元音", note: "先练清楚口型和舌位", kind: "vowel", letters: ["ㅏ", "ㅑ", "ㅓ", "ㅕ", "ㅗ", "ㅛ", "ㅜ", "ㅠ", "ㅡ", "ㅣ", "ㅐ", "ㅔ"] },
+      { id: "double-vowels", label: "双元音", note: "听清开头到结尾的滑动", kind: "vowel", letters: ["ㅒ", "ㅖ", "ㅘ", "ㅙ", "ㅚ", "ㅝ", "ㅞ", "ㅟ", "ㅢ"] },
+    ],
+  },
+  {
+    id: "batchim",
+    label: "收音",
+    note: "收音先按 7 类代表音练，再看双收音读前还是读后。",
+    groups: [
+      {
+        id: "base-batchim",
+        label: "基础收音",
+        note: "写法很多，实际先归到 7 类",
+        kind: "batchim",
+        items: [
+          { letter: "ㄱ 类", sound: "实际读 ㄱ", word: "ㄱ ㄲ ㅋ", meaning: "국, 밖, 부엌", examples: [["국", "收成 ㄱ"], ["밖", "ㄲ 作收音读 ㄱ"], ["부엌", "ㅋ 作收音读 ㄱ"]], tips: ["包含写法：ㄱ ㄲ ㅋ", "发音短促收住，不要加 으 或 이。"] },
+          { letter: "ㄴ 类", sound: "实际读 ㄴ", word: "ㄴ", meaning: "문, 산", examples: [["문", "门"], ["산", "山"]], tips: ["舌尖抵住上齿龈，声音从鼻腔出来。"] },
+          { letter: "ㄷ 类", sound: "实际读 ㄷ", word: "ㄷ ㅅ ㅆ ㅈ ㅊ ㅌ ㅎ", meaning: "옷, 낮, 꽃", examples: [["옷", "ㅅ 作收音读 ㄷ"], ["낮", "ㅈ 作收音读 ㄷ"], ["꽃", "ㅊ 作收音读 ㄷ"]], tips: ["这一类写法最多，先统一收成 ㄷ 的听感。"] },
+          { letter: "ㄹ 类", sound: "实际读 ㄹ", word: "ㄹ", meaning: "달, 길", examples: [["달", "月亮"], ["길", "路"]], tips: ["舌尖轻轻收住，不要拖成长音。"] },
+          { letter: "ㅁ 类", sound: "实际读 ㅁ", word: "ㅁ", meaning: "밤, 마음", examples: [["밤", "夜晚/栗子"], ["마음", "心"]], tips: ["双唇闭合，声音从鼻腔出来。"] },
+          { letter: "ㅂ 类", sound: "实际读 ㅂ", word: "ㅂ ㅍ", meaning: "집, 앞", examples: [["집", "家"], ["앞", "ㅍ 作收音读 ㅂ"]], tips: ["双唇闭合收住，不要读出完整的 브。"] },
+          { letter: "ㅇ 类", sound: "实际读 ㅇ", word: "ㅇ", meaning: "방, 강", examples: [["방", "房间"], ["강", "江/河"]], tips: ["舌根收住，声音从鼻腔出来。"] },
+        ],
+      },
+      {
+        id: "double-front",
+        categoryLabel: "双收音",
+        categoryNote: "双收音先判断读前一个还是后一个；后接元音时后续再单独练连音。",
+        label: "多数读前一个",
+        note: "先按前一个辅音收住",
+        kind: "batchim",
+        items: [
+          { letter: "ㄳ", sound: "读前一个：ㄱ", word: "넋", meaning: "넋 → 넉", examples: [["넋", "灵魂，收成 ㄱ"]], tips: ["后面的 ㅅ 不单独读出来。"] },
+          { letter: "ㄵ", sound: "读前一个：ㄴ", word: "앉다", meaning: "앉다 → 안따", examples: [["앉다", "坐，收成 ㄴ"]], tips: ["先记作 ㄴ 类收音。"] },
+          { letter: "ㄶ", sound: "读前一个：ㄴ", word: "많다", meaning: "많다 → 만타", examples: [["많다", "多，收成 ㄴ"]], tips: ["ㅎ 后续会影响后面的音，这里先记默认收音。"] },
+          { letter: "ㄼ", sound: "多数读前一个：ㄹ", word: "여덟", meaning: "여덟 → 여덜", examples: [["여덟", "八，收成 ㄹ"], ["넓다", "宽，常读 널따"]], tips: ["ㄼ 多数按 ㄹ 收住，但 밟다 类要单独记。"] },
+          { letter: "ㄽ", sound: "读前一个：ㄹ", word: "외곬", meaning: "외곬 → 외골", examples: [["외곬", "单一路径，收成 ㄹ"]], tips: ["后面的 ㅅ 不单独读出来。"] },
+          { letter: "ㄾ", sound: "读前一个：ㄹ", word: "핥다", meaning: "핥다 → 할따", examples: [["핥다", "舔，收成 ㄹ"]], tips: ["先按 ㄹ 收住，再观察后续辅音变化。"] },
+          { letter: "ㅀ", sound: "读前一个：ㄹ", word: "싫다", meaning: "싫다 → 실타", examples: [["싫다", "不喜欢，收成 ㄹ"]], tips: ["ㅎ 会影响后面的 ㄷ，先把收音归到 ㄹ。"] },
+          { letter: "ㅄ", sound: "读前一个：ㅂ", word: "값", meaning: "값 → 갑", examples: [["값", "价格，收成 ㅂ"], ["없다", "没有，收成 ㅂ"]], tips: ["后面的 ㅅ 不单独读出来。"] },
+        ],
+      },
+      {
+        id: "double-back",
+        label: "少数读后一个",
+        note: "这几个需要完整记住",
+        kind: "batchim",
+        items: [
+          { letter: "ㄺ", sound: "读后一个：ㄱ", word: "닭", meaning: "닭 → 닥", examples: [["닭", "鸡，收成 ㄱ"], ["읽다", "读，常收成 ㄱ"], ["맑다", "清澈，常收成 ㄱ"]], tips: ["不要按前面的 ㄹ 收住，默认听到 ㄱ 类收音。"] },
+          { letter: "ㄻ", sound: "读后一个：ㅁ", word: "삶", meaning: "삶 → 삼", examples: [["삶", "人生，收成 ㅁ"], ["젊다", "年轻，收成 ㅁ"]], tips: ["看到 ㄻ，优先记作 ㅁ 类听感。"] },
+          { letter: "ㄿ", sound: "读后一个：ㅂ", word: "읊다", meaning: "읊다 → 읍따", examples: [["읊다", "吟诵，收成 ㅂ"]], tips: ["ㅍ 作收音时归到 ㅂ 类。"] },
+        ],
+      },
+      {
+        id: "double-special",
+        label: "特殊发音",
+        note: "容易和默认规则混淆",
+        kind: "batchim",
+        items: [
+          { letter: "ㄼ", sound: "밟다 类读 ㅂ", word: "밟다", meaning: "밟다 → 밥따", examples: [["밟다", "踩，读 밥따"], ["밟고", "读 밥꼬"], ["밟지", "读 밥찌"]], tips: ["ㄼ 多数读 ㄹ，但 밟다 这一类常读 ㅂ，需要单独记。"] },
+        ],
+      },
+    ],
+  },
+];
+
 let letterItems = [];
 let selectedLetterIndex = null;
 let playbackRunId = 0;
@@ -68,6 +154,10 @@ let loopEnabled = false;
 const savedTheme = localStorage.getItem("theme");
 if (savedTheme === "dark") {
   document.body.dataset.theme = "dark";
+}
+
+function getWordAudioUrl(word, fallbackUrl = "") {
+  return window.WORD_AUDIO_URLS?.[word] || fallbackUrl || "";
 }
 
 
@@ -241,7 +331,7 @@ function buildLetterPlaybackQueue(letterData) {
   if (includeLetter) {
     queue.push({
       label: "音标",
-      text: letterData.sound,
+      text: letterData.playbackText || letterData.sound,
       audioUrl: letterData.letterAudioUrl,
     });
   }
@@ -359,17 +449,18 @@ function initThemeToggle() {
 
 function normalizeLetterItem(item) {
   const details = LETTER_DETAILS[item.letter] || {};
+  const kind = CONSONANT_LETTERS.has(item.letter) ? "consonant" : "vowel";
   const primaryExample = {
     word: item.word,
     meaning: item.meaning,
-    audioUrl: item.audio_url || "",
+    audioUrl: getWordAudioUrl(item.word, item.audio_url || ""),
     primary: true,
   };
 
   const examples = (details.examples || [[item.word, item.meaning]]).map(([word, meaning], index) => ({
     word,
     meaning,
-    audioUrl: index === 0 ? item.audio_url || "" : "",
+    audioUrl: getWordAudioUrl(word, index === 0 ? item.audio_url || "" : ""),
     primary: index === 0,
   }));
 
@@ -379,19 +470,118 @@ function normalizeLetterItem(item) {
 
   return {
     ...item,
+    type: "letter",
+    kind,
     sound: details.sound || item.letter,
     letterAudioUrl: item.letter_audio_url || "",
     examples,
+    tips: [],
   };
 }
 
 
-function renderLetterDetail(letterData) {
+function normalizeRuleItem(item, group) {
+  const examples = (item.examples || []).map(([word, meaning], index) => ({
+    word,
+    meaning,
+    audioUrl: getWordAudioUrl(word),
+    primary: index === 0,
+  }));
+
+  return {
+    type: "rule",
+    kind: group.kind,
+    letter: item.letter,
+    word: item.word,
+    meaning: item.meaning,
+    sound: item.sound,
+    playbackText: examples[0]?.word || item.letter,
+    letterAudioUrl: "",
+    examples,
+    tips: item.tips || [],
+  };
+}
+
+
+function getCardAriaLabel(item) {
+  if (item.type === "rule") {
+    return `查看 ${item.letter} 收音规则`;
+  }
+
+  return `播放 ${item.letter}，查看 ${item.word} 示例`;
+}
+
+
+function renderPracticeCard(item, index) {
+  const metaText = item.type === "rule" ? item.sound : `${item.examples.length} 个示例`;
+
+  return `
+    <article
+      class="letter-card ${item.kind}${item.type === "rule" ? " rule-card" : ""}"
+      data-index="${index}"
+      role="button"
+      tabindex="0"
+      aria-label="${getCardAriaLabel(item)}"
+    >
+      <strong>${item.letter}</strong>
+      <span class="letter-word">${item.word}</span>
+      <span>${item.meaning}</span>
+      <small>${metaText}</small>
+    </article>
+  `;
+}
+
+
+function renderTipList(tips) {
+  if (!tips.length) {
+    return "";
+  }
+
+  return `
+    <div class="detail-tips">
+      ${tips.map((tip) => `<span>${tip}</span>`).join("")}
+    </div>
+  `;
+}
+
+
+function closeLetterDetail() {
   const detail = document.querySelector("#letterDetail");
   if (!detail) {
     return;
   }
 
+  selectedLetterIndex = null;
+  detail.hidden = true;
+  document.querySelector("#letters")?.appendChild(detail);
+  document.querySelectorAll(".letter-card").forEach((card) => card.classList.remove("selected"));
+  stopPlaybackQueue();
+}
+
+
+function moveLetterDetailAfterSelectedRow(detail, selectedCard) {
+  const groupGrid = selectedCard.closest(".letter-group-grid");
+  if (!groupGrid) {
+    return;
+  }
+
+  const selectedTop = selectedCard.offsetTop;
+  const rowCards = Array.from(groupGrid.querySelectorAll(".letter-card"))
+    .filter((card) => Math.abs(card.offsetTop - selectedTop) < 2);
+  const lastRowCard = rowCards[rowCards.length - 1] || selectedCard;
+
+  lastRowCard.insertAdjacentElement("afterend", detail);
+}
+
+
+function renderLetterDetail(letterData, selectedCard) {
+  const detail = document.querySelector("#letterDetail");
+  if (!detail || !selectedCard) {
+    return;
+  }
+
+  detail.hidden = true;
+  moveLetterDetailAfterSelectedRow(detail, selectedCard);
   detail.hidden = false;
   detail.innerHTML = `
     <div class="letter-detail-head">
@@ -403,8 +593,9 @@ function renderLetterDetail(letterData) {
     </div>
     <div class="detail-summary">
       <span>当前点击卡片会按上方设置依次朗读。</span>
-      <span>示例单词共 ${letterData.examples.length} 个。</span>
+      <span>${letterData.type === "rule" ? "例词" : "示例单词"}共 ${letterData.examples.length} 个。</span>
     </div>
+    ${renderTipList(letterData.tips || [])}
     <div class="example-list">
       ${letterData.examples.map((example) => `
         <article class="example-word${example.primary ? " primary" : ""}">
@@ -416,25 +607,22 @@ function renderLetterDetail(letterData) {
   `;
 
   detail.querySelector(".detail-close").addEventListener("click", () => {
-    selectedLetterIndex = null;
-    detail.hidden = true;
-    document.querySelectorAll(".letter-card").forEach((card) => card.classList.remove("selected"));
-    stopPlaybackQueue();
+    closeLetterDetail();
   });
 }
 
 
 function selectLetter(index) {
   const detail = document.querySelector("#letterDetail");
+  const selectedCard = document.querySelector(`.letter-card[data-index="${index}"]`);
 
   if (selectedLetterIndex === index) {
-    selectedLetterIndex = null;
-    if (detail) {
-      detail.hidden = true;
-    }
-    document.querySelectorAll(".letter-card").forEach((card) => card.classList.remove("selected"));
-    stopPlaybackQueue();
+    closeLetterDetail();
     return;
+  }
+
+  if (detail) {
+    detail.hidden = true;
   }
 
   selectedLetterIndex = index;
@@ -444,7 +632,7 @@ function selectLetter(index) {
     card.classList.toggle("selected", Number(card.dataset.index) === index);
   });
 
-  renderLetterDetail(letterData);
+  renderLetterDetail(letterData, selectedCard);
   playLetterQueue(letterData);
 }
 
@@ -456,21 +644,84 @@ function selectLetter(index) {
 async function loadLetters() {
   const result = await api("/api/letters");
   const grid = document.querySelector("#letterGrid");
-  letterItems = result.data.map(normalizeLetterItem);
+  const normalizedLetters = result.data.map(normalizeLetterItem);
+  const lettersBySymbol = new Map(normalizedLetters.map((item) => [item.letter, item]));
+  letterItems = [];
 
-  grid.innerHTML = letterItems.map((item, index) => `
-    <article class="letter-card" data-index="${index}">
-      <strong>${item.letter}</strong>
-      <span class="letter-word">${item.word}</span>
-      <span>${item.meaning}</span>
-      <small>${item.examples.length} 个示例</small>
-    </article>
+  grid.innerHTML = PHONETIC_SECTIONS.map((section) => `
+    <section class="letter-section" data-section="${section.id}">
+      <div class="letter-section-head">
+        <div>
+          <span class="eyebrow">${section.id === "batchim" ? "Batchim" : "Hangul"}</span>
+          <h3>${section.label}</h3>
+        </div>
+        <span>${section.note}</span>
+      </div>
+      <div class="letter-subgroups">
+        ${section.groups.map((group) => {
+          const groupItems = (group.letters || [])
+            .map((letter) => lettersBySymbol.get(letter))
+            .filter(Boolean)
+            .concat((group.items || []).map((item) => normalizeRuleItem(item, group)));
+
+          const indexedItems = groupItems.map((item) => {
+            const index = letterItems.length;
+            letterItems.push(item);
+            return { item, index };
+          });
+
+          return `
+            <section class="letter-subgroup" data-group="${group.id}">
+              ${group.categoryLabel ? `
+                <div class="letter-category-head">
+                  <div>
+                    <span class="eyebrow">Double Batchim</span>
+                    <h4>${group.categoryLabel}</h4>
+                  </div>
+                  <span>${group.categoryNote || ""}</span>
+                </div>
+              ` : ""}
+              <div class="letter-subgroup-head">
+                <div>
+                  <span class="letter-type-badge ${group.kind}">${group.label}</span>
+                  <h4>${group.label}</h4>
+                </div>
+                <span>${group.note}，共 ${indexedItems.length} 个</span>
+              </div>
+              <div class="letter-group-grid">
+                ${indexedItems.map(({ item, index }) => renderPracticeCard(item, index)).join("")}
+              </div>
+            </section>
+          `;
+        }).join("")}
+      </div>
+    </section>
   `).join("");
 
   grid.querySelectorAll(".letter-card").forEach((card) => {
     card.addEventListener("click", () => {
       selectLetter(Number(card.dataset.index));
     });
+    card.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") {
+        return;
+      }
+
+      event.preventDefault();
+      selectLetter(Number(card.dataset.index));
+    });
+  });
+
+  window.addEventListener("resize", () => {
+    if (selectedLetterIndex === null) {
+      return;
+    }
+
+    const selectedCard = document.querySelector(`.letter-card[data-index="${selectedLetterIndex}"]`);
+    const detail = document.querySelector("#letterDetail");
+    if (selectedCard && detail && !detail.hidden) {
+      moveLetterDetailAfterSelectedRow(detail, selectedCard);
+    }
   });
 }
 

@@ -449,7 +449,113 @@ textarea {
   text-align: center;
 }
 
-.letter-grid {
+.letter-groups {
+  display: grid;
+  gap: 24px;
+}
+
+.letter-section {
+  display: grid;
+  gap: 14px;
+}
+
+.letter-section-head,
+.letter-category-head,
+.letter-subgroup-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 0 2px;
+}
+
+.letter-section-head h3 {
+  margin: 6px 0 0;
+  color: var(--ink);
+  font-size: 22px;
+  line-height: 1.25;
+}
+
+.letter-category-head h4 {
+  margin: 6px 0 0;
+  color: var(--ink);
+  font-size: 22px;
+  line-height: 1.25;
+}
+
+.letter-section-head > span,
+.letter-category-head > span,
+.letter-subgroup-head > span {
+  max-width: 340px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: right;
+}
+
+.letter-subgroups {
+  display: grid;
+  gap: 16px;
+}
+
+.letter-subgroup {
+  display: grid;
+  gap: 10px;
+  padding-top: 8px;
+}
+
+.letter-category-head {
+  margin-top: 8px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.letter-subgroup-head h4 {
+  margin: 6px 0 0;
+  color: var(--ink);
+  font-size: 20px;
+  font-weight: 760;
+  line-height: 1.25;
+}
+
+.letter-subgroup-head {
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface-raised);
+}
+
+.letter-type-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 3px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.letter-type-badge.consonant {
+  border-color: color-mix(in srgb, var(--brand) 32%, var(--line));
+  color: var(--brand-strong);
+  background: color-mix(in srgb, var(--surface) 78%, var(--brand-soft));
+}
+
+.letter-type-badge.vowel {
+  border-color: color-mix(in srgb, oklch(72% 0.09 72) 34%, var(--line));
+  color: color-mix(in srgb, var(--ink) 72%, oklch(52% 0.12 72));
+  background: color-mix(in srgb, var(--surface) 86%, oklch(88% 0.05 72));
+}
+
+.letter-type-badge.batchim {
+  border-color: color-mix(in srgb, oklch(62% 0.09 185) 34%, var(--line));
+  color: color-mix(in srgb, var(--ink) 76%, oklch(48% 0.1 185));
+  background: color-mix(in srgb, var(--surface) 86%, oklch(88% 0.045 185));
+}
+
+.letter-group-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(136px, 1fr));
   gap: 12px;
@@ -497,9 +603,28 @@ textarea {
   background: color-mix(in srgb, var(--surface) 86%, var(--brand-soft));
 }
 
+.letter-card:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--brand) 28%, transparent);
+  outline-offset: 2px;
+}
+
 .letter-card.selected {
   border-color: var(--brand);
   background: var(--brand-soft);
+}
+
+.letter-card.vowel.selected {
+  border-color: color-mix(in srgb, oklch(68% 0.12 72) 70%, var(--line));
+  background: color-mix(in srgb, var(--surface) 80%, oklch(90% 0.05 72));
+}
+
+.letter-card.batchim.selected {
+  border-color: color-mix(in srgb, oklch(62% 0.09 185) 70%, var(--line));
+  background: color-mix(in srgb, var(--surface) 80%, oklch(90% 0.045 185));
+}
+
+.letter-card.rule-card {
+  min-height: 146px;
 }
 
 .letter-card strong {
@@ -529,12 +654,13 @@ textarea {
 }
 
 .letter-detail {
-  margin-top: 16px;
+  grid-column: 1 / -1;
   padding: 18px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface);
   box-shadow: var(--shadow-soft);
+  scroll-margin-top: 120px;
 }
 
 .letter-detail-head {
@@ -580,6 +706,22 @@ textarea {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface-raised);
+}
+
+.detail-tips {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.detail-tips span {
+  display: block;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--muted);
+  background: color-mix(in srgb, var(--surface-raised) 86%, var(--brand-soft));
+  line-height: 1.55;
 }
 
 .example-list {
@@ -764,6 +906,21 @@ textarea {
   .section-title input,
   .section-title select {
     max-width: none;
+  }
+
+  .letter-section-head,
+  .letter-category-head,
+  .letter-subgroup-head {
+    align-items: start;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .letter-section-head > span,
+  .letter-category-head > span,
+  .letter-subgroup-head > span {
+    max-width: none;
+    text-align: left;
   }
 
   .letter-controls .repeat-control {

@@ -19,8 +19,10 @@
     <nav class="tabs" aria-label="学习模块">
       <button class="tab active" data-page="guide">学习路径</button>
       <button class="tab" data-page="letters">音标</button>
-      <button class="tab" data-page="scenes">场景</button>
       <button class="tab" data-page="vocabulary">词汇</button>
+      <button class="tab" data-page="ll">音标组合</button>
+      <button class="tab" data-page="scenes">句子</button>
+      <button class="tab" data-page="ss">音变</button>
       <button class="tab" data-page="materials">教材</button>
       <button class="theme-toggle" type="button" aria-label="切换明暗背景" title="切换明暗背景">
         <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
@@ -107,7 +109,7 @@
       <div class="section-title">
         <div>
           <span class="eyebrow">Pronunciation</span>
-          <h2>40 个韩文字母</h2>
+          <h2>韩语发音训练</h2>
         </div>
       </div>
       <div class="letter-controls" aria-label="音标朗读设置">
@@ -118,8 +120,19 @@
           <input id="letterRepeatCount" type="number" min="1" step="1" value="1" inputmode="numeric">
         </label>
       </div>
-      <div id="letterGrid" class="letter-grid"></div>
+      <div id="letterGrid" class="letter-groups"></div>
       <section id="letterDetail" class="letter-detail" hidden></section>
+    </section>
+
+    <section id="vocabulary" class="page">
+      <div class="section-title">
+        <div>
+          <span class="eyebrow">Vocabulary</span>
+          <h2>词汇例句</h2>
+        </div>
+        <input id="vocabSearch" type="search" placeholder="搜索韩文或中文">
+      </div>
+      <div id="vocabList" class="sentence-list"></div>
     </section>
 
     <section id="scenes" class="page">
@@ -137,16 +150,9 @@
       <div id="sentenceList" class="sentence-list"></div>
     </section>
 
-    <section id="vocabulary" class="page">
-      <div class="section-title">
-        <div>
-          <span class="eyebrow">Vocabulary</span>
-          <h2>词汇例句</h2>
-        </div>
-        <input id="vocabSearch" type="search" placeholder="搜索韩文或中文">
-      </div>
-      <div id="vocabList" class="sentence-list"></div>
-    </section>
+    
+
+
 
     <section id="materials" class="page">
       <div class="section-title">
@@ -163,6 +169,7 @@
     </section>
   </main>
 
+  <script src="/static/js/word-audio-map.js"></script>
   <script src="/static/js/app.js"></script>
 </body>
 </html>
