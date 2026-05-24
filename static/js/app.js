@@ -9,25 +9,202 @@
 const player = document.querySelector("#player");
 
 const LETTER_DETAILS = {
-  "ㄱ": { sound: "기역", examples: [["가방", "书包"], ["고기", "肉"], ["기차", "火车"], ["가게", "商店"]] },
+  "ㄱ": {
+    sound: "기역",
+    tips: [
+      "词首偏 k，但不强送气，不要读成 ㅋ。在元音之间常听起来偏 g。作收音时短促收住，近似 k，不释放元音。",
+    ],
+    examples: [
+      { label: "词首", word: "가방", meaning: "书包" },
+      { label: "词中", word: "고기", meaning: "肉" },
+      { label: "收音", word: "국", meaning: "汤/国" },
+    ],
+    contrastGroup: "g",
+  },
   "ㄴ": { sound: "니은", examples: [["나무", "树"], ["누나", "姐姐"], ["나라", "国家"], ["노래", "歌曲"]] },
-  "ㄷ": { sound: "디귿", examples: [["다리", "腿/桥"], ["두부", "豆腐"], ["도서관", "图书馆"], ["달", "月亮"]] },
+  "ㄷ": {
+    sound: "디귿",
+    tips: [
+      "词首偏 t/d 之间，但不强送气。",
+      "在元音之间常听起来偏 d。",
+      "作收音时舌尖短促收住，归到 ㄷ 类。",
+    ],
+    examples: [
+      { label: "词首", word: "다리", meaning: "腿/桥" },
+      { label: "词中", word: "바다", meaning: "大海" },
+      { label: "收音", word: "곧", meaning: "马上" },
+    ],
+    contrastGroup: "d",
+  },
   "ㄹ": { sound: "리을", examples: [["라면", "拉面"], ["리본", "丝带"], ["로봇", "机器人"], ["러시아", "俄罗斯"]] },
   "ㅁ": { sound: "미음", examples: [["모자", "帽子"], ["물", "水"], ["마을", "村庄"], ["문", "门"]] },
-  "ㅂ": { sound: "비읍", examples: [["바다", "大海"], ["바지", "裤子"], ["밥", "饭"], ["버스", "公交车"]] },
-  "ㅅ": { sound: "시옷", examples: [["사과", "苹果"], ["산", "山"], ["손", "手"], ["선생님", "老师"]] },
+  "ㅂ": {
+    sound: "비읍",
+    tips: [
+      "词首偏 p/b 之间，但不要明显送气。",
+      "在元音之间常听起来偏 b。",
+      "作收音时双唇闭合收住，归到 ㅂ 类。",
+    ],
+    examples: [
+      { label: "词首", word: "바다", meaning: "大海" },
+      { label: "词中", word: "아버지", meaning: "爸爸/父亲" },
+      { label: "收音", word: "밥", meaning: "饭" },
+    ],
+    contrastGroup: "b",
+  },
+  "ㅅ": {
+    sound: "시옷",
+    tips: [
+      "词首气流较轻，注意不要读成紧音 ㅆ。",
+      "遇到 ㅣ 或 y 类元音时，听感会更接近 shi。",
+      "作收音时不读 s，归到 ㄷ 类收音。",
+    ],
+    examples: [
+      { label: "词首", word: "사과", meaning: "苹果" },
+      { label: "词中", word: "의사", meaning: "医生" },
+      { label: "收音", word: "옷", meaning: "衣服" },
+    ],
+    contrastGroup: "s",
+  },
   "ㅇ": { sound: "이응", examples: [["아이", "孩子"], ["우유", "牛奶"], ["오이", "黄瓜"], ["이름", "名字"]] },
-  "ㅈ": { sound: "지읒", examples: [["지도", "地图"], ["지하철", "地铁"], ["전화", "电话"], ["집", "家"]] },
-  "ㅊ": { sound: "치읓", examples: [["차", "车/茶"], ["친구", "朋友"], ["책", "书"], ["치마", "裙子"]] },
-  "ㅋ": { sound: "키읔", examples: [["코", "鼻子"], ["커피", "咖啡"], ["카드", "卡片"], ["키", "身高/钥匙"]] },
-  "ㅌ": { sound: "티읕", examples: [["토마토", "番茄"], ["택시", "出租车"], ["텔레비전", "电视"], ["타다", "乘坐"]] },
-  "ㅍ": { sound: "피읖", examples: [["포도", "葡萄"], ["피자", "披萨"], ["팔", "胳膊/八"], ["편지", "信"]] },
+  "ㅈ": {
+    sound: "지읒",
+    tips: [
+      "词首偏 j/ch 之间，但不明显送气。",
+      "在元音之间听起来更柔和。",
+      "作收音时归到 ㄷ 类。",
+    ],
+    examples: [
+      { label: "词首", word: "지도", meaning: "地图" },
+      { label: "词中", word: "여자", meaning: "女人" },
+      { label: "收音", word: "낮", meaning: "白天" },
+    ],
+    contrastGroup: "j",
+  },
+  "ㅊ": {
+    sound: "치읓",
+    tips: [
+      "送气明显，气流比 ㅈ 更强。",
+      "不要读成紧音 ㅉ。",
+      "作收音时归到 ㄷ 类。",
+    ],
+    examples: [
+      { label: "词首", word: "차", meaning: "车/茶" },
+      { label: "词中", word: "기차", meaning: "火车" },
+      { label: "收音", word: "꽃", meaning: "花" },
+    ],
+    contrastGroup: "j",
+  },
+  "ㅋ": {
+    sound: "키읔",
+    tips: [
+      "送气明显，气流比 ㄱ 更强。",
+      "不要读成紧音 ㄲ。",
+      "作收音时归到 ㄱ 类。",
+    ],
+    examples: [
+      { label: "词首", word: "코", meaning: "鼻子" },
+      { label: "词中", word: "커피", meaning: "咖啡" },
+      { label: "收音", word: "부엌", meaning: "厨房" },
+    ],
+    contrastGroup: "g",
+  },
+  "ㅌ": {
+    sound: "티읕",
+    tips: [
+      "送气明显，气流比 ㄷ 更强。",
+      "不要读成紧音 ㄸ。",
+      "作收音时归到 ㄷ 类。",
+    ],
+    examples: [
+      { label: "词首", word: "타다", meaning: "乘坐" },
+      { label: "词中", word: "토마토", meaning: "番茄" },
+      { label: "收音", word: "밭", meaning: "田地" },
+    ],
+    contrastGroup: "d",
+  },
+  "ㅍ": {
+    sound: "피읖",
+    tips: [
+      "送气明显，双唇打开时气流更强。",
+      "不要读成紧音 ㅃ。",
+      "作收音时归到 ㅂ 类。",
+    ],
+    examples: [
+      { label: "词首", word: "파도", meaning: "波浪" },
+      { label: "词中", word: "커피", meaning: "咖啡" },
+      { label: "收音", word: "앞", meaning: "前面" },
+    ],
+    contrastGroup: "b",
+  },
   "ㅎ": { sound: "히읗", examples: [["하늘", "天空"], ["학교", "学校"], ["한국", "韩国"], ["호텔", "酒店"]] },
-  "ㄲ": { sound: "쌍기역", examples: [["꼬리", "尾巴"], ["꽃", "花"], ["꿈", "梦"], ["까치", "喜鹊"]] },
-  "ㄸ": { sound: "쌍디귿", examples: [["딸기", "草莓"], ["떡", "年糕"], ["따뜻해요", "暖和"], ["뜨다", "浮起"]] },
-  "ㅃ": { sound: "쌍비읍", examples: [["빵", "面包"], ["뿌리", "根"], ["빨래", "洗衣"], ["뽀뽀", "亲亲"]] },
-  "ㅆ": { sound: "쌍시옷", examples: [["쌀", "米"], ["쓰다", "写/苦"], ["씨", "先生/种子"], ["싸다", "便宜"]] },
-  "ㅉ": { sound: "쌍지읒", examples: [["짜다", "咸"], ["찌개", "炖汤"], ["쪽", "页/边"], ["짝", "只/双的一方"]] },
+  "ㄲ": {
+    sound: "쌍기역",
+    tips: [
+      "紧音更用力、更紧，几乎不送气。",
+      "不要读成送气音 ㅋ。",
+      "作收音时归到 ㄱ 类。",
+    ],
+    examples: [
+      { label: "词首", word: "까치", meaning: "喜鹊" },
+      { label: "词中", word: "토끼", meaning: "兔子" },
+      { label: "收音", word: "밖", meaning: "外面" },
+    ],
+    contrastGroup: "g",
+  },
+  "ㄸ": {
+    sound: "쌍디귿",
+    tips: [
+      "紧音更紧，不明显送气。",
+      "不要读成送气音 ㅌ。",
+      "韩语里 ㄸ 不作普通收音使用。",
+    ],
+    examples: [
+      { label: "词首", word: "딸기", meaning: "草莓" },
+      { label: "词中", word: "따뜻해요", meaning: "暖和" },
+    ],
+    contrastGroup: "d",
+  },
+  "ㅃ": {
+    sound: "쌍비읍",
+    tips: [
+      "双唇更紧，几乎不送气。",
+      "不要读成送气音 ㅍ。",
+      "韩语里 ㅃ 不作普通收音使用。",
+    ],
+    examples: [
+      { label: "词首", word: "빵", meaning: "面包" },
+      { label: "词中", word: "뽀뽀", meaning: "亲亲" },
+    ],
+    contrastGroup: "b",
+  },
+  "ㅆ": {
+    sound: "쌍시옷",
+    tips: [
+      "紧音更用力，声音更紧。",
+      "不要读成松音 ㅅ。",
+      "作收音时归到 ㄷ 类。",
+    ],
+    examples: [
+      { label: "词首", word: "쌀", meaning: "米" },
+      { label: "词中", word: "싸다", meaning: "便宜" },
+      { label: "收音", word: "있다", meaning: "有/在" },
+    ],
+    contrastGroup: "s",
+  },
+  "ㅉ": {
+    sound: "쌍지읒",
+    tips: [
+      "紧音更紧，不明显送气。",
+      "不要读成送气音 ㅊ。",
+      "韩语里 ㅉ 不作普通收音使用。",
+    ],
+    examples: [
+      { label: "词首", word: "짜다", meaning: "咸" },
+      { label: "词中", word: "찌개", meaning: "炖汤" },
+    ],
+    contrastGroup: "j",
+  },
   "ㅏ": { sound: "아", examples: [["아기", "婴儿"], ["아빠", "爸爸"], ["바다", "大海"], ["사과", "苹果"]] },
   "ㅑ": { sound: "야", examples: [["야구", "棒球"], ["야채", "蔬菜"], ["이야기", "故事"], ["야간", "夜间"]] },
   "ㅓ": { sound: "어", examples: [["어머니", "妈妈"], ["어디", "哪里"], ["버스", "公交车"], ["저", "我/那个"]] },
@@ -54,6 +231,33 @@ const LETTER_DETAILS = {
 const CONSONANT_LETTERS = new Set([
   "ㄱ", "ㄴ", "ㄷ", "ㄹ", "ㅁ", "ㅂ", "ㅅ", "ㅇ", "ㅈ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ", "ㄲ", "ㄸ", "ㅃ", "ㅆ", "ㅉ",
 ]);
+
+const CONTRAST_GROUPS = {
+  g: [
+    { letter: "ㄱ", label: "松音", word: "가방", meaning: "书包" },
+    { letter: "ㅋ", label: "送气音", word: "카메라", meaning: "相机" },
+    { letter: "ㄲ", label: "紧音", word: "까치", meaning: "喜鹊" },
+  ],
+  d: [
+    { letter: "ㄷ", label: "松音", word: "다리", meaning: "腿/桥" },
+    { letter: "ㅌ", label: "送气音", word: "타다", meaning: "乘坐" },
+    { letter: "ㄸ", label: "紧音", word: "딸기", meaning: "草莓" },
+  ],
+  b: [
+    { letter: "ㅂ", label: "松音", word: "바다", meaning: "大海" },
+    { letter: "ㅍ", label: "送气音", word: "파도", meaning: "波浪" },
+    { letter: "ㅃ", label: "紧音", word: "빵", meaning: "面包" },
+  ],
+  j: [
+    { letter: "ㅈ", label: "松音", word: "지도", meaning: "地图" },
+    { letter: "ㅊ", label: "送气音", word: "차", meaning: "车/茶" },
+    { letter: "ㅉ", label: "紧音", word: "짜다", meaning: "咸" },
+  ],
+  s: [
+    { letter: "ㅅ", label: "松音", word: "사과", meaning: "苹果" },
+    { letter: "ㅆ", label: "紧音", word: "쌀", meaning: "米" },
+  ],
+};
 
 const PHONETIC_SECTIONS = [
   {
@@ -158,6 +362,28 @@ if (savedTheme === "dark") {
 
 function getWordAudioUrl(word, fallbackUrl = "") {
   return window.WORD_AUDIO_URLS?.[word] || fallbackUrl || "";
+}
+
+
+function normalizeExample(rawExample, index, fallbackAudioUrl = "") {
+  if (Array.isArray(rawExample)) {
+    const [word, meaning] = rawExample;
+    return {
+      word,
+      meaning,
+      label: "",
+      audioUrl: getWordAudioUrl(word, index === 0 ? fallbackAudioUrl : ""),
+      primary: index === 0,
+    };
+  }
+
+  return {
+    word: rawExample.word,
+    meaning: rawExample.meaning,
+    label: rawExample.label || "",
+    audioUrl: getWordAudioUrl(rawExample.word, index === 0 ? fallbackAudioUrl : ""),
+    primary: index === 0,
+  };
 }
 
 
@@ -453,16 +679,13 @@ function normalizeLetterItem(item) {
   const primaryExample = {
     word: item.word,
     meaning: item.meaning,
+    label: "",
     audioUrl: getWordAudioUrl(item.word, item.audio_url || ""),
     primary: true,
   };
 
-  const examples = (details.examples || [[item.word, item.meaning]]).map(([word, meaning], index) => ({
-    word,
-    meaning,
-    audioUrl: getWordAudioUrl(word, index === 0 ? item.audio_url || "" : ""),
-    primary: index === 0,
-  }));
+  const examples = (details.examples || [[item.word, item.meaning]])
+    .map((example, index) => normalizeExample(example, index, item.audio_url || ""));
 
   if (!examples.some((example) => example.word === primaryExample.word)) {
     examples.unshift(primaryExample);
@@ -475,18 +698,14 @@ function normalizeLetterItem(item) {
     sound: details.sound || item.letter,
     letterAudioUrl: item.letter_audio_url || "",
     examples,
-    tips: [],
+    tips: details.tips || [],
+    contrastGroup: details.contrastGroup || "",
   };
 }
 
 
 function normalizeRuleItem(item, group) {
-  const examples = (item.examples || []).map(([word, meaning], index) => ({
-    word,
-    meaning,
-    audioUrl: getWordAudioUrl(word),
-    primary: index === 0,
-  }));
+  const examples = (item.examples || []).map((example, index) => normalizeExample(example, index));
 
   return {
     type: "rule",
@@ -545,6 +764,93 @@ function renderTipList(tips) {
 }
 
 
+function getContrastItems(letterData) {
+  return (CONTRAST_GROUPS[letterData.contrastGroup] || []).map((item, index) => ({
+    ...item,
+    audioUrl: getWordAudioUrl(item.word),
+    primary: item.letter === letterData.letter,
+    contrastIndex: index,
+  }));
+}
+
+
+function renderWordButton(item, index, options = {}) {
+  const label = item.label ? `<span class="word-label">${item.label}</span>` : "";
+  const current = options.current ? " current" : "";
+  const primary = item.primary ? " primary" : "";
+  const letter = item.letter ? `<span class="word-letter">${item.letter}</span>` : "";
+  const dataset = options.kind === "contrast" ? `data-contrast-index="${index}"` : `data-example-index="${index}"`;
+
+  return `
+    <button class="example-word${primary}${current}" type="button" ${dataset}>
+      ${label}
+      <strong>${letter}${item.word}</strong>
+      <span>${item.meaning}</span>
+    </button>
+  `;
+}
+
+
+function renderExampleSection(title, items, kind, letterData) {
+  if (!items.length) {
+    return "";
+  }
+
+  return `
+    <div class="detail-block">
+      <div class="detail-block-head">
+        <h4>${title}</h4>
+        <span>点击词卡单独播放</span>
+      </div>
+      <div class="example-list">
+        ${items.map((item, index) => renderWordButton(item, index, {
+          kind,
+          current: kind === "contrast" && item.letter === letterData.letter,
+        })).join("")}
+      </div>
+    </div>
+  `;
+}
+
+
+async function playWordOnly(item) {
+  stopPlaybackQueue();
+
+  const runId = playbackRunId;
+  const repeatCount = getRepeatCount();
+
+  for (let index = 0; index < repeatCount; index += 1) {
+    if (playbackRunId !== runId) {
+      return;
+    }
+
+    await playPronunciationItem({
+      text: item.word,
+      audioUrl: item.audioUrl,
+    }, runId);
+
+    if (index < repeatCount - 1) {
+      await wait(520, runId);
+    }
+  }
+}
+
+
+function bindDetailWordPlayback(detail, letterData, contrastItems) {
+  detail.querySelectorAll("[data-example-index]").forEach((button) => {
+    button.addEventListener("click", () => {
+      playWordOnly(letterData.examples[Number(button.dataset.exampleIndex)]);
+    });
+  });
+
+  detail.querySelectorAll("[data-contrast-index]").forEach((button) => {
+    button.addEventListener("click", () => {
+      playWordOnly(contrastItems[Number(button.dataset.contrastIndex)]);
+    });
+  });
+}
+
+
 function closeLetterDetail() {
   const detail = document.querySelector("#letterDetail");
   if (!detail) {
@@ -580,6 +886,8 @@ function renderLetterDetail(letterData, selectedCard) {
     return;
   }
 
+  const contrastItems = getContrastItems(letterData);
+
   detail.hidden = true;
   moveLetterDetailAfterSelectedRow(detail, selectedCard);
   detail.hidden = false;
@@ -591,24 +899,16 @@ function renderLetterDetail(letterData, selectedCard) {
       </div>
       <button class="detail-close" type="button" aria-label="收起示范详情">×</button>
     </div>
-    <div class="detail-summary">
-      <span>当前点击卡片会按上方设置依次朗读。</span>
-      <span>${letterData.type === "rule" ? "例词" : "示例单词"}共 ${letterData.examples.length} 个。</span>
-    </div>
     ${renderTipList(letterData.tips || [])}
-    <div class="example-list">
-      ${letterData.examples.map((example) => `
-        <article class="example-word${example.primary ? " primary" : ""}">
-          <strong>${example.word}</strong>
-          <span>${example.meaning}</span>
-        </article>
-      `).join("")}
-    </div>
+    ${renderExampleSection(letterData.type === "rule" ? "例词" : "位置示范", letterData.examples, "example", letterData)}
+    ${renderExampleSection("对比词汇", contrastItems, "contrast", letterData)}
   `;
 
   detail.querySelector(".detail-close").addEventListener("click", () => {
     closeLetterDetail();
   });
+
+  bindDetailWordPlayback(detail, letterData, contrastItems);
 }
 
 
