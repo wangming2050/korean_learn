@@ -1,0 +1,3545 @@
+{
+  "id": "yonsei-korean-1",
+  "title": "延世韩国语 1",
+  "subtitle": "1-10 课 PDF + 听力",
+  "coverLabel": "延世 1",
+  "pdfUrl": "/static/textbooks/yonsei1/yonsei-korean-1.pdf",
+  "pageCount": 443,
+  "transcriptStartPage": 397,
+  "units": [
+    {
+      "unit": 1,
+      "title": "第1课 인사",
+      "startPage": 20,
+      "endPage": 49,
+      "sections": [
+        {
+          "id": "c1-u1",
+          "title": "1课 1单元",
+          "page": 21,
+          "endPage": 26,
+          "startPage": 21
+        },
+        {
+          "id": "c1-u2",
+          "title": "1课 2单元",
+          "page": 27,
+          "endPage": 32,
+          "startPage": 27
+        },
+        {
+          "id": "c1-u3",
+          "title": "1课 3单元",
+          "page": 33,
+          "endPage": 38,
+          "startPage": 33
+        },
+        {
+          "id": "c1-u4",
+          "title": "1课 4单元",
+          "page": 39,
+          "endPage": 44,
+          "startPage": 39
+        },
+        {
+          "id": "c1-u5",
+          "title": "1课 5单元",
+          "page": 45,
+          "endPage": 49,
+          "startPage": 45
+        }
+      ],
+      "tracks": [
+        {
+          "id": "part1-01",
+          "title": "1-5单元 曲目 1",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_01.mp3"
+        },
+        {
+          "id": "part1-02",
+          "title": "1-5单元 曲目 2",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_02.mp3"
+        },
+        {
+          "id": "part1-03",
+          "title": "1-5单元 曲目 3",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_03.mp3"
+        },
+        {
+          "id": "part1-04",
+          "title": "1-5单元 曲目 4",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_04.mp3"
+        },
+        {
+          "id": "part1-05",
+          "title": "1-5单元 曲目 5",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_05.mp3"
+        },
+        {
+          "id": "part1-06",
+          "title": "1-5单元 曲目 6",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_06.mp3"
+        },
+        {
+          "id": "part1-07",
+          "title": "1-5单元 曲目 7",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_07.mp3"
+        },
+        {
+          "id": "part1-08",
+          "title": "1-5单元 曲目 8",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_08.mp3"
+        },
+        {
+          "id": "part1-09",
+          "title": "1-5单元 曲目 9",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_09.mp3"
+        },
+        {
+          "id": "part1-10",
+          "title": "1-5单元 曲目 10",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_10.mp3"
+        },
+        {
+          "id": "part1-11",
+          "title": "1-5单元 曲目 11",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_11.mp3"
+        }
+      ]
+    },
+    {
+      "unit": 2,
+      "title": "第2课 학교와 집",
+      "startPage": 50,
+      "endPage": 87,
+      "sections": [
+        {
+          "id": "c2-u1",
+          "title": "2课 1单元",
+          "page": 51,
+          "endPage": 58,
+          "startPage": 51
+        },
+        {
+          "id": "c2-u2",
+          "title": "2课 2单元",
+          "page": 59,
+          "endPage": 66,
+          "startPage": 59
+        },
+        {
+          "id": "c2-u3",
+          "title": "2课 3单元",
+          "page": 67,
+          "endPage": 74,
+          "startPage": 67
+        },
+        {
+          "id": "c2-u4",
+          "title": "2课 4单元",
+          "page": 75,
+          "endPage": 80,
+          "startPage": 75
+        },
+        {
+          "id": "c2-u5",
+          "title": "2课 5单元",
+          "page": 81,
+          "endPage": 87,
+          "startPage": 81
+        }
+      ],
+      "tracks": [
+        {
+          "id": "part1-12",
+          "title": "1-5单元 曲目 12",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_12.mp3"
+        },
+        {
+          "id": "part1-13",
+          "title": "1-5单元 曲目 13",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_13.mp3"
+        },
+        {
+          "id": "part1-14",
+          "title": "1-5单元 曲目 14",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_14.mp3"
+        },
+        {
+          "id": "part1-15",
+          "title": "1-5单元 曲目 15",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_15.mp3"
+        },
+        {
+          "id": "part1-16",
+          "title": "1-5单元 曲目 16",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_16.mp3"
+        },
+        {
+          "id": "part1-17",
+          "title": "1-5单元 曲目 17",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_17.mp3"
+        },
+        {
+          "id": "part1-18",
+          "title": "1-5单元 曲目 18",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_18.mp3"
+        },
+        {
+          "id": "part1-19",
+          "title": "1-5单元 曲目 19",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_19.mp3"
+        },
+        {
+          "id": "part1-20",
+          "title": "1-5单元 曲目 20",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_20.mp3"
+        },
+        {
+          "id": "part1-21",
+          "title": "1-5单元 曲目 21",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_21.mp3"
+        },
+        {
+          "id": "part1-22",
+          "title": "1-5单元 曲目 22",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_22.mp3"
+        }
+      ]
+    },
+    {
+      "unit": 3,
+      "title": "第3课 가족과 친구",
+      "startPage": 88,
+      "endPage": 123,
+      "sections": [
+        {
+          "id": "c3-u1",
+          "title": "3课 1单元",
+          "page": 89,
+          "endPage": 94,
+          "startPage": 89
+        },
+        {
+          "id": "c3-u2",
+          "title": "3课 2单元",
+          "page": 95,
+          "endPage": 104,
+          "startPage": 95
+        },
+        {
+          "id": "c3-u3",
+          "title": "3课 3单元",
+          "page": 105,
+          "endPage": 110,
+          "startPage": 105
+        },
+        {
+          "id": "c3-u4",
+          "title": "3课 4单元",
+          "page": 111,
+          "endPage": 116,
+          "startPage": 111
+        },
+        {
+          "id": "c3-u5",
+          "title": "3课 5单元",
+          "page": 117,
+          "endPage": 123,
+          "startPage": 117
+        }
+      ],
+      "tracks": [
+        {
+          "id": "part1-23",
+          "title": "1-5单元 曲目 23",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_23.mp3"
+        },
+        {
+          "id": "part1-24",
+          "title": "1-5单元 曲目 24",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_24.mp3"
+        },
+        {
+          "id": "part1-25",
+          "title": "1-5单元 曲目 25",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_25.mp3"
+        },
+        {
+          "id": "part1-26",
+          "title": "1-5单元 曲目 26",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_26.mp3"
+        },
+        {
+          "id": "part1-27",
+          "title": "1-5单元 曲目 27",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_27.mp3"
+        },
+        {
+          "id": "part1-28",
+          "title": "1-5单元 曲目 28",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_28.mp3"
+        },
+        {
+          "id": "part1-29",
+          "title": "1-5单元 曲目 29",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_29.mp3"
+        },
+        {
+          "id": "part1-30",
+          "title": "1-5单元 曲目 30",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_30.mp3"
+        },
+        {
+          "id": "part1-31",
+          "title": "1-5单元 曲目 31",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_31.mp3"
+        },
+        {
+          "id": "part1-32",
+          "title": "1-5单元 曲目 32",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_32.mp3"
+        },
+        {
+          "id": "part1-33",
+          "title": "1-5单元 曲目 33",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_33.mp3"
+        },
+        {
+          "id": "part1-34",
+          "title": "1-5单元 曲目 34",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_34.mp3"
+        }
+      ]
+    },
+    {
+      "unit": 4,
+      "title": "第4课 음식",
+      "startPage": 124,
+      "endPage": 161,
+      "sections": [
+        {
+          "id": "c4-u1",
+          "title": "4课 1单元",
+          "page": 125,
+          "endPage": 132,
+          "startPage": 125
+        },
+        {
+          "id": "c4-u2",
+          "title": "4课 2单元",
+          "page": 133,
+          "endPage": 140,
+          "startPage": 133
+        },
+        {
+          "id": "c4-u3",
+          "title": "4课 3单元",
+          "page": 141,
+          "endPage": 148,
+          "startPage": 141
+        },
+        {
+          "id": "c4-u4",
+          "title": "4课 4单元",
+          "page": 149,
+          "endPage": 156,
+          "startPage": 149
+        },
+        {
+          "id": "c4-u5",
+          "title": "4课 5单元",
+          "page": 157,
+          "endPage": 161,
+          "startPage": 157
+        }
+      ],
+      "tracks": [
+        {
+          "id": "part1-35",
+          "title": "1-5单元 曲目 35",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_35.mp3"
+        },
+        {
+          "id": "part1-36",
+          "title": "1-5单元 曲目 36",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_36.mp3"
+        },
+        {
+          "id": "part1-37",
+          "title": "1-5单元 曲目 37",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_37.mp3"
+        },
+        {
+          "id": "part1-38",
+          "title": "1-5单元 曲目 38",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_38.mp3"
+        },
+        {
+          "id": "part1-39",
+          "title": "1-5单元 曲目 39",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_39.mp3"
+        },
+        {
+          "id": "part1-40",
+          "title": "1-5单元 曲目 40",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_40.mp3"
+        },
+        {
+          "id": "part1-41",
+          "title": "1-5单元 曲目 41",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_41.mp3"
+        },
+        {
+          "id": "part1-42",
+          "title": "1-5单元 曲目 42",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_42.mp3"
+        },
+        {
+          "id": "part1-43",
+          "title": "1-5单元 曲目 43",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_43.mp3"
+        },
+        {
+          "id": "part1-44",
+          "title": "1-5单元 曲目 44",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_44.mp3"
+        },
+        {
+          "id": "part1-45",
+          "title": "1-5单元 曲目 45",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_45.mp3"
+        }
+      ]
+    },
+    {
+      "unit": 5,
+      "title": "第5课 하루 생활",
+      "startPage": 162,
+      "endPage": 201,
+      "sections": [
+        {
+          "id": "c5-u1",
+          "title": "5课 1单元",
+          "page": 163,
+          "endPage": 170,
+          "startPage": 163
+        },
+        {
+          "id": "c5-u2",
+          "title": "5课 2单元",
+          "page": 171,
+          "endPage": 178,
+          "startPage": 171
+        },
+        {
+          "id": "c5-u3",
+          "title": "5课 3单元",
+          "page": 179,
+          "endPage": 186,
+          "startPage": 179
+        },
+        {
+          "id": "c5-u4",
+          "title": "5课 4单元",
+          "page": 187,
+          "endPage": 194,
+          "startPage": 187
+        },
+        {
+          "id": "c5-u5",
+          "title": "5课 5单元",
+          "page": 195,
+          "endPage": 201,
+          "startPage": 195
+        }
+      ],
+      "tracks": [
+        {
+          "id": "part1-46",
+          "title": "1-5单元 曲目 46",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_46.mp3"
+        },
+        {
+          "id": "part1-47",
+          "title": "1-5单元 曲目 47",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_47.mp3"
+        },
+        {
+          "id": "part1-48",
+          "title": "1-5单元 曲目 48",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_48.mp3"
+        },
+        {
+          "id": "part1-49",
+          "title": "1-5单元 曲目 49",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_49.mp3"
+        },
+        {
+          "id": "part1-50",
+          "title": "1-5单元 曲目 50",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_50.mp3"
+        },
+        {
+          "id": "part1-51",
+          "title": "1-5单元 曲目 51",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_51.mp3"
+        },
+        {
+          "id": "part1-52",
+          "title": "1-5单元 曲目 52",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_52.mp3"
+        },
+        {
+          "id": "part1-53",
+          "title": "1-5单元 曲目 53",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_53.mp3"
+        },
+        {
+          "id": "part1-54",
+          "title": "1-5单元 曲目 54",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_54.mp3"
+        },
+        {
+          "id": "part1-55",
+          "title": "1-5单元 曲目 55",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_55.mp3"
+        },
+        {
+          "id": "part1-56",
+          "title": "1-5单元 曲目 56",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_56.mp3"
+        },
+        {
+          "id": "part1-57",
+          "title": "1-5单元 曲目 57",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_57.mp3"
+        }
+      ]
+    },
+    {
+      "unit": 6,
+      "title": "第6课 물건 사기",
+      "startPage": 202,
+      "endPage": 239,
+      "sections": [
+        {
+          "id": "c6-u1",
+          "title": "6课 1单元",
+          "page": 203,
+          "endPage": 208,
+          "startPage": 203
+        },
+        {
+          "id": "c6-u2",
+          "title": "6课 2单元",
+          "page": 209,
+          "endPage": 216,
+          "startPage": 209
+        },
+        {
+          "id": "c6-u3",
+          "title": "6课 3单元",
+          "page": 217,
+          "endPage": 224,
+          "startPage": 217
+        },
+        {
+          "id": "c6-u4",
+          "title": "6课 4单元",
+          "page": 225,
+          "endPage": 232,
+          "startPage": 225
+        },
+        {
+          "id": "c6-u5",
+          "title": "6课 5单元",
+          "page": 233,
+          "endPage": 239,
+          "startPage": 233
+        }
+      ],
+      "tracks": [
+        {
+          "id": "part2-01",
+          "title": "6-10单元 曲目 1",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_01.mp3"
+        },
+        {
+          "id": "part2-02",
+          "title": "6-10单元 曲目 2",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_02.mp3"
+        },
+        {
+          "id": "part2-03",
+          "title": "6-10单元 曲目 3",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_03.mp3"
+        },
+        {
+          "id": "part2-04",
+          "title": "6-10单元 曲目 4",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_04.mp3"
+        },
+        {
+          "id": "part2-05",
+          "title": "6-10单元 曲目 5",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_05.mp3"
+        },
+        {
+          "id": "part2-06",
+          "title": "6-10单元 曲目 6",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_06.mp3"
+        },
+        {
+          "id": "part2-07",
+          "title": "6-10单元 曲目 7",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_07.mp3"
+        },
+        {
+          "id": "part2-08",
+          "title": "6-10单元 曲目 8",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_08.mp3"
+        },
+        {
+          "id": "part2-09",
+          "title": "6-10单元 曲目 9",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_09.mp3"
+        },
+        {
+          "id": "part2-10",
+          "title": "6-10单元 曲目 10",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_10.mp3"
+        },
+        {
+          "id": "part2-11",
+          "title": "6-10单元 曲目 11",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_11.mp3"
+        }
+      ]
+    },
+    {
+      "unit": 7,
+      "title": "第7课 교통",
+      "startPage": 240,
+      "endPage": 281,
+      "sections": [
+        {
+          "id": "c7-u1",
+          "title": "7课 1单元",
+          "page": 241,
+          "endPage": 250,
+          "startPage": 241
+        },
+        {
+          "id": "c7-u2",
+          "title": "7课 2单元",
+          "page": 251,
+          "endPage": 258,
+          "startPage": 251
+        },
+        {
+          "id": "c7-u3",
+          "title": "7课 3单元",
+          "page": 259,
+          "endPage": 266,
+          "startPage": 259
+        },
+        {
+          "id": "c7-u4",
+          "title": "7课 4单元",
+          "page": 267,
+          "endPage": 274,
+          "startPage": 267
+        },
+        {
+          "id": "c7-u5",
+          "title": "7课 5单元",
+          "page": 275,
+          "endPage": 281,
+          "startPage": 275
+        }
+      ],
+      "tracks": [
+        {
+          "id": "part2-12",
+          "title": "6-10单元 曲目 12",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_12.mp3"
+        },
+        {
+          "id": "part2-13",
+          "title": "6-10单元 曲目 13",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_13.mp3"
+        },
+        {
+          "id": "part2-14",
+          "title": "6-10单元 曲目 14",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_14.mp3"
+        },
+        {
+          "id": "part2-15",
+          "title": "6-10单元 曲目 15",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_15.mp3"
+        },
+        {
+          "id": "part2-16",
+          "title": "6-10单元 曲目 16",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_16.mp3"
+        },
+        {
+          "id": "part2-17",
+          "title": "6-10单元 曲目 17",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_17.mp3"
+        },
+        {
+          "id": "part2-18",
+          "title": "6-10单元 曲目 18",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_18.mp3"
+        },
+        {
+          "id": "part2-19",
+          "title": "6-10单元 曲目 19",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_19.mp3"
+        },
+        {
+          "id": "part2-20",
+          "title": "6-10单元 曲目 20",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_20.mp3"
+        },
+        {
+          "id": "part2-21",
+          "title": "6-10单元 曲目 21",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_21.mp3"
+        },
+        {
+          "id": "part2-22",
+          "title": "6-10单元 曲目 22",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_22.mp3"
+        },
+        {
+          "id": "part2-23",
+          "title": "6-10单元 曲目 23",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_23.mp3"
+        }
+      ]
+    },
+    {
+      "unit": 8,
+      "title": "第8课 전화",
+      "startPage": 282,
+      "endPage": 317,
+      "sections": [
+        {
+          "id": "c8-u1",
+          "title": "8课 1单元",
+          "page": 283,
+          "endPage": 290,
+          "startPage": 283
+        },
+        {
+          "id": "c8-u2",
+          "title": "8课 2单元",
+          "page": 291,
+          "endPage": 296,
+          "startPage": 291
+        },
+        {
+          "id": "c8-u3",
+          "title": "8课 3单元",
+          "page": 297,
+          "endPage": 304,
+          "startPage": 297
+        },
+        {
+          "id": "c8-u4",
+          "title": "8课 4单元",
+          "page": 305,
+          "endPage": 310,
+          "startPage": 305
+        },
+        {
+          "id": "c8-u5",
+          "title": "8课 5单元",
+          "page": 311,
+          "endPage": 317,
+          "startPage": 311
+        }
+      ],
+      "tracks": [
+        {
+          "id": "part2-24",
+          "title": "6-10单元 曲目 24",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_24.mp3"
+        },
+        {
+          "id": "part2-25",
+          "title": "6-10单元 曲目 25",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_25.mp3"
+        },
+        {
+          "id": "part2-26",
+          "title": "6-10单元 曲目 26",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_26.mp3"
+        },
+        {
+          "id": "part2-27",
+          "title": "6-10单元 曲目 27",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_27.mp3"
+        },
+        {
+          "id": "part2-28",
+          "title": "6-10单元 曲目 28",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_28.mp3"
+        },
+        {
+          "id": "part2-29",
+          "title": "6-10单元 曲目 29",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_29.mp3"
+        },
+        {
+          "id": "part2-30",
+          "title": "6-10单元 曲目 30",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_30.mp3"
+        },
+        {
+          "id": "part2-31",
+          "title": "6-10单元 曲目 31",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_31.mp3"
+        },
+        {
+          "id": "part2-32",
+          "title": "6-10单元 曲目 32",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_32.mp3"
+        },
+        {
+          "id": "part2-33",
+          "title": "6-10单元 曲目 33",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_33.mp3"
+        },
+        {
+          "id": "part2-34",
+          "title": "6-10单元 曲目 34",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_34.mp3"
+        },
+        {
+          "id": "part2-35",
+          "title": "6-10单元 曲目 35",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_35.mp3"
+        }
+      ]
+    },
+    {
+      "unit": 9,
+      "title": "第9课 날씨와 계절",
+      "startPage": 318,
+      "endPage": 355,
+      "sections": [
+        {
+          "id": "c9-u1",
+          "title": "9课 1单元",
+          "page": 319,
+          "endPage": 326,
+          "startPage": 319
+        },
+        {
+          "id": "c9-u2",
+          "title": "9课 2单元",
+          "page": 327,
+          "endPage": 334,
+          "startPage": 327
+        },
+        {
+          "id": "c9-u3",
+          "title": "9课 3单元",
+          "page": 335,
+          "endPage": 342,
+          "startPage": 335
+        },
+        {
+          "id": "c9-u4",
+          "title": "9课 4单元",
+          "page": 343,
+          "endPage": 350,
+          "startPage": 343
+        },
+        {
+          "id": "c9-u5",
+          "title": "9课 5单元",
+          "page": 351,
+          "endPage": 355,
+          "startPage": 351
+        }
+      ],
+      "tracks": [
+        {
+          "id": "part2-36",
+          "title": "6-10单元 曲目 36",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_36.mp3"
+        },
+        {
+          "id": "part2-37",
+          "title": "6-10单元 曲目 37",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_37.mp3"
+        },
+        {
+          "id": "part2-38",
+          "title": "6-10单元 曲目 38",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_38.mp3"
+        },
+        {
+          "id": "part2-39",
+          "title": "6-10单元 曲目 39",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_39.mp3"
+        },
+        {
+          "id": "part2-40",
+          "title": "6-10单元 曲目 40",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_40.mp3"
+        },
+        {
+          "id": "part2-41",
+          "title": "6-10单元 曲目 41",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_41.mp3"
+        },
+        {
+          "id": "part2-42",
+          "title": "6-10单元 曲目 42",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_42.mp3"
+        },
+        {
+          "id": "part2-43",
+          "title": "6-10单元 曲目 43",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_43.mp3"
+        },
+        {
+          "id": "part2-44",
+          "title": "6-10单元 曲目 44",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_44.mp3"
+        },
+        {
+          "id": "part2-45",
+          "title": "6-10单元 曲目 45",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_45.mp3"
+        },
+        {
+          "id": "part2-46",
+          "title": "6-10单元 曲目 46",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_46.mp3"
+        }
+      ]
+    },
+    {
+      "unit": 10,
+      "title": "第10课 방학과 여행",
+      "startPage": 356,
+      "endPage": 443,
+      "sections": [
+        {
+          "id": "c10-u1",
+          "title": "10课 1单元",
+          "page": 357,
+          "endPage": 364,
+          "startPage": 357
+        },
+        {
+          "id": "c10-u2",
+          "title": "10课 2单元",
+          "page": 365,
+          "endPage": 372,
+          "startPage": 365
+        },
+        {
+          "id": "c10-u3",
+          "title": "10课 3单元",
+          "page": 373,
+          "endPage": 380,
+          "startPage": 373
+        },
+        {
+          "id": "c10-u4",
+          "title": "10课 4单元",
+          "page": 381,
+          "endPage": 388,
+          "startPage": 381
+        },
+        {
+          "id": "c10-u5",
+          "title": "10课 5单元",
+          "page": 389,
+          "endPage": 443,
+          "startPage": 389
+        }
+      ],
+      "tracks": [
+        {
+          "id": "part2-47",
+          "title": "6-10单元 曲目 47",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_47.mp3"
+        },
+        {
+          "id": "part2-48",
+          "title": "6-10单元 曲目 48",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_48.mp3"
+        },
+        {
+          "id": "part2-49",
+          "title": "6-10单元 曲目 49",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_49.mp3"
+        },
+        {
+          "id": "part2-50",
+          "title": "6-10单元 曲目 50",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_50.mp3"
+        },
+        {
+          "id": "part2-51",
+          "title": "6-10单元 曲目 51",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_51.mp3"
+        },
+        {
+          "id": "part2-52",
+          "title": "6-10单元 曲目 52",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_52.mp3"
+        },
+        {
+          "id": "part2-53",
+          "title": "6-10单元 曲目 53",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_53.mp3"
+        },
+        {
+          "id": "part2-54",
+          "title": "6-10单元 曲目 54",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_54.mp3"
+        },
+        {
+          "id": "part2-55",
+          "title": "6-10单元 曲目 55",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_55.mp3"
+        },
+        {
+          "id": "part2-56",
+          "title": "6-10单元 曲目 56",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_56.mp3"
+        },
+        {
+          "id": "part2-57",
+          "title": "6-10单元 曲目 57",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_57.mp3"
+        },
+        {
+          "id": "part2-58",
+          "title": "6-10单元 曲目 58",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_58.mp3"
+        }
+      ]
+    }
+  ],
+  "pageAudio": {
+    "21": [
+      {
+        "id": "c1-u1-dialogue-p21",
+        "unit": 1,
+        "section": 1,
+        "kind": "dialogue",
+        "printedPage": 21,
+        "page": 21,
+        "title": "1课 1单元 第一段对话",
+        "audioTitle": "MP3 01-02",
+        "audios": [
+          {
+            "id": "part1-01",
+            "title": "MP3 01",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_01.mp3"
+          },
+          {
+            "id": "part1-02",
+            "title": "MP3 02",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_02.mp3"
+          }
+        ],
+        "trackId": "part1-01",
+        "url": "/static/textbooks/yonsei1/audio/part1/track_01.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "24": [
+      {
+        "id": "c1-u1-task-p24",
+        "unit": 1,
+        "section": 1,
+        "kind": "task",
+        "printedPage": 24,
+        "page": 24,
+        "title": "1课 1单元 과제2",
+        "audioTitle": "MP3 03",
+        "audios": [
+          {
+            "id": "part1-03",
+            "title": "MP3 03",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_03.mp3"
+          }
+        ],
+        "trackId": "part1-03",
+        "url": "/static/textbooks/yonsei1/audio/part1/track_03.mp3",
+        "transcript": "마리아\n안녕하십니까?\n민철\n네, 안녕하십니까?\n마리아\n제 이름은 마리아입니다.\n민철\n저는 정민철입니다. 그리고 제 친구 이영수입니다.\n영수\n마리아 씨, 안녕하십니까?\n마리아\n네, 영수 씨 반갑습니다.",
+        "transcriptSource": "transcript-section",
+        "task": 2
+      }
+    ],
+    "27": [
+      {
+        "id": "c1-u2-dialogue-p27",
+        "unit": 1,
+        "section": 2,
+        "kind": "dialogue",
+        "printedPage": 27,
+        "page": 27,
+        "title": "1课 2单元 第一段对话",
+        "audioTitle": "MP3 04-05",
+        "audios": [
+          {
+            "id": "part1-04",
+            "title": "MP3 04",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_04.mp3"
+          },
+          {
+            "id": "part1-05",
+            "title": "MP3 05",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_05.mp3"
+          }
+        ],
+        "trackId": "part1-04",
+        "url": "/static/textbooks/yonsei1/audio/part1/track_04.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "30": [
+      {
+        "id": "c1-u2-task-p30",
+        "unit": 1,
+        "section": 2,
+        "kind": "task",
+        "printedPage": 30,
+        "page": 30,
+        "title": "1课 2单元 과제2",
+        "audioTitle": "MP3 06",
+        "audios": [
+          {
+            "id": "part1-06",
+            "title": "MP3 06",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_06.mp3"
+          }
+        ],
+        "trackId": "part1-06",
+        "url": "/static/textbooks/yonsei1/audio/part1/track_06.mp3",
+        "transcript": "로라\n안녕하십니까? 제 이름은 로라입니다. 캐나다 사람입니다.\n리카\n저는 리카입니다. 일본에서 왔습니다.\n세르게이\n저는 세르게이입니다. 러시아 사람입니다.\n유진\n반갑습니다. 저는 김유진입니다. 한국 사람입니다.",
+        "transcriptSource": "transcript-section",
+        "task": 2
+      }
+    ],
+    "33": [
+      {
+        "id": "c1-u3-dialogue-p33",
+        "unit": 1,
+        "section": 3,
+        "kind": "dialogue",
+        "printedPage": 33,
+        "page": 33,
+        "title": "1课 3单元 第一段对话",
+        "audioTitle": "MP3 07-08",
+        "audios": [
+          {
+            "id": "part1-07",
+            "title": "MP3 07",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_07.mp3"
+          },
+          {
+            "id": "part1-08",
+            "title": "MP3 08",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_08.mp3"
+          }
+        ],
+        "trackId": "part1-07",
+        "url": "/static/textbooks/yonsei1/audio/part1/track_07.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "37": [
+      {
+        "id": "c1-u3-task-p37",
+        "unit": 1,
+        "section": 3,
+        "kind": "task",
+        "printedPage": 37,
+        "page": 37,
+        "title": "1课 3单元 과제2",
+        "audioTitle": "MP3 09",
+        "audios": [
+          {
+            "id": "part1-09",
+            "title": "MP3 09",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_09.mp3"
+          }
+        ],
+        "trackId": "part1-09",
+        "url": "/static/textbooks/yonsei1/audio/part1/track_09.mp3",
+        "transcript": "유진\n안녕하십니까? 김유진입니다.\n토마스\n반갑습니다. 토마스입니다.\n왕명\n저는 왕명입니다. 그런데 유진 씨는 학생입니까?\n유진\n아니요, 저는 회사원입니다. 왕명 씨는 무엇을 하십니까?\n왕영\n저는 연세대학교 교수입니다. 토마스 씨는 무엇을 하십니까?\n토마스\n저는 은행원입니다.",
+        "transcriptSource": "transcript-section",
+        "task": 2
+      }
+    ],
+    "39": [
+      {
+        "id": "c1-u4-dialogue-p39",
+        "unit": 1,
+        "section": 4,
+        "kind": "dialogue",
+        "printedPage": 39,
+        "page": 39,
+        "title": "1课 4单元 第一段对话",
+        "audioTitle": "MP3 10-11",
+        "audios": [
+          {
+            "id": "part1-10",
+            "title": "MP3 10",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_10.mp3"
+          },
+          {
+            "id": "part1-11",
+            "title": "MP3 11",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_11.mp3"
+          }
+        ],
+        "trackId": "part1-10",
+        "url": "/static/textbooks/yonsei1/audio/part1/track_10.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "42": [
+      {
+        "id": "c1-u4-task-p42",
+        "unit": 1,
+        "section": 4,
+        "kind": "task",
+        "printedPage": 42,
+        "page": 42,
+        "title": "1课 4单元 과제2",
+        "audioTitle": "MP3 12",
+        "audios": [
+          {
+            "id": "part1-12",
+            "title": "MP3 12",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_12.mp3"
+          }
+        ],
+        "trackId": "part1-12",
+        "url": "/static/textbooks/yonsei1/audio/part1/track_12.mp3",
+        "transcript": "김 선생님\n안녕하십니까? 제임스 씨.\n제임스\n네, 안녕하십니까? 김 선생님.\n김 선생님\n학교에 갑니까?\n제임스\n네, 학교에 갑니다.",
+        "transcriptSource": "transcript-section",
+        "task": 2
+      }
+    ],
+    "45": [
+      {
+        "id": "c1-u5-reading-p45",
+        "unit": 1,
+        "section": 5,
+        "kind": "reading",
+        "printedPage": 45,
+        "page": 45,
+        "title": "1课 5单元 읽어 봅시다",
+        "audioTitle": "MP3 13",
+        "audios": [
+          {
+            "id": "part1-13",
+            "title": "MP3 13",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_13.mp3"
+          }
+        ],
+        "trackId": "part1-13",
+        "url": "/static/textbooks/yonsei1/audio/part1/track_13.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-reading",
+        "transcriptNote": "听力原文位于当前 PDF 页的 읽어 봅시다 区域。"
+      }
+    ],
+    "51": [
+      {
+        "id": "c2-u1-dialogue-p51",
+        "unit": 2,
+        "section": 1,
+        "kind": "dialogue",
+        "printedPage": 51,
+        "page": 51,
+        "title": "2课 1单元 第一段对话",
+        "audioTitle": "MP3 14-15",
+        "audios": [
+          {
+            "id": "part1-14",
+            "title": "MP3 14",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_14.mp3"
+          },
+          {
+            "id": "part1-15",
+            "title": "MP3 15",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_15.mp3"
+          }
+        ],
+        "trackId": "part1-14",
+        "url": "/static/textbooks/yonsei1/audio/part1/track_14.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "56": [
+      {
+        "id": "c2-u1-task-p56",
+        "unit": 2,
+        "section": 1,
+        "kind": "task",
+        "printedPage": 56,
+        "page": 56,
+        "title": "2课 1单元 과제2",
+        "audioTitle": "MP3 16",
+        "audios": [
+          {
+            "id": "part1-16",
+            "title": "MP3 16",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_16.mp3"
+          }
+        ],
+        "trackId": "part1-16",
+        "url": "/static/textbooks/yonsei1/audio/part1/track_16.mp3",
+        "transcript": "정희\n웨이 씨, 이것이 웨이 씨 공책입니까?\n웨이\n네, 제 공책입니다.\n정희\n그럼 저건 리에 씨 공책입니까?\n웨이\n아니요, 제임스 씨 공책입니다. 여기 이름이 있습니다.\n정희\n그럼 저것이 리에 씨 공책입니까?\n웨이\n네, 그렇습니다.",
+        "transcriptSource": "transcript-section",
+        "task": 2
+      }
+    ],
+    "59": [
+      {
+        "id": "c2-u2-dialogue-p59",
+        "unit": 2,
+        "section": 2,
+        "kind": "dialogue",
+        "printedPage": 59,
+        "page": 59,
+        "title": "2课 2单元 第一段对话",
+        "audioTitle": "MP3 17-18",
+        "audios": [
+          {
+            "id": "part1-17",
+            "title": "MP3 17",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_17.mp3"
+          },
+          {
+            "id": "part1-18",
+            "title": "MP3 18",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_18.mp3"
+          }
+        ],
+        "trackId": "part1-17",
+        "url": "/static/textbooks/yonsei1/audio/part1/track_17.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "67": [
+      {
+        "id": "c2-u3-dialogue-p67",
+        "unit": 2,
+        "section": 3,
+        "kind": "dialogue",
+        "printedPage": 67,
+        "page": 67,
+        "title": "2课 3单元 第一段对话",
+        "audioTitle": "MP3 19-20",
+        "audios": [
+          {
+            "id": "part1-19",
+            "title": "MP3 19",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_19.mp3"
+          },
+          {
+            "id": "part1-20",
+            "title": "MP3 20",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_20.mp3"
+          }
+        ],
+        "trackId": "part1-19",
+        "url": "/static/textbooks/yonsei1/audio/part1/track_19.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "75": [
+      {
+        "id": "c2-u4-dialogue-p75",
+        "unit": 2,
+        "section": 4,
+        "kind": "dialogue",
+        "printedPage": 75,
+        "page": 75,
+        "title": "2课 4单元 第一段对话",
+        "audioTitle": "MP3 21-22",
+        "audios": [
+          {
+            "id": "part1-21",
+            "title": "MP3 21",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_21.mp3"
+          },
+          {
+            "id": "part1-22",
+            "title": "MP3 22",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_22.mp3"
+          }
+        ],
+        "trackId": "part1-21",
+        "url": "/static/textbooks/yonsei1/audio/part1/track_21.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "81": [
+      {
+        "id": "c2-u5-reading-p81",
+        "unit": 2,
+        "section": 5,
+        "kind": "reading",
+        "printedPage": 81,
+        "page": 81,
+        "title": "2课 5单元 읽어 봅시다",
+        "audioTitle": "MP3 23",
+        "audios": [
+          {
+            "id": "part1-23",
+            "title": "MP3 23",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_23.mp3"
+          }
+        ],
+        "trackId": "part1-23",
+        "url": "/static/textbooks/yonsei1/audio/part1/track_23.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-reading",
+        "transcriptNote": "听力原文位于当前 PDF 页的 읽어 봅시다 区域。"
+      }
+    ],
+    "89": [
+      {
+        "id": "c3-u1-dialogue-p89",
+        "unit": 3,
+        "section": 1,
+        "kind": "dialogue",
+        "printedPage": 89,
+        "page": 89,
+        "title": "3课 1单元 第一段对话",
+        "audioTitle": "MP3 24-25",
+        "audios": [
+          {
+            "id": "part1-24",
+            "title": "MP3 24",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_24.mp3"
+          },
+          {
+            "id": "part1-25",
+            "title": "MP3 25",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_25.mp3"
+          }
+        ],
+        "trackId": "part1-24",
+        "url": "/static/textbooks/yonsei1/audio/part1/track_24.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "95": [
+      {
+        "id": "c3-u2-dialogue-p95",
+        "unit": 3,
+        "section": 2,
+        "kind": "dialogue",
+        "printedPage": 95,
+        "page": 95,
+        "title": "3课 2单元 第一段对话",
+        "audioTitle": "MP3 26-27",
+        "audios": [
+          {
+            "id": "part1-26",
+            "title": "MP3 26",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_26.mp3"
+          },
+          {
+            "id": "part1-27",
+            "title": "MP3 27",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_27.mp3"
+          }
+        ],
+        "trackId": "part1-26",
+        "url": "/static/textbooks/yonsei1/audio/part1/track_26.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "105": [
+      {
+        "id": "c3-u3-dialogue-p105",
+        "unit": 3,
+        "section": 3,
+        "kind": "dialogue",
+        "printedPage": 105,
+        "page": 105,
+        "title": "3课 3单元 第一段对话",
+        "audioTitle": "MP3 28-29",
+        "audios": [
+          {
+            "id": "part1-28",
+            "title": "MP3 28",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_28.mp3"
+          },
+          {
+            "id": "part1-29",
+            "title": "MP3 29",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_29.mp3"
+          }
+        ],
+        "trackId": "part1-28",
+        "url": "/static/textbooks/yonsei1/audio/part1/track_28.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "108": [
+      {
+        "id": "c3-u3-task-p108",
+        "unit": 3,
+        "section": 3,
+        "kind": "task",
+        "printedPage": 108,
+        "page": 108,
+        "title": "3课 3单元 과제1",
+        "audioTitle": "MP3 30",
+        "audios": [
+          {
+            "id": "part1-30",
+            "title": "MP3 30",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_30.mp3"
+          }
+        ],
+        "trackId": "part1-30",
+        "url": "/static/textbooks/yonsei1/audio/part1/track_30.mp3",
+        "transcript": "제 고향은 부산입니다.\n부산은 크고 사람들이 많습니다.\n부산에는 바다가 있습니다. 그래서 생선이 많습니다.\n그리고 대학교하고 공원도 있습니다.\n겨울에는 따뜻하고 여름에는 시원합니다.\n부산 사람들은 친절하고 따뜻합니다.\n저는 제 고향을 아주 사랑합니다.",
+        "transcriptSource": "transcript-section",
+        "task": 1
+      }
+    ],
+    "111": [
+      {
+        "id": "c3-u4-dialogue-p111",
+        "unit": 3,
+        "section": 4,
+        "kind": "dialogue",
+        "printedPage": 111,
+        "page": 111,
+        "title": "3课 4单元 第一段对话",
+        "audioTitle": "MP3 31-32",
+        "audios": [
+          {
+            "id": "part1-31",
+            "title": "MP3 31",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_31.mp3"
+          },
+          {
+            "id": "part1-32",
+            "title": "MP3 32",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_32.mp3"
+          }
+        ],
+        "trackId": "part1-31",
+        "url": "/static/textbooks/yonsei1/audio/part1/track_31.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "117": [
+      {
+        "id": "c3-u5-reading-p117",
+        "unit": 3,
+        "section": 5,
+        "kind": "reading",
+        "printedPage": 117,
+        "page": 117,
+        "title": "3课 5单元 읽어 봅시다",
+        "audioTitle": "MP3 33",
+        "audios": [
+          {
+            "id": "part1-33",
+            "title": "MP3 33",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_33.mp3"
+          }
+        ],
+        "trackId": "part1-33",
+        "url": "/static/textbooks/yonsei1/audio/part1/track_33.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-reading",
+        "transcriptNote": "听力原文位于当前 PDF 页的 읽어 봅시다 区域。"
+      }
+    ],
+    "125": [
+      {
+        "id": "c4-u1-dialogue-p125",
+        "unit": 4,
+        "section": 1,
+        "kind": "dialogue",
+        "printedPage": 125,
+        "page": 125,
+        "title": "4课 1单元 第一段对话",
+        "audioTitle": "MP3 34-35",
+        "audios": [
+          {
+            "id": "part1-34",
+            "title": "MP3 34",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_34.mp3"
+          },
+          {
+            "id": "part1-35",
+            "title": "MP3 35",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_35.mp3"
+          }
+        ],
+        "trackId": "part1-34",
+        "url": "/static/textbooks/yonsei1/audio/part1/track_34.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "130": [
+      {
+        "id": "c4-u1-task-p130",
+        "unit": 4,
+        "section": 1,
+        "kind": "task",
+        "printedPage": 130,
+        "page": 130,
+        "title": "4课 1单元 과제2",
+        "audioTitle": "MP3 36",
+        "audios": [
+          {
+            "id": "part1-36",
+            "title": "MP3 36",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_36.mp3"
+          }
+        ],
+        "trackId": "part1-36",
+        "url": "/static/textbooks/yonsei1/audio/part1/track_36.mp3",
+        "transcript": "미선\n웨이 씨, 어디에 갈까요?\n웨이\n학교 근처 한식집에 갑시다. 깨끗하고 조용합니다.\n미선\n저는 정문 앞 중국집을 좋아합니다. 제임스 씨는 어떻습니까?\n제임스\n저는 학생식당에서 먹습니다. 아주 가깝습니다.\n미선\n그래요? 정문 앞 중국집은 음식이 아주 많습니다.\n웨이\n그럼 우리 오늘 중국집에서 먹을까요?\n제임스\n미선 씨, 값이 어떻습니까?\n미선\n값이 쌉니다.\n제임스\n좋습니다. 중국집에 갑시다.",
+        "transcriptSource": "transcript-section",
+        "task": 2
+      }
+    ],
+    "133": [
+      {
+        "id": "c4-u2-dialogue-p133",
+        "unit": 4,
+        "section": 2,
+        "kind": "dialogue",
+        "printedPage": 133,
+        "page": 133,
+        "title": "4课 2单元 第一段对话",
+        "audioTitle": "MP3 37-38",
+        "audios": [
+          {
+            "id": "part1-37",
+            "title": "MP3 37",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_37.mp3"
+          },
+          {
+            "id": "part1-38",
+            "title": "MP3 38",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_38.mp3"
+          }
+        ],
+        "trackId": "part1-37",
+        "url": "/static/textbooks/yonsei1/audio/part1/track_37.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "138": [
+      {
+        "id": "c4-u2-task-p138",
+        "unit": 4,
+        "section": 2,
+        "kind": "task",
+        "printedPage": 138,
+        "page": 138,
+        "title": "4课 2单元 과제2",
+        "audioTitle": "MP3 39",
+        "audios": [
+          {
+            "id": "part1-39",
+            "title": "MP3 39",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_39.mp3"
+          }
+        ],
+        "trackId": "part1-39",
+        "url": "/static/textbooks/yonsei1/audio/part1/track_39.mp3",
+        "transcript": "마리아\n불고기 맛이 어떻습니까?\n웨이\n좀 싱겁습니다.\n마리아\n그래요? 간장이 여기 있습니다.\n웨이\n어, 이 고추가 아주 맵습니다.\n마리아\n그 김치도 맵습니까?\n웨이\n아니요, 맵지 않습니다. 좀 십니다.\n웨이\n이 식혜는 맛이 어떻습니까?\n마리아\n그건 좀 답니다.",
+        "transcriptSource": "transcript-section",
+        "task": 2
+      }
+    ],
+    "141": [
+      {
+        "id": "c4-u3-dialogue-p141",
+        "unit": 4,
+        "section": 3,
+        "kind": "dialogue",
+        "printedPage": 141,
+        "page": 141,
+        "title": "4课 3单元 第一段对话",
+        "audioTitle": "MP3 40-41",
+        "audios": [
+          {
+            "id": "part1-40",
+            "title": "MP3 40",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_40.mp3"
+          },
+          {
+            "id": "part1-41",
+            "title": "MP3 41",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_41.mp3"
+          }
+        ],
+        "trackId": "part1-40",
+        "url": "/static/textbooks/yonsei1/audio/part1/track_40.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "149": [
+      {
+        "id": "c4-u4-dialogue-p149",
+        "unit": 4,
+        "section": 4,
+        "kind": "dialogue",
+        "printedPage": 149,
+        "page": 149,
+        "title": "4课 4单元 第一段对话",
+        "audioTitle": "MP3 42-43",
+        "audios": [
+          {
+            "id": "part1-42",
+            "title": "MP3 42",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_42.mp3"
+          },
+          {
+            "id": "part1-43",
+            "title": "MP3 43",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_43.mp3"
+          }
+        ],
+        "trackId": "part1-42",
+        "url": "/static/textbooks/yonsei1/audio/part1/track_42.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "154": [
+      {
+        "id": "c4-u4-task-p154",
+        "unit": 4,
+        "section": 4,
+        "kind": "task",
+        "printedPage": 154,
+        "page": 154,
+        "title": "4课 4单元 과제2",
+        "audioTitle": "MP3 44",
+        "audios": [
+          {
+            "id": "part1-44",
+            "title": "MP3 44",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_44.mp3"
+          }
+        ],
+        "trackId": "part1-44",
+        "url": "/static/textbooks/yonsei1/audio/part1/track_44.mp3",
+        "transcript": "1.\n마리아\n뭘 드시겠습니까?\n영수\n전 냉면을 먹고 싶습니다.\n마리아\n냉면은 맵지 않습니까?\n영수\n물냉면은 맵지 않습니다. 마리아 씨는 뭘 드시겠습니까?\n마리아\n그럼 저도 물냉면을 먹겠습니다.\n영수\n네, 여기요. 여기 물냉면 두 그릇이요.\n2.\n웨이\n무슨 음식을 먹을까요?\n미선\n피자도 먹고 싶고 스파게티도 먹고 싶어요.\n웨이\n저도 피자를 좋아합니다. 그럼 피자 하나하고 스파게티 하나 시킬까요?\n미선\n그럽시다. 여기요. 여기 피자 하나하고 스파게티 하나 주십시오.\n3.\n정희\n뭘 드시겠습니까?\n리에\n저는 맥주를 마시고 싶습니다.\n정희\n그럼 저도 맥주를 마시겠습니다.\n리에\n그럼 여기 맥주 두 병 주십시오.",
+        "transcriptSource": "transcript-section",
+        "task": 2
+      }
+    ],
+    "157": [
+      {
+        "id": "c4-u5-reading-p157",
+        "unit": 4,
+        "section": 5,
+        "kind": "reading",
+        "printedPage": 157,
+        "page": 157,
+        "title": "4课 5单元 읽어 봅시다",
+        "audioTitle": "MP3 45",
+        "audios": [
+          {
+            "id": "part1-45",
+            "title": "MP3 45",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_45.mp3"
+          }
+        ],
+        "trackId": "part1-45",
+        "url": "/static/textbooks/yonsei1/audio/part1/track_45.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-reading",
+        "transcriptNote": "听力原文位于当前 PDF 页的 읽어 봅시다 区域。"
+      }
+    ],
+    "163": [
+      {
+        "id": "c5-u1-dialogue-p163",
+        "unit": 5,
+        "section": 1,
+        "kind": "dialogue",
+        "printedPage": 163,
+        "page": 163,
+        "title": "5课 1单元 第一段对话",
+        "audioTitle": "MP3 46-47",
+        "audios": [
+          {
+            "id": "part1-46",
+            "title": "MP3 46",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_46.mp3"
+          },
+          {
+            "id": "part1-47",
+            "title": "MP3 47",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_47.mp3"
+          }
+        ],
+        "trackId": "part1-46",
+        "url": "/static/textbooks/yonsei1/audio/part1/track_46.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "168": [
+      {
+        "id": "c5-u1-task-p168",
+        "unit": 5,
+        "section": 1,
+        "kind": "task",
+        "printedPage": 168,
+        "page": 168,
+        "title": "5课 1单元 과제2",
+        "audioTitle": "MP3 48",
+        "audios": [
+          {
+            "id": "part1-48",
+            "title": "MP3 48",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_48.mp3"
+          }
+        ],
+        "trackId": "part1-48",
+        "url": "/static/textbooks/yonsei1/audio/part1/track_48.mp3",
+        "transcript": "마리아\n선생님, 시간 있으세요?\n선생님\n마리아 씨, 지금 몇 시예요?\n마리아\n3시 반이에요.\n선생님\n그럼 30분쯤 시간이 있어요. 4시에 회의가 있어요.\n마리아\n그럼 잠깐 선생님과 이야기하고 싶어요.\n선생님\n어서 들어오세요.\n마리아\n네, 고맙습니다.",
+        "transcriptSource": "transcript-section",
+        "task": 2
+      }
+    ],
+    "171": [
+      {
+        "id": "c5-u2-dialogue-p171",
+        "unit": 5,
+        "section": 2,
+        "kind": "dialogue",
+        "printedPage": 171,
+        "page": 171,
+        "title": "5课 2单元 第一段对话",
+        "audioTitle": "MP3 49-50",
+        "audios": [
+          {
+            "id": "part1-49",
+            "title": "MP3 49",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_49.mp3"
+          },
+          {
+            "id": "part1-50",
+            "title": "MP3 50",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_50.mp3"
+          }
+        ],
+        "trackId": "part1-49",
+        "url": "/static/textbooks/yonsei1/audio/part1/track_49.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "179": [
+      {
+        "id": "c5-u3-dialogue-p179",
+        "unit": 5,
+        "section": 3,
+        "kind": "dialogue",
+        "printedPage": 179,
+        "page": 179,
+        "title": "5课 3单元 第一段对话",
+        "audioTitle": "MP3 51-52",
+        "audios": [
+          {
+            "id": "part1-51",
+            "title": "MP3 51",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_51.mp3"
+          },
+          {
+            "id": "part1-52",
+            "title": "MP3 52",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_52.mp3"
+          }
+        ],
+        "trackId": "part1-51",
+        "url": "/static/textbooks/yonsei1/audio/part1/track_51.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "183": [
+      {
+        "id": "c5-u3-task-p183",
+        "unit": 5,
+        "section": 3,
+        "kind": "task",
+        "printedPage": 183,
+        "page": 183,
+        "title": "5课 3单元 과제1",
+        "audioTitle": "MP3 53",
+        "audios": [
+          {
+            "id": "part1-53",
+            "title": "MP3 53",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_53.mp3"
+          }
+        ],
+        "trackId": "part1-53",
+        "url": "/static/textbooks/yonsei1/audio/part1/track_53.mp3",
+        "transcript": "저는 날마다 6시 반에 일어납니다.\n아침에 커피를 마시고 신문을 읽습니다.\n그리고 7시에 세수를 합니다. 7시 반에 아침을 먹습니다.\n8시에 버스를 탑니다. 9시에 학교에 갑니다.\n수업은 9시부터 1시까지 있습니다.\n1시에 친구들하고 같이 식당에서 점심을 먹습니다.\n3시에 집에 갑니다.\n조금 잡니다. 그리고 6시에 숙제를 합니다.\n8시에 텔레비전을 봅니다. 10시에 잡니다.",
+        "transcriptSource": "transcript-section",
+        "task": 1
+      }
+    ],
+    "187": [
+      {
+        "id": "c5-u4-dialogue-p187",
+        "unit": 5,
+        "section": 4,
+        "kind": "dialogue",
+        "printedPage": 187,
+        "page": 187,
+        "title": "5课 4单元 第一段对话",
+        "audioTitle": "MP3 54-55",
+        "audios": [
+          {
+            "id": "part1-54",
+            "title": "MP3 54",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_54.mp3"
+          },
+          {
+            "id": "part1-55",
+            "title": "MP3 55",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_55.mp3"
+          }
+        ],
+        "trackId": "part1-54",
+        "url": "/static/textbooks/yonsei1/audio/part1/track_54.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "191": [
+      {
+        "id": "c5-u4-task-p191",
+        "unit": 5,
+        "section": 4,
+        "kind": "task",
+        "printedPage": 191,
+        "page": 191,
+        "title": "5课 4单元 과제1",
+        "audioTitle": "MP3 56",
+        "audios": [
+          {
+            "id": "part1-56",
+            "title": "MP3 56",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_56.mp3"
+          }
+        ],
+        "trackId": "part1-56",
+        "url": "/static/textbooks/yonsei1/audio/part1/track_56.mp3",
+        "transcript": "미선\n어제 무엇을 했어요?\n제임스\n친구를 만났어요.\n미선\n몇 시에 친구를 만났어요?\n제임스\n1시에 친구를 만났어요.\n미선\n친구하고 무엇을 했어요?\n제임스\n학교 앞 식당에서 점심을 먹고 백화점에 갔어요.\n미선\n백화점에서 무엇을 했어요?\n제임스\n친구는 옷을 사고 저는 구두를 샀어요.\n미선\n몇 시에 집에 왔어요?\n제임스\n9시에 집에 왔어요.\n미선\n몇 시에 주무셨어요?\n제임스\n12시에 잤어요.",
+        "transcriptSource": "transcript-section",
+        "task": 1
+      }
+    ],
+    "195": [
+      {
+        "id": "c5-u5-reading-p195",
+        "unit": 5,
+        "section": 5,
+        "kind": "reading",
+        "printedPage": 195,
+        "page": 195,
+        "title": "5课 5单元 읽어 봅시다",
+        "audioTitle": "MP3 57",
+        "audios": [
+          {
+            "id": "part1-57",
+            "title": "MP3 57",
+            "url": "/static/textbooks/yonsei1/audio/part1/track_57.mp3"
+          }
+        ],
+        "trackId": "part1-57",
+        "url": "/static/textbooks/yonsei1/audio/part1/track_57.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-reading",
+        "transcriptNote": "听力原文位于当前 PDF 页的 읽어 봅시다 区域。"
+      }
+    ],
+    "203": [
+      {
+        "id": "c6-u1-dialogue-p203",
+        "unit": 6,
+        "section": 1,
+        "kind": "dialogue",
+        "printedPage": 203,
+        "page": 203,
+        "title": "6课 1单元 第一段对话",
+        "audioTitle": "MP3 01-02",
+        "audios": [
+          {
+            "id": "part2-01",
+            "title": "MP3 01",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_01.mp3"
+          },
+          {
+            "id": "part2-02",
+            "title": "MP3 02",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_02.mp3"
+          }
+        ],
+        "trackId": "part2-01",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_01.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "207": [
+      {
+        "id": "c6-u1-task-p207",
+        "unit": 6,
+        "section": 1,
+        "kind": "task",
+        "printedPage": 207,
+        "page": 207,
+        "title": "6课 1单元 과제2",
+        "audioTitle": "MP3 03",
+        "audios": [
+          {
+            "id": "part2-03",
+            "title": "MP3 03",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_03.mp3"
+          }
+        ],
+        "trackId": "part2-03",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_03.mp3",
+        "transcript": "영수\n미선 씨, 뭘 먹고 싶어요?\n미선\n글쎄요, 저는 과일하고 빵을 좋아해요. 영수 씨는 어때요?\n영수\n저도 과일하고 빵을 좋아해요. 그럼, 과일하고 빵을 사러 갑시다. 어디에서 살까요?\n미선\n학교 근처 백화점에서 삽시다.\n영수\n백화점은 비싸지 않아요?\n미선\n그렇지만 물건이 많고 좋아요.\n영수\n우리 하숙집 근처 가게도 물건이 많고 좋아요.\n미선\n그 가게는 값이 싸요?\n영수\n네, 아줌마가 친절하고 값도 싸요.\n미선\n그래요? 그 가게에 갑시다.",
+        "transcriptSource": "transcript-section",
+        "task": 2
+      }
+    ],
+    "209": [
+      {
+        "id": "c6-u2-dialogue-p209",
+        "unit": 6,
+        "section": 2,
+        "kind": "dialogue",
+        "printedPage": 209,
+        "page": 209,
+        "title": "6课 2单元 第一段对话",
+        "audioTitle": "MP3 04-05",
+        "audios": [
+          {
+            "id": "part2-04",
+            "title": "MP3 04",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_04.mp3"
+          },
+          {
+            "id": "part2-05",
+            "title": "MP3 05",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_05.mp3"
+          }
+        ],
+        "trackId": "part2-04",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_04.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "214": [
+      {
+        "id": "c6-u2-task-p214",
+        "unit": 6,
+        "section": 2,
+        "kind": "task",
+        "printedPage": 214,
+        "page": 214,
+        "title": "6课 2单元 과제2",
+        "audioTitle": "MP3 06",
+        "audios": [
+          {
+            "id": "part2-06",
+            "title": "MP3 06",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_06.mp3"
+          }
+        ],
+        "trackId": "part2-06",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_06.mp3",
+        "transcript": "주인\n어서 오십시오.\n정희\n가방 좀 보여 주세요.\n주인\n이 가방이 어떻습니까?\n정희\n글쎄요, 그건 좀 작아요.\n주인\n작지만 아주 싸고 예쁩니다.\n정희\n저는 저 큰 가방을 사고 싶어요.\n주인\n그 가방은 좀 비쌉니다.\n정희\n그럼 좀 싸고 큰 가방은 없어요?\n주인\n죄송합니다. 다른 가방이 없습니다.\n정희\n그럼, 다음에 다시 오겠습니다.\n주인\n네, 고맙습니다. 다음에 또 오십시오.",
+        "transcriptSource": "transcript-section",
+        "task": 2
+      }
+    ],
+    "217": [
+      {
+        "id": "c6-u3-dialogue-p217",
+        "unit": 6,
+        "section": 3,
+        "kind": "dialogue",
+        "printedPage": 217,
+        "page": 217,
+        "title": "6课 3单元 第一段对话",
+        "audioTitle": "MP3 07-08",
+        "audios": [
+          {
+            "id": "part2-07",
+            "title": "MP3 07",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_07.mp3"
+          },
+          {
+            "id": "part2-08",
+            "title": "MP3 08",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_08.mp3"
+          }
+        ],
+        "trackId": "part2-07",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_07.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "222": [
+      {
+        "id": "c6-u3-task-p222",
+        "unit": 6,
+        "section": 3,
+        "kind": "task",
+        "printedPage": 222,
+        "page": 222,
+        "title": "6课 3单元 과제2",
+        "audioTitle": "MP3 09",
+        "audios": [
+          {
+            "id": "part2-09",
+            "title": "MP3 09",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_09.mp3"
+          }
+        ],
+        "trackId": "part2-09",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_09.mp3",
+        "transcript": "1.\n주인\n어서 오십시오.\n손님\n사과 좋은 거 있어요?\n주인\n있습니다. 이 사과 아주 달고 맛있습니다.\n손님\n얼마예요?\n주인\n한 개에 1,000원입니다.\n손님\n이 귤은 얼마예요?\n주인\n세 개에 1,000원입니다.\n손님\n사과 다섯 개하고 귤 세 개 주세요.\n2.\n손님\n이 스웨터 얼마예요?\n주인\n한 벌에 45,000원입니다. 입어 보십시오.\n손님\n좀 작아요.\n주인\n그럼 저 파란 스웨터는 어떻습니까?\n손님\n얼마예요?\n주인\n50,000원입니다. 아주 좋습니다.\n손님\n그럼 저 파란 스웨터로 주세요.\n3.\n손님\n공책 좀 보여 주세요.\n주인\n여기 있습니다. 구경하십시오.\n손님\n이건 얼마예요?\n주인\n한 권에 800원입니다.\n손님\n볼펜은 얼마예요?\n주인\n한 자루에 1,500원입니다.\n손님\n공책 두 권하고 볼펜 한 자루 주세요.",
+        "transcriptSource": "transcript-section",
+        "task": 2
+      }
+    ],
+    "225": [
+      {
+        "id": "c6-u4-dialogue-p225",
+        "unit": 6,
+        "section": 4,
+        "kind": "dialogue",
+        "printedPage": 225,
+        "page": 225,
+        "title": "6课 4单元 第一段对话",
+        "audioTitle": "MP3 10-11",
+        "audios": [
+          {
+            "id": "part2-10",
+            "title": "MP3 10",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_10.mp3"
+          },
+          {
+            "id": "part2-11",
+            "title": "MP3 11",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_11.mp3"
+          }
+        ],
+        "trackId": "part2-10",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_10.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "233": [
+      {
+        "id": "c6-u5-reading-p233",
+        "unit": 6,
+        "section": 5,
+        "kind": "reading",
+        "printedPage": 233,
+        "page": 233,
+        "title": "6课 5单元 읽어 봅시다",
+        "audioTitle": "MP3 12",
+        "audios": [
+          {
+            "id": "part2-12",
+            "title": "MP3 12",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_12.mp3"
+          }
+        ],
+        "trackId": "part2-12",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_12.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-reading",
+        "transcriptNote": "听力原文位于当前 PDF 页的 읽어 봅시다 区域。"
+      }
+    ],
+    "241": [
+      {
+        "id": "c7-u1-dialogue-p241",
+        "unit": 7,
+        "section": 1,
+        "kind": "dialogue",
+        "printedPage": 241,
+        "page": 241,
+        "title": "7课 1单元 第一段对话",
+        "audioTitle": "MP3 13-14",
+        "audios": [
+          {
+            "id": "part2-13",
+            "title": "MP3 13",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_13.mp3"
+          },
+          {
+            "id": "part2-14",
+            "title": "MP3 14",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_14.mp3"
+          }
+        ],
+        "trackId": "part2-13",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_13.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "247": [
+      {
+        "id": "c7-u1-task-p247",
+        "unit": 7,
+        "section": 1,
+        "kind": "task",
+        "printedPage": 247,
+        "page": 247,
+        "title": "7课 1单元 과제2",
+        "audioTitle": "MP3 15",
+        "audios": [
+          {
+            "id": "part2-15",
+            "title": "MP3 15",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_15.mp3"
+          }
+        ],
+        "trackId": "part2-15",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_15.mp3",
+        "transcript": "웨이\n리에 씨, 집이 어디입니까?\n리에\n학교 근처입니다.\n웨이\n어떻게 갑니까?\n리에\n동문에서 왼쪽으로 올라가서 똑바로 갑니다. 꽃 가게 앞쪽에 우리 하숙집이 있습니다.\n웨이\n리에 씨 집은 산 쪽이네요. 우리 집은 신촌 쪽인데요.\n리에\n학교 정문 쪽입니까?\n웨이\n네, 백화점 근처에 있습니다.\n리에\n어떻게 갑니까?\n웨이\n정문 앞에서 백화점 쪽으로 똑바로 갑니다. 백화점 앞에서 공원 쪽으로 조금 가면 공원 오른쪽에 식당이 있습니다. 그 식당 앞 오피스텔입니다.",
+        "transcriptSource": "transcript-section",
+        "task": 2
+      }
+    ],
+    "251": [
+      {
+        "id": "c7-u2-dialogue-p251",
+        "unit": 7,
+        "section": 2,
+        "kind": "dialogue",
+        "printedPage": 251,
+        "page": 251,
+        "title": "7课 2单元 第一段对话",
+        "audioTitle": "MP3 16-17",
+        "audios": [
+          {
+            "id": "part2-16",
+            "title": "MP3 16",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_16.mp3"
+          },
+          {
+            "id": "part2-17",
+            "title": "MP3 17",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_17.mp3"
+          }
+        ],
+        "trackId": "part2-16",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_16.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "259": [
+      {
+        "id": "c7-u3-dialogue-p259",
+        "unit": 7,
+        "section": 3,
+        "kind": "dialogue",
+        "printedPage": 259,
+        "page": 259,
+        "title": "7课 3单元 第一段对话",
+        "audioTitle": "MP3 18-19",
+        "audios": [
+          {
+            "id": "part2-18",
+            "title": "MP3 18",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_18.mp3"
+          },
+          {
+            "id": "part2-19",
+            "title": "MP3 19",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_19.mp3"
+          }
+        ],
+        "trackId": "part2-18",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_18.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "263": [
+      {
+        "id": "c7-u3-task-p263",
+        "unit": 7,
+        "section": 3,
+        "kind": "task",
+        "printedPage": 263,
+        "page": 263,
+        "title": "7课 3单元 과제1",
+        "audioTitle": "MP3 20",
+        "audios": [
+          {
+            "id": "part2-20",
+            "title": "MP3 20",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_20.mp3"
+          }
+        ],
+        "trackId": "part2-20",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_20.mp3",
+        "transcript": "1.\n가\n이거 광화문 가요?\n나\n네, 갑니다. 타세요.\n가\n광화문까지 멉니까?\n나\n아니요, 여기에서 5분쯤 걸립니다.\n가\n제가 광화문을 잘 모르니까 가르쳐 주세요.\n나\n네, 알겠습니다. 그리고 안내 방송을 하니까 걱정하지 마세요.\n2.\n가\n실례합니다만 이거 동대문 갑니까?\n나\n아니요, 동대문은 저쪽에서 4호선을 타세요.\n가\n고맙습니다. 그런데 동대문까지 얼마나 걸립니까?\n나\n20분쯤 걸립니다.\n3.\n가\n여보세요, 죄송하지만 이거 부산에 갑니까?\n나\n네, 갑니다.\n가\n서울에서 부산역까지 얼마나 걸립니까?\n나\n3시간 반쯤 걸립니다.\n가\n고맙습니다.",
+        "transcriptSource": "transcript-section",
+        "task": 1
+      }
+    ],
+    "267": [
+      {
+        "id": "c7-u4-dialogue-p267",
+        "unit": 7,
+        "section": 4,
+        "kind": "dialogue",
+        "printedPage": 267,
+        "page": 267,
+        "title": "7课 4单元 第一段对话",
+        "audioTitle": "MP3 21-22",
+        "audios": [
+          {
+            "id": "part2-21",
+            "title": "MP3 21",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_21.mp3"
+          },
+          {
+            "id": "part2-22",
+            "title": "MP3 22",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_22.mp3"
+          }
+        ],
+        "trackId": "part2-21",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_21.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "271": [
+      {
+        "id": "c7-u4-task-p271",
+        "unit": 7,
+        "section": 4,
+        "kind": "task",
+        "printedPage": 271,
+        "page": 271,
+        "title": "7课 4单元 과제1",
+        "audioTitle": "MP3 23",
+        "audios": [
+          {
+            "id": "part2-23",
+            "title": "MP3 23",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_23.mp3"
+          }
+        ],
+        "trackId": "part2-23",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_23.mp3",
+        "transcript": "가\n어서 오세요, 어디로 모실까요?\n나\n남대문시장으로 갑시다. 얼마나 걸립니까?\n가\n20분쯤 걸립니다. 그런데 시장 안으로 들어갈까요?\n나\n아니요, 시장 안은 복잡하니까 육교 앞에 세워 주세요.\n가\n네, 다 왔습니다.\n나\n고맙습니다. 얼마입니까?\n가\n5,300원입니다.\n나\n여기 있습니다.\n가\n네, 700원 여기 있습니다. 안녕히 가십시오.",
+        "transcriptSource": "transcript-section",
+        "task": 1
+      }
+    ],
+    "275": [
+      {
+        "id": "c7-u5-reading-p275",
+        "unit": 7,
+        "section": 5,
+        "kind": "reading",
+        "printedPage": 275,
+        "page": 275,
+        "title": "7课 5单元 읽어 봅시다",
+        "audioTitle": "MP3 24",
+        "audios": [
+          {
+            "id": "part2-24",
+            "title": "MP3 24",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_24.mp3"
+          }
+        ],
+        "trackId": "part2-24",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_24.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-reading",
+        "transcriptNote": "听力原文位于当前 PDF 页的 읽어 봅시다 区域。"
+      }
+    ],
+    "283": [
+      {
+        "id": "c8-u1-dialogue-p283",
+        "unit": 8,
+        "section": 1,
+        "kind": "dialogue",
+        "printedPage": 283,
+        "page": 283,
+        "title": "8课 1单元 第一段对话",
+        "audioTitle": "MP3 25-26",
+        "audios": [
+          {
+            "id": "part2-25",
+            "title": "MP3 25",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_25.mp3"
+          },
+          {
+            "id": "part2-26",
+            "title": "MP3 26",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_26.mp3"
+          }
+        ],
+        "trackId": "part2-25",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_25.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "288": [
+      {
+        "id": "c8-u1-task-p288",
+        "unit": 8,
+        "section": 1,
+        "kind": "task",
+        "printedPage": 288,
+        "page": 288,
+        "title": "8课 1单元 과제2",
+        "audioTitle": "MP3 27",
+        "audios": [
+          {
+            "id": "part2-27",
+            "title": "MP3 27",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_27.mp3"
+          }
+        ],
+        "trackId": "part2-27",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_27.mp3",
+        "transcript": "제임스\n마리아 씨, 내일 시간 있으세요?\n마리아\n글쎄요, 지금 잘 모르겠어요. 이따가 저녁에 전화 주세요.\n제임스\n그럼 전화번호 좀 가르쳐 주세요.\n마리아\n네, 집 전화번호는 2124-3479이고 휴대폰은 011-214-3479예요.\n제임스\n저녁에 제가 전화하겠습니다.\n마리아\n네, 그러세요. 아, 9시부터는 밖에서 친구를 만나니까 핸드폰으로 전화하세요.\n제임스\n8시 반쯤 전화할게요.\n마리아\n네, 그러세요. 전화 기다릴게요.",
+        "transcriptSource": "transcript-section",
+        "task": 2
+      }
+    ],
+    "291": [
+      {
+        "id": "c8-u2-dialogue-p291",
+        "unit": 8,
+        "section": 2,
+        "kind": "dialogue",
+        "printedPage": 291,
+        "page": 291,
+        "title": "8课 2单元 第一段对话",
+        "audioTitle": "MP3 28-29",
+        "audios": [
+          {
+            "id": "part2-28",
+            "title": "MP3 28",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_28.mp3"
+          },
+          {
+            "id": "part2-29",
+            "title": "MP3 29",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_29.mp3"
+          }
+        ],
+        "trackId": "part2-28",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_28.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "295": [
+      {
+        "id": "c8-u2-task-p295",
+        "unit": 8,
+        "section": 2,
+        "kind": "task",
+        "printedPage": 295,
+        "page": 295,
+        "title": "8课 2单元 과제2",
+        "audioTitle": "MP3 30",
+        "audios": [
+          {
+            "id": "part2-30",
+            "title": "MP3 30",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_30.mp3"
+          }
+        ],
+        "trackId": "part2-30",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_30.mp3",
+        "transcript": "제임스\n여보세요, 리에 씨 좀 바꿔 주세요.\n아저씨\n몇 번에 거셨어요?\n제임스\n2134-3469 아니에요?\n아저씨\n아닙니다. 잘못 거셨습니다.\n제임스\n정말 죄송합니다.\n리에\n여보세요.\n제임스\n여보세요, 리에 씨 계세요?\n리에\n바로 전데요. 제임스 씨예요?\n제임스\n네, 제임스예요.\n리에\n웬일이세요?\n제임스\n네, 리에 씨, 웨이 씨 전화번호를 몰라서요.\n리에\n집이요? 휴대폰이요?\n제임스\n휴대폰이요. 번호 좀 가르쳐 주세요.\n리에\n잠깐만요. 웨이 씨 휴대폰은 019-315-3894예요.\n제임스\n네, 고맙습니다. 리에 씨. 내일 학교에서 만나요.\n리에\n네, 그래요. 제임스 씨.",
+        "transcriptSource": "transcript-section",
+        "task": 2
+      }
+    ],
+    "297": [
+      {
+        "id": "c8-u3-dialogue-p297",
+        "unit": 8,
+        "section": 3,
+        "kind": "dialogue",
+        "printedPage": 297,
+        "page": 297,
+        "title": "8课 3单元 第一段对话",
+        "audioTitle": "MP3 31-32",
+        "audios": [
+          {
+            "id": "part2-31",
+            "title": "MP3 31",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_31.mp3"
+          },
+          {
+            "id": "part2-32",
+            "title": "MP3 32",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_32.mp3"
+          }
+        ],
+        "trackId": "part2-31",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_31.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "305": [
+      {
+        "id": "c8-u4-dialogue-p305",
+        "unit": 8,
+        "section": 4,
+        "kind": "dialogue",
+        "printedPage": 305,
+        "page": 305,
+        "title": "8课 4单元 第一段对话",
+        "audioTitle": "MP3 33-34",
+        "audios": [
+          {
+            "id": "part2-33",
+            "title": "MP3 33",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_33.mp3"
+          },
+          {
+            "id": "part2-34",
+            "title": "MP3 34",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_34.mp3"
+          }
+        ],
+        "trackId": "part2-33",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_33.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "307": [
+      {
+        "id": "c8-u4-task-p307",
+        "unit": 8,
+        "section": 4,
+        "kind": "task",
+        "printedPage": 307,
+        "page": 307,
+        "title": "8课 4单元 과제1",
+        "audioTitle": "MP3 35",
+        "audios": [
+          {
+            "id": "part2-35",
+            "title": "MP3 35",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_35.mp3"
+          }
+        ],
+        "trackId": "part2-35",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_35.mp3",
+        "transcript": "가\n여보세요?\n나\n여보세요? 연세 하숙집입니까?\n가\n네, 그렇습니다. 누굴 찾으세요?\n나\n실례지만 영수 씨 좀 바꿔 주세요.\n가\n영수 씨 지금 안 계신데요.\n나\n그럼 리에 씨 계십니까?\n가\n리에 씨는 지금 친구와 통화 중인데요.\n나\n그럼 누구 다른 사람 있어요?\n가\n제임스 씨하고 정희 씨가 있어요.\n나\n그럼 제임스 씨 좀 바꿔 주세요.\n가\n네, 잠깐만 기다리세요.",
+        "transcriptSource": "transcript-section",
+        "task": 1
+      }
+    ],
+    "311": [
+      {
+        "id": "c8-u5-reading-p311",
+        "unit": 8,
+        "section": 5,
+        "kind": "reading",
+        "printedPage": 311,
+        "page": 311,
+        "title": "8课 5单元 읽어 봅시다",
+        "audioTitle": "MP3 36",
+        "audios": [
+          {
+            "id": "part2-36",
+            "title": "MP3 36",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_36.mp3"
+          }
+        ],
+        "trackId": "part2-36",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_36.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-reading",
+        "transcriptNote": "听力原文位于当前 PDF 页的 읽어 봅시다 区域。"
+      }
+    ],
+    "319": [
+      {
+        "id": "c9-u1-dialogue-p319",
+        "unit": 9,
+        "section": 1,
+        "kind": "dialogue",
+        "printedPage": 319,
+        "page": 319,
+        "title": "9课 1单元 第一段对话",
+        "audioTitle": "MP3 37-38",
+        "audios": [
+          {
+            "id": "part2-37",
+            "title": "MP3 37",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_37.mp3"
+          },
+          {
+            "id": "part2-38",
+            "title": "MP3 38",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_38.mp3"
+          }
+        ],
+        "trackId": "part2-37",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_37.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "327": [
+      {
+        "id": "c9-u2-dialogue-p327",
+        "unit": 9,
+        "section": 2,
+        "kind": "dialogue",
+        "printedPage": 327,
+        "page": 327,
+        "title": "9课 2单元 第一段对话",
+        "audioTitle": "MP3 39-40",
+        "audios": [
+          {
+            "id": "part2-39",
+            "title": "MP3 39",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_39.mp3"
+          },
+          {
+            "id": "part2-40",
+            "title": "MP3 40",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_40.mp3"
+          }
+        ],
+        "trackId": "part2-39",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_39.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "332": [
+      {
+        "id": "c9-u2-task-p332",
+        "unit": 9,
+        "section": 2,
+        "kind": "task",
+        "printedPage": 332,
+        "page": 332,
+        "title": "9课 2单元 과제2",
+        "audioTitle": "MP3 41",
+        "audios": [
+          {
+            "id": "part2-41",
+            "title": "MP3 41",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_41.mp3"
+          }
+        ],
+        "trackId": "part2-41",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_41.mp3",
+        "transcript": "밤에 남쪽 지방에 비가 내렸습니다.\n전남 지방에는 많은 비가 내리기도 했는데요.\n지금도 비가 조금 오는 곳이 있지만 이번 비는 오늘 오전에 그치겠습니다.\n오늘 서울은 비가 내리지는 않겠고 흐린 후 맑겠습니다.\n전국에 강한 바람이 불겠습니다.\n날씨였습니다.",
+        "transcriptSource": "transcript-section",
+        "task": 2
+      }
+    ],
+    "335": [
+      {
+        "id": "c9-u3-dialogue-p335",
+        "unit": 9,
+        "section": 3,
+        "kind": "dialogue",
+        "printedPage": 335,
+        "page": 335,
+        "title": "9课 3单元 第一段对话",
+        "audioTitle": "MP3 42-43",
+        "audios": [
+          {
+            "id": "part2-42",
+            "title": "MP3 42",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_42.mp3"
+          },
+          {
+            "id": "part2-43",
+            "title": "MP3 43",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_43.mp3"
+          }
+        ],
+        "trackId": "part2-42",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_42.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "343": [
+      {
+        "id": "c9-u4-dialogue-p343",
+        "unit": 9,
+        "section": 4,
+        "kind": "dialogue",
+        "printedPage": 343,
+        "page": 343,
+        "title": "9课 4单元 第一段对话",
+        "audioTitle": "MP3 44-45",
+        "audios": [
+          {
+            "id": "part2-44",
+            "title": "MP3 44",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_44.mp3"
+          },
+          {
+            "id": "part2-45",
+            "title": "MP3 45",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_45.mp3"
+          }
+        ],
+        "trackId": "part2-44",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_44.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "348": [
+      {
+        "id": "c9-u4-task-p348",
+        "unit": 9,
+        "section": 4,
+        "kind": "task",
+        "printedPage": 348,
+        "page": 348,
+        "title": "9课 4单元 과제2",
+        "audioTitle": "MP3 46",
+        "audios": [
+          {
+            "id": "part2-46",
+            "title": "MP3 46",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_46.mp3"
+          }
+        ],
+        "trackId": "part2-46",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_46.mp3",
+        "transcript": "정희\n주말에 무엇을 하실 거예요?\n과장\n날씨가 따뜻해서 가족들과 같이 소풍을 갈 거예요.\n정희\n어디에 갈 거예요?\n과장\n강릉에 갈 거예요. 강릉은 바다도 볼 수 있고 산이 있어서 등산도 할 수 있어요. 요즘 꽃이 많이 펴서 산이 아름다울 것 같아요.\n정희\n수영도 할 거예요?\n과장\n아니요, 아직 좀 추울 것 같아요. 아이들과 배를 타고 바다 구경을 할 거예요.",
+        "transcriptSource": "transcript-section",
+        "task": 2
+      }
+    ],
+    "351": [
+      {
+        "id": "c9-u5-reading-p351",
+        "unit": 9,
+        "section": 5,
+        "kind": "reading",
+        "printedPage": 351,
+        "page": 351,
+        "title": "9课 5单元 읽어 봅시다",
+        "audioTitle": "MP3 47",
+        "audios": [
+          {
+            "id": "part2-47",
+            "title": "MP3 47",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_47.mp3"
+          }
+        ],
+        "trackId": "part2-47",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_47.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-reading",
+        "transcriptNote": "听力原文位于当前 PDF 页的 읽어 봅시다 区域。"
+      }
+    ],
+    "357": [
+      {
+        "id": "c10-u1-dialogue-p357",
+        "unit": 10,
+        "section": 1,
+        "kind": "dialogue",
+        "printedPage": 357,
+        "page": 357,
+        "title": "10课 1单元 第一段对话",
+        "audioTitle": "MP3 48-49",
+        "audios": [
+          {
+            "id": "part2-48",
+            "title": "MP3 48",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_48.mp3"
+          },
+          {
+            "id": "part2-49",
+            "title": "MP3 49",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_49.mp3"
+          }
+        ],
+        "trackId": "part2-48",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_48.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "365": [
+      {
+        "id": "c10-u2-dialogue-p365",
+        "unit": 10,
+        "section": 2,
+        "kind": "dialogue",
+        "printedPage": 365,
+        "page": 365,
+        "title": "10课 2单元 第一段对话",
+        "audioTitle": "MP3 50-51",
+        "audios": [
+          {
+            "id": "part2-50",
+            "title": "MP3 50",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_50.mp3"
+          },
+          {
+            "id": "part2-51",
+            "title": "MP3 51",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_51.mp3"
+          }
+        ],
+        "trackId": "part2-50",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_50.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "370": [
+      {
+        "id": "c10-u2-task-p370",
+        "unit": 10,
+        "section": 2,
+        "kind": "task",
+        "printedPage": 370,
+        "page": 370,
+        "title": "10课 2单元 과제2",
+        "audioTitle": "MP3 52",
+        "audios": [
+          {
+            "id": "part2-52",
+            "title": "MP3 52",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_52.mp3"
+          }
+        ],
+        "trackId": "part2-52",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_52.mp3",
+        "transcript": "웨이\n리에 씨, 토요일 오후에 뭘 하세요?\n리에\n제 취미가 그림 그리기예요. 그래서 공원에 가서 그림을 그리려고 해요.\n웨이\n저도 공원에서 경치를 찍을 거예요. 같이 가요.\n리에\n그래요. 제임스 씨도 같이 가요.\n제임스\n저는 토요일 오후에 집에서 소설책을 읽고 싶어요.\n웨이\n공원에서 책을 읽는 사람들도 많아요. 같이 가요. 공원 옆에는 서울에서 제일 큰 책방도 있어요.\n제임스\n그래요? 그럼 내일 아침에 전화해 주세요.\n리에\n네, 제가 전화할게요. 우리 모두 내일 오후에 공원에서 만나요.",
+        "transcriptSource": "transcript-section",
+        "task": 2
+      }
+    ],
+    "373": [
+      {
+        "id": "c10-u3-dialogue-p373",
+        "unit": 10,
+        "section": 3,
+        "kind": "dialogue",
+        "printedPage": 373,
+        "page": 373,
+        "title": "10课 3单元 第一段对话",
+        "audioTitle": "MP3 53-54",
+        "audios": [
+          {
+            "id": "part2-53",
+            "title": "MP3 53",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_53.mp3"
+          },
+          {
+            "id": "part2-54",
+            "title": "MP3 54",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_54.mp3"
+          }
+        ],
+        "trackId": "part2-53",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_53.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "377": [
+      {
+        "id": "c10-u3-task-p377",
+        "unit": 10,
+        "section": 3,
+        "kind": "task",
+        "printedPage": 377,
+        "page": 377,
+        "title": "10课 3单元 과제1",
+        "audioTitle": "MP3 55",
+        "audios": [
+          {
+            "id": "part2-55",
+            "title": "MP3 55",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_55.mp3"
+          }
+        ],
+        "trackId": "part2-55",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_55.mp3",
+        "transcript": "마리아\n민철 씨, ‘안녕, 형아’ 봤어요?\n민철\n‘안녕, 형아’요? 그게 뭐예요? 책이에요?\n마리아\n아니요, 영화예요. 아직 안 보셨군요.\n민철\n네, 마리아 씨는 보셨어요? 어떤 영화예요?\n마리아\n네, 어제 친구와 같이 봤어요. 가족 영화예요.\n민철\n재미있어요?\n마리아\n네, 슬프고 감동적이에요. 러시아에 있는 가족들이 보고 싶었어요.\n민철\n주인공이 누구예요?\n마리아\n9살 남자 아이예요. 영화 속에서 이 아이의 형이 병 때문에 많이 아파요. 병에 걸린 형과 9살 된 동생, 그리고 부모님이 나와요.\n민철\n형이 죽어요?\n마리아\n그건 말할 수 없어요. 민철 씨도 꼭 보세요. 가족과 같이 보면 더 좋을 거예요.\n민철\n그 영화를 보고 울었어요?\n마리아\n네, 민철 씨도 꼭 손수건을 가지고 가세요.",
+        "transcriptSource": "transcript-section",
+        "task": 1
+      }
+    ],
+    "381": [
+      {
+        "id": "c10-u4-dialogue-p381",
+        "unit": 10,
+        "section": 4,
+        "kind": "dialogue",
+        "printedPage": 381,
+        "page": 381,
+        "title": "10课 4单元 第一段对话",
+        "audioTitle": "MP3 56-57",
+        "audios": [
+          {
+            "id": "part2-56",
+            "title": "MP3 56",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_56.mp3"
+          },
+          {
+            "id": "part2-57",
+            "title": "MP3 57",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_57.mp3"
+          }
+        ],
+        "trackId": "part2-56",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_56.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-dialogue",
+        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+      }
+    ],
+    "389": [
+      {
+        "id": "c10-u5-reading-p389",
+        "unit": 10,
+        "section": 5,
+        "kind": "reading",
+        "printedPage": 389,
+        "page": 389,
+        "title": "10课 5单元 읽어 봅시다",
+        "audioTitle": "MP3 58",
+        "audios": [
+          {
+            "id": "part2-58",
+            "title": "MP3 58",
+            "url": "/static/textbooks/yonsei1/audio/part2/track_58.mp3"
+          }
+        ],
+        "trackId": "part2-58",
+        "url": "/static/textbooks/yonsei1/audio/part2/track_58.mp3",
+        "transcript": "",
+        "transcriptSource": "current-page-reading",
+        "transcriptNote": "听力原文位于当前 PDF 页的 읽어 봅시다 区域。"
+      }
+    ]
+  },
+  "transcripts": [
+    {
+      "id": "c1-u1-task2-p5",
+      "unit": 1,
+      "section": 1,
+      "task": 2,
+      "printedPage": 5,
+      "page": 24,
+      "title": "1课 1单元 任务2",
+      "audioTitle": "任务 2",
+      "transcript": "마리아 안녕하십니까? \n민절 네, 안녕하십니까? \n마리아 제 이름은 마리아입니다. \n민절 저는정민철입니다. \n그리고 제 친구 이영수입니다. \n영수 마리아 씨, 안녕하십니까? \n마리아 네, 영수 씨 반갑습니다.",
+      "source": "script-pages",
+      "audios": [
+        {
+          "id": "part1-03",
+          "title": "1-5单元 曲目 3",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_03.mp3"
+        }
+      ],
+      "trackId": "part1-03",
+      "url": "/static/textbooks/yonsei1/audio/part1/track_03.mp3"
+    },
+    {
+      "id": "c1-u2-task2-p11",
+      "unit": 1,
+      "section": 2,
+      "task": 2,
+      "printedPage": 11,
+      "page": 30,
+      "title": "1课 2单元 任务2",
+      "audioTitle": "任务 2",
+      "transcript": "로라 안녕하십니까? 제 이름은 로라입니다. 캐나다 사람입니다. \n리카 저는 리카입니다. 일본에서 왔습니다. \n세르게이 저는세르게이입니다. 러시아사람입니다, \n유진 반갑습니다. 저는 김유진입니다. 한국 사람입니다.",
+      "source": "script-pages",
+      "audios": [
+        {
+          "id": "part1-05",
+          "title": "1-5单元 曲目 5",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_05.mp3"
+        }
+      ],
+      "trackId": "part1-05",
+      "url": "/static/textbooks/yonsei1/audio/part1/track_05.mp3"
+    },
+    {
+      "id": "c1-u3-task2-p18",
+      "unit": 1,
+      "section": 3,
+      "task": 2,
+      "printedPage": 18,
+      "page": 37,
+      "title": "1课 3单元 任务2",
+      "audioTitle": "任务 2",
+      "transcript": "유진 안녕하십니까? 김유진입니다. \n토마스 반갑습니다. 토마스입니다. \n왕명 저는왕명입니다.그런데‘ 유진씨는학생입니까? \n유진 아니요, 저는 회사원입니다. \n왕명 씨는 무엇을 하십니까? \n왕영 저는 연세대학교 교수입니다. \n토마스 씨는 무엇을 하십니까? \n토마스 저는 은행원입니다.",
+      "source": "script-pages",
+      "audios": [
+        {
+          "id": "part1-08",
+          "title": "1-5单元 曲目 8",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_08.mp3"
+        }
+      ],
+      "trackId": "part1-08",
+      "url": "/static/textbooks/yonsei1/audio/part1/track_08.mp3"
+    },
+    {
+      "id": "c1-u4-task2-p23",
+      "unit": 1,
+      "section": 4,
+      "task": 2,
+      "printedPage": 23,
+      "page": 42,
+      "title": "1课 4单元 任务2",
+      "audioTitle": "任务 2",
+      "transcript": "김 선생님 안녕하십 니까? 제임스 씨. \n제임스 네, 안녕하십니까? 김 선생님, \n김 선생님 학교에 갑니까? \n제임스 네, 학교에 갑니다.",
+      "source": "script-pages",
+      "audios": [
+        {
+          "id": "part1-10",
+          "title": "1-5单元 曲目 10",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_10.mp3"
+        }
+      ],
+      "trackId": "part1-10",
+      "url": "/static/textbooks/yonsei1/audio/part1/track_10.mp3"
+    },
+    {
+      "id": "c2-u1-task2-p37",
+      "unit": 2,
+      "section": 1,
+      "task": 2,
+      "printedPage": 37,
+      "page": 56,
+      "title": "2课 1单元 任务2",
+      "audioTitle": "任务 2",
+      "transcript": "정희 웨이 씨, 이것이 웨이 씨 공책입니까? \n웨이 네, 제공책입니다. \n정희 그럼 저건 리에 씨 공책입니까? \n워1 01 아니요, 제임人 씨 공책입니다. \n여기 이름이 있습니다. \n정희 그럼 저것이 리에 씨 공책입니까? \n워10 1 네,그렇습니다.",
+      "source": "script-pages",
+      "audios": [
+        {
+          "id": "part1-12",
+          "title": "1-5单元 曲目 12",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_12.mp3"
+        }
+      ],
+      "trackId": "part1-12",
+      "url": "/static/textbooks/yonsei1/audio/part1/track_12.mp3"
+    },
+    {
+      "id": "c3-u3-task1-p89",
+      "unit": 3,
+      "section": 3,
+      "task": 1,
+      "printedPage": 89,
+      "page": 108,
+      "title": "3课 3单元 任务1",
+      "audioTitle": "任务 1",
+      "transcript": "제고향은부산입니다. \n부산은 크고 사람들이 많습니다. \n부산에는 바다가 있습니다. 그래서 생선이 많습니다. \n그리고 대학교하고 공원도 있습니다. \n겨울에는 따풋하고 여름에는 시원합니다. \n부산 사람들은 친절하고 따돗합니다. \n저는 제 고향을 아주 사랑합니다.",
+      "source": "script-pages",
+      "audios": [
+        {
+          "id": "part1-24",
+          "title": "1-5单元 曲目 24",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_24.mp3"
+        }
+      ],
+      "trackId": "part1-24",
+      "url": "/static/textbooks/yonsei1/audio/part1/track_24.mp3"
+    },
+    {
+      "id": "c4-u1-task2-p111",
+      "unit": 4,
+      "section": 1,
+      "task": 2,
+      "printedPage": 111,
+      "page": 130,
+      "title": "4课 1单元 任务2",
+      "audioTitle": "任务 2",
+      "transcript": "미선 웨이 씨, 어디에 갈까요? \n웨이 학교 근처 한식집에 갑시다. 깨끗하고 조용합니다. \n미선 저는 정문 앞 중국집을 좋아합니다. 제임스 씨는 어떻습니까? \n제임스 저는학생식당에서 먹습니다. 아주가깝습니다. \n미선 그래요?정문앞중국집은음식이아주많습니다. \n웨이 그럼 우리 오늘 중국집에서 먹을까요? \n제임스 미선 씨, 값이 어떻습니까? \n미선 값이 쌍니다. \n제임스 좋습니다. 중국집에 갑시다.",
+      "source": "script-pages",
+      "audios": [
+        {
+          "id": "part1-35",
+          "title": "1-5单元 曲目 35",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_35.mp3"
+        }
+      ],
+      "trackId": "part1-35",
+      "url": "/static/textbooks/yonsei1/audio/part1/track_35.mp3"
+    },
+    {
+      "id": "c4-u2-task2-p119",
+      "unit": 4,
+      "section": 2,
+      "task": 2,
+      "printedPage": 119,
+      "page": 138,
+      "title": "4课 2单元 任务2",
+      "audioTitle": "任务 2",
+      "transcript": "마리아 불고기 맛이 어떻습니까? \n웨이 좀싱겁습니다. \n마리아 그래요? 간장이 여기 있습니다. \n웨이 어, 이 고추가 아주 랩습니다. \n마리아 씨, 그 김치도 랩습니까? \n마리아 아니요, 랩지 않습니다. 좀 십니다. \n웨이 이 식혜는 맛이 어떻습니까? \n마리아 그건좀답니다.",
+      "source": "script-pages",
+      "audios": [
+        {
+          "id": "part1-38",
+          "title": "1-5单元 曲目 38",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_38.mp3"
+        }
+      ],
+      "trackId": "part1-38",
+      "url": "/static/textbooks/yonsei1/audio/part1/track_38.mp3"
+    },
+    {
+      "id": "c4-u4-task2-p135",
+      "unit": 4,
+      "section": 4,
+      "task": 2,
+      "printedPage": 135,
+      "page": 154,
+      "title": "4课 4单元 任务2",
+      "audioTitle": "任务 2",
+      "transcript": "마리아 뭘 드시겠습니까? \n영수 전 냉면을 먹고 싶습니다. \n마리아 냉면은 랩지 않습니까? \n영수 물냉면은 랩지 않습니다. \n마리아 씨는 뭘 드시겠습니까? \n마리아 그럼 저도 물냉면을 먹겠습니다. \n영수 네, 여기요. 여기 물냉면 두 그룻이요. \n2. \n웨이 무슨 음식을 먹을까요? \n미선 피자도 먹고 싶고 스파게티도 먹고 싶어요, \n웨이 저도 피자를 좋아합니다. 그럼 피자 하나하고 스따게티 하나 시킬까요? \n미선 그럽시다. 여기요. 여기 피자 하나하고 스파게티 하나 주십시오. \n \n3. \n정희 뭘드시겠습니까? \n리에 저는 맥주를 마시고 싶습니다. \n정희 그럼 저도 맥주를 마시겠습니다. \n리에 그럼 여기 맥주 두 병 주십시오,",
+      "source": "script-pages",
+      "audios": [
+        {
+          "id": "part1-43",
+          "title": "1-5单元 曲目 43",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_43.mp3"
+        }
+      ],
+      "trackId": "part1-43",
+      "url": "/static/textbooks/yonsei1/audio/part1/track_43.mp3"
+    },
+    {
+      "id": "c5-u1-task2-p149",
+      "unit": 5,
+      "section": 1,
+      "task": 2,
+      "printedPage": 149,
+      "page": 168,
+      "title": "5课 1单元 任务2",
+      "audioTitle": "任务 2",
+      "transcript": "마리아 선생님, 시간 있으세요? \n선생님 마리아 씨, 지금 몇 시 예요? \n마리아 3시 반이에요. \n선생님 그럼 30분쯤 시간이 있어요. 4시에 회의가 있어요. \n마리아 그럼 잠깐 선생님과 이야기하고 싶어요. \n선생님 어서 들어오세요. \n마리아 네, 고맙습니다.",
+      "source": "script-pages",
+      "audios": [
+        {
+          "id": "part1-46",
+          "title": "1-5单元 曲目 46",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_46.mp3"
+        }
+      ],
+      "trackId": "part1-46",
+      "url": "/static/textbooks/yonsei1/audio/part1/track_46.mp3"
+    },
+    {
+      "id": "c5-u3-task1-p164",
+      "unit": 5,
+      "section": 3,
+      "task": 1,
+      "printedPage": 164,
+      "page": 183,
+      "title": "5课 3单元 任务1",
+      "audioTitle": "任务 1",
+      "transcript": "저는 날마다 6시 반에 일어납니다. \n아침에 커피를 마시고 신문을 읽습니다. \n그리고 7시에 세수를합니다, 7시 반에 아침을 먹습니다. \n8시에 버스를탑니다, 9시에 학교에 갑니다. \n수업은 9시부터 1시까지 있습니다. \n1시에 친구들하고 같이 식당에서 점심을 먹습니다. \n3시에집에갑니다. \n조금 잡니다. 그리고 6시에 숙제를 합니다. \n8시에 텔레비전을 봅니다. 10시에 잡니다.",
+      "source": "script-pages",
+      "audios": [
+        {
+          "id": "part1-51",
+          "title": "1-5单元 曲目 51",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_51.mp3"
+        }
+      ],
+      "trackId": "part1-51",
+      "url": "/static/textbooks/yonsei1/audio/part1/track_51.mp3"
+    },
+    {
+      "id": "c5-u4-task1-p172",
+      "unit": 5,
+      "section": 4,
+      "task": 1,
+      "printedPage": 172,
+      "page": 191,
+      "title": "5课 4单元 任务1",
+      "audioTitle": "任务 1",
+      "transcript": "미선 어제무엇을했어 요? \n제임스 친구를만났어요. \n미선 몇 시에 친구를 만났어요? \n제임스 1시 에 친구를 만났어요. \n미선 친구하고 무엇을 했어요? \n제임스 학교 앞 식당에서 점심을 먹고 백화점에 갔어요. \n미선 백화점 에서 무엇을 했어요? \n제임스 친구는 옷을 사고 저는 구두를 샀어요. \n미선 몇시에집에왔어요? \n제임스 9시에집에왔어요 \n미선 몇시 에 주무셨어요? \n제임스 12시에갔어 요.",
+      "source": "script-pages",
+      "audios": [
+        {
+          "id": "part1-54",
+          "title": "1-5单元 曲目 54",
+          "url": "/static/textbooks/yonsei1/audio/part1/track_54.mp3"
+        }
+      ],
+      "trackId": "part1-54",
+      "url": "/static/textbooks/yonsei1/audio/part1/track_54.mp3"
+    },
+    {
+      "id": "c6-u1-task2-p188",
+      "unit": 6,
+      "section": 1,
+      "task": 2,
+      "printedPage": 188,
+      "page": 207,
+      "title": "6课 1单元 任务2",
+      "audioTitle": "任务 2",
+      "transcript": "영수 미선 씨, 뭘 먹고 싶어요? \n미선 글쩨요, 저는 과일하고 빵을 좋아해요. 영수 씨는 어때요? \n영수 저도 과일하고 빵을 좋아해요. 그렴, 과일하고 빵을 사러 갑시다. \n어디에서살까요? \n미선 학교근처 백화점 에 서 삽시다. \n영수 백화점은 비싸지 않아요? \n미선 그렇지만 물건이 많고 좋아요. \n영수 우리 하숙집 근처 가게도 물건이 많고 좋아요. \n미선 그 가게는 값이 싸요? \n영수 네, 아줌마가 친절하고 값도 싸요, \n미선 그래요? 그 가게에 갑시다.",
+      "source": "script-pages",
+      "audios": [
+        {
+          "id": "part2-01",
+          "title": "6-10单元 曲目 1",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_01.mp3"
+        }
+      ],
+      "trackId": "part2-01",
+      "url": "/static/textbooks/yonsei1/audio/part2/track_01.mp3"
+    },
+    {
+      "id": "c6-u2-task2-p195",
+      "unit": 6,
+      "section": 2,
+      "task": 2,
+      "printedPage": 195,
+      "page": 214,
+      "title": "6课 2单元 任务2",
+      "audioTitle": "任务 2",
+      "transcript": "주인 어서 오십시오. \n정회 가방좀보여주세요. \n주인 이 가방이 어떻습니까? \n정회 글쩨요, 그건 좀 작아요. \n주인 작지만아주싸고예뽑니다. \n정회 저는 저 큰 가방을 사고‘ 싶어요, \n주인 그가방은좀비쌀니다. \n정회 그럼 좀 싸고 큰 가방은 없어요? \n주인 죄송합니다. 다른 가방이 없습니다. \n정희 그렴, 다음에 다시 오겠습니다. \n~‘-。‘-;| 네, 고맙습니다. 다음에 또 오십시오. \n6 과 3 항 과제 2 (p. \n ) \n주인 어서 오십시오. \n손님 사과좋은거 있어요? \n?。L」, 있습니다. 이 사과 아주 달고 맛있습니다. \n손님 얼마예요? \n주인 한 개에 1,\n 원입니다. \n손님 이률은얼마예요? \n주인 세 개에 1,\n 원입니다, \n슨님 사과다섯개하고률세개주세요. \n \n2. \n손님 \n주민 \n손님 \n주인 \n손님 \n주인 \n손님 \n3. \n손님 \n주인 \n손님 \n주인 \n손님 \n주인 \n손님 \n이스웨터 얼마예요? \n한 벌에 45,\n원입니다. 입어 보십시오. \n좀작아요. \n그럼 저 따란 스웨터는 어떻습니까? \n얼마예요? \n50,\n원입니다. 아주 좋습니다. \n그럼 저 파란 스웨터로 주세요. \n공책좀보여주세요. \n여기 있습니다. 구경하십시오. \n이건 얼마예요? \n한 권에 \n원입니다. \n볼펜은얼마예요? \n한자루에 1,\n 원입니다. \n공책 두 권하고 볼펜 한 자루 주세요.",
+      "source": "script-pages",
+      "audios": [
+        {
+          "id": "part2-04",
+          "title": "6-10单元 曲目 4",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_04.mp3"
+        }
+      ],
+      "trackId": "part2-04",
+      "url": "/static/textbooks/yonsei1/audio/part2/track_04.mp3"
+    },
+    {
+      "id": "c7-u1-task2-p228",
+      "unit": 7,
+      "section": 1,
+      "task": 2,
+      "printedPage": 228,
+      "page": 247,
+      "title": "7课 1单元 任务2",
+      "audioTitle": "任务 2",
+      "transcript": "입|이 리에 씨, 집이 어디입니까? \n리에 학교근처입니다. \n웨이 어떻게 갑니까? \n리에 동문에서 왼쪽으로 올라가서 똑바로 갑니다. \n꽃 가게 앞쪽에 우리 하숙집이 있습니다. \n웨이 리에 씨 집은 산 쪽이네요. 우리 집은 신촌 쪽인데요. \n리에 학교 정문 쪽입니까? \n웨이 네, 백화점 근처에 있습니다. \n리에 어떻게갑니까? \n웨이 정문 앞에서 백화점 쪽으로 똑바로 갑니다. \n백화점 앞에서 공원 쪽으로 조금 가면 공원 오른쪽에 식당이 있습니다. 그 \n식당 앞 오피 스텔입니다.",
+      "source": "script-pages",
+      "audios": [
+        {
+          "id": "part2-12",
+          "title": "6-10单元 曲目 12",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_12.mp3"
+        }
+      ],
+      "trackId": "part2-12",
+      "url": "/static/textbooks/yonsei1/audio/part2/track_12.mp3"
+    },
+    {
+      "id": "c7-u3-task1-p244",
+      "unit": 7,
+      "section": 3,
+      "task": 1,
+      "printedPage": 244,
+      "page": 263,
+      "title": "7课 3单元 任务1",
+      "audioTitle": "任务 1",
+      "transcript": "가 이거광화문가요? \n나 네,갑니다.타세요. \n가 광화문까지 법니까? \n나 아니요, 여기에서 5분쯤 걸립니다. \n가 제가 광화문을 잘 모 E 니까 가르쳐 주세요. \n나 네, 알겠습니다. 그리고 안내 방송을 하니까 걱정하지 마세요. \n2. \n가 실례합니다만 이거 동대문 갑니까? \n나 아니요, 동대문은 저쪽에서 4호션을 타세요. \n가 고맙습나다, 그런데 동대문까지 얼마나 걸립니까? \n나 20분쯤걸립니다. \n3. \n가 여보세요, 죄송하지만 이거 부산에 갑니까? \n나 네,갑니다. \n가 서울에서 부산역까지 얼마나 걸립니까? \n나 3시간반쯤걸립니다. \n가 고맙습니다.",
+      "source": "script-pages",
+      "audios": [
+        {
+          "id": "part2-17",
+          "title": "6-10单元 曲目 17",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_17.mp3"
+        }
+      ],
+      "trackId": "part2-17",
+      "url": "/static/textbooks/yonsei1/audio/part2/track_17.mp3"
+    },
+    {
+      "id": "c7-u4-task1-p252",
+      "unit": 7,
+      "section": 4,
+      "task": 1,
+      "printedPage": 252,
+      "page": 271,
+      "title": "7课 4单元 任务1",
+      "audioTitle": "任务 1",
+      "transcript": "가 어서 오세요, 어디로 모실까요? \n나 남대문시장으로 갑시다. 얼마나 결렵 니까? \n가 20분쯤 걸립니다. 그런데 시장 안으로 들어갈까요? \n나 아니요, 시장 안은 복잡하니까 육교 앞에 세워 주세요. \n가 네,다왔습니다. \n나 고맙습니다. 얼마입니까? \n가 5,\n원입니다. \n나 여기 있습니다. \n가 네, \n 원 여기 있습니다. 안녕히 가십시오.",
+      "source": "script-pages",
+      "audios": [
+        {
+          "id": "part2-20",
+          "title": "6-10单元 曲目 20",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_20.mp3"
+        }
+      ],
+      "trackId": "part2-20",
+      "url": "/static/textbooks/yonsei1/audio/part2/track_20.mp3"
+    },
+    {
+      "id": "c8-u1-task2-p269",
+      "unit": 8,
+      "section": 1,
+      "task": 2,
+      "printedPage": 269,
+      "page": 288,
+      "title": "8课 1单元 任务2",
+      "audioTitle": "任务 2",
+      "transcript": "제임스 마리아 씨, 내일 시간 있으세요? \n마리아 글째요, 지금 잘 모르겠어요. 이따가 저녁에 전화 주세요. \n제임스 그럼 전화번호 좀 가르쳐 주세요. \n마리아 네, 집 전화번호는 \n4-\n9 이고 휴대폰은 \n-\n-34 79 예요, \n제임스 저녁에 제가 전화하겠습니다. \n마리아 네, 그러세요. 아, 9시부터는 밖에서 친구를 만나니까 핸드폰으로 전화하세요. \n제임스 8시 반 좀 전화할게요. \n마리아 네, 그러세요. 전화기다릴게요.",
+      "source": "script-pages",
+      "audios": [
+        {
+          "id": "part2-24",
+          "title": "6-10单元 曲目 24",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_24.mp3"
+        }
+      ],
+      "trackId": "part2-24",
+      "url": "/static/textbooks/yonsei1/audio/part2/track_24.mp3"
+    },
+    {
+      "id": "c8-u2-task2-p276",
+      "unit": 8,
+      "section": 2,
+      "task": 2,
+      "printedPage": 276,
+      "page": 295,
+      "title": "8课 2单元 任务2",
+      "audioTitle": "任务 2",
+      "transcript": "제임스 여보세요, 리에 씨 좀 바꿔 주세요. \n아저씨 몇 번에 거셨어요? \n제임스 \n4-\n9 아니 에요? \n아저씨 아닙니다. 잘못 거셨습니다. \n제임스 정말죄송합니다. \n리에 여보세요. \n제임스 여보세요, 리에 씨 계세요? \n리메 바로 전데요. 제임 λ 씨예요? \n제임스 네, 제임 λ 예요. \n리어| 웬일이세요? \n제임스 네, 리에 씨, 웨이 씨 전화번호를 몰라서요. \n리에 집이요?휴대폰이요? \n제임스 휴대폰이요. 변호 좀 가르쳐 주세요, \n리에 잠깐만요. 웨이 씨 휴대폰은 \n-\n-\n4예요. \n제임스 네, 고맙습니다. 리에 씨. 내 일 학교에서 만나요, \n\"- I 어| 네, 그래요. 제임人 씨 .",
+      "source": "script-pages",
+      "audios": [
+        {
+          "id": "part2-27",
+          "title": "6-10单元 曲目 27",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_27.mp3"
+        }
+      ],
+      "trackId": "part2-27",
+      "url": "/static/textbooks/yonsei1/audio/part2/track_27.mp3"
+    },
+    {
+      "id": "c8-u4-task1-p288",
+      "unit": 8,
+      "section": 4,
+      "task": 1,
+      "printedPage": 288,
+      "page": 307,
+      "title": "8课 4单元 任务1",
+      "audioTitle": "任务 1",
+      "transcript": "가 여보세요? \n나 여보세요? 연세 하숙집입니깨 \n가 네, 그렇습니다. 누굴 찾으세요? \n나 실례지만 영수 씨 좀 바꿔 주세요. \n가 영수 씨 지금 안 계신데요. \n나 그럼 리에 씨 계십니까? \n가 리에 씨는 지금 친구와 통화 중인데요. \n나 그럼 누구 다른 사람 있어요? \n가 제임 λ 씨하고 정희 씨가 있어요. \n나 그럼 제임 λ 씨 좀 바꿔 주세요. \n가 네, 잠깐만 기다리세요.",
+      "source": "script-pages",
+      "audios": [
+        {
+          "id": "part2-32",
+          "title": "6-10单元 曲目 32",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_32.mp3"
+        }
+      ],
+      "trackId": "part2-32",
+      "url": "/static/textbooks/yonsei1/audio/part2/track_32.mp3"
+    },
+    {
+      "id": "c9-u2-task2-p313",
+      "unit": 9,
+      "section": 2,
+      "task": 2,
+      "printedPage": 313,
+      "page": 332,
+      "title": "9课 2单元 任务2",
+      "audioTitle": "任务 2",
+      "transcript": "밤에 남쪽 지방에 비가 내렸습니다. \n전남 지방에는 많은 비가 내리기도 했는데요. \n지금도 비가조금오는곳이 있지만이번 비는오늘오전에 그치겠습니다. \n오늘 서울은 비가 내리지는 않겠고 흐린 후 맘겠습니다. \n전국에 강한 바람이 불겠습나다. \n날씨였습니다.",
+      "source": "script-pages",
+      "audios": [
+        {
+          "id": "part2-36",
+          "title": "6-10单元 曲目 36",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_36.mp3"
+        }
+      ],
+      "trackId": "part2-36",
+      "url": "/static/textbooks/yonsei1/audio/part2/track_36.mp3"
+    },
+    {
+      "id": "c9-u4-task2-p329",
+      "unit": 9,
+      "section": 4,
+      "task": 2,
+      "printedPage": 329,
+      "page": 348,
+      "title": "9课 4单元 任务2",
+      "audioTitle": "任务 2",
+      "transcript": "정희 주말에 무엇을 하실 거예요? \n과장 날씨가 따뜻해서 가족들과같이 소풍을갈거 예요. \n정희 어디에 갈거 예요? \n과장 강릉에갈거예요. \n강릉은 바다도 볼 수 있고 산이 있어서 등산도 할 수 있어요. \n요즘 꽃이 많이 펴서 산이 아름다울 것 같아요. \n정회 수영도할거예요? \n과장 아니요, 아직 좀 추울 것 같아요. \n아이들과 배를 타고 바다 구경을 할 거예요.",
+      "source": "script-pages",
+      "audios": [
+        {
+          "id": "part2-43",
+          "title": "6-10单元 曲目 43",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_43.mp3"
+        }
+      ],
+      "trackId": "part2-43",
+      "url": "/static/textbooks/yonsei1/audio/part2/track_43.mp3"
+    },
+    {
+      "id": "c10-u2-task2-p351",
+      "unit": 10,
+      "section": 2,
+      "task": 2,
+      "printedPage": 351,
+      "page": 370,
+      "title": "10课 2单元 任务2",
+      "audioTitle": "任务 2",
+      "transcript": "웨이 리에 씨, 토요일 오후에 뭘 하세요? \n리에 제 취미가그림 그리기예요. 그래서 공원에 가서 그림을그리려고해요. \n웨이 저도 공원에서 경치를 찍을 거예요. 같이 가요. \n리에 그래요. 제임스 씨도 같이 가요. \n제입스 저는 토요일 오후에 집에서 소설책을 읽고 싶어요. \n웨이 공원에서 책을 읽는 사람들도 많아요. 같이 가요. \n공원 옆에는 서울에서 제일 큰 책방도 있어요. \n제임스 그래요? 그럼 내일 아침에 전화해 주세요. \n리에 네, 제가 전화할게요. 우리 모두 내일 오후에 공원에서 만나요.",
+      "source": "script-pages",
+      "audios": [
+        {
+          "id": "part2-47",
+          "title": "6-10单元 曲目 47",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_47.mp3"
+        }
+      ],
+      "trackId": "part2-47",
+      "url": "/static/textbooks/yonsei1/audio/part2/track_47.mp3"
+    },
+    {
+      "id": "c10-u3-task1-p358",
+      "unit": 10,
+      "section": 3,
+      "task": 1,
+      "printedPage": 358,
+      "page": 377,
+      "title": "10课 3单元 任务1",
+      "audioTitle": "任务 1",
+      "transcript": "마리아 민철씨, ‘안녕, 형아’ 봤어요? \n민철 ‘안녕, 형아’요? 그게 뭐예요? 책이에요? \n마리아 아니요, 영화예요. 아직 안 보셨군요. \n민절 네, 마리아 씨는 보셨어요? 어떤 영화예요? \n마리아 네, 어제 친구와 같이 봤어요. 가족 영화예요. • \n민절 재미있어요? \n마리아 네, 슬프고 감동적이에요. 러시아에 있는 가족들이 보고 싶었어요 . \n민철 주인공이 누구예요? \n마리아 9살 남자 아이예요. 영화속에서 이 아이의 형이 병 때문에 많이 아파요. \n병에 걸린 형과 9살 된 동생, 그리고 부모님이 나와요. \n민절 형이 죽어요? \n마리아 그건 말할 수 없어요. 민철 씨도 콕 보세요, \n가족과 같이 보면 더 좋을 거예요, \n민철 그 영화를 보고 울었어요? \n마리아 네, 민철 씨도 목 손수건을 가지고 가세요 .",
+      "source": "script-pages",
+      "audios": [
+        {
+          "id": "part2-50",
+          "title": "6-10单元 曲目 50",
+          "url": "/static/textbooks/yonsei1/audio/part2/track_50.mp3"
+        }
+      ],
+      "trackId": "part2-50",
+      "url": "/static/textbooks/yonsei1/audio/part2/track_50.mp3"
+    }
+  ],
+  "notes": "章节菜单按 1-10 课、每课 5 单元生成。每课前四单元第一段对话放两段音频并共用同一原文；任务听力原文来自 PDF 397 页之后的原文区解析。"
+}

@@ -140,6 +140,11 @@ const PHONETIC_SECTIONS = [
 let letterItems = [];
 let selectedLetterIndex = null;
 let playbackRunId = 0;
+let textbookList = [];
+let activeTextbook = null;
+let activeTextbookPdf = null;
+let activeTextbookPage = 1;
+let activeTextbookRenderTask = null;
 
 // 保存当前正在做“片段循环”的结束时间，timeupdate 事件里会用到。
 let currentLoopEnd = 0;
@@ -183,6 +188,143 @@ async function api(url, options = {}) {
 }
 
 
+function escapeHtml(value) {
+  return String(value || "").replace(/[&<>"']/g, (char) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;",
+  }[char]));
+}
+
+
+function formatTranscriptHtml(transcript) {
+  const speakerPattern = /^(?:김 선생님|선생님|아저씨|마리아|리에|웨이|제임스|민철|민절|정희|정회|미선|영수|유진|로라|리카|세르게이|토마스|왕명|왕영|과장|주인|주민|손님|슨님|가|나)$/;
+  const speakerPrefixPattern = /^((?:김 선생님|선생님|아저씨|마리아|리에|웨이|제임스|민철|민절|정희|정회|미선|영수|유진|로라|리카|세르게이|토마스|왕명|왕영|과장|주인|주민|손님|슨님|가|나))\s+(?!씨(?:\b|[가-힣,.，、]))(.+)$/;
+  const sectionPattern = /^\d+\.$/;
+  const suffixLinePattern = /^(?:씨[,.，、]?|요[,.，、]?|예요[,.，、]?|입니다[,.，、]?)/;
+  const lines = String(transcript || "")
+    .split(/\n+/)
+    .map((line) => line.trim())
+    .filter(Boolean);
+  const blocks = [];
+
+  for (let index = 0; index < lines.length; index += 1) {
+    const line = lines[index];
+    if (speakerPattern.test(line) && lines[index + 1]) {
+      if (speakerPattern.test(lines[index + 1]) && suffixLinePattern.test(lines[index + 2] || "")) {
+        blocks.push({ speaker: line, text: `${lines[index + 1]} ${lines[index + 2]}` });
+        index += 2;
+        continue;
+      }
+
+      const utterance = [];
+      index += 1;
+      while (index < lines.length && !speakerPattern.test(lines[index]) && !speakerPrefixPattern.test(lines[index]) && !sectionPattern.test(lines[index])) {
+        utterance.push(lines[index]);
+        index += 1;
+      }
+      index -= 1;
+      blocks.push({ speaker: line, text: utterance.join(" ") });
+      continue;
+    }
+
+    const speakerMatch = line.match(speakerPrefixPattern);
+    if (speakerMatch) {
+      blocks.push({ speaker: speakerMatch[1], text: speakerMatch[2] });
+    } else {
+      blocks.push({ text: line });
+    }
+  }
+
+  return blocks.map((block) => {
+    if (!block.speaker) {
+      if (sectionPattern.test(block.text)) {
+        return `<div class="transcript-section-number">${escapeHtml(block.text)}</div>`;
+      }
+
+      return `<div class="transcript-line"><span>${escapeHtml(block.text)}</span></div>`;
+    }
+
+    return `
+      <div class="transcript-line">
+        <strong class="transcript-speaker">${escapeHtml(block.speaker)}</strong>
+        <span>${escapeHtml(block.text)}</span>
+      </div>
+    `;
+  })
+    .join("");
+}
+
+
+function formatAudioTime(seconds) {
+  if (!Number.isFinite(seconds) || seconds < 0) {
+    return "0:00";
+  }
+
+  const totalSeconds = Math.floor(seconds);
+  const minutes = Math.floor(totalSeconds / 60);
+  const restSeconds = String(totalSeconds % 60).padStart(2, "0");
+  return `${minutes}:${restSeconds}`;
+}
+
+
+function getAudioButtonLabel(audios, index) {
+  return audios.length > 1 ? `播放听力${index + 1}` : "播放听力";
+}
+
+
+function setRangeFill(input, value = Number(input.value) || 0) {
+  input.style.setProperty("--range-fill", `${Math.min(Math.max(value, 0), 100)}%`);
+}
+
+
+function syncMaterialAudioControls() {
+  const currentSrc = player.currentSrc || player.getAttribute("src") || "";
+  const duration = Number.isFinite(player.duration) ? player.duration : 0;
+  const currentTime = Number.isFinite(player.currentTime) ? player.currentTime : 0;
+  const progressValue = duration > 0 ? (currentTime / duration) * 100 : 0;
+
+  document.querySelectorAll(".audio-card").forEach((card) => {
+    const isActive = Boolean(currentSrc) && Array.from(card.querySelectorAll("[data-audio]")).some((button) => {
+      const url = button.dataset.audio || "";
+      return currentSrc.endsWith(url) || currentSrc === url;
+    });
+    const progress = card.querySelector("[data-audio-progress]");
+    const time = card.querySelector("[data-audio-time]");
+    const volume = card.querySelector("[data-audio-volume]");
+    const muteButton = card.querySelector("[data-audio-mute]");
+    const pauseButton = card.querySelector("[data-audio-pause]");
+
+    card.classList.toggle("is-playing", isActive && !player.paused);
+    if (progress && !progress.dataset.seeking) {
+      const nextValue = isActive ? progressValue : 0;
+      progress.value = String(nextValue);
+      setRangeFill(progress, nextValue);
+      progress.disabled = !isActive || duration <= 0;
+    }
+    if (time) {
+      time.textContent = isActive ? `${formatAudioTime(currentTime)} / ${formatAudioTime(duration)}` : "0:00 / 0:00";
+    }
+    if (volume) {
+      const volumeValue = Math.round(player.volume * 100);
+      volume.value = String(volumeValue);
+      setRangeFill(volume, volumeValue);
+    }
+    if (muteButton) {
+      muteButton.setAttribute("aria-label", player.muted ? "取消静音" : "静音");
+      muteButton.classList.toggle("is-muted", player.muted || player.volume === 0);
+    }
+    if (pauseButton) {
+      pauseButton.disabled = !isActive;
+      pauseButton.setAttribute("aria-label", player.paused ? "继续播放" : "暂停听力");
+      pauseButton.classList.toggle("is-paused", isActive && player.paused);
+    }
+  });
+}
+
+
 /**
  * 播放一个音频地址。
  * start/end 用于教材时间轴或句子片段播放。
@@ -194,6 +336,7 @@ function playAudio(audioUrl, start = 0, end = 0, shouldLoop = false, slow = fals
     return;
   }
 
+  const isSameAudio = player.getAttribute("src") === audioUrl || player.currentSrc.endsWith(audioUrl);
   stopPlaybackQueue();
   currentLoopStart = Number(start) || 0;
   currentLoopEnd = Number(end) || 0;
@@ -205,8 +348,11 @@ function playAudio(audioUrl, start = 0, end = 0, shouldLoop = false, slow = fals
   }
 
   player.playbackRate = slow ? 0.75 : 1;
-  player.currentTime = currentLoopStart;
+  if (!isSameAudio || currentLoopStart > 0) {
+    player.currentTime = currentLoopStart;
+  }
   player.play();
+  syncMaterialAudioControls();
 }
 
 
@@ -389,7 +535,15 @@ player.addEventListener("timeupdate", () => {
     player.currentTime = currentLoopStart;
     player.play();
   }
+
+  syncMaterialAudioControls();
 });
+
+player.addEventListener("loadedmetadata", syncMaterialAudioControls);
+player.addEventListener("play", syncMaterialAudioControls);
+player.addEventListener("pause", syncMaterialAudioControls);
+player.addEventListener("ended", syncMaterialAudioControls);
+player.addEventListener("volumechange", syncMaterialAudioControls);
 
 
 /**
@@ -820,57 +974,312 @@ async function loadVocabulary(keyword = "") {
 
 
 /**
- * 加载教材列表。
- * 用户选择教材后，再读取单个教材的完整 content 时间轴。
+ * 加载教材入口列表。
  */
 async function loadMaterials() {
-  const result = await api("/api/materials");
-  const select = document.querySelector("#materialSelect");
-
-  select.innerHTML = result.data.map((item) => (
-    `<option value="${item.id}">${item.title} ${item.chapter || ""}</option>`
-  )).join("");
-
-  if (result.data.length > 0) {
-    await loadMaterial(result.data[0].id);
-  } else {
-    document.querySelector("#materialContent").innerHTML = "<p>还没有教材，请先到管理页新增。</p>";
+  const response = await fetch("/static/textbooks/index.json");
+  if (!response.ok) {
+    throw new Error("教材列表加载失败。");
   }
+
+  const result = await response.json();
+  textbookList = result.textbooks || [];
+  renderTextbookLibrary();
 }
 
 
-/**
- * 加载单个教材，并把每一句渲染成可点击的时间轴项目。
- */
-async function loadMaterial(materialId) {
-  const result = await api(`/api/materials?id=${encodeURIComponent(materialId)}`);
-  const material = result.data;
-  const list = document.querySelector("#materialContent");
+function renderTextbookLibrary() {
+  const library = document.querySelector("#textbookLibrary");
+  const reader = document.querySelector("#textbookReader");
+  reader.hidden = true;
+  library.hidden = false;
 
-  list.innerHTML = material.content.map((line) => `
-    <article class="sentence-card">
+  if (textbookList.length === 0) {
+    library.innerHTML = "<p>还没有教材。</p>";
+    return;
+  }
+
+  library.innerHTML = `
+    <div class="section-title">
       <div>
-        <h3>${line.text}</h3>
-        <div class="meta">${line.start || 0}s - ${line.end || "音频结束"}s</div>
+        <span class="eyebrow">Textbooks</span>
+        <h2>选择教材</h2>
       </div>
-      <button
-        data-audio="${material.audio_url || ""}"
-        data-start="${line.start || 0}"
-        data-end="${line.end || 0}"
-      >播放</button>
-    </article>
+    </div>
+    <div class="textbook-grid">
+      ${textbookList.map((book) => `
+        <button class="textbook-card" type="button" data-manifest="${escapeHtml(book.manifestUrl)}">
+          <strong>${escapeHtml(book.title)}</strong>
+          <span>${escapeHtml(book.subtitle)}</span>
+          <small>${book.courseCount || 0} 课 · ${book.sectionCount || 0} 单元 · ${book.pageCount || 0} 页 · ${book.audioCount || 0} 段听力</small>
+        </button>
+      `).join("")}
+    </div>
+  `;
+
+  library.querySelectorAll(".textbook-card").forEach((card) => {
+    card.addEventListener("click", () => openTextbook(card.dataset.manifest));
+  });
+}
+
+
+async function openTextbook(manifestUrl) {
+  if (!window.pdfjsLib) {
+    throw new Error("PDF 阅读器加载失败，请确认静态资源完整后刷新页面。");
+  }
+
+  window.pdfjsLib.GlobalWorkerOptions.workerSrc = "/static/vendor/pdfjs/pdf.worker.min.js";
+  const response = await fetch(manifestUrl);
+  if (!response.ok) {
+    throw new Error("教材清单加载失败。");
+  }
+
+  activeTextbook = await response.json();
+  activeTextbookPdf = await window.pdfjsLib.getDocument(activeTextbook.pdfUrl).promise;
+  activeTextbookPage = 1;
+
+  document.querySelector("#textbookLibrary").hidden = true;
+  document.querySelector("#textbookReader").hidden = false;
+  document.querySelector("#materialPageInput").max = activeTextbookPdf.numPages;
+  renderChapterMenu();
+  await renderTextbookPage(activeTextbookPage);
+}
+
+
+function renderChapterMenu() {
+  const panel = document.querySelector("#chapterMenuPanel");
+  panel.innerHTML = (activeTextbook.units || []).map((unit) => `
+    <section class="chapter-group">
+      <button class="chapter-unit" type="button" data-page="${unit.startPage}">
+        ${escapeHtml(unit.title)}
+      </button>
+      <div class="chapter-lessons">
+        ${(unit.sections || unit.lessons || []).map((section) => `
+          <button type="button" data-page="${section.page}">
+            ${escapeHtml(section.title)}
+          </button>
+        `).join("")}
+      </div>
+    </section>
   `).join("");
 
-  list.querySelectorAll("button").forEach((button) => {
+  panel.querySelectorAll("[data-page]").forEach((button) => {
     button.addEventListener("click", () => {
-      playAudio(
-        button.dataset.audio,
-        button.dataset.start,
-        button.dataset.end,
-        document.querySelector("#materialLoop").checked,
-      );
+      closeChapterMenu();
+      renderTextbookPage(button.dataset.page);
     });
   });
+}
+
+
+function toggleChapterMenu() {
+  const button = document.querySelector("#chapterMenuButton");
+  const panel = document.querySelector("#chapterMenuPanel");
+  const nextOpen = panel.hidden;
+  panel.hidden = !nextOpen;
+  button.setAttribute("aria-expanded", String(nextOpen));
+}
+
+
+function closeChapterMenu() {
+  document.querySelector("#chapterMenuPanel").hidden = true;
+  document.querySelector("#chapterMenuButton").setAttribute("aria-expanded", "false");
+}
+
+
+async function renderTextbookPage(pageNumber) {
+  if (!activeTextbookPdf) {
+    return;
+  }
+
+  const nextPage = Math.min(Math.max(Number(pageNumber) || 1, 1), activeTextbookPdf.numPages);
+  activeTextbookPage = nextPage;
+
+  if (activeTextbookRenderTask) {
+    activeTextbookRenderTask.cancel();
+  }
+
+  const page = await activeTextbookPdf.getPage(activeTextbookPage);
+  const canvas = document.querySelector("#materialPdfCanvas");
+  const stage = document.querySelector(".pdf-stage");
+  const context = canvas.getContext("2d");
+  const viewport = page.getViewport({ scale: 1 });
+  const stageWidth = Math.max(stage.clientWidth - 28, 320);
+  const scale = Math.min(stageWidth / viewport.width, 1.7);
+  const scaledViewport = page.getViewport({ scale });
+
+  canvas.width = Math.floor(scaledViewport.width);
+  canvas.height = Math.floor(scaledViewport.height);
+  canvas.style.width = `${canvas.width}px`;
+  canvas.style.height = `${canvas.height}px`;
+
+  activeTextbookRenderTask = page.render({ canvasContext: context, viewport: scaledViewport });
+  try {
+    await activeTextbookRenderTask.promise;
+  } catch (error) {
+    if (error.name !== "RenderingCancelledException") {
+      throw error;
+    }
+  } finally {
+    activeTextbookRenderTask = null;
+  }
+
+  syncTextbookControls();
+  renderCurrentPageAudio();
+}
+
+
+function syncTextbookControls() {
+  const total = activeTextbookPdf ? activeTextbookPdf.numPages : activeTextbook.pageCount;
+  document.querySelector("#materialPageInput").value = activeTextbookPage;
+  document.querySelector("#materialPageLabel").textContent = `第 ${activeTextbookPage} / ${total} 页`;
+  document.querySelector("#materialPrevPage").disabled = activeTextbookPage <= 1;
+  document.querySelector("#materialNextPage").disabled = activeTextbookPage >= total;
+}
+
+
+function getCurrentTextbookUnit() {
+  if (!activeTextbook) {
+    return null;
+  }
+
+  return (activeTextbook.units || []).find((unit) => (
+    activeTextbookPage >= unit.startPage && activeTextbookPage <= unit.endPage
+  )) || null;
+}
+
+
+function getCurrentPageAudioItems() {
+  if (!activeTextbook) {
+    return [];
+  }
+
+  return (activeTextbook.pageAudio || {})[String(activeTextbookPage)] || [];
+}
+
+
+function renderCurrentPageAudio() {
+  const unit = getCurrentTextbookUnit();
+  const audioItems = getCurrentPageAudioItems();
+  const title = document.querySelector("#materialAudioTitle");
+  const hint = document.querySelector("#materialAudioHint");
+  const list = document.querySelector("#materialAudioList");
+
+  title.textContent = unit ? unit.title : (activeTextbook?.title || "延世韩国语1").replace(/\s+(?=\d)/g, "");
+  hint.textContent = "";
+  hint.hidden = true;
+
+  if (audioItems.length === 0) {
+    list.innerHTML = "";
+    return;
+  }
+
+  list.innerHTML = audioItems.map((item) => {
+    const audios = item.audios || [{ title: item.audioTitle || "播放", url: item.url || "" }];
+    const transcriptHtml = formatTranscriptHtml(item.transcript);
+
+    return `
+    <article class="audio-card">
+      <div class="audio-card-main">
+        <div>
+          <strong>${escapeHtml(item.title)}</strong>
+        </div>
+        <div class="audio-player-tools" aria-label="听力播放控制">
+          <button class="audio-icon-button audio-pause-button" type="button" data-audio-pause aria-label="暂停听力" disabled>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path class="pause-shape" d="M8 5h3v14H8zM13 5h3v14h-3z"></path>
+              <path class="play-shape" d="M8 5v14l11-7z"></path>
+            </svg>
+          </button>
+          <input type="range" min="0" max="100" value="0" step="0.1" data-audio-progress aria-label="听力进度">
+          <span data-audio-time>0:00 / 0:00</span>
+          <button class="audio-icon-button audio-volume-button" type="button" data-audio-mute aria-label="静音">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 10v4h4l5 4V6L8 10H4z"></path>
+              <path class="volume-wave" d="M16 9a4 4 0 0 1 0 6M18.5 6.5a7.5 7.5 0 0 1 0 11"></path>
+              <path class="volume-muted" d="M16 9l5 5M21 9l-5 5"></path>
+            </svg>
+          </button>
+          <input type="range" min="0" max="100" value="100" step="1" data-audio-volume aria-label="音量">
+        </div>
+        <div class="audio-actions">
+          ${audios.map((audio, index) => `
+            <button type="button" data-audio="${escapeHtml(audio.url || "")}" ${audio.url ? "" : "disabled"}>
+              ${escapeHtml(getAudioButtonLabel(audios, index))}
+            </button>
+          `).join("")}
+        </div>
+      </div>
+      ${transcriptHtml ? `
+        <button class="transcript-toggle" type="button" data-transcript="${escapeHtml(item.id)}">显示听力原文</button>
+        <div id="transcript-${escapeHtml(item.id)}" class="transcript-text" hidden>
+          ${transcriptHtml}
+        </div>
+      ` : item.transcriptNote ? `<p class="transcript-source-note">${escapeHtml(item.transcriptNote)}</p>` : ""}
+    </article>
+  `;
+  }).join("");
+
+  list.querySelectorAll("[data-audio]").forEach((button) => {
+    button.addEventListener("click", () => playAudio(button.dataset.audio));
+  });
+
+  list.querySelectorAll("[data-audio-progress]").forEach((progress) => {
+    setRangeFill(progress);
+    progress.addEventListener("pointerdown", () => {
+      progress.dataset.seeking = "true";
+    });
+    progress.addEventListener("pointerup", () => {
+      delete progress.dataset.seeking;
+      syncMaterialAudioControls();
+    });
+    progress.addEventListener("change", () => {
+      delete progress.dataset.seeking;
+      syncMaterialAudioControls();
+    });
+    progress.addEventListener("input", () => {
+      if (Number.isFinite(player.duration) && player.duration > 0) {
+        player.currentTime = (Number(progress.value) / 100) * player.duration;
+        setRangeFill(progress);
+      }
+    });
+  });
+
+  list.querySelectorAll("[data-audio-volume]").forEach((volume) => {
+    setRangeFill(volume, Number(volume.value));
+    volume.addEventListener("input", () => {
+      player.volume = Math.min(Math.max(Number(volume.value) / 100, 0), 1);
+      player.muted = player.volume === 0;
+      setRangeFill(volume, Number(volume.value));
+    });
+  });
+
+  list.querySelectorAll("[data-audio-mute]").forEach((button) => {
+    button.addEventListener("click", () => {
+      player.muted = !player.muted;
+    });
+  });
+
+  list.querySelectorAll("[data-audio-pause]").forEach((button) => {
+    button.addEventListener("click", () => {
+      if (player.paused) {
+        player.play();
+      } else {
+        player.pause();
+      }
+    });
+  });
+
+  list.querySelectorAll(".transcript-toggle").forEach((button) => {
+    button.addEventListener("click", () => {
+      const transcript = document.getElementById(`transcript-${button.dataset.transcript}`);
+      const nextHidden = !transcript.hidden;
+      transcript.hidden = nextHidden;
+      button.textContent = nextHidden ? "显示听力原文" : "隐藏听力原文";
+    });
+  });
+
+  syncMaterialAudioControls();
 }
 
 
@@ -882,8 +1291,33 @@ function initEvents() {
     loadSentences(event.target.value);
   });
 
-  document.querySelector("#materialSelect").addEventListener("change", (event) => {
-    loadMaterial(event.target.value);
+  document.querySelector("#textbookBackButton").addEventListener("click", () => {
+    stopPlaybackQueue();
+    activeTextbook = null;
+    activeTextbookPdf = null;
+    renderTextbookLibrary();
+  });
+
+  document.querySelector("#materialPrevPage").addEventListener("click", () => {
+    renderTextbookPage(activeTextbookPage - 1);
+  });
+
+  document.querySelector("#materialNextPage").addEventListener("click", () => {
+    renderTextbookPage(activeTextbookPage + 1);
+  });
+
+  document.querySelector("#materialPageInput").addEventListener("change", (event) => {
+    renderTextbookPage(event.target.value);
+  });
+
+  document.querySelector("#materialPageInput").addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      renderTextbookPage(event.target.value);
+    }
+  });
+
+  document.querySelector("#chapterMenuButton").addEventListener("click", () => {
+    toggleChapterMenu();
   });
 
   document.querySelector("#vocabSearch").addEventListener("input", (event) => {
@@ -901,14 +1335,20 @@ document.addEventListener("DOMContentLoaded", async () => {
   initThemeToggle();
   initEvents();
 
-  try {
-    await loadLetters();
-    await loadScenes();
-    await loadVocabulary();
-    await loadMaterials();
-  } catch (error) {
-    // 常见原因是 MySQL 没启动、数据库没创建、pymysql 没安装。
-    console.error(error);
-    alert(`初始化失败：${error.message}`);
+  const startupTasks = [
+    ["音标", loadLetters],
+    ["场景", loadScenes],
+    ["词汇", loadVocabulary],
+    ["教材", loadMaterials],
+  ];
+
+  const results = await Promise.allSettled(startupTasks.map(([, task]) => task()));
+  const failed = results
+    .map((result, index) => ({ result, name: startupTasks[index][0] }))
+    .filter((item) => item.result.status === "rejected");
+
+  if (failed.length > 0) {
+    failed.forEach((item) => console.error(`${item.name}初始化失败`, item.result.reason));
+    alert(`部分模块初始化失败：${failed.map((item) => item.name).join("、")}`);
   }
 });
