@@ -356,6 +356,22 @@ function playAudio(audioUrl, start = 0, end = 0, shouldLoop = false, slow = fals
 }
 
 
+function seekMaterialAudio(progress) {
+  if (!Number.isFinite(player.duration) || player.duration <= 0) {
+    return;
+  }
+
+  const progressValue = Math.min(Math.max(Number(progress.value) || 0, 0), 100);
+  const targetTime = (progressValue / 100) * player.duration;
+  if (typeof player.fastSeek === "function") {
+    player.fastSeek(targetTime);
+  } else {
+    player.currentTime = targetTime;
+  }
+  setRangeFill(progress, progressValue);
+}
+
+
 function stopPlaybackQueue() {
   playbackRunId += 1;
   player.pause();
@@ -1238,10 +1254,7 @@ function renderCurrentPageAudio() {
       syncMaterialAudioControls();
     });
     progress.addEventListener("input", () => {
-      if (Number.isFinite(player.duration) && player.duration > 0) {
-        player.currentTime = (Number(progress.value) / 100) * player.duration;
-        setRangeFill(progress);
-      }
+      seekMaterialAudio(progress);
     });
   });
 
