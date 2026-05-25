@@ -1,9 +1,0 @@
-[phases.setup]
-nixPkgs = ["...", "git-lfs"]
-
-[phases.build]
-cmds = [
-  "git lfs install",
-  "git lfs pull --include='static/textbooks/yonsei1/yonsei-korean-1.pdf'",
-  "test \"$(head -c 5 static/textbooks/yonsei1/yonsei-korean-1.pdf)\" = \"%PDF-\""
-]
