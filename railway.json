@@ -4,7 +4,7 @@
     "builder": "NIXPACKS"
   },
   "deploy": {
-    "startCommand": "HOST=0.0.0.0 python3 server.py",
+    "startCommand": "HOST=0.0.0.0 bash railway-start.sh",
     "restartPolicyType": "ON_FAILURE",
     "restartPolicyMaxRetries": 10
   }
