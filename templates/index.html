@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>韩语句子跟读学习</title>
   <link rel="stylesheet" href="/static/css/style.css">
+  <script src="/static/vendor/pdfjs/pdf.min.js" defer></script>
 </head>
 <body>
   <header class="topbar">
@@ -100,10 +101,7 @@
       </div>
     </section>
 
-    <section class="player-shell" aria-label="音频播放器">
-      <span>播放器</span>
-      <audio id="player" controls></audio>
-    </section>
+    <audio id="player"></audio>
 
     <section id="letters" class="page active">
       <div class="section-title">
@@ -172,17 +170,41 @@
 
 
     <section id="materials" class="page">
-      <div class="section-title">
-        <div>
-          <span class="eyebrow">Timeline</span>
-          <h2>教材时间轴</h2>
+      <div id="textbookLibrary" class="textbook-library"></div>
+      <div id="textbookReader" class="textbook-reader-page" hidden>
+        <div class="reader-header">
+          <button id="textbookBackButton" class="secondary-action" type="button">返回教材</button>
+          <div class="page-jump">
+            <label for="materialPageInput">页码</label>
+            <input id="materialPageInput" type="number" min="1" value="1" inputmode="numeric">
+            <span id="materialPageLabel">第 1 页</span>
+          </div>
+          <div class="chapter-menu">
+            <button id="chapterMenuButton" type="button" aria-expanded="false">章节</button>
+            <div id="chapterMenuPanel" class="chapter-menu-panel" hidden></div>
+          </div>
         </div>
-        <select id="materialSelect"></select>
+
+        <div class="reader-footer">
+          <section class="textbook-audio" aria-label="当前页面听力">
+            <div class="textbook-audio-head">
+              <div>
+                <h3 id="materialAudioTitle">听力</h3>
+              </div>
+              <p id="materialAudioHint" hidden></p>
+            </div>
+            <div id="materialAudioList" class="audio-track-list"></div>
+          </section>
+        </div>
+
+        <div class="pdf-reader-surface">
+          <button id="materialPrevPage" class="page-arrow page-arrow-left" type="button" aria-label="上一页">‹</button>
+          <div class="pdf-stage">
+            <canvas id="materialPdfCanvas"></canvas>
+          </div>
+          <button id="materialNextPage" class="page-arrow page-arrow-right" type="button" aria-label="下一页">›</button>
+        </div>
       </div>
-      <div class="play-options">
-        <label><input type="checkbox" id="materialLoop"> 单句循环</label>
-      </div>
-      <div id="materialContent" class="sentence-list"></div>
     </section>
   </main>
 
