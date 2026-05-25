@@ -6,7 +6,9 @@ cd "$(dirname "$0")"
 
 LFS_INCLUDE_PATTERN="static/textbooks/**/*.pdf"
 YONSEI1_PDF_PATH="static/textbooks/yonsei1/yonsei-korean-1.pdf"
+DEFAULT_YONSEI1_PDF_URL="https://github.com/testerwm/korean_learn/raw/main/static/textbooks/yonsei1/yonsei-korean-1.pdf"
 MIN_PDF_BYTES=10485760
+MIN_FREE_BYTES=367001600
 
 is_lfs_pointer() {
   local file_path="$1"
@@ -73,28 +75,65 @@ is_valid_pdf() {
   head -c 4 "$file_path" | grep -q "%PDF"
 }
 
-download_yonsei_pdf() {
-  if [ -z "${YONSEI1_PDF_URL:-}" ]; then
-    echo "YONSEI1_PDF_URL is not configured; cannot download textbook PDF." >&2
-    return 1
-  fi
+has_enough_disk_space() {
+  local dir_path="$1"
+  local available_kb
+  available_kb=$(df -k "$dir_path" | awk 'NR == 2 {print $4}')
+  [ -n "$available_kb" ] && [ $((available_kb * 1024)) -ge "$MIN_FREE_BYTES" ]
+}
 
-  if ! command -v curl >/dev/null 2>&1; then
-    echo "curl is not available; cannot download textbook PDF." >&2
-    return 1
-  fi
+download_with_python() {
+  local source_url="$1"
+  local output_path="$2"
+
+  python3 - "$source_url" "$output_path" <<'PY'
+import sys
+import urllib.request
+
+source_url, output_path = sys.argv[1], sys.argv[2]
+with urllib.request.urlopen(source_url, timeout=600) as response:
+    with open(output_path, "wb") as output_file:
+        while True:
+            chunk = response.read(1024 * 1024)
+            if not chunk:
+                break
+            output_file.write(chunk)
+PY
+}
+
+download_yonsei_pdf() {
+  local source_url
+  source_url="${YONSEI1_PDF_URL:-$DEFAULT_YONSEI1_PDF_URL}"
 
   local temp_path
   temp_path="${YONSEI1_PDF_PATH}.download"
   mkdir -p "$(dirname "$YONSEI1_PDF_PATH")"
+
+  if [ ! -w "$(dirname "$YONSEI1_PDF_PATH")" ]; then
+    echo "Textbook PDF directory is not writable: $(dirname "$YONSEI1_PDF_PATH")" >&2
+    return 1
+  fi
+
+  if ! has_enough_disk_space "$(dirname "$YONSEI1_PDF_PATH")"; then
+    echo "Not enough free disk space to download textbook PDF. Need at least $MIN_FREE_BYTES bytes." >&2
+    return 1
+  fi
+
   rm -f "$temp_path"
 
-  echo "Downloading Yonsei textbook PDF from YONSEI1_PDF_URL..."
-  curl --fail --location --show-error --silent \
-    --connect-timeout 20 \
-    --max-time 600 \
-    --output "$temp_path" \
-    "$YONSEI1_PDF_URL"
+  echo "Downloading Yonsei textbook PDF..."
+  if command -v curl >/dev/null 2>&1; then
+    curl --fail --location --show-error --silent \
+      --connect-timeout 20 \
+      --max-time 600 \
+      --output "$temp_path" \
+      "$source_url"
+  elif command -v python3 >/dev/null 2>&1; then
+    download_with_python "$source_url" "$temp_path"
+  else
+    echo "Neither curl nor python3 is available; cannot download textbook PDF." >&2
+    return 1
+  fi
 
   if ! is_valid_pdf "$temp_path"; then
     rm -f "$temp_path"
