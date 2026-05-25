@@ -188,13 +188,66 @@ class KoreanLearnHandler(BaseHTTPRequestHandler):
             self.send_json({"error": "文件不存在"}, status=404)
             return
 
-        content = file_path.read_bytes()
+        file_size = file_path.stat().st_size
         content_type = mimetypes.guess_type(str(file_path))[0] or "application/octet-stream"
+        byte_range = self.parse_range_header(self.headers.get("Range"), file_size)
+
+        if byte_range is None and self.headers.get("Range"):
+            self.send_response(416)
+            self.send_header("Content-Range", f"bytes */{file_size}")
+            self.send_header("Accept-Ranges", "bytes")
+            self.end_headers()
+            return
+
+        if byte_range:
+            start, end = byte_range
+            content_length = end - start + 1
+            self.send_response(206)
+            self.send_header("Content-Type", f"{content_type}; charset=utf-8")
+            self.send_header("Content-Length", str(content_length))
+            self.send_header("Content-Range", f"bytes {start}-{end}/{file_size}")
+            self.send_header("Accept-Ranges", "bytes")
+            self.end_headers()
+            with file_path.open("rb") as file:
+                file.seek(start)
+                self.wfile.write(file.read(content_length))
+            return
+
+        content = file_path.read_bytes()
         self.send_response(200)
         self.send_header("Content-Type", f"{content_type}; charset=utf-8")
         self.send_header("Content-Length", str(len(content)))
+        self.send_header("Accept-Ranges", "bytes")
         self.end_headers()
         self.wfile.write(content)
+
+    def parse_range_header(self, range_header, file_size):
+        """解析单段 bytes Range 请求，用于音频拖动播放。"""
+        if not range_header or not range_header.startswith("bytes=") or file_size <= 0:
+            return None
+
+        range_value = range_header.removeprefix("bytes=").split(",", 1)[0].strip()
+        if "-" not in range_value:
+            return None
+
+        start_text, end_text = range_value.split("-", 1)
+        try:
+            if start_text == "":
+                suffix_length = int(end_text)
+                if suffix_length <= 0:
+                    return None
+                start = max(file_size - suffix_length, 0)
+                end = file_size - 1
+            else:
+                start = int(start_text)
+                end = int(end_text) if end_text else file_size - 1
+        except ValueError:
+            return None
+
+        if start < 0 or end < start or start >= file_size:
+            return None
+
+        return start, min(end, file_size - 1)
 
     def send_static_file(self, url_path):
         """

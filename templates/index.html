@@ -159,37 +159,67 @@
       <div id="textbookLibrary" class="textbook-library"></div>
       <div id="textbookReader" class="textbook-reader-page" hidden>
         <div class="reader-header">
-          <button id="textbookBackButton" class="secondary-action" type="button">返回教材</button>
+          <aside class="reader-tools" aria-label="教材阅读工具">
+            <button id="textbookBackButton" class="reader-tool-button" type="button" aria-label="返回教材" title="返回教材">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M15 18l-6-6 6-6"></path>
+                <path d="M20 12H9"></path>
+              </svg>
+            </button>
+            <div class="chapter-menu">
+              <button id="chapterMenuButton" class="reader-tool-button" type="button" aria-expanded="false" aria-label="选择章节" title="选择章节">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 6h14"></path>
+                  <path d="M5 12h14"></path>
+                  <path d="M5 18h14"></path>
+                </svg>
+              </button>
+              <div id="chapterMenuPanel" class="chapter-menu-panel" hidden></div>
+            </div>
+            <button id="readerFocusButton" class="reader-tool-button" type="button" aria-label="放大阅读" title="放大阅读">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 3H3v5"></path>
+                <path d="M16 3h5v5"></path>
+                <path d="M21 16v5h-5"></path>
+                <path d="M3 16v5h5"></path>
+              </svg>
+            </button>
+          </aside>
           <div class="page-jump">
             <label for="materialPageInput">页码</label>
+            <span class="page-prefix">第</span>
             <input id="materialPageInput" type="number" min="1" value="1" inputmode="numeric">
-            <span id="materialPageLabel">第 1 页</span>
+            <span id="materialPageLabel">/ 1 页</span>
           </div>
-          <div class="chapter-menu">
-            <button id="chapterMenuButton" type="button" aria-expanded="false">章节</button>
-            <div id="chapterMenuPanel" class="chapter-menu-panel" hidden></div>
-          </div>
+          <div class="reader-header-spacer" aria-hidden="true"></div>
         </div>
 
-        <div class="reader-footer">
-          <section class="textbook-audio" aria-label="当前页面听力">
-            <div class="textbook-audio-head">
-              <div>
-                <h3 id="materialAudioTitle">听力</h3>
-              </div>
-              <p id="materialAudioHint" hidden></p>
+        <div class="reader-body">
+          <div class="pdf-reader-surface">
+            <button id="materialPrevPage" class="page-arrow page-arrow-left" type="button" aria-label="上一页">‹</button>
+            <div class="pdf-stage">
+              <canvas id="materialPdfCanvas"></canvas>
             </div>
-            <div id="materialAudioList" class="audio-track-list"></div>
-          </section>
+            <button id="materialNextPage" class="page-arrow page-arrow-right" type="button" aria-label="下一页">›</button>
+          </div>
+
+          <aside class="reader-audio-panel">
+            <section class="textbook-audio" aria-label="当前页面听力">
+              <div class="textbook-audio-head">
+                <h3 id="materialAudioTitle">听力</h3>
+                <p id="materialAudioHint" hidden></p>
+              </div>
+              <div id="materialAudioList" class="audio-track-list"></div>
+            </section>
+          </aside>
         </div>
 
-        <div class="pdf-reader-surface">
-          <button id="materialPrevPage" class="page-arrow page-arrow-left" type="button" aria-label="上一页">‹</button>
-          <div class="pdf-stage">
-            <canvas id="materialPdfCanvas"></canvas>
-          </div>
-          <button id="materialNextPage" class="page-arrow page-arrow-right" type="button" aria-label="下一页">›</button>
-        </div>
+        <button id="readerFocusExitButton" class="reader-focus-exit" type="button" aria-label="退出放大阅读" title="退出放大阅读" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M18 6 6 18"></path>
+            <path d="m6 6 12 12"></path>
+          </svg>
+        </button>
       </div>
     </section>
   </main>

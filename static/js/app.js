@@ -359,6 +359,9 @@ let currentLoopStart = 0;
 // 标记当前是否开启片段循环。
 let loopEnabled = false;
 
+// 教材听力循环开关，只影响教材阅读器里的听力按钮。
+let materialAudioLoopEnabled = false;
+
 // 明暗背景偏好保存在浏览器本地；刷新页面后保持上次选择。
 const savedTheme = localStorage.getItem("theme");
 if (savedTheme === "dark") {
@@ -501,8 +504,30 @@ function getAudioButtonLabel(audios, index) {
 }
 
 
+function getChapterSectionTitle(section) {
+  const match = String(section.title || "").match(/(\d+)单元/);
+  return match ? `${match[1]}单元` : (section.title || "");
+}
+
+
 function setRangeFill(input, value = Number(input.value) || 0) {
   input.style.setProperty("--range-fill", `${Math.min(Math.max(value, 0), 100)}%`);
+}
+
+
+function seekMaterialAudio(progress) {
+  if (!Number.isFinite(player.duration) || player.duration <= 0) {
+    return;
+  }
+
+  const progressValue = Math.min(Math.max(Number(progress.value) || 0, 0), 100);
+  const targetTime = (progressValue / 100) * player.duration;
+  if (typeof player.fastSeek === "function") {
+    player.fastSeek(targetTime);
+  } else {
+    player.currentTime = targetTime;
+  }
+  setRangeFill(progress, progressValue);
 }
 
 
@@ -522,6 +547,7 @@ function syncMaterialAudioControls() {
     const volume = card.querySelector("[data-audio-volume]");
     const muteButton = card.querySelector("[data-audio-mute]");
     const pauseButton = card.querySelector("[data-audio-pause]");
+    const loopButton = card.querySelector("[data-audio-loop]");
 
     card.classList.toggle("is-playing", isActive && !player.paused);
     if (progress && !progress.dataset.seeking) {
@@ -547,6 +573,11 @@ function syncMaterialAudioControls() {
       pauseButton.setAttribute("aria-label", player.paused ? "继续播放" : "暂停听力");
       pauseButton.classList.toggle("is-paused", isActive && player.paused);
     }
+    if (loopButton) {
+      loopButton.setAttribute("aria-pressed", String(materialAudioLoopEnabled));
+      loopButton.setAttribute("aria-label", materialAudioLoopEnabled ? "关闭循环播放" : "开启循环播放");
+      loopButton.classList.toggle("is-looping", materialAudioLoopEnabled);
+    }
   });
 }
 
@@ -564,6 +595,7 @@ function playAudio(audioUrl, start = 0, end = 0, shouldLoop = false, slow = fals
 
   const isSameAudio = player.getAttribute("src") === audioUrl || player.currentSrc.endsWith(audioUrl);
   stopPlaybackQueue();
+  player.loop = false;
   currentLoopStart = Number(start) || 0;
   currentLoopEnd = Number(end) || 0;
   loopEnabled = shouldLoop;
@@ -578,6 +610,13 @@ function playAudio(audioUrl, start = 0, end = 0, shouldLoop = false, slow = fals
     player.currentTime = currentLoopStart;
   }
   player.play();
+  syncMaterialAudioControls();
+}
+
+
+function playMaterialAudio(audioUrl) {
+  playAudio(audioUrl);
+  player.loop = materialAudioLoopEnabled;
   syncMaterialAudioControls();
 }
 
@@ -1291,6 +1330,7 @@ async function loadMaterials() {
 function renderTextbookLibrary() {
   const library = document.querySelector("#textbookLibrary");
   const reader = document.querySelector("#textbookReader");
+  document.querySelector("#materials").classList.remove("reader-open");
   reader.hidden = true;
   library.hidden = false;
 
@@ -1340,6 +1380,7 @@ async function openTextbook(manifestUrl) {
 
   document.querySelector("#textbookLibrary").hidden = true;
   document.querySelector("#textbookReader").hidden = false;
+  document.querySelector("#materials").classList.add("reader-open");
   document.querySelector("#materialPageInput").max = activeTextbookPdf.numPages;
   renderChapterMenu();
   await renderTextbookPage(activeTextbookPage);
@@ -1356,7 +1397,7 @@ function renderChapterMenu() {
       <div class="chapter-lessons">
         ${(unit.sections || unit.lessons || []).map((section) => `
           <button type="button" data-page="${section.page}">
-            ${escapeHtml(section.title)}
+            ${escapeHtml(getChapterSectionTitle(section))}
           </button>
         `).join("")}
       </div>
@@ -1393,6 +1434,10 @@ async function renderTextbookPage(pageNumber) {
   }
 
   const nextPage = Math.min(Math.max(Number(pageNumber) || 1, 1), activeTextbookPdf.numPages);
+  const pageChanged = nextPage !== activeTextbookPage;
+  if (pageChanged) {
+    stopPlaybackQueue();
+  }
   activeTextbookPage = nextPage;
 
   if (activeTextbookRenderTask) {
@@ -1404,8 +1449,14 @@ async function renderTextbookPage(pageNumber) {
   const stage = document.querySelector(".pdf-stage");
   const context = canvas.getContext("2d");
   const viewport = page.getViewport({ scale: 1 });
-  const stageWidth = Math.max(stage.clientWidth - 28, 320);
-  const scale = Math.min(stageWidth / viewport.width, 1.7);
+  const reader = document.querySelector("#textbookReader");
+  const isFocusMode = reader.classList.contains("is-focus-mode");
+  const normalStageWidth = Math.max(reader.clientWidth - 120, 320);
+  const stageWidth = isFocusMode ? Math.max(stage.clientWidth - 16, 320) : normalStageWidth;
+  const widthScale = stageWidth / viewport.width;
+  const scale = isFocusMode
+    ? Math.min(widthScale * 1.35, 2.4)
+    : Math.min(widthScale, 1.7);
   const scaledViewport = page.getViewport({ scale });
 
   canvas.width = Math.floor(scaledViewport.width);
@@ -1432,9 +1483,29 @@ async function renderTextbookPage(pageNumber) {
 function syncTextbookControls() {
   const total = activeTextbookPdf ? activeTextbookPdf.numPages : activeTextbook.pageCount;
   document.querySelector("#materialPageInput").value = activeTextbookPage;
-  document.querySelector("#materialPageLabel").textContent = `第 ${activeTextbookPage} / ${total} 页`;
+  document.querySelector("#materialPageLabel").textContent = `/ ${total} 页`;
   document.querySelector("#materialPrevPage").disabled = activeTextbookPage <= 1;
   document.querySelector("#materialNextPage").disabled = activeTextbookPage >= total;
+}
+
+
+function setReaderFocusMode(enabled) {
+  const reader = document.querySelector("#textbookReader");
+  reader.classList.toggle("is-focus-mode", enabled);
+  document.querySelector("#readerFocusExitButton").hidden = !enabled;
+  closeChapterMenu();
+  renderTextbookPage(activeTextbookPage);
+}
+
+
+function shouldIgnoreReaderKey(event) {
+  const target = event.target;
+  if (!target) {
+    return false;
+  }
+
+  const tagName = target.tagName ? target.tagName.toLowerCase() : "";
+  return target.isContentEditable || ["input", "textarea", "select"].includes(tagName);
 }
 
 
@@ -1477,51 +1548,66 @@ function renderCurrentPageAudio() {
   list.innerHTML = audioItems.map((item) => {
     const audios = item.audios || [{ title: item.audioTitle || "播放", url: item.url || "" }];
     const transcriptHtml = formatTranscriptHtml(item.transcript);
+    const transcriptControlHtml = transcriptHtml ? `
+      <button class="transcript-toggle" type="button" data-transcript="${escapeHtml(item.id)}">显示听力原文</button>
+    ` : item.transcriptNote ? `<p class="transcript-source-note">${escapeHtml(item.transcriptNote)}</p>` : "";
 
     return `
     <article class="audio-card">
       <div class="audio-card-main">
-        <div>
-          <strong>${escapeHtml(item.title)}</strong>
-        </div>
         <div class="audio-player-tools" aria-label="听力播放控制">
-          <button class="audio-icon-button audio-pause-button" type="button" data-audio-pause aria-label="暂停听力" disabled>
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path class="pause-shape" d="M8 5h3v14H8zM13 5h3v14h-3z"></path>
-              <path class="play-shape" d="M8 5v14l11-7z"></path>
-            </svg>
-          </button>
-          <input type="range" min="0" max="100" value="0" step="0.1" data-audio-progress aria-label="听力进度">
-          <span data-audio-time>0:00 / 0:00</span>
-          <button class="audio-icon-button audio-volume-button" type="button" data-audio-mute aria-label="静音">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M4 10v4h4l5 4V6L8 10H4z"></path>
-              <path class="volume-wave" d="M16 9a4 4 0 0 1 0 6M18.5 6.5a7.5 7.5 0 0 1 0 11"></path>
-              <path class="volume-muted" d="M16 9l5 5M21 9l-5 5"></path>
-            </svg>
-          </button>
-          <input type="range" min="0" max="100" value="100" step="1" data-audio-volume aria-label="音量">
-        </div>
-        <div class="audio-actions">
-          ${audios.map((audio, index) => `
-            <button type="button" data-audio="${escapeHtml(audio.url || "")}" ${audio.url ? "" : "disabled"}>
-              ${escapeHtml(getAudioButtonLabel(audios, index))}
+          <div class="audio-control-row">
+            <button class="audio-icon-button audio-pause-button" type="button" data-audio-pause aria-label="暂停听力" disabled>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path class="pause-shape" d="M8 5h3v14H8zM13 5h3v14h-3z"></path>
+                <path class="play-shape" d="M8 5v14l11-7z"></path>
+              </svg>
             </button>
-          `).join("")}
+            <input type="range" min="0" max="100" value="0" step="0.1" data-audio-progress aria-label="听力进度">
+            <span data-audio-time>0:00 / 0:00</span>
+          </div>
+          <div class="audio-control-row audio-volume-row">
+            <button class="audio-icon-button audio-loop-button" type="button" data-audio-loop aria-label="开启循环播放" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M17 2l4 4-4 4"></path>
+                <path d="M3 11V9a3 3 0 0 1 3-3h15"></path>
+                <path d="M7 22l-4-4 4-4"></path>
+                <path d="M21 13v2a3 3 0 0 1-3 3H3"></path>
+                <path class="loop-disabled" d="M5 5l14 14"></path>
+              </svg>
+            </button>
+            <button class="audio-icon-button audio-volume-button" type="button" data-audio-mute aria-label="静音">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 10v4h4l5 4V6L8 10H4z"></path>
+                <path class="volume-wave" d="M16 9a4 4 0 0 1 0 6M18.5 6.5a7.5 7.5 0 0 1 0 11"></path>
+                <path class="volume-muted" d="M16 9l5 5M21 9l-5 5"></path>
+              </svg>
+            </button>
+            <input type="range" min="0" max="100" value="100" step="1" data-audio-volume aria-label="音量">
+          </div>
+        </div>
+        <div class="audio-side-panel">
+          <div class="audio-actions">
+            ${audios.map((audio, index) => `
+              <button type="button" data-audio="${escapeHtml(audio.url || "")}" ${audio.url ? "" : "disabled"}>
+                ${escapeHtml(getAudioButtonLabel(audios, index))}
+              </button>
+            `).join("")}
+          </div>
+          ${transcriptControlHtml ? `<div class="audio-extra">${transcriptControlHtml}</div>` : ""}
         </div>
       </div>
       ${transcriptHtml ? `
-        <button class="transcript-toggle" type="button" data-transcript="${escapeHtml(item.id)}">显示听力原文</button>
         <div id="transcript-${escapeHtml(item.id)}" class="transcript-text" hidden>
           ${transcriptHtml}
         </div>
-      ` : item.transcriptNote ? `<p class="transcript-source-note">${escapeHtml(item.transcriptNote)}</p>` : ""}
+      ` : ""}
     </article>
   `;
   }).join("");
 
   list.querySelectorAll("[data-audio]").forEach((button) => {
-    button.addEventListener("click", () => playAudio(button.dataset.audio));
+    button.addEventListener("click", () => playMaterialAudio(button.dataset.audio));
   });
 
   list.querySelectorAll("[data-audio-progress]").forEach((progress) => {
@@ -1538,10 +1624,7 @@ function renderCurrentPageAudio() {
       syncMaterialAudioControls();
     });
     progress.addEventListener("input", () => {
-      if (Number.isFinite(player.duration) && player.duration > 0) {
-        player.currentTime = (Number(progress.value) / 100) * player.duration;
-        setRangeFill(progress);
-      }
+      seekMaterialAudio(progress);
     });
   });
 
@@ -1557,6 +1640,14 @@ function renderCurrentPageAudio() {
   list.querySelectorAll("[data-audio-mute]").forEach((button) => {
     button.addEventListener("click", () => {
       player.muted = !player.muted;
+    });
+  });
+
+  list.querySelectorAll("[data-audio-loop]").forEach((button) => {
+    button.addEventListener("click", () => {
+      materialAudioLoopEnabled = !materialAudioLoopEnabled;
+      player.loop = materialAudioLoopEnabled;
+      syncMaterialAudioControls();
     });
   });
 
@@ -1595,7 +1686,18 @@ function initEvents() {
     stopPlaybackQueue();
     activeTextbook = null;
     activeTextbookPdf = null;
+    document.querySelector("#materials").classList.remove("reader-open");
+    document.querySelector("#textbookReader").classList.remove("is-focus-mode");
+    document.querySelector("#readerFocusExitButton").hidden = true;
     renderTextbookLibrary();
+  });
+
+  document.querySelector("#readerFocusButton").addEventListener("click", () => {
+    setReaderFocusMode(true);
+  });
+
+  document.querySelector("#readerFocusExitButton").addEventListener("click", () => {
+    setReaderFocusMode(false);
   });
 
   document.querySelector("#materialPrevPage").addEventListener("click", () => {
@@ -1618,6 +1720,34 @@ function initEvents() {
 
   document.querySelector("#chapterMenuButton").addEventListener("click", () => {
     toggleChapterMenu();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (!activeTextbookPdf || document.querySelector("#textbookReader").hidden || shouldIgnoreReaderKey(event)) {
+      return;
+    }
+
+    if (event.key === "Escape" && document.querySelector("#textbookReader").classList.contains("is-focus-mode")) {
+      event.preventDefault();
+      setReaderFocusMode(false);
+      return;
+    }
+
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      renderTextbookPage(activeTextbookPage - 1);
+    }
+
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      renderTextbookPage(activeTextbookPage + 1);
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (activeTextbookPdf && !document.querySelector("#textbookReader").hidden) {
+      renderTextbookPage(activeTextbookPage);
+    }
   });
 
   document.querySelector("#vocabSearch").addEventListener("input", (event) => {
