@@ -763,6 +763,31 @@ textarea {
   line-height: 1.55;
 }
 
+.detail-block {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.detail-block-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.detail-block-head h4 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.35;
+}
+
+.detail-block-head span {
+  color: var(--faint);
+  font-size: 13px;
+}
+
 .example-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(138px, 1fr));
@@ -770,19 +795,54 @@ textarea {
 }
 
 .example-word {
+  width: 100%;
   padding: 12px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
+  color: var(--ink);
+  text-align: left;
   background: var(--surface-raised);
+  cursor: pointer;
+  transition:
+    border-color 0.16s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.16s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.16s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.example-word.primary {
+.example-word:hover {
+  transform: translateY(-1px);
+  border-color: var(--brand);
+  background: color-mix(in srgb, var(--surface-raised) 84%, var(--brand-soft));
+}
+
+.example-word:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--brand) 28%, transparent);
+  outline-offset: 2px;
+}
+
+.example-word.primary,
+.example-word.current {
   border-color: color-mix(in srgb, var(--brand) 45%, var(--line));
 }
 
 .example-word strong,
 .example-word span {
   display: block;
+}
+
+.example-word .word-label {
+  margin-bottom: 7px;
+  color: var(--brand-strong);
+  font-size: 12px;
+  font-weight: 760;
+  line-height: 1.2;
+}
+
+.example-word .word-letter {
+  display: inline;
+  margin-right: 7px;
+  color: var(--brand-strong);
+  font-size: 15px;
 }
 
 .example-word strong {
