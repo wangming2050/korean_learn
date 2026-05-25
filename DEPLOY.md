@@ -174,9 +174,15 @@ HOST=0.0.0.0 bash railway-start.sh
 
 ### 部署后提示教材 PDF 不存在或打不开
 
-教材 PDF 使用 Git LFS 管理。Railway 通过 Nixpacks 构建时，项目里的 `nixpacks.toml` 会安装 `git-lfs`，并在构建阶段尝试拉取 `static/textbooks/**/*.pdf`。启动时 `railway-start.sh` 还会检查 PDF 是否仍是 LFS 指针文件，如果是，会再执行一次 `git lfs pull`。
+教材 PDF 使用 Git LFS 管理。Railway 通过 Nixpacks 构建时，项目里的 `nixpacks.toml` 会安装 `curl`、`git` 和 `git-lfs`，并在构建阶段尝试拉取 `static/textbooks/**/*.pdf`。
 
-如果 Railway 日志提示 `.git directory is not available` 或 `Textbook PDF is still a Git LFS pointer`，说明当前部署环境没有拿到真实 LFS 文件。短期可以重新部署确认构建日志；长期建议把 PDF 放到对象存储或 CDN，再让教材 manifest 指向外部 URL。
+Railway 的运行容器不一定保留 `.git` 目录，所以启动时 `railway-start.sh` 会优先从环境变量 `YONSEI1_PDF_URL` 下载真实 PDF，并校验文件头和文件大小。请在 Railway Variables 里添加：
+
+```text
+YONSEI1_PDF_URL=https://github.com/testerwm/korean_learn/raw/main/static/textbooks/yonsei1/yonsei-korean-1.pdf
+```
+
+如果 Railway 日志提示 `YONSEI1_PDF_URL is not configured` 或 `Downloaded textbook file is not a valid PDF`，说明当前部署环境没有拿到真实 PDF，或下载地址不可用。短期可以检查变量和下载 URL；长期建议把 PDF 放到对象存储或 CDN，再让教材 manifest 指向外部 URL。
 
 ### 登录后台后 Cookie 不安全
 
