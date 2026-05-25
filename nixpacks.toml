@@ -1,0 +1,7 @@
+[phases.setup]
+aptPkgs = ["...", "git", "git-lfs"]
+
+[phases.build]
+cmds = [
+  "if [ -d .git ]; then git lfs install --local && git lfs pull --include='static/textbooks/**/*.pdf'; else echo 'Skipping Git LFS pull during build: .git directory not found.'; fi"
+]

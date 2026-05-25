@@ -169,8 +169,14 @@ mysql -h 线上MYSQLHOST -P 线上MYSQLPORT -u 线上MYSQLUSER -p 线上MYSQLDAT
 项目里的 `railway.json` 已经设置：
 
 ```text
-HOST=0.0.0.0 python3 server.py
+HOST=0.0.0.0 bash railway-start.sh
 ```
+
+### 部署后提示教材 PDF 不存在或打不开
+
+教材 PDF 使用 Git LFS 管理。Railway 通过 Nixpacks 构建时，项目里的 `nixpacks.toml` 会安装 `git-lfs`，并在构建阶段尝试拉取 `static/textbooks/**/*.pdf`。启动时 `railway-start.sh` 还会检查 PDF 是否仍是 LFS 指针文件，如果是，会再执行一次 `git lfs pull`。
+
+如果 Railway 日志提示 `.git directory is not available` 或 `Textbook PDF is still a Git LFS pointer`，说明当前部署环境没有拿到真实 LFS 文件。短期可以重新部署确认构建日志；长期建议把 PDF 放到对象存储或 CDN，再让教材 manifest 指向外部 URL。
 
 ### 登录后台后 Cookie 不安全
 
