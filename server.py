@@ -29,6 +29,11 @@ BASE_DIR = Path(__file__).resolve().parent
 # 真正部署时建议通过环境变量 ADMIN_PASSWORD 设置复杂密码。
 ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "admin123")
 
+# 教材 PDF/听力等大资源的对象存储地址。
+# 默认使用当前 v2.0 测试用 Cloudflare R2 公共开发 URL；正式域名准备好后只需要改环境变量。
+DEFAULT_ASSET_BASE_URL = "https://pub-932125ce45f74ebbbfea4319730d4d53.r2.dev"
+ASSET_BASE_URL = os.getenv("ASSET_BASE_URL", DEFAULT_ASSET_BASE_URL).rstrip("/")
+
 # 后台 Cookie 令牌：用于判断浏览器是否已经登录后台。
 # 这里为了教学保持简单；生产项目应改成数据库 session 或签名 token。
 ADMIN_SESSION_TOKEN = os.getenv("ADMIN_SESSION_TOKEN", "korean-learn-admin-session")
@@ -119,6 +124,11 @@ class KoreanLearnHandler(BaseHTTPRequestHandler):
                 {"message": "已退出登录"},
                 extra_headers={"Set-Cookie": "admin_session=; Path=/; Max-Age=0; HttpOnly"},
             )
+            return
+
+        # 前端运行配置：教材大文件通过对象存储/CDN 加载。
+        if method == "GET" and path == "/api/config":
+            self.send_json({"assetBaseUrl": ASSET_BASE_URL})
             return
 
         # 静态资源：手动读取 static 目录下的 CSS、JS、音频文件。

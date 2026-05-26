@@ -42,6 +42,24 @@ export ADMIN_PASSWORD=你的后台密码
 
 如果使用本项目推荐的 `.env` 启动方式，也可以在 `.env` 中修改 `ADMIN_PASSWORD`。
 
+教材 PDF 和教材听力等大文件默认从 Cloudflare R2 加载。v2.0 测试环境默认资源地址是：
+
+```text
+https://pub-932125ce45f74ebbbfea4319730d4d53.r2.dev
+```
+
+如需切换到正式对象存储域名，可以设置：
+
+```bash
+export ASSET_BASE_URL=https://assets.example.com
+```
+
+如果使用 `.env` 启动方式，也可以写入：
+
+```text
+ASSET_BASE_URL=https://assets.example.com
+```
+
 ## 功能说明
 
 用户端只保留学习功能：
