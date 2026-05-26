@@ -7,6 +7,11 @@
 
 // 获取全站唯一的 audio 播放器。后面所有播放按钮都会复用它。
 const player = document.querySelector("#player");
+const STATIC_PREFIX = "/static/";
+
+let appConfig = {
+  assetBaseUrl: "",
+};
 
 const LETTER_DETAILS = {
   "ㄱ": {
@@ -1316,6 +1321,8 @@ async function loadVocabulary(keyword = "") {
  * 加载教材入口列表。
  */
 async function loadMaterials() {
+  await loadAppConfig();
+
   const response = await fetch("/static/textbooks/index.json");
   if (!response.ok) {
     throw new Error("教材列表加载失败。");
@@ -1324,6 +1331,60 @@ async function loadMaterials() {
   const result = await response.json();
   textbookList = result.textbooks || [];
   renderTextbookLibrary();
+}
+
+
+async function loadAppConfig() {
+  if (appConfig.loaded) {
+    return;
+  }
+
+  const response = await fetch("/api/config");
+  if (response.ok) {
+    const result = await response.json();
+    appConfig.assetBaseUrl = normalizeAssetBaseUrl(result.assetBaseUrl || "");
+  }
+
+  appConfig.loaded = true;
+}
+
+
+function normalizeAssetBaseUrl(value) {
+  return String(value || "").replace(/\/+$/, "");
+}
+
+
+function isAbsoluteUrl(url) {
+  return /^https?:\/\//i.test(String(url || ""));
+}
+
+
+function resolveTextbookAssetUrl(url) {
+  if (!url || isAbsoluteUrl(url) || !appConfig.assetBaseUrl) {
+    return url || "";
+  }
+
+  if (url.startsWith(STATIC_PREFIX)) {
+    return `${appConfig.assetBaseUrl}/${url.slice(STATIC_PREFIX.length)}`;
+  }
+
+  return url;
+}
+
+
+function resolveTextbookAssetUrls(value) {
+  if (Array.isArray(value)) {
+    return value.map(resolveTextbookAssetUrls);
+  }
+
+  if (!value || typeof value !== "object") {
+    return value;
+  }
+
+  return Object.fromEntries(Object.entries(value).map(([key, entry]) => [
+    key,
+    key === "url" || key === "pdfUrl" ? resolveTextbookAssetUrl(entry) : resolveTextbookAssetUrls(entry),
+  ]));
 }
 
 
@@ -1374,7 +1435,7 @@ async function openTextbook(manifestUrl) {
     throw new Error("教材清单加载失败。");
   }
 
-  activeTextbook = await response.json();
+  activeTextbook = resolveTextbookAssetUrls(await response.json());
   activeTextbookPdf = await window.pdfjsLib.getDocument(activeTextbook.pdfUrl).promise;
   activeTextbookPage = 1;
 

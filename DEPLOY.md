@@ -172,17 +172,34 @@ mysql -h 线上MYSQLHOST -P 线上MYSQLPORT -u 线上MYSQLUSER -p 线上MYSQLDAT
 HOST=0.0.0.0 bash railway-start.sh
 ```
 
-### 部署后提示教材 PDF 不存在或打不开
+### 教材 PDF 或听力打不开
 
-教材 PDF 使用 Git LFS 管理。Railway 通过 Nixpacks 构建时，项目里的 `nixpacks.toml` 会安装 `curl`、`git` 和 `git-lfs`，并在构建阶段尝试拉取 `static/textbooks/**/*.pdf`。
-
-Railway 的运行容器不一定保留 `.git` 目录，所以启动时 `railway-start.sh` 会优先从下载 URL 获取真实 PDF，并校验文件头和文件大小。脚本内置了默认下载地址；如果需要改成自己的文件源，可以在 Railway Variables 里添加：
+v2.0 起，教材 PDF 和教材听力 MP3 不再放在仓库和 Railway 容器里，而是通过对象存储加载。当前测试环境默认使用 Cloudflare R2 公共开发 URL：
 
 ```text
-YONSEI1_PDF_URL=https://github.com/testerwm/korean_learn/raw/main/static/textbooks/yonsei1/yonsei-korean-1.pdf
+https://pub-932125ce45f74ebbbfea4319730d4d53.r2.dev
 ```
 
-如果 Railway 日志提示 `Downloaded textbook file is not a valid PDF`、`Textbook PDF directory is not writable` 或 `Not enough free disk space`，说明当前部署环境没有拿到真实 PDF，或下载目录、磁盘空间、下载地址不可用。短期可以检查日志和 `YONSEI1_PDF_URL`；长期建议把 PDF 放到对象存储或 CDN，再让教材 manifest 指向外部 URL。
+如果要切换成正式 R2 自定义域名或其他 CDN，在 Railway Variables 里添加：
+
+```text
+ASSET_BASE_URL=https://assets.example.com
+```
+
+对象存储里需要保持资源路径从 `textbooks/` 开始，例如：
+
+```text
+textbooks/yonsei1/yonsei-korean-1.pdf
+textbooks/yonsei1/audio/part1/track_01.mp3
+textbooks/yonsei1/audio/part2/track_01.mp3
+```
+
+如果页面能打开但教材加载失败，优先检查：
+
+- `ASSET_BASE_URL` 是否少了协议或多了路径前缀。
+- R2 公共访问是否开启。
+- R2 CORS 是否允许站点用 `GET` 和 `HEAD` 读取资源。
+- 浏览器开发者工具里 PDF/MP3 请求是否返回 `403` 或 `404`。
 
 ### 登录后台后 Cookie 不安全
 
