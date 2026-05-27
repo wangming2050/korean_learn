@@ -42,7 +42,7 @@ export ADMIN_PASSWORD=你的后台密码
 
 如果使用本项目推荐的 `.env` 启动方式，也可以在 `.env` 中修改 `ADMIN_PASSWORD`。
 
-教材 PDF 和教材听力等大文件默认从 Cloudflare R2 加载。v2.0 测试环境默认资源地址是：
+教材页图和教材听力等大文件默认从 Cloudflare R2 加载。v2.1 起前端使用纯图片阅读器，PDF 只作为生成页图的源文件或备份，不参与阅读器加载。当前测试环境默认资源地址是：
 
 ```text
 https://pub-932125ce45f74ebbbfea4319730d4d53.r2.dev
@@ -59,6 +59,22 @@ export ASSET_BASE_URL=https://assets.example.com
 ```text
 ASSET_BASE_URL=https://assets.example.com
 ```
+
+教材首屏会优先加载低清页面缩略图，再加载高清 WebP 预览图。页面图和听力需要上传到同一个对象存储路径下，例如：
+
+```text
+textbooks/yonsei1/page-thumbs/page_001.webp
+textbooks/yonsei1/page-images/page_001.webp
+```
+
+生成页面图前先安装本地工具依赖：
+
+```bash
+python3 -m pip install pymupdf pillow
+python3 scripts/generate_textbook_page_images.py path/to/yonsei-korean-1.pdf dist/yonsei1 --image-width 1320 --image-quality 80 --thumb-width 560 --thumb-quality 62
+```
+
+生成后的 `page-images/` 和 `page-thumbs/` 目录只上传到对象存储，不需要提交到仓库。
 
 ## 功能说明
 

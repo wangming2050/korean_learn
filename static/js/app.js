@@ -8,6 +8,8 @@
 // 获取全站唯一的 audio 播放器。后面所有播放按钮都会复用它。
 const player = document.querySelector("#player");
 const STATIC_PREFIX = "/static/";
+const TEXTBOOK_CACHE_LIMIT = 2;
+const TEXTBOOK_PREFETCH_RADIUS = 2;
 
 let appConfig = {
   assetBaseUrl: "",
@@ -351,9 +353,12 @@ let selectedLetterIndex = null;
 let playbackRunId = 0;
 let textbookList = [];
 let activeTextbook = null;
-let activeTextbookPdf = null;
 let activeTextbookPage = 1;
-let activeTextbookRenderTask = null;
+let activeTextbookCacheEntry = null;
+let activeTextbookRenderRunId = 0;
+let activeTextbookImageRunId = 0;
+let textbookCacheVersion = 0;
+const textbookCache = new Map();
 
 // 保存当前正在做“片段循环”的结束时间，timeupdate 事件里会用到。
 let currentLoopEnd = 0;
@@ -1383,7 +1388,9 @@ function resolveTextbookAssetUrls(value) {
 
   return Object.fromEntries(Object.entries(value).map(([key, entry]) => [
     key,
-    key === "url" || key === "pdfUrl" ? resolveTextbookAssetUrl(entry) : resolveTextbookAssetUrls(entry),
+    key === "url" || key === "pageImageUrlTemplate" || key === "pageThumbUrlTemplate"
+      ? resolveTextbookAssetUrl(entry)
+      : resolveTextbookAssetUrls(entry),
   ]));
 }
 
@@ -1420,31 +1427,204 @@ function renderTextbookLibrary() {
 
   library.querySelectorAll(".textbook-card").forEach((card) => {
     card.addEventListener("click", () => openTextbook(card.dataset.manifest));
+    card.addEventListener("mouseenter", () => warmTextbookAssets(card.dataset.manifest, 1, 2));
+    card.addEventListener("focus", () => warmTextbookAssets(card.dataset.manifest, 1, 2));
+    card.addEventListener("touchstart", () => warmTextbookAssets(card.dataset.manifest, 1, 2), { passive: true });
+    warmTextbookAssets(card.dataset.manifest, 1, 0);
   });
 }
 
 
 async function openTextbook(manifestUrl) {
-  if (!window.pdfjsLib) {
-    throw new Error("PDF 阅读器加载失败，请确认静态资源完整后刷新页面。");
+  activeTextbookCacheEntry = await getTextbookCacheEntry(manifestUrl);
+  activeTextbook = activeTextbookCacheEntry.textbook;
+  activeTextbookPage = 1;
+  activeTextbookCacheEntry.lastOpenedAt = ++textbookCacheVersion;
+
+  document.querySelector("#textbookLibrary").hidden = true;
+  document.querySelector("#textbookReader").hidden = false;
+  document.querySelector("#materials").classList.add("reader-open");
+  document.querySelector("#materialPageInput").max = getTextbookPageTotal();
+  renderChapterMenu();
+  renderTextbookPage(activeTextbookPage);
+  prefetchTextbookPages(activeTextbookPage, 1);
+}
+
+
+async function getTextbookCacheEntry(manifestUrl) {
+  const cachedEntry = textbookCache.get(manifestUrl);
+  if (cachedEntry) {
+    cachedEntry.lastOpenedAt = ++textbookCacheVersion;
+    return cachedEntry;
   }
 
-  window.pdfjsLib.GlobalWorkerOptions.workerSrc = "/static/vendor/pdfjs/pdf.worker.min.js";
   const response = await fetch(manifestUrl);
   if (!response.ok) {
     throw new Error("教材清单加载失败。");
   }
 
-  activeTextbook = resolveTextbookAssetUrls(await response.json());
-  activeTextbookPdf = await window.pdfjsLib.getDocument(activeTextbook.pdfUrl).promise;
-  activeTextbookPage = 1;
+  const textbook = resolveTextbookAssetUrls(await response.json());
+  const entry = {
+    manifestUrl,
+    textbook,
+    warmedPages: new Set(),
+    lastOpenedAt: ++textbookCacheVersion,
+  };
+  textbookCache.set(manifestUrl, entry);
+  trimTextbookCache();
+  return entry;
+}
 
-  document.querySelector("#textbookLibrary").hidden = true;
-  document.querySelector("#textbookReader").hidden = false;
-  document.querySelector("#materials").classList.add("reader-open");
-  document.querySelector("#materialPageInput").max = activeTextbookPdf.numPages;
-  renderChapterMenu();
-  await renderTextbookPage(activeTextbookPage);
+
+function trimTextbookCache() {
+  if (textbookCache.size <= TEXTBOOK_CACHE_LIMIT) {
+    return;
+  }
+
+  const entries = [...textbookCache.values()]
+    .filter((entry) => entry !== activeTextbookCacheEntry)
+    .sort((a, b) => a.lastOpenedAt - b.lastOpenedAt);
+
+  while (textbookCache.size > TEXTBOOK_CACHE_LIMIT && entries.length > 0) {
+    const entry = entries.shift();
+    textbookCache.delete(entry.manifestUrl);
+  }
+}
+
+
+function prefetchTextbookPages(centerPage, radius = TEXTBOOK_PREFETCH_RADIUS) {
+  if (!activeTextbook) {
+    return;
+  }
+
+  const firstPage = Math.max(Number(centerPage) - radius, 1);
+  const lastPage = Math.min(Number(centerPage) + radius, getTextbookPageTotal());
+  for (let pageNumber = firstPage; pageNumber <= lastPage; pageNumber += 1) {
+    preloadTextbookPageImage(pageNumber);
+  }
+}
+
+
+async function warmTextbookAssets(manifestUrl, centerPage = 1, radius = 0) {
+  try {
+    const entry = await getTextbookCacheEntry(manifestUrl);
+    warmTextbookEntryImages(entry, centerPage, radius);
+  } catch (error) {
+    console.warn("教材预热失败。", error);
+  }
+}
+
+
+function warmTextbookEntryImages(entry, centerPage = 1, radius = 0) {
+  const total = entry.textbook.pageCount || 1;
+  const firstPage = Math.max(Number(centerPage) - radius, 1);
+  const lastPage = Math.min(Number(centerPage) + radius, total);
+  for (let pageNumber = firstPage; pageNumber <= lastPage; pageNumber += 1) {
+    preloadTextbookPageImage(pageNumber, entry);
+  }
+}
+
+
+function getTextbookPageTotal() {
+  return activeTextbook?.pageCount || 1;
+}
+
+
+function getTextbookPageAssetUrl(pageNumber, template) {
+  if (!template) {
+    return "";
+  }
+
+  const pageText = String(pageNumber).padStart(3, "0");
+  return template
+    .replace("{page}", pageText)
+    .replace("{pageNumber}", String(pageNumber));
+}
+
+
+function getTextbookPageImageUrl(pageNumber, entry = activeTextbookCacheEntry) {
+  return getTextbookPageAssetUrl(pageNumber, entry?.textbook?.pageImageUrlTemplate || activeTextbook?.pageImageUrlTemplate);
+}
+
+
+function getTextbookPageThumbUrl(pageNumber, entry = activeTextbookCacheEntry) {
+  return getTextbookPageAssetUrl(pageNumber, entry?.textbook?.pageThumbUrlTemplate || activeTextbook?.pageThumbUrlTemplate);
+}
+
+
+function preloadTextbookPageImage(pageNumber, entry = activeTextbookCacheEntry) {
+  if (!entry) {
+    return;
+  }
+
+  const cacheKey = String(pageNumber);
+  if (entry.warmedPages?.has(cacheKey)) {
+    return;
+  }
+
+  entry.warmedPages?.add(cacheKey);
+  [getTextbookPageThumbUrl(pageNumber, entry), getTextbookPageImageUrl(pageNumber, entry)]
+    .filter(Boolean)
+    .forEach((url) => {
+      const image = new Image();
+      image.decoding = "async";
+      image.src = url;
+    });
+}
+
+
+function showTextbookPagePreview(pageNumber) {
+  const preview = document.querySelector("#materialPagePreview");
+  const imageRunId = ++activeTextbookImageRunId;
+  const thumbUrl = getTextbookPageThumbUrl(pageNumber);
+  const imageUrl = getTextbookPageImageUrl(pageNumber);
+
+  showTextbookPageSkeleton(pageNumber);
+  preview.hidden = true;
+
+  if (!thumbUrl && !imageUrl) {
+    return;
+  }
+
+  loadTextbookPreviewImage(thumbUrl, pageNumber, imageRunId)
+    .finally(() => loadTextbookPreviewImage(imageUrl, pageNumber, imageRunId));
+}
+
+
+function showTextbookPageSkeleton(pageNumber) {
+  const skeleton = document.querySelector("#materialPageSkeleton");
+  const label = document.querySelector("#materialPageSkeletonLabel");
+  label.textContent = `第 ${pageNumber} 页`;
+  skeleton.hidden = false;
+}
+
+
+function hideTextbookPageSkeleton() {
+  document.querySelector("#materialPageSkeleton").hidden = true;
+}
+
+
+function loadTextbookPreviewImage(url, pageNumber, imageRunId) {
+  if (!url) {
+    return Promise.resolve(false);
+  }
+
+  return new Promise((resolve) => {
+    const image = new Image();
+    image.decoding = "async";
+    image.onload = () => {
+      if (imageRunId === activeTextbookImageRunId && pageNumber === activeTextbookPage) {
+        const preview = document.querySelector("#materialPagePreview");
+        preview.src = url;
+        preview.alt = `${activeTextbook?.title || "教材"} 第 ${pageNumber} 页预览`;
+        preview.hidden = false;
+        hideTextbookPageSkeleton();
+      }
+      resolve(true);
+    };
+    image.onerror = () => resolve(false);
+    image.src = url;
+  });
 }
 
 
@@ -1489,60 +1669,29 @@ function closeChapterMenu() {
 }
 
 
-async function renderTextbookPage(pageNumber) {
-  if (!activeTextbookPdf) {
+function renderTextbookPage(pageNumber) {
+  if (!activeTextbook) {
     return;
   }
 
-  const nextPage = Math.min(Math.max(Number(pageNumber) || 1, 1), activeTextbookPdf.numPages);
+  const totalPages = getTextbookPageTotal();
+  const nextPage = Math.min(Math.max(Number(pageNumber) || 1, 1), totalPages);
   const pageChanged = nextPage !== activeTextbookPage;
   if (pageChanged) {
     stopPlaybackQueue();
   }
   activeTextbookPage = nextPage;
 
-  if (activeTextbookRenderTask) {
-    activeTextbookRenderTask.cancel();
-  }
-
-  const page = await activeTextbookPdf.getPage(activeTextbookPage);
-  const canvas = document.querySelector("#materialPdfCanvas");
-  const stage = document.querySelector(".pdf-stage");
-  const context = canvas.getContext("2d");
-  const viewport = page.getViewport({ scale: 1 });
-  const reader = document.querySelector("#textbookReader");
-  const isFocusMode = reader.classList.contains("is-focus-mode");
-  const normalStageWidth = Math.max(reader.clientWidth - 120, 320);
-  const stageWidth = isFocusMode ? Math.max(stage.clientWidth - 16, 320) : normalStageWidth;
-  const widthScale = stageWidth / viewport.width;
-  const scale = isFocusMode
-    ? Math.min(widthScale * 1.35, 2.4)
-    : Math.min(widthScale, 1.7);
-  const scaledViewport = page.getViewport({ scale });
-
-  canvas.width = Math.floor(scaledViewport.width);
-  canvas.height = Math.floor(scaledViewport.height);
-  canvas.style.width = `${canvas.width}px`;
-  canvas.style.height = `${canvas.height}px`;
-
-  activeTextbookRenderTask = page.render({ canvasContext: context, viewport: scaledViewport });
-  try {
-    await activeTextbookRenderTask.promise;
-  } catch (error) {
-    if (error.name !== "RenderingCancelledException") {
-      throw error;
-    }
-  } finally {
-    activeTextbookRenderTask = null;
-  }
-
+  activeTextbookRenderRunId += 1;
+  showTextbookPagePreview(activeTextbookPage);
   syncTextbookControls();
   renderCurrentPageAudio();
+  prefetchTextbookPages(activeTextbookPage);
 }
 
 
 function syncTextbookControls() {
-  const total = activeTextbookPdf ? activeTextbookPdf.numPages : activeTextbook.pageCount;
+  const total = getTextbookPageTotal();
   document.querySelector("#materialPageInput").value = activeTextbookPage;
   document.querySelector("#materialPageLabel").textContent = `/ ${total} 页`;
   document.querySelector("#materialPrevPage").disabled = activeTextbookPage <= 1;
@@ -1745,8 +1894,10 @@ function initEvents() {
 
   document.querySelector("#textbookBackButton").addEventListener("click", () => {
     stopPlaybackQueue();
+    activeTextbookRenderRunId += 1;
+    activeTextbookImageRunId += 1;
     activeTextbook = null;
-    activeTextbookPdf = null;
+    activeTextbookCacheEntry = null;
     document.querySelector("#materials").classList.remove("reader-open");
     document.querySelector("#textbookReader").classList.remove("is-focus-mode");
     document.querySelector("#readerFocusExitButton").hidden = true;
@@ -1784,7 +1935,7 @@ function initEvents() {
   });
 
   document.addEventListener("keydown", (event) => {
-    if (!activeTextbookPdf || document.querySelector("#textbookReader").hidden || shouldIgnoreReaderKey(event)) {
+    if (!activeTextbook || document.querySelector("#textbookReader").hidden || shouldIgnoreReaderKey(event)) {
       return;
     }
 
@@ -1806,7 +1957,7 @@ function initEvents() {
   });
 
   window.addEventListener("resize", () => {
-    if (activeTextbookPdf && !document.querySelector("#textbookReader").hidden) {
+    if (activeTextbook && !document.querySelector("#textbookReader").hidden) {
       renderTextbookPage(activeTextbookPage);
     }
   });

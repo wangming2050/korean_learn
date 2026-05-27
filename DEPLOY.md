@@ -172,9 +172,9 @@ mysql -h 线上MYSQLHOST -P 线上MYSQLPORT -u 线上MYSQLUSER -p 线上MYSQLDAT
 HOST=0.0.0.0 bash railway-start.sh
 ```
 
-### 教材 PDF 或听力打不开
+### 教材页图或听力打不开
 
-v2.0 起，教材 PDF 和教材听力 MP3 不再放在仓库和 Railway 容器里，而是通过对象存储加载。当前测试环境默认使用 Cloudflare R2 公共开发 URL：
+v2.1 起，教材阅读器直接加载低清缩略图和高清 WebP 页图；PDF 只作为生成页图的源文件或备份，不参与前端阅读器加载。教材页图和教材听力 MP3 不再放在仓库和 Railway 容器里，而是通过对象存储加载。当前测试环境默认使用 Cloudflare R2 公共开发 URL：
 
 ```text
 https://pub-932125ce45f74ebbbfea4319730d4d53.r2.dev
@@ -189,17 +189,27 @@ ASSET_BASE_URL=https://assets.example.com
 对象存储里需要保持资源路径从 `textbooks/` 开始，例如：
 
 ```text
-textbooks/yonsei1/yonsei-korean-1.pdf
+textbooks/yonsei1/page-thumbs/page_001.webp
+textbooks/yonsei1/page-images/page_001.webp
 textbooks/yonsei1/audio/part1/track_01.mp3
 textbooks/yonsei1/audio/part2/track_01.mp3
 ```
+
+页面 WebP 缩略图和预览图用于教材首屏加速，必须上传到对象存储。生成命令示例：
+
+```bash
+python3 -m pip install pymupdf pillow
+python3 scripts/generate_textbook_page_images.py path/to/yonsei-korean-1.pdf dist/yonsei1 --image-width 1320 --image-quality 80 --thumb-width 560 --thumb-quality 62
+```
+
+将生成的 `page-thumbs/page_001.webp`、`page-images/page_001.webp` 等文件上传到 `textbooks/yonsei1/` 下的对应目录。这些生成文件不要提交到 Git。
 
 如果页面能打开但教材加载失败，优先检查：
 
 - `ASSET_BASE_URL` 是否少了协议或多了路径前缀。
 - R2 公共访问是否开启。
 - R2 CORS 是否允许站点用 `GET` 和 `HEAD` 读取资源。
-- 浏览器开发者工具里 PDF/MP3 请求是否返回 `403` 或 `404`。
+- 浏览器开发者工具里页面图或 MP3 请求是否返回 `403` 或 `404`。
 
 ### 登录后台后 Cookie 不安全
 
