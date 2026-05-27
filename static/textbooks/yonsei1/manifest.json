@@ -1,9 +1,10 @@
 {
   "id": "yonsei-korean-1",
   "title": "延世韩国语 1",
-  "subtitle": "1-10 课 PDF + 听力",
+  "subtitle": "1-10 课页图 + 听力",
   "coverLabel": "延世 1",
-  "pdfUrl": "/static/textbooks/yonsei1/yonsei-korean-1.pdf",
+  "pageImageUrlTemplate": "/static/textbooks/yonsei1/page-images/page_{page}.webp",
+  "pageThumbUrlTemplate": "/static/textbooks/yonsei1/page-thumbs/page_{page}.webp",
   "pageCount": 443,
   "transcriptStartPage": 397,
   "units": [
@@ -1060,7 +1061,7 @@
         "url": "/static/textbooks/yonsei1/audio/part1/track_01.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "24": [
@@ -1113,7 +1114,7 @@
         "url": "/static/textbooks/yonsei1/audio/part1/track_04.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "30": [
@@ -1166,7 +1167,7 @@
         "url": "/static/textbooks/yonsei1/audio/part1/track_07.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "37": [
@@ -1219,7 +1220,7 @@
         "url": "/static/textbooks/yonsei1/audio/part1/track_10.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "42": [
@@ -1267,7 +1268,7 @@
         "url": "/static/textbooks/yonsei1/audio/part1/track_13.mp3",
         "transcript": "",
         "transcriptSource": "current-page-reading",
-        "transcriptNote": "听力原文位于当前 PDF 页的 읽어 봅시다 区域。"
+        "transcriptNote": "听力原文位于当前教材页的 읽어 봅시다 区域。"
       }
     ],
     "51": [
@@ -1296,7 +1297,7 @@
         "url": "/static/textbooks/yonsei1/audio/part1/track_14.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "56": [
@@ -1349,7 +1350,7 @@
         "url": "/static/textbooks/yonsei1/audio/part1/track_17.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "67": [
@@ -1378,7 +1379,7 @@
         "url": "/static/textbooks/yonsei1/audio/part1/track_19.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "75": [
@@ -1407,7 +1408,7 @@
         "url": "/static/textbooks/yonsei1/audio/part1/track_21.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "81": [
@@ -1431,7 +1432,7 @@
         "url": "/static/textbooks/yonsei1/audio/part1/track_23.mp3",
         "transcript": "",
         "transcriptSource": "current-page-reading",
-        "transcriptNote": "听力原文位于当前 PDF 页的 읽어 봅시다 区域。"
+        "transcriptNote": "听力原文位于当前教材页的 읽어 봅시다 区域。"
       }
     ],
     "89": [
@@ -1460,7 +1461,7 @@
         "url": "/static/textbooks/yonsei1/audio/part1/track_24.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "95": [
@@ -1489,7 +1490,7 @@
         "url": "/static/textbooks/yonsei1/audio/part1/track_26.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "105": [
@@ -1518,7 +1519,7 @@
         "url": "/static/textbooks/yonsei1/audio/part1/track_28.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "108": [
@@ -1571,7 +1572,7 @@
         "url": "/static/textbooks/yonsei1/audio/part1/track_31.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "117": [
@@ -1595,7 +1596,7 @@
         "url": "/static/textbooks/yonsei1/audio/part1/track_33.mp3",
         "transcript": "",
         "transcriptSource": "current-page-reading",
-        "transcriptNote": "听力原文位于当前 PDF 页的 읽어 봅시다 区域。"
+        "transcriptNote": "听力原文位于当前教材页的 읽어 봅시다 区域。"
       }
     ],
     "125": [
@@ -1624,7 +1625,7 @@
         "url": "/static/textbooks/yonsei1/audio/part1/track_34.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "130": [
@@ -1677,7 +1678,7 @@
         "url": "/static/textbooks/yonsei1/audio/part1/track_37.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "138": [
@@ -1730,7 +1731,7 @@
         "url": "/static/textbooks/yonsei1/audio/part1/track_40.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "149": [
@@ -1759,7 +1760,7 @@
         "url": "/static/textbooks/yonsei1/audio/part1/track_42.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "154": [
@@ -1807,7 +1808,7 @@
         "url": "/static/textbooks/yonsei1/audio/part1/track_45.mp3",
         "transcript": "",
         "transcriptSource": "current-page-reading",
-        "transcriptNote": "听力原文位于当前 PDF 页的 읽어 봅시다 区域。"
+        "transcriptNote": "听力原文位于当前教材页的 읽어 봅시다 区域。"
       }
     ],
     "163": [
@@ -1836,7 +1837,7 @@
         "url": "/static/textbooks/yonsei1/audio/part1/track_46.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "168": [
@@ -1889,7 +1890,7 @@
         "url": "/static/textbooks/yonsei1/audio/part1/track_49.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "179": [
@@ -1918,7 +1919,7 @@
         "url": "/static/textbooks/yonsei1/audio/part1/track_51.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "183": [
@@ -1971,7 +1972,7 @@
         "url": "/static/textbooks/yonsei1/audio/part1/track_54.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "191": [
@@ -2019,7 +2020,7 @@
         "url": "/static/textbooks/yonsei1/audio/part1/track_57.mp3",
         "transcript": "",
         "transcriptSource": "current-page-reading",
-        "transcriptNote": "听力原文位于当前 PDF 页的 읽어 봅시다 区域。"
+        "transcriptNote": "听力原文位于当前教材页的 읽어 봅시다 区域。"
       }
     ],
     "203": [
@@ -2048,7 +2049,7 @@
         "url": "/static/textbooks/yonsei1/audio/part2/track_01.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "207": [
@@ -2101,7 +2102,7 @@
         "url": "/static/textbooks/yonsei1/audio/part2/track_04.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "214": [
@@ -2154,7 +2155,7 @@
         "url": "/static/textbooks/yonsei1/audio/part2/track_07.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "222": [
@@ -2207,7 +2208,7 @@
         "url": "/static/textbooks/yonsei1/audio/part2/track_10.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "233": [
@@ -2231,7 +2232,7 @@
         "url": "/static/textbooks/yonsei1/audio/part2/track_12.mp3",
         "transcript": "",
         "transcriptSource": "current-page-reading",
-        "transcriptNote": "听力原文位于当前 PDF 页的 읽어 봅시다 区域。"
+        "transcriptNote": "听力原文位于当前教材页的 읽어 봅시다 区域。"
       }
     ],
     "241": [
@@ -2260,7 +2261,7 @@
         "url": "/static/textbooks/yonsei1/audio/part2/track_13.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "247": [
@@ -2313,7 +2314,7 @@
         "url": "/static/textbooks/yonsei1/audio/part2/track_16.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "259": [
@@ -2342,7 +2343,7 @@
         "url": "/static/textbooks/yonsei1/audio/part2/track_18.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "263": [
@@ -2395,7 +2396,7 @@
         "url": "/static/textbooks/yonsei1/audio/part2/track_21.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "271": [
@@ -2443,7 +2444,7 @@
         "url": "/static/textbooks/yonsei1/audio/part2/track_24.mp3",
         "transcript": "",
         "transcriptSource": "current-page-reading",
-        "transcriptNote": "听力原文位于当前 PDF 页的 읽어 봅시다 区域。"
+        "transcriptNote": "听力原文位于当前教材页的 읽어 봅시다 区域。"
       }
     ],
     "283": [
@@ -2472,7 +2473,7 @@
         "url": "/static/textbooks/yonsei1/audio/part2/track_25.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "288": [
@@ -2525,7 +2526,7 @@
         "url": "/static/textbooks/yonsei1/audio/part2/track_28.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "295": [
@@ -2578,7 +2579,7 @@
         "url": "/static/textbooks/yonsei1/audio/part2/track_31.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "305": [
@@ -2607,7 +2608,7 @@
         "url": "/static/textbooks/yonsei1/audio/part2/track_33.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "307": [
@@ -2655,7 +2656,7 @@
         "url": "/static/textbooks/yonsei1/audio/part2/track_36.mp3",
         "transcript": "",
         "transcriptSource": "current-page-reading",
-        "transcriptNote": "听力原文位于当前 PDF 页的 읽어 봅시다 区域。"
+        "transcriptNote": "听力原文位于当前教材页的 읽어 봅시다 区域。"
       }
     ],
     "319": [
@@ -2684,7 +2685,7 @@
         "url": "/static/textbooks/yonsei1/audio/part2/track_37.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "327": [
@@ -2713,7 +2714,7 @@
         "url": "/static/textbooks/yonsei1/audio/part2/track_39.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "332": [
@@ -2766,7 +2767,7 @@
         "url": "/static/textbooks/yonsei1/audio/part2/track_42.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "343": [
@@ -2795,7 +2796,7 @@
         "url": "/static/textbooks/yonsei1/audio/part2/track_44.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "348": [
@@ -2843,7 +2844,7 @@
         "url": "/static/textbooks/yonsei1/audio/part2/track_47.mp3",
         "transcript": "",
         "transcriptSource": "current-page-reading",
-        "transcriptNote": "听力原文位于当前 PDF 页的 읽어 봅시다 区域。"
+        "transcriptNote": "听力原文位于当前教材页的 읽어 봅시다 区域。"
       }
     ],
     "357": [
@@ -2872,7 +2873,7 @@
         "url": "/static/textbooks/yonsei1/audio/part2/track_48.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "365": [
@@ -2901,7 +2902,7 @@
         "url": "/static/textbooks/yonsei1/audio/part2/track_50.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "370": [
@@ -2954,7 +2955,7 @@
         "url": "/static/textbooks/yonsei1/audio/part2/track_53.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "377": [
@@ -3007,7 +3008,7 @@
         "url": "/static/textbooks/yonsei1/audio/part2/track_56.mp3",
         "transcript": "",
         "transcriptSource": "current-page-dialogue",
-        "transcriptNote": "听力原文位于当前 PDF 页的对话区域。"
+        "transcriptNote": "听力原文位于当前教材页的对话区域。"
       }
     ],
     "389": [
@@ -3031,7 +3032,7 @@
         "url": "/static/textbooks/yonsei1/audio/part2/track_58.mp3",
         "transcript": "",
         "transcriptSource": "current-page-reading",
-        "transcriptNote": "听力原文位于当前 PDF 页的 읽어 봅시다 区域。"
+        "transcriptNote": "听力原文位于当前教材页的 읽어 봅시다 区域。"
       }
     ]
   },
@@ -3541,5 +3542,5 @@
       "url": "/static/textbooks/yonsei1/audio/part2/track_50.mp3"
     }
   ],
-  "notes": "章节菜单按 1-10 课、每课 5 单元生成。每课前四单元第一段对话放两段音频并共用同一原文；任务听力原文来自 PDF 397 页之后的原文区解析。"
+  "notes": "章节菜单按 1-10 课、每课 5 单元生成。每课前四单元第一段对话放两段音频并共用同一原文；任务听力原文来自教材 397 页之后的原文区解析。"
 }

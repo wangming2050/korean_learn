@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>韩语句子跟读学习</title>
   <link rel="stylesheet" href="/static/css/style.css">
-  <script src="/static/vendor/pdfjs/pdf.min.js" defer></script>
 </head>
 <body>
   <header class="topbar">
@@ -198,7 +197,10 @@
           <div class="pdf-reader-surface">
             <button id="materialPrevPage" class="page-arrow page-arrow-left" type="button" aria-label="上一页">‹</button>
             <div class="pdf-stage">
-              <canvas id="materialPdfCanvas"></canvas>
+              <div id="materialPageSkeleton" class="material-page-skeleton" aria-live="polite">
+                <span id="materialPageSkeletonLabel">第 1 页</span>
+              </div>
+              <img id="materialPagePreview" class="material-page-preview" alt="教材页面预览" hidden>
             </div>
             <button id="materialNextPage" class="page-arrow page-arrow-right" type="button" aria-label="下一页">›</button>
           </div>
