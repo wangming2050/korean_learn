@@ -357,6 +357,8 @@ let activeTextbookPage = 1;
 let activeTextbookCacheEntry = null;
 let activeTextbookRenderRunId = 0;
 let activeTextbookImageRunId = 0;
+let activeTextbookLoadRunId = 0;
+let activeTextbookLoadStatus = "idle";
 let textbookCacheVersion = 0;
 const textbookCache = new Map();
 
@@ -1435,19 +1437,64 @@ function renderTextbookLibrary() {
 }
 
 
-async function openTextbook(manifestUrl) {
-  activeTextbookCacheEntry = await getTextbookCacheEntry(manifestUrl);
-  activeTextbook = activeTextbookCacheEntry.textbook;
+function openTextbook(manifestUrl) {
+  const loadRunId = ++activeTextbookLoadRunId;
+  const libraryBook = textbookList.find((book) => book.manifestUrl === manifestUrl);
+  activeTextbookCacheEntry = null;
+  activeTextbook = createPendingTextbook(libraryBook, manifestUrl);
   activeTextbookPage = 1;
-  activeTextbookCacheEntry.lastOpenedAt = ++textbookCacheVersion;
+  activeTextbookLoadStatus = "loading";
 
   document.querySelector("#textbookLibrary").hidden = true;
   document.querySelector("#textbookReader").hidden = false;
   document.querySelector("#materials").classList.add("reader-open");
   document.querySelector("#materialPageInput").max = getTextbookPageTotal();
-  renderChapterMenu();
+  closeChapterMenu();
+  renderChapterMenu("loading");
   renderTextbookPage(activeTextbookPage);
-  prefetchTextbookPages(activeTextbookPage, 1);
+
+  getTextbookCacheEntry(manifestUrl)
+    .then((entry) => {
+      if (loadRunId !== activeTextbookLoadRunId) {
+        return;
+      }
+
+      activeTextbookCacheEntry = entry;
+      activeTextbook = entry.textbook;
+      activeTextbookLoadStatus = "ready";
+      activeTextbookCacheEntry.lastOpenedAt = ++textbookCacheVersion;
+      document.querySelector("#materialPageInput").max = getTextbookPageTotal();
+      renderChapterMenu();
+      renderTextbookPage(activeTextbookPage);
+      prefetchTextbookPages(activeTextbookPage, 1);
+    })
+    .catch((error) => {
+      if (loadRunId !== activeTextbookLoadRunId) {
+        return;
+      }
+
+      activeTextbookCacheEntry = null;
+      activeTextbookLoadStatus = "failed";
+      renderChapterMenu("failed");
+      showTextbookPageSkeleton(activeTextbookPage, "教材信息加载失败，请稍后重试");
+      syncTextbookControls();
+      renderCurrentPageAudio();
+      console.warn("教材信息加载失败。", error);
+    });
+}
+
+
+function createPendingTextbook(book = {}, manifestUrl = "") {
+  return {
+    id: book.id || "",
+    title: book.title || "教材",
+    subtitle: book.subtitle || "",
+    manifestUrl,
+    pageCount: book.pageCount || 1,
+    units: [],
+    pageAudio: {},
+    isPending: true,
+  };
 }
 
 
@@ -1579,7 +1626,7 @@ function showTextbookPagePreview(pageNumber) {
   const thumbUrl = getTextbookPageThumbUrl(pageNumber);
   const imageUrl = getTextbookPageImageUrl(pageNumber);
 
-  showTextbookPageSkeleton(pageNumber);
+  showTextbookPageSkeleton(pageNumber, activeTextbookLoadStatus === "failed" ? "教材信息加载失败，请稍后重试" : "加载中……");
   preview.hidden = true;
 
   if (!thumbUrl && !imageUrl) {
@@ -1587,14 +1634,21 @@ function showTextbookPagePreview(pageNumber) {
   }
 
   loadTextbookPreviewImage(thumbUrl, pageNumber, imageRunId)
-    .finally(() => loadTextbookPreviewImage(imageUrl, pageNumber, imageRunId));
+    .then((thumbLoaded) => loadTextbookPreviewImage(imageUrl, pageNumber, imageRunId)
+      .then((imageLoaded) => {
+        if (!thumbLoaded && !imageLoaded && imageRunId === activeTextbookImageRunId && pageNumber === activeTextbookPage) {
+          showTextbookPageSkeleton(pageNumber, "页面正在加载，请稍候");
+        }
+      }));
 }
 
 
-function showTextbookPageSkeleton(pageNumber) {
+function showTextbookPageSkeleton(pageNumber, status = "加载中……") {
   const skeleton = document.querySelector("#materialPageSkeleton");
   const label = document.querySelector("#materialPageSkeletonLabel");
+  const statusLabel = document.querySelector("#materialPageSkeletonStatus");
   label.textContent = `第 ${pageNumber} 页`;
+  statusLabel.textContent = status;
   skeleton.hidden = false;
 }
 
@@ -1628,8 +1682,21 @@ function loadTextbookPreviewImage(url, pageNumber, imageRunId) {
 }
 
 
-function renderChapterMenu() {
+function renderChapterMenu(state = activeTextbookLoadStatus) {
+  const button = document.querySelector("#chapterMenuButton");
   const panel = document.querySelector("#chapterMenuPanel");
+  const isReady = state === "ready";
+  button.disabled = !isReady;
+  button.title = isReady ? "选择章节" : "章节加载中";
+  button.setAttribute("aria-label", isReady ? "选择章节" : "章节加载中");
+
+  if (!isReady) {
+    panel.innerHTML = `<p class="chapter-menu-empty">${state === "failed" ? "教材信息加载失败，请稍后重试。" : "章节加载中……"}</p>`;
+    panel.hidden = true;
+    button.setAttribute("aria-expanded", "false");
+    return;
+  }
+
   panel.innerHTML = (activeTextbook.units || []).map((unit) => `
     <section class="chapter-group">
       <button class="chapter-unit" type="button" data-page="${unit.startPage}">
@@ -1657,6 +1724,10 @@ function renderChapterMenu() {
 function toggleChapterMenu() {
   const button = document.querySelector("#chapterMenuButton");
   const panel = document.querySelector("#chapterMenuPanel");
+  if (button.disabled) {
+    return;
+  }
+
   const nextOpen = panel.hidden;
   panel.hidden = !nextOpen;
   button.setAttribute("aria-expanded", String(nextOpen));
@@ -1747,6 +1818,21 @@ function renderCurrentPageAudio() {
   const list = document.querySelector("#materialAudioList");
 
   title.textContent = unit ? unit.title : (activeTextbook?.title || "延世韩国语1").replace(/\s+(?=\d)/g, "");
+
+  if (activeTextbookLoadStatus === "loading") {
+    hint.textContent = "听力信息加载中……";
+    hint.hidden = false;
+    list.innerHTML = "";
+    return;
+  }
+
+  if (activeTextbookLoadStatus === "failed") {
+    hint.textContent = "教材信息加载失败，请稍后重试。";
+    hint.hidden = false;
+    list.innerHTML = "";
+    return;
+  }
+
   hint.textContent = "";
   hint.hidden = true;
 
@@ -1896,8 +1982,10 @@ function initEvents() {
     stopPlaybackQueue();
     activeTextbookRenderRunId += 1;
     activeTextbookImageRunId += 1;
+    activeTextbookLoadRunId += 1;
     activeTextbook = null;
     activeTextbookCacheEntry = null;
+    activeTextbookLoadStatus = "idle";
     document.querySelector("#materials").classList.remove("reader-open");
     document.querySelector("#textbookReader").classList.remove("is-focus-mode");
     document.querySelector("#readerFocusExitButton").hidden = true;
