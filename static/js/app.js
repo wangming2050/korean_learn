@@ -937,8 +937,6 @@ function getCardAriaLabel(item) {
 
 
 function renderPracticeCard(item, index) {
-  const metaText = item.type === "rule" ? item.sound : `${item.examples.length} 个示例`;
-
   return `
     <article
       class="letter-card ${item.kind}${item.type === "rule" ? " rule-card" : ""}"
@@ -948,9 +946,6 @@ function renderPracticeCard(item, index) {
       aria-label="${getCardAriaLabel(item)}"
     >
       <strong>${item.letter}</strong>
-      <span class="letter-word">${item.word}</span>
-      <span>${item.meaning}</span>
-      <small>${metaText}</small>
     </article>
   `;
 }
@@ -1188,7 +1183,6 @@ async function loadLetters() {
               ` : ""}
               <div class="letter-subgroup-head">
                 <div>
-                  <span class="letter-type-badge ${group.kind}">${group.label}</span>
                   <h4>${group.label}</h4>
                 </div>
                 <span>${group.note}，共 ${indexedItems.length} 个</span>

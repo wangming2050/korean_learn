@@ -601,8 +601,8 @@ textarea {
 
 .letter-group-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(136px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+  gap: 10px;
 }
 
 .letter-card,
@@ -616,29 +616,16 @@ textarea {
 
 .letter-card {
   position: relative;
-  min-height: 132px;
-  padding: 16px;
+  display: grid;
+  place-items: center;
+  min-height: 72px;
+  padding: 8px;
   cursor: pointer;
   overflow: hidden;
   transition:
     transform 0.16s cubic-bezier(0.22, 1, 0.36, 1),
     border-color 0.16s cubic-bezier(0.22, 1, 0.36, 1),
     background-color 0.16s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.letter-card::after {
-  content: "";
-  position: absolute;
-  right: 14px;
-  bottom: 14px;
-  width: 24px;
-  height: 24px;
-  border: 1px solid color-mix(in srgb, var(--brand) 34%, var(--line));
-  border-radius: 999px;
-  background:
-    linear-gradient(90deg, transparent 42%, var(--brand) 42% 56%, transparent 56%),
-    linear-gradient(45deg, transparent 49%, var(--brand) 49% 58%, transparent 58%);
-  opacity: 0.58;
 }
 
 .letter-card:hover {
@@ -667,13 +654,8 @@ textarea {
   background: color-mix(in srgb, var(--surface) 80%, oklch(90% 0.045 185));
 }
 
-.letter-card.rule-card {
-  min-height: 146px;
-}
-
 .letter-card strong {
   display: block;
-  margin-bottom: 10px;
   color: var(--brand-strong);
   font-size: 36px;
   line-height: 1;
