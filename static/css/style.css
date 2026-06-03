@@ -422,6 +422,27 @@ textarea {
   gap: 16px;
 }
 
+.local-pdf-upload-panel {
+  display: grid;
+  gap: 6px;
+  padding: 16px;
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.local-pdf-upload-panel strong {
+  color: var(--ink);
+  font-size: 18px;
+}
+
+.textbook-empty-state {
+  margin: 0;
+  color: var(--muted);
+}
+
 .textbook-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
@@ -452,6 +473,40 @@ textarea {
   align-self: end;
   color: var(--faint);
   font-size: 13px;
+}
+
+.local-textbook-card {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+}
+
+.local-textbook-card > button:first-child {
+  display: grid;
+  gap: 8px;
+  width: 100%;
+  min-height: 142px;
+  padding: 18px;
+  border: 0;
+  box-shadow: none;
+  text-align: left;
+}
+
+.local-textbook-card > button:first-child:hover {
+  transform: none;
+}
+
+.textbook-delete-button {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: auto;
+  min-height: 0;
+  padding: 6px 10px;
+  border-color: var(--line);
+  box-shadow: none;
+  color: var(--muted);
+  font-size: 12px;
 }
 
 .letter-controls {

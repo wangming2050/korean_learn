@@ -10,6 +10,17 @@ const player = document.querySelector("#player");
 const STATIC_PREFIX = "/static/";
 const TEXTBOOK_CACHE_LIMIT = 2;
 const TEXTBOOK_PREFETCH_RADIUS = 2;
+const PDFJS_MODULE_URL = "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.mjs";
+const PDFJS_WORKER_URL = "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.worker.mjs";
+const LOCAL_TEXTBOOK_DB_NAME = "korean-learn-local-textbooks";
+const LOCAL_TEXTBOOK_DB_VERSION = 1;
+const LOCAL_TEXTBOOK_DOC_STORE = "documents";
+const LOCAL_TEXTBOOK_PAGE_STORE = "pages";
+const LOCAL_TEXTBOOK_MAX_FILE_SIZE = 300 * 1024 * 1024;
+const LOCAL_TEXTBOOK_MAX_PAGES = 600;
+const LOCAL_TEXTBOOK_IMAGE_WIDTH = 1320;
+const LOCAL_TEXTBOOK_THUMB_WIDTH = 560;
+const LOCAL_PAGE_URL_PREFIX = "indexeddb-page://";
 
 let appConfig = {
   assetBaseUrl: "",
@@ -361,6 +372,12 @@ let activeTextbookLoadRunId = 0;
 let activeTextbookLoadStatus = "idle";
 let textbookCacheVersion = 0;
 const textbookCache = new Map();
+let localTextbookList = [];
+let localTextbookDbPromise = null;
+let pdfJsModulePromise = null;
+let localTextbookJobVersion = 0;
+const localTextbookJobs = new Map();
+const localTextbookObjectUrls = new Map();
 
 // 保存当前正在做“片段循环”的结束时间，timeupdate 事件里会用到。
 let currentLoopEnd = 0;
@@ -1323,14 +1340,477 @@ async function loadVocabulary(keyword = "") {
  */
 async function loadMaterials() {
   await loadAppConfig();
+  textbookList = [];
+  localTextbookList = await loadLocalTextbookDocuments();
+  renderTextbookLibrary();
+}
 
-  const response = await fetch("/static/textbooks/index.json");
-  if (!response.ok) {
-    throw new Error("教材列表加载失败。");
+
+function openLocalTextbookDb() {
+  if (localTextbookDbPromise) {
+    return localTextbookDbPromise;
   }
 
-  const result = await response.json();
-  textbookList = result.textbooks || [];
+  localTextbookDbPromise = new Promise((resolve, reject) => {
+    const request = indexedDB.open(LOCAL_TEXTBOOK_DB_NAME, LOCAL_TEXTBOOK_DB_VERSION);
+    request.onupgradeneeded = () => {
+      const db = request.result;
+      if (!db.objectStoreNames.contains(LOCAL_TEXTBOOK_DOC_STORE)) {
+        db.createObjectStore(LOCAL_TEXTBOOK_DOC_STORE, { keyPath: "id" });
+      }
+      if (!db.objectStoreNames.contains(LOCAL_TEXTBOOK_PAGE_STORE)) {
+        const store = db.createObjectStore(LOCAL_TEXTBOOK_PAGE_STORE, { keyPath: ["documentId", "pageNumber", "kind"] });
+        store.createIndex("byDocument", "documentId");
+      }
+    };
+    request.onsuccess = () => resolve(request.result);
+    request.onerror = () => reject(request.error);
+  });
+
+  return localTextbookDbPromise;
+}
+
+
+async function runLocalTextbookStore(storeName, mode, callback) {
+  const db = await openLocalTextbookDb();
+  return new Promise((resolve, reject) => {
+    const transaction = db.transaction(storeName, mode);
+    const store = transaction.objectStore(storeName);
+    let result;
+    transaction.oncomplete = () => resolve(result);
+    transaction.onerror = () => reject(transaction.error);
+    transaction.onabort = () => reject(transaction.error);
+    result = callback(store);
+  });
+}
+
+
+function requestToPromise(request) {
+  return new Promise((resolve, reject) => {
+    request.onsuccess = () => resolve(request.result);
+    request.onerror = () => reject(request.error);
+  });
+}
+
+
+async function loadLocalTextbookDocuments() {
+  if (!("indexedDB" in window)) {
+    return [];
+  }
+
+  const documents = await runLocalTextbookStore(LOCAL_TEXTBOOK_DOC_STORE, "readonly", (store) => requestToPromise(store.getAll()));
+  return documents
+    .map(normalizeLocalTextbookDocument)
+    .sort((a, b) => (b.updatedAt || 0) - (a.updatedAt || 0));
+}
+
+
+function normalizeLocalTextbookDocument(document) {
+  return {
+    ...document,
+    title: document.title || document.fileName || "本地 PDF 教材",
+    pageCount: document.pageCount || 1,
+    generatedPages: document.generatedPages || 0,
+    status: document.status || "processing",
+    source: "local-upload",
+  };
+}
+
+
+async function saveLocalTextbookDocument(document) {
+  await runLocalTextbookStore(LOCAL_TEXTBOOK_DOC_STORE, "readwrite", (store) => store.put(document));
+  localTextbookList = await loadLocalTextbookDocuments();
+}
+
+
+async function getLocalTextbookDocument(documentId) {
+  const document = await runLocalTextbookStore(LOCAL_TEXTBOOK_DOC_STORE, "readonly", (store) => requestToPromise(store.get(documentId)));
+  return document ? normalizeLocalTextbookDocument(document) : null;
+}
+
+
+async function saveLocalTextbookPage(documentId, pageNumber, kind, blob) {
+  await runLocalTextbookStore(LOCAL_TEXTBOOK_PAGE_STORE, "readwrite", (store) => store.put({
+    documentId,
+    pageNumber,
+    kind,
+    blob,
+    updatedAt: Date.now(),
+  }));
+}
+
+
+async function getLocalTextbookPage(documentId, pageNumber, kind) {
+  return runLocalTextbookStore(LOCAL_TEXTBOOK_PAGE_STORE, "readonly", (store) => (
+    requestToPromise(store.get([documentId, Number(pageNumber), kind]))
+  ));
+}
+
+
+async function deleteLocalTextbookPages(documentId) {
+  const db = await openLocalTextbookDb();
+  return new Promise((resolve, reject) => {
+    const transaction = db.transaction(LOCAL_TEXTBOOK_PAGE_STORE, "readwrite");
+    const index = transaction.objectStore(LOCAL_TEXTBOOK_PAGE_STORE).index("byDocument");
+    const request = index.openCursor(IDBKeyRange.only(documentId));
+    request.onsuccess = () => {
+      const cursor = request.result;
+      if (cursor) {
+        cursor.delete();
+        cursor.continue();
+      }
+    };
+    transaction.oncomplete = () => resolve();
+    transaction.onerror = () => reject(transaction.error);
+    transaction.onabort = () => reject(transaction.error);
+  });
+}
+
+
+async function deleteLocalTextbook(documentId) {
+  stopPlaybackQueue();
+  activeTextbookRenderRunId += 1;
+  activeTextbookImageRunId += 1;
+  activeTextbookLoadRunId += 1;
+  localTextbookJobs.delete(documentId);
+  revokeLocalTextbookObjectUrls(documentId);
+  await deleteLocalTextbookPages(documentId);
+  await runLocalTextbookStore(LOCAL_TEXTBOOK_DOC_STORE, "readwrite", (store) => store.delete(documentId));
+  localTextbookList = await loadLocalTextbookDocuments();
+  if (activeTextbook?.id === documentId) {
+    activeTextbook = null;
+    activeTextbookCacheEntry = null;
+  }
+  renderTextbookLibrary();
+}
+
+
+function createLocalTextbookManifest(document) {
+  return {
+    id: document.id,
+    title: document.title || "本地 PDF 教材",
+    subtitle: document.status === "ready" ? "本机缓存" : "正在转换",
+    pageCount: document.pageCount || 1,
+    pageWidth: document.pageWidth || 589,
+    pageHeight: document.pageHeight || 807,
+    pageImageUrlTemplate: `${LOCAL_PAGE_URL_PREFIX}${document.id}/image/{pageNumber}`,
+    pageThumbUrlTemplate: `${LOCAL_PAGE_URL_PREFIX}${document.id}/thumb/{pageNumber}`,
+    units: [],
+    pageAudio: {},
+    source: "local-upload",
+    generatedPages: document.generatedPages || 0,
+    status: document.status || "processing",
+  };
+}
+
+
+function createLocalTextbookListItem(document) {
+  return {
+    id: document.id,
+    title: document.title || "本地 PDF 教材",
+    subtitle: document.status === "ready" ? "本机 PDF 页图缓存" : "正在本机转换 PDF",
+    pageCount: document.pageCount || 1,
+    generatedPages: document.generatedPages || 0,
+    status: document.status || "processing",
+    source: "local-upload",
+  };
+}
+
+
+function isLocalTextbookPageUrl(url) {
+  return String(url || "").startsWith(LOCAL_PAGE_URL_PREFIX);
+}
+
+
+function parseLocalTextbookPageUrl(url) {
+  const value = String(url || "").slice(LOCAL_PAGE_URL_PREFIX.length);
+  const [documentId, kind, pageText] = value.split("/");
+  return {
+    documentId,
+    kind,
+    pageNumber: Number(pageText),
+  };
+}
+
+
+async function getLocalTextbookPageObjectUrl(url) {
+  const { documentId, kind, pageNumber } = parseLocalTextbookPageUrl(url);
+  if (!documentId || !kind || !pageNumber) {
+    return "";
+  }
+
+  const cacheKey = `${documentId}:${kind}:${pageNumber}`;
+  if (localTextbookObjectUrls.has(cacheKey)) {
+    return localTextbookObjectUrls.get(cacheKey);
+  }
+
+  let page = await getLocalTextbookPage(documentId, pageNumber, kind);
+  if (!page && kind === "thumb") {
+    page = await getLocalTextbookPage(documentId, pageNumber, "image");
+  }
+  if (!page && kind === "image") {
+    await ensureLocalTextbookPageRendered(documentId, pageNumber);
+    page = await getLocalTextbookPage(documentId, pageNumber, kind);
+  }
+  if (!page?.blob) {
+    return "";
+  }
+
+  const objectUrl = URL.createObjectURL(page.blob);
+  localTextbookObjectUrls.set(cacheKey, objectUrl);
+  return objectUrl;
+}
+
+
+function revokeLocalTextbookObjectUrls(documentId = "") {
+  for (const [key, url] of localTextbookObjectUrls.entries()) {
+    if (!documentId || key.startsWith(`${documentId}:`)) {
+      URL.revokeObjectURL(url);
+      localTextbookObjectUrls.delete(key);
+    }
+  }
+}
+
+
+async function loadPdfJs() {
+  if (!pdfJsModulePromise) {
+    pdfJsModulePromise = import(PDFJS_MODULE_URL).then((pdfjs) => {
+      pdfjs.GlobalWorkerOptions.workerSrc = PDFJS_WORKER_URL;
+      return pdfjs;
+    });
+  }
+  return pdfJsModulePromise;
+}
+
+
+async function loadLocalPdfDocument(document) {
+  if (!document.sourcePdfBlob) {
+    throw new Error("本地 PDF 源文件不可用，请重新上传。");
+  }
+
+  const pdfjs = await loadPdfJs();
+  const data = new Uint8Array(await document.sourcePdfBlob.arrayBuffer());
+  return pdfjs.getDocument({ data }).promise;
+}
+
+
+async function renderPdfPageBlob(pdfDocument, pageNumber, targetWidth, quality) {
+  const page = await pdfDocument.getPage(pageNumber);
+  const baseViewport = page.getViewport({ scale: 1 });
+  const scale = targetWidth / baseViewport.width;
+  const viewport = page.getViewport({ scale });
+  const canvas = document.createElement("canvas");
+  const context = canvas.getContext("2d", { alpha: false });
+  canvas.width = Math.ceil(viewport.width);
+  canvas.height = Math.ceil(viewport.height);
+  context.fillStyle = "#fff";
+  context.fillRect(0, 0, canvas.width, canvas.height);
+  await page.render({ canvasContext: context, viewport }).promise;
+
+  const blob = await new Promise((resolve) => {
+    canvas.toBlob((result) => resolve(result), "image/webp", quality);
+  });
+  if (blob) {
+    return { blob, width: viewport.width, height: viewport.height };
+  }
+
+  const fallbackBlob = await new Promise((resolve) => {
+    canvas.toBlob((result) => resolve(result), "image/jpeg", quality);
+  });
+  return { blob: fallbackBlob, width: viewport.width, height: viewport.height };
+}
+
+
+async function renderAndStoreLocalPdfPage(job, pageNumber) {
+  if (job.renderedPages.has(pageNumber) || job.renderingPages.has(pageNumber)) {
+    return;
+  }
+
+  job.renderingPages.add(pageNumber);
+  try {
+    const thumb = await renderPdfPageBlob(job.pdfDocument, pageNumber, LOCAL_TEXTBOOK_THUMB_WIDTH, 0.62);
+    const image = await renderPdfPageBlob(job.pdfDocument, pageNumber, LOCAL_TEXTBOOK_IMAGE_WIDTH, 0.8);
+    await saveLocalTextbookPage(job.document.id, pageNumber, "thumb", thumb.blob);
+    await saveLocalTextbookPage(job.document.id, pageNumber, "image", image.blob);
+    job.renderedPages.add(pageNumber);
+
+    const generatedPages = Math.max(job.document.generatedPages || 0, job.renderedPages.size);
+    job.document = {
+      ...job.document,
+      generatedPages,
+      status: generatedPages >= job.document.pageCount ? "ready" : "processing",
+      updatedAt: Date.now(),
+    };
+    await saveLocalTextbookDocument(job.document);
+
+    if (activeTextbook?.id === job.document.id) {
+      activeTextbook = {
+        ...activeTextbook,
+        status: job.document.status,
+        generatedPages: job.document.generatedPages,
+      };
+      activeTextbookLoadStatus = "ready";
+      syncTextbookControls();
+      renderCurrentPageAudio();
+      if (activeTextbookPage === pageNumber) {
+        showTextbookPagePreview(pageNumber);
+      }
+    }
+  } finally {
+    job.renderingPages.delete(pageNumber);
+  }
+}
+
+
+async function createLocalTextbookJob(document) {
+  const existingJob = localTextbookJobs.get(document.id);
+  if (existingJob) {
+    return existingJob;
+  }
+
+  const pdfDocument = await loadLocalPdfDocument(document);
+  const job = {
+    id: document.id,
+    document,
+    pdfDocument,
+    renderedPages: new Set(),
+    renderingPages: new Set(),
+    runId: ++localTextbookJobVersion,
+  };
+  localTextbookJobs.set(document.id, job);
+  return job;
+}
+
+
+async function ensureLocalTextbookPageRendered(documentId, pageNumber) {
+  const document = await getLocalTextbookDocument(documentId);
+  if (!document || document.status === "ready") {
+    return;
+  }
+
+  const existingPage = await getLocalTextbookPage(documentId, pageNumber, "image");
+  if (existingPage?.blob) {
+    return;
+  }
+
+  const job = await createLocalTextbookJob(document);
+  await renderAndStoreLocalPdfPage(job, Number(pageNumber));
+}
+
+
+async function processLocalPdfDocument(document) {
+  const job = await createLocalTextbookJob(document);
+  for (let pageNumber = 1; pageNumber <= job.document.pageCount; pageNumber += 1) {
+    if (!localTextbookJobs.has(job.document.id) || localTextbookJobs.get(job.document.id)?.runId !== job.runId) {
+      return;
+    }
+    await renderAndStoreLocalPdfPage(job, pageNumber);
+  }
+}
+
+
+async function handleLocalPdfUpload(file) {
+  if (!file) {
+    return;
+  }
+
+  if (!("indexedDB" in window)) {
+    alert("当前浏览器不支持本机教材缓存。");
+    return;
+  }
+
+  if (file.type && file.type !== "application/pdf") {
+    alert("请选择 PDF 文件。");
+    return;
+  }
+
+  if (file.size > LOCAL_TEXTBOOK_MAX_FILE_SIZE) {
+    alert("PDF 文件不能超过 300MB。");
+    return;
+  }
+
+  const now = Date.now();
+  const documentRecord = {
+    id: `local-${now}-${Math.random().toString(36).slice(2, 10)}`,
+    title: file.name.replace(/\.pdf$/i, "") || "本地 PDF 教材",
+    fileName: file.name,
+    pageCount: 1,
+    generatedPages: 0,
+    status: "processing",
+    source: "local-upload",
+    sourcePdfBlob: file,
+    createdAt: now,
+    updatedAt: now,
+  };
+
+  await saveLocalTextbookDocument(documentRecord);
+  localTextbookList = await loadLocalTextbookDocuments();
+  renderTextbookLibrary();
+  openLocalTextbook(documentRecord.id);
+
+  try {
+    const pdfDocument = await loadLocalPdfDocument(documentRecord);
+    if (pdfDocument.numPages > LOCAL_TEXTBOOK_MAX_PAGES) {
+      throw new Error(`PDF 页数不能超过 ${LOCAL_TEXTBOOK_MAX_PAGES} 页。`);
+    }
+
+    const firstPage = await pdfDocument.getPage(1);
+    const viewport = firstPage.getViewport({ scale: 1 });
+    const updatedDocument = {
+      ...documentRecord,
+      pageCount: pdfDocument.numPages,
+      pageWidth: viewport.width,
+      pageHeight: viewport.height,
+      updatedAt: Date.now(),
+    };
+    await saveLocalTextbookDocument(updatedDocument);
+    localTextbookJobs.set(updatedDocument.id, {
+      id: updatedDocument.id,
+      document: updatedDocument,
+      pdfDocument,
+      renderedPages: new Set(),
+      renderingPages: new Set(),
+      runId: ++localTextbookJobVersion,
+    });
+
+    if (activeTextbook?.id === updatedDocument.id) {
+      activeTextbook = createLocalTextbookManifest(updatedDocument);
+      activeTextbookLoadStatus = "ready";
+      document.querySelector("#materialPageInput").max = getTextbookPageTotal();
+      applyTextbookStageAspectRatio();
+      renderChapterMenu();
+      renderTextbookPage(activeTextbookPage);
+    }
+
+    processLocalPdfDocument(updatedDocument).catch((error) => {
+      markLocalTextbookFailed(updatedDocument.id, error.message || "PDF 转换失败。");
+    });
+  } catch (error) {
+    await markLocalTextbookFailed(documentRecord.id, error.message || "PDF 转换失败。");
+  }
+}
+
+
+async function markLocalTextbookFailed(documentId, message) {
+  const document = await getLocalTextbookDocument(documentId);
+  if (!document) {
+    return;
+  }
+
+  const failedDocument = {
+    ...document,
+    status: "failed",
+    errorMessage: message,
+    updatedAt: Date.now(),
+  };
+  await saveLocalTextbookDocument(failedDocument);
+  if (activeTextbook?.id === documentId) {
+    activeTextbook = createLocalTextbookManifest(failedDocument);
+    activeTextbookLoadStatus = "failed";
+    showTextbookPageSkeleton(activeTextbookPage, message || "PDF 转换失败。");
+    renderChapterMenu("failed");
+    renderCurrentPageAudio();
+  }
   renderTextbookLibrary();
 }
 
@@ -1398,19 +1878,33 @@ function renderTextbookLibrary() {
   reader.hidden = true;
   library.hidden = false;
 
-  if (textbookList.length === 0) {
-    library.innerHTML = "<p>还没有教材。</p>";
-    return;
-  }
-
   library.innerHTML = `
     <div class="section-title">
       <div>
         <span class="eyebrow">Textbooks</span>
-        <h2>选择教材</h2>
+        <h2>我的教材</h2>
       </div>
+      <button id="localPdfUploadButton" class="secondary-action" type="button">上传 PDF</button>
+      <input id="localPdfUploadInput" type="file" accept="application/pdf" hidden>
     </div>
+    <section class="local-pdf-upload-panel">
+      <strong>上传自己的 PDF 教材</strong>
+      <span>文件只保存在本机浏览器里，并转换成低清/高清页图缓存。不会上传到服务器或 R2。</span>
+    </section>
+    ${localTextbookList.length === 0 ? `
+      <p class="textbook-empty-state">还没有本地教材。上传 PDF 后会在这里出现。</p>
+    ` : ""}
     <div class="textbook-grid">
+      ${localTextbookList.map((book) => `
+        <article class="textbook-card local-textbook-card">
+          <button type="button" data-local-document="${escapeHtml(book.id)}">
+            <strong>${escapeHtml(book.title)}</strong>
+            <span>${escapeHtml(getLocalTextbookStatusText(book))}</span>
+            <small>${book.pageCount || 0} 页 · 已缓存 ${book.generatedPages || 0} 页</small>
+          </button>
+          <button class="textbook-delete-button" type="button" data-delete-local-document="${escapeHtml(book.id)}">删除</button>
+        </article>
+      `).join("")}
       ${textbookList.map((book) => `
         <button class="textbook-card" type="button" data-manifest="${escapeHtml(book.manifestUrl)}">
           <strong>${escapeHtml(book.title)}</strong>
@@ -1421,13 +1915,86 @@ function renderTextbookLibrary() {
     </div>
   `;
 
+  library.querySelector("#localPdfUploadButton").addEventListener("click", () => {
+    library.querySelector("#localPdfUploadInput").click();
+  });
+
+  library.querySelector("#localPdfUploadInput").addEventListener("change", (event) => {
+    const [file] = event.target.files || [];
+    event.target.value = "";
+    handleLocalPdfUpload(file);
+  });
+
+  library.querySelectorAll("[data-local-document]").forEach((button) => {
+    button.addEventListener("click", () => openLocalTextbook(button.dataset.localDocument));
+  });
+
+  library.querySelectorAll("[data-delete-local-document]").forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const documentId = button.dataset.deleteLocalDocument;
+      const book = localTextbookList.find((item) => item.id === documentId);
+      if (confirm(`删除《${book?.title || "本地教材"}》的本机缓存？`)) {
+        deleteLocalTextbook(documentId).catch((error) => {
+          console.warn("本地教材删除失败。", error);
+          alert("删除失败，请稍后重试。");
+        });
+      }
+    });
+  });
+
   library.querySelectorAll(".textbook-card").forEach((card) => {
+    if (!card.dataset.manifest) {
+      return;
+    }
     card.addEventListener("click", () => openTextbook(card.dataset.manifest));
     card.addEventListener("mouseenter", () => warmTextbookAssets(card.dataset.manifest, 1, 2));
     card.addEventListener("focus", () => warmTextbookAssets(card.dataset.manifest, 1, 2));
     card.addEventListener("touchstart", () => warmTextbookAssets(card.dataset.manifest, 1, 2), { passive: true });
     warmTextbookAssets(card.dataset.manifest, 1, 0);
   });
+}
+
+
+function getLocalTextbookStatusText(book) {
+  if (book.status === "ready") {
+    return "已完成本机页图缓存";
+  }
+  if (book.status === "failed") {
+    return book.errorMessage || "转换失败，请重新上传";
+  }
+  return "正在本机转换 PDF";
+}
+
+
+async function openLocalTextbook(documentId) {
+  const loadRunId = ++activeTextbookLoadRunId;
+  const documentRecord = await getLocalTextbookDocument(documentId);
+  if (!documentRecord || loadRunId !== activeTextbookLoadRunId) {
+    return;
+  }
+
+  activeTextbookCacheEntry = null;
+  activeTextbook = createLocalTextbookManifest(documentRecord);
+  activeTextbookPage = 1;
+  activeTextbookLoadStatus = documentRecord.status === "failed" ? "failed" : "ready";
+
+  document.querySelector("#textbookLibrary").hidden = true;
+  document.querySelector("#textbookReader").hidden = false;
+  document.querySelector("#materials").classList.add("reader-open");
+  document.querySelector("#materialPageInput").max = getTextbookPageTotal();
+  closeChapterMenu();
+  renderChapterMenu(activeTextbookLoadStatus);
+  renderTextbookPage(activeTextbookPage);
+
+  if (documentRecord.status !== "ready") {
+    createLocalTextbookJob(documentRecord)
+      .then(() => Promise.all([
+        ensureLocalTextbookPageRendered(documentRecord.id, activeTextbookPage),
+        processLocalPdfDocument(documentRecord),
+      ]))
+      .catch((error) => markLocalTextbookFailed(documentRecord.id, error.message || "PDF 转换失败。"));
+  }
 }
 
 
@@ -1594,19 +2161,26 @@ function getTextbookPageThumbUrl(pageNumber, entry = activeTextbookCacheEntry) {
 
 
 function preloadTextbookPageImage(pageNumber, entry = activeTextbookCacheEntry) {
-  if (!entry) {
+  if (!entry && activeTextbook?.source !== "local-upload") {
     return;
   }
 
   const cacheKey = String(pageNumber);
-  if (entry.warmedPages?.has(cacheKey)) {
+  if (entry?.warmedPages?.has(cacheKey)) {
     return;
   }
 
-  entry.warmedPages?.add(cacheKey);
+  entry?.warmedPages?.add(cacheKey);
   [getTextbookPageThumbUrl(pageNumber, entry), getTextbookPageImageUrl(pageNumber, entry)]
     .filter(Boolean)
-    .forEach((url) => {
+    .forEach(async (url) => {
+      if (isLocalTextbookPageUrl(url)) {
+        const objectUrl = await getLocalTextbookPageObjectUrl(url);
+        if (!objectUrl) {
+          return;
+        }
+        url = objectUrl;
+      }
       const image = new Image();
       image.decoding = "async";
       image.src = url;
@@ -1620,7 +2194,8 @@ function showTextbookPagePreview(pageNumber) {
   const thumbUrl = getTextbookPageThumbUrl(pageNumber);
   const imageUrl = getTextbookPageImageUrl(pageNumber);
 
-  showTextbookPageSkeleton(pageNumber, activeTextbookLoadStatus === "failed" ? "教材信息加载失败，请稍后重试" : "加载中……");
+  applyTextbookStageAspectRatio();
+  showTextbookPageSkeleton(pageNumber, getTextbookSkeletonStatus());
   preview.hidden = true;
 
   if (!thumbUrl && !imageUrl) {
@@ -1631,9 +2206,28 @@ function showTextbookPagePreview(pageNumber) {
     .then((thumbLoaded) => loadTextbookPreviewImage(imageUrl, pageNumber, imageRunId)
       .then((imageLoaded) => {
         if (!thumbLoaded && !imageLoaded && imageRunId === activeTextbookImageRunId && pageNumber === activeTextbookPage) {
-          showTextbookPageSkeleton(pageNumber, "页面正在加载，请稍候");
+          showTextbookPageSkeleton(pageNumber, getTextbookSkeletonStatus());
         }
       }));
+}
+
+
+function getTextbookSkeletonStatus() {
+  if (activeTextbookLoadStatus === "failed") {
+    return activeTextbook?.status === "failed" ? "PDF 转换失败，请重新上传" : "教材信息加载失败，请稍后重试";
+  }
+  if (activeTextbook?.source === "local-upload" && activeTextbook?.status !== "ready") {
+    return "正在本机转换页面……";
+  }
+  return "加载中……";
+}
+
+
+function applyTextbookStageAspectRatio() {
+  const stage = document.querySelector(".pdf-stage");
+  const width = Number(activeTextbook?.pageWidth) || 589;
+  const height = Number(activeTextbook?.pageHeight) || 807;
+  stage.style.aspectRatio = `${width} / ${height}`;
 }
 
 
@@ -1657,13 +2251,20 @@ function loadTextbookPreviewImage(url, pageNumber, imageRunId) {
     return Promise.resolve(false);
   }
 
-  return new Promise((resolve) => {
+  return Promise.resolve(url)
+    .then((nextUrl) => (isLocalTextbookPageUrl(nextUrl) ? getLocalTextbookPageObjectUrl(nextUrl) : nextUrl))
+    .then((resolvedUrl) => new Promise((resolve) => {
+      if (!resolvedUrl) {
+        resolve(false);
+        return;
+      }
+
     const image = new Image();
     image.decoding = "async";
     image.onload = () => {
       if (imageRunId === activeTextbookImageRunId && pageNumber === activeTextbookPage) {
         const preview = document.querySelector("#materialPagePreview");
-        preview.src = url;
+        preview.src = resolvedUrl;
         preview.alt = `${activeTextbook?.title || "教材"} 第 ${pageNumber} 页预览`;
         preview.hidden = false;
         hideTextbookPageSkeleton();
@@ -1671,21 +2272,22 @@ function loadTextbookPreviewImage(url, pageNumber, imageRunId) {
       resolve(true);
     };
     image.onerror = () => resolve(false);
-    image.src = url;
-  });
+    image.src = resolvedUrl;
+  }));
 }
 
 
 function renderChapterMenu(state = activeTextbookLoadStatus) {
   const button = document.querySelector("#chapterMenuButton");
   const panel = document.querySelector("#chapterMenuPanel");
-  const isReady = state === "ready";
+  const hasChapters = (activeTextbook?.units || []).length > 0;
+  const isReady = state === "ready" && hasChapters;
   button.disabled = !isReady;
-  button.title = isReady ? "选择章节" : "章节加载中";
-  button.setAttribute("aria-label", isReady ? "选择章节" : "章节加载中");
+  button.title = isReady ? "选择章节" : (hasChapters ? "章节加载中" : "本地 PDF 暂无章节目录");
+  button.setAttribute("aria-label", isReady ? "选择章节" : (hasChapters ? "章节加载中" : "本地 PDF 暂无章节目录"));
 
   if (!isReady) {
-    panel.innerHTML = `<p class="chapter-menu-empty">${state === "failed" ? "教材信息加载失败，请稍后重试。" : "章节加载中……"}</p>`;
+    panel.innerHTML = `<p class="chapter-menu-empty">${state === "failed" ? "教材信息加载失败，请稍后重试。" : (hasChapters ? "章节加载中……" : "本地 PDF 暂无章节目录。")}</p>`;
     panel.hidden = true;
     button.setAttribute("aria-expanded", "false");
     return;
@@ -1807,10 +2409,19 @@ function getCurrentPageAudioItems() {
 function renderCurrentPageAudio() {
   const unit = getCurrentTextbookUnit();
   const audioItems = getCurrentPageAudioItems();
+  const panel = document.querySelector(".reader-audio-panel");
   const title = document.querySelector("#materialAudioTitle");
   const hint = document.querySelector("#materialAudioHint");
   const list = document.querySelector("#materialAudioList");
 
+  if (activeTextbook?.source === "local-upload" && audioItems.length === 0) {
+    panel.hidden = true;
+    list.innerHTML = "";
+    hint.hidden = true;
+    return;
+  }
+
+  panel.hidden = false;
   title.textContent = unit ? unit.title : (activeTextbook?.title || "延世韩国语1").replace(/\s+(?=\d)/g, "");
 
   if (activeTextbookLoadStatus === "loading") {
