@@ -235,6 +235,97 @@ const LETTER_DETAILS = {
   "ㅢ": { sound: "의", examples: [["의자", "椅子"], ["의사", "医生"], ["회의", "会议"], ["의미", "意思"]] },
 };
 
+const LETTER_GUIDANCE = {
+  "ㄱ": {
+    positionNotes: ["词首听感偏 k，词中常更接近 g，收音时收成短促的 ㄱ 类，不要读出额外元音。"],
+  },
+  "ㄴ": {
+    tips: ["舌尖抵住上齿龈，声音从鼻腔出来。", "不要把 ㄴ 和 ㄹ 混在一起，ㄴ 更稳定、更鼻音。"],
+    positionNotes: ["词首、词中、收音都保持 n 的听感，收音时舌尖停住，不要加 으。"],
+    contrastNote: "ㄴ 没有紧音或送气音对比，重点练鼻音位置和收音停住。",
+  },
+  "ㄷ": {
+    positionNotes: ["词首不强送气，词中更柔和，收音统一归到 ㄷ 类，舌尖短促收住。"],
+  },
+  "ㄹ": {
+    tips: ["词首和元音之间更像轻轻弹一下舌尖，不是英语 r。", "作收音时更接近 l 的收住感，但不要拖长。"],
+    positionNotes: ["词首/词中练轻弹舌，收音练舌尖停住。ㄹ 的位置变化比多数辅音更明显。"],
+    contrastNote: "ㄹ 没有紧音或送气音对比，重点比较词首轻弹和收音收住。",
+  },
+  "ㅁ": {
+    tips: ["双唇自然闭合，声音从鼻腔出来。", "不要读成带爆破的 b/p，ㅁ 是稳定鼻音。"],
+    positionNotes: ["词首、词中、收音都保持 m 的听感；收音时嘴唇闭住即可，不要补一个 으。"],
+    contrastNote: "ㅁ 没有紧音或送气音对比，重点练双唇鼻音。",
+  },
+  "ㅂ": {
+    positionNotes: ["词首不强送气，词中更接近 b，收音时双唇闭合归到 ㅂ 类。"],
+  },
+  "ㅅ": {
+    positionNotes: ["词首保持轻擦音，遇 ㅣ/y 类元音会更接近 shi；收音不读 s，统一收成 ㄷ 类。"],
+  },
+  "ㅇ": {
+    tips: ["在音节开头只是占位，不发音。", "在收音位置读 ng，舌根收住，声音从鼻腔出来。"],
+    positionNotes: ["词首的 ㅇ 不发音，例如 아이 读作以元音开始；词尾/收音的 ㅇ 要读成 ng，例如 방、강。"],
+    contrastNote: "ㅇ 没有紧音或送气音对比，它的重点是区分开头无声和收音 ng。",
+  },
+  "ㅈ": {
+    positionNotes: ["词首不明显送气，词中更柔和；收音时归到 ㄷ 类。"],
+  },
+  "ㅊ": {
+    positionNotes: ["词首和词中都要听到明显送气；收音位置归到 ㄷ 类，不保留 ch 的释放。"],
+  },
+  "ㅋ": {
+    positionNotes: ["词首/词中气流明显；收音位置归到 ㄱ 类，短促收住。"],
+  },
+  "ㅌ": {
+    positionNotes: ["词首/词中气流明显；收音位置归到 ㄷ 类，舌尖收住。"],
+  },
+  "ㅍ": {
+    positionNotes: ["词首/词中双唇打开时有明显气流；收音位置归到 ㅂ 类，双唇闭住。"],
+  },
+  "ㅎ": {
+    tips: ["像轻轻呼气的 h，气流要出来，但不要用力过猛。", "在一些连读环境里会弱化或影响后面辅音送气，入门阶段先听词里的实际读法。"],
+    positionNotes: ["词首常读 h；词中可能变弱；作收音时经常影响后面的辅音，不建议只按单个 ㅎ 死记。"],
+    contrastNote: "ㅎ 不属于松音/紧音/送气音三组对比，重点听呼气感和连读里的变化。",
+  },
+  "ㄲ": {
+    positionNotes: ["词首和词中都要收紧发音，几乎不送气；收音时归到 ㄱ 类。"],
+  },
+  "ㄸ": {
+    positionNotes: ["ㄸ 主要出现在词首或词中，不作普通收音；练习时重点听紧、不送气。"],
+  },
+  "ㅃ": {
+    positionNotes: ["ㅃ 主要出现在词首或词中，不作普通收音；双唇先收紧再打开。"],
+  },
+  "ㅆ": {
+    positionNotes: ["词首/词中更紧更用力；收音时不读 ss，归到 ㄷ 类。"],
+  },
+  "ㅉ": {
+    positionNotes: ["ㅉ 主要出现在词首或词中，不作普通收音；声音紧，不要读成送气 ㅊ。"],
+  },
+  "ㅏ": { tips: ["嘴自然张开，发明亮的 a。", "不要收得太扁，也不要读成 ㅓ。"] },
+  "ㅑ": { tips: ["先有短促 y 滑音，再到 ㅏ。", "练习时可以慢慢从 이 过渡到 아。"] },
+  "ㅓ": { tips: ["嘴张开但声音更靠后，中文学习者容易和 ㅗ/ㅏ 混。", "不要把它读成普通 a。"] },
+  "ㅕ": { tips: ["先有 y 滑音，再到 ㅓ。", "重点听 여 和 야 的开口差异。"] },
+  "ㅗ": { tips: ["嘴唇收圆，声音靠后。", "不要读成 ㅓ，也不要把嘴张太大。"] },
+  "ㅛ": { tips: ["先有 y 滑音，再到圆唇 ㅗ。", "嘴型从轻微前移过渡到圆唇。"] },
+  "ㅜ": { tips: ["嘴唇收圆，声音比 ㅗ 更高、更收。", "注意和 ㅡ 区分，ㅜ 有明显圆唇。"] },
+  "ㅠ": { tips: ["先有 y 滑音，再到圆唇 ㅜ。", "不要把 유 读成 단순 우，开头要有滑动。"] },
+  "ㅡ": { tips: ["嘴唇放平，舌位较高，声音短而收。", "不要读成中文的“呃”或圆唇的 ㅜ。"] },
+  "ㅣ": { tips: ["嘴角自然展开，舌位高。", "声音要干净，不要加前面的 y。"] },
+  "ㅐ": { tips: ["现代韩语里常和 ㅔ 接近，但入门仍建议先分开练。", "嘴型比 ㅏ 更扁一些。"] },
+  "ㅔ": { tips: ["现代韩语里常和 ㅐ 接近，先通过词汇多听多记。", "不要读成 ㅣ，嘴型要稍微打开。"] },
+  "ㅒ": { tips: ["由 y 滑向 ㅐ，实际使用频率不高。", "先听清 얘、걔、쟤 这类常见词。"] },
+  "ㅖ": { tips: ["由 y 滑向 ㅔ，有些词里听感会弱化。", "예、계、시계 是优先练习词。"] },
+  "ㅘ": { tips: ["由 ㅗ 快速滑到 ㅏ，嘴型从圆到开。", "不要拆成两个很长的音。"] },
+  "ㅙ": { tips: ["由 ㅗ 滑到 ㅐ，常见于 왜、돼。", "和 ㅞ、ㅚ 在现代发音里可能接近，先靠词记。"] },
+  "ㅚ": { tips: ["现代口语里常接近 we 的听感。", "保留外/会社等常见词的整体听感。"] },
+  "ㅝ": { tips: ["由 ㅜ 滑到 ㅓ，嘴型从圆到稍开。", "뭐、원、권 是优先听的词。"] },
+  "ㅞ": { tips: ["由 ㅜ 滑到 ㅔ，和 ㅙ/ㅚ 容易接近。", "入门阶段先用常见词建立听感。"] },
+  "ㅟ": { tips: ["嘴唇先圆，声音向 ㅣ 收。", "注意 귀、위、뒤 的滑动，不要读成单纯 이。"] },
+  "ㅢ": { tips: ["标准音从 ㅡ 滑到 ㅣ，但实际词中会有变化。", "의자、의사 先按 의 练；助词 의 后续可单独学习。"] },
+};
+
 const CONSONANT_LETTERS = new Set([
   "ㄱ", "ㄴ", "ㄷ", "ㄹ", "ㅁ", "ㅂ", "ㅅ", "ㅇ", "ㅈ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ", "ㄲ", "ㄸ", "ㅃ", "ㅆ", "ㅉ",
 ]);
@@ -270,26 +361,26 @@ const PHONETIC_SECTIONS = [
   {
     id: "consonants",
     label: "辅音",
-    note: "先听松音，再对比紧音和送气音。",
+    note: "先选一个音，听发音，再看位置和对比。",
     groups: [
-      { id: "plain", label: "松音", note: "先按基础辅音建立听感", kind: "consonant", letters: ["ㄱ", "ㄴ", "ㄷ", "ㄹ", "ㅁ", "ㅂ", "ㅅ", "ㅇ", "ㅈ"] },
+      { id: "plain", label: "松音", note: "基础听感，不强送气", kind: "consonant", letters: ["ㄱ", "ㄴ", "ㄷ", "ㄹ", "ㅁ", "ㅂ", "ㅅ", "ㅇ", "ㅈ"] },
       { id: "tense", label: "紧音", note: "声音更紧，气流更短", kind: "consonant", letters: ["ㄲ", "ㄸ", "ㅃ", "ㅆ", "ㅉ"] },
-      { id: "aspirated", label: "送气音", note: "重点听明显送气", kind: "consonant", letters: ["ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"] },
+      { id: "aspirated", label: "送气音", note: "气流更明显", kind: "consonant", letters: ["ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"] },
     ],
   },
   {
     id: "vowels",
     label: "元音",
-    note: "先稳定单元音，再练组合后的双元音。",
+    note: "重点看口型，不按词首词尾区分。",
     groups: [
-      { id: "single-vowels", label: "单元音", note: "先练清楚口型和舌位", kind: "vowel", letters: ["ㅏ", "ㅑ", "ㅓ", "ㅕ", "ㅗ", "ㅛ", "ㅜ", "ㅠ", "ㅡ", "ㅣ", "ㅐ", "ㅔ"] },
-      { id: "double-vowels", label: "双元音", note: "听清开头到结尾的滑动", kind: "vowel", letters: ["ㅒ", "ㅖ", "ㅘ", "ㅙ", "ㅚ", "ㅝ", "ㅞ", "ㅟ", "ㅢ"] },
+      { id: "single-vowels", label: "单元音", note: "先稳定一个口型", kind: "vowel", letters: ["ㅏ", "ㅑ", "ㅓ", "ㅕ", "ㅗ", "ㅛ", "ㅜ", "ㅠ", "ㅡ", "ㅣ", "ㅐ", "ㅔ"] },
+      { id: "double-vowels", label: "双元音", note: "听清滑动方向", kind: "vowel", letters: ["ㅒ", "ㅖ", "ㅘ", "ㅙ", "ㅚ", "ㅝ", "ㅞ", "ㅟ", "ㅢ"] },
     ],
   },
   {
     id: "batchim",
     label: "收音",
-    note: "收音先按 7 类代表音练，再看双收音读前还是读后。",
+    note: "先记 7 个代表音，再练双收音。",
     groups: [
       {
         id: "base-batchim",
@@ -880,6 +971,7 @@ function initThemeToggle() {
 
 function normalizeLetterItem(item) {
   const details = LETTER_DETAILS[item.letter] || {};
+  const guidance = LETTER_GUIDANCE[item.letter] || {};
   const kind = CONSONANT_LETTERS.has(item.letter) ? "consonant" : "vowel";
   const primaryExample = {
     word: item.word,
@@ -903,7 +995,12 @@ function normalizeLetterItem(item) {
     sound: details.sound || item.letter,
     letterAudioUrl: item.letter_audio_url || "",
     examples,
-    tips: details.tips || [],
+    tips: [
+      ...(details.tips || []),
+      ...(guidance.tips || []),
+    ],
+    positionNotes: guidance.positionNotes || getDefaultPositionNotes(kind),
+    contrastNote: guidance.contrastNote || getDefaultContrastNote(kind),
     contrastGroup: details.contrastGroup || "",
   };
 }
@@ -923,7 +1020,27 @@ function normalizeRuleItem(item, group) {
     letterAudioUrl: "",
     examples,
     tips: item.tips || [],
+    positionNotes: item.sound ? [item.sound] : [],
+    contrastNote: "",
   };
+}
+
+
+function getDefaultPositionNotes(kind) {
+  if (kind === "vowel") {
+    return ["元音不分词首、词中、词尾辅音位置；重点练口型，以及和辅音组合后的稳定音色。"];
+  }
+
+  return ["这个辅音的实际听感会受词首、词中、收音位置影响；先听示范词，再跟读模仿。"];
+}
+
+
+function getDefaultContrastNote(kind) {
+  if (kind === "vowel") {
+    return "元音不参与松音、紧音、送气音对比；重点比较口型、圆唇和双元音滑动。";
+  }
+
+  return "这个音标没有成套的松音/紧音/送气音对比，先把自身发音位置练稳。";
 }
 
 
@@ -951,14 +1068,17 @@ function renderPracticeCard(item, index) {
 }
 
 
-function renderTipList(tips) {
-  if (!tips.length) {
+function renderGuidanceBlock(title, notes, variant = "") {
+  if (!notes.length) {
     return "";
   }
 
   return `
-    <div class="detail-tips">
-      ${tips.map((tip) => `<span>${tip}</span>`).join("")}
+    <div class="detail-guidance ${variant}">
+      <h4>${title}</h4>
+      <div>
+        ${notes.map((note) => `<span>${note}</span>`).join("")}
+      </div>
     </div>
   `;
 }
@@ -1010,6 +1130,19 @@ function renderExampleSection(title, items, kind, letterData) {
       </div>
     </div>
   `;
+}
+
+
+function getExampleSectionTitle(letterData) {
+  if (letterData.type === "rule") {
+    return "规则例词";
+  }
+
+  if (letterData.kind === "vowel") {
+    return "示范词汇";
+  }
+
+  return "位置示范";
 }
 
 
@@ -1094,13 +1227,17 @@ function renderLetterDetail(letterData, selectedCard) {
   detail.innerHTML = `
     <div class="letter-detail-head">
       <div>
-        <span class="eyebrow">Selected Sound</span>
+        <span class="eyebrow">Sound Detail</span>
         <h3>${letterData.letter} <span>${letterData.sound}</span></h3>
       </div>
       <button class="detail-close" type="button" aria-label="收起示范详情">×</button>
     </div>
-    ${renderTipList(letterData.tips || [])}
-    ${renderExampleSection(letterData.type === "rule" ? "例词" : "位置示范", letterData.examples, "example", letterData)}
+    <div class="detail-guidance-grid">
+      ${renderGuidanceBlock("发音技巧", letterData.tips || [], "primary")}
+      ${renderGuidanceBlock("位置说明", letterData.positionNotes || [], "position")}
+      ${contrastItems.length ? "" : renderGuidanceBlock("对比说明", letterData.contrastNote ? [letterData.contrastNote] : [], "contrast")}
+    </div>
+    ${renderExampleSection(getExampleSectionTitle(letterData), letterData.examples, "example", letterData)}
     ${renderExampleSection("对比词汇", contrastItems, "contrast", letterData)}
   `;
 
