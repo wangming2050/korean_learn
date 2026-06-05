@@ -495,12 +495,12 @@ textarea {
 
 .letter-groups {
   display: grid;
-  gap: 24px;
+  gap: 20px;
 }
 
 .letter-section {
   display: grid;
-  gap: 14px;
+  gap: 12px;
 }
 
 .letter-section-head,
@@ -539,13 +539,13 @@ textarea {
 
 .letter-subgroups {
   display: grid;
-  gap: 16px;
+  gap: 14px;
 }
 
 .letter-subgroup {
   display: grid;
-  gap: 10px;
-  padding-top: 8px;
+  gap: 8px;
+  padding-top: 6px;
 }
 
 .letter-category-head {
@@ -563,46 +563,16 @@ textarea {
 }
 
 .letter-subgroup-head {
-  padding: 10px 12px;
+  padding: 8px 10px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface-raised);
 }
 
-.letter-type-badge {
-  display: inline-flex;
-  align-items: center;
-  min-height: 24px;
-  padding: 3px 8px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  color: var(--muted);
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.letter-type-badge.consonant {
-  border-color: color-mix(in srgb, var(--brand) 32%, var(--line));
-  color: var(--brand-strong);
-  background: color-mix(in srgb, var(--surface) 78%, var(--brand-soft));
-}
-
-.letter-type-badge.vowel {
-  border-color: color-mix(in srgb, oklch(72% 0.09 72) 34%, var(--line));
-  color: color-mix(in srgb, var(--ink) 72%, oklch(52% 0.12 72));
-  background: color-mix(in srgb, var(--surface) 86%, oklch(88% 0.05 72));
-}
-
-.letter-type-badge.batchim {
-  border-color: color-mix(in srgb, oklch(62% 0.09 185) 34%, var(--line));
-  color: color-mix(in srgb, var(--ink) 76%, oklch(48% 0.1 185));
-  background: color-mix(in srgb, var(--surface) 86%, oklch(88% 0.045 185));
-}
-
 .letter-group-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(62px, 74px));
+  gap: 8px;
 }
 
 .letter-card,
@@ -618,8 +588,9 @@ textarea {
   position: relative;
   display: grid;
   place-items: center;
-  min-height: 72px;
-  padding: 8px;
+  aspect-ratio: 1;
+  min-height: 0;
+  padding: 0;
   cursor: pointer;
   overflow: hidden;
   transition:
@@ -642,6 +613,9 @@ textarea {
 .letter-card.selected {
   border-color: var(--brand);
   background: var(--brand-soft);
+  box-shadow:
+    0 0 0 3px color-mix(in srgb, var(--brand) 22%, transparent),
+    var(--shadow-soft);
 }
 
 .letter-card.vowel.selected {
@@ -657,31 +631,19 @@ textarea {
 .letter-card strong {
   display: block;
   color: var(--brand-strong);
-  font-size: 36px;
+  font-size: 32px;
   line-height: 1;
+  text-align: center;
+  word-break: keep-all;
 }
 
-.letter-card span {
-  display: block;
-  color: var(--muted);
-  line-height: 1.55;
-}
-
-.letter-card .letter-word {
-  color: var(--ink);
-  font-weight: 700;
-}
-
-.letter-card small {
-  display: block;
-  margin-top: 9px;
-  color: var(--faint);
-  font-size: 12px;
+.letter-card.batchim strong {
+  font-size: 23px;
 }
 
 .letter-detail {
   grid-column: 1 / -1;
-  padding: 18px;
+  padding: 16px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface);
@@ -734,19 +696,36 @@ textarea {
   background: var(--surface-raised);
 }
 
-.detail-tips {
+.detail-guidance-grid {
   display: grid;
-  gap: 8px;
-  margin-bottom: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
 }
 
-.detail-tips span {
-  display: block;
-  padding: 8px 10px;
+.detail-guidance {
+  display: grid;
+  gap: 8px;
+  padding: 10px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  color: var(--muted);
   background: color-mix(in srgb, var(--surface-raised) 86%, var(--brand-soft));
+}
+
+.detail-guidance h4 {
+  margin: 0;
+  color: var(--brand-strong);
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.detail-guidance div {
+  display: grid;
+  gap: 6px;
+}
+
+.detail-guidance span {
+  display: block;
+  color: var(--muted);
   line-height: 1.55;
 }
 
