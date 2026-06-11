@@ -3,26 +3,30 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>韩语句子跟读学习</title>
+  <title>한步 · 韩语练习</title>
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/static/css/redesign.css">
+  <link rel="stylesheet" href="/static/css/vocab.css">
+  <link rel="stylesheet" href="/static/css/scene.css">
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 </head>
-<body>
+<body data-active-page="guide">
   <header class="topbar">
-    <a class="brand" href="/" aria-label="韩语练习台首页">
-      <span class="brand-mark" aria-hidden="true">한</span>
-      <span>
-        <span class="brand-title">韩语练习</span>
-        <span class="brand-subtitle">小单位，高频练</span>
-      </span>
+    <a class="brand" href="/" aria-label="한步 韩语练习台首页">
+      <span class="brand-mark" lang="ko" aria-hidden="true"><span class="lg-han">한</span><span class="lg-bu">步</span></span>
     </a>
 
     <nav class="tabs" aria-label="学习模块">
-      <button class="tab active" data-page="guide">学习路径</button>
+      <button class="tab active" data-page="guide">首页</button>
       <button class="tab" data-page="letters">音标</button>
       <button class="tab" data-page="vocabulary">词汇</button>
-      <!-- <button class="tab" data-page="ll">音标组合</button> -->
       <button class="tab" data-page="scenes">句子</button>
-      <!-- <button class="tab" data-page="ss">音变</button> -->
       <button class="tab" data-page="materials">教材</button>
       <button class="theme-toggle" type="button" aria-label="切换明暗背景" title="切换明暗背景">
         <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
@@ -37,79 +41,61 @@
   </header>
 
   <main>
-    <section id="guide" class="page guide-page active">
-      <div class="guide-hero">
-        <span class="eyebrow">Learning Path</span>
-        <h1>先知道怎么练，再选择今天练什么。</h1>
-        <p>这里不替你安排计划，只给出一条清晰的学习思路和网站使用方法。你可以按自己的节奏，从音标、场景、词汇或教材进入训练。</p>
-      </div>
-
-      <div class="guide-grid">
-        <article class="guide-panel">
-          <span class="guide-index">01</span>
-          <h2>语音靠模仿</h2>
-          <p>先听标准音，再跟着读。不要急着学很多，先把一个音、一个词听准。</p>
-          <ul>
-            <li>寻找清晰音频材料</li>
-            <li>熟读多听，逐段模仿语音语调</li>
-            <li>后续可加入录音、回放、对比和调整</li>
-          </ul>
-        </article>
-
-        <article class="guide-panel">
-          <span class="guide-index">02</span>
-          <h2>语法靠句子</h2>
-          <p>韩语语法不要脱离句子看。先理解助词、词序和简单句，再进入复杂表达。</p>
-          <ul>
-            <li>从场景句子里观察 은/는、이/가、을/를</li>
-            <li>对照中文理解韩语语序</li>
-            <li>读懂简单句，再尝试自己造句</li>
-          </ul>
-        </article>
-
-        <article class="guide-panel">
-          <span class="guide-index">03</span>
-          <h2>词汇靠积累</h2>
-          <p>单词不要孤立背。把词放到例句里，听发音、看用法、反复复现。</p>
-          <ul>
-            <li>用例句记词，不只记中文意思</li>
-            <li>搜索韩文或中文，回到句子里理解</li>
-            <li>把模糊的词留给下一轮复习</li>
-          </ul>
-        </article>
-
-        <article class="guide-panel">
-          <span class="guide-index">04</span>
-          <h2>这个网站怎么用</h2>
-          <p>四个栏目分别解决不同问题。你可以按需要进入，不需要一次全部完成。</p>
-          <ul>
-            <li>音标：点击字母听标准音</li>
-            <li>场景：选择场景，循环或慢速跟读句子</li>
-            <li>词汇：搜索词汇，通过例句理解用法</li>
-            <li>教材：按时间轴逐句播放和跟读</li>
-          </ul>
-        </article>
-      </div>
-
-      <div class="guide-next">
-        <div>
-          <strong>开始练习</strong>
-          <span>如果你是第一次打开，可以先从音标开始。</span>
+    <!-- ============================================================
+         学习路径（首页） — 居中格言 + 学习路线图
+         ============================================================ -->
+    <section id="guide" class="page guide-page active" data-screen-label="首页">
+      <div class="home">
+        <div class="home-hero">
+          <span class="home-logo" lang="ko" aria-hidden="true"><span class="lg-han">한</span><span class="lg-bu">步</span></span>
+          <h1 class="home-motto" lang="ko">시작이 반이다</h1>
+          <p class="home-motto-cn">好的开始是成功的一半</p>
         </div>
-        <button class="secondary-action" type="button" data-open-page="letters">进入音标</button>
+
+        <ol class="roadmap" aria-label="学习路线图">
+          <li class="roadmap-step">
+            <button class="roadmap-card" type="button" data-open-page="letters">
+              <span class="roadmap-node">01</span>
+              <span class="roadmap-ko" lang="ko">발음</span>
+              <span class="roadmap-name">音标</span>
+              <span class="roadmap-go">进入 →</span>
+            </button>
+          </li>
+          <li class="roadmap-step">
+            <button class="roadmap-card" type="button" data-open-page="vocabulary">
+              <span class="roadmap-node">02</span>
+              <span class="roadmap-ko" lang="ko">단어</span>
+              <span class="roadmap-name">词汇</span>
+              <span class="roadmap-go">进入 →</span>
+            </button>
+          </li>
+          <li class="roadmap-step">
+            <button class="roadmap-card" type="button" data-open-page="scenes">
+              <span class="roadmap-node">03</span>
+              <span class="roadmap-ko" lang="ko">문장</span>
+              <span class="roadmap-name">句子</span>
+              <span class="roadmap-go">进入 →</span>
+            </button>
+          </li>
+          <li class="roadmap-step">
+            <button class="roadmap-card" type="button" data-open-page="materials">
+              <span class="roadmap-node">04</span>
+              <span class="roadmap-ko" lang="ko">교재</span>
+              <span class="roadmap-name">教材</span>
+              <span class="roadmap-go">进入 →</span>
+            </button>
+          </li>
+        </ol>
       </div>
     </section>
 
+    <!-- 全站唯一的音频播放器，所有播放按钮复用它（app.js / React 应用共用） -->
     <audio id="player"></audio>
 
-
-    <section id="letters" class="page active">
-      <div class="section-title">
-        <div>
-          <span class="eyebrow">Pronunciation</span>
-          <h2>韩语发音训练</h2>
-        </div>
-      </div>
+    <!-- ============================================================
+         音标（Letters） — 保留原有功能，由 app.js 动态渲染
+         ============================================================ -->
+    <section id="letters" class="page" data-screen-label="音标">
       <div class="letter-controls" aria-label="音标朗读设置">
         <label><input type="checkbox" id="playLetterSound" checked> 音标</label>
         <label><input type="checkbox" id="playExampleWords"> 示例单词</label>
@@ -122,39 +108,24 @@
       <section id="letterDetail" class="letter-detail" hidden></section>
     </section>
 
-
-
-
-
-    <section id="vocabulary" class="page">
-      <div class="section-title">
-        <div>
-          <span class="eyebrow">Vocabulary</span>
-          <h2>词汇例句</h2>
-        </div>
-        <input id="vocabSearch" type="search" placeholder="搜索韩文或中文">
-      </div>
-      <div id="vocabList" class="sentence-list"></div>
+    <!-- ============================================================
+         词汇（Vocabulary） — React 应用，接 /api/vocabulary
+         ============================================================ -->
+    <section id="vocabulary" class="page" data-screen-label="词汇">
+      <div id="vocab-root"></div>
     </section>
 
-
-    <section id="scenes" class="page">
-      <div class="section-title">
-        <div>
-          <span class="eyebrow">Sentences</span>
-          <h2>场景句子</h2>
-        </div>
-        <select id="sceneSelect"></select>
-      </div>
-      <div class="play-options">
-        <label><input type="checkbox" id="sentenceLoop"> 单句循环</label>
-        <label><input type="checkbox" id="sentenceSlow"> 慢速播放</label>
-      </div>
-      <div id="sentenceList" class="sentence-list"></div>
+    <!-- ============================================================
+         句子（Scenes） — React 应用，接 /api/scenes + /api/sentences
+         ============================================================ -->
+    <section id="scenes" class="page" data-screen-label="句子">
+      <div id="scene-root"></div>
     </section>
 
-
-    <section id="materials" class="page">
+    <!-- ============================================================
+         教材（Materials） — 保留原有阅读器 + AI 助教，仅套用新视觉风格
+         ============================================================ -->
+    <section id="materials" class="page" data-screen-label="教材">
       <div id="textbookLibrary" class="textbook-library"></div>
       <div id="textbookReader" class="textbook-reader-page" hidden>
         <div class="reader-header">
@@ -206,13 +177,21 @@
             <button id="materialNextPage" class="page-arrow page-arrow-right" type="button" aria-label="下一页">›</button>
           </div>
 
-          <aside class="reader-audio-panel">
-            <section class="textbook-audio" aria-label="当前页面听力">
-              <div class="textbook-audio-head">
-                <h3 id="materialAudioTitle">听力</h3>
-                <p id="materialAudioHint" hidden></p>
+          <aside class="reader-assistant-panel">
+            <section class="pdf-assistant" aria-label="AI 助教问答">
+              <div class="pdf-assistant-head">
+                <div class="pdf-assistant-title-row">
+                  <h3>AI 助教</h3>
+                  <button id="pdfAssistantExpandButton" class="pdf-assistant-expand-button" type="button" aria-pressed="false">展开</button>
+                </div>
+                <p id="pdfAssistantStatus">会参考当前页和相邻页内容回答。</p>
               </div>
-              <div id="materialAudioList" class="audio-track-list"></div>
+              <div id="pdfAssistantMessages" class="pdf-assistant-messages" aria-live="polite"></div>
+              <form id="pdfAssistantForm" class="pdf-assistant-form">
+                <textarea id="pdfAssistantQuestion" rows="3" placeholder="问问当前页哪里不懂"></textarea>
+                <button id="pdfAssistantSendButton" type="submit">提问</button>
+              </form>
+              <p class="pdf-assistant-privacy">提问时会把当前页附近的文字发送给 AI；文字太少时会附带当前页截图。</p>
             </section>
           </aside>
         </div>
@@ -227,7 +206,13 @@
     </section>
   </main>
 
+  <!-- 原生 JS：页面切换、音标、教材阅读器、AI 助教、音频播放 -->
   <script src="/static/js/word-audio-map.js"></script>
   <script src="/static/js/app.js"></script>
+
+  <!-- 词汇页 React 应用（接 /api/vocabulary） -->
+  <script type="text/babel" src="/static/js/vocab-app.jsx"></script>
+  <!-- 句子页 React 应用（接 /api/scenes + /api/sentences） -->
+  <script type="text/babel" src="/static/js/sentence-app.jsx"></script>
 </body>
 </html>

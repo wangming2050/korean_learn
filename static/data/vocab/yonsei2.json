@@ -1,0 +1,6218 @@
+[
+  {
+    "id": "yonsei2-0001",
+    "korean": "무역",
+    "chinese": "[贸易]名.贸易",
+    "source_page": 1,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0002",
+    "korean": "부탁하다",
+    "chinese": "拜托",
+    "source_page": 1,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0003",
+    "korean": "도움",
+    "chinese": "[名] 帮助",
+    "source_page": 1,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0004",
+    "korean": "필요하다",
+    "chinese": "[形] 需要",
+    "source_page": 1,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0005",
+    "korean": "말씀 많이 들었습니다",
+    "chinese": "久闻大名",
+    "source_page": 1,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0006",
+    "korean": "무역 회사",
+    "chinese": "[名] 贸易公司",
+    "source_page": 1,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0007",
+    "korean": "신문사",
+    "chinese": "[名] 报社",
+    "source_page": 1,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0008",
+    "korean": "방송국",
+    "chinese": "[名]电视台",
+    "source_page": 1,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0009",
+    "korean": "여행사",
+    "chinese": "旅行社",
+    "source_page": 1,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0010",
+    "korean": "증권 회사",
+    "chinese": "证券公司",
+    "source_page": 1,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0011",
+    "korean": "항공사",
+    "chinese": "[名]航空公司",
+    "source_page": 1,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0012",
+    "korean": "잡지사",
+    "chinese": "杂志社",
+    "source_page": 1,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0013",
+    "korean": "졸업하다",
+    "chinese": "毕业",
+    "source_page": 2,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0014",
+    "korean": "전공",
+    "chinese": "专业",
+    "source_page": 2,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0015",
+    "korean": "경영학",
+    "chinese": "经营学",
+    "source_page": 2,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0016",
+    "korean": "국어국문학",
+    "chinese": "国语国文学",
+    "source_page": 2,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0017",
+    "korean": "천문우주학",
+    "chinese": "天文宇宙学",
+    "source_page": 2,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0018",
+    "korean": "의학",
+    "chinese": "医学",
+    "source_page": 2,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0019",
+    "korean": "역사학",
+    "chinese": "历史学",
+    "source_page": 2,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0020",
+    "korean": "신문방송학",
+    "chinese": "新闻传播学",
+    "source_page": 2,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0021",
+    "korean": "경제학",
+    "chinese": "经济学",
+    "source_page": 2,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0022",
+    "korean": "태어나다",
+    "chinese": "出生",
+    "source_page": 2,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0023",
+    "korean": "오래간만",
+    "chinese": "好久不见",
+    "source_page": 2,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0024",
+    "korean": "지내다",
+    "chinese": "过",
+    "source_page": 2,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0025",
+    "korean": "사귀다",
+    "chinese": "交往",
+    "source_page": 2,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0026",
+    "korean": "힘들다",
+    "chinese": "吃力，费劲",
+    "source_page": 2,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0027",
+    "korean": "익숙하다",
+    "chinese": "习惯",
+    "source_page": 2,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0028",
+    "korean": "사촌",
+    "chinese": "堂兄弟，堂姐妹",
+    "source_page": 3,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0029",
+    "korean": "올케",
+    "chinese": "弟媳，嫂子（女称）",
+    "source_page": 3,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0030",
+    "korean": "형수",
+    "chinese": "嫂子（男称）",
+    "source_page": 3,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0031",
+    "korean": "조카",
+    "chinese": "侄子，侄女",
+    "source_page": 3,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0032",
+    "korean": "외숙부",
+    "chinese": "舅舅",
+    "source_page": 3,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0033",
+    "korean": "외숙모",
+    "chinese": "舅妈",
+    "source_page": 3,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0034",
+    "korean": "다녀오다",
+    "chinese": "去，去一趟",
+    "source_page": 3,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0035",
+    "korean": "시골",
+    "chinese": "乡村",
+    "source_page": 3,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0036",
+    "korean": "경치",
+    "chinese": "景色",
+    "source_page": 3,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0037",
+    "korean": "빌딩",
+    "chinese": "大厦",
+    "source_page": 3,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0038",
+    "korean": "착",
+    "chinese": "善良",
+    "source_page": 3,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0039",
+    "korean": "도시",
+    "chinese": "城市",
+    "source_page": 3,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0040",
+    "korean": "섬",
+    "chinese": "岛",
+    "source_page": 3,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0041",
+    "korean": "관광지",
+    "chinese": "观光地",
+    "source_page": 3,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0042",
+    "korean": "유적지",
+    "chinese": "历史遗迹",
+    "source_page": 3,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0043",
+    "korean": "바닷가",
+    "chinese": "海边",
+    "source_page": 4,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0044",
+    "korean": "부럽다",
+    "chinese": "羡慕",
+    "source_page": 4,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0045",
+    "korean": "유럽",
+    "chinese": "欧洲",
+    "source_page": 4,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0046",
+    "korean": "습기",
+    "chinese": "湿气",
+    "source_page": 4,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0047",
+    "korean": "숲",
+    "chinese": "森林",
+    "source_page": 4,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0048",
+    "korean": "캥거루",
+    "chinese": "袋鼠 kangaroo",
+    "source_page": 4,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0049",
+    "korean": "새",
+    "chinese": "[名]鸟",
+    "source_page": 4,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0050",
+    "korean": "터키",
+    "chinese": "土耳其",
+    "source_page": 4,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0051",
+    "korean": "관심",
+    "chinese": "关心",
+    "source_page": 4,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0052",
+    "korean": "관계",
+    "chinese": "关系",
+    "source_page": 4,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0053",
+    "korean": "친척",
+    "chinese": "亲戚",
+    "source_page": 4,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0054",
+    "korean": "데리고",
+    "chinese": "带着",
+    "source_page": 4,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0055",
+    "korean": "설렁탕",
+    "chinese": "牛杂碎汤",
+    "source_page": 4,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0056",
+    "korean": "파",
+    "chinese": "葱",
+    "source_page": 4,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0057",
+    "korean": "말다",
+    "chinese": "泡",
+    "source_page": 4,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0058",
+    "korean": "접시",
+    "chinese": "碟子",
+    "source_page": 5,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0059",
+    "korean": "덜다",
+    "chinese": "减；盛",
+    "source_page": 5,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0060",
+    "korean": "넣다",
+    "chinese": "放入",
+    "source_page": 5,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0061",
+    "korean": "뿌리다",
+    "chinese": "撒，洒",
+    "source_page": 5,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0062",
+    "korean": "비비다",
+    "chinese": "拌",
+    "source_page": 5,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0063",
+    "korean": "찍다",
+    "chinese": "蘸；拍照",
+    "source_page": 5,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0064",
+    "korean": "가루",
+    "chinese": "粉，粉末",
+    "source_page": 5,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0065",
+    "korean": "유명하다",
+    "chinese": "著名的",
+    "source_page": 5,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0066",
+    "korean": "닭고기",
+    "chinese": "鸡肉",
+    "source_page": 5,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0067",
+    "korean": "채소",
+    "chinese": "蔬菜",
+    "source_page": 5,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0068",
+    "korean": "좀",
+    "chinese": "稍微，一点儿",
+    "source_page": 5,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0069",
+    "korean": "튀김",
+    "chinese": "油炸食物",
+    "source_page": 5,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0070",
+    "korean": "후추",
+    "chinese": "胡椒",
+    "source_page": 5,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0071",
+    "korean": "우선",
+    "chinese": "首先",
+    "source_page": 5,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0072",
+    "korean": "끓이다",
+    "chinese": "煮，熬，烧开",
+    "source_page": 5,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0073",
+    "korean": "돼지고기",
+    "chinese": "猪肉",
+    "source_page": 6,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0074",
+    "korean": "썰다",
+    "chinese": "[动] 切",
+    "source_page": 6,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0075",
+    "korean": "간",
+    "chinese": "咸淡",
+    "source_page": 6,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0076",
+    "korean": "맞추다",
+    "chinese": "调，配",
+    "source_page": 6,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0077",
+    "korean": "굽다",
+    "chinese": "[动] 烤",
+    "source_page": 6,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0078",
+    "korean": "튀기다",
+    "chinese": "[他] 炸",
+    "source_page": 6,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0079",
+    "korean": "볶다",
+    "chinese": "（他）炒",
+    "source_page": 6,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0080",
+    "korean": "삶다",
+    "chinese": "炖",
+    "source_page": 6,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0081",
+    "korean": "찌다",
+    "chinese": "蒸",
+    "source_page": 6,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0082",
+    "korean": "다지다",
+    "chinese": "剁",
+    "source_page": 6,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0083",
+    "korean": "썰다",
+    "chinese": "切",
+    "source_page": 6,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0084",
+    "korean": "젓다",
+    "chinese": "搅拌",
+    "source_page": 6,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0085",
+    "korean": "프라이팬",
+    "chinese": "平底锅",
+    "source_page": 6,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0086",
+    "korean": "기름",
+    "chinese": "油",
+    "source_page": 6,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0087",
+    "korean": "칼",
+    "chinese": "刀",
+    "source_page": 6,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0088",
+    "korean": "가지",
+    "chinese": "种",
+    "source_page": 7,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0089",
+    "korean": "전병",
+    "chinese": "煎饼",
+    "source_page": 7,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0090",
+    "korean": "카레",
+    "chinese": "咖喱",
+    "source_page": 7,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0091",
+    "korean": "토마토",
+    "chinese": "西红柿",
+    "source_page": 7,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0092",
+    "korean": "요구르트",
+    "chinese": "酸奶",
+    "source_page": 7,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0093",
+    "korean": "돈가스",
+    "chinese": "炸猪排",
+    "source_page": 7,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0094",
+    "korean": "부드럽다",
+    "chinese": "松软；柔软；细腻",
+    "source_page": 7,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0095",
+    "korean": "오리",
+    "chinese": "鸭子",
+    "source_page": 7,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0096",
+    "korean": "껍질",
+    "chinese": "皮",
+    "source_page": 7,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0097",
+    "korean": "갈비찜",
+    "chinese": "炖排骨",
+    "source_page": 7,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0098",
+    "korean": "전통",
+    "chinese": "传统",
+    "source_page": 7,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0099",
+    "korean": "윗사람",
+    "chinese": "长辈",
+    "source_page": 7,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0100",
+    "korean": "아랫사람",
+    "chinese": "晚辈",
+    "source_page": 7,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0101",
+    "korean": "다른",
+    "chinese": "其他",
+    "source_page": 7,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0102",
+    "korean": "예절",
+    "chinese": "礼节",
+    "source_page": 7,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0103",
+    "korean": "들다",
+    "chinese": "提；拿；举",
+    "source_page": 8,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0104",
+    "korean": "양손",
+    "chinese": "双手",
+    "source_page": 8,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0105",
+    "korean": "내려넣다",
+    "chinese": "放下",
+    "source_page": 8,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0106",
+    "korean": "냄비",
+    "chinese": "汤锅",
+    "source_page": 8,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0107",
+    "korean": "식탁",
+    "chinese": "饭桌",
+    "source_page": 8,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0108",
+    "korean": "숟가락",
+    "chinese": "勺子",
+    "source_page": 8,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0109",
+    "korean": "젓가락",
+    "chinese": "筷子",
+    "source_page": 8,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0110",
+    "korean": "국그릇",
+    "chinese": "汤碗",
+    "source_page": 8,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0111",
+    "korean": "밥그릇",
+    "chinese": "饭碗",
+    "source_page": 8,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0112",
+    "korean": "버리다",
+    "chinese": "扔掉",
+    "source_page": 8,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0113",
+    "korean": "어른",
+    "chinese": "大人",
+    "source_page": 8,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0114",
+    "korean": "수저",
+    "chinese": "勺子和筷子",
+    "source_page": 8,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0115",
+    "korean": "풀다",
+    "chinese": "解开；擤",
+    "source_page": 8,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0116",
+    "korean": "내다",
+    "chinese": "出，交",
+    "source_page": 8,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0117",
+    "korean": "마치다",
+    "chinese": "结束，完成",
+    "source_page": 8,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0118",
+    "korean": "실수",
+    "chinese": "[名] 失误",
+    "source_page": 9,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0119",
+    "korean": "인상적인",
+    "chinese": "印象深刻的",
+    "source_page": 9,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0120",
+    "korean": "마당",
+    "chinese": "院子，庭院",
+    "source_page": 9,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0121",
+    "korean": "점",
+    "chinese": "分，点",
+    "source_page": 9,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0122",
+    "korean": "없애다",
+    "chinese": "消除",
+    "source_page": 9,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0123",
+    "korean": "찹쌀가루",
+    "chinese": "糯米粉",
+    "source_page": 9,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0124",
+    "korean": "구수하다",
+    "chinese": "（味道）香",
+    "source_page": 9,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0125",
+    "korean": "발효 식품",
+    "chinese": "发酵食品",
+    "source_page": 9,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0126",
+    "korean": "이사하다",
+    "chinese": "搬家",
+    "source_page": 9,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0127",
+    "korean": "돈을 모아다",
+    "chinese": "攒钱",
+    "source_page": 9,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0128",
+    "korean": "조종사",
+    "chinese": "飞行员",
+    "source_page": 9,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0129",
+    "korean": "모델",
+    "chinese": "模特",
+    "source_page": 9,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0130",
+    "korean": "지각",
+    "chinese": "迟到",
+    "source_page": 9,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0131",
+    "korean": "경험",
+    "chinese": "经验",
+    "source_page": 9,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0132",
+    "korean": "튀기다",
+    "chinese": "炸，煎",
+    "source_page": 9,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0133",
+    "korean": "디카",
+    "chinese": "数码相机",
+    "source_page": 10,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0134",
+    "korean": "전자",
+    "chinese": "电子",
+    "source_page": 10,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0135",
+    "korean": "어둡다",
+    "chinese": "暗",
+    "source_page": 10,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0136",
+    "korean": "스티커",
+    "chinese": "贴纸",
+    "source_page": 10,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0137",
+    "korean": "크기",
+    "chinese": "大小",
+    "source_page": 10,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0138",
+    "korean": "버튼",
+    "chinese": "按钮，纽扣",
+    "source_page": 10,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0139",
+    "korean": "플래시",
+    "chinese": "闪光灯",
+    "source_page": 10,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0140",
+    "korean": "상을 차리다",
+    "chinese": "摆桌子",
+    "source_page": 10,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0141",
+    "korean": "주변",
+    "chinese": "周围，周边",
+    "source_page": 10,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0142",
+    "korean": "기대다",
+    "chinese": "靠，依靠",
+    "source_page": 10,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0143",
+    "korean": "손을 대다",
+    "chinese": "着手，动手，入手，下手",
+    "source_page": 10,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0144",
+    "korean": "쓰레기를 버리다",
+    "chinese": "扔垃圾",
+    "source_page": 10,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0145",
+    "korean": "껌을 씹다",
+    "chinese": "嚼口香糖",
+    "source_page": 10,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0146",
+    "korean": "파마를 하다",
+    "chinese": "烫发",
+    "source_page": 10,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0147",
+    "korean": "머리를 기르다",
+    "chinese": "留长发",
+    "source_page": 10,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0148",
+    "korean": "깍두기",
+    "chinese": "萝卜泡菜",
+    "source_page": 11,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0149",
+    "korean": "무",
+    "chinese": "[名] 萝卜",
+    "source_page": 11,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0150",
+    "korean": "빈",
+    "chinese": "空的",
+    "source_page": 11,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0151",
+    "korean": "막걸리",
+    "chinese": "米酒",
+    "source_page": 11,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0152",
+    "korean": "참기름",
+    "chinese": "香油",
+    "source_page": 11,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0153",
+    "korean": "버섯",
+    "chinese": "蘑菇",
+    "source_page": 11,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0154",
+    "korean": "섞다",
+    "chinese": "混合",
+    "source_page": 11,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0155",
+    "korean": "행사",
+    "chinese": "活动",
+    "source_page": 11,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0156",
+    "korean": "정장",
+    "chinese": "正装",
+    "source_page": 11,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0157",
+    "korean": "고르다",
+    "chinese": "选择，挑选",
+    "source_page": 11,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0158",
+    "korean": "선택하다",
+    "chinese": "选择",
+    "source_page": 11,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0159",
+    "korean": "입학식",
+    "chinese": "开学典礼",
+    "source_page": 11,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0160",
+    "korean": "졸업식",
+    "chinese": "毕业典礼",
+    "source_page": 11,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0161",
+    "korean": "식당가",
+    "chinese": "美食街；食堂街-",
+    "source_page": 11,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0162",
+    "korean": "가전제품",
+    "chinese": "家电产品",
+    "source_page": 11,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0163",
+    "korean": "아동복",
+    "chinese": "童装",
+    "source_page": 12,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0164",
+    "korean": "스포츠용품",
+    "chinese": "运动用品",
+    "source_page": 12,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0165",
+    "korean": "남성복",
+    "chinese": "[名] 男装[记] 来自\"男性服\"",
+    "source_page": 12,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0166",
+    "korean": "여성복",
+    "chinese": "[名] 女装",
+    "source_page": 12,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0167",
+    "korean": "패션 잡화",
+    "chinese": "时尚百货",
+    "source_page": 12,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0168",
+    "korean": "서류",
+    "chinese": "文件",
+    "source_page": 12,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0169",
+    "korean": "배낭",
+    "chinese": "背囊，背包",
+    "source_page": 12,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0170",
+    "korean": "질",
+    "chinese": "质量",
+    "source_page": 12,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0171",
+    "korean": "세일",
+    "chinese": "打折",
+    "source_page": 12,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0172",
+    "korean": "블라우스",
+    "chinese": "女式衬衫（名）",
+    "source_page": 12,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0173",
+    "korean": "와이셔츠",
+    "chinese": "衬衫（名）",
+    "source_page": 12,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0174",
+    "korean": "와인",
+    "chinese": "葡萄酒",
+    "source_page": 12,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0175",
+    "korean": "하늘색",
+    "chinese": "天蓝色",
+    "source_page": 12,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0176",
+    "korean": "하얗다",
+    "chinese": "白色的",
+    "source_page": 12,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0177",
+    "korean": "어울리다",
+    "chinese": "适合",
+    "source_page": 12,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0178",
+    "korean": "갈아입다",
+    "chinese": "换衣服",
+    "source_page": 13,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0179",
+    "korean": "갈아신다",
+    "chinese": "换（鞋袜）",
+    "source_page": 13,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0180",
+    "korean": "치수",
+    "chinese": "尺码",
+    "source_page": 13,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0181",
+    "korean": "사이즈",
+    "chinese": "尺寸，大小",
+    "source_page": 13,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0182",
+    "korean": "꽃무늬",
+    "chinese": "花纹",
+    "source_page": 13,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0183",
+    "korean": "줄무늬",
+    "chinese": "条纹",
+    "source_page": 13,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0184",
+    "korean": "체크무늬",
+    "chinese": "格子纹（名）",
+    "source_page": 13,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0185",
+    "korean": "물방울무늬",
+    "chinese": "水珠纹",
+    "source_page": 13,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0186",
+    "korean": "청바지",
+    "chinese": "牛仔裤",
+    "source_page": 13,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0187",
+    "korean": "계산",
+    "chinese": "结账，计算",
+    "source_page": 13,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0188",
+    "korean": "봉투",
+    "chinese": "信封，文件袋",
+    "source_page": 13,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0189",
+    "korean": "서명하다",
+    "chinese": "签名，署名",
+    "source_page": 13,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0190",
+    "korean": "직접",
+    "chinese": "直接 亲自",
+    "source_page": 13,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0191",
+    "korean": "배달하다",
+    "chinese": "送，投递",
+    "source_page": 13,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0192",
+    "korean": "주문하다",
+    "chinese": "订购，订货",
+    "source_page": 13,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0193",
+    "korean": "냉동식품",
+    "chinese": "冷冻食品",
+    "source_page": 14,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0194",
+    "korean": "주방용품",
+    "chinese": "厨房用品",
+    "source_page": 14,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0195",
+    "korean": "유제품",
+    "chinese": "乳制品",
+    "source_page": 14,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0196",
+    "korean": "곡물",
+    "chinese": "谷物，粮食",
+    "source_page": 14,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0197",
+    "korean": "음료",
+    "chinese": "饮料",
+    "source_page": 14,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0198",
+    "korean": "주류",
+    "chinese": "酒类",
+    "source_page": 14,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0199",
+    "korean": "식료품",
+    "chinese": "食品，食材",
+    "source_page": 14,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0200",
+    "korean": "생활용품",
+    "chinese": "[名] 生活用品",
+    "source_page": 14,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0201",
+    "korean": "베이지색",
+    "chinese": "米黄色",
+    "source_page": 14,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0202",
+    "korean": "아무리",
+    "chinese": "无论如何",
+    "source_page": 14,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0203",
+    "korean": "후식",
+    "chinese": "饭后甜点",
+    "source_page": 14,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0204",
+    "korean": "취하다",
+    "chinese": "醉",
+    "source_page": 14,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0205",
+    "korean": "노인",
+    "chinese": "老人",
+    "source_page": 14,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0206",
+    "korean": "바구니",
+    "chinese": "篮子，筐",
+    "source_page": 14,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0207",
+    "korean": "광고",
+    "chinese": "广告",
+    "source_page": 14,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0208",
+    "korean": "마음에 들다",
+    "chinese": "满意，称心，喜欢",
+    "source_page": 15,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0209",
+    "korean": "꽃다발",
+    "chinese": "花束",
+    "source_page": 15,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0210",
+    "korean": "시디",
+    "chinese": "CD光盘",
+    "source_page": 15,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0211",
+    "korean": "목도리",
+    "chinese": "围巾（名）",
+    "source_page": 15,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0212",
+    "korean": "현금",
+    "chinese": "现金",
+    "source_page": 15,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0213",
+    "korean": "장갑",
+    "chinese": "手套",
+    "source_page": 15,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0214",
+    "korean": "천둥이 치다",
+    "chinese": "打雷",
+    "source_page": 15,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0215",
+    "korean": "군만두",
+    "chinese": "煎饺",
+    "source_page": 15,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0216",
+    "korean": "콤비네이션",
+    "chinese": "[名]结合，组合，搭配，combination",
+    "source_page": 15,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0217",
+    "korean": "해물",
+    "chinese": "海鲜；海物-",
+    "source_page": 15,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0218",
+    "korean": "파인애플",
+    "chinese": "菠萝",
+    "source_page": 15,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0219",
+    "korean": "홈쇼핑",
+    "chinese": "电视购物",
+    "source_page": 15,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0220",
+    "korean": "비누",
+    "chinese": "香皂",
+    "source_page": 15,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0221",
+    "korean": "햄",
+    "chinese": "火腿",
+    "source_page": 15,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0222",
+    "korean": "생수",
+    "chinese": "矿泉水",
+    "source_page": 15,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0223",
+    "korean": "담다",
+    "chinese": "盛，装",
+    "source_page": 16,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0224",
+    "korean": "영수증",
+    "chinese": "收据，发票",
+    "source_page": 16,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0225",
+    "korean": "도장",
+    "chinese": "[名]印章",
+    "source_page": 16,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0226",
+    "korean": "묶다",
+    "chinese": "[动] 捆扎",
+    "source_page": 16,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0227",
+    "korean": "배가 부르다",
+    "chinese": "肚子饱",
+    "source_page": 16,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0228",
+    "korean": "세트",
+    "chinese": "套装",
+    "source_page": 16,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0229",
+    "korean": "환불",
+    "chinese": "退款（名）",
+    "source_page": 16,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0230",
+    "korean": "핸드백",
+    "chinese": "手提包（名）",
+    "source_page": 16,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0231",
+    "korean": "튼튼하다",
+    "chinese": "健康，结实",
+    "source_page": 16,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0232",
+    "korean": "찢어지다",
+    "chinese": "撕破，撕扯",
+    "source_page": 16,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0233",
+    "korean": "더러워지다",
+    "chinese": "变脏",
+    "source_page": 16,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0234",
+    "korean": "가죽",
+    "chinese": "皮，皮革",
+    "source_page": 16,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0235",
+    "korean": "광경",
+    "chinese": "光景，景象，情景",
+    "source_page": 16,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0236",
+    "korean": "신선하다",
+    "chinese": "新鲜",
+    "source_page": 16,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0237",
+    "korean": "농수산물",
+    "chinese": "农产品和水产品",
+    "source_page": 16,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0238",
+    "korean": "보석",
+    "chinese": "[宝石]名.宝石",
+    "source_page": 17,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0239",
+    "korean": "악기",
+    "chinese": "乐器",
+    "source_page": 17,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0240",
+    "korean": "모이다",
+    "chinese": "[动] 聚集, 收集[派] 모임(n.聚会)",
+    "source_page": 17,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0241",
+    "korean": "특별하다",
+    "chinese": "特别",
+    "source_page": 17,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0242",
+    "korean": "초대하다",
+    "chinese": "招待，邀请",
+    "source_page": 17,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0243",
+    "korean": "잊다",
+    "chinese": "忘记",
+    "source_page": 17,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0244",
+    "korean": "꼭",
+    "chinese": "一定",
+    "source_page": 17,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0245",
+    "korean": "폭죽을 터뜨리다",
+    "chinese": "放爆竹",
+    "source_page": 17,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0246",
+    "korean": "소원을 빌다",
+    "chinese": "许愿",
+    "source_page": 17,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0247",
+    "korean": "촛불을 끄다",
+    "chinese": "吹蜡烛",
+    "source_page": 17,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0248",
+    "korean": "풍선을 불다",
+    "chinese": "吹气球",
+    "source_page": 17,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0249",
+    "korean": "카드를 쓰다",
+    "chinese": "写贺卡",
+    "source_page": 17,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0250",
+    "korean": "생일 축하 노래를 부르다",
+    "chinese": "唱生日歌",
+    "source_page": 17,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0251",
+    "korean": "케이크를 자르다",
+    "chinese": "切蛋糕",
+    "source_page": 17,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0252",
+    "korean": "박수를 치다",
+    "chinese": "拍手，鼓掌",
+    "source_page": 17,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0253",
+    "korean": "샴페인",
+    "chinese": "香槟",
+    "source_page": 18,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0254",
+    "korean": "뷔페",
+    "chinese": "自助餐",
+    "source_page": 18,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0255",
+    "korean": "별일 없다",
+    "chinese": "没别的事，没特别的事",
+    "source_page": 18,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0256",
+    "korean": "집들이",
+    "chinese": "乔迁宴",
+    "source_page": 18,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0257",
+    "korean": "동료",
+    "chinese": "[名]同事",
+    "source_page": 18,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0258",
+    "korean": "적다",
+    "chinese": "写，记",
+    "source_page": 18,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0259",
+    "korean": "따로",
+    "chinese": "另外;分开",
+    "source_page": 18,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0260",
+    "korean": "결정하다",
+    "chinese": "决定",
+    "source_page": 18,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0261",
+    "korean": "욕실",
+    "chinese": "浴室",
+    "source_page": 18,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0262",
+    "korean": "서재",
+    "chinese": "书房",
+    "source_page": 18,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0263",
+    "korean": "부엌",
+    "chinese": "[名] 厨房",
+    "source_page": 18,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0264",
+    "korean": "거실",
+    "chinese": "客厅",
+    "source_page": 18,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0265",
+    "korean": "현관",
+    "chinese": "玄关，门厅",
+    "source_page": 18,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0266",
+    "korean": "창고",
+    "chinese": "仓库",
+    "source_page": 18,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0267",
+    "korean": "방",
+    "chinese": "房间",
+    "source_page": 18,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0268",
+    "korean": "베란다",
+    "chinese": "名 阳台",
+    "source_page": 19,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0269",
+    "korean": "뛰다",
+    "chinese": "跑，跳",
+    "source_page": 19,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0270",
+    "korean": "때리다",
+    "chinese": "打（人）",
+    "source_page": 19,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0271",
+    "korean": "중고차",
+    "chinese": "二手车",
+    "source_page": 19,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0272",
+    "korean": "고민",
+    "chinese": "苦恼",
+    "source_page": 19,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0273",
+    "korean": "커튼",
+    "chinese": "名 窗帘",
+    "source_page": 19,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0274",
+    "korean": "블라인드",
+    "chinese": "百叶窗",
+    "source_page": 19,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0275",
+    "korean": "자유롭다",
+    "chinese": "自由的",
+    "source_page": 19,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0276",
+    "korean": "귀찮다",
+    "chinese": "[형용사] 麻烦。讨厌。厌烦。烦人。",
+    "source_page": 19,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0277",
+    "korean": "꽂다",
+    "chinese": "插，戴",
+    "source_page": 19,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0278",
+    "korean": "후배",
+    "chinese": "晚辈；后辈；师弟（妹）",
+    "source_page": 19,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0279",
+    "korean": "청첩장",
+    "chinese": "请柬",
+    "source_page": 19,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0280",
+    "korean": "연세",
+    "chinese": "年龄（敬语）",
+    "source_page": 19,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0281",
+    "korean": "서두르다",
+    "chinese": "着急",
+    "source_page": 19,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0282",
+    "korean": "별로",
+    "chinese": "不怎么，没什么，不太",
+    "source_page": 19,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0283",
+    "korean": "축의금을 내다",
+    "chinese": "给礼金",
+    "source_page": 20,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0284",
+    "korean": "예물을 교환하다",
+    "chinese": "交换信物",
+    "source_page": 20,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0285",
+    "korean": "축가를 부르다",
+    "chinese": "唱祝歌",
+    "source_page": 20,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0286",
+    "korean": "부케를 던지다",
+    "chinese": "扔捧花",
+    "source_page": 20,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0287",
+    "korean": "기념 촬영을 하다",
+    "chinese": "拍纪念照",
+    "source_page": 20,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0288",
+    "korean": "피로연을 하다",
+    "chinese": "开宴会",
+    "source_page": 20,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0289",
+    "korean": "예식장",
+    "chinese": "结婚礼堂",
+    "source_page": 20,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0290",
+    "korean": "음악회",
+    "chinese": "音乐会",
+    "source_page": 20,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0291",
+    "korean": "동창",
+    "chinese": "同学",
+    "source_page": 20,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0292",
+    "korean": "뒤풀이",
+    "chinese": "余兴（一般指活动结束后进行的非正式聚会）",
+    "source_page": 20,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0293",
+    "korean": "기대가 되다",
+    "chinese": "期待（被动）",
+    "source_page": 20,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0294",
+    "korean": "기대를 하다",
+    "chinese": "期待（主动）",
+    "source_page": 20,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0295",
+    "korean": "동아리",
+    "chinese": "社团",
+    "source_page": 20,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0296",
+    "korean": "동호회",
+    "chinese": "兴趣协会",
+    "source_page": 20,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0297",
+    "korean": "동창회",
+    "chinese": "同窗会，同学会",
+    "source_page": 20,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0298",
+    "korean": "반상회",
+    "chinese": "例会；班常会-",
+    "source_page": 21,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0299",
+    "korean": "환영회",
+    "chinese": "欢迎会",
+    "source_page": 21,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0300",
+    "korean": "송별회",
+    "chinese": "送别会",
+    "source_page": 21,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0301",
+    "korean": "도시락",
+    "chinese": "饭盒，便当",
+    "source_page": 21,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0302",
+    "korean": "돌잔치",
+    "chinese": "周岁宴",
+    "source_page": 21,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0303",
+    "korean": "풍습",
+    "chinese": "风俗",
+    "source_page": 21,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0304",
+    "korean": "거품",
+    "chinese": "[名] 泡沫",
+    "source_page": 21,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0305",
+    "korean": "엿",
+    "chinese": "麦芽糖",
+    "source_page": 21,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0306",
+    "korean": "의미",
+    "chinese": "意义",
+    "source_page": 21,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0307",
+    "korean": "시험을 붙다",
+    "chinese": "考试合格",
+    "source_page": 21,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0308",
+    "korean": "낚시하다",
+    "chinese": "钓鱼",
+    "source_page": 21,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0309",
+    "korean": "종일",
+    "chinese": "整日",
+    "source_page": 21,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0310",
+    "korean": "토끼",
+    "chinese": "[名]兔子",
+    "source_page": 21,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0311",
+    "korean": "잡다",
+    "chinese": "「动」抓住",
+    "source_page": 21,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0312",
+    "korean": "살아나다",
+    "chinese": "复活，复苏；复兴",
+    "source_page": 21,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0313",
+    "korean": "승진",
+    "chinese": "升职",
+    "source_page": 22,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0314",
+    "korean": "존댓말",
+    "chinese": "敬语",
+    "source_page": 22,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0315",
+    "korean": "반말",
+    "chinese": "非敬语",
+    "source_page": 22,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0316",
+    "korean": "양초",
+    "chinese": "蜡烛",
+    "source_page": 22,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0317",
+    "korean": "장난감",
+    "chinese": "[名] 玩具",
+    "source_page": 22,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0318",
+    "korean": "놀이 공원",
+    "chinese": "游乐园",
+    "source_page": 22,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0319",
+    "korean": "번",
+    "chinese": "号，次",
+    "source_page": 22,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0320",
+    "korean": "호선",
+    "chinese": "号线",
+    "source_page": 22,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0321",
+    "korean": "갈아타다",
+    "chinese": "[动] 换乘[记] 타다(vt.乘坐)",
+    "source_page": 22,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0322",
+    "korean": "고속버스",
+    "chinese": "高速大巴",
+    "source_page": 22,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0323",
+    "korean": "시내버스",
+    "chinese": "市内巴士",
+    "source_page": 22,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0324",
+    "korean": "마을버스",
+    "chinese": "乡下巴士",
+    "source_page": 22,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0325",
+    "korean": "일반택시",
+    "chinese": "普通出租车",
+    "source_page": 22,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0326",
+    "korean": "개인택시",
+    "chinese": "个人出租车",
+    "source_page": 22,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0327",
+    "korean": "모범택시",
+    "chinese": "模范出租车",
+    "source_page": 22,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0328",
+    "korean": "무궁화호",
+    "chinese": "无穷花号",
+    "source_page": 23,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0329",
+    "korean": "새마을호",
+    "chinese": "新村号",
+    "source_page": 23,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0330",
+    "korean": "케이티엑스",
+    "chinese": "(KTX)高速列车",
+    "source_page": 23,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0331",
+    "korean": "배터리",
+    "chinese": "电池",
+    "source_page": 23,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0332",
+    "korean": "이층 버스",
+    "chinese": "双层巴士",
+    "source_page": 23,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0333",
+    "korean": "수상 버스",
+    "chinese": "水上巴士",
+    "source_page": 23,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0334",
+    "korean": "씨클로",
+    "chinese": "三轮车",
+    "source_page": 23,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0335",
+    "korean": "트램",
+    "chinese": "有轨电车",
+    "source_page": 23,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0336",
+    "korean": "케이블카",
+    "chinese": "[名] 缆车",
+    "source_page": 23,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0337",
+    "korean": "모노레일",
+    "chinese": "单轨列车",
+    "source_page": 23,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0338",
+    "korean": "점",
+    "chinese": "点，处",
+    "source_page": 23,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0339",
+    "korean": "가위",
+    "chinese": "[名]剪刀",
+    "source_page": 23,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0340",
+    "korean": "한",
+    "chinese": "大概，大约",
+    "source_page": 23,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0341",
+    "korean": "보통",
+    "chinese": "普通，一般",
+    "source_page": 23,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0342",
+    "korean": "출퇴근",
+    "chinese": "[名] 上下班",
+    "source_page": 23,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0343",
+    "korean": "정도",
+    "chinese": "程度，左右",
+    "source_page": 24,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0344",
+    "korean": "차가 밀리다",
+    "chinese": "堵车",
+    "source_page": 24,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0345",
+    "korean": "길을 막히다",
+    "chinese": "路堵",
+    "source_page": 24,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0346",
+    "korean": "교통이 불편하다",
+    "chinese": "交通拥堵",
+    "source_page": 24,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0347",
+    "korean": "노선도",
+    "chinese": "路线图（名）",
+    "source_page": 24,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0348",
+    "korean": "하차",
+    "chinese": "下车",
+    "source_page": 24,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0349",
+    "korean": "승차",
+    "chinese": "乘车-",
+    "source_page": 24,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0350",
+    "korean": "벨을 누르다",
+    "chinese": "按铃",
+    "source_page": 24,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0351",
+    "korean": "거스름돈",
+    "chinese": "找零",
+    "source_page": 24,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0352",
+    "korean": "단말기",
+    "chinese": "刷卡机",
+    "source_page": 24,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0353",
+    "korean": "교통카드",
+    "chinese": "交通卡",
+    "source_page": 24,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0354",
+    "korean": "노약자석",
+    "chinese": "老弱病残孕专座",
+    "source_page": 24,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0355",
+    "korean": "자격증",
+    "chinese": "资格证",
+    "source_page": 24,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0356",
+    "korean": "야경",
+    "chinese": "【名】夜景",
+    "source_page": 24,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0357",
+    "korean": "반대",
+    "chinese": "相反",
+    "source_page": 24,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0358",
+    "korean": "승강장",
+    "chinese": "站台",
+    "source_page": 25,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0359",
+    "korean": "요금",
+    "chinese": "收费；费用",
+    "source_page": 25,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0360",
+    "korean": "역무원",
+    "chinese": "站内服务员",
+    "source_page": 25,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0361",
+    "korean": "내다",
+    "chinese": "交",
+    "source_page": 25,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0362",
+    "korean": "환승역",
+    "chinese": "换乘站",
+    "source_page": 25,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0363",
+    "korean": "열차",
+    "chinese": "列车",
+    "source_page": 25,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0364",
+    "korean": "안전선",
+    "chinese": "安全线",
+    "source_page": 25,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0365",
+    "korean": "스크린 도어",
+    "chinese": "屏蔽门",
+    "source_page": 25,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0366",
+    "korean": "방송",
+    "chinese": "广播",
+    "source_page": 25,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0367",
+    "korean": "주의하다",
+    "chinese": "注意",
+    "source_page": 25,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0368",
+    "korean": "양보하다",
+    "chinese": "让步；谦让；迁就",
+    "source_page": 25,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0369",
+    "korean": "구간",
+    "chinese": "区间；区域",
+    "source_page": 25,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0370",
+    "korean": "벗다",
+    "chinese": "脱",
+    "source_page": 25,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0371",
+    "korean": "사이",
+    "chinese": "之间",
+    "source_page": 25,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0372",
+    "korean": "벌금",
+    "chinese": "罚金，罚款（名）",
+    "source_page": 25,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0373",
+    "korean": "승객",
+    "chinese": "乘客",
+    "source_page": 26,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0374",
+    "korean": "엘리베이터",
+    "chinese": "[ 名 ] 电梯",
+    "source_page": 26,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0375",
+    "korean": "약도",
+    "chinese": "简图；略图",
+    "source_page": 26,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0376",
+    "korean": "보이다",
+    "chinese": "看得见",
+    "source_page": 26,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0377",
+    "korean": "똑바로",
+    "chinese": "（正前方）一直",
+    "source_page": 26,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0378",
+    "korean": "사거리",
+    "chinese": "十字路口",
+    "source_page": 26,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0379",
+    "korean": "쭉",
+    "chinese": "一直",
+    "source_page": 26,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0380",
+    "korean": "잘 보여요",
+    "chinese": "看得清楚吗",
+    "source_page": 26,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0381",
+    "korean": "잘 들려요",
+    "chinese": "听得清楚吗",
+    "source_page": 26,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0382",
+    "korean": "횡단보도",
+    "chinese": "人行横道",
+    "source_page": 26,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0383",
+    "korean": "어린이 보호",
+    "chinese": "保护儿童",
+    "source_page": 26,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0384",
+    "korean": "좌회전",
+    "chinese": "左转弯",
+    "source_page": 26,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0385",
+    "korean": "우회전",
+    "chinese": "右转弯",
+    "source_page": 26,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0386",
+    "korean": "유턴",
+    "chinese": "掉头",
+    "source_page": 26,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0387",
+    "korean": "버스 전용차로",
+    "chinese": "公共汽车专用道",
+    "source_page": 26,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0388",
+    "korean": "일방통행",
+    "chinese": "单行线",
+    "source_page": 27,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0389",
+    "korean": "보행자 통행금지",
+    "chinese": "禁止行人通过",
+    "source_page": 27,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0390",
+    "korean": "주차금지",
+    "chinese": "禁止停车",
+    "source_page": 27,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0391",
+    "korean": "어리다",
+    "chinese": "幼；小",
+    "source_page": 27,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0392",
+    "korean": "똑똑하다",
+    "chinese": "聪明",
+    "source_page": 27,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0393",
+    "korean": "깨다",
+    "chinese": "醒",
+    "source_page": 27,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0394",
+    "korean": "벽",
+    "chinese": "墙",
+    "source_page": 27,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0395",
+    "korean": "졸리다",
+    "chinese": "犯困",
+    "source_page": 27,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0396",
+    "korean": "다치다",
+    "chinese": "受伤",
+    "source_page": 27,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0397",
+    "korean": "그만두다",
+    "chinese": "辞职，停止",
+    "source_page": 27,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0398",
+    "korean": "젊다",
+    "chinese": "年轻",
+    "source_page": 27,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0399",
+    "korean": "꺼내다",
+    "chinese": "拿出来",
+    "source_page": 27,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0400",
+    "korean": "비슷하다",
+    "chinese": "差不多 相似",
+    "source_page": 27,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0401",
+    "korean": "느리다",
+    "chinese": "慢",
+    "source_page": 27,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0402",
+    "korean": "연결하다",
+    "chinese": "连接，联系",
+    "source_page": 27,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0403",
+    "korean": "움직이다",
+    "chinese": "移动",
+    "source_page": 28,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0404",
+    "korean": "계단",
+    "chinese": "[名] 楼梯[记] 来自中文词\"阶段\"",
+    "source_page": 28,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0405",
+    "korean": "단점",
+    "chinese": "短处，缺点",
+    "source_page": 28,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0406",
+    "korean": "거꾸로",
+    "chinese": "反过来",
+    "source_page": 28,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0407",
+    "korean": "중간",
+    "chinese": "中间",
+    "source_page": 28,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0408",
+    "korean": "정확하다",
+    "chinese": "正确；准确",
+    "source_page": 28,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0409",
+    "korean": "언덕",
+    "chinese": "山坡，丘陵",
+    "source_page": 28,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0410",
+    "korean": "해저",
+    "chinese": "海底",
+    "source_page": 28,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0411",
+    "korean": "동네",
+    "chinese": "小区，街道",
+    "source_page": 28,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0412",
+    "korean": "고유하다",
+    "chinese": "原有，特有",
+    "source_page": 28,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0413",
+    "korean": "지역",
+    "chinese": "地区，区域",
+    "source_page": 28,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0414",
+    "korean": "알려주다",
+    "chinese": "告诉，告知",
+    "source_page": 28,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0415",
+    "korean": "일부",
+    "chinese": "一部分",
+    "source_page": 28,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0416",
+    "korean": "숫자",
+    "chinese": "数字",
+    "source_page": 28,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0417",
+    "korean": "종교",
+    "chinese": "n. 宗教",
+    "source_page": 28,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0418",
+    "korean": "알아보다",
+    "chinese": "了解，打听",
+    "source_page": 29,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0419",
+    "korean": "검색",
+    "chinese": "检索，搜索",
+    "source_page": 29,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0420",
+    "korean": "보고서",
+    "chinese": "报告书",
+    "source_page": 29,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0421",
+    "korean": "자료",
+    "chinese": "资料",
+    "source_page": 29,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0422",
+    "korean": "좀 알아보려고 왔는데요",
+    "chinese": "来了解......",
+    "source_page": 29,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0423",
+    "korean": "연체료",
+    "chinese": "滞纳金，延期费",
+    "source_page": 29,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0424",
+    "korean": "학생증",
+    "chinese": "学生证",
+    "source_page": 29,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0425",
+    "korean": "자료를 찾다",
+    "chinese": "找资料",
+    "source_page": 29,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0426",
+    "korean": "대출하다",
+    "chinese": "借，贷款",
+    "source_page": 29,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0427",
+    "korean": "반납하다",
+    "chinese": "归还，缴回",
+    "source_page": 29,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0428",
+    "korean": "열람실",
+    "chinese": "[名] 阅览室",
+    "source_page": 29,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0429",
+    "korean": "입에 맞다",
+    "chinese": "合口味",
+    "source_page": 29,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0430",
+    "korean": "복사",
+    "chinese": "复印",
+    "source_page": 29,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0431",
+    "korean": "신청하다",
+    "chinese": "[动] 申请",
+    "source_page": 29,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0432",
+    "korean": "출판사",
+    "chinese": "[名] 出版社",
+    "source_page": 29,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0433",
+    "korean": "반납일",
+    "chinese": "归还日期",
+    "source_page": 30,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0434",
+    "korean": "환경 문제",
+    "chinese": "环境问题",
+    "source_page": 30,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0435",
+    "korean": "학기말 시험",
+    "chinese": "期末考试",
+    "source_page": 30,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0436",
+    "korean": "참석하다",
+    "chinese": "参加",
+    "source_page": 30,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0437",
+    "korean": "제시간",
+    "chinese": "准时；按时",
+    "source_page": 30,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0438",
+    "korean": "수학여행",
+    "chinese": "休学旅行",
+    "source_page": 30,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0439",
+    "korean": "환전",
+    "chinese": "换钱",
+    "source_page": 30,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0440",
+    "korean": "환율",
+    "chinese": "汇率",
+    "source_page": 30,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0441",
+    "korean": "떨어지다",
+    "chinese": "下降（汇率）；下跌",
+    "source_page": 30,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0442",
+    "korean": "서류",
+    "chinese": "文件；证件",
+    "source_page": 30,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0443",
+    "korean": "처리하다",
+    "chinese": "处理，办理",
+    "source_page": 30,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0444",
+    "korean": "창구",
+    "chinese": "窗口",
+    "source_page": 30,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0445",
+    "korean": "줄을 서다",
+    "chinese": "排队",
+    "source_page": 30,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0446",
+    "korean": "현금 자동 인출기",
+    "chinese": "自动取款机",
+    "source_page": 30,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0447",
+    "korean": "비밀번호",
+    "chinese": "密码",
+    "source_page": 31,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0448",
+    "korean": "돈을 찾다",
+    "chinese": "取钱",
+    "source_page": 31,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0449",
+    "korean": "예금하다",
+    "chinese": "存钱",
+    "source_page": 31,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0450",
+    "korean": "번호표를 뽑다",
+    "chinese": "取号",
+    "source_page": 31,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0451",
+    "korean": "통장",
+    "chinese": "存折",
+    "source_page": 31,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0452",
+    "korean": "차례",
+    "chinese": "顺序",
+    "source_page": 31,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0453",
+    "korean": "우아하다",
+    "chinese": "优雅",
+    "source_page": 31,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0454",
+    "korean": "거리",
+    "chinese": "距离",
+    "source_page": 31,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0455",
+    "korean": "이자",
+    "chinese": "利息",
+    "source_page": 31,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0456",
+    "korean": "송굼",
+    "chinese": "汇款；寄钱",
+    "source_page": 31,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0457",
+    "korean": "수수료",
+    "chinese": "手续费",
+    "source_page": 31,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0458",
+    "korean": "공과금",
+    "chinese": "税金；公共事业费",
+    "source_page": 31,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0459",
+    "korean": "전기",
+    "chinese": "电",
+    "source_page": 31,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0460",
+    "korean": "가스",
+    "chinese": "煤气",
+    "source_page": 31,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0461",
+    "korean": "도장",
+    "chinese": "印章",
+    "source_page": 31,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0462",
+    "korean": "운전 면허증",
+    "chinese": "驾驶证",
+    "source_page": 32,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0463",
+    "korean": "계좌 번호",
+    "chinese": "银行账号",
+    "source_page": 32,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0464",
+    "korean": "메모",
+    "chinese": "纸条，笔记",
+    "source_page": 32,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0465",
+    "korean": "미장원",
+    "chinese": "[名] 美容院",
+    "source_page": 32,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0466",
+    "korean": "빨래하다",
+    "chinese": "洗衣",
+    "source_page": 32,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0467",
+    "korean": "헬스클럽",
+    "chinese": "健身房",
+    "source_page": 32,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0468",
+    "korean": "소포",
+    "chinese": "包裹",
+    "source_page": 32,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0469",
+    "korean": "저울",
+    "chinese": "[名] 秤",
+    "source_page": 32,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0470",
+    "korean": "이상하다",
+    "chinese": "[形] 奇怪",
+    "source_page": 32,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0471",
+    "korean": "이상",
+    "chinese": "异常，不正常，反常",
+    "source_page": 32,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0472",
+    "korean": "생기다",
+    "chinese": "产生",
+    "source_page": 32,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0473",
+    "korean": "보험에 들다",
+    "chinese": "买保险",
+    "source_page": 32,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0474",
+    "korean": "항공편",
+    "chinese": "航空件",
+    "source_page": 32,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0475",
+    "korean": "택배",
+    "chinese": "[名] 快递",
+    "source_page": 32,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0476",
+    "korean": "특급 우편",
+    "chinese": "特快件",
+    "source_page": 32,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0477",
+    "korean": "배편",
+    "chinese": "水路件",
+    "source_page": 33,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0478",
+    "korean": "국제 특급",
+    "chinese": "国际特快",
+    "source_page": 33,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0479",
+    "korean": "등기",
+    "chinese": "挂号，登记",
+    "source_page": 33,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0480",
+    "korean": "부치다",
+    "chinese": "[动] 邮寄",
+    "source_page": 33,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0481",
+    "korean": "브라질",
+    "chinese": "巴西",
+    "source_page": 33,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0482",
+    "korean": "결석",
+    "chinese": "[名] 缺席",
+    "source_page": 33,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0483",
+    "korean": "낙제",
+    "chinese": "不及格",
+    "source_page": 33,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0484",
+    "korean": "메일",
+    "chinese": "电子邮件",
+    "source_page": 33,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0485",
+    "korean": "짐",
+    "chinese": "[名]行李",
+    "source_page": 33,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0486",
+    "korean": "모자라다",
+    "chinese": "不足，不够",
+    "source_page": 33,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0487",
+    "korean": "스트레스",
+    "chinese": "[名] 压力",
+    "source_page": 33,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0488",
+    "korean": "쌓다",
+    "chinese": "积累",
+    "source_page": 33,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0489",
+    "korean": "올려놓다",
+    "chinese": "放在上面",
+    "source_page": 33,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0490",
+    "korean": "연장",
+    "chinese": "延长；延期",
+    "source_page": 33,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0491",
+    "korean": "신청서",
+    "chinese": "申请书",
+    "source_page": 33,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0492",
+    "korean": "놓이다",
+    "chinese": "放",
+    "source_page": 34,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0493",
+    "korean": "재학 증명서",
+    "chinese": "在读证明",
+    "source_page": 34,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0494",
+    "korean": "비자 기간 연장",
+    "chinese": "延长签证期",
+    "source_page": 34,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0495",
+    "korean": "유효 기간",
+    "chinese": "有效期",
+    "source_page": 34,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0496",
+    "korean": "사증(비자)",
+    "chinese": "签证",
+    "source_page": 34,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0497",
+    "korean": "외국인등록증",
+    "chinese": "外国人身份证",
+    "source_page": 34,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0498",
+    "korean": "입국",
+    "chinese": "入境",
+    "source_page": 34,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0499",
+    "korean": "출국",
+    "chinese": "出境；出国-",
+    "source_page": 34,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0500",
+    "korean": "출입국관리 사무소",
+    "chinese": "出入境管理局",
+    "source_page": 34,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0501",
+    "korean": "법무부",
+    "chinese": "法务部",
+    "source_page": 34,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0502",
+    "korean": "성별",
+    "chinese": "性别",
+    "source_page": 34,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0503",
+    "korean": "직위",
+    "chinese": "职位",
+    "source_page": 34,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0504",
+    "korean": "본국",
+    "chinese": "本国",
+    "source_page": 34,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0505",
+    "korean": "사유",
+    "chinese": "事由；理由",
+    "source_page": 34,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0506",
+    "korean": "신청인",
+    "chinese": "申请人",
+    "source_page": 34,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0507",
+    "korean": "벤치",
+    "chinese": "长椅",
+    "source_page": 35,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0508",
+    "korean": "본인",
+    "chinese": "本人",
+    "source_page": 35,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0509",
+    "korean": "옛날",
+    "chinese": "很久以前",
+    "source_page": 35,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0510",
+    "korean": "마을",
+    "chinese": "村子；村庄",
+    "source_page": 35,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0511",
+    "korean": "밭",
+    "chinese": "旱田",
+    "source_page": 35,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0512",
+    "korean": "집안일",
+    "chinese": "家务",
+    "source_page": 35,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0513",
+    "korean": "도둑",
+    "chinese": "小偷",
+    "source_page": 35,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0514",
+    "korean": "경찰",
+    "chinese": "警察",
+    "source_page": 35,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0515",
+    "korean": "달라지다",
+    "chinese": "改变",
+    "source_page": 35,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0516",
+    "korean": "헤어지다",
+    "chinese": "告别；道别；分手",
+    "source_page": 35,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0517",
+    "korean": "수입인지",
+    "chinese": "印花税票",
+    "source_page": 35,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0518",
+    "korean": "접수하다",
+    "chinese": "接受；受理",
+    "source_page": 35,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0519",
+    "korean": "금방",
+    "chinese": "刚；马上",
+    "source_page": 35,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0520",
+    "korean": "열리다",
+    "chinese": "열다被动词",
+    "source_page": 35,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0521",
+    "korean": "닫히다",
+    "chinese": "닫다被动词",
+    "source_page": 35,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0522",
+    "korean": "켜지다",
+    "chinese": "켜다被动词",
+    "source_page": 36,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0523",
+    "korean": "꺼지다",
+    "chinese": "꺼다被动词",
+    "source_page": 36,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0524",
+    "korean": "비다",
+    "chinese": "空",
+    "source_page": 36,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0525",
+    "korean": "붙다",
+    "chinese": "贴",
+    "source_page": 36,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0526",
+    "korean": "복도",
+    "chinese": "走廊",
+    "source_page": 36,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0527",
+    "korean": "소파",
+    "chinese": "沙发",
+    "source_page": 36,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0528",
+    "korean": "플라스틱",
+    "chinese": "塑料",
+    "source_page": 36,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0529",
+    "korean": "스티로품",
+    "chinese": "泡沫塑料",
+    "source_page": 36,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0530",
+    "korean": "출장",
+    "chinese": "出差",
+    "source_page": 36,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0531",
+    "korean": "꽉",
+    "chinese": "紧",
+    "source_page": 36,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0532",
+    "korean": "웬일",
+    "chinese": "什么事",
+    "source_page": 36,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0533",
+    "korean": "웬일이에요",
+    "chinese": "有什么事吗",
+    "source_page": 36,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0534",
+    "korean": "연극",
+    "chinese": "话剧",
+    "source_page": 36,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0535",
+    "korean": "초대권",
+    "chinese": "赠券",
+    "source_page": 36,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0536",
+    "korean": "무료",
+    "chinese": "免费",
+    "source_page": 36,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0537",
+    "korean": "국립극장",
+    "chinese": "国立剧场",
+    "source_page": 37,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0538",
+    "korean": "매표소",
+    "chinese": "售票处",
+    "source_page": 37,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0539",
+    "korean": "전화가 오다",
+    "chinese": "来电话",
+    "source_page": 37,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0540",
+    "korean": "전화를 받다",
+    "chinese": "接电话",
+    "source_page": 37,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0541",
+    "korean": "(전화를)바꿔 주다",
+    "chinese": "转接电话",
+    "source_page": 37,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0542",
+    "korean": "전화를 끊다",
+    "chinese": "挂电话",
+    "source_page": 37,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0543",
+    "korean": "통화 중이다",
+    "chinese": "通话中",
+    "source_page": 37,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0544",
+    "korean": "전화를 잘못 걸다",
+    "chinese": "打错电话",
+    "source_page": 37,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0545",
+    "korean": "언어 교환",
+    "chinese": "语言交换",
+    "source_page": 37,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0546",
+    "korean": "천천히",
+    "chinese": "慢慢",
+    "source_page": 37,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0547",
+    "korean": "할 일",
+    "chinese": "要做的事",
+    "source_page": 37,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0548",
+    "korean": "좀 바꿔주세요",
+    "chinese": "请接电话",
+    "source_page": 37,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0549",
+    "korean": "곧",
+    "chinese": "就；马上",
+    "source_page": 37,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0550",
+    "korean": "확인하다",
+    "chinese": "确认",
+    "source_page": 37,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0551",
+    "korean": "밀리다",
+    "chinese": "堆积；积压；拥挤",
+    "source_page": 37,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0552",
+    "korean": "벌써",
+    "chinese": "已经",
+    "source_page": 38,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0553",
+    "korean": "물어보다",
+    "chinese": "问一问",
+    "source_page": 38,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0554",
+    "korean": "음성 메시지",
+    "chinese": "语音留言",
+    "source_page": 38,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0555",
+    "korean": "문자 메시지",
+    "chinese": "文字短信",
+    "source_page": 38,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0556",
+    "korean": "발신자",
+    "chinese": "打电话的人",
+    "source_page": 38,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0557",
+    "korean": "수신자",
+    "chinese": "接电话的人",
+    "source_page": 38,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0558",
+    "korean": "지역 번호",
+    "chinese": "区号",
+    "source_page": 38,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0559",
+    "korean": "단축 번호",
+    "chinese": "快速拨号",
+    "source_page": 38,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0560",
+    "korean": "진동",
+    "chinese": "震动",
+    "source_page": 38,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0561",
+    "korean": "나중에",
+    "chinese": "以后，今后",
+    "source_page": 38,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0562",
+    "korean": "문제",
+    "chinese": "问题",
+    "source_page": 38,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0563",
+    "korean": "유행하다",
+    "chinese": "流行，风行",
+    "source_page": 38,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0564",
+    "korean": "쿠폰",
+    "chinese": "优惠券",
+    "source_page": 38,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0565",
+    "korean": "뜻",
+    "chinese": "意思",
+    "source_page": 38,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0566",
+    "korean": "죄송하다",
+    "chinese": "对不起，抱歉",
+    "source_page": 39,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0567",
+    "korean": "급하다",
+    "chinese": "急",
+    "source_page": 39,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0568",
+    "korean": "깜빡",
+    "chinese": "一时",
+    "source_page": 39,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0569",
+    "korean": "잊어버리다",
+    "chinese": "忘记",
+    "source_page": 39,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0570",
+    "korean": "선약이 있다",
+    "chinese": "事先约好了",
+    "source_page": 39,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0571",
+    "korean": "약속을 미루다",
+    "chinese": "推迟约定",
+    "source_page": 39,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0572",
+    "korean": "약속을 취소하다",
+    "chinese": "取消约定",
+    "source_page": 39,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0573",
+    "korean": "약속을 지키다",
+    "chinese": "遵守约定",
+    "source_page": 39,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0574",
+    "korean": "약속을 어기다",
+    "chinese": "失约",
+    "source_page": 39,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0575",
+    "korean": "새벽",
+    "chinese": "清晨，凌晨",
+    "source_page": 39,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0576",
+    "korean": "선배",
+    "chinese": "学长，前辈",
+    "source_page": 39,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0577",
+    "korean": "콘서트",
+    "chinese": "音乐会",
+    "source_page": 39,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0578",
+    "korean": "사고",
+    "chinese": "事故",
+    "source_page": 39,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0579",
+    "korean": "고장나다",
+    "chinese": "坏",
+    "source_page": 39,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0580",
+    "korean": "서비스센터",
+    "chinese": "售后服务中心",
+    "source_page": 40,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0581",
+    "korean": "돌아오다",
+    "chinese": "回来",
+    "source_page": 40,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0582",
+    "korean": "전하다",
+    "chinese": "转达",
+    "source_page": 40,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0583",
+    "korean": "그렇게",
+    "chinese": "那样",
+    "source_page": 40,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0584",
+    "korean": "수리하다 / 고치다",
+    "chinese": "修;修理",
+    "source_page": 40,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0585",
+    "korean": "별표",
+    "chinese": "星号",
+    "source_page": 40,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0586",
+    "korean": "우물 정자",
+    "chinese": "井号",
+    "source_page": 40,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0587",
+    "korean": "녹음하다",
+    "chinese": "录音",
+    "source_page": 40,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0588",
+    "korean": "통화료",
+    "chinese": "通话费",
+    "source_page": 40,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0589",
+    "korean": "누르다",
+    "chinese": "按，压",
+    "source_page": 40,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0590",
+    "korean": "회비",
+    "chinese": "会费",
+    "source_page": 40,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0591",
+    "korean": "농구공",
+    "chinese": "篮球",
+    "source_page": 40,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0592",
+    "korean": "가난하다",
+    "chinese": "贫穷",
+    "source_page": 40,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0593",
+    "korean": "빌려주다",
+    "chinese": "[动] 借给",
+    "source_page": 40,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0594",
+    "korean": "저장하다",
+    "chinese": "储存，保存",
+    "source_page": 40,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0595",
+    "korean": "참석",
+    "chinese": "出席；参加",
+    "source_page": 41,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0596",
+    "korean": "담임 선생님",
+    "chinese": "班主任",
+    "source_page": 41,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0597",
+    "korean": "심하다",
+    "chinese": "严重，厉害",
+    "source_page": 41,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0598",
+    "korean": "진찰",
+    "chinese": "诊察，看病，检查",
+    "source_page": 41,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0599",
+    "korean": "식중독",
+    "chinese": "食物中毒",
+    "source_page": 41,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0600",
+    "korean": "낫다",
+    "chinese": "（病）好",
+    "source_page": 41,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0601",
+    "korean": "이틀",
+    "chinese": "两天",
+    "source_page": 41,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0602",
+    "korean": "진찰을 하다",
+    "chinese": "医生看诊",
+    "source_page": 41,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0603",
+    "korean": "진찰을 받다",
+    "chinese": "（病人）接受诊断",
+    "source_page": 41,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0604",
+    "korean": "수업을 하다",
+    "chinese": "(老师）上课",
+    "source_page": 41,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0605",
+    "korean": "수업을 듣다",
+    "chinese": "（学生）听课",
+    "source_page": 41,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0606",
+    "korean": "소화가 안 되다",
+    "chinese": "消化不好",
+    "source_page": 41,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0607",
+    "korean": "배탈이 나다",
+    "chinese": "拉肚子，闹肚子",
+    "source_page": 41,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0608",
+    "korean": "설사를 하다",
+    "chinese": "腹泻",
+    "source_page": 41,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0609",
+    "korean": "토하다",
+    "chinese": "呕吐。吐。",
+    "source_page": 41,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0610",
+    "korean": "속이 쓰리다",
+    "chinese": "肚子难受，喝醉隔天胃不舒服",
+    "source_page": 42,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0611",
+    "korean": "변비가 있다",
+    "chinese": "便秘",
+    "source_page": 42,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0612",
+    "korean": "끈",
+    "chinese": "带子，绳子",
+    "source_page": 42,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0613",
+    "korean": "선",
+    "chinese": "线",
+    "source_page": 42,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0614",
+    "korean": "긋다",
+    "chinese": "画线",
+    "source_page": 42,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0615",
+    "korean": "넘어지다",
+    "chinese": "[动] 跌倒",
+    "source_page": 42,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0616",
+    "korean": "붓다",
+    "chinese": "肿，倒（液体）",
+    "source_page": 42,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0617",
+    "korean": "검사",
+    "chinese": "检查，检验",
+    "source_page": 42,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0618",
+    "korean": "붕대",
+    "chinese": "名 绷带",
+    "source_page": 42,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0619",
+    "korean": "감다",
+    "chinese": "缠绕",
+    "source_page": 42,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0620",
+    "korean": "수첩",
+    "chinese": "记事本",
+    "source_page": 42,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0621",
+    "korean": "농담",
+    "chinese": "[名] 玩笑",
+    "source_page": 42,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0622",
+    "korean": "어지럽다",
+    "chinese": "[形]晕眩，发昏",
+    "source_page": 42,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0623",
+    "korean": "포크",
+    "chinese": "餐叉",
+    "source_page": 42,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0624",
+    "korean": "버터",
+    "chinese": "黄油",
+    "source_page": 42,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0625",
+    "korean": "엉덩이",
+    "chinese": "[名] 屁股",
+    "source_page": 43,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0626",
+    "korean": "증세",
+    "chinese": "[名] 症状",
+    "source_page": 43,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0627",
+    "korean": "콧물",
+    "chinese": "[名] 鼻涕",
+    "source_page": 43,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0628",
+    "korean": "점점",
+    "chinese": "渐渐地，越来越",
+    "source_page": 43,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0629",
+    "korean": "몸살감기",
+    "chinese": "重感冒",
+    "source_page": 43,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0630",
+    "korean": "과로하다",
+    "chinese": "过度疲劳",
+    "source_page": 43,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0631",
+    "korean": "푹",
+    "chinese": "充分",
+    "source_page": 43,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0632",
+    "korean": "기침을 하다",
+    "chinese": "咳嗽",
+    "source_page": 43,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0633",
+    "korean": "두통이 심하다",
+    "chinese": "头痛严重",
+    "source_page": 43,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0634",
+    "korean": "목이 쉬다",
+    "chinese": "嗓子干哑",
+    "source_page": 43,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0635",
+    "korean": "몸이 떨리다",
+    "chinese": "身体 发抖",
+    "source_page": 43,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0636",
+    "korean": "열이 나다",
+    "chinese": "发烧",
+    "source_page": 43,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0637",
+    "korean": "코가 막히다",
+    "chinese": "鼻子不通",
+    "source_page": 43,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0638",
+    "korean": "처방",
+    "chinese": "处方",
+    "source_page": 43,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0639",
+    "korean": "가래",
+    "chinese": "痰",
+    "source_page": 43,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0640",
+    "korean": "주사",
+    "chinese": "注射，打针",
+    "source_page": 44,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0641",
+    "korean": "사업",
+    "chinese": "[명사] 事业。工作。",
+    "source_page": 44,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0642",
+    "korean": "입맛",
+    "chinese": "[名] 胃口",
+    "source_page": 44,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0643",
+    "korean": "굶다",
+    "chinese": "[动] 饿肚子",
+    "source_page": 44,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0644",
+    "korean": "나다",
+    "chinese": "流出，有，出现",
+    "source_page": 44,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0645",
+    "korean": "처방전",
+    "chinese": "处方",
+    "source_page": 44,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0646",
+    "korean": "종합",
+    "chinese": "综合",
+    "source_page": 44,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0647",
+    "korean": "사고가 나요",
+    "chinese": "出现事故",
+    "source_page": 44,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0648",
+    "korean": "화가 나요",
+    "chinese": "发脾气",
+    "source_page": 44,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0649",
+    "korean": "피가 나요",
+    "chinese": "流血",
+    "source_page": 44,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0650",
+    "korean": "땀이 나요",
+    "chinese": "流汗",
+    "source_page": 44,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0651",
+    "korean": "눈물이 나요",
+    "chinese": "流眼泪",
+    "source_page": 44,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0652",
+    "korean": "콧물이 나요",
+    "chinese": "流鼻涕",
+    "source_page": 44,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0653",
+    "korean": "종합병원",
+    "chinese": "[名]综合医院",
+    "source_page": 44,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0654",
+    "korean": "소화제",
+    "chinese": "[名] 消化药",
+    "source_page": 44,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0655",
+    "korean": "진통제",
+    "chinese": "止痛药；镇痛剂-",
+    "source_page": 45,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0656",
+    "korean": "영양제",
+    "chinese": "[名] 营养剂",
+    "source_page": 45,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0657",
+    "korean": "수면제",
+    "chinese": "安眠药；睡眠剂-",
+    "source_page": 45,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0658",
+    "korean": "소독약",
+    "chinese": "名 消毒药，消毒剂",
+    "source_page": 45,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0659",
+    "korean": "피부 연고",
+    "chinese": "皮肤软膏",
+    "source_page": 45,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0660",
+    "korean": "칼슘",
+    "chinese": "[名] 钙",
+    "source_page": 45,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0661",
+    "korean": "비타민",
+    "chinese": "[名] 维生素，维他命",
+    "source_page": 45,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0662",
+    "korean": "머리카락",
+    "chinese": "头发",
+    "source_page": 45,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0663",
+    "korean": "살이 빠지다",
+    "chinese": "变瘦",
+    "source_page": 45,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0664",
+    "korean": "여드름",
+    "chinese": "痘痘，粉刺",
+    "source_page": 45,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0665",
+    "korean": "무릎",
+    "chinese": "[名] 膝盖",
+    "source_page": 45,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0666",
+    "korean": "학비",
+    "chinese": "[名] 学费",
+    "source_page": 45,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0667",
+    "korean": "싸우다",
+    "chinese": "吵架，打架",
+    "source_page": 45,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0668",
+    "korean": "성공",
+    "chinese": "成功",
+    "source_page": 45,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0669",
+    "korean": "군인",
+    "chinese": "名.军人",
+    "source_page": 45,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0670",
+    "korean": "알레르기",
+    "chinese": "过敏性反应",
+    "source_page": 46,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0671",
+    "korean": "진료",
+    "chinese": "诊疗",
+    "source_page": 46,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0672",
+    "korean": "환자",
+    "chinese": "病人",
+    "source_page": 46,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0673",
+    "korean": "환절기",
+    "chinese": "换季期",
+    "source_page": 46,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0674",
+    "korean": "건강 보험",
+    "chinese": "健康保险",
+    "source_page": 46,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0675",
+    "korean": "치료",
+    "chinese": "[名] 治疗",
+    "source_page": 46,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0676",
+    "korean": "입원",
+    "chinese": "[名] 住院",
+    "source_page": 46,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0677",
+    "korean": "수술",
+    "chinese": "[名] 手术",
+    "source_page": 46,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0678",
+    "korean": "퇴원",
+    "chinese": "[名] 出院",
+    "source_page": 46,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0679",
+    "korean": "진단서",
+    "chinese": "诊断书",
+    "source_page": 46,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0680",
+    "korean": "무섭다",
+    "chinese": "可怕，害怕",
+    "source_page": 46,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0681",
+    "korean": "부자",
+    "chinese": "富人",
+    "source_page": 46,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0682",
+    "korean": "떡",
+    "chinese": "[名] 糕点",
+    "source_page": 46,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0683",
+    "korean": "설거지",
+    "chinese": "[名] 洗碗, 指饭后收拾饭桌",
+    "source_page": 46,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0684",
+    "korean": "내과",
+    "chinese": "内科",
+    "source_page": 46,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0685",
+    "korean": "외과",
+    "chinese": "外科",
+    "source_page": 47,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0686",
+    "korean": "치과",
+    "chinese": "牙科",
+    "source_page": 47,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0687",
+    "korean": "이비인후과",
+    "chinese": "耳鼻喉科",
+    "source_page": 47,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0688",
+    "korean": "피부과",
+    "chinese": "皮肤科",
+    "source_page": 47,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0689",
+    "korean": "정신과",
+    "chinese": "神经科",
+    "source_page": 47,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0690",
+    "korean": "안과",
+    "chinese": "眼科",
+    "source_page": 47,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0691",
+    "korean": "부러지다",
+    "chinese": "折、断",
+    "source_page": 47,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0692",
+    "korean": "피",
+    "chinese": "血",
+    "source_page": 47,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0693",
+    "korean": "교정하다",
+    "chinese": "矫正",
+    "source_page": 47,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0694",
+    "korean": "썩다",
+    "chinese": "腐烂",
+    "source_page": 47,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0695",
+    "korean": "코피",
+    "chinese": "鼻血",
+    "source_page": 47,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0696",
+    "korean": "가렵다",
+    "chinese": "痒",
+    "source_page": 47,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0697",
+    "korean": "우울하다",
+    "chinese": "忧郁",
+    "source_page": 47,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0698",
+    "korean": "불안하다",
+    "chinese": "不安",
+    "source_page": 47,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0699",
+    "korean": "따갑다",
+    "chinese": "火辣辣",
+    "source_page": 47,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0700",
+    "korean": "충혈이 되다",
+    "chinese": "充血",
+    "source_page": 48,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0701",
+    "korean": "병문안",
+    "chinese": "探病，探视",
+    "source_page": 48,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0702",
+    "korean": "문병",
+    "chinese": "[名] 探病, 看病\"问病\"",
+    "source_page": 48,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0703",
+    "korean": "깁스",
+    "chinese": "石膏",
+    "source_page": 48,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0704",
+    "korean": "답답해하다",
+    "chinese": "闷",
+    "source_page": 48,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0705",
+    "korean": "호두",
+    "chinese": "n. 核桃",
+    "source_page": 48,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0706",
+    "korean": "멋지다",
+    "chinese": "帅，漂亮",
+    "source_page": 48,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0707",
+    "korean": "덕분",
+    "chinese": "[副] 多亏",
+    "source_page": 48,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0708",
+    "korean": "뼈",
+    "chinese": "骨骼，骨头",
+    "source_page": 48,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0709",
+    "korean": "해외",
+    "chinese": "n.海外",
+    "source_page": 48,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0710",
+    "korean": "동해",
+    "chinese": "[名] 东海",
+    "source_page": 48,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0711",
+    "korean": "일출",
+    "chinese": "n. 日出",
+    "source_page": 48,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0712",
+    "korean": "장면",
+    "chinese": "场景；场面",
+    "source_page": 48,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0713",
+    "korean": "국내 여행",
+    "chinese": "国内旅游",
+    "source_page": 48,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0714",
+    "korean": "해외 여행",
+    "chinese": "海外旅行 (overseas trip)",
+    "source_page": 48,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0715",
+    "korean": "배낭 여행",
+    "chinese": "背包旅行",
+    "source_page": 49,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0716",
+    "korean": "신혼 여행",
+    "chinese": "度蜜月",
+    "source_page": 49,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0717",
+    "korean": "수학 여행",
+    "chinese": "见学旅行",
+    "source_page": 49,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0718",
+    "korean": "단체 여행",
+    "chinese": "团体旅行",
+    "source_page": 49,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0719",
+    "korean": "용돈",
+    "chinese": "[名] 零花钱",
+    "source_page": 49,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0720",
+    "korean": "물에 빠지다",
+    "chinese": "掉进水里，溺水",
+    "source_page": 49,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0721",
+    "korean": "키스",
+    "chinese": "吻",
+    "source_page": 49,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0722",
+    "korean": "민박",
+    "chinese": "民宿",
+    "source_page": 49,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0723",
+    "korean": "여관",
+    "chinese": "[名] 旅馆，旅店",
+    "source_page": 49,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0724",
+    "korean": "푸르다",
+    "chinese": "青翠，碧绿，绿",
+    "source_page": 49,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0725",
+    "korean": "분위기",
+    "chinese": "氛围，气氛",
+    "source_page": 49,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0726",
+    "korean": "공장",
+    "chinese": "（名）工厂",
+    "source_page": 49,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0727",
+    "korean": "꼬마",
+    "chinese": "[名] 小鬼(称呼可爱的小孩)",
+    "source_page": 49,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0728",
+    "korean": "처녀",
+    "chinese": "姑娘；处女-",
+    "source_page": 49,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0729",
+    "korean": "기억에 남다",
+    "chinese": "留下印象",
+    "source_page": 49,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0730",
+    "korean": "특실",
+    "chinese": "特等间，豪华间",
+    "source_page": 50,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0731",
+    "korean": "일반실",
+    "chinese": "标准间",
+    "source_page": 50,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0732",
+    "korean": "원하다",
+    "chinese": "希望",
+    "source_page": 50,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0733",
+    "korean": "묵다",
+    "chinese": "住",
+    "source_page": 50,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0734",
+    "korean": "전망",
+    "chinese": "远望，展望，瞭望",
+    "source_page": 50,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0735",
+    "korean": "연락처",
+    "chinese": "联络方式",
+    "source_page": 50,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0736",
+    "korean": "할인",
+    "chinese": "[名] 折扣，打折",
+    "source_page": 50,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0737",
+    "korean": "결제",
+    "chinese": "支付，结账",
+    "source_page": 50,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0738",
+    "korean": "상품",
+    "chinese": "[名] 商品[记] 来自\"商品\"",
+    "source_page": 50,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0739",
+    "korean": "렌터카",
+    "chinese": "租赁车",
+    "source_page": 50,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0740",
+    "korean": "예정",
+    "chinese": "预定",
+    "source_page": 50,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0741",
+    "korean": "체크인",
+    "chinese": "入住手续",
+    "source_page": 50,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0742",
+    "korean": "항공권",
+    "chinese": "飞机票",
+    "source_page": 50,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0743",
+    "korean": "여정",
+    "chinese": "旅程",
+    "source_page": 50,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0744",
+    "korean": "왕복",
+    "chinese": "往返",
+    "source_page": 51,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0745",
+    "korean": "편도",
+    "chinese": "单程",
+    "source_page": 51,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0746",
+    "korean": "일반석",
+    "chinese": "经济舱",
+    "source_page": 51,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0747",
+    "korean": "비즈니스석",
+    "chinese": "商务舱",
+    "source_page": 51,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0748",
+    "korean": "대여",
+    "chinese": "出租",
+    "source_page": 51,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0749",
+    "korean": "중형차",
+    "chinese": "中型车",
+    "source_page": 51,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0750",
+    "korean": "대형차",
+    "chinese": "大型车",
+    "source_page": 51,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0751",
+    "korean": "승합차",
+    "chinese": "公共汽车，巴士",
+    "source_page": 51,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0752",
+    "korean": "기사",
+    "chinese": "司机",
+    "source_page": 51,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0753",
+    "korean": "포함",
+    "chinese": "包括，包含；包含-",
+    "source_page": 51,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0754",
+    "korean": "여부",
+    "chinese": "与否",
+    "source_page": 51,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0755",
+    "korean": "애인",
+    "chinese": "[名] 恋人",
+    "source_page": 51,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0756",
+    "korean": "고래",
+    "chinese": "[名] 鲸鱼",
+    "source_page": 51,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0757",
+    "korean": "동물",
+    "chinese": "[名] 动物[派] 동물원(n.动物园)",
+    "source_page": 51,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0758",
+    "korean": "후반",
+    "chinese": "后半，后期",
+    "source_page": 52,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0759",
+    "korean": "발전하다",
+    "chinese": "[自] 发展",
+    "source_page": 52,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0760",
+    "korean": "마라톤",
+    "chinese": "[名] 马拉松",
+    "source_page": 52,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0761",
+    "korean": "이집트",
+    "chinese": "[名] 埃及",
+    "source_page": 52,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0762",
+    "korean": "빼놓다",
+    "chinese": "遗漏，除外",
+    "source_page": 52,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0763",
+    "korean": "추천하다",
+    "chinese": "[动] 推荐",
+    "source_page": 52,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0764",
+    "korean": "로마",
+    "chinese": "罗马",
+    "source_page": 52,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0765",
+    "korean": "시대",
+    "chinese": "（名）时代",
+    "source_page": 52,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0766",
+    "korean": "호수",
+    "chinese": "[名] 湖[记] 来自\"湖水\"",
+    "source_page": 52,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0767",
+    "korean": "강",
+    "chinese": "[名] 江, 河[记] 来自中文词\"江\"[派] 한강(n.汉江)",
+    "source_page": 52,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0768",
+    "korean": "폭포",
+    "chinese": "[名] 瀑布",
+    "source_page": 52,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0769",
+    "korean": "해변",
+    "chinese": "n. 海边",
+    "source_page": 52,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0770",
+    "korean": "온천",
+    "chinese": "(名)温泉",
+    "source_page": 52,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0771",
+    "korean": "화산",
+    "chinese": "[名] 火山",
+    "source_page": 52,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0772",
+    "korean": "오페라 하우스",
+    "chinese": "悉尼歌剧院",
+    "source_page": 53,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0773",
+    "korean": "청소",
+    "chinese": "[名] 打扫[派] 청소기(n.清洁器，吸尘器);청소부(n.保洁员, 清扫工)",
+    "source_page": 53,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0774",
+    "korean": "화장",
+    "chinese": "[名] 化妆",
+    "source_page": 53,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0775",
+    "korean": "엽서",
+    "chinese": "[叶书]名.明信片",
+    "source_page": 53,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0776",
+    "korean": "하와이",
+    "chinese": "[名] 夏威夷",
+    "source_page": 53,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0777",
+    "korean": "알프스",
+    "chinese": "阿尔卑斯",
+    "source_page": 53,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0778",
+    "korean": "신주쿠",
+    "chinese": "新宿（地名）",
+    "source_page": 53,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0779",
+    "korean": "도쿄",
+    "chinese": "东京",
+    "source_page": 53,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0780",
+    "korean": "나이아가라 폭포",
+    "chinese": "尼亚加拉瀑布",
+    "source_page": 53,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0781",
+    "korean": "느낌",
+    "chinese": "[名] 感觉",
+    "source_page": 53,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0782",
+    "korean": "구경거리",
+    "chinese": "可看的东西",
+    "source_page": 53,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0783",
+    "korean": "세계 문화 유산",
+    "chinese": "世界文化遗产",
+    "source_page": 53,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0784",
+    "korean": "축제",
+    "chinese": "[名] 庆祝仪式",
+    "source_page": 53,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0785",
+    "korean": "과학",
+    "chinese": "科学",
+    "source_page": 54,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0786",
+    "korean": "해산물",
+    "chinese": "海产品",
+    "source_page": 54,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0787",
+    "korean": "설경",
+    "chinese": "雪景",
+    "source_page": 54,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0788",
+    "korean": "유물",
+    "chinese": "遗物，古迹",
+    "source_page": 54,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0789",
+    "korean": "귤",
+    "chinese": "桔子",
+    "source_page": 54,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0790",
+    "korean": "보증금",
+    "chinese": "押金",
+    "source_page": 54,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0791",
+    "korean": "원룸",
+    "chinese": "单间",
+    "source_page": 54,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0792",
+    "korean": "시설",
+    "chinese": "设施",
+    "source_page": 54,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0793",
+    "korean": "부동산 소개소에 가다",
+    "chinese": "去房地产中介",
+    "source_page": 54,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0794",
+    "korean": "집 구경을 하다",
+    "chinese": "参观房子",
+    "source_page": 54,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0795",
+    "korean": "계약을 하다",
+    "chinese": "签约",
+    "source_page": 54,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0796",
+    "korean": "소개비를 주다",
+    "chinese": "给中介费",
+    "source_page": 54,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0797",
+    "korean": "이사를 하다",
+    "chinese": "搬家",
+    "source_page": 54,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0798",
+    "korean": "조언을 하다",
+    "chinese": "提建议",
+    "source_page": 54,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0799",
+    "korean": "난방비",
+    "chinese": "取暖费",
+    "source_page": 54,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0800",
+    "korean": "자연 환경",
+    "chinese": "自然环境",
+    "source_page": 55,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0801",
+    "korean": "관리비",
+    "chinese": "管理费",
+    "source_page": 55,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0802",
+    "korean": "공동 화장실",
+    "chinese": "公共卫生间",
+    "source_page": 55,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0803",
+    "korean": "자식",
+    "chinese": "孩子",
+    "source_page": 55,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0804",
+    "korean": "그래도",
+    "chinese": "还是；即便如此",
+    "source_page": 55,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0805",
+    "korean": "그래서",
+    "chinese": "所以",
+    "source_page": 55,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0806",
+    "korean": "연기하다",
+    "chinese": "延期",
+    "source_page": 55,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0807",
+    "korean": "진학하다",
+    "chinese": "升学",
+    "source_page": 55,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0808",
+    "korean": "그러나",
+    "chinese": "可是，但是",
+    "source_page": 55,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0809",
+    "korean": "합격하다",
+    "chinese": "合格，通过",
+    "source_page": 55,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0810",
+    "korean": "그러니까",
+    "chinese": "[副] 所以[记] 非正式的用法、只能用于口语",
+    "source_page": 55,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0811",
+    "korean": "그런데",
+    "chinese": "[副]但是，可是，然而",
+    "source_page": 55,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0812",
+    "korean": "그렇지만",
+    "chinese": "但是",
+    "source_page": 55,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0813",
+    "korean": "무리하다",
+    "chinese": "无理，过分",
+    "source_page": 55,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0814",
+    "korean": "그리고",
+    "chinese": "而且",
+    "source_page": 55,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0815",
+    "korean": "낫다",
+    "chinese": "好",
+    "source_page": 56,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0816",
+    "korean": "포장이나",
+    "chinese": "包装搬家",
+    "source_page": 56,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0817",
+    "korean": "참다",
+    "chinese": "忍耐",
+    "source_page": 56,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0818",
+    "korean": "엄살(을) 부리다",
+    "chinese": "夸张（严重程度）",
+    "source_page": 56,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0819",
+    "korean": "짐을 싸다",
+    "chinese": "打包行李",
+    "source_page": 56,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0820",
+    "korean": "짐을 옮기다",
+    "chinese": "搬运行李",
+    "source_page": 56,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0821",
+    "korean": "짐을 정리하다",
+    "chinese": "整理行李",
+    "source_page": 56,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0822",
+    "korean": "이삿짐센터",
+    "chinese": "搬家公司",
+    "source_page": 56,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0823",
+    "korean": "이사 비용",
+    "chinese": "搬家费",
+    "source_page": 56,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0824",
+    "korean": "사다리차",
+    "chinese": "云梯车",
+    "source_page": 56,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0825",
+    "korean": "이웃집",
+    "chinese": "邻居家，隔壁",
+    "source_page": 56,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0826",
+    "korean": "배치",
+    "chinese": "布置",
+    "source_page": 56,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0827",
+    "korean": "전학가다",
+    "chinese": "转学",
+    "source_page": 56,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0828",
+    "korean": "다정하다",
+    "chinese": "亲密",
+    "source_page": 56,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0829",
+    "korean": "걸레",
+    "chinese": "抹布",
+    "source_page": 56,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0830",
+    "korean": "깔끔하다",
+    "chinese": "干净利落",
+    "source_page": 57,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0831",
+    "korean": "룸메이트",
+    "chinese": "室友",
+    "source_page": 57,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0832",
+    "korean": "재활용",
+    "chinese": "再利用",
+    "source_page": 57,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0833",
+    "korean": "상자",
+    "chinese": "箱子",
+    "source_page": 57,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0834",
+    "korean": "설거지를 하다",
+    "chinese": "洗碗",
+    "source_page": 57,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0835",
+    "korean": "빨래를 하다",
+    "chinese": "洗衣服",
+    "source_page": 57,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0836",
+    "korean": "음식을 만들다",
+    "chinese": "做饭",
+    "source_page": 57,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0837",
+    "korean": "청소기를 돌리다",
+    "chinese": "启动吸尘器",
+    "source_page": 57,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0838",
+    "korean": "화분에 물을 주다",
+    "chinese": "浇水",
+    "source_page": 57,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0839",
+    "korean": "강아지를 돌보다",
+    "chinese": "照顾小狗",
+    "source_page": 57,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0840",
+    "korean": "먼지를 털다",
+    "chinese": "掸尘",
+    "source_page": 57,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0841",
+    "korean": "걸레질을 하다",
+    "chinese": "擦灰尘",
+    "source_page": 57,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0842",
+    "korean": "마당을 쓸다",
+    "chinese": "扫院子",
+    "source_page": 57,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0843",
+    "korean": "세차하다",
+    "chinese": "洗车",
+    "source_page": 57,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0844",
+    "korean": "콧노래",
+    "chinese": "哼歌",
+    "source_page": 57,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0845",
+    "korean": "외롭",
+    "chinese": "孤独",
+    "source_page": 58,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0846",
+    "korean": "스카프",
+    "chinese": "围巾；丝巾",
+    "source_page": 58,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0847",
+    "korean": "얼룩",
+    "chinese": "斑点；污渍",
+    "source_page": 58,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0848",
+    "korean": "빼다",
+    "chinese": "去除",
+    "source_page": 58,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0849",
+    "korean": "빠지다",
+    "chinese": "洗掉",
+    "source_page": 58,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0850",
+    "korean": "드라이클리닝을 하십시오",
+    "chinese": "请干洗",
+    "source_page": 58,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0851",
+    "korean": "옷걸이에 걸어서 말리십시오",
+    "chinese": "用衣架挂起来晾",
+    "source_page": 58,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0852",
+    "korean": "80에서 120도로 다림질하십시오",
+    "chinese": "用80-120°熨烫",
+    "source_page": 58,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0853",
+    "korean": "표백하지 마십시오",
+    "chinese": "禁止漂白",
+    "source_page": 58,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0854",
+    "korean": "물세탁을 하지 마십시오",
+    "chinese": "禁止用水洗",
+    "source_page": 58,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0855",
+    "korean": "짜지 마십시오",
+    "chinese": "禁止拧",
+    "source_page": 58,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0856",
+    "korean": "드라이클리닝",
+    "chinese": "干洗",
+    "source_page": 58,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0857",
+    "korean": "말리다",
+    "chinese": "晾",
+    "source_page": 58,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0858",
+    "korean": "다림질하다/다리미질하다",
+    "chinese": "熨烫",
+    "source_page": 58,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0859",
+    "korean": "표백하다",
+    "chinese": "漂白",
+    "source_page": 58,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0860",
+    "korean": "짜다",
+    "chinese": "拧",
+    "source_page": 59,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0861",
+    "korean": "털",
+    "chinese": "毛",
+    "source_page": 59,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0862",
+    "korean": "점퍼",
+    "chinese": "运动服，工作服",
+    "source_page": 59,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0863",
+    "korean": "양말",
+    "chinese": "袜子",
+    "source_page": 59,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0864",
+    "korean": "속옷",
+    "chinese": "内衣",
+    "source_page": 59,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0865",
+    "korean": "스타킹",
+    "chinese": "长筒袜",
+    "source_page": 59,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0866",
+    "korean": "면바지",
+    "chinese": "棉料裤子",
+    "source_page": 59,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0867",
+    "korean": "수건",
+    "chinese": "手巾",
+    "source_page": 59,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0868",
+    "korean": "재킷",
+    "chinese": "杰克",
+    "source_page": 59,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0869",
+    "korean": "스웨터",
+    "chinese": "针织套衫，羊毛套衫",
+    "source_page": 59,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0870",
+    "korean": "니트",
+    "chinese": "针织品",
+    "source_page": 59,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0871",
+    "korean": "조끼",
+    "chinese": "坎肩",
+    "source_page": 59,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0872",
+    "korean": "실크",
+    "chinese": "丝绸",
+    "source_page": 59,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0873",
+    "korean": "손빨래",
+    "chinese": "手洗",
+    "source_page": 59,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0874",
+    "korean": "구멍이 나다",
+    "chinese": "出了洞",
+    "source_page": 59,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0875",
+    "korean": "맡기다",
+    "chinese": "委托",
+    "source_page": 60,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0876",
+    "korean": "잉크",
+    "chinese": "墨水",
+    "source_page": 60,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0877",
+    "korean": "껌",
+    "chinese": "口香糖",
+    "source_page": 60,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0878",
+    "korean": "크레파스",
+    "chinese": "蜡粉笔，蜡笔，彩色粉笔",
+    "source_page": 60,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0879",
+    "korean": "바르다",
+    "chinese": "抹，擦",
+    "source_page": 60,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0880",
+    "korean": "접속사",
+    "chinese": "连接词",
+    "source_page": 60,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0881",
+    "korean": "벽지",
+    "chinese": "墙纸",
+    "source_page": 60,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0882",
+    "korean": "칠하다",
+    "chinese": "漆，涂",
+    "source_page": 60,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0883",
+    "korean": "천장",
+    "chinese": "天花板，天棚",
+    "source_page": 60,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0884",
+    "korean": "상담하다",
+    "chinese": "商谈，商量",
+    "source_page": 60,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0885",
+    "korean": "정보",
+    "chinese": "信息",
+    "source_page": 60,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0886",
+    "korean": "분리",
+    "chinese": "分开，分类",
+    "source_page": 60,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0887",
+    "korean": "종류",
+    "chinese": "种类",
+    "source_page": 60,
+    "source_book": "延世韩国语 2"
+  },
+  {
+    "id": "yonsei2-0888",
+    "korean": "줄다",
+    "chinese": "减少",
+    "source_page": 60,
+    "source_book": "延世韩国语 2"
+  }
+]

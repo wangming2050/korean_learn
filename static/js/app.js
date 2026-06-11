@@ -13,14 +13,21 @@ const TEXTBOOK_PREFETCH_RADIUS = 2;
 const PDFJS_MODULE_URL = "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.mjs";
 const PDFJS_WORKER_URL = "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.worker.mjs";
 const LOCAL_TEXTBOOK_DB_NAME = "korean-learn-local-textbooks";
-const LOCAL_TEXTBOOK_DB_VERSION = 1;
+const LOCAL_TEXTBOOK_DB_VERSION = 2;
 const LOCAL_TEXTBOOK_DOC_STORE = "documents";
 const LOCAL_TEXTBOOK_PAGE_STORE = "pages";
+const LOCAL_TEXTBOOK_TEXT_STORE = "pageTexts";
 const LOCAL_TEXTBOOK_MAX_FILE_SIZE = 300 * 1024 * 1024;
 const LOCAL_TEXTBOOK_MAX_PAGES = 600;
 const LOCAL_TEXTBOOK_IMAGE_WIDTH = 1320;
 const LOCAL_TEXTBOOK_THUMB_WIDTH = 560;
 const LOCAL_PAGE_URL_PREFIX = "indexeddb-page://";
+const LOCAL_TEXTBOOK_TEXT_SCAN_PAGES = 80;
+const LOCAL_TEXTBOOK_TOC_SCAN_PAGES = 30;
+const LOCAL_TEXTBOOK_TOC_PARSE_PAGES = 8;
+const LOCAL_TEXTBOOK_TOC_IMAGE_WIDTH = 1000;
+const ASSISTANT_CONTEXT_RADIUS = 2;
+const ASSISTANT_TEXT_IMAGE_THRESHOLD = 80;
 
 let appConfig = {
   assetBaseUrl: "",
@@ -373,11 +380,17 @@ let activeTextbookLoadStatus = "idle";
 let textbookCacheVersion = 0;
 const textbookCache = new Map();
 let localTextbookList = [];
+let localTextbookOrder = JSON.parse(localStorage.getItem("localTextbookOrder") || "null") || [];
+let textbookBatchMode = false;
+let textbookSelectedIds = new Set();
 let localTextbookDbPromise = null;
 let pdfJsModulePromise = null;
 let localTextbookJobVersion = 0;
 const localTextbookJobs = new Map();
 const localTextbookObjectUrls = new Map();
+let pdfAssistantMessages = [];
+let pdfAssistantRequestId = 0;
+let pdfAssistantExpanded = false;
 
 // 保存当前正在做“片段循环”的结束时间，timeupdate 事件里会用到。
 let currentLoopEnd = 0;
@@ -843,7 +856,22 @@ player.addEventListener("volumechange", syncMaterialAudioControls);
 /**
  * 切换页面栏目。
  */
-function activatePage(pageId) {
+function resetPageState(pageId) {
+  if (pageId === "letters") {
+    closeLetterDetail();
+  }
+
+  if (pageId === "materials") {
+    resetTextbookReaderToLibrary();
+  }
+
+  window.dispatchEvent(new CustomEvent("korean-learn:reset-module", {
+    detail: { page: pageId },
+  }));
+}
+
+
+function activatePage(pageId, options = {}) {
   document.querySelectorAll(".tab").forEach((item) => {
     item.classList.toggle("active", item.dataset.page === pageId);
   });
@@ -853,18 +881,15 @@ function activatePage(pageId) {
   });
 
   document.body.dataset.activePage = pageId;
+
+  if (options.reset) {
+    resetPageState(pageId);
+  }
 }
 
 
 function initDefaultPage() {
-  const hasSeenGuide = localStorage.getItem("hasSeenGuide") === "true";
-  const defaultPage = hasSeenGuide ? "letters" : "guide";
-
-  activatePage(defaultPage);
-
-  if (!hasSeenGuide) {
-    localStorage.setItem("hasSeenGuide", "true");
-  }
+  activatePage("guide", { reset: true });
 }
 
 
@@ -873,11 +898,11 @@ function initDefaultPage() {
  */
 function initTabs() {
   document.querySelectorAll(".tab").forEach((tab) => {
-    tab.addEventListener("click", () => activatePage(tab.dataset.page));
+    tab.addEventListener("click", () => activatePage(tab.dataset.page, { reset: true }));
   });
 
   document.querySelectorAll("[data-open-page]").forEach((button) => {
-    button.addEventListener("click", () => activatePage(button.dataset.openPage));
+    button.addEventListener("click", () => activatePage(button.dataset.openPage, { reset: true }));
   });
 }
 
@@ -1114,7 +1139,12 @@ function renderLetterDetail(letterData, selectedCard) {
         <span class="eyebrow">Selected Sound</span>
         <h3>${letterData.letter} <span>${letterData.sound}</span></h3>
       </div>
-      <button class="detail-close" type="button" aria-label="收起示范详情">×</button>
+      <div class="letter-detail-actions">
+        <button class="detail-play" type="button" aria-label="播放发音" title="播放发音">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
+        </button>
+        <button class="detail-close" type="button" aria-label="收起示范详情">×</button>
+      </div>
     </div>
     ${renderTipList(letterData.tips || [])}
     ${renderExampleSection(letterData.type === "rule" ? "例词" : "位置示范", letterData.examples, "example", letterData)}
@@ -1123,6 +1153,10 @@ function renderLetterDetail(letterData, selectedCard) {
 
   detail.querySelector(".detail-close").addEventListener("click", () => {
     closeLetterDetail();
+  });
+
+  detail.querySelector(".detail-play").addEventListener("click", () => {
+    playLetterQueue(letterData);
   });
 
   bindDetailWordPlayback(detail, letterData, contrastItems);
@@ -1150,7 +1184,6 @@ function selectLetter(index) {
   });
 
   renderLetterDetail(letterData, selectedCard);
-  playLetterQueue(letterData);
 }
 
 
@@ -1362,6 +1395,10 @@ function openLocalTextbookDb() {
         const store = db.createObjectStore(LOCAL_TEXTBOOK_PAGE_STORE, { keyPath: ["documentId", "pageNumber", "kind"] });
         store.createIndex("byDocument", "documentId");
       }
+      if (!db.objectStoreNames.contains(LOCAL_TEXTBOOK_TEXT_STORE)) {
+        const store = db.createObjectStore(LOCAL_TEXTBOOK_TEXT_STORE, { keyPath: ["documentId", "pageNumber"] });
+        store.createIndex("byDocument", "documentId");
+      }
     };
     request.onsuccess = () => resolve(request.result);
     request.onerror = () => reject(request.error);
@@ -1411,6 +1448,11 @@ function normalizeLocalTextbookDocument(document) {
     title: document.title || document.fileName || "本地 PDF 教材",
     pageCount: document.pageCount || 1,
     generatedPages: document.generatedPages || 0,
+    textPages: document.textPages || 0,
+    outlineStatus: document.outlineStatus || "pending",
+    outlineError: document.outlineError || "",
+    outlineDebugSummary: document.outlineDebugSummary || "",
+    units: document.units || [],
     status: document.status || "processing",
     source: "local-upload",
   };
@@ -1447,11 +1489,36 @@ async function getLocalTextbookPage(documentId, pageNumber, kind) {
 }
 
 
+async function saveLocalTextbookPageText(documentId, pageNumber, text, outlineTitle = "") {
+  await runLocalTextbookStore(LOCAL_TEXTBOOK_TEXT_STORE, "readwrite", (store) => store.put({
+    documentId,
+    pageNumber,
+    text,
+    textStatus: text ? "ready" : "empty",
+    outlineTitle,
+    updatedAt: Date.now(),
+  }));
+}
+
+
+async function getLocalTextbookPageText(documentId, pageNumber) {
+  return runLocalTextbookStore(LOCAL_TEXTBOOK_TEXT_STORE, "readonly", (store) => (
+    requestToPromise(store.get([documentId, Number(pageNumber)]))
+  ));
+}
+
+
 async function deleteLocalTextbookPages(documentId) {
   const db = await openLocalTextbookDb();
+  await deleteLocalTextbookStoreByDocument(db, LOCAL_TEXTBOOK_PAGE_STORE, documentId);
+  await deleteLocalTextbookStoreByDocument(db, LOCAL_TEXTBOOK_TEXT_STORE, documentId);
+}
+
+
+function deleteLocalTextbookStoreByDocument(db, storeName, documentId) {
   return new Promise((resolve, reject) => {
-    const transaction = db.transaction(LOCAL_TEXTBOOK_PAGE_STORE, "readwrite");
-    const index = transaction.objectStore(LOCAL_TEXTBOOK_PAGE_STORE).index("byDocument");
+    const transaction = db.transaction(storeName, "readwrite");
+    const index = transaction.objectStore(storeName).index("byDocument");
     const request = index.openCursor(IDBKeyRange.only(documentId));
     request.onsuccess = () => {
       const cursor = request.result;
@@ -1495,10 +1562,14 @@ function createLocalTextbookManifest(document) {
     pageHeight: document.pageHeight || 807,
     pageImageUrlTemplate: `${LOCAL_PAGE_URL_PREFIX}${document.id}/image/{pageNumber}`,
     pageThumbUrlTemplate: `${LOCAL_PAGE_URL_PREFIX}${document.id}/thumb/{pageNumber}`,
-    units: [],
+    units: document.units || [],
     pageAudio: {},
     source: "local-upload",
     generatedPages: document.generatedPages || 0,
+    textPages: document.textPages || 0,
+    outlineStatus: document.outlineStatus || "pending",
+    outlineError: document.outlineError || "",
+    outlineDebugSummary: document.outlineDebugSummary || "",
     status: document.status || "processing",
   };
 }
@@ -1594,6 +1665,1034 @@ async function loadLocalPdfDocument(document) {
 }
 
 
+async function extractPdfPageText(page) {
+  const content = await page.getTextContent();
+  return content.items
+    .map((item) => String(item.str || "").trim())
+    .filter(Boolean)
+    .join(" ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+
+async function buildPdfOutlineUnits(pdfDocument) {
+  const outline = await pdfDocument.getOutline();
+  if (!outline?.length) {
+    return [];
+  }
+
+  const entries = [];
+  await collectPdfOutlineEntries(pdfDocument, outline, entries);
+  const uniqueEntries = dedupeChapterEntries(entries)
+    .sort((a, b) => a.page - b.page);
+
+  if (uniqueEntries.length === 0) {
+    return [];
+  }
+
+  return chapterEntriesToUnits(uniqueEntries, pdfDocument.numPages);
+}
+
+
+async function collectPdfOutlineEntries(pdfDocument, items, entries, parentTitle = "") {
+  for (const item of items || []) {
+    const page = await resolvePdfOutlinePage(pdfDocument, item.dest);
+    const title = String(item.title || "").trim();
+    if (page && title) {
+      entries.push({
+        title,
+        page,
+        level: parentTitle ? 2 : 1,
+        parentTitle,
+      });
+    }
+    if (item.items?.length) {
+      await collectPdfOutlineEntries(pdfDocument, item.items, entries, title || parentTitle);
+    }
+  }
+}
+
+
+async function resolvePdfOutlinePage(pdfDocument, dest) {
+  if (!dest) {
+    return null;
+  }
+
+  const destination = typeof dest === "string" ? await pdfDocument.getDestination(dest) : dest;
+  const ref = Array.isArray(destination) ? destination[0] : null;
+  if (!ref) {
+    return null;
+  }
+
+  try {
+    const index = await pdfDocument.getPageIndex(ref);
+    return index + 1;
+  } catch (error) {
+    return null;
+  }
+}
+
+
+function dedupeChapterEntries(entries) {
+  const seen = new Set();
+  return entries.filter((entry) => {
+    const key = `${entry.page}:${entry.title}`;
+    if (seen.has(key)) {
+      return false;
+    }
+    seen.add(key);
+    return true;
+  });
+}
+
+
+function chapterEntriesToUnits(entries, totalPages) {
+  const topLevelEntries = entries.filter((entry) => entry.level === 1);
+  if (topLevelEntries.length >= 2) {
+    return topLevelEntries.map((entry, index) => {
+      const nextTop = topLevelEntries[index + 1];
+      const childEntries = entries.filter((candidate) => (
+        candidate.level > 1
+        && candidate.page >= entry.page
+        && (!nextTop || candidate.page < nextTop.page)
+      ));
+      return {
+        unit: index + 1,
+        title: entry.title,
+        startPage: entry.page,
+        endPage: (nextTop?.page || totalPages + 1) - 1,
+        sections: childEntries.map((child, childIndex) => ({
+          id: `local-section-${index + 1}-${childIndex + 1}`,
+          title: child.title,
+          page: child.page,
+          startPage: child.page,
+          endPage: (childEntries[childIndex + 1]?.page || nextTop?.page || totalPages + 1) - 1,
+        })),
+      };
+    });
+  }
+
+  return entries.map((entry, index) => ({
+    unit: index + 1,
+    title: entry.title,
+    startPage: entry.page,
+    endPage: (entries[index + 1]?.page || totalPages + 1) - 1,
+    sections: [],
+  }));
+}
+
+
+async function buildPdfBlockTocResult(pdfDocument) {
+  const pageResults = [];
+  const maxPages = Math.min(pdfDocument.numPages, LOCAL_TEXTBOOK_TOC_SCAN_PAGES);
+
+  for (let pageNumber = 1; pageNumber <= maxPages; pageNumber += 1) {
+    const page = await pdfDocument.getPage(pageNumber);
+    const lines = await extractPdfPageTextLines(page);
+    const entries = parseBlockTocEntries(lines, pdfDocument.numPages);
+    const chapterCount = entries.filter((entry) => entry.type === "chapter").length;
+    if (entries.length >= 3 && chapterCount >= 2) {
+      pageResults.push({
+        pageNumber,
+        entries,
+        chapterCount,
+      });
+    }
+  }
+
+  if (pageResults.length === 0) {
+    return {
+      units: [],
+      status: "none",
+      debugSummary: "未找到可解析的 block 目录页。",
+    };
+  }
+
+  const bestResult = pageResults
+    .sort((a, b) => (b.chapterCount - a.chapterCount) || (b.entries.length - a.entries.length))[0];
+  const lastTocPage = Math.max(...pageResults.map((result) => result.pageNumber));
+  const normalizedEntries = normalizeSequentialYonseiTocEntries(bestResult.entries);
+  const mappedEntries = mapBlockTocEntriesToPdfPages(normalizedEntries, bestResult.pageNumber, lastTocPage, pdfDocument.numPages);
+
+  return {
+    units: chapterEntriesToUnits(mappedEntries, pdfDocument.numPages),
+    status: "block-toc",
+    debugSummary: `block 目录页：第 ${bestResult.pageNumber} 页，识别 ${mappedEntries.length} 个条目。`,
+  };
+}
+
+
+async function extractPdfPageTextLines(page) {
+  const content = await page.getTextContent();
+  const rawItems = (content.items || [])
+    .map((item) => {
+      const text = String(item.str || "").replace(/\s+/g, " ").trim();
+      const transform = item.transform || [];
+      return {
+        text,
+        x: Number(transform[4]) || 0,
+        y: Number(transform[5]) || 0,
+        width: Number(item.width) || 0,
+        height: Number(item.height) || Math.abs(Number(transform[3]) || 0) || 10,
+      };
+    })
+    .filter((item) => item.text);
+
+  const lines = [];
+  const yTolerance = 5;
+  for (const item of rawItems.sort((a, b) => b.y - a.y || a.x - b.x)) {
+    let line = lines.find((candidate) => Math.abs(candidate.y - item.y) <= yTolerance);
+    if (!line) {
+      line = {
+        y: item.y,
+        minX: item.x,
+        maxX: item.x + item.width,
+        items: [],
+      };
+      lines.push(line);
+    }
+    line.items.push(item);
+    line.y = (line.y * (line.items.length - 1) + item.y) / line.items.length;
+    line.minX = Math.min(line.minX, item.x);
+    line.maxX = Math.max(line.maxX, item.x + item.width);
+  }
+
+  return lines
+    .map((line) => {
+      const sortedItems = line.items.sort((a, b) => a.x - b.x);
+      const segments = [];
+      let previousRight = null;
+      for (const item of sortedItems) {
+        const gap = previousRight === null ? 0 : item.x - previousRight;
+        if (gap > 18) {
+          segments.push(" ");
+        }
+        segments.push(item.text);
+        previousRight = item.x + item.width;
+      }
+      const text = segments.join("").replace(/\s+/g, " ").trim();
+      return {
+        ...line,
+        items: sortedItems,
+        text,
+      };
+    })
+    .filter((line) => line.text)
+    .sort((a, b) => b.y - a.y || a.minX - b.minX);
+}
+
+
+function parseBlockTocEntries(lines, totalPages) {
+  const entries = [];
+  for (const line of lines) {
+    const lineEntries = parseBlockTocLine(line, totalPages);
+    entries.push(...lineEntries);
+  }
+
+  entries.push(...parseBlockTocEntriesByPageOrder(lines, totalPages));
+
+  return dedupeTocEntriesByTitle(entries)
+    .filter((entry) => entry.title && entry.printedPage > 0 && entry.printedPage <= totalPages + 80)
+    .filter((entry) => !isProbablyGarbledText(entry.title))
+    .sort((a, b) => a.printedPage - b.printedPage)
+    .slice(0, 80);
+}
+
+
+function normalizeSequentialYonseiTocEntries(entries) {
+  const chapterEntries = entries
+    .map((entry) => ({
+      ...entry,
+      chapterNumber: extractChapterNumber(entry.title),
+    }))
+    .filter((entry) => entry.type === "chapter" && entry.chapterNumber > 0 && entry.chapterNumber <= 20);
+  const maxChapterNumber = Math.max(...chapterEntries.map((entry) => entry.chapterNumber), 0);
+  if (maxChapterNumber < 3) {
+    return entries;
+  }
+
+  const printedPages = [...new Set(chapterEntries
+    .map((entry) => entry.printedPage)
+    .filter((page) => page > 0))]
+    .sort((a, b) => a - b);
+  if (printedPages[0] > 1) {
+    printedPages.unshift(1);
+  }
+  if (printedPages.length < maxChapterNumber) {
+    return entries;
+  }
+
+  const normalizedChapters = [];
+  for (let chapterNumber = 1; chapterNumber <= maxChapterNumber; chapterNumber += 1) {
+    const candidates = chapterEntries.filter((entry) => entry.chapterNumber === chapterNumber);
+    if (!candidates.length) {
+      continue;
+    }
+    const bestTitle = candidates
+      .map((entry) => cleanSequentialTocTitle(entry.title))
+      .sort((a, b) => b.length - a.length)[0];
+    normalizedChapters.push({
+      title: bestTitle,
+      printedPage: printedPages[chapterNumber - 1],
+      page: printedPages[chapterNumber - 1],
+      level: 1,
+      type: "chapter",
+    });
+  }
+
+  const lastChapterPrintedPage = printedPages[maxChapterNumber - 1] || 0;
+  const normalizedAppendices = Object.values(entries
+    .filter((entry) => entry.type !== "chapter" && entry.printedPage > lastChapterPrintedPage)
+    .reduce((acc, entry) => {
+      const title = cleanSequentialTocTitle(entry.title);
+      if (!title) {
+        return acc;
+      }
+      const key = normalizeSearchText(title);
+      if (!acc[key] || entry.printedPage < acc[key].printedPage) {
+        acc[key] = {
+          ...entry,
+          title,
+          level: 1,
+        };
+      }
+      return acc;
+    }, {}))
+    .sort((a, b) => a.printedPage - b.printedPage);
+
+  return [...normalizedChapters, ...normalizedAppendices];
+}
+
+
+function cleanSequentialTocTitle(title) {
+  return String(title || "")
+    .replace(/[‘’“”"']/g, "")
+    .replace(/\s+/g, " ")
+    .replace(/\s*-\s*$/g, "")
+    .trim();
+}
+
+
+function parseBlockTocLine(line, totalPages) {
+  const normalizedLine = normalizeTocLineNoise(line.text);
+  const titleMatch = normalizedLine.match(/(?:제|저)\s*\d{1,2}\s*과\s*[-_＿]?\s*[^0-9]{1,60}|第\s*\d{1,2}\s*(?:课|課|果|i果)\s*[-_＿]?\s*[^0-9]{1,60}/i);
+  const appendixMatch = normalizedLine.match(/(?:듣기\s*지문|문화\s*번역|참고\s*답안|색인|听力\s*原文|聽力\s*原文|文化\s*译文|文化\s*譯文|参考\s*答案|參考\s*答案|索引)[^0-9]{0,24}/i);
+  const rawTitle = titleMatch?.[0] || appendixMatch?.[0] || "";
+  if (!rawTitle) {
+    return [];
+  }
+
+  const printedPage = extractPrintedPageFromTocLine(line, rawTitle);
+  if (!printedPage || printedPage > totalPages + 80) {
+    return [];
+  }
+
+  const cleanedTitle = normalizeYonseiTocTitle(rawTitle);
+  if (!cleanedTitle) {
+    return [];
+  }
+
+  return [{
+    title: cleanedTitle,
+    page: Math.min(Math.max(printedPage, 1), totalPages),
+    printedPage,
+    level: getTocEntryLevel(cleanedTitle),
+    type: appendixMatch ? "appendix" : "chapter",
+  }];
+}
+
+
+function parseBlockTocEntriesByPageOrder(lines, totalPages) {
+  const orderedLines = lines
+    .filter((line) => isLikelyTocContentLine(line.text))
+    .sort((a, b) => b.y - a.y || a.minX - b.minX);
+  const titleEntries = orderedLines
+    .map((line) => {
+      const normalizedLine = normalizeTocLineNoise(line.text);
+      const titleMatch = normalizedLine.match(/(?:제|저)\s*\d{1,2}\s*과\s*[-_＿]?\s*[^0-9]{1,60}|第\s*\d{1,2}\s*(?:课|課|果|i果)\s*[-_＿]?\s*[^0-9]{1,60}/i);
+      const appendixMatch = normalizedLine.match(/(?:듣기\s*지문|문화\s*번역|참고\s*답안|색인|听力\s*原文|聽力\s*原文|文化\s*译文|文化\s*譯文|参考\s*答案|參考\s*答案|索引)[^0-9]{0,24}/i);
+      const rawTitle = titleMatch?.[0] || appendixMatch?.[0] || "";
+      const title = normalizeYonseiTocTitle(rawTitle);
+      return title
+        ? {
+            title,
+            line,
+            type: appendixMatch ? "appendix" : "chapter",
+          }
+        : null;
+    })
+    .filter(Boolean);
+  const printedPages = orderedLines
+    .map((line) => extractTocPrintedPageCandidate(line))
+    .filter((value) => value > 0 && value <= totalPages + 80);
+
+  const likelyPrintedPages = printedPages
+    .filter((value, index, all) => all.indexOf(value) === index)
+    .filter((value, index, all) => (
+      index === 0 || value > all[index - 1]
+    ));
+  const firstChapterNumber = extractChapterNumber(titleEntries.find((entry) => entry.type === "chapter")?.title || "");
+  if (firstChapterNumber === 1 && likelyPrintedPages[0] > 1) {
+    likelyPrintedPages.unshift(1);
+  }
+
+  if (titleEntries.length < 3 || likelyPrintedPages.length < 3) {
+    return [];
+  }
+
+  const chapterNumbers = titleEntries
+    .filter((entry) => entry.type === "chapter")
+    .map((entry) => extractChapterNumber(entry.title))
+    .filter(Boolean);
+  const hasSequentialChapters = chapterNumbers.length >= 3
+    && chapterNumbers.some((number, index, all) => index > 0 && number === all[index - 1] + 1);
+  if (!hasSequentialChapters) {
+    return [];
+  }
+
+  return titleEntries
+    .map((entry, index) => {
+      const printedPage = likelyPrintedPages[index];
+      if (!printedPage) {
+        return null;
+      }
+      return {
+        title: entry.title,
+        printedPage,
+        page: printedPage,
+        level: getTocEntryLevel(entry.title),
+        type: entry.type,
+      };
+    })
+    .filter(Boolean);
+}
+
+
+function extractTocPrintedPageCandidate(line) {
+  const normalizedLine = normalizeTocLineNoise(line.text);
+  const titleMatch = normalizedLine.match(/(?:제|저)\s*\d{1,2}\s*과\s*[-_＿]?\s*[^0-9]{1,60}|第\s*\d{1,2}\s*(?:课|課|果|i果)\s*[-_＿]?\s*[^0-9]{1,60}|(?:듣기\s*지문|문화\s*번역|참고\s*답안|색인|听力\s*原文|聽力\s*原文|文化\s*译文|文化\s*譯文|参考\s*答案|參考\s*答案|索引)[^0-9]{0,24}/i);
+  const rawTitle = titleMatch?.[0] || "";
+  if (!rawTitle) {
+    return 0;
+  }
+  return extractPrintedPageFromTocLine(line, rawTitle);
+}
+
+
+function isLikelyTocContentLine(text) {
+  const value = normalizeTocLineNoise(text);
+  return /(?:제|저)\s*\d{1,2}\s*과|第\s*\d{1,2}\s*(?:课|課|果|i果)|듣기\s*지문|문화\s*번역|참고\s*답안|색인|听力\s*原文|聽力\s*原文|参考\s*答案|參考\s*答案|索引/i.test(value);
+}
+
+
+function extractChapterNumber(title) {
+  const match = normalizeTocLineNoise(title).match(/(?:제|第)\s*(\d{1,2})\s*(?:과|课|課)/i);
+  return match ? Number(match[1]) : 0;
+}
+
+
+function dedupeTocEntriesByTitle(entries) {
+  const seen = new Set();
+  return entries.filter((entry) => {
+    const key = `${entry.title}:${entry.printedPage}`;
+    if (seen.has(key)) {
+      return false;
+    }
+    seen.add(key);
+    return true;
+  });
+}
+
+
+function extractPrintedPageFromTocLine(line, rawTitle) {
+  const rightSideText = line.items
+    .filter((item) => item.x > line.minX + 180)
+    .sort((a, b) => a.x - b.x)
+    .map((item) => String(item.text || ""))
+    .join("");
+  const rightSideNumber = (rightSideText.match(/\d{1,3}/g) || [])
+    .map(Number)
+    .filter((value) => value > 0)
+    .pop();
+  if (rightSideNumber) {
+    return rightSideNumber;
+  }
+
+  const normalizedLine = normalizeTocLineNoise(line.text);
+  const titleIndex = normalizedLine.indexOf(rawTitle);
+  const afterTitle = titleIndex >= 0 ? normalizedLine.slice(titleIndex + rawTitle.length) : "";
+  const trailingNumbers = afterTitle.match(/\d{1,3}/g) || [];
+  return Number(trailingNumbers.at(-1)) || 0;
+}
+
+
+function normalizeTocLineNoise(value) {
+  return String(value || "")
+    .replace(/[＿_]+/g, "_")
+    .replace(/[–—－]+/g, "-")
+    .replace(/第\s*([1-9])\s*[iI!l|]?\s*果/g, "第$1课")
+    .replace(/第\s*([sS])\s*[iI!l|]?\s*果/g, "第5课")
+    .replace(/저\s*1([1-9])\s*과/g, "제$1과")
+    .replace(/저\s*110\s*과/g, "제10과")
+    .replace(/저\s*10\s*과/g, "제10과")
+    .replace(/저\s*(\d{1,2})\s*과/g, "제$1과")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+
+function normalizeYonseiTocTitle(title) {
+  return normalizeTocLineNoise(title)
+    .replace(/^(제\s*\d{1,2}\s*과)\s*[-_＿]?\s*/i, (_, label) => `${label.replace(/\s+/g, "")}_ `)
+    .replace(/^(第\s*\d{1,2}\s*[课課])\s*[-_＿]?\s*/i, (_, label) => `${label.replace(/\s+/g, "")}_ `)
+    .replace(/\.{2,}|…+|-{2,}/g, " ")
+    .replace(/\s+/g, " ")
+    .replace(/\s+\d{1,3}$/g, "")
+    .replace(/[_＿]\s*$/g, "")
+    .trim()
+    .slice(0, 90);
+}
+
+
+function mapBlockTocEntriesToPdfPages(entries, tocPageNumber, lastTocPage, totalPages) {
+  const firstPrintedPage = entries.find((entry) => entry.type === "chapter")?.printedPage || entries[0]?.printedPage || 1;
+  const fallbackOffset = Math.max(lastTocPage + 1 - firstPrintedPage, 0);
+  return entries.map((entry) => ({
+    ...entry,
+    page: Math.min(Math.max(entry.printedPage + fallbackOffset, 1), totalPages),
+    confidence: "block-toc",
+  }));
+}
+
+
+async function buildPdfTocResult(pdfDocument, documentId) {
+  const tocPages = await findPdfTocPages(pdfDocument, documentId);
+  if (tocPages.length && !tocPages.every((page) => isProbablyGarbledText(page.text))) {
+    const entries = dedupeChapterEntries(parseTocEntries(tocPages, pdfDocument.numPages));
+    if (entries.length) {
+      const adjustedEntries = await calibrateTocEntries(pdfDocument, documentId, entries);
+      return {
+        units: chapterEntriesToUnits(adjustedEntries, pdfDocument.numPages),
+        status: "toc",
+      };
+    }
+  }
+
+  return { units: [], status: "none" };
+}
+
+
+async function buildVisualPdfTocResult(pdfDocument, documentId) {
+  const candidates = await findVisualTocCandidatePages(pdfDocument, documentId);
+  const candidatePages = [...candidates.strong, ...candidates.weak];
+  const hadStrongCandidate = candidates.strong.length > 0;
+
+  for (const pageNumber of candidatePages) {
+    const image = await renderPdfPageDataUrl(pdfDocument, pageNumber, LOCAL_TEXTBOOK_TOC_IMAGE_WIDTH, 0.68);
+    if (!image) {
+      continue;
+    }
+    const entries = await requestVisualTocEntries(image, pageNumber, pdfDocument.numPages);
+    if (entries.length < 3) {
+      continue;
+    }
+    const mappedEntries = await mapVisualTocEntriesToPdfPages(pdfDocument, documentId, entries, pageNumber);
+    if (mappedEntries.length) {
+      return {
+        units: chapterEntriesToUnits(mappedEntries, pdfDocument.numPages),
+        hadStrongCandidate,
+      };
+    }
+  }
+  return { units: [], hadStrongCandidate };
+}
+
+
+async function findVisualTocCandidatePages(pdfDocument, documentId) {
+  const maxPages = Math.min(pdfDocument.numPages, LOCAL_TEXTBOOK_TOC_SCAN_PAGES);
+  const strongCandidates = [];
+  const weakCandidates = [];
+
+  for (let pageNumber = 1; pageNumber <= maxPages; pageNumber += 1) {
+    const text = await getOrExtractLocalPageText(pdfDocument, documentId, pageNumber);
+    if (isLikelyVisualTocText(text)) {
+      strongCandidates.push(pageNumber);
+    } else if (pageNumber >= 3 && (isProbablyGarbledText(text) || text.length < 80)) {
+      weakCandidates.push(pageNumber);
+    } else if (pageNumber >= 8 && pageNumber <= 20) {
+      weakCandidates.push(pageNumber);
+    }
+  }
+
+  return {
+    strong: [...new Set(strongCandidates)].slice(0, 8),
+    weak: [...new Set(weakCandidates)].slice(0, 10),
+  };
+}
+
+
+function isLikelyVisualTocText(text) {
+  const value = String(text || "");
+  return /(目录|目錄|contents|table of contents|차례|목차|머리말|일러두기|내용\s*구성|나오는\s*사람|듣기\s*지문|참고\s*답안|색인)/i.test(value);
+}
+
+
+function isProbablyGarbledText(text) {
+  const value = String(text || "").trim();
+  if (!value) {
+    return false;
+  }
+  const compact = value.replace(/\s+/g, "");
+  if (compact.length < 20) {
+    return false;
+  }
+  const readable = compact.match(/[\p{Script=Hangul}\p{Script=Han}A-Za-z0-9]/gu) || [];
+  const symbols = compact.match(/[^\p{Script=Hangul}\p{Script=Han}A-Za-z0-9]/gu) || [];
+  const oddRuns = compact.match(/[~@#$%^&*_=+|\\/<>{}\[\]`]{2,}/g) || [];
+  return readable.length / compact.length < 0.55 || symbols.length / compact.length > 0.45 || oddRuns.length >= 2;
+}
+
+
+async function renderPdfPageDataUrl(pdfDocument, pageNumber, targetWidth, quality = 0.7) {
+  const page = await pdfDocument.getPage(pageNumber);
+  const baseViewport = page.getViewport({ scale: 1 });
+  const scale = targetWidth / baseViewport.width;
+  const viewport = page.getViewport({ scale });
+  const canvas = document.createElement("canvas");
+  const context = canvas.getContext("2d", { alpha: false });
+  canvas.width = Math.ceil(viewport.width);
+  canvas.height = Math.ceil(viewport.height);
+  context.fillStyle = "#fff";
+  context.fillRect(0, 0, canvas.width, canvas.height);
+  await page.render({ canvasContext: context, viewport }).promise;
+  try {
+    return canvas.toDataURL("image/jpeg", quality);
+  } catch (error) {
+    return "";
+  }
+}
+
+
+async function requestVisualTocEntries(image, pageNumber, pageCount) {
+  try {
+    const response = await fetch("/api/pdf-assistant/extract-toc", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ image, pageNumber, pageCount }),
+    });
+    const result = await response.json();
+    if (!response.ok) {
+      console.warn("视觉目录识别失败。", result.error || response.statusText);
+      return [];
+    }
+    return normalizeVisualTocEntries(result.entries || []);
+  } catch (error) {
+    console.warn("视觉目录识别请求失败。", error);
+    return [];
+  }
+}
+
+
+function normalizeVisualTocEntries(entries) {
+  return entries
+    .map((entry) => ({
+      title: cleanTocDisplayTitle(entry.title),
+      printedPage: Number(entry.printedPage),
+      type: String(entry.type || "chapter").toLowerCase(),
+    }))
+    .filter((entry) => entry.title && entry.printedPage > 0 && !isProbablyGarbledText(entry.title))
+    .slice(0, 80);
+}
+
+
+function cleanTocDisplayTitle(title) {
+  return String(title || "")
+    .replace(/\.{2,}|…+|-{2,}/g, " ")
+    .replace(/\s*[_＿]\s*/g, "_ ")
+    .replace(/^(제\s*\d+\s*과)\s+/i, "$1_ ")
+    .replace(/^(第\s*\d+\s*[课課])\s+/i, "$1_ ")
+    .replace(/\s+/g, " ")
+    .replace(/\s+\d{1,3}$/g, "")
+    .replace(/[_＿]\s*$/g, "")
+    .trim()
+    .slice(0, 90);
+}
+
+
+async function mapVisualTocEntriesToPdfPages(pdfDocument, documentId, entries, tocPageNumber) {
+  const pageLabelMap = await getPdfPageLabelMap(pdfDocument);
+  let mapped = mapEntriesByPageLabels(entries, pageLabelMap);
+  if (mapped.length >= Math.min(entries.length, 3)) {
+    return mapped;
+  }
+
+  mapped = await calibrateTocEntries(pdfDocument, documentId, entries.map((entry) => ({
+    title: entry.title,
+    printedPage: entry.printedPage,
+    page: entry.printedPage,
+    level: getVisualTocEntryLevel(entry),
+    type: entry.type,
+  })));
+  const calibratedCount = mapped.filter((entry) => entry.confidence === "calibrated").length;
+  if (calibratedCount >= 2) {
+    return mapped;
+  }
+
+  const firstPrintedPage = entries.find((entry) => entry.type === "chapter")?.printedPage || entries[0]?.printedPage || 1;
+  const fallbackOffset = Math.max(tocPageNumber + 3 - firstPrintedPage, 0);
+  return entries
+    .map((entry) => ({
+      title: entry.title,
+      printedPage: entry.printedPage,
+      page: Math.min(Math.max(entry.printedPage + fallbackOffset, 1), pdfDocument.numPages),
+      level: getVisualTocEntryLevel(entry),
+      confidence: "visual-low",
+    }))
+    .sort((a, b) => a.page - b.page);
+}
+
+
+async function getPdfPageLabelMap(pdfDocument) {
+  if (typeof pdfDocument.getPageLabels !== "function") {
+    return new Map();
+  }
+  try {
+    const labels = await pdfDocument.getPageLabels();
+    const map = new Map();
+    (labels || []).forEach((label, index) => {
+      const normalized = String(label || "").trim();
+      if (/^\d+$/.test(normalized) && !map.has(Number(normalized))) {
+        map.set(Number(normalized), index + 1);
+      }
+    });
+    return map;
+  } catch (error) {
+    return new Map();
+  }
+}
+
+
+function mapEntriesByPageLabels(entries, pageLabelMap) {
+  return entries
+    .filter((entry) => pageLabelMap.has(entry.printedPage))
+    .map((entry) => ({
+      title: entry.title,
+      printedPage: entry.printedPage,
+      page: pageLabelMap.get(entry.printedPage),
+      level: getVisualTocEntryLevel(entry),
+      confidence: "label",
+    }))
+    .sort((a, b) => a.page - b.page);
+}
+
+
+function getVisualTocEntryLevel(entry) {
+  if (entry.type === "chapter" || /^(第\s*\d+\s*[课課章]|Chapter\s+\d+|Unit\s+\d+|제\s*\d+\s*과|\d+\s*과)\b/i.test(entry.title)) {
+    return 1;
+  }
+  if (entry.type === "section") {
+    return 2;
+  }
+  return 1;
+}
+
+
+async function findPdfTocPages(pdfDocument, documentId) {
+  const maxPages = Math.min(pdfDocument.numPages, LOCAL_TEXTBOOK_TOC_SCAN_PAGES);
+  const tocStartPages = [];
+
+  for (let pageNumber = 1; pageNumber <= maxPages; pageNumber += 1) {
+    const text = await getOrExtractLocalPageText(pdfDocument, documentId, pageNumber);
+    if (isLikelyTocPage(text)) {
+      tocStartPages.push(pageNumber);
+    }
+  }
+
+  if (!tocStartPages.length) {
+    return [];
+  }
+
+  const firstTocPage = tocStartPages[0];
+  const lastTocPage = Math.min(pdfDocument.numPages, firstTocPage + LOCAL_TEXTBOOK_TOC_PARSE_PAGES - 1);
+  const tocPages = [];
+  for (let pageNumber = firstTocPage; pageNumber <= lastTocPage; pageNumber += 1) {
+    const text = await getOrExtractLocalPageText(pdfDocument, documentId, pageNumber);
+    tocPages.push({ pageNumber, text });
+  }
+  return tocPages;
+}
+
+
+async function getOrExtractLocalPageText(pdfDocument, documentId, pageNumber) {
+  const pageText = await getLocalTextbookPageText(documentId, pageNumber);
+  if (pageText?.text) {
+    return pageText.text;
+  }
+
+  const page = await pdfDocument.getPage(pageNumber);
+  const text = await extractPdfPageText(page);
+  await saveLocalTextbookPageText(documentId, pageNumber, text);
+  return text;
+}
+
+
+function isLikelyTocPage(text) {
+  const value = String(text || "").trim();
+  if (!value) {
+    return false;
+  }
+
+  if (/(目录|目錄|contents|table of contents|차례|목차)/i.test(value.slice(0, 1200))) {
+    return true;
+  }
+
+  const matches = value.match(/(?:\.{2,}|…{1,}|-{2,}|\s{2,})\s*\d{1,3}(?=\s|$)/g) || [];
+  return matches.length >= 4;
+}
+
+
+function parseTocEntries(tocPages, totalPages) {
+  const entries = [];
+  for (const tocPage of tocPages) {
+    const lines = splitTocTextIntoLines(tocPage.text);
+    for (const line of lines) {
+      const entry = parseTocLine(line, totalPages);
+      if (entry) {
+        entries.push(entry);
+      }
+    }
+  }
+
+  return entries
+    .filter((entry, index, all) => (
+      all.findIndex((candidate) => candidate.title === entry.title && candidate.printedPage === entry.printedPage) === index
+    ))
+    .filter((entry) => !isProbablyGarbledText(entry.title))
+    .slice(0, 80);
+}
+
+
+function splitTocTextIntoLines(text) {
+  return String(text || "")
+    .replace(/([。!?])\s+/g, "$1\n")
+    .replace(/(\d{1,3})\s+(?=(?:第\s*\d+\s*[课課章單单]|Chapter\s+\d+|Unit\s+\d+|Lesson\s+\d+|\d+\s*과))/gi, "$1\n")
+    .split(/\n+/)
+    .map((line) => line.replace(/\s+/g, " ").trim())
+    .filter(Boolean);
+}
+
+
+function parseTocLine(line, totalPages) {
+  const cleaned = String(line || "")
+    .replace(/^(目录|目錄|contents|table of contents|차례|목차)\s*[:：-]?\s*/i, "")
+    .trim();
+  if (cleaned.length < 4) {
+    return null;
+  }
+
+  const match = cleaned.match(/^(.*?)\s*(?:\.{2,}|…{1,}|-{2,}|\s{2,}|\s)\s*(\d{1,3})\s*$/);
+  if (!match) {
+    return null;
+  }
+
+  const title = normalizeTocTitle(match[1]);
+  const printedPage = Number(match[2]);
+  if (!title || !printedPage || printedPage > totalPages + 30) {
+    return null;
+  }
+
+  return {
+    title,
+    page: Math.min(Math.max(printedPage, 1), totalPages),
+    printedPage,
+    level: getTocEntryLevel(title),
+  };
+}
+
+
+function normalizeTocTitle(title) {
+  return String(title || "")
+    .replace(/[·•●◦▪▫]+\s*/g, "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 80);
+}
+
+
+function getTocEntryLevel(title) {
+  if (/^(第\s*\d+\s*[课課章]|Chapter\s+\d+|Unit\s+\d+|제\s*\d+\s*과|\d+\s*과)\b/i.test(title)) {
+    return 1;
+  }
+  if (/^\d+(?:[.-]\d+)*\s+/.test(title)) {
+    return 1;
+  }
+  return 2;
+}
+
+
+async function calibrateTocEntries(pdfDocument, documentId, entries) {
+  const offsets = [];
+  const sampleEntries = entries.slice(0, 12);
+  const maxSearchPage = Math.min(pdfDocument.numPages, LOCAL_TEXTBOOK_TEXT_SCAN_PAGES);
+
+  for (const entry of sampleEntries) {
+    const titleKey = normalizeSearchText(entry.title);
+    if (titleKey.length < 3) {
+      continue;
+    }
+    const searchStart = Math.max(1, entry.printedPage - 8);
+    const searchEnd = Math.min(maxSearchPage, entry.printedPage + 18);
+    for (let pageNumber = searchStart; pageNumber <= searchEnd; pageNumber += 1) {
+      const text = await getOrExtractLocalPageText(pdfDocument, documentId, pageNumber);
+      if (normalizeSearchText(text).includes(titleKey)) {
+        offsets.push(pageNumber - entry.printedPage);
+        break;
+      }
+    }
+  }
+
+  const offset = offsets.length >= 2 ? medianNumber(offsets) : 0;
+  return entries
+    .map((entry) => ({
+      ...entry,
+      page: Math.min(Math.max(entry.printedPage + offset, 1), pdfDocument.numPages),
+      confidence: offsets.length >= 2 ? "calibrated" : "toc",
+    }))
+    .sort((a, b) => a.page - b.page);
+}
+
+
+function normalizeSearchText(value) {
+  return String(value || "")
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}]+/gu, "");
+}
+
+
+function medianNumber(values) {
+  const sorted = [...values].sort((a, b) => a - b);
+  return sorted[Math.floor(sorted.length / 2)] || 0;
+}
+
+
+function detectTitleFromPageText(text) {
+  const normalizedText = String(text || "").replace(/\s+/g, " ").trim();
+  if (!normalizedText) {
+    return "";
+  }
+
+  const lines = normalizedText
+    .split(/(?=第\s*\d+\s*[课章單单])|(?=Chapter\s+\d+)|(?=Unit\s+\d+)|(?=Lesson\s+\d+)/i)
+    .map((line) => line.trim())
+    .filter(Boolean);
+
+  const candidates = [
+    /第\s*\d+\s*[课課章單单][^。.!?]{0,40}/,
+    /(?:Chapter|Unit|Lesson)\s+\d+[^。.!?]{0,50}/i,
+    /\d+\s*[과과][^。.!?]{0,40}/,
+  ];
+
+  for (const line of lines.slice(0, 8)) {
+    for (const pattern of candidates) {
+      const match = line.match(pattern);
+      if (match) {
+        return match[0].trim();
+      }
+    }
+  }
+
+  return "";
+}
+
+
+async function buildScannedTitleUnits(pdfDocument, documentId) {
+  const entries = [];
+  const maxPages = Math.min(pdfDocument.numPages, LOCAL_TEXTBOOK_TEXT_SCAN_PAGES);
+  for (let pageNumber = 1; pageNumber <= maxPages; pageNumber += 1) {
+    const text = await getOrExtractLocalPageText(pdfDocument, documentId, pageNumber);
+    const title = detectTitleFromPageText(text);
+    if (title && !isProbablyGarbledText(title)) {
+      entries.push({ title, page: pageNumber, level: 1 });
+    }
+  }
+
+  const uniqueEntries = dedupeChapterEntries(entries);
+  return uniqueEntries.length >= 3 ? chapterEntriesToUnits(uniqueEntries, pdfDocument.numPages) : [];
+}
+
+
+async function initializeLocalPdfOutline(job) {
+  if (job.outlineInitialized) {
+    return job.document.units || [];
+  }
+
+  job.outlineInitialized = true;
+  let units = [];
+  let outlineStatus = "none";
+  let outlineError = "";
+  let outlineDebugSummary = "";
+  try {
+    units = await buildPdfOutlineUnits(job.pdfDocument);
+    outlineStatus = units.length ? "outline" : "none";
+    if (units.length === 0) {
+      const blockTocResult = await buildPdfBlockTocResult(job.pdfDocument);
+      units = blockTocResult.units;
+      outlineStatus = blockTocResult.status;
+      outlineDebugSummary = blockTocResult.debugSummary || "";
+    }
+    if (units.length === 0) {
+      const tocResult = await buildPdfTocResult(job.pdfDocument, job.document.id);
+      units = tocResult.units;
+      outlineStatus = tocResult.status;
+    }
+    if (units.length === 0) {
+      units = await buildScannedTitleUnits(job.pdfDocument, job.document.id);
+      outlineStatus = units.length ? "scanned" : "none";
+    }
+    if (units.length === 0) {
+      const visualResult = await buildVisualPdfTocResult(job.pdfDocument, job.document.id);
+      units = visualResult.units;
+      outlineStatus = units.length ? "visual" : "none";
+    }
+    if (!outlineDebugSummary) {
+      outlineDebugSummary = units.length
+        ? `目录识别成功：${outlineStatus}，${units.length} 个入口。`
+        : "未识别到可用目录。";
+    }
+  } catch (error) {
+    console.warn("目录识别失败。", error);
+    units = [];
+    outlineStatus = "failed";
+    outlineError = error?.message || "目录识别过程中出现未知错误。";
+    outlineDebugSummary = outlineError;
+  }
+
+  job.document = {
+    ...job.document,
+    units,
+    outlineStatus,
+    outlineError,
+    outlineDebugSummary,
+    updatedAt: Date.now(),
+  };
+  await saveLocalTextbookDocument(job.document);
+
+  if (activeTextbook?.id === job.document.id) {
+    activeTextbook = {
+      ...activeTextbook,
+      units,
+      outlineStatus,
+      outlineError,
+      outlineDebugSummary,
+    };
+    renderChapterMenu();
+  }
+
+  return units;
+}
+
+
 async function renderPdfPageBlob(pdfDocument, pageNumber, targetWidth, quality) {
   const page = await pdfDocument.getPage(pageNumber);
   const baseViewport = page.getViewport({ scale: 1 });
@@ -1628,6 +2727,10 @@ async function renderAndStoreLocalPdfPage(job, pageNumber) {
 
   job.renderingPages.add(pageNumber);
   try {
+    const page = await job.pdfDocument.getPage(pageNumber);
+    const text = await extractPdfPageText(page);
+    await saveLocalTextbookPageText(job.document.id, pageNumber, text);
+
     const thumb = await renderPdfPageBlob(job.pdfDocument, pageNumber, LOCAL_TEXTBOOK_THUMB_WIDTH, 0.62);
     const image = await renderPdfPageBlob(job.pdfDocument, pageNumber, LOCAL_TEXTBOOK_IMAGE_WIDTH, 0.8);
     await saveLocalTextbookPage(job.document.id, pageNumber, "thumb", thumb.blob);
@@ -1635,9 +2738,11 @@ async function renderAndStoreLocalPdfPage(job, pageNumber) {
     job.renderedPages.add(pageNumber);
 
     const generatedPages = Math.max(job.document.generatedPages || 0, job.renderedPages.size);
+    const textPages = Math.max(job.document.textPages || 0, job.renderedPages.size);
     job.document = {
       ...job.document,
       generatedPages,
+      textPages,
       status: generatedPages >= job.document.pageCount ? "ready" : "processing",
       updatedAt: Date.now(),
     };
@@ -1648,10 +2753,11 @@ async function renderAndStoreLocalPdfPage(job, pageNumber) {
         ...activeTextbook,
         status: job.document.status,
         generatedPages: job.document.generatedPages,
+        textPages: job.document.textPages,
       };
       activeTextbookLoadStatus = "ready";
       syncTextbookControls();
-      renderCurrentPageAudio();
+      renderPdfAssistantPanel();
       if (activeTextbookPage === pageNumber) {
         showTextbookPagePreview(pageNumber);
       }
@@ -1684,12 +2790,13 @@ async function createLocalTextbookJob(document) {
 
 async function ensureLocalTextbookPageRendered(documentId, pageNumber) {
   const document = await getLocalTextbookDocument(documentId);
-  if (!document || document.status === "ready") {
+  if (!document) {
     return;
   }
 
   const existingPage = await getLocalTextbookPage(documentId, pageNumber, "image");
-  if (existingPage?.blob) {
+  const existingText = await getLocalTextbookPageText(documentId, pageNumber);
+  if (existingPage?.blob && existingText) {
     return;
   }
 
@@ -1700,6 +2807,7 @@ async function ensureLocalTextbookPageRendered(documentId, pageNumber) {
 
 async function processLocalPdfDocument(document) {
   const job = await createLocalTextbookJob(document);
+  await initializeLocalPdfOutline(job);
   for (let pageNumber = 1; pageNumber <= job.document.pageCount; pageNumber += 1) {
     if (!localTextbookJobs.has(job.document.id) || localTextbookJobs.get(job.document.id)?.runId !== job.runId) {
       return;
@@ -1764,17 +2872,19 @@ async function handleLocalPdfUpload(file) {
       updatedAt: Date.now(),
     };
     await saveLocalTextbookDocument(updatedDocument);
-    localTextbookJobs.set(updatedDocument.id, {
+    const job = {
       id: updatedDocument.id,
       document: updatedDocument,
       pdfDocument,
       renderedPages: new Set(),
       renderingPages: new Set(),
       runId: ++localTextbookJobVersion,
-    });
+    };
+    localTextbookJobs.set(updatedDocument.id, job);
+    await initializeLocalPdfOutline(job);
 
     if (activeTextbook?.id === updatedDocument.id) {
-      activeTextbook = createLocalTextbookManifest(updatedDocument);
+      activeTextbook = createLocalTextbookManifest(job.document);
       activeTextbookLoadStatus = "ready";
       document.querySelector("#materialPageInput").max = getTextbookPageTotal();
       applyTextbookStageAspectRatio();
@@ -1809,7 +2919,7 @@ async function markLocalTextbookFailed(documentId, message) {
     activeTextbookLoadStatus = "failed";
     showTextbookPageSkeleton(activeTextbookPage, message || "PDF 转换失败。");
     renderChapterMenu("failed");
-    renderCurrentPageAudio();
+    renderPdfAssistantPanel();
   }
   renderTextbookLibrary();
 }
@@ -1871,40 +2981,91 @@ function resolveTextbookAssetUrls(value) {
 }
 
 
+function getSortedLocalTextbookList() {
+  if (!localTextbookOrder.length) return localTextbookList;
+  const orderMap = new Map(localTextbookOrder.map((id, i) => [id, i]));
+  return [...localTextbookList].sort((a, b) => {
+    const ia = orderMap.has(a.id) ? orderMap.get(a.id) : 9999;
+    const ib = orderMap.has(b.id) ? orderMap.get(b.id) : 9999;
+    return ia - ib;
+  });
+}
+
+function saveLocalTextbookOrder() {
+  const sorted = getSortedLocalTextbookList();
+  localTextbookOrder = sorted.map((b) => b.id);
+  localStorage.setItem("localTextbookOrder", JSON.stringify(localTextbookOrder));
+}
+
+
+function resetTextbookReaderToLibrary() {
+  stopPlaybackQueue();
+  activeTextbookRenderRunId += 1;
+  activeTextbookImageRunId += 1;
+  activeTextbookLoadRunId += 1;
+  activeTextbook = null;
+  activeTextbookCacheEntry = null;
+  activeTextbookLoadStatus = "idle";
+  pdfAssistantMessages = [];
+  pdfAssistantExpanded = false;
+  closeChapterMenu();
+  document.querySelector("#materials")?.classList.remove("reader-open");
+  document.querySelector("#textbookReader")?.classList.remove("is-focus-mode", "is-assistant-expanded");
+  const focusExitButton = document.querySelector("#readerFocusExitButton");
+  if (focusExitButton) {
+    focusExitButton.hidden = true;
+  }
+  renderTextbookLibrary();
+}
+
+
 function renderTextbookLibrary() {
   const library = document.querySelector("#textbookLibrary");
   const reader = document.querySelector("#textbookReader");
   document.querySelector("#materials").classList.remove("reader-open");
+  reader.classList.remove("is-assistant-expanded");
   reader.hidden = true;
   library.hidden = false;
 
+  const sortedLocal = getSortedLocalTextbookList();
+  const selCount = textbookSelectedIds.size;
+
   library.innerHTML = `
-    <div class="section-title">
-      <div>
-        <span class="eyebrow">Textbooks</span>
-        <h2>我的教材</h2>
-      </div>
+    <div class="textbook-library-actions">
       <button id="localPdfUploadButton" class="secondary-action" type="button">上传 PDF</button>
       <input id="localPdfUploadInput" type="file" accept="application/pdf" hidden>
+      <button id="textbookBatchToggle" class="textbook-batch-toggle" type="button">${textbookBatchMode ? "完成" : "批量管理"}</button>
     </div>
-    <section class="local-pdf-upload-panel">
-      <strong>上传自己的 PDF 教材</strong>
-      <span>文件只保存在本机浏览器里，并转换成低清/高清页图缓存。不会上传到服务器或 R2。</span>
-    </section>
-    ${localTextbookList.length === 0 ? `
+    ${textbookBatchMode ? `
+      <div class="textbook-batch-bar">
+        <span class="textbook-batch-bar-count">
+          ${selCount > 0 ? `已选 <strong>${selCount}</strong> 项` : "点击卡片选择，拖动卡片排序"}
+        </span>
+        <button class="textbook-batch-delete" type="button" id="textbookBatchDelete" ${selCount === 0 ? "disabled" : ""}>删除所选</button>
+      </div>
+    ` : ""}
+    ${sortedLocal.length === 0 && textbookList.length === 0 ? `
       <p class="textbook-empty-state">还没有本地教材。上传 PDF 后会在这里出现。</p>
     ` : ""}
-    <div class="textbook-grid">
-      ${localTextbookList.map((book) => `
-        <article class="textbook-card local-textbook-card">
-          <button type="button" data-local-document="${escapeHtml(book.id)}">
-            <strong>${escapeHtml(book.title)}</strong>
-            <span>${escapeHtml(getLocalTextbookStatusText(book))}</span>
-            <small>${book.pageCount || 0} 页 · 已缓存 ${book.generatedPages || 0} 页</small>
-          </button>
-          <button class="textbook-delete-button" type="button" data-delete-local-document="${escapeHtml(book.id)}">删除</button>
-        </article>
-      `).join("")}
+    <div class="textbook-grid" id="textbookGrid">
+      ${sortedLocal.map((book) => {
+        const sel = textbookSelectedIds.has(book.id);
+        return `
+          <article class="textbook-card local-textbook-card${textbookBatchMode ? " is-selectable" : ""}${sel ? " is-selected" : ""}"
+            data-local-document="${escapeHtml(book.id)}"
+            ${textbookBatchMode ? `draggable="true" data-drag-id="${escapeHtml(book.id)}"` : ""}>
+            <button type="button" ${textbookBatchMode ? 'tabindex="-1"' : ""} data-open-local="${escapeHtml(book.id)}" style="pointer-events:${textbookBatchMode ? "none" : "auto"}">
+              <strong>${escapeHtml(book.title)}</strong>
+              <span>${escapeHtml(getLocalTextbookStatusText(book))}</span>
+              <small>${book.pageCount || 0} 页 · 已缓存 ${book.generatedPages || 0} 页</small>
+            </button>
+            ${textbookBatchMode
+              ? `<div class="textbook-card-check" aria-hidden="true"></div>`
+              : `<button class="textbook-delete-button" type="button" data-delete-local-document="${escapeHtml(book.id)}">删除</button>`
+            }
+          </article>
+        `;
+      }).join("")}
       ${textbookList.map((book) => `
         <button class="textbook-card" type="button" data-manifest="${escapeHtml(book.manifestUrl)}">
           <strong>${escapeHtml(book.title)}</strong>
@@ -1915,38 +3076,114 @@ function renderTextbookLibrary() {
     </div>
   `;
 
-  library.querySelector("#localPdfUploadButton").addEventListener("click", () => {
-    library.querySelector("#localPdfUploadInput").click();
+  // 上传按钮
+  const uploadBtn = library.querySelector("#localPdfUploadButton");
+  if (uploadBtn) {
+    uploadBtn.addEventListener("click", () => library.querySelector("#localPdfUploadInput").click());
+    library.querySelector("#localPdfUploadInput").addEventListener("change", (event) => {
+      const [file] = event.target.files || [];
+      event.target.value = "";
+      handleLocalPdfUpload(file);
+    });
+  }
+
+  // 批量管理切换
+  library.querySelector("#textbookBatchToggle")?.addEventListener("click", () => {
+    textbookBatchMode = !textbookBatchMode;
+    textbookSelectedIds.clear();
+    renderTextbookLibrary();
   });
 
-  library.querySelector("#localPdfUploadInput").addEventListener("change", (event) => {
-    const [file] = event.target.files || [];
-    event.target.value = "";
-    handleLocalPdfUpload(file);
-  });
-
-  library.querySelectorAll("[data-local-document]").forEach((button) => {
-    button.addEventListener("click", () => openLocalTextbook(button.dataset.localDocument));
-  });
-
-  library.querySelectorAll("[data-delete-local-document]").forEach((button) => {
-    button.addEventListener("click", (event) => {
-      event.stopPropagation();
-      const documentId = button.dataset.deleteLocalDocument;
-      const book = localTextbookList.find((item) => item.id === documentId);
-      if (confirm(`删除《${book?.title || "本地教材"}》的本机缓存？`)) {
-        deleteLocalTextbook(documentId).catch((error) => {
-          console.warn("本地教材删除失败。", error);
-          alert("删除失败，请稍后重试。");
-        });
-      }
+  // 批量删除
+  library.querySelector("#textbookBatchDelete")?.addEventListener("click", () => {
+    if (textbookSelectedIds.size === 0) return;
+    const names = [...textbookSelectedIds]
+      .map((id) => localTextbookList.find((b) => b.id === id)?.title || "未命名")
+      .join("、");
+    if (!confirm(`确认删除以下 ${textbookSelectedIds.size} 本教材的本机缓存？\n\n${names}`)) return;
+    const ids = [...textbookSelectedIds];
+    textbookSelectedIds.clear();
+    Promise.all(ids.map((id) => deleteLocalTextbook(id))).catch((err) => {
+      console.warn("批量删除失败", err);
+      alert("部分教材删除失败，请稍后重试。");
     });
   });
 
-  library.querySelectorAll(".textbook-card").forEach((card) => {
-    if (!card.dataset.manifest) {
-      return;
-    }
+  // 批量模式卡片点击（选择/取消选择）
+  if (textbookBatchMode) {
+    library.querySelectorAll(".is-selectable[data-local-document]").forEach((card) => {
+      card.addEventListener("click", () => {
+        const id = card.dataset.localDocument;
+        if (textbookSelectedIds.has(id)) {
+          textbookSelectedIds.delete(id);
+        } else {
+          textbookSelectedIds.add(id);
+        }
+        renderTextbookLibrary();
+      });
+    });
+
+    // 拖拽排序
+    let dragSrcId = null;
+    library.querySelectorAll("[data-drag-id]").forEach((card) => {
+      card.addEventListener("dragstart", (e) => {
+        dragSrcId = card.dataset.dragId;
+        card.classList.add("is-dragging");
+        e.dataTransfer.effectAllowed = "move";
+      });
+      card.addEventListener("dragend", () => {
+        card.classList.remove("is-dragging");
+        library.querySelectorAll(".drag-over").forEach((el) => el.classList.remove("drag-over"));
+      });
+      card.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = "move";
+        if (card.dataset.dragId !== dragSrcId) {
+          library.querySelectorAll(".drag-over").forEach((el) => el.classList.remove("drag-over"));
+          card.classList.add("drag-over");
+        }
+      });
+      card.addEventListener("dragleave", () => card.classList.remove("drag-over"));
+      card.addEventListener("drop", (e) => {
+        e.preventDefault();
+        card.classList.remove("drag-over");
+        const targetId = card.dataset.dragId;
+        if (!dragSrcId || dragSrcId === targetId) return;
+        const list = getSortedLocalTextbookList();
+        const srcIdx = list.findIndex((b) => b.id === dragSrcId);
+        const tgtIdx = list.findIndex((b) => b.id === targetId);
+        if (srcIdx < 0 || tgtIdx < 0) return;
+        const [moved] = list.splice(srcIdx, 1);
+        list.splice(tgtIdx, 0, moved);
+        localTextbookOrder = list.map((b) => b.id);
+        localStorage.setItem("localTextbookOrder", JSON.stringify(localTextbookOrder));
+        renderTextbookLibrary();
+      });
+    });
+  } else {
+    // 普通模式：点击卡片打开
+    library.querySelectorAll("[data-open-local]").forEach((btn) => {
+      btn.addEventListener("click", () => openLocalTextbook(btn.dataset.openLocal));
+    });
+
+    // 单个删除
+    library.querySelectorAll("[data-delete-local-document]").forEach((button) => {
+      button.addEventListener("click", (event) => {
+        event.stopPropagation();
+        const documentId = button.dataset.deleteLocalDocument;
+        const book = localTextbookList.find((item) => item.id === documentId);
+        if (confirm(`删除《${book?.title || "本地教材"}》的本机缓存？`)) {
+          deleteLocalTextbook(documentId).catch((error) => {
+            console.warn("本地教材删除失败。", error);
+            alert("删除失败，请稍后重试。");
+          });
+        }
+      });
+    });
+  }
+
+  // 服务器教材卡片
+  library.querySelectorAll(".textbook-card[data-manifest]").forEach((card) => {
     card.addEventListener("click", () => openTextbook(card.dataset.manifest));
     card.addEventListener("mouseenter", () => warmTextbookAssets(card.dataset.manifest, 1, 2));
     card.addEventListener("focus", () => warmTextbookAssets(card.dataset.manifest, 1, 2));
@@ -1978,6 +3215,8 @@ async function openLocalTextbook(documentId) {
   activeTextbook = createLocalTextbookManifest(documentRecord);
   activeTextbookPage = 1;
   activeTextbookLoadStatus = documentRecord.status === "failed" ? "failed" : "ready";
+  pdfAssistantMessages = [];
+  pdfAssistantExpanded = false;
 
   document.querySelector("#textbookLibrary").hidden = true;
   document.querySelector("#textbookReader").hidden = false;
@@ -1986,6 +3225,12 @@ async function openLocalTextbook(documentId) {
   closeChapterMenu();
   renderChapterMenu(activeTextbookLoadStatus);
   renderTextbookPage(activeTextbookPage);
+
+  if (documentRecord.status === "ready" && documentRecord.outlineStatus === "pending") {
+    repairLocalTextbookOutline(documentRecord).catch((error) => {
+      console.warn("本地教材目录修复失败。", error);
+    });
+  }
 
   if (documentRecord.status !== "ready") {
     createLocalTextbookJob(documentRecord)
@@ -1998,6 +3243,13 @@ async function openLocalTextbook(documentId) {
 }
 
 
+async function repairLocalTextbookOutline(documentRecord) {
+  const job = await createLocalTextbookJob(documentRecord);
+  job.outlineInitialized = false;
+  await initializeLocalPdfOutline(job);
+}
+
+
 function openTextbook(manifestUrl) {
   const loadRunId = ++activeTextbookLoadRunId;
   const libraryBook = textbookList.find((book) => book.manifestUrl === manifestUrl);
@@ -2005,6 +3257,8 @@ function openTextbook(manifestUrl) {
   activeTextbook = createPendingTextbook(libraryBook, manifestUrl);
   activeTextbookPage = 1;
   activeTextbookLoadStatus = "loading";
+  pdfAssistantMessages = [];
+  pdfAssistantExpanded = false;
 
   document.querySelector("#textbookLibrary").hidden = true;
   document.querySelector("#textbookReader").hidden = false;
@@ -2039,7 +3293,7 @@ function openTextbook(manifestUrl) {
       renderChapterMenu("failed");
       showTextbookPageSkeleton(activeTextbookPage, "教材信息加载失败，请稍后重试");
       syncTextbookControls();
-      renderCurrentPageAudio();
+      renderPdfAssistantPanel();
       console.warn("教材信息加载失败。", error);
     });
 }
@@ -2281,19 +3535,32 @@ function renderChapterMenu(state = activeTextbookLoadStatus) {
   const button = document.querySelector("#chapterMenuButton");
   const panel = document.querySelector("#chapterMenuPanel");
   const hasChapters = (activeTextbook?.units || []).length > 0;
-  const isReady = state === "ready" && hasChapters;
-  button.disabled = !isReady;
-  button.title = isReady ? "选择章节" : (hasChapters ? "章节加载中" : "本地 PDF 暂无章节目录");
-  button.setAttribute("aria-label", isReady ? "选择章节" : (hasChapters ? "章节加载中" : "本地 PDF 暂无章节目录"));
+  const isReady = state === "ready";
+  button.disabled = false;
+  button.title = hasChapters ? "选择章节" : "目录状态";
+  button.setAttribute("aria-label", hasChapters ? "选择章节" : "目录状态");
 
-  if (!isReady) {
-    panel.innerHTML = `<p class="chapter-menu-empty">${state === "failed" ? "教材信息加载失败，请稍后重试。" : (hasChapters ? "章节加载中……" : "本地 PDF 暂无章节目录。")}</p>`;
-    panel.hidden = true;
+  if (!isReady || !hasChapters) {
+    const message = getChapterMenuEmptyMessage(state);
+    panel.innerHTML = `
+      <p class="chapter-menu-empty">${escapeHtml(message)}</p>
+      ${canReidentifyLocalToc() ? `<button id="chapterReidentifyButton" class="chapter-reidentify-button" type="button">重新识别目录</button>` : ""}
+    `;
+    const reidentifyButton = panel.querySelector("#chapterReidentifyButton");
+    if (reidentifyButton) {
+      reidentifyButton.addEventListener("click", () => {
+        reidentifyLocalTextbookOutline().catch((error) => {
+          console.warn("重新识别目录失败。", error);
+        });
+      });
+    }
     button.setAttribute("aria-expanded", "false");
     return;
   }
 
-  panel.innerHTML = (activeTextbook.units || []).map((unit) => `
+  panel.innerHTML = `
+    ${canReidentifyLocalToc() ? `<button id="chapterReidentifyButton" class="chapter-reidentify-button" type="button">重新识别目录</button>` : ""}
+    ${(activeTextbook.units || []).map((unit) => `
     <section class="chapter-group">
       <button class="chapter-unit" type="button" data-page="${unit.startPage}">
         ${escapeHtml(unit.title)}
@@ -2306,7 +3573,17 @@ function renderChapterMenu(state = activeTextbookLoadStatus) {
         `).join("")}
       </div>
     </section>
-  `).join("");
+  `).join("")}
+  `;
+
+  const reidentifyButton = panel.querySelector("#chapterReidentifyButton");
+  if (reidentifyButton) {
+    reidentifyButton.addEventListener("click", () => {
+      reidentifyLocalTextbookOutline().catch((error) => {
+        console.warn("重新识别目录失败。", error);
+      });
+    });
+  }
 
   panel.querySelectorAll("[data-page]").forEach((button) => {
     button.addEventListener("click", () => {
@@ -2317,12 +3594,70 @@ function renderChapterMenu(state = activeTextbookLoadStatus) {
 }
 
 
+function getChapterMenuEmptyMessage(state = activeTextbookLoadStatus) {
+  if (state === "failed") {
+    return "教材信息加载失败，请稍后重试。";
+  }
+  const outlineStatus = activeTextbook?.outlineStatus || "none";
+  if (state === "loading" || outlineStatus === "pending") {
+    return "正在识别目录页……";
+  }
+  if (outlineStatus === "failed") {
+    const detail = activeTextbook?.outlineError || activeTextbook?.outlineDebugSummary || "";
+    return detail
+      ? `目录识别失败：${detail} 可重新识别或使用页码跳转。`
+      : "目录识别失败，可重新识别或使用页码跳转。";
+  }
+  if (activeTextbook?.outlineDebugSummary && outlineStatus !== "none") {
+    return activeTextbook.outlineDebugSummary;
+  }
+  return "未识别到目录，可使用页码跳转。";
+}
+
+
+function canReidentifyLocalToc() {
+  return activeTextbook?.source === "local-upload" && activeTextbook?.id && activeTextbookLoadStatus !== "failed";
+}
+
+
+async function reidentifyLocalTextbookOutline() {
+  if (!canReidentifyLocalToc()) {
+    return;
+  }
+
+  const documentRecord = await getLocalTextbookDocument(activeTextbook.id);
+  if (!documentRecord) {
+    return;
+  }
+
+  const nextDocument = {
+    ...documentRecord,
+    units: [],
+    outlineStatus: "pending",
+    outlineError: "",
+    outlineDebugSummary: "",
+    updatedAt: Date.now(),
+  };
+  await saveLocalTextbookDocument(nextDocument);
+  activeTextbook = {
+    ...activeTextbook,
+    units: [],
+    outlineStatus: "pending",
+    outlineError: "",
+    outlineDebugSummary: "",
+  };
+  renderChapterMenu("ready");
+
+  const job = await createLocalTextbookJob(nextDocument);
+  job.document = nextDocument;
+  job.outlineInitialized = false;
+  await initializeLocalPdfOutline(job);
+}
+
+
 function toggleChapterMenu() {
   const button = document.querySelector("#chapterMenuButton");
   const panel = document.querySelector("#chapterMenuPanel");
-  if (button.disabled) {
-    return;
-  }
 
   const nextOpen = panel.hidden;
   panel.hidden = !nextOpen;
@@ -2352,7 +3687,7 @@ function renderTextbookPage(pageNumber) {
   activeTextbookRenderRunId += 1;
   showTextbookPagePreview(activeTextbookPage);
   syncTextbookControls();
-  renderCurrentPageAudio();
+  renderPdfAssistantPanel();
   prefetchTextbookPages(activeTextbookPage);
 }
 
@@ -2406,172 +3741,219 @@ function getCurrentPageAudioItems() {
 }
 
 
-function renderCurrentPageAudio() {
-  const unit = getCurrentTextbookUnit();
-  const audioItems = getCurrentPageAudioItems();
-  const panel = document.querySelector(".reader-audio-panel");
-  const title = document.querySelector("#materialAudioTitle");
-  const hint = document.querySelector("#materialAudioHint");
-  const list = document.querySelector("#materialAudioList");
-
-  if (activeTextbook?.source === "local-upload" && audioItems.length === 0) {
-    panel.hidden = true;
-    list.innerHTML = "";
-    hint.hidden = true;
-    return;
-  }
-
+function renderPdfAssistantPanel() {
+  const reader = document.querySelector("#textbookReader");
+  const panel = document.querySelector(".reader-assistant-panel");
+  const status = document.querySelector("#pdfAssistantStatus");
+  const messages = document.querySelector("#pdfAssistantMessages");
+  const question = document.querySelector("#pdfAssistantQuestion");
+  const sendButton = document.querySelector("#pdfAssistantSendButton");
+  const expandButton = document.querySelector("#pdfAssistantExpandButton");
   panel.hidden = false;
-  title.textContent = unit ? unit.title : (activeTextbook?.title || "延世韩国语1").replace(/\s+(?=\d)/g, "");
+  reader.classList.toggle("is-assistant-expanded", pdfAssistantExpanded);
+  panel.classList.toggle("is-expanded", pdfAssistantExpanded);
+  expandButton.textContent = pdfAssistantExpanded ? "收起" : "AI 助教";
+  expandButton.setAttribute("aria-label", pdfAssistantExpanded ? "收起 AI 助教" : "展开 AI 助教");
+  expandButton.setAttribute("title", pdfAssistantExpanded ? "收起 AI 助教" : "AI 助教");
+  expandButton.setAttribute("aria-pressed", String(pdfAssistantExpanded));
 
-  if (activeTextbookLoadStatus === "loading") {
-    hint.textContent = "听力信息加载中……";
-    hint.hidden = false;
-    list.innerHTML = "";
+  if (!activeTextbook) {
+    status.textContent = "打开 PDF 后可以提问。";
+    question.disabled = true;
+    sendButton.disabled = true;
+  } else if (activeTextbookLoadStatus === "failed") {
+    status.textContent = "PDF 当前不可用，暂时不能提问。";
+    question.disabled = true;
+    sendButton.disabled = true;
+  } else {
+    status.textContent = `将参考第 ${activeTextbookPage} 页及相邻页面回答。`;
+    question.disabled = false;
+    sendButton.disabled = false;
+  }
+
+  messages.innerHTML = pdfAssistantMessages.length === 0
+    ? ""
+    : pdfAssistantMessages.map((message) => `
+      <article class="pdf-assistant-message pdf-assistant-message-${escapeHtml(message.role)}">
+        <strong>${message.role === "user" ? "你" : "AI 助教"}</strong>
+        <div class="pdf-assistant-content">${renderAssistantMessageContent(message.content)}</div>
+        ${message.truncated ? `<span class="pdf-assistant-truncated">回答可能被截断，可继续追问“请继续”。</span>` : ""}
+      </article>
+    `).join("");
+  messages.scrollTop = messages.scrollHeight;
+}
+
+
+function renderAssistantMessageContent(content) {
+  const lines = String(content || "")
+    .replace(/\r\n?/g, "\n")
+    .split("\n");
+  const parts = [];
+  let listType = "";
+
+  function closeList() {
+    if (!listType) return;
+    parts.push(`</${listType}>`);
+    listType = "";
+  }
+
+  function openList(type) {
+    if (listType === type) return;
+    closeList();
+    listType = type;
+    parts.push(`<${type}>`);
+  }
+
+  function renderInline(text) {
+    return escapeHtml(text)
+      .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+      .replace(/`([^`]+)`/g, "<code>$1</code>");
+  }
+
+  lines.forEach((line) => {
+    const trimmed = line.trim();
+    if (!trimmed || /^-{2,}$/.test(trimmed)) {
+      closeList();
+      return;
+    }
+
+    const headingMatch = trimmed.match(/^#{1,6}\s+(.+)$/);
+    if (headingMatch) {
+      closeList();
+      parts.push(`<h4>${renderInline(headingMatch[1])}</h4>`);
+      return;
+    }
+
+    const bulletMatch = trimmed.match(/^[-*]\s+(.+)$/);
+    if (bulletMatch) {
+      openList("ul");
+      parts.push(`<li>${renderInline(bulletMatch[1])}</li>`);
+      return;
+    }
+
+    const orderedMatch = trimmed.match(/^\d+[.)]\s+(.+)$/);
+    if (orderedMatch) {
+      openList("ol");
+      parts.push(`<li>${renderInline(orderedMatch[1])}</li>`);
+      return;
+    }
+
+    closeList();
+    parts.push(`<p>${renderInline(trimmed)}</p>`);
+  });
+
+  closeList();
+  return parts.join("");
+}
+
+
+function isLikelyTruncatedAnswer(content) {
+  const text = String(content || "").trim();
+  if (text.length < 1200) {
+    return false;
+  }
+  const lastChar = text.slice(-1);
+  const openParenCount = (text.match(/[（(「『《【]/g) || []).length;
+  const closeParenCount = (text.match(/[）)」』》】]/g) || []).length;
+  return !/[。.!?！？」』）)]$/.test(lastChar) || openParenCount > closeParenCount;
+}
+
+
+async function getPdfAssistantContextPages() {
+  if (!activeTextbook?.id) {
+    return [];
+  }
+
+  const firstPage = Math.max(activeTextbookPage - ASSISTANT_CONTEXT_RADIUS, 1);
+  const lastPage = Math.min(activeTextbookPage + ASSISTANT_CONTEXT_RADIUS, getTextbookPageTotal());
+  const pages = [];
+  for (let pageNumber = firstPage; pageNumber <= lastPage; pageNumber += 1) {
+    if (activeTextbook.source === "local-upload") {
+      await ensureLocalTextbookPageRendered(activeTextbook.id, pageNumber);
+    }
+    const textRecord = await getLocalTextbookPageText(activeTextbook.id, pageNumber);
+    pages.push({
+      pageNumber,
+      text: textRecord?.text || "",
+      isCurrent: pageNumber === activeTextbookPage,
+    });
+  }
+  return pages;
+}
+
+
+async function getCurrentPageScreenshotDataUrl() {
+  const preview = document.querySelector("#materialPagePreview");
+  if (!preview || preview.hidden || !preview.complete || !preview.naturalWidth) {
+    return "";
+  }
+
+  const maxWidth = 900;
+  const scale = Math.min(maxWidth / preview.naturalWidth, 1);
+  const canvas = document.createElement("canvas");
+  canvas.width = Math.max(Math.round(preview.naturalWidth * scale), 1);
+  canvas.height = Math.max(Math.round(preview.naturalHeight * scale), 1);
+  const context = canvas.getContext("2d");
+  context.drawImage(preview, 0, 0, canvas.width, canvas.height);
+  try {
+    return canvas.toDataURL("image/jpeg", 0.72);
+  } catch (error) {
+    return "";
+  }
+}
+
+
+async function sendPdfAssistantQuestion() {
+  const input = document.querySelector("#pdfAssistantQuestion");
+  const question = input.value.trim();
+  if (!question || !activeTextbook) {
     return;
   }
 
-  if (activeTextbookLoadStatus === "failed") {
-    hint.textContent = "教材信息加载失败，请稍后重试。";
-    hint.hidden = false;
-    list.innerHTML = "";
-    return;
+  const requestId = ++pdfAssistantRequestId;
+  input.value = "";
+  pdfAssistantMessages.push({ role: "user", content: question });
+  pdfAssistantMessages.push({ role: "assistant", content: "正在阅读当前页……" });
+  renderPdfAssistantPanel();
+
+  try {
+    const contextPages = await getPdfAssistantContextPages();
+    const currentPageText = contextPages.find((page) => page.isCurrent)?.text || "";
+    const screenshot = currentPageText.trim().length < ASSISTANT_TEXT_IMAGE_THRESHOLD || isProbablyGarbledText(currentPageText)
+      ? await getCurrentPageScreenshotDataUrl()
+      : "";
+    const response = await fetch("/api/pdf-assistant/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        question,
+        documentTitle: activeTextbook.title || "本地 PDF 教材",
+        pageNumber: activeTextbookPage,
+        pageCount: getTextbookPageTotal(),
+        contextPages,
+        screenshot,
+      }),
+    });
+    const result = await response.json();
+    if (!response.ok) {
+      throw new Error(result.error || "AI 助教暂时不可用。");
+    }
+    if (requestId === pdfAssistantRequestId) {
+      const answer = result.answer || "我没有生成有效回答。";
+      pdfAssistantMessages[pdfAssistantMessages.length - 1] = {
+        role: "assistant",
+        content: answer,
+        truncated: isLikelyTruncatedAnswer(answer),
+      };
+    }
+  } catch (error) {
+    pdfAssistantMessages[pdfAssistantMessages.length - 1] = {
+      role: "assistant",
+      content: error.message || "AI 助教暂时不可用。",
+    };
   }
 
-  hint.textContent = "";
-  hint.hidden = true;
-
-  if (audioItems.length === 0) {
-    list.innerHTML = "";
-    return;
-  }
-
-  list.innerHTML = audioItems.map((item) => {
-    const audios = item.audios || [{ title: item.audioTitle || "播放", url: item.url || "" }];
-    const transcriptHtml = formatTranscriptHtml(item.transcript);
-    const transcriptControlHtml = transcriptHtml ? `
-      <button class="transcript-toggle" type="button" data-transcript="${escapeHtml(item.id)}">显示听力原文</button>
-    ` : item.transcriptNote ? `<p class="transcript-source-note">${escapeHtml(item.transcriptNote)}</p>` : "";
-
-    return `
-    <article class="audio-card">
-      <div class="audio-card-main">
-        <div class="audio-player-tools" aria-label="听力播放控制">
-          <div class="audio-control-row">
-            <button class="audio-icon-button audio-pause-button" type="button" data-audio-pause aria-label="暂停听力" disabled>
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path class="pause-shape" d="M8 5h3v14H8zM13 5h3v14h-3z"></path>
-                <path class="play-shape" d="M8 5v14l11-7z"></path>
-              </svg>
-            </button>
-            <input type="range" min="0" max="100" value="0" step="0.1" data-audio-progress aria-label="听力进度">
-            <span data-audio-time>0:00 / 0:00</span>
-          </div>
-          <div class="audio-control-row audio-volume-row">
-            <button class="audio-icon-button audio-loop-button" type="button" data-audio-loop aria-label="开启循环播放" aria-pressed="false">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M17 2l4 4-4 4"></path>
-                <path d="M3 11V9a3 3 0 0 1 3-3h15"></path>
-                <path d="M7 22l-4-4 4-4"></path>
-                <path d="M21 13v2a3 3 0 0 1-3 3H3"></path>
-                <path class="loop-disabled" d="M5 5l14 14"></path>
-              </svg>
-            </button>
-            <button class="audio-icon-button audio-volume-button" type="button" data-audio-mute aria-label="静音">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M4 10v4h4l5 4V6L8 10H4z"></path>
-                <path class="volume-wave" d="M16 9a4 4 0 0 1 0 6M18.5 6.5a7.5 7.5 0 0 1 0 11"></path>
-                <path class="volume-muted" d="M16 9l5 5M21 9l-5 5"></path>
-              </svg>
-            </button>
-            <input type="range" min="0" max="100" value="100" step="1" data-audio-volume aria-label="音量">
-          </div>
-        </div>
-        <div class="audio-side-panel">
-          <div class="audio-actions">
-            ${audios.map((audio, index) => `
-              <button type="button" data-audio="${escapeHtml(audio.url || "")}" ${audio.url ? "" : "disabled"}>
-                ${escapeHtml(getAudioButtonLabel(audios, index))}
-              </button>
-            `).join("")}
-          </div>
-          ${transcriptControlHtml ? `<div class="audio-extra">${transcriptControlHtml}</div>` : ""}
-        </div>
-      </div>
-      ${transcriptHtml ? `
-        <div id="transcript-${escapeHtml(item.id)}" class="transcript-text" hidden>
-          ${transcriptHtml}
-        </div>
-      ` : ""}
-    </article>
-  `;
-  }).join("");
-
-  list.querySelectorAll("[data-audio]").forEach((button) => {
-    button.addEventListener("click", () => playMaterialAudio(button.dataset.audio));
-  });
-
-  list.querySelectorAll("[data-audio-progress]").forEach((progress) => {
-    setRangeFill(progress);
-    progress.addEventListener("pointerdown", () => {
-      progress.dataset.seeking = "true";
-    });
-    progress.addEventListener("pointerup", () => {
-      delete progress.dataset.seeking;
-      syncMaterialAudioControls();
-    });
-    progress.addEventListener("change", () => {
-      delete progress.dataset.seeking;
-      syncMaterialAudioControls();
-    });
-    progress.addEventListener("input", () => {
-      seekMaterialAudio(progress);
-    });
-  });
-
-  list.querySelectorAll("[data-audio-volume]").forEach((volume) => {
-    setRangeFill(volume, Number(volume.value));
-    volume.addEventListener("input", () => {
-      player.volume = Math.min(Math.max(Number(volume.value) / 100, 0), 1);
-      player.muted = player.volume === 0;
-      setRangeFill(volume, Number(volume.value));
-    });
-  });
-
-  list.querySelectorAll("[data-audio-mute]").forEach((button) => {
-    button.addEventListener("click", () => {
-      player.muted = !player.muted;
-    });
-  });
-
-  list.querySelectorAll("[data-audio-loop]").forEach((button) => {
-    button.addEventListener("click", () => {
-      materialAudioLoopEnabled = !materialAudioLoopEnabled;
-      player.loop = materialAudioLoopEnabled;
-      syncMaterialAudioControls();
-    });
-  });
-
-  list.querySelectorAll("[data-audio-pause]").forEach((button) => {
-    button.addEventListener("click", () => {
-      if (player.paused) {
-        player.play();
-      } else {
-        player.pause();
-      }
-    });
-  });
-
-  list.querySelectorAll(".transcript-toggle").forEach((button) => {
-    button.addEventListener("click", () => {
-      const transcript = document.getElementById(`transcript-${button.dataset.transcript}`);
-      const nextHidden = !transcript.hidden;
-      transcript.hidden = nextHidden;
-      button.textContent = nextHidden ? "显示听力原文" : "隐藏听力原文";
-    });
-  });
-
-  syncMaterialAudioControls();
+  renderPdfAssistantPanel();
 }
 
 
@@ -2579,22 +3961,13 @@ function renderCurrentPageAudio() {
  * 初始化页面中的 change / input 事件。
  */
 function initEvents() {
-  document.querySelector("#sceneSelect").addEventListener("change", (event) => {
+  // 句子页已由 React 应用（sentence-app.jsx）接管，旧的下拉框可能不存在，做空值保护。
+  document.querySelector("#sceneSelect")?.addEventListener("change", (event) => {
     loadSentences(event.target.value);
   });
 
   document.querySelector("#textbookBackButton").addEventListener("click", () => {
-    stopPlaybackQueue();
-    activeTextbookRenderRunId += 1;
-    activeTextbookImageRunId += 1;
-    activeTextbookLoadRunId += 1;
-    activeTextbook = null;
-    activeTextbookCacheEntry = null;
-    activeTextbookLoadStatus = "idle";
-    document.querySelector("#materials").classList.remove("reader-open");
-    document.querySelector("#textbookReader").classList.remove("is-focus-mode");
-    document.querySelector("#readerFocusExitButton").hidden = true;
-    renderTextbookLibrary();
+    resetTextbookReaderToLibrary();
   });
 
   document.querySelector("#readerFocusButton").addEventListener("click", () => {
@@ -2627,6 +4000,22 @@ function initEvents() {
     toggleChapterMenu();
   });
 
+  document.querySelector("#pdfAssistantForm").addEventListener("submit", (event) => {
+    event.preventDefault();
+    sendPdfAssistantQuestion();
+  });
+  document.querySelector("#pdfAssistantQuestion").addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" || event.shiftKey || event.isComposing) {
+      return;
+    }
+    event.preventDefault();
+    sendPdfAssistantQuestion();
+  });
+  document.querySelector("#pdfAssistantExpandButton").addEventListener("click", () => {
+    pdfAssistantExpanded = !pdfAssistantExpanded;
+    renderPdfAssistantPanel();
+  });
+
   document.addEventListener("keydown", (event) => {
     if (!activeTextbook || document.querySelector("#textbookReader").hidden || shouldIgnoreReaderKey(event)) {
       return;
@@ -2655,7 +4044,8 @@ function initEvents() {
     }
   });
 
-  document.querySelector("#vocabSearch").addEventListener("input", (event) => {
+  // 词汇页已由 React 应用（vocab-app.jsx）接管，旧的搜索框可能不存在，做空值保护。
+  document.querySelector("#vocabSearch")?.addEventListener("input", (event) => {
     loadVocabulary(event.target.value);
   });
 }
@@ -2670,10 +4060,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   initThemeToggle();
   initEvents();
 
+  // 场景（句子）和词汇改由各自的 React 应用加载，这里不再启动旧的渲染逻辑。
   const startupTasks = [
     ["音标", loadLetters],
-    ["场景", loadScenes],
-    ["词汇", loadVocabulary],
     ["教材", loadMaterials],
   ];
 
@@ -2684,6 +4073,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   if (failed.length > 0) {
     failed.forEach((item) => console.error(`${item.name}初始化失败`, item.result.reason));
-    alert(`部分模块初始化失败：${failed.map((item) => item.name).join("、")}`);
+    console.warn(`部分模块初始化失败：${failed.map((item) => item.name).join("、")}`);
   }
 });

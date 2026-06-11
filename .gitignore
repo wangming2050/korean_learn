@@ -1,5 +1,6 @@
 .env
 .env.r2.local
+.env.ai.local
 __pycache__/
 *.pyc
 .DS_Store
