@@ -3889,7 +3889,12 @@ function renderPdfAssistantPanel() {
   panel.hidden = false;
   reader.classList.toggle("is-assistant-expanded", pdfAssistantExpanded);
   panel.classList.toggle("is-expanded", pdfAssistantExpanded);
-  expandButton.textContent = pdfAssistantExpanded ? "收起" : "AI 助教";
+  const expandLabel = expandButton.querySelector(".pdf-assistant-expand-label");
+  if (expandLabel) {
+    expandLabel.textContent = pdfAssistantExpanded ? "收起" : "AI 助教";
+  } else {
+    expandButton.textContent = pdfAssistantExpanded ? "收起" : "AI 助教";
+  }
   expandButton.setAttribute("aria-label", pdfAssistantExpanded ? "收起 AI 助教" : "展开 AI 助教");
   expandButton.setAttribute("title", pdfAssistantExpanded ? "收起 AI 助教" : "AI 助教");
   expandButton.setAttribute("aria-pressed", String(pdfAssistantExpanded));
@@ -3906,6 +3911,16 @@ function renderPdfAssistantPanel() {
     status.textContent = `将参考第 ${activeTextbookPage} 页及相邻页面回答。`;
     question.disabled = false;
     sendButton.disabled = false;
+  }
+
+  const pageChip = document.querySelector("#pdfAssistantPageChip");
+  if (pageChip) {
+    if (activeTextbook && activeTextbookLoadStatus !== "failed") {
+      pageChip.textContent = `正在参考 第 ${activeTextbookPage} 页`;
+      pageChip.hidden = false;
+    } else {
+      pageChip.hidden = true;
+    }
   }
 
   messages.innerHTML = pdfAssistantMessages.length === 0
@@ -4151,6 +4166,14 @@ function initEvents() {
   document.querySelector("#pdfAssistantExpandButton").addEventListener("click", () => {
     pdfAssistantExpanded = !pdfAssistantExpanded;
     renderPdfAssistantPanel();
+  });
+  document.querySelectorAll(".pdf-assistant-quick").forEach((quickButton) => {
+    quickButton.addEventListener("click", () => {
+      const input = document.querySelector("#pdfAssistantQuestion");
+      if (!input || input.disabled) return;
+      input.value = quickButton.getAttribute("data-prompt") || quickButton.textContent.trim();
+      sendPdfAssistantQuestion();
+    });
   });
 
   document.addEventListener("keydown", (event) => {

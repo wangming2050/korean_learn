@@ -1552,12 +1552,12 @@ input:focus, select:focus, textarea:focus {
 }
 
 .reader-assistant-panel {
-  position: absolute;
-  right: clamp(12px, 2vw, 24px);
-  top: 10px;
+  position: fixed;
+  top: clamp(12px, 2vh, 18px);
+  right: clamp(12px, 2vw, 18px);
   bottom: auto;
-  z-index: 70;
-  width: 96px;
+  z-index: 80;
+  width: auto;
 }
 
 .reader-assistant-panel.is-expanded {
@@ -1574,26 +1574,29 @@ input:focus, select:focus, textarea:focus {
   display: grid;
   gap: 12px;
   padding: 16px;
-  border: 1px solid var(--glass-border);
+  border: 1px solid #e3e9f3;
   border-radius: 18px;
-  background: color-mix(in srgb, var(--surface) 82%, transparent);
-  backdrop-filter: blur(20px) saturate(145%);
-  -webkit-backdrop-filter: blur(20px) saturate(145%);
-  box-shadow: var(--shadow), var(--glass-shine);
+  background: #ffffff;
+  box-shadow: none;
 }
 
 .reader-assistant-panel:not(.is-expanded) .pdf-assistant {
   display: block;
   gap: 0;
-  width: 96px;
-  height: 44px;
+  width: 56px;
+  height: 56px;
   padding: 0;
-  border-radius: 14px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: none;
 }
 
 .reader-assistant-panel.is-expanded .pdf-assistant {
   height: calc(100vh - 48px);
-  align-content: start;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .pdf-assistant-head { display: grid; gap: 4px; }
@@ -1601,9 +1604,10 @@ input:focus, select:focus, textarea:focus {
 .pdf-assistant-title-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 10px;
+  gap: 9px;
 }
+.pdf-assistant-title-row h3 { margin-right: 2px; }
+.pdf-assistant-title-row .pdf-assistant-expand-button { margin-left: auto; }
 
 .pdf-assistant-head h3 {
   margin: 0;
@@ -1621,11 +1625,53 @@ input:focus, select:focus, textarea:focus {
   display: none;
 }
 
-.pdf-assistant-head p,
+.pdf-assistant-head p { display: none; }
+
 .pdf-assistant-privacy {
-  display: none;
+  margin: 0;
+  color: var(--faint);
+  font-size: 10.5px;
+  line-height: 1.5;
 }
 
+/* 展开态：闪光徽标 + 页码芯片 */
+.pdf-assistant-spark {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  flex: none;
+  border-radius: 50%;
+  border: 1.5px solid var(--brand);
+  background: #ffffff;
+  color: var(--brand);
+}
+.pdf-assistant-spark svg { width: 15px; height: 15px; fill: currentColor; stroke: none; }
+
+.pdf-assistant-page-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3.5px 10px;
+  border-radius: var(--radius-pill);
+  background: oklch(from var(--brand) l c h / 0.09);
+  color: var(--brand-strong);
+  font-size: 11.5px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.pdf-assistant-page-chip::before {
+  content: "";
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--brand);
+}
+.pdf-assistant-page-chip[hidden] { display: none; }
+
+/* 收起态隐藏头部装饰件与正文 */
+.reader-assistant-panel:not(.is-expanded) .pdf-assistant-spark,
+.reader-assistant-panel:not(.is-expanded) .pdf-assistant-page-chip,
+.reader-assistant-panel:not(.is-expanded) .pdf-assistant-quickrow,
 .reader-assistant-panel:not(.is-expanded) #pdfAssistantStatus,
 .reader-assistant-panel:not(.is-expanded) .pdf-assistant-messages,
 .reader-assistant-panel:not(.is-expanded) .pdf-assistant-form,
@@ -1633,31 +1679,72 @@ input:focus, select:focus, textarea:focus {
   display: none;
 }
 
+/* 展开态的收起按钮：扯平方形 + 双个头» */
 .pdf-assistant-expand-button {
-  min-height: 28px;
-  padding: 4px 10px;
-  border-radius: var(--radius-sm);
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.reader-assistant-panel:not(.is-expanded) .pdf-assistant-expand-button {
   display: grid;
-  width: 100%;
-  height: 100%;
-  min-height: 0;
   place-items: center;
+  width: 30px;
+  height: 30px;
+  min-height: 0;
   padding: 0;
-  border: none;
-  border-radius: 14px;
-  background: transparent;
+  border: 1px solid #e3e9f3;
+  border-radius: 9px;
+  background: #ffffff;
   color: var(--brand-strong);
-  font-size: 14px;
-  font-weight: 700;
-  white-space: nowrap;
-  line-height: 1;
   box-shadow: none;
 }
+.pdf-assistant-expand-button:hover {
+  border-color: var(--brand);
+  color: var(--brand);
+}
+.pdf-assistant-collapse-icon { display: grid; place-items: center; }
+.pdf-assistant-collapse-icon svg {
+  width: 15px; height: 15px;
+  fill: none; stroke: currentColor; stroke-width: 2;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+.pdf-assistant-expand-label { display: none; }
+
+.reader-assistant-panel:not(.is-expanded) .pdf-assistant-expand-button {
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-radius: 50%;
+  background: var(--brand);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.reader-assistant-panel:not(.is-expanded) .pdf-assistant-expand-button:hover {
+  background: var(--brand-strong);
+}
+
+/* 收起态圆形图标：只显闪光图标 */
+.pdf-assistant-fab-icon { display: none; }
+
+.reader-assistant-panel:not(.is-expanded) .pdf-assistant-fab-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+  stroke: none;
+}
+
+.reader-assistant-panel:not(.is-expanded) .pdf-assistant-collapse-icon { display: none; }
+
+/* 收起态圆形图标：显示闪光图标、隐藏文字 */
+.pdf-assistant-fab-icon { display: none; }
+
+.reader-assistant-panel:not(.is-expanded) .pdf-assistant-fab-icon {
+  display: block;
+  width: 26px;
+  height: 26px;
+  fill: currentColor;
+  stroke: none;
+}
+
+.reader-assistant-panel:not(.is-expanded) .pdf-assistant-expand-label { display: none; }
 
 .pdf-assistant-empty {
   margin: 0;
@@ -1668,30 +1755,32 @@ input:focus, select:focus, textarea:focus {
 
 .pdf-assistant-messages {
   display: grid;
-  gap: 8px;
+  gap: 10px;
+  align-content: end;
   max-height: min(56vh, 520px);
   overflow: auto;
 }
 
 .reader-assistant-panel.is-expanded .pdf-assistant-messages {
-  max-height: calc(100vh - 245px);
+  flex: 1;
+  min-height: 0;
+  max-height: none;
 }
 
 .pdf-assistant-message {
+  justify-self: start;
   display: grid;
   gap: 4px;
-  padding: 11px 12px;
-  border: 1px solid var(--glass-border);
-  border-radius: 13px;
-  background: color-mix(in srgb, var(--surface) 78%, transparent);
-  font-size: 13px;
-  line-height: 1.55;
+  max-width: 92%;
+  padding: 10px 13px;
+  border: 1px solid #e3e9f3;
+  border-radius: 14px 14px 14px 4px;
+  background: #f3f6fb;
+  font-size: 13.5px;
+  line-height: 1.6;
 }
 
-.pdf-assistant-message strong {
-  color: var(--brand-strong);
-  font-size: 12px;
-}
+.pdf-assistant-message > strong { display: none; }
 
 .pdf-assistant-content {
   display: grid;
@@ -1743,34 +1832,92 @@ input:focus, select:focus, textarea:focus {
 }
 
 .pdf-assistant-message-user {
-  background: oklch(from var(--brand) l c h / 0.08);
-  border-color: oklch(from var(--brand) l c h / 0.2);
+  justify-self: end;
+  max-width: 85%;
+  border: none;
+  border-radius: 14px 14px 4px 14px;
+  background: var(--brand);
+}
+.pdf-assistant-message-user,
+.pdf-assistant-message-user .pdf-assistant-content,
+.pdf-assistant-message-user .pdf-assistant-content strong,
+.pdf-assistant-message-user .pdf-assistant-content code {
+  color: #ffffff;
 }
 
-.pdf-assistant-form { display: grid; gap: 8px; }
+/* 快捷提问 */
+.pdf-assistant-quickrow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.pdf-assistant-quick {
+  padding: 6px 12px;
+  border: 1px solid #e3e9f3;
+  border-radius: var(--radius-pill);
+  background: #ffffff;
+  color: var(--ink);
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: none;
+}
+.pdf-assistant-quick:hover {
+  border-color: var(--brand);
+  color: var(--brand);
+  background: #ffffff;
+}
+
+/* 紧凑输入条 */
+.pdf-assistant-form {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  padding: 8px;
+  border: 1px solid #e3e9f3;
+  border-radius: 14px;
+  background: #ffffff;
+}
+.pdf-assistant-form:focus-within { border-color: var(--brand); }
 
 .pdf-assistant-form textarea {
-  min-height: 88px;
-  border-radius: 13px;
-  resize: vertical;
+  flex: 1;
+  min-height: 24px;
+  max-height: 120px;
+  padding: 4px 6px;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  resize: none;
+  font-size: 13.5px;
+  line-height: 1.5;
+  box-shadow: none;
 }
+.pdf-assistant-form textarea:focus { box-shadow: none; outline: none; }
 
-.pdf-assistant-form button {
-  min-height: 40px;
-  border-radius: var(--radius-sm);
+.pdf-assistant-send {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  flex: none;
+  padding: 0;
+  border: none;
+  border-radius: 10px;
   background: var(--brand);
-  border-color: var(--brand);
-  color: white;
-  font-weight: 600;
-  font-size: 14px;
-  box-shadow: 0 2px 12px oklch(from var(--brand) l c h / 0.3);
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: none;
 }
-
-.pdf-assistant-form button:hover {
-  background: var(--brand-strong);
-  border-color: var(--brand-strong);
-  color: white;
+.pdf-assistant-send svg {
+  width: 16px; height: 16px;
+  fill: none; stroke: currentColor; stroke-width: 2;
+  stroke-linecap: round; stroke-linejoin: round;
 }
+.pdf-assistant-send:hover { background: var(--brand-strong); }
+.pdf-assistant-form textarea:disabled { opacity: 0.5; }
+.pdf-assistant-send:disabled { opacity: 0.5; cursor: not-allowed; }
 
 @media (max-width: 960px) {
   .textbook-reader-page {
@@ -2157,8 +2304,7 @@ input:focus, select:focus, textarea:focus {
   .reader-body { grid-template-columns: 1fr; }
 
   .reader-tools,
-  .reader-audio-panel,
-  .reader-assistant-panel { position: static; }
+  .reader-audio-panel { position: static; }
 
   .reader-tools { display: flex; justify-content: center; padding-left: 0; }
 
@@ -2167,14 +2313,19 @@ input:focus, select:focus, textarea:focus {
     min-width: 0;
   }
 
+  /* 收起态：保持右上角圆形悬浮图标，滚动不动 */
   .reader-assistant-panel:not(.is-expanded) {
-    width: 96px;
-    justify-self: end;
+    position: fixed;
+    top: clamp(10px, 2vh, 16px);
+    right: clamp(10px, 2vw, 16px);
+    bottom: auto;
+    width: auto;
   }
 
   .reader-assistant-panel:not(.is-expanded) .pdf-assistant {
-    width: 96px;
-    margin-left: auto;
+    width: 52px;
+    height: 52px;
+    margin: 0;
   }
 
   .page-jump { justify-content: center; }
