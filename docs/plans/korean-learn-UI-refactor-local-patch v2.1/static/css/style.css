@@ -1733,19 +1733,6 @@ input:focus, select:focus, textarea:focus {
 
 .reader-assistant-panel:not(.is-expanded) .pdf-assistant-collapse-icon { display: none; }
 
-/* 收起态圆形图标：显示闪光图标、隐藏文字 */
-.pdf-assistant-fab-icon { display: none; }
-
-.reader-assistant-panel:not(.is-expanded) .pdf-assistant-fab-icon {
-  display: block;
-  width: 26px;
-  height: 26px;
-  fill: currentColor;
-  stroke: none;
-}
-
-.reader-assistant-panel:not(.is-expanded) .pdf-assistant-expand-label { display: none; }
-
 .pdf-assistant-empty {
   margin: 0;
   color: var(--muted);

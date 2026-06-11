@@ -486,7 +486,7 @@ function bindTableActions(rows, apiBase, reloadPage, renderForm) {
 // 初始化场景管理页。
 async function loadScenePage() {
   // 设置页面文字。
-  setPageText("场景管理", "管理问路、购物、餐厅、打招呼等句子分类。", "新增 / 编辑场景");
+  setPageText("场景管理", "管理学校、医院、交通、餐厅等句子分类。", "新增 / 编辑场景");
 
   // 场景页不需要句子筛选器。
   document.querySelector("#sentenceFilterLabel").style.display = "none";

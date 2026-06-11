@@ -1,0 +1,32 @@
+{
+  "books": [
+    {
+      "id": "yonsei1",
+      "label": "延世韩国语 1",
+      "title": "延世韩国语 1",
+      "count": 1021,
+      "url": "/static/data/vocab/yonsei1.json"
+    },
+    {
+      "id": "yonsei2",
+      "label": "延世韩国语 2",
+      "title": "延世韩国语 2",
+      "count": 888,
+      "url": "/static/data/vocab/yonsei2.json"
+    },
+    {
+      "id": "topik1",
+      "label": "TOPIK 1 初级词汇",
+      "title": "TOPIK 1 初级词汇",
+      "count": 866,
+      "url": "/static/data/vocab/topik1.json"
+    },
+    {
+      "id": "snu1",
+      "label": "首尔大学韩国语第一册",
+      "title": "首尔大学韩国语第一册",
+      "count": 380,
+      "url": "/static/data/vocab/snu1.json"
+    }
+  ]
+}

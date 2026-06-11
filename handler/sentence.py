@@ -8,7 +8,13 @@
 - GET  /api/letters               返回 40 个韩文字母演示数据
 """
 
+import os
+
 from db import execute, fetch_all
+from handler.seed_content import DEFAULT_SENTENCES, search_vocabulary
+
+
+USE_DATABASE_CONTENT = os.getenv("KOREAN_LEARN_USE_DB_CONTENT") == "1"
 
 
 KOREAN_LETTERS = [
@@ -64,6 +70,13 @@ def handle_sentence_request(handler, method, path, query):
     if method == "GET" and path == "/api/sentences":
         scene_id = query.get("scene_id", [""])[0]
 
+        if not USE_DATABASE_CONTENT:
+            rows = DEFAULT_SENTENCES
+            if scene_id:
+                rows = [row for row in rows if str(row["scene_id"]) == str(scene_id)]
+            handler.send_json({"data": rows})
+            return True
+
         if scene_id:
             rows = fetch_all(
                 """
@@ -75,6 +88,7 @@ def handle_sentence_request(handler, method, path, query):
                   s.audio_start,
                   s.audio_end,
                   s.scene_id,
+                  s.situation,
                   sc.name AS scene_name
                 FROM sentence s
                 LEFT JOIN scene sc ON sc.id = s.scene_id
@@ -94,6 +108,7 @@ def handle_sentence_request(handler, method, path, query):
                   s.audio_start,
                   s.audio_end,
                   s.scene_id,
+                  s.situation,
                   sc.name AS scene_name
                 FROM sentence s
                 LEFT JOIN scene sc ON sc.id = s.scene_id
@@ -109,6 +124,7 @@ def handle_sentence_request(handler, method, path, query):
         korean = (body.get("korean") or "").strip()
         chinese = (body.get("chinese") or "").strip()
         audio_url = (body.get("audio_url") or "").strip()
+        situation = (body.get("situation") or "常用表达").strip()
         scene_id = body.get("scene_id")
         audio_start = body.get("audio_start") or 0
         audio_end = body.get("audio_end") or 0
@@ -119,10 +135,10 @@ def handle_sentence_request(handler, method, path, query):
 
         sentence_id = execute(
             """
-            INSERT INTO sentence (korean, chinese, audio_url, audio_start, audio_end, scene_id)
-            VALUES (%s, %s, %s, %s, %s, %s)
+            INSERT INTO sentence (korean, chinese, audio_url, audio_start, audio_end, scene_id, situation)
+            VALUES (%s, %s, %s, %s, %s, %s, %s)
             """,
-            (korean, chinese, audio_url, audio_start, audio_end, scene_id),
+            (korean, chinese, audio_url, audio_start, audio_end, scene_id, situation),
         )
         handler.send_json({"id": sentence_id}, status=201)
         return True
@@ -133,6 +149,7 @@ def handle_sentence_request(handler, method, path, query):
         korean = (body.get("korean") or "").strip()
         chinese = (body.get("chinese") or "").strip()
         audio_url = (body.get("audio_url") or "").strip()
+        situation = (body.get("situation") or "常用表达").strip()
         scene_id = body.get("scene_id")
         audio_start = body.get("audio_start") or 0
         audio_end = body.get("audio_end") or 0
@@ -149,10 +166,11 @@ def handle_sentence_request(handler, method, path, query):
                 audio_url = %s,
                 audio_start = %s,
                 audio_end = %s,
-                scene_id = %s
+                scene_id = %s,
+                situation = %s
             WHERE id = %s
             """,
-            (korean, chinese, audio_url, audio_start, audio_end, scene_id, sentence_id),
+            (korean, chinese, audio_url, audio_start, audio_end, scene_id, situation, sentence_id),
         )
         handler.send_json({"id": sentence_id})
         return True
@@ -170,6 +188,10 @@ def handle_sentence_request(handler, method, path, query):
 
     if method == "GET" and path == "/api/vocabulary":
         keyword = query.get("q", [""])[0].strip()
+
+        if not USE_DATABASE_CONTENT:
+            handler.send_json({"data": search_vocabulary(keyword)})
+            return True
 
         if keyword:
             rows = fetch_all(

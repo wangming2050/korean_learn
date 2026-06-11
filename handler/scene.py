@@ -6,14 +6,24 @@
 - DELETE /api/scenes?id=1 删除场景
 """
 
+import os
+
 # execute 用来执行 INSERT/UPDATE/DELETE，fetch_all 用来查询列表。
 from db import execute, fetch_all
+from handler.seed_content import DEFAULT_SCENES
+
+
+USE_DATABASE_CONTENT = os.getenv("KOREAN_LEARN_USE_DB_CONTENT") == "1"
 
 
 def handle_scene_request(handler, method, path, query):
     """处理所有 /api/scenes 开头的请求。"""
     # GET /api/scenes：查询全部场景，用于用户端下拉框和后台列表。
     if method == "GET" and path == "/api/scenes":
+        if not USE_DATABASE_CONTENT:
+            handler.send_json({"data": DEFAULT_SCENES})
+            return True
+
         # 直接写 SQL，ORDER BY id 保证列表顺序稳定。
         scenes = fetch_all("SELECT id, name FROM scene ORDER BY id")
         # 把查询结果包在 data 字段里返回，前端统一读取 result.data。

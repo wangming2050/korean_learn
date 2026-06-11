@@ -8,6 +8,9 @@ router.py
 # 导入教材模块的请求处理函数。
 from handler.material import handle_material_request
 
+# 导入 PDF AI 助教模块的请求处理函数。
+from handler.pdf_assistant import handle_pdf_assistant_request
+
 # 导入场景模块的请求处理函数。
 from handler.scene import handle_scene_request
 
@@ -41,6 +44,10 @@ def route(handler, method, path, query):
     # 如果路径以 /api/materials 开头，就交给教材 handler。
     if path.startswith("/api/materials"):
         return handle_material_request(handler, method, path, query)
+
+    # 如果路径以 /api/pdf-assistant 开头，就交给 PDF AI 助教 handler。
+    if path.startswith("/api/pdf-assistant"):
+        return handle_pdf_assistant_request(handler, method, path, query)
 
     # 没有匹配到任何 API 路由时，返回 None，让 server.py 统一返回 404。
     return None

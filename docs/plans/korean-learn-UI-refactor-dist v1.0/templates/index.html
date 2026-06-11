@@ -3,8 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>한步 · 韩语练习</title>
-  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  <title>韩语句子跟读学习</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@500;700;800&display=swap" rel="stylesheet">
@@ -18,8 +17,9 @@
 </head>
 <body data-active-page="guide">
   <header class="topbar">
-    <a class="brand" href="/" aria-label="한步 韩语练习台首页">
-      <span class="brand-mark" lang="ko" aria-hidden="true"><span class="lg-han">한</span><span class="lg-bu">步</span></span>
+    <a class="brand" href="/" aria-label="韩语练习台首页">
+      <span class="brand-mark" aria-hidden="true">한</span>
+      <span class="brand-title">韩语练习</span>
     </a>
 
     <nav class="tabs" aria-label="学习模块">
@@ -47,7 +47,7 @@
     <section id="guide" class="page guide-page active" data-screen-label="首页">
       <div class="home">
         <div class="home-hero">
-          <span class="home-logo" lang="ko" aria-hidden="true"><span class="lg-han">한</span><span class="lg-bu">步</span></span>
+          <span class="home-logo" aria-hidden="true">한</span>
           <h1 class="home-motto" lang="ko">시작이 반이다</h1>
           <p class="home-motto-cn">好的开始是成功的一半</p>
         </div>
@@ -96,6 +96,12 @@
          音标（Letters） — 保留原有功能，由 app.js 动态渲染
          ============================================================ -->
     <section id="letters" class="page" data-screen-label="音标">
+      <div class="section-title">
+        <div>
+          <span class="eyebrow">Pronunciation</span>
+          <h2>韩语发音训练</h2>
+        </div>
+      </div>
       <div class="letter-controls" aria-label="音标朗读设置">
         <label><input type="checkbox" id="playLetterSound" checked> 音标</label>
         <label><input type="checkbox" id="playExampleWords"> 示例单词</label>
@@ -181,38 +187,15 @@
             <section class="pdf-assistant" aria-label="AI 助教问答">
               <div class="pdf-assistant-head">
                 <div class="pdf-assistant-title-row">
-                  <span class="pdf-assistant-spark" aria-hidden="true">
-                    <svg viewBox="0 0 24 24">
-                      <path d="M12 2.5l2.1 5.6 5.9 1.9-5.9 1.9L12 17.5 9.9 11.9 4 10l5.9-1.9L12 2.5z"></path>
-                      <path d="M19 15l0.9 2.4 2.4 0.9-2.4 0.9L19 21.6l-0.9-2.4-2.4-0.9 2.4-0.9L19 15z"></path>
-                    </svg>
-                  </span>
                   <h3>AI 助教</h3>
-                  <span id="pdfAssistantPageChip" class="pdf-assistant-page-chip">正在参考 第 1 页</span>
-                  <button id="pdfAssistantExpandButton" class="pdf-assistant-expand-button" type="button" aria-pressed="false">
-                    <svg class="pdf-assistant-fab-icon" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M12 2.5l2.1 5.6 5.9 1.9-5.9 1.9L12 17.5 9.9 11.9 4 10l5.9-1.9L12 2.5z"></path>
-                      <path d="M19 15l0.9 2.4 2.4 0.9-2.4 0.9L19 21.6l-0.9-2.4-2.4-0.9 2.4-0.9L19 15z"></path>
-                    </svg>
-                    <span class="pdf-assistant-collapse-icon" aria-hidden="true">
-                      <svg viewBox="0 0 24 24"><path d="M13 17l5-5-5-5"></path><path d="M6 17l5-5-5-5"></path></svg>
-                    </span>
-                    <span class="pdf-assistant-expand-label">收起</span>
-                  </button>
+                  <button id="pdfAssistantExpandButton" class="pdf-assistant-expand-button" type="button" aria-pressed="false">展开</button>
                 </div>
                 <p id="pdfAssistantStatus">会参考当前页和相邻页内容回答。</p>
               </div>
               <div id="pdfAssistantMessages" class="pdf-assistant-messages" aria-live="polite"></div>
-              <div class="pdf-assistant-quickrow" aria-label="快捷提问">
-                <button type="button" class="pdf-assistant-quick" data-prompt="讲解本页的语法点">讲解本页语法点</button>
-                <button type="button" class="pdf-assistant-quick" data-prompt="解释本页的生词">生词解释</button>
-                <button type="button" class="pdf-assistant-quick" data-prompt="根据本页内容出几道练习题">根据本页出练习题</button>
-              </div>
               <form id="pdfAssistantForm" class="pdf-assistant-form">
-                <textarea id="pdfAssistantQuestion" rows="1" placeholder="问问当前页哪里不懂…"></textarea>
-                <button id="pdfAssistantSendButton" class="pdf-assistant-send" type="submit" aria-label="提问" title="提问">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2 11 13"></path><path d="M22 2 15 22l-4-9-9-4 20-7z"></path></svg>
-                </button>
+                <textarea id="pdfAssistantQuestion" rows="3" placeholder="问问当前页哪里不懂"></textarea>
+                <button id="pdfAssistantSendButton" type="submit">提问</button>
               </form>
               <p class="pdf-assistant-privacy">提问时会把当前页附近的文字发送给 AI；文字太少时会附带当前页截图。</p>
             </section>

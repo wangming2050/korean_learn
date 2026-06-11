@@ -42,39 +42,39 @@ export ADMIN_PASSWORD=你的后台密码
 
 如果使用本项目推荐的 `.env` 启动方式，也可以在 `.env` 中修改 `ADMIN_PASSWORD`。
 
-教材页图和教材听力等大文件默认从 Cloudflare R2 加载。v2.1 起前端使用纯图片阅读器，PDF 只作为生成页图的源文件或备份，不参与阅读器加载。当前测试环境默认资源地址是：
+v2.2 起，用户端教材阅读器改为“用户自上传 PDF”。PDF 文件只在浏览器本机读取，前端用 PDF.js 转成低清/高清页图 Blob，并保存到 IndexedDB 缓存；不会上传到服务器、Git 仓库或 R2。用户删除教材时，本机缓存会一起清理。上传后会优先读取 PDF 内置目录；没有目录时会扫描前几页标题生成目录候选。
 
-```text
-https://pub-932125ce45f74ebbbfea4319730d4d53.r2.dev
-```
+当前 MVP 不提供公共内置教材资源，也不需要配置 `ASSET_BASE_URL` 才能阅读用户自己的 PDF。R2 相关脚本只保留为后续私有云端存储方案的工具，不参与默认用户阅读流程。
 
-如需切换到正式对象存储域名，可以设置：
+PDF 阅读器右侧提供 AI 助教问答区。用户提问时，前端只发送当前页和相邻页提取出的文字；如果当前页文字太少或文本层乱码，会附带当前页截图。目录自动识别在文本层乱码时也会把候选目录页截图发送给后端 Gemini 接口抽取目录，不上传整本 PDF。默认推荐使用 Gemini API 免费层做 MVP 测试：
 
-```bash
-export ASSET_BASE_URL=https://assets.example.com
-```
-
-如果使用 `.env` 启动方式，也可以写入：
-
-```text
-ASSET_BASE_URL=https://assets.example.com
-```
-
-教材首屏会优先加载低清页面缩略图，再加载高清 WebP 预览图。页面图和听力需要上传到同一个对象存储路径下，例如：
-
-```text
-textbooks/yonsei1/page-thumbs/page_001.webp
-textbooks/yonsei1/page-images/page_001.webp
-```
-
-生成页面图前先安装本地工具依赖：
+本地开发可以新建 `.env.ai.local`，服务启动时会自动读取，且系统环境变量优先：
 
 ```bash
-python3 -m pip install pymupdf pillow
-python3 scripts/generate_textbook_page_images.py path/to/yonsei-korean-1.pdf dist/yonsei1 --image-width 1320 --image-quality 80 --thumb-width 560 --thumb-quality 62
+AI_PROVIDER=gemini
+GEMINI_API_KEY=你的 Gemini API Key
+GEMINI_MODEL=gemini-2.5-flash
 ```
 
-生成后的 `page-images/` 和 `page-thumbs/` 目录只上传到对象存储，不需要提交到仓库。
+也可以直接使用环境变量：
+
+```bash
+export AI_PROVIDER=gemini
+export GEMINI_API_KEY=你的 Gemini API Key
+export GEMINI_MODEL=gemini-2.5-flash
+```
+
+也可以切换为 OpenAI：
+
+```bash
+export AI_PROVIDER=openai
+export OPENAI_API_KEY=你的 OpenAI API Key
+export OPENAI_MODEL=gpt-4.1-mini
+```
+
+如果不设置对应 provider 的 API key，阅读器仍可正常使用，AI 助教会提示未配置，视觉目录识别会降级为本地文本识别。Gemini 免费层适合测试/MVP；用户提问内容和候选目录页截图会发送给模型服务，请避免输入敏感资料。
+
+不要把真实 API key 写进前端 JS、提交到 GitHub，或贴到公开文档里。`.env.ai.local` 已被 `.gitignore` 忽略，只适合保存在本机；线上部署仍推荐使用平台环境变量。
 
 ## 功能说明
 
@@ -83,7 +83,7 @@ python3 scripts/generate_textbook_page_images.py path/to/yonsei-korean-1.pdf dis
 - 音标：展示 40 个韩文字母，点击播放音频。
 - 场景句子：按场景查看句子，支持单句循环、慢速播放。
 - 词汇：词汇通过例句展示，不单独孤立罗列。
-- 教材：教材文本按句子绑定音频时间轴，点击句子跳转播放。
+- 教材：用户上传自己的 PDF，网站在本机转换为页图后展示，支持页码跳转、自动目录和 AI 助教问答。
 
 后台独立访问，不出现在用户端导航：
 

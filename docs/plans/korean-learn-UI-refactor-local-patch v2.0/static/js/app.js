@@ -3913,16 +3913,6 @@ function renderPdfAssistantPanel() {
     sendButton.disabled = false;
   }
 
-  const pageChip = document.querySelector("#pdfAssistantPageChip");
-  if (pageChip) {
-    if (activeTextbook && activeTextbookLoadStatus !== "failed") {
-      pageChip.textContent = `正在参考 第 ${activeTextbookPage} 页`;
-      pageChip.hidden = false;
-    } else {
-      pageChip.hidden = true;
-    }
-  }
-
   messages.innerHTML = pdfAssistantMessages.length === 0
     ? ""
     : pdfAssistantMessages.map((message) => `
@@ -4166,14 +4156,6 @@ function initEvents() {
   document.querySelector("#pdfAssistantExpandButton").addEventListener("click", () => {
     pdfAssistantExpanded = !pdfAssistantExpanded;
     renderPdfAssistantPanel();
-  });
-  document.querySelectorAll(".pdf-assistant-quick").forEach((quickButton) => {
-    quickButton.addEventListener("click", () => {
-      const input = document.querySelector("#pdfAssistantQuestion");
-      if (!input || input.disabled) return;
-      input.value = quickButton.getAttribute("data-prompt") || quickButton.textContent.trim();
-      sendPdfAssistantQuestion();
-    });
   });
 
   document.addEventListener("keydown", (event) => {
