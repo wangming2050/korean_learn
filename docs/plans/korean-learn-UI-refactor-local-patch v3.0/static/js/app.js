@@ -379,42 +379,48 @@ const PHONETIC_SECTIONS = [
   {
     id: "consonants",
     label: "辅音",
+    note: "先选一个音，听发音，再看位置和对比。",
     groups: [
-      { id: "plain", label: "松音", kind: "consonant", letters: ["ㄱ", "ㄴ", "ㄷ", "ㄹ", "ㅁ", "ㅂ", "ㅅ", "ㅇ", "ㅈ"] },
-      { id: "tense", label: "紧音", kind: "consonant", letters: ["ㄲ", "ㄸ", "ㅃ", "ㅆ", "ㅉ"] },
-      { id: "aspirated", label: "送气音", kind: "consonant", letters: ["ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"] },
+      { id: "plain", label: "松音", note: "基础听感，不强送气", kind: "consonant", letters: ["ㄱ", "ㄴ", "ㄷ", "ㄹ", "ㅁ", "ㅂ", "ㅅ", "ㅇ", "ㅈ"] },
+      { id: "tense", label: "紧音", note: "声音更紧，气流更短", kind: "consonant", letters: ["ㄲ", "ㄸ", "ㅃ", "ㅆ", "ㅉ"] },
+      { id: "aspirated", label: "送气音", note: "气流更明显", kind: "consonant", letters: ["ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"] },
     ],
   },
   {
     id: "vowels",
     label: "元音",
+    note: "重点看口型，不按词首词尾区分。",
     groups: [
-      { id: "single-vowels", label: "单元音", kind: "vowel", letters: ["ㅏ", "ㅑ", "ㅓ", "ㅕ", "ㅗ", "ㅛ", "ㅜ", "ㅠ", "ㅡ", "ㅣ", "ㅐ", "ㅔ"] },
-      { id: "double-vowels", label: "双元音", kind: "vowel", letters: ["ㅒ", "ㅖ", "ㅘ", "ㅙ", "ㅚ", "ㅝ", "ㅞ", "ㅟ", "ㅢ"] },
+      { id: "single-vowels", label: "单元音", note: "先稳定一个口型", kind: "vowel", letters: ["ㅏ", "ㅑ", "ㅓ", "ㅕ", "ㅗ", "ㅛ", "ㅜ", "ㅠ", "ㅡ", "ㅣ", "ㅐ", "ㅔ"] },
+      { id: "double-vowels", label: "双元音", note: "听清滑动方向", kind: "vowel", letters: ["ㅒ", "ㅖ", "ㅘ", "ㅙ", "ㅚ", "ㅝ", "ㅞ", "ㅟ", "ㅢ"] },
     ],
   },
   {
     id: "batchim",
     label: "收音",
+    note: "先记 7 个代表音，再练双收音。",
     groups: [
       {
         id: "base-batchim",
         label: "基础收音",
+        note: "写法很多，实际先归到 7 类",
         kind: "batchim",
         items: [
-          { letter: "ㄱ", sound: "实际读 ㄱ", word: "ㄱ ㄲ ㅋ", meaning: "국, 밖, 부엌", examples: [["국", "收成 ㄱ"], ["밖", "ㄲ 作收音读 ㄱ"], ["부엌", "ㅋ 作收音读 ㄱ"]], tips: ["包含写法：ㄱ ㄲ ㅋ", "发音短促收住，不要加 으 或 이。"] },
-          { letter: "ㄴ", sound: "实际读 ㄴ", word: "ㄴ", meaning: "문, 산", examples: [["문", "门"], ["산", "山"]], tips: ["舌尖抵住上齿龈，声音从鼻腔出来。"] },
-          { letter: "ㄷ", sound: "实际读 ㄷ", word: "ㄷ ㅅ ㅆ ㅈ ㅊ ㅌ ㅎ", meaning: "옷, 낮, 꽃", examples: [["옷", "ㅅ 作收音读 ㄷ"], ["낮", "ㅈ 作收音读 ㄷ"], ["꽃", "ㅊ 作收音读 ㄷ"]], tips: ["这一类写法最多，先统一收成 ㄷ 的听感。"] },
-          { letter: "ㄹ", sound: "实际读 ㄹ", word: "ㄹ", meaning: "달, 길", examples: [["달", "月亮"], ["길", "路"]], tips: ["舌尖轻轻收住，不要拖成长音。"] },
-          { letter: "ㅁ", sound: "实际读 ㅁ", word: "ㅁ", meaning: "밤, 마음", examples: [["밤", "夜晚/栗子"], ["마음", "心"]], tips: ["双唇闭合，声音从鼻腔出来。"] },
-          { letter: "ㅂ", sound: "实际读 ㅂ", word: "ㅂ ㅍ", meaning: "집, 앞", examples: [["집", "家"], ["앞", "ㅍ 作收音读 ㅂ"]], tips: ["双唇闭合收住，不要读出完整的 브。"] },
-          { letter: "ㅇ", sound: "实际读 ㅇ", word: "ㅇ", meaning: "방, 강", examples: [["방", "房间"], ["강", "江/河"]], tips: ["舌根收住，声音从鼻腔出来。"] },
+          { letter: "ㄱ 类", sound: "实际读 ㄱ", word: "ㄱ ㄲ ㅋ", meaning: "국, 밖, 부엌", examples: [["국", "收成 ㄱ"], ["밖", "ㄲ 作收音读 ㄱ"], ["부엌", "ㅋ 作收音读 ㄱ"]], tips: ["包含写法：ㄱ ㄲ ㅋ", "发音短促收住，不要加 으 或 이。"] },
+          { letter: "ㄴ 类", sound: "实际读 ㄴ", word: "ㄴ", meaning: "문, 산", examples: [["문", "门"], ["산", "山"]], tips: ["舌尖抵住上齿龈，声音从鼻腔出来。"] },
+          { letter: "ㄷ 类", sound: "实际读 ㄷ", word: "ㄷ ㅅ ㅆ ㅈ ㅊ ㅌ ㅎ", meaning: "옷, 낮, 꽃", examples: [["옷", "ㅅ 作收音读 ㄷ"], ["낮", "ㅈ 作收音读 ㄷ"], ["꽃", "ㅊ 作收音读 ㄷ"]], tips: ["这一类写法最多，先统一收成 ㄷ 的听感。"] },
+          { letter: "ㄹ 类", sound: "实际读 ㄹ", word: "ㄹ", meaning: "달, 길", examples: [["달", "月亮"], ["길", "路"]], tips: ["舌尖轻轻收住，不要拖成长音。"] },
+          { letter: "ㅁ 类", sound: "实际读 ㅁ", word: "ㅁ", meaning: "밤, 마음", examples: [["밤", "夜晚/栗子"], ["마음", "心"]], tips: ["双唇闭合，声音从鼻腔出来。"] },
+          { letter: "ㅂ 类", sound: "实际读 ㅂ", word: "ㅂ ㅍ", meaning: "집, 앞", examples: [["집", "家"], ["앞", "ㅍ 作收音读 ㅂ"]], tips: ["双唇闭合收住，不要读出完整的 브。"] },
+          { letter: "ㅇ 类", sound: "实际读 ㅇ", word: "ㅇ", meaning: "방, 강", examples: [["방", "房间"], ["강", "江/河"]], tips: ["舌根收住，声音从鼻腔出来。"] },
         ],
       },
       {
         id: "double-front",
         categoryLabel: "双收音",
+        categoryNote: "双收音先判断读前一个还是后一个；后接元音时后续再单独练连音。",
         label: "多数读前一个",
+        note: "先按前一个辅音收住",
         kind: "batchim",
         items: [
           { letter: "ㄳ", sound: "读前一个：ㄱ", word: "넋", meaning: "넋 → 넉", examples: [["넋", "灵魂，收成 ㄱ"]], tips: ["后面的 ㅅ 不单独读出来。"] },
@@ -430,6 +436,7 @@ const PHONETIC_SECTIONS = [
       {
         id: "double-back",
         label: "少数读后一个",
+        note: "这几个需要完整记住",
         kind: "batchim",
         items: [
           { letter: "ㄺ", sound: "读后一个：ㄱ", word: "닭", meaning: "닭 → 닥", examples: [["닭", "鸡，收成 ㄱ"], ["읽다", "读，常收成 ㄱ"], ["맑다", "清澈，常收成 ㄱ"]], tips: ["不要按前面的 ㄹ 收住，默认听到 ㄱ 类收音。"] },
@@ -440,6 +447,7 @@ const PHONETIC_SECTIONS = [
       {
         id: "double-special",
         label: "特殊发音",
+        note: "容易和默认规则混淆",
         kind: "batchim",
         items: [
           { letter: "ㄼ", sound: "밟다 类读 ㅂ", word: "밟다", meaning: "밟다 → 밥따", examples: [["밟다", "踩，读 밥따"], ["밟고", "读 밥꼬"], ["밟지", "读 밥찌"]], tips: ["ㄼ 多数读 ㄹ，但 밟다 这一类常读 ㅂ，需要单独记。"] },
@@ -1154,6 +1162,7 @@ function renderExampleSection(title, items, kind, letterData) {
     <div class="detail-block">
       <div class="detail-block-head">
         <h4>${title}</h4>
+        <span>点击词卡单独播放</span>
       </div>
       <div class="example-list">
         ${items.map((item, index) => renderWordButton(item, index, {
@@ -1264,6 +1273,9 @@ function renderLetterDetail(letterData, selectedCard) {
         <h3>${letterData.letter} <span>${letterData.sound}</span></h3>
       </div>
       <div class="letter-detail-actions">
+        <button class="detail-play" type="button" aria-label="播放发音" title="播放发音">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
+        </button>
         <button class="detail-close" type="button" aria-label="收起示范详情">×</button>
       </div>
     </div>
@@ -1278,6 +1290,10 @@ function renderLetterDetail(letterData, selectedCard) {
 
   detail.querySelector(".detail-close").addEventListener("click", () => {
     closeLetterDetail();
+  });
+
+  detail.querySelector(".detail-play").addEventListener("click", () => {
+    playLetterQueue(letterData);
   });
 
   bindDetailWordPlayback(detail, letterData, contrastItems);
@@ -1326,6 +1342,7 @@ async function loadLetters() {
           <span class="eyebrow">${section.id === "batchim" ? "Batchim" : "Hangul"}</span>
           <h3>${section.label}</h3>
         </div>
+        <span>${section.note}</span>
       </div>
       <div class="letter-subgroups">
         ${section.groups.map((group) => {
@@ -1348,12 +1365,14 @@ async function loadLetters() {
                     <span class="eyebrow">Double Batchim</span>
                     <h4>${group.categoryLabel}</h4>
                   </div>
+                  <span>${group.categoryNote || ""}</span>
                 </div>
               ` : ""}
               <div class="letter-subgroup-head">
                 <div>
                   <h4>${group.label}</h4>
                 </div>
+                <span>${group.note}，共 ${indexedItems.length} 个</span>
               </div>
               <div class="letter-group-grid">
                 ${indexedItems.map(({ item, index }) => renderPracticeCard(item, index)).join("")}
@@ -3982,35 +4001,13 @@ function renderAssistantMessageContent(content) {
 
 function isLikelyTruncatedAnswer(content) {
   const text = String(content || "").trim();
-  if (text.length < 2000) {
+  if (text.length < 1200) {
     return false;
   }
   const lastChar = text.slice(-1);
   const openParenCount = (text.match(/[（(「『《【]/g) || []).length;
   const closeParenCount = (text.match(/[）)」』》】]/g) || []).length;
-  const endsWithIncompleteList = /(?:^|\n)\s*(?:[-*]|\d+[.)])\s+\S[^。.!?！？」』）)]*$/.test(text);
-  return !/[。.!?！？」』）)]$/.test(lastChar) || openParenCount > closeParenCount || endsWithIncompleteList;
-}
-
-
-function containAssistantMessageWheel(event) {
-  if (!pdfAssistantExpanded) {
-    return;
-  }
-
-  const messages = event.currentTarget;
-  if (!messages || messages.scrollHeight <= messages.clientHeight) {
-    return;
-  }
-
-  const atTop = messages.scrollTop <= 0;
-  const atBottom = messages.scrollTop + messages.clientHeight >= messages.scrollHeight - 1;
-  const scrollingUp = event.deltaY < 0;
-  const scrollingDown = event.deltaY > 0;
-
-  if ((scrollingUp && !atTop) || (scrollingDown && !atBottom)) {
-    event.stopPropagation();
-  }
+  return !/[。.!?！？」』）)]$/.test(lastChar) || openParenCount > closeParenCount;
 }
 
 
@@ -4166,7 +4163,6 @@ function initEvents() {
     event.preventDefault();
     sendPdfAssistantQuestion();
   });
-  document.querySelector("#pdfAssistantMessages").addEventListener("wheel", containAssistantMessageWheel, { passive: true });
   document.querySelector("#pdfAssistantExpandButton").addEventListener("click", () => {
     pdfAssistantExpanded = !pdfAssistantExpanded;
     renderPdfAssistantPanel();
@@ -4214,21 +4210,6 @@ function initEvents() {
   });
 }
 
-
-function initTopbarScrollState() {
-  const topbar = document.querySelector(".topbar");
-  if (!topbar) {
-    return;
-  }
-
-  const updateTopbarState = () => {
-    topbar.classList.toggle("is-scrolled", window.scrollY > 8);
-  };
-
-  updateTopbarState();
-  window.addEventListener("scroll", updateTopbarState, { passive: true });
-}
-
 /**
  * 页面启动函数。
  * DOMContentLoaded 表示 HTML 已经被浏览器解析完成，可以安全地 querySelector。
@@ -4237,7 +4218,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   initTabs();
   initDefaultPage();
   initThemeToggle();
-  initTopbarScrollState();
   initEvents();
 
   // 场景（句子）和词汇改由各自的 React 应用加载，这里不再启动旧的渲染逻辑。
