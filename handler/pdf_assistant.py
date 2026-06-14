@@ -21,6 +21,7 @@ MAX_QUESTION_CHARS = 1200
 MAX_CONTEXT_CHARS = 20000
 MAX_SCREENSHOT_CHARS = 2_400_000
 LOCAL_AI_ENV_PATH = Path(__file__).resolve().parent.parent / ".env.ai.local"
+DEFAULT_ASSISTANT_MAX_OUTPUT_TOKENS = 9000
 
 
 def load_local_ai_env():
@@ -154,6 +155,17 @@ def get_missing_key_message(provider):
     return "AI 助教未配置，请先设置 GEMINI_API_KEY。"
 
 
+def get_assistant_max_output_tokens():
+    raw_value = os.getenv("AI_ASSISTANT_MAX_OUTPUT_TOKENS", "").strip()
+    if not raw_value:
+        return DEFAULT_ASSISTANT_MAX_OUTPUT_TOKENS
+    try:
+        value = int(raw_value)
+    except ValueError:
+        return DEFAULT_ASSISTANT_MAX_OUTPUT_TOKENS
+    return min(max(value, 1000), 12000)
+
+
 def build_context_text(context_pages):
     """Limit context to current and adjacent pages."""
     parts = []
@@ -178,6 +190,7 @@ def build_assistant_prompt(document_title, page_number, page_count, question, co
         "要求：回答要详细、教学化、适合韩语初中级学习者；不要只给一句摘要；"
         "不要声称看过整本 PDF；不知道时明确说不知道。"
         "请完整回答，不要过早结束；内容较多时分段讲解，确保每个要点都有解释。\n"
+        "回答必须完整，不要中途停止；如果内容较多，优先完整解释当前页核心内容，而不是压缩成摘要。\n"
         "请按以下结构回答：\n"
         "1. 这一页的学习目标或主题。\n"
         "2. 页面中重要韩语句子或内容的中文解释。\n"
@@ -219,7 +232,7 @@ def ask_openai(api_key, model, prompt, screenshot):
         "model": model,
         "store": False,
         "input": [{"role": "user", "content": content}],
-        "max_output_tokens": 6000,
+        "max_output_tokens": get_assistant_max_output_tokens(),
     }
     data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
     request = urllib.request.Request(
@@ -254,7 +267,7 @@ def ask_gemini(api_key, model, prompt, screenshot):
     payload = {
         "contents": [{"role": "user", "parts": parts}],
         "generationConfig": {
-            "maxOutputTokens": 6000,
+            "maxOutputTokens": get_assistant_max_output_tokens(),
             "temperature": 0.3,
         },
     }

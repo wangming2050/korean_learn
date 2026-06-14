@@ -76,6 +76,15 @@ export OPENAI_MODEL=gpt-4.1-mini
 
 不要把真实 API key 写进前端 JS、提交到 GitHub，或贴到公开文档里。`.env.ai.local` 已被 `.gitignore` 忽略，只适合保存在本机；线上部署仍推荐使用平台环境变量。
 
+词汇和例句的韩语发音支持服务端 Google Cloud Text-to-Speech。没有配置时会自动退回浏览器自带朗读；配置后会首次生成 MP3 并缓存到 `static/generated-audio/`，后续同一句文本直接复用缓存：
+
+```bash
+GOOGLE_TTS_API_KEY=你的 Google TTS API Key
+GOOGLE_TTS_VOICE=ko-KR-Neural2-A
+```
+
+本地开发也可以新建 `.env.tts.local` 保存上述变量。`.env.tts.local` 和 `static/generated-audio/` 已被 Git 忽略，不要提交真实 key 或生成音频缓存。需要更自然的声音时，可以把 `GOOGLE_TTS_VOICE` 改成可用的 `ko-KR-Chirp3-HD-*` 声音。
+
 ## 功能说明
 
 用户端只保留学习功能：

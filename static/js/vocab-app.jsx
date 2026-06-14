@@ -34,7 +34,8 @@ function speakKo(text) {
 function playWord(word) {
   const ex = (word.examples || []).find((e) => e.audio);
   if (ex && typeof window.playAudio === "function") window.playAudio(ex.audio);
-  else if (ex) { try { new Audio(ex.audio).play(); } catch (e) { speakKo(word.ko); } }
+  else if (ex && ex.audio) { try { new Audio(ex.audio).play(); } catch (e) { speakKo(word.ko); } }
+  else if (typeof window.playKoreanText === "function") window.playKoreanText(word.ko);
   else speakKo(word.ko);
 }
 function shuffle(arr) {

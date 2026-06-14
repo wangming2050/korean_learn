@@ -1,0 +1,413 @@
+/* ============================================================
+   音标（Letters）重设计 — 轻盈 reskin
+   纯样式覆盖，不改任何 JS / DOM 结构 / 音频逻辑。
+   置于 style.css 之后加载即可生效；沿用项目 CSS 变量，自动适配明暗。
+   作用域限定 #letters / #letterDetail，不影响其它页面。
+   ============================================================ */
+
+/* ── 顶部工具条：玻璃盒子 → 一行安静的内联控件 ── */
+#letters .letter-controls {
+  margin: 0 0 26px;
+  padding: 0 2px 18px;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+  gap: 20px;
+  align-items: center;
+}
+#letters .letter-controls label {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 13.5px;
+  gap: 8px;
+  min-height: 0;
+}
+#letters .letter-controls label:hover {
+  background: transparent;
+  border-color: transparent;
+  color: var(--ink);
+}
+/* 复选框 → 极简圆点 */
+#letters .letter-controls input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  margin: 0;
+  border: 1.5px solid var(--line-strong);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+#letters .letter-controls input[type="checkbox"]:checked {
+  border-color: var(--brand);
+  box-shadow: inset 0 0 0 3px var(--brand);
+  background: transparent;
+}
+#letters .letter-controls .repeat-control {
+  gap: 8px;
+  color: var(--muted);
+  font-size: 13.5px;
+}
+#letters .repeat-control input {
+  width: 52px;
+  min-height: 30px;
+  padding: 4px 8px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--surface);
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+/* ── 容器节奏 ── */
+#letters .letter-groups { gap: 8px; }
+#letters .letter-section { gap: 0; margin-top: 30px; }
+#letters .letter-section:first-child { margin-top: 0; }
+
+/* ── 段落标题（辅音 / 元音 / 收音）：去掉彩色眉标 ── */
+#letters .eyebrow { display: none; }
+#letters .letter-section-head {
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 8px;
+  padding: 0 2px;
+}
+#letters .letter-section-head h3 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+#letters .letter-section-head > span {
+  display: block;
+  margin-left: auto;
+  max-width: none;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: right;
+}
+
+/* ── 分组：玻璃盒标题 → 左竖排标签 + 右字母 ── */
+#letters .letter-subgroups { gap: 0; }
+#letters .letter-subgroup {
+  display: grid;
+  grid-template-columns: 118px minmax(0, 1fr);
+  align-items: start;
+  gap: 16px 22px;
+  padding: 16px 2px;
+  border-top: 1px solid color-mix(in oklch, var(--line) 55%, transparent);
+}
+#letters .letter-subgroup:first-child { border-top: none; }
+
+/* 双收音的「读前/读后/特殊」分类小标题 → 安静的整行标签 */
+#letters .letter-category-head {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 4px 0 2px;
+  border: none;
+  background: transparent;
+  align-items: baseline;
+  gap: 10px;
+}
+#letters .letter-category-head h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--muted);
+}
+#letters .letter-category-head > span {
+  display: block;
+  margin-left: auto;
+  max-width: none;
+  color: var(--faint);
+  font-size: 12.5px;
+  text-align: right;
+}
+
+/* 左侧分组标签 */
+#letters .letter-subgroup-head {
+  grid-column: 1;
+  display: block;
+  padding: 4px 0 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  backdrop-filter: none;
+}
+#letters .letter-subgroup-head h4 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+}
+#letters .letter-subgroup-head > span {
+  display: block;
+  margin-top: 3px;
+  max-width: none;
+  color: var(--faint);
+  font-size: 12px;
+  text-align: left;
+}
+
+/* ── 字母格子：玻璃卡 → 极简留白方块 ── */
+#letters .letter-group-grid {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+#letters .letter-card {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 60px;
+  min-height: 56px;
+  padding: 8px 4px;
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+  overflow: visible;
+  transition: background 0.13s ease, transform 0.13s ease;
+}
+#letters .letter-card:hover {
+  transform: none;
+  border-color: transparent;
+  background: color-mix(in oklch, var(--ink) 6%, transparent);
+}
+#letters .letter-card.selected,
+#letters .letter-card.vowel.selected,
+#letters .letter-card.batchim.selected {
+  border-color: transparent;
+  background: color-mix(in oklch, var(--brand) 13%, transparent);
+}
+#letters .letter-card strong {
+  color: var(--ink);
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1;
+  transition: color 0.13s ease;
+}
+#letters .letter-card.selected strong,
+#letters .letter-card.vowel.selected strong,
+#letters .letter-card.batchim.selected strong {
+  color: var(--brand);
+}
+
+/* ============================================================
+   详情面板 — 行内展开 · 轻盈
+   ============================================================ */
+#letterDetail.letter-detail {
+  flex: 0 0 min(calc(100% + 140px), calc(100vw - 64px));
+  width: min(calc(100% + 140px), calc(100vw - 64px));
+  margin: 8px 0 14px -140px;
+  padding: 22px 26px 24px;
+  border: 1px solid color-mix(in oklch, var(--brand) 22%, var(--line));
+  border-radius: 16px;
+  background: color-mix(in oklch, var(--brand) 4%, var(--surface));
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+}
+
+/* 顶部：字母 + 名 + 操作 */
+#letterDetail .letter-detail-head {
+  align-items: center;
+  margin-bottom: 0;
+}
+#letterDetail .letter-detail-head > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+#letterDetail .letter-detail h3 {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin: 0;
+  font-size: 46px;
+  font-weight: 600;
+  line-height: 0.95;
+  color: var(--ink);
+}
+#letterDetail .letter-detail h3 span {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--brand-strong);
+}
+
+/* 操作键：朗读（实心蓝）+ 收起 */
+#letterDetail .letter-detail-actions { gap: 8px; }
+#letterDetail .detail-play {
+  width: 38px;
+  min-width: 38px;
+  height: 38px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--brand);
+  color: #fff;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+#letterDetail .detail-play:hover {
+  filter: brightness(1.06);
+  transform: none;
+  background: var(--brand);
+  border-color: transparent;
+}
+#letterDetail .detail-play svg { width: 15px; height: 15px; margin-left: 1px; }
+#letterDetail .detail-close {
+  width: 34px;
+  min-width: 0;
+  height: 34px;
+  border: none;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--faint);
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+#letterDetail .detail-close:hover {
+  background: color-mix(in oklch, var(--ink) 7%, transparent);
+  color: var(--ink);
+  border-color: transparent;
+  transform: none;
+}
+
+/* 发音技巧 + 位置说明：两栏文字，无盒子 */
+#letterDetail .detail-guidance-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 44px;
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid color-mix(in oklch, var(--brand) 16%, var(--line));
+}
+#letterDetail .detail-guidance { flex: 1 1 300px; min-width: 0; }
+#letterDetail .detail-guidance h4 {
+  margin: 0 0 9px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+#letterDetail .detail-guidance > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+#letterDetail .detail-guidance > div span {
+  position: relative;
+  padding-left: 15px;
+  color: var(--muted);
+  font-size: 14.5px;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+#letterDetail .detail-guidance > div span::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.66em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: color-mix(in oklch, var(--brand) 55%, var(--faint));
+}
+
+/* 词卡区块（位置示范 / 示范词汇 / 对比词汇） */
+#letterDetail .detail-block { gap: 0; margin-top: 22px; }
+#letterDetail .detail-block-head {
+  align-items: baseline;
+  margin-bottom: 13px;
+}
+#letterDetail .detail-block-head h4 {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+#letterDetail .detail-block-head span { color: var(--faint); font-size: 12px; }
+#letterDetail .example-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  grid-template-columns: none;
+}
+#letterDetail .example-word {
+  width: auto;
+  min-width: 116px;
+  padding: 11px 16px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: var(--surface);
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  text-align: left;
+}
+#letterDetail .example-word:hover {
+  transform: translateY(-1px);
+  border-color: var(--brand);
+  background: color-mix(in oklch, var(--brand) 8%, var(--surface));
+}
+#letterDetail .example-word.primary,
+#letterDetail .example-word.current {
+  border-color: color-mix(in oklch, var(--brand) 50%, var(--line));
+  background: color-mix(in oklch, var(--brand) 12%, var(--surface));
+}
+#letterDetail .example-word .word-label {
+  margin-bottom: 5px;
+  color: var(--faint);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+#letterDetail .example-word.primary .word-label,
+#letterDetail .example-word.current .word-label { color: var(--brand-strong); }
+#letterDetail .example-word strong { font-size: 18px; line-height: 1.3; color: var(--ink); }
+#letterDetail .example-word .word-letter {
+  margin-right: 7px;
+  color: var(--brand-strong);
+  font-size: 16px;
+  font-weight: 700;
+}
+#letterDetail .example-word > span { margin-top: 4px; color: var(--muted); font-size: 12.5px; }
+
+/* ── 窄屏：标签回到字母上方 ── */
+@media (max-width: 720px) {
+  #letters .letter-subgroup {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  #letters .letter-subgroup-head { grid-column: 1; }
+  #letters .letter-group-grid { grid-column: 1; }
+  #letterDetail.letter-detail {
+    flex-basis: 100%;
+    width: 100%;
+    margin-left: 0;
+    padding: 18px 16px 20px;
+  }
+  #letterDetail .letter-detail h3 { font-size: 38px; }
+}

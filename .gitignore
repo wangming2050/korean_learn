@@ -1,6 +1,8 @@
 .env
 .env.r2.local
 .env.ai.local
+.env.tts.local
+static/generated-audio/
 __pycache__/
 *.pyc
 .DS_Store
