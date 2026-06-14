@@ -9,27 +9,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- title 是浏览器标签页上显示的标题。 -->
   <title>后台登录</title>
-  <!-- 后台使用独立 CSS，不和用户端样式混在一起。 -->
   <link rel="stylesheet" href="/static/css/admin.css">
 </head>
 <body class="login-body">
-  <!-- main 表示页面主要内容；登录页只有一个登录面板。 -->
   <main class="login-panel">
-    <!-- h1 是登录页主标题。 -->
+    <div class="login-brand">한步</div>
     <h1>后台登录</h1>
-    <!-- p 提示默认密码来源，方便学习和本地调试。 -->
-    <p>请输入后台管理密码。</p>
-    <!-- form 用于提交密码；JS 会拦截 submit 并用 fetch 调接口。 -->
+    <p>管理场景与例句内容。</p>
     <form id="loginForm">
-      <!-- password 类型会把输入内容显示成圆点。 -->
       <input name="password" type="password" placeholder="后台密码" required>
-      <!-- submit 按钮触发表单提交事件。 -->
       <button type="submit">登录</button>
     </form>
-    <!-- 登录失败或成功提示会写入这个元素。 -->
     <p id="loginMessage" class="message"></p>
   </main>
-  <!-- 后台 JS 同时负责登录页和后台管理页。 -->
   <script src="/static/js/admin.js"></script>
 </body>
 </html>

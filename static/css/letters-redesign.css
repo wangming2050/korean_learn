@@ -211,9 +211,9 @@
    详情面板 — 行内展开 · 轻盈
    ============================================================ */
 #letterDetail.letter-detail {
-  flex: 0 0 100%;
-  width: 100%;
-  margin: 8px 0 14px;
+  flex: 0 0 min(calc(100% + 140px), calc(100vw - 64px));
+  width: min(calc(100% + 140px), calc(100vw - 64px));
+  margin: 8px 0 14px -140px;
   padding: 22px 26px 24px;
   border: 1px solid color-mix(in oklch, var(--brand) 22%, var(--line));
   border-radius: 16px;
@@ -403,6 +403,11 @@
   }
   #letters .letter-subgroup-head { grid-column: 1; }
   #letters .letter-group-grid { grid-column: 1; }
-  #letterDetail.letter-detail { padding: 18px 16px 20px; }
+  #letterDetail.letter-detail {
+    flex-basis: 100%;
+    width: 100%;
+    margin-left: 0;
+    padding: 18px 16px 20px;
+  }
   #letterDetail .letter-detail h3 { font-size: 38px; }
 }

@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- 后台管理页模板：/admin/scene、/admin/sentence、/admin/material 共用这一份。 -->
+<!-- 后台管理页模板：/admin/scene、/admin/sentence 共用这一份。 -->
 <html lang="zh-CN">
 <head>
   <!-- 页面统一使用 utf-8，避免中文和韩文乱码。 -->
@@ -8,39 +8,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- JS 会根据当前路径修改标题区域文案。 -->
   <title>韩语学习后台</title>
-  <!-- 后台独立样式。 -->
   <link rel="stylesheet" href="/static/css/admin.css">
 </head>
 <body>
-  <!-- 后台顶部栏：左侧标题，右侧退出按钮。 -->
   <header class="admin-topbar">
-    <!-- 后台品牌标题。 -->
-    <h1>韩语学习后台</h1>
-    <!-- 退出按钮会调用 /api/admin/logout。 -->
-    <button id="logoutBtn" type="button">退出</button>
+    <a class="admin-brand" href="/admin/scene" aria-label="后台首页">
+      <span>한步</span>
+      <strong>内容后台</strong>
+    </a>
+    <nav class="admin-nav" aria-label="后台导航">
+      <a href="/admin/scene" data-admin-page="scene">场景管理</a>
+      <a href="/admin/sentence" data-admin-page="sentence">例句管理</a>
+      <a href="/">返回用户端</a>
+    </nav>
+    <button id="logoutBtn" class="admin-logout" type="button">退出</button>
   </header>
 
-  <!-- 后台主体采用左右布局：左侧菜单，右侧内容。 -->
   <div class="admin-shell">
-    <!-- aside 是后台导航；它只出现在 /admin 下，不出现在用户端。 -->
     <aside class="admin-sidebar">
-      <!-- 每个链接都是真实后台路径，刷新页面也能进入对应模块。 -->
+      <p>ADMIN</p>
       <a href="/admin/scene" data-admin-page="scene">场景管理</a>
-      <a href="/admin/sentence" data-admin-page="sentence">句子管理</a>
-      <a href="/admin/material" data-admin-page="material">教材管理</a>
-      <!-- 返回用户端首页的链接，方便管理后查看效果。 -->
-      <a href="/">返回用户端</a>
+      <a href="/admin/sentence" data-admin-page="sentence">例句管理</a>
     </aside>
 
-    <!-- main 是当前管理模块内容区域。 -->
     <main class="admin-content">
-      <!-- 页面标题和说明由 JS 根据当前路径填充。 -->
       <section class="page-heading">
+        <span id="adminEyebrow">CONTENT</span>
         <h2 id="adminTitle"></h2>
         <p id="adminSubtitle"></p>
       </section>
 
-      <!-- 工具栏：句子页会显示场景筛选，其它页面隐藏。 -->
       <section class="toolbar">
         <label id="sentenceFilterLabel">
           按场景筛选
@@ -48,14 +45,12 @@
         </label>
       </section>
 
-      <!-- 表单区域：新增和编辑共用同一个表单，由 JS 动态生成字段。 -->
       <section class="panel">
         <h3 id="formTitle">新增</h3>
         <form id="adminForm"></form>
         <p id="adminMessage" class="message"></p>
       </section>
 
-      <!-- 列表区域：每个管理页都会显示已有数据，满足“不能只有表单”。 -->
       <section class="panel">
         <h3>已有数据</h3>
         <div id="adminTable"></div>
@@ -63,7 +58,6 @@
     </main>
   </div>
 
-  <!-- 后台所有交互逻辑都放在 admin.js。 -->
   <script src="/static/js/admin.js"></script>
 </body>
 </html>

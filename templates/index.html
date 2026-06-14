@@ -27,7 +27,7 @@
       <button class="tab active" data-page="guide">首页</button>
       <button class="tab" data-page="letters">音标</button>
       <button class="tab" data-page="vocabulary">词汇</button>
-      <button class="tab" data-page="scenes">句子</button>
+      <button class="tab" data-page="scenes">例句</button>
       <button class="tab" data-page="materials">教材</button>
       <button class="theme-toggle" type="button" aria-label="切换明暗背景" title="切换明暗背景">
         <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
@@ -74,7 +74,7 @@
             <button class="roadmap-card" type="button" data-open-page="scenes">
               <span class="roadmap-node">03</span>
               <span class="roadmap-ko" lang="ko">문장</span>
-              <span class="roadmap-name">句子</span>
+              <span class="roadmap-name">例句</span>
               <span class="roadmap-go">进入 →</span>
             </button>
           </li>
@@ -117,9 +117,9 @@
     </section>
 
     <!-- ============================================================
-         句子（Scenes） — React 应用，接 /api/scenes + /api/sentences
+         例句（Scenes） — React 应用，接 /api/scenes + /api/sentences
          ============================================================ -->
-    <section id="scenes" class="page" data-screen-label="句子">
+    <section id="scenes" class="page" data-screen-label="例句">
       <div id="scene-root"></div>
     </section>
 
@@ -203,6 +203,13 @@
                 </div>
                 <p id="pdfAssistantStatus">会参考当前页和相邻页内容回答。</p>
               </div>
+              <div id="pdfAssistantHistoryBar" class="pdf-assistant-historybar" aria-label="AI 助教历史">
+                <div class="pdf-assistant-history-tabs" role="group" aria-label="历史范围">
+                  <button type="button" data-assistant-history-view="page">当前页</button>
+                  <button type="button" data-assistant-history-view="all">全部历史</button>
+                </div>
+                <button id="pdfAssistantHistoryClear" class="pdf-assistant-history-clear" type="button">清空</button>
+              </div>
               <div id="pdfAssistantMessages" class="pdf-assistant-messages" aria-live="polite"></div>
               <div class="pdf-assistant-quickrow" aria-label="快捷提问">
                 <button type="button" class="pdf-assistant-quick" data-prompt="讲解本页的语法点">讲解本页语法点</button>
@@ -215,7 +222,6 @@
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2 11 13"></path><path d="M22 2 15 22l-4-9-9-4 20-7z"></path></svg>
                 </button>
               </form>
-              <p class="pdf-assistant-privacy">提问时会把当前页附近的文字发送给 AI；文字太少时会附带当前页截图。</p>
             </section>
           </aside>
         </div>
@@ -236,7 +242,7 @@
 
   <!-- 词汇页 React 应用（接 /api/vocabulary） -->
   <script type="text/babel" src="/static/js/vocab-app.jsx"></script>
-  <!-- 句子页 React 应用（接 /api/scenes + /api/sentences） -->
+  <!-- 例句页 React 应用（接 /api/scenes + /api/sentences） -->
   <script type="text/babel" src="/static/js/sentence-app.jsx"></script>
 </body>
 </html>

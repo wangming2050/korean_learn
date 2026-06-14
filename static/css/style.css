@@ -1621,13 +1621,6 @@ input:focus, select:focus, textarea:focus {
 
 .pdf-assistant-head p { display: none; }
 
-.pdf-assistant-privacy {
-  margin: 0;
-  color: var(--faint);
-  font-size: 10.5px;
-  line-height: 1.5;
-}
-
 /* 展开态：闪光徽标 + 页码芯片 */
 .pdf-assistant-spark {
   display: grid;
@@ -1665,11 +1658,11 @@ input:focus, select:focus, textarea:focus {
 /* 收起态隐藏头部装饰件与正文 */
 .reader-assistant-panel:not(.is-expanded) .pdf-assistant-spark,
 .reader-assistant-panel:not(.is-expanded) .pdf-assistant-page-chip,
+.reader-assistant-panel:not(.is-expanded) .pdf-assistant-historybar,
 .reader-assistant-panel:not(.is-expanded) .pdf-assistant-quickrow,
 .reader-assistant-panel:not(.is-expanded) #pdfAssistantStatus,
 .reader-assistant-panel:not(.is-expanded) .pdf-assistant-messages,
-.reader-assistant-panel:not(.is-expanded) .pdf-assistant-form,
-.reader-assistant-panel:not(.is-expanded) .pdf-assistant-privacy {
+.reader-assistant-panel:not(.is-expanded) .pdf-assistant-form {
   display: none;
 }
 
@@ -1747,6 +1740,58 @@ input:focus, select:focus, textarea:focus {
   line-height: 1.5;
 }
 
+.pdf-assistant-historybar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex: 0 0 auto;
+}
+
+.pdf-assistant-history-tabs {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px;
+  border: 1px solid #e3e9f3;
+  border-radius: 12px;
+  background: #f8fafd;
+}
+
+.pdf-assistant-history-tabs button,
+.pdf-assistant-history-clear,
+.pdf-assistant-history-page,
+.pdf-assistant-history-delete {
+  min-height: 0;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.pdf-assistant-history-tabs button {
+  padding: 6px 10px;
+}
+
+.pdf-assistant-history-tabs button.is-active {
+  background: #ffffff;
+  color: var(--brand);
+  box-shadow: 0 1px 4px rgba(15, 35, 57, 0.08);
+}
+
+.pdf-assistant-history-clear {
+  padding: 7px 9px;
+  border: 1px solid #e3e9f3;
+  background: #ffffff;
+}
+
+.pdf-assistant-history-clear:disabled {
+  cursor: default;
+  opacity: 0.45;
+}
+
 .pdf-assistant-messages {
   display: grid;
   gap: 10px;
@@ -1766,6 +1811,66 @@ input:focus, select:focus, textarea:focus {
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
   touch-action: pan-y;
+}
+
+.pdf-assistant-history-group {
+  margin: 10px 0 7px;
+  color: var(--brand-strong);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.pdf-assistant-history-item {
+  display: grid;
+  gap: 7px;
+  margin: 0 0 12px;
+}
+
+.pdf-assistant-history-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--faint);
+  font-size: 11.5px;
+  font-weight: 700;
+}
+
+.pdf-assistant-history-page {
+  padding: 3px 7px;
+  background: oklch(from var(--brand) l c h / 0.09);
+  color: var(--brand);
+}
+
+.pdf-assistant-history-delete {
+  margin-left: auto;
+  padding: 3px 7px;
+  color: #a6423a;
+}
+
+.pdf-assistant-history-question,
+.pdf-assistant-history-answer {
+  display: grid;
+  gap: 5px;
+  padding: 10px 13px;
+  border: 1px solid #e3e9f3;
+  border-radius: 14px;
+  background: #ffffff;
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+.pdf-assistant-history-question {
+  background: oklch(from var(--brand) l c h / 0.07);
+}
+
+.pdf-assistant-history-question > strong,
+.pdf-assistant-history-answer > strong {
+  color: var(--brand-strong);
+  font-size: 12px;
+}
+
+.pdf-assistant-history-question p {
+  margin: 0;
 }
 
 .pdf-assistant-message {

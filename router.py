@@ -5,9 +5,6 @@ router.py
 不用 Flask / Django / FastAPI，所有 URL 都靠 if 判断和函数映射完成。
 """
 
-# 导入教材模块的请求处理函数。
-from handler.material import handle_material_request
-
 # 导入 PDF AI 助教模块的请求处理函数。
 from handler.pdf_assistant import handle_pdf_assistant_request
 
@@ -16,6 +13,9 @@ from handler.scene import handle_scene_request
 
 # 导入句子、音标、词汇模块的请求处理函数。
 from handler.sentence import handle_sentence_request
+
+# 导入服务端 TTS 模块。
+from handler.tts import handle_tts_request
 
 
 def route(handler, method, path, query):
@@ -41,13 +41,13 @@ def route(handler, method, path, query):
     ):
         return handle_sentence_request(handler, method, path, query)
 
-    # 如果路径以 /api/materials 开头，就交给教材 handler。
-    if path.startswith("/api/materials"):
-        return handle_material_request(handler, method, path, query)
-
     # 如果路径以 /api/pdf-assistant 开头，就交给 PDF AI 助教 handler。
     if path.startswith("/api/pdf-assistant"):
         return handle_pdf_assistant_request(handler, method, path, query)
+
+    # 韩语 TTS 生成接口，前端只拿生成后的音频 URL，不接触 API key。
+    if path.startswith("/api/tts"):
+        return handle_tts_request(handler, method, path, query)
 
     # 没有匹配到任何 API 路由时，返回 None，让 server.py 统一返回 404。
     return None

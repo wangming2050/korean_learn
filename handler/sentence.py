@@ -8,13 +8,8 @@
 - GET  /api/letters               返回 40 个韩文字母演示数据
 """
 
-import os
-
 from db import execute, fetch_all
 from handler.seed_content import DEFAULT_SENTENCES, search_vocabulary
-
-
-USE_DATABASE_CONTENT = os.getenv("KOREAN_LEARN_USE_DB_CONTENT") == "1"
 
 
 KOREAN_LETTERS = [
@@ -70,51 +65,49 @@ def handle_sentence_request(handler, method, path, query):
     if method == "GET" and path == "/api/sentences":
         scene_id = query.get("scene_id", [""])[0]
 
-        if not USE_DATABASE_CONTENT:
+        try:
+            if scene_id:
+                rows = fetch_all(
+                    """
+                    SELECT
+                      s.id,
+                      s.korean,
+                      s.chinese,
+                      s.audio_url,
+                      s.audio_start,
+                      s.audio_end,
+                      s.scene_id,
+                      s.situation,
+                      sc.name AS scene_name
+                    FROM sentence s
+                    LEFT JOIN scene sc ON sc.id = s.scene_id
+                    WHERE s.scene_id = %s
+                    ORDER BY s.id
+                    """,
+                    (scene_id,),
+                )
+            else:
+                rows = fetch_all(
+                    """
+                    SELECT
+                      s.id,
+                      s.korean,
+                      s.chinese,
+                      s.audio_url,
+                      s.audio_start,
+                      s.audio_end,
+                      s.scene_id,
+                      s.situation,
+                      sc.name AS scene_name
+                    FROM sentence s
+                    LEFT JOIN scene sc ON sc.id = s.scene_id
+                    ORDER BY s.id
+                    """
+                )
+        except Exception:
             rows = DEFAULT_SENTENCES
             if scene_id:
                 rows = [row for row in rows if str(row["scene_id"]) == str(scene_id)]
-            handler.send_json({"data": rows})
-            return True
-
-        if scene_id:
-            rows = fetch_all(
-                """
-                SELECT
-                  s.id,
-                  s.korean,
-                  s.chinese,
-                  s.audio_url,
-                  s.audio_start,
-                  s.audio_end,
-                  s.scene_id,
-                  s.situation,
-                  sc.name AS scene_name
-                FROM sentence s
-                LEFT JOIN scene sc ON sc.id = s.scene_id
-                WHERE s.scene_id = %s
-                ORDER BY s.id
-                """,
-                (scene_id,),
-            )
-        else:
-            rows = fetch_all(
-                """
-                SELECT
-                  s.id,
-                  s.korean,
-                  s.chinese,
-                  s.audio_url,
-                  s.audio_start,
-                  s.audio_end,
-                  s.scene_id,
-                  s.situation,
-                  sc.name AS scene_name
-                FROM sentence s
-                LEFT JOIN scene sc ON sc.id = s.scene_id
-                ORDER BY s.id
-                """
-            )
 
         handler.send_json({"data": rows})
         return True
@@ -148,15 +141,21 @@ def handle_sentence_request(handler, method, path, query):
         body = handler.read_json_body()
         korean = (body.get("korean") or "").strip()
         chinese = (body.get("chinese") or "").strip()
-        audio_url = (body.get("audio_url") or "").strip()
         situation = (body.get("situation") or "常用表达").strip()
         scene_id = body.get("scene_id")
-        audio_start = body.get("audio_start") or 0
-        audio_end = body.get("audio_end") or 0
 
         if not sentence_id or not korean or not chinese or not scene_id:
             handler.send_json({"error": "句子 id、韩文、中文翻译、场景 id 都不能为空"}, status=400)
             return True
+
+        existing_audio = fetch_all(
+            "SELECT audio_url, audio_start, audio_end FROM sentence WHERE id = %s",
+            (sentence_id,),
+        )
+        existing_audio = existing_audio[0] if existing_audio else {}
+        audio_url = (body.get("audio_url") or existing_audio.get("audio_url") or "").strip()
+        audio_start = body.get("audio_start") if "audio_start" in body else existing_audio.get("audio_start", 0)
+        audio_end = body.get("audio_end") if "audio_end" in body else existing_audio.get("audio_end", 0)
 
         execute(
             """
@@ -188,50 +187,7 @@ def handle_sentence_request(handler, method, path, query):
 
     if method == "GET" and path == "/api/vocabulary":
         keyword = query.get("q", [""])[0].strip()
-
-        if not USE_DATABASE_CONTENT:
-            handler.send_json({"data": search_vocabulary(keyword)})
-            return True
-
-        if keyword:
-            rows = fetch_all(
-                """
-                SELECT
-                  v.id,
-                  v.korean,
-                  v.chinese,
-                  v.pos,
-                  s.id AS sentence_id,
-                  s.korean AS sentence_korean,
-                  s.chinese AS sentence_chinese,
-                  s.audio_url
-                FROM vocabulary v
-                LEFT JOIN sentence s ON s.korean LIKE CONCAT('%%', v.korean, '%%')
-                WHERE v.korean LIKE CONCAT('%%', %s, '%%')
-                   OR v.chinese LIKE CONCAT('%%', %s, '%%')
-                ORDER BY v.id, s.id
-                """,
-                (keyword, keyword),
-            )
-        else:
-            rows = fetch_all(
-                """
-                SELECT
-                  v.id,
-                  v.korean,
-                  v.chinese,
-                  v.pos,
-                  s.id AS sentence_id,
-                  s.korean AS sentence_korean,
-                  s.chinese AS sentence_chinese,
-                  s.audio_url
-                FROM vocabulary v
-                LEFT JOIN sentence s ON s.korean LIKE CONCAT('%%', v.korean, '%%')
-                ORDER BY v.id, s.id
-                """
-            )
-
-        handler.send_json({"data": rows})
+        handler.send_json({"data": search_vocabulary(keyword)})
         return True
 
     return None

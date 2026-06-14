@@ -474,6 +474,8 @@ const localTextbookObjectUrls = new Map();
 let pdfAssistantMessages = [];
 let pdfAssistantRequestId = 0;
 let pdfAssistantExpanded = false;
+let pdfAssistantHistory = [];
+let pdfAssistantHistoryView = localStorage.getItem("pdfAssistantHistoryView") === "all" ? "all" : "page";
 
 // 保存当前正在做“片段循环”的结束时间，timeupdate 事件里会用到。
 let currentLoopEnd = 0;
@@ -749,6 +751,7 @@ function playMaterialAudio(audioUrl) {
 function stopPlaybackQueue() {
   playbackRunId += 1;
   player.pause();
+  stopKoreanTextPlayback();
   if ("speechSynthesis" in window) {
     window.speechSynthesis.cancel();
   }
@@ -802,6 +805,171 @@ function playUrlOnce(audioUrl, runId) {
   });
 }
 
+const ttsRequestCache = new Map();
+let generatedTextPlaybackRunId = 0;
+
+
+function stopKoreanTextPlayback() {
+  generatedTextPlaybackRunId += 1;
+  if ("speechSynthesis" in window) {
+    window.speechSynthesis.cancel();
+  }
+}
+
+
+async function synthesizeKoreanSpeech(text, { slow = false, voice = "" } = {}) {
+  const normalizedText = String(text || "").trim();
+  if (!normalizedText) {
+    return "";
+  }
+
+  const cacheKey = JSON.stringify({ text: normalizedText, slow, voice });
+  if (!ttsRequestCache.has(cacheKey)) {
+    ttsRequestCache.set(cacheKey, (async () => {
+      const response = await fetch("/api/tts/synthesize", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          text: normalizedText,
+          slow,
+          voice,
+          speakingRate: slow ? 0.75 : 1,
+        }),
+      });
+      const payload = await response.json();
+      if (!response.ok) {
+        throw new Error(payload.error || "TTS 生成失败");
+      }
+      return payload.audioUrl || "";
+    })());
+  }
+
+  return ttsRequestCache.get(cacheKey);
+}
+
+
+function playAudioWithCallbacks(audioUrl, { slow = false, loop = false, onEnd } = {}) {
+  return new Promise((resolve) => {
+    if (!audioUrl) {
+      resolve(false);
+      return;
+    }
+
+    player.pause();
+    player.loop = !!loop;
+    loopEnabled = !!loop;
+    player.playbackRate = slow ? 0.75 : 1;
+    player.src = audioUrl;
+    player.currentTime = 0;
+
+    const cleanup = () => {
+      player.removeEventListener("ended", onEnded);
+      player.removeEventListener("error", onError);
+    };
+
+    const onEnded = () => {
+      cleanup();
+      onEnd?.();
+      resolve(true);
+    };
+
+    const onError = () => {
+      cleanup();
+      resolve(false);
+    };
+
+    player.addEventListener("ended", onEnded, { once: true });
+    player.addEventListener("error", onError, { once: true });
+    player.play().then(() => {
+      if (loop) {
+        resolve(true);
+      }
+    }).catch(() => {
+      cleanup();
+      resolve(false);
+    });
+  });
+}
+
+
+function speakKoreanInBrowser(text, { slow = false, loop = false, onEnd } = {}) {
+  return new Promise((resolve) => {
+    if (!text || !("speechSynthesis" in window)) {
+      resolve(false);
+      return;
+    }
+
+    const runId = generatedTextPlaybackRunId;
+    const speakOnce = () => {
+      if (runId !== generatedTextPlaybackRunId) {
+        resolve(false);
+        return;
+      }
+
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = "ko-KR";
+      utterance.rate = slow ? 0.68 : 0.9;
+      utterance.pitch = 1;
+
+      const voices = window.speechSynthesis.getVoices();
+      const koreanVoice = voices.find((voice) => voice.lang && voice.lang.toLowerCase().startsWith("ko"));
+      if (koreanVoice) {
+        utterance.voice = koreanVoice;
+      }
+
+      utterance.onend = () => {
+        if (runId !== generatedTextPlaybackRunId) {
+          resolve(false);
+          return;
+        }
+        if (loop) {
+          window.setTimeout(speakOnce, 450);
+        } else {
+          onEnd?.();
+          resolve(true);
+        }
+      };
+      utterance.onerror = () => {
+        onEnd?.();
+        resolve(false);
+      };
+      window.speechSynthesis.cancel();
+      window.speechSynthesis.speak(utterance);
+    };
+
+    speakOnce();
+  });
+}
+
+
+async function playKoreanText(text, { slow = false, loop = false, onEnd, voice = "" } = {}) {
+  const normalizedText = String(text || "").trim();
+  if (!normalizedText) {
+    onEnd?.();
+    return false;
+  }
+
+  stopKoreanTextPlayback();
+  const runId = generatedTextPlaybackRunId;
+  try {
+    const audioUrl = await synthesizeKoreanSpeech(normalizedText, { slow, voice });
+    if (runId !== generatedTextPlaybackRunId) {
+      return false;
+    }
+    const played = await playAudioWithCallbacks(audioUrl, { slow, loop, onEnd });
+    if (played) {
+      return true;
+    }
+  } catch (error) {
+    console.info("服务端 TTS 不可用，退回浏览器朗读。", error.message);
+  }
+
+  if (runId !== generatedTextPlaybackRunId) {
+    return false;
+  }
+  return speakKoreanInBrowser(normalizedText, { slow, loop, onEnd });
+}
+
 
 function speakKorean(text, runId) {
   return new Promise((resolve) => {
@@ -832,7 +1000,14 @@ function speakKorean(text, runId) {
 async function playPronunciationItem(item, runId) {
   let played = false;
 
-  if (item.audioUrl) {
+  if (item.preferTts && item.text) {
+    played = await playKoreanText(item.text, { slow: item.slow });
+    if (playbackRunId !== runId) {
+      return false;
+    }
+  }
+
+  if (!played && item.audioUrl) {
     played = await playUrlOnce(item.audioUrl, runId);
   }
 
@@ -842,6 +1017,11 @@ async function playPronunciationItem(item, runId) {
 
   return played;
 }
+
+
+window.synthesizeKoreanSpeech = synthesizeKoreanSpeech;
+window.playKoreanText = playKoreanText;
+window.stopKoreanTextPlayback = stopKoreanTextPlayback;
 
 
 function getRepeatCount() {
@@ -878,6 +1058,7 @@ function buildLetterPlaybackQueue(letterData) {
         label: "示例单词",
         text: example.word,
         audioUrl: example.audioUrl,
+        preferTts: true,
       });
     });
   }
@@ -1193,6 +1374,7 @@ async function playWordOnly(item) {
     await playPronunciationItem({
       text: item.word,
       audioUrl: item.audioUrl,
+      preferTts: true,
     }, runId);
 
     if (index < repeatCount - 1) {
@@ -1571,6 +1753,7 @@ function normalizeLocalTextbookDocument(document) {
     outlineError: document.outlineError || "",
     outlineDebugSummary: document.outlineDebugSummary || "",
     units: document.units || [],
+    assistantHistory: Array.isArray(document.assistantHistory) ? document.assistantHistory : [],
     status: document.status || "processing",
     source: "local-upload",
   };
@@ -1586,6 +1769,142 @@ async function saveLocalTextbookDocument(document) {
 async function getLocalTextbookDocument(documentId) {
   const document = await runLocalTextbookStore(LOCAL_TEXTBOOK_DOC_STORE, "readonly", (store) => requestToPromise(store.get(documentId)));
   return document ? normalizeLocalTextbookDocument(document) : null;
+}
+
+
+function getPdfAssistantHistoryStorageKey(textbook = activeTextbook) {
+  if (!textbook) {
+    return "";
+  }
+  if (textbook.source === "local-upload") {
+    return textbook.id || "";
+  }
+  return textbook.manifestUrl || textbook.id || textbook.title || "";
+}
+
+
+function normalizePdfAssistantHistoryItem(item, textbookId = "") {
+  if (!item || typeof item !== "object") {
+    return null;
+  }
+  const page = Math.max(1, Number(item.page) || 1);
+  const createdAt = Number(item.createdAt) || Date.now();
+  const question = String(item.question || "").trim();
+  const answer = String(item.answer || "").trim();
+  if (!question && !answer) {
+    return null;
+  }
+  return {
+    id: String(item.id || `assistant-${createdAt}-${Math.random().toString(36).slice(2, 8)}`),
+    textbookId: String(item.textbookId || textbookId || ""),
+    page,
+    question,
+    answer,
+    createdAt,
+    updatedAt: Number(item.updatedAt) || createdAt,
+    truncated: Boolean(item.truncated),
+  };
+}
+
+
+function normalizePdfAssistantHistory(history, textbookId = "") {
+  return (Array.isArray(history) ? history : [])
+    .map((item) => normalizePdfAssistantHistoryItem(item, textbookId))
+    .filter(Boolean)
+    .sort((a, b) => a.createdAt - b.createdAt);
+}
+
+
+function loadStoredPdfAssistantHistory(textbook = activeTextbook) {
+  const storageKey = getPdfAssistantHistoryStorageKey(textbook);
+  if (!storageKey || textbook?.source === "local-upload") {
+    return [];
+  }
+  try {
+    return normalizePdfAssistantHistory(
+      JSON.parse(localStorage.getItem(`pdfAssistantHistory:${storageKey}`) || "[]"),
+      storageKey,
+    );
+  } catch (error) {
+    return [];
+  }
+}
+
+
+async function persistPdfAssistantHistory() {
+  const storageKey = getPdfAssistantHistoryStorageKey();
+  if (!activeTextbook || !storageKey) {
+    return;
+  }
+
+  const nextHistory = normalizePdfAssistantHistory(pdfAssistantHistory, storageKey);
+  pdfAssistantHistory = nextHistory;
+  if (activeTextbook.source === "local-upload") {
+    const documentRecord = await getLocalTextbookDocument(activeTextbook.id);
+    if (!documentRecord) {
+      return;
+    }
+    await saveLocalTextbookDocument({
+      ...documentRecord,
+      assistantHistory: nextHistory,
+      updatedAt: Date.now(),
+    });
+  } else {
+    localStorage.setItem(`pdfAssistantHistory:${storageKey}`, JSON.stringify(nextHistory));
+  }
+}
+
+
+async function addPdfAssistantHistoryItem(question, answer, truncated = false, page = activeTextbookPage) {
+  const textbookId = getPdfAssistantHistoryStorageKey();
+  if (!activeTextbook || !textbookId) {
+    return;
+  }
+  const now = Date.now();
+  pdfAssistantHistory.push({
+    id: `assistant-${now}-${Math.random().toString(36).slice(2, 8)}`,
+    textbookId,
+    page: Math.max(1, Number(page) || activeTextbookPage || 1),
+    question,
+    answer,
+    createdAt: now,
+    updatedAt: now,
+    truncated,
+  });
+  try {
+    await persistPdfAssistantHistory();
+  } catch (error) {
+    console.warn("AI 助教历史保存失败。", error);
+  }
+}
+
+
+async function deletePdfAssistantHistoryItem(historyId) {
+  pdfAssistantHistory = pdfAssistantHistory.filter((item) => item.id !== historyId);
+  try {
+    await persistPdfAssistantHistory();
+  } catch (error) {
+    console.warn("AI 助教历史删除保存失败。", error);
+  }
+  renderPdfAssistantPanel();
+}
+
+
+async function clearPdfAssistantHistory() {
+  if (!activeTextbook) {
+    return;
+  }
+  const confirmed = window.confirm("确定清空本教材的全部 AI 助教历史吗？");
+  if (!confirmed) {
+    return;
+  }
+  pdfAssistantHistory = [];
+  try {
+    await persistPdfAssistantHistory();
+  } catch (error) {
+    console.warn("AI 助教历史清空保存失败。", error);
+  }
+  renderPdfAssistantPanel();
 }
 
 
@@ -3125,6 +3444,7 @@ function resetTextbookReaderToLibrary() {
   activeTextbookCacheEntry = null;
   activeTextbookLoadStatus = "idle";
   pdfAssistantMessages = [];
+  pdfAssistantHistory = [];
   pdfAssistantExpanded = false;
   closeChapterMenu();
   document.querySelector("#materials")?.classList.remove("reader-open");
@@ -3334,6 +3654,7 @@ async function openLocalTextbook(documentId) {
   activeTextbookPage = 1;
   activeTextbookLoadStatus = documentRecord.status === "failed" ? "failed" : "ready";
   pdfAssistantMessages = [];
+  pdfAssistantHistory = normalizePdfAssistantHistory(documentRecord.assistantHistory || [], documentRecord.id);
   pdfAssistantExpanded = false;
 
   document.querySelector("#textbookLibrary").hidden = true;
@@ -3376,6 +3697,7 @@ function openTextbook(manifestUrl) {
   activeTextbookPage = 1;
   activeTextbookLoadStatus = "loading";
   pdfAssistantMessages = [];
+  pdfAssistantHistory = loadStoredPdfAssistantHistory(activeTextbook);
   pdfAssistantExpanded = false;
 
   document.querySelector("#textbookLibrary").hidden = true;
@@ -3394,6 +3716,7 @@ function openTextbook(manifestUrl) {
 
       activeTextbookCacheEntry = entry;
       activeTextbook = entry.textbook;
+      pdfAssistantHistory = loadStoredPdfAssistantHistory(activeTextbook);
       activeTextbookLoadStatus = "ready";
       activeTextbookCacheEntry.lastOpenedAt = ++textbookCacheVersion;
       document.querySelector("#materialPageInput").max = getTextbookPageTotal();
@@ -3859,6 +4182,63 @@ function getCurrentPageAudioItems() {
 }
 
 
+function formatAssistantHistoryTime(timestamp) {
+  const date = new Date(Number(timestamp) || Date.now());
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  const hours = String(date.getHours()).padStart(2, "0");
+  const minutes = String(date.getMinutes()).padStart(2, "0");
+  return `${month}-${day} ${hours}:${minutes}`;
+}
+
+
+function getVisiblePdfAssistantHistory() {
+  const history = normalizePdfAssistantHistory(pdfAssistantHistory, getPdfAssistantHistoryStorageKey());
+  if (pdfAssistantHistoryView === "all") {
+    return history.sort((a, b) => (a.page - b.page) || (a.createdAt - b.createdAt));
+  }
+  return history
+    .filter((item) => item.page === activeTextbookPage)
+    .sort((a, b) => a.createdAt - b.createdAt);
+}
+
+
+function renderPdfAssistantHistory() {
+  const visibleHistory = getVisiblePdfAssistantHistory();
+  if (!visibleHistory.length) {
+    return "";
+  }
+
+  let lastPage = null;
+  const chunks = [];
+  visibleHistory.forEach((item) => {
+    if (pdfAssistantHistoryView === "all" && item.page !== lastPage) {
+      lastPage = item.page;
+      chunks.push(`<div class="pdf-assistant-history-group">第 ${escapeHtml(item.page)} 页</div>`);
+    }
+    chunks.push(`
+      <article class="pdf-assistant-history-item">
+        <div class="pdf-assistant-history-meta">
+          <button type="button" class="pdf-assistant-history-page" data-assistant-history-page="${escapeHtml(item.page)}">第 ${escapeHtml(item.page)} 页</button>
+          <span>${escapeHtml(formatAssistantHistoryTime(item.createdAt))}</span>
+          <button type="button" class="pdf-assistant-history-delete" data-assistant-history-delete="${escapeHtml(item.id)}" aria-label="删除这条历史">删除</button>
+        </div>
+        <div class="pdf-assistant-history-question">
+          <strong>你</strong>
+          <p>${escapeHtml(item.question)}</p>
+        </div>
+        <div class="pdf-assistant-history-answer">
+          <strong>AI 助教</strong>
+          <div class="pdf-assistant-content">${renderAssistantMessageContent(item.answer)}</div>
+          ${item.truncated ? `<span class="pdf-assistant-truncated">回答可能被截断，可继续追问“请继续”。</span>` : ""}
+        </div>
+      </article>
+    `);
+  });
+  return chunks.join("");
+}
+
+
 function renderPdfAssistantPanel() {
   const reader = document.querySelector("#textbookReader");
   const panel = document.querySelector(".reader-assistant-panel");
@@ -3904,7 +4284,18 @@ function renderPdfAssistantPanel() {
     }
   }
 
-  messages.innerHTML = pdfAssistantMessages.length === 0
+  document.querySelectorAll("[data-assistant-history-view]").forEach((button) => {
+    const isActive = button.dataset.assistantHistoryView === pdfAssistantHistoryView;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+  });
+  const clearHistoryButton = document.querySelector("#pdfAssistantHistoryClear");
+  if (clearHistoryButton) {
+    clearHistoryButton.disabled = !pdfAssistantHistory.length;
+  }
+
+  const historyHtml = renderPdfAssistantHistory();
+  const transientMessagesHtml = pdfAssistantMessages.length === 0
     ? ""
     : pdfAssistantMessages.map((message) => `
       <article class="pdf-assistant-message pdf-assistant-message-${escapeHtml(message.role)}">
@@ -3913,6 +4304,7 @@ function renderPdfAssistantPanel() {
         ${message.truncated ? `<span class="pdf-assistant-truncated">回答可能被截断，可继续追问“请继续”。</span>` : ""}
       </article>
     `).join("");
+  messages.innerHTML = `${historyHtml}${transientMessagesHtml}`;
   messages.scrollTop = messages.scrollHeight;
 }
 
@@ -4066,6 +4458,7 @@ async function sendPdfAssistantQuestion() {
   }
 
   const requestId = ++pdfAssistantRequestId;
+  const requestPage = activeTextbookPage;
   input.value = "";
   pdfAssistantMessages.push({ role: "user", content: question });
   pdfAssistantMessages.push({ role: "assistant", content: "正在阅读当前页……" });
@@ -4095,17 +4488,25 @@ async function sendPdfAssistantQuestion() {
     }
     if (requestId === pdfAssistantRequestId) {
       const answer = result.answer || "我没有生成有效回答。";
+      const truncated = isLikelyTruncatedAnswer(answer);
       pdfAssistantMessages[pdfAssistantMessages.length - 1] = {
         role: "assistant",
         content: answer,
-        truncated: isLikelyTruncatedAnswer(answer),
+        truncated,
       };
+      await addPdfAssistantHistoryItem(question, answer, truncated, requestPage);
+      pdfAssistantMessages = [];
     }
   } catch (error) {
-    pdfAssistantMessages[pdfAssistantMessages.length - 1] = {
-      role: "assistant",
-      content: error.message || "AI 助教暂时不可用。",
-    };
+    const errorMessage = error.message || "AI 助教暂时不可用。";
+    if (requestId === pdfAssistantRequestId) {
+      pdfAssistantMessages[pdfAssistantMessages.length - 1] = {
+        role: "assistant",
+        content: errorMessage,
+      };
+      await addPdfAssistantHistoryItem(question, errorMessage, false, requestPage);
+      pdfAssistantMessages = [];
+    }
   }
 
   renderPdfAssistantPanel();
@@ -4170,6 +4571,31 @@ function initEvents() {
   document.querySelector("#pdfAssistantExpandButton").addEventListener("click", () => {
     pdfAssistantExpanded = !pdfAssistantExpanded;
     renderPdfAssistantPanel();
+  });
+  document.querySelector("#pdfAssistantHistoryBar")?.addEventListener("click", (event) => {
+    const viewButton = event.target.closest("[data-assistant-history-view]");
+    if (viewButton) {
+      pdfAssistantHistoryView = viewButton.dataset.assistantHistoryView === "all" ? "all" : "page";
+      localStorage.setItem("pdfAssistantHistoryView", pdfAssistantHistoryView);
+      renderPdfAssistantPanel();
+      return;
+    }
+
+    if (event.target.closest("#pdfAssistantHistoryClear")) {
+      clearPdfAssistantHistory();
+    }
+  });
+  document.querySelector("#pdfAssistantMessages").addEventListener("click", (event) => {
+    const pageButton = event.target.closest("[data-assistant-history-page]");
+    if (pageButton) {
+      renderTextbookPage(pageButton.dataset.assistantHistoryPage);
+      return;
+    }
+
+    const deleteButton = event.target.closest("[data-assistant-history-delete]");
+    if (deleteButton) {
+      deletePdfAssistantHistoryItem(deleteButton.dataset.assistantHistoryDelete);
+    }
   });
   document.querySelectorAll(".pdf-assistant-quick").forEach((quickButton) => {
     quickButton.addEventListener("click", () => {

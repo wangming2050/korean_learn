@@ -204,6 +204,15 @@ OPENAI_MODEL=gpt-4.1-mini
 
 如果不设置对应 provider 的 API key，PDF 阅读器仍可使用，AI 助教会返回未配置提示，视觉目录识别会降级为本地文本识别。用户提问时只发送当前页和相邻页文字；当前页文字太少或文本层乱码时才附带当前页截图。目录页文本乱码时，候选目录页截图会发送给 Gemini 用于抽取目录。Gemini 免费层适合测试/MVP；用户提问内容和候选目录页截图会发送给模型服务，请避免输入敏感资料。
 
+词汇和例句播放可以接入 Google Cloud Text-to-Speech。Railway Variables 里设置：
+
+```text
+GOOGLE_TTS_API_KEY=你的 Google TTS API Key
+GOOGLE_TTS_VOICE=ko-KR-Neural2-A
+```
+
+本地开发也可以在项目根目录创建 `.env.tts.local` 保存上述变量。未配置时播放功能会退回浏览器自带韩语朗读。生成音频默认缓存在 `static/generated-audio/`；如果部署平台文件系统不可持久化，重启后会重新生成并再次消耗 TTS 额度。生产环境后续建议把生成音频同步到 R2/CDN。
+
 部署时不需要为用户自上传 PDF 配置 `ASSET_BASE_URL`。如果页面能打开但 PDF 无法转换，优先检查：
 
 - 浏览器是否支持 IndexedDB、Canvas 和 WebP。

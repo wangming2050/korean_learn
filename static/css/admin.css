@@ -1,304 +1,442 @@
-/*
-  admin.css
-
-  后台管理系统独立样式文件。
-  用户端页面不引用它，后台页面也不引用用户端 style.css。
-*/
-
-* {
-  /* border-box 让 width 包含 padding 和 border，更方便计算布局。 */
-  box-sizing: border-box;
+:root {
+  --admin-bg: #f4f7fb;
+  --admin-surface: rgba(255, 255, 255, 0.74);
+  --admin-surface-strong: rgba(255, 255, 255, 0.9);
+  --admin-border: rgba(148, 163, 184, 0.28);
+  --admin-ink: #07111f;
+  --admin-muted: #64748b;
+  --admin-blue: #125ee8;
+  --admin-green: #0f6b57;
+  --admin-red: #b42318;
+  --admin-shadow: 0 24px 70px rgba(15, 23, 42, 0.08);
+  --admin-radius: 24px;
 }
 
+* { box-sizing: border-box; }
+
+html { min-height: 100%; }
+
 body {
-  /* 去掉浏览器默认外边距，让顶部栏贴齐窗口。 */
+  min-height: 100vh;
   margin: 0;
-  /* 后台使用清晰的系统字体，中文和韩文都能显示。 */
-  font-family: Arial, "Microsoft YaHei", sans-serif;
-  /* 设置后台主文字颜色。 */
-  color: #18211f;
-  /* 使用浅灰绿色背景，让白色面板更明显。 */
-  background: #f3f5f1;
+  color: var(--admin-ink);
+  background:
+    radial-gradient(circle at top left, rgba(18, 94, 232, 0.12), transparent 34rem),
+    linear-gradient(135deg, #f8fbff 0%, var(--admin-bg) 55%, #eef5f2 100%);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Microsoft YaHei", "Noto Sans SC", sans-serif;
 }
 
 button,
 input,
 select,
 textarea {
-  /* 表单控件继承 body 字体，避免不同浏览器默认字体不一致。 */
   font: inherit;
 }
 
 button {
-  /* 后台按钮使用深绿色，和用户端有轻微统一感。 */
-  background: #1f6f5b;
-  /* 按钮文字用白色提高对比。 */
-  color: #ffffff;
-  /* 去掉浏览器默认边框。 */
-  border: 0;
-  /* 控制按钮高度和左右留白。 */
-  padding: 10px 14px;
-  /* 圆角保持克制，后台看起来更工具化。 */
-  border-radius: 6px;
-  /* 鼠标移上去显示可点击。 */
+  border: 1px solid rgba(15, 107, 87, 0.18);
+  border-radius: 14px;
+  padding: 11px 18px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--admin-green), #0b5d4d);
+  box-shadow: 0 12px 28px rgba(15, 107, 87, 0.16);
   cursor: pointer;
+  font-weight: 750;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 36px rgba(15, 107, 87, 0.22);
 }
 
 button.secondary {
-  /* 次要按钮用于编辑。 */
-  background: #52615c;
+  color: #223041;
+  background: rgba(255, 255, 255, 0.72);
+  border-color: var(--admin-border);
+  box-shadow: none;
 }
 
 button.danger {
-  /* 删除按钮使用红色，提示这是危险操作。 */
-  background: #b13a32;
+  background: linear-gradient(135deg, var(--admin-red), #8f1d16);
+  border-color: rgba(180, 35, 24, 0.22);
+  box-shadow: 0 12px 28px rgba(180, 35, 24, 0.15);
 }
 
 input,
 select,
 textarea {
-  /* 表单控件宽度撑满父容器。 */
   width: 100%;
-  /* 边框使用低对比灰色。 */
-  border: 1px solid #b9c3bc;
-  /* 控制输入框内部留白。 */
-  padding: 10px 12px;
-  /* 输入框圆角与按钮一致。 */
-  border-radius: 6px;
-  /* 背景白色，和页面底色区分。 */
-  background: #ffffff;
+  min-height: 48px;
+  border: 1px solid var(--admin-border);
+  border-radius: 16px;
+  padding: 12px 14px;
+  color: var(--admin-ink);
+  background: rgba(255, 255, 255, 0.78);
+  outline: none;
+  transition: border 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: rgba(18, 94, 232, 0.54);
+  box-shadow: 0 0 0 4px rgba(18, 94, 232, 0.1);
+  background: rgba(255, 255, 255, 0.96);
 }
 
 label {
-  /* label 变成纵向布局，上面是字段名，下面是输入框。 */
   display: grid;
-  /* 字段名和输入框之间留一点间距。 */
-  gap: 6px;
-  /* 字段名颜色稍浅。 */
-  color: #43514d;
+  gap: 8px;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 750;
+}
+
+[hidden] {
+  display: none !important;
 }
 
 .admin-topbar {
-  /* 顶部栏使用 flex，让标题和退出按钮左右分布。 */
-  display: flex;
-  /* 垂直居中。 */
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  /* 左右两端对齐。 */
-  justify-content: space-between;
-  /* 顶部栏内边距。 */
-  padding: 18px 24px;
-  /* 顶部栏背景白色。 */
-  background: #ffffff;
-  /* 底部边线区分内容区域。 */
-  border-bottom: 1px solid #d8ded8;
+  gap: 24px;
+  padding: 18px clamp(18px, 4vw, 56px);
+  border-bottom: 1px solid var(--admin-border);
+  background: rgba(248, 251, 255, 0.78);
+  backdrop-filter: blur(18px);
 }
 
-.admin-topbar h1 {
-  /* 去掉 h1 默认外边距。 */
-  margin: 0;
-  /* 后台标题不需要太大。 */
+.admin-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--admin-ink);
+  text-decoration: none;
+}
+
+.admin-brand span,
+.login-brand {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  color: var(--admin-blue);
+  background: rgba(18, 94, 232, 0.1);
   font-size: 22px;
+  font-weight: 900;
+}
+
+.admin-brand strong {
+  font-size: 18px;
+  letter-spacing: 0;
+}
+
+.admin-nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.admin-nav a,
+.admin-sidebar a {
+  color: #475569;
+  text-decoration: none;
+  font-weight: 800;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  transition: color 160ms ease, background 160ms ease, border 160ms ease;
+}
+
+.admin-nav a {
+  padding: 10px 16px;
+}
+
+.admin-nav a.active,
+.admin-nav a:hover,
+.admin-sidebar a.active,
+.admin-sidebar a:hover {
+  color: var(--admin-blue);
+  border-color: rgba(18, 94, 232, 0.18);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.admin-logout {
+  color: #334155;
+  background: rgba(255, 255, 255, 0.72);
+  border-color: var(--admin-border);
+  box-shadow: none;
 }
 
 .admin-shell {
-  /* 后台主体左右两列：菜单固定宽度，内容自动占满。 */
   display: grid;
-  /* 左侧 220px，右侧 1fr。 */
-  grid-template-columns: 220px 1fr;
-  /* 最小高度撑满视口减去顶部栏附近高度。 */
-  min-height: calc(100vh - 65px);
+  grid-template-columns: 210px minmax(0, 1fr);
+  gap: 26px;
+  width: min(1440px, calc(100% - 48px));
+  margin: 34px auto 56px;
 }
 
 .admin-sidebar {
-  /* 侧边栏背景白色。 */
-  background: #ffffff;
-  /* 右侧边线。 */
-  border-right: 1px solid #d8ded8;
-  /* 内边距。 */
-  padding: 18px;
-  /* 菜单项纵向排列。 */
+  position: sticky;
+  top: 96px;
+  align-self: start;
   display: grid;
-  /* 每个链接之间留间距。 */
-  gap: 8px;
-  /* 内容从顶部开始，不拉伸到全高。 */
-  align-content: start;
+  gap: 10px;
+  padding: 18px;
+  border: 1px solid var(--admin-border);
+  border-radius: var(--admin-radius);
+  background: var(--admin-surface);
+  box-shadow: var(--admin-shadow);
+  backdrop-filter: blur(18px);
+}
+
+.admin-sidebar p {
+  margin: 2px 8px 8px;
+  color: var(--admin-muted);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
 }
 
 .admin-sidebar a {
-  /* 链接显示为块状按钮。 */
-  display: block;
-  /* 去掉下划线。 */
-  text-decoration: none;
-  /* 默认文字颜色。 */
-  color: #25312d;
-  /* 链接内部留白。 */
-  padding: 10px 12px;
-  /* 链接圆角。 */
-  border-radius: 6px;
-}
-
-.admin-sidebar a.active,
-.admin-sidebar a:hover {
-  /* 当前页面和 hover 使用绿色底。 */
-  background: #1f6f5b;
-  /* 当前页面文字变白。 */
-  color: #ffffff;
+  padding: 13px 14px;
 }
 
 .admin-content {
-  /* 内容区内边距。 */
-  padding: 24px;
-  /* 内容区最大宽度，避免宽屏上表格太散。 */
-  max-width: 1180px;
+  min-width: 0;
+}
+
+.page-heading {
+  margin-bottom: 22px;
+}
+
+.page-heading span {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--admin-blue);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
 }
 
 .page-heading h2 {
-  /* 去掉标题默认上边距。 */
-  margin: 0 0 8px;
+  margin: 0 0 10px;
+  font-size: clamp(34px, 5vw, 56px);
+  line-height: 1;
+  letter-spacing: 0;
 }
 
 .page-heading p {
-  /* 去掉段落默认上边距。 */
-  margin: 0 0 18px;
-  /* 副标题颜色降低一点。 */
-  color: #60706a;
+  max-width: 720px;
+  margin: 0;
+  color: var(--admin-muted);
+  font-size: 17px;
+  font-weight: 650;
 }
 
 .toolbar {
-  /* 工具栏下方留距离。 */
-  margin-bottom: 16px;
+  margin-bottom: 18px;
+}
+
+.toolbar[hidden],
+#sentenceFilterLabel[hidden] {
+  display: none !important;
+}
+
+.toolbar label {
+  width: min(360px, 100%);
 }
 
 .panel {
-  /* 面板背景白色。 */
-  background: #ffffff;
-  /* 面板边框。 */
-  border: 1px solid #d8ded8;
-  /* 面板圆角。 */
-  border-radius: 8px;
-  /* 面板内部留白。 */
-  padding: 18px;
-  /* 每个面板之间留距离。 */
-  margin-bottom: 16px;
+  margin-bottom: 20px;
+  padding: clamp(18px, 3vw, 28px);
+  border: 1px solid var(--admin-border);
+  border-radius: var(--admin-radius);
+  background: var(--admin-surface);
+  box-shadow: var(--admin-shadow);
+  backdrop-filter: blur(18px);
 }
 
 .panel h3 {
-  /* 去掉 h3 默认上边距。 */
-  margin: 0 0 14px;
+  margin: 0 0 18px;
+  font-size: 20px;
 }
 
 .form-grid {
-  /* 表单字段用响应式网格排列。 */
   display: grid;
-  /* 每列至少 220px，空间够时自动多列。 */
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  /* 字段之间间距。 */
-  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
 }
 
 .form-actions {
-  /* 表单按钮单独占一行。 */
   display: flex;
-  /* 按钮之间留间距。 */
-  gap: 10px;
-  /* 表单按钮顶部留距离。 */
-  margin-top: 14px;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.message {
+  min-height: 22px;
+  margin: 14px 0 0;
+  color: var(--admin-green);
+  font-weight: 800;
+}
+
+.message[data-type="error"] {
+  color: var(--admin-red);
 }
 
 .table {
-  /* 表格容器允许横向滚动，防止小屏挤坏。 */
   overflow-x: auto;
 }
 
 table {
-  /* 表格宽度撑满容器。 */
   width: 100%;
-  /* 合并单元格边框。 */
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 720px;
 }
 
 th,
 td {
-  /* 单元格底部边线。 */
-  border-bottom: 1px solid #e2e6e1;
-  /* 单元格内边距。 */
-  padding: 10px;
-  /* 文本左对齐。 */
+  padding: 15px 14px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.22);
   text-align: left;
-  /* 表格内容顶部对齐，长文本更易读。 */
   vertical-align: top;
 }
 
 th {
-  /* 表头背景。 */
-  background: #f7f8f5;
+  color: #475569;
+  background: rgba(255, 255, 255, 0.48);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+td {
+  color: #182233;
+  font-weight: 650;
+}
+
+.ko-cell {
+  font-weight: 800;
 }
 
 .actions {
-  /* 操作按钮横向排列。 */
   display: flex;
-  /* 按钮之间留间距。 */
+  flex-wrap: wrap;
   gap: 8px;
 }
 
-.message {
-  /* 提示信息颜色。 */
-  color: #1f6f5b;
-  /* 给提示保留高度，避免出现时页面跳动。 */
-  min-height: 22px;
+.actions button {
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+.empty-state {
+  display: grid;
+  place-items: center;
+  min-height: 140px;
+  color: var(--admin-muted);
+  font-weight: 800;
+  border: 1px dashed rgba(148, 163, 184, 0.36);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.42);
 }
 
 .login-body {
-  /* 登录页使用 flex 居中登录框。 */
-  display: flex;
-  /* 水平居中。 */
-  justify-content: center;
-  /* 垂直方向留出上方空间。 */
-  align-items: flex-start;
-  /* 登录框距离顶部。 */
-  padding-top: 12vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
 }
 
 .login-panel {
-  /* 登录面板宽度。 */
-  width: min(420px, calc(100% - 32px));
-  /* 登录面板背景。 */
-  background: #ffffff;
-  /* 登录面板边框。 */
-  border: 1px solid #d8ded8;
-  /* 登录面板圆角。 */
-  border-radius: 8px;
-  /* 登录面板内边距。 */
-  padding: 28px;
+  width: min(420px, 100%);
+  padding: 34px;
+  border: 1px solid var(--admin-border);
+  border-radius: 28px;
+  background: var(--admin-surface-strong);
+  box-shadow: var(--admin-shadow);
+  backdrop-filter: blur(18px);
+}
+
+.login-brand {
+  margin-bottom: 22px;
 }
 
 .login-panel h1 {
-  /* 去掉标题默认上边距。 */
-  margin: 0 0 8px;
+  margin: 0 0 10px;
+  font-size: 38px;
+  line-height: 1;
+}
+
+.login-panel p {
+  margin: 0 0 22px;
+  color: var(--admin-muted);
+  font-weight: 700;
 }
 
 .login-panel form {
-  /* 登录表单纵向排列。 */
   display: grid;
-  /* 输入框和按钮之间留距离。 */
-  gap: 12px;
+  gap: 14px;
 }
 
-@media (max-width: 760px) {
-  .admin-shell {
-    /* 小屏改成单列，侧边栏在上，内容在下。 */
-    grid-template-columns: 1fr;
+@media (max-width: 900px) {
+  .admin-topbar {
+    grid-template-columns: 1fr auto;
   }
 
-  .admin-content {
-    /* 小屏减少内容内边距。 */
-    padding: 16px;
+  .admin-nav {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+
+  .admin-shell {
+    grid-template-columns: 1fr;
+    width: min(100% - 28px, 760px);
+    margin-top: 22px;
   }
 
   .admin-sidebar {
-    /* 小屏菜单改成横向滚动。 */
+    position: static;
     display: flex;
-    /* 允许横向滚动。 */
     overflow-x: auto;
+  }
+
+  .admin-sidebar p {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .admin-topbar {
+    gap: 14px;
+    padding: 14px;
+  }
+
+  .admin-brand strong {
+    display: none;
+  }
+
+  .admin-nav a,
+  .admin-sidebar a {
+    white-space: nowrap;
+  }
+
+  .page-heading h2 {
+    font-size: 38px;
+  }
+
+  .panel {
+    border-radius: 20px;
   }
 }
