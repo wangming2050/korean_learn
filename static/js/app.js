@@ -476,6 +476,9 @@ let pdfAssistantRequestId = 0;
 let pdfAssistantExpanded = false;
 let pdfAssistantHistory = [];
 let pdfAssistantHistoryView = localStorage.getItem("pdfAssistantHistoryView") === "all" ? "all" : "page";
+const pdfAssistantExpandedHistoryPages = new Set();
+const pdfAssistantExpandedHistoryItems = new Set();
+let pdfAssistantScrollTarget = null;
 
 // 保存当前正在做“片段循环”的结束时间，timeupdate 事件里会用到。
 let currentLoopEnd = 0;
@@ -1858,10 +1861,10 @@ async function persistPdfAssistantHistory() {
 async function addPdfAssistantHistoryItem(question, answer, truncated = false, page = activeTextbookPage) {
   const textbookId = getPdfAssistantHistoryStorageKey();
   if (!activeTextbook || !textbookId) {
-    return;
+    return null;
   }
   const now = Date.now();
-  pdfAssistantHistory.push({
+  const historyItem = {
     id: `assistant-${now}-${Math.random().toString(36).slice(2, 8)}`,
     textbookId,
     page: Math.max(1, Number(page) || activeTextbookPage || 1),
@@ -1870,12 +1873,14 @@ async function addPdfAssistantHistoryItem(question, answer, truncated = false, p
     createdAt: now,
     updatedAt: now,
     truncated,
-  });
+  };
+  pdfAssistantHistory.push(historyItem);
   try {
     await persistPdfAssistantHistory();
   } catch (error) {
     console.warn("AI 助教历史保存失败。", error);
   }
+  return historyItem;
 }
 
 
@@ -4209,33 +4214,142 @@ function renderPdfAssistantHistory() {
     return "";
   }
 
-  let lastPage = null;
-  const chunks = [];
-  visibleHistory.forEach((item) => {
-    if (pdfAssistantHistoryView === "all" && item.page !== lastPage) {
-      lastPage = item.page;
-      chunks.push(`<div class="pdf-assistant-history-group">第 ${escapeHtml(item.page)} 页</div>`);
+  if (pdfAssistantHistoryView === "all") {
+    return renderPdfAssistantAllHistory(visibleHistory);
+  }
+
+  return visibleHistory.map((item) => renderPdfAssistantHistoryItem(item)).join("");
+}
+
+
+function groupPdfAssistantHistoryByPage(history) {
+  const pageMap = new Map();
+  history.forEach((item) => {
+    if (!pageMap.has(item.page)) {
+      pageMap.set(item.page, []);
     }
+    pageMap.get(item.page).push(item);
+  });
+
+  return Array.from(pageMap.entries())
+    .sort(([pageA], [pageB]) => pageA - pageB)
+    .map(([page, items]) => ({
+      page,
+      items: items.sort((a, b) => a.createdAt - b.createdAt),
+    }));
+}
+
+
+function renderPdfAssistantHistoryItem(item) {
+  return `
+    <article class="pdf-assistant-history-item" data-assistant-history-item="${escapeHtml(item.id)}">
+      <div class="pdf-assistant-history-meta">
+        <button type="button" class="pdf-assistant-history-page" data-assistant-history-page="${escapeHtml(item.page)}">第 ${escapeHtml(item.page)} 页</button>
+        <span>${escapeHtml(formatAssistantHistoryTime(item.createdAt))}</span>
+        <button type="button" class="pdf-assistant-history-delete" data-assistant-history-delete="${escapeHtml(item.id)}" aria-label="删除这条历史">删除</button>
+      </div>
+      <div class="pdf-assistant-history-question">
+        <strong>你</strong>
+        <p>${escapeHtml(item.question)}</p>
+      </div>
+      <div class="pdf-assistant-history-answer">
+        <strong>AI 助教</strong>
+        <div class="pdf-assistant-content">${renderAssistantMessageContent(item.answer)}</div>
+        ${item.truncated ? `<span class="pdf-assistant-truncated">回答可能被截断，可继续追问“请继续”。</span>` : ""}
+      </div>
+    </article>
+  `;
+}
+
+
+function renderPdfAssistantAllHistory(history) {
+  const chunks = [];
+  groupPdfAssistantHistoryByPage(history).forEach(({ page, items }) => {
+    const isExpanded = pdfAssistantExpandedHistoryPages.has(String(page));
     chunks.push(`
-      <article class="pdf-assistant-history-item">
-        <div class="pdf-assistant-history-meta">
-          <button type="button" class="pdf-assistant-history-page" data-assistant-history-page="${escapeHtml(item.page)}">第 ${escapeHtml(item.page)} 页</button>
-          <span>${escapeHtml(formatAssistantHistoryTime(item.createdAt))}</span>
-          <button type="button" class="pdf-assistant-history-delete" data-assistant-history-delete="${escapeHtml(item.id)}" aria-label="删除这条历史">删除</button>
-        </div>
-        <div class="pdf-assistant-history-question">
-          <strong>你</strong>
-          <p>${escapeHtml(item.question)}</p>
-        </div>
-        <div class="pdf-assistant-history-answer">
-          <strong>AI 助教</strong>
-          <div class="pdf-assistant-content">${renderAssistantMessageContent(item.answer)}</div>
-          ${item.truncated ? `<span class="pdf-assistant-truncated">回答可能被截断，可继续追问“请继续”。</span>` : ""}
-        </div>
-      </article>
+      <section class="pdf-assistant-history-page-group${isExpanded ? " is-expanded" : ""}">
+        <button type="button" class="pdf-assistant-history-page-toggle" data-assistant-history-toggle-page="${escapeHtml(page)}" aria-expanded="${String(isExpanded)}">
+          <span class="pdf-assistant-history-chevron" aria-hidden="true">›</span>
+          <span>第 ${escapeHtml(page)} 页</span>
+          <em>${escapeHtml(items.length)} 条对话</em>
+        </button>
+        ${isExpanded ? `
+          <div class="pdf-assistant-history-page-body">
+            ${items.map((item) => {
+              const isItemExpanded = pdfAssistantExpandedHistoryItems.has(String(item.id));
+              return `
+                <article class="pdf-assistant-history-question-group${isItemExpanded ? " is-expanded" : ""}" data-assistant-history-item="${escapeHtml(item.id)}">
+                  <div class="pdf-assistant-history-question-head">
+                    <button type="button" class="pdf-assistant-history-question-toggle" data-assistant-history-toggle-item="${escapeHtml(item.id)}" aria-expanded="${String(isItemExpanded)}">
+                      <span class="pdf-assistant-history-chevron" aria-hidden="true">›</span>
+                      <span class="pdf-assistant-history-question-preview">${escapeHtml(item.question)}</span>
+                      <em>${escapeHtml(formatAssistantHistoryTime(item.createdAt))}</em>
+                    </button>
+                    <button type="button" class="pdf-assistant-history-delete" data-assistant-history-delete="${escapeHtml(item.id)}" aria-label="删除这条历史">删除</button>
+                  </div>
+                  ${isItemExpanded ? `
+                    <div class="pdf-assistant-history-meta">
+                      <button type="button" class="pdf-assistant-history-page" data-assistant-history-page="${escapeHtml(item.page)}">第 ${escapeHtml(item.page)} 页</button>
+                    </div>
+                    <div class="pdf-assistant-history-question">
+                      <strong>你</strong>
+                      <p>${escapeHtml(item.question)}</p>
+                    </div>
+                    <div class="pdf-assistant-history-answer">
+                      <strong>AI 助教</strong>
+                      <div class="pdf-assistant-content">${renderAssistantMessageContent(item.answer)}</div>
+                      ${item.truncated ? `<span class="pdf-assistant-truncated">回答可能被截断，可继续追问“请继续”。</span>` : ""}
+                    </div>
+                  ` : ""}
+                </article>
+              `;
+            }).join("")}
+          </div>
+        ` : ""}
+      </section>
     `);
   });
   return chunks.join("");
+}
+
+
+function escapeAssistantSelectorValue(value) {
+  return String(value || "").replace(/\\/g, "\\\\").replace(/"/g, "\\\"");
+}
+
+
+function queuePdfAssistantScrollTarget(selector, block = "start") {
+  pdfAssistantScrollTarget = { selector, block };
+}
+
+
+function applyPdfAssistantScrollTarget(messages, previousScrollTop) {
+  if (!messages) {
+    pdfAssistantScrollTarget = null;
+    return;
+  }
+  const target = pdfAssistantScrollTarget;
+  pdfAssistantScrollTarget = null;
+
+  if (!target?.selector) {
+    messages.scrollTop = previousScrollTop;
+    return;
+  }
+
+  const targetElement = messages.querySelector(target.selector);
+  if (!targetElement) {
+    messages.scrollTop = previousScrollTop;
+    return;
+  }
+
+  const messageRect = messages.getBoundingClientRect();
+  const targetRect = targetElement.getBoundingClientRect();
+  const topPadding = 8;
+  const targetTop = targetRect.top - messageRect.top + messages.scrollTop - topPadding;
+  const targetBottom = targetRect.bottom - messageRect.bottom + messages.scrollTop + topPadding;
+  messages.scrollTop = target.block === "nearest"
+    ? Math.max(Math.min(messages.scrollTop, targetTop), targetBottom)
+    : Math.max(0, targetTop);
 }
 
 
@@ -4294,18 +4408,19 @@ function renderPdfAssistantPanel() {
     clearHistoryButton.disabled = !pdfAssistantHistory.length;
   }
 
+  const previousScrollTop = messages.scrollTop;
   const historyHtml = renderPdfAssistantHistory();
   const transientMessagesHtml = pdfAssistantMessages.length === 0
     ? ""
-    : pdfAssistantMessages.map((message) => `
-      <article class="pdf-assistant-message pdf-assistant-message-${escapeHtml(message.role)}">
+    : pdfAssistantMessages.map((message, index) => `
+      <article class="pdf-assistant-message pdf-assistant-message-${escapeHtml(message.role)}" data-assistant-transient-role="${escapeHtml(message.role)}" data-assistant-transient-index="${escapeHtml(index)}">
         <strong>${message.role === "user" ? "你" : "AI 助教"}</strong>
         <div class="pdf-assistant-content">${renderAssistantMessageContent(message.content)}</div>
         ${message.truncated ? `<span class="pdf-assistant-truncated">回答可能被截断，可继续追问“请继续”。</span>` : ""}
       </article>
     `).join("");
   messages.innerHTML = `${historyHtml}${transientMessagesHtml}`;
-  messages.scrollTop = messages.scrollHeight;
+  applyPdfAssistantScrollTarget(messages, previousScrollTop);
 }
 
 
@@ -4462,6 +4577,7 @@ async function sendPdfAssistantQuestion() {
   input.value = "";
   pdfAssistantMessages.push({ role: "user", content: question });
   pdfAssistantMessages.push({ role: "assistant", content: "正在阅读当前页……" });
+  queuePdfAssistantScrollTarget('[data-assistant-transient-role="user"]');
   renderPdfAssistantPanel();
 
   try {
@@ -4494,8 +4610,11 @@ async function sendPdfAssistantQuestion() {
         content: answer,
         truncated,
       };
-      await addPdfAssistantHistoryItem(question, answer, truncated, requestPage);
+      const historyItem = await addPdfAssistantHistoryItem(question, answer, truncated, requestPage);
       pdfAssistantMessages = [];
+      if (historyItem?.id) {
+        queuePdfAssistantScrollTarget(`[data-assistant-history-item="${escapeAssistantSelectorValue(historyItem.id)}"]`);
+      }
     }
   } catch (error) {
     const errorMessage = error.message || "AI 助教暂时不可用。";
@@ -4504,8 +4623,11 @@ async function sendPdfAssistantQuestion() {
         role: "assistant",
         content: errorMessage,
       };
-      await addPdfAssistantHistoryItem(question, errorMessage, false, requestPage);
+      const historyItem = await addPdfAssistantHistoryItem(question, errorMessage, false, requestPage);
       pdfAssistantMessages = [];
+      if (historyItem?.id) {
+        queuePdfAssistantScrollTarget(`[data-assistant-history-item="${escapeAssistantSelectorValue(historyItem.id)}"]`);
+      }
     }
   }
 
@@ -4595,6 +4717,32 @@ function initEvents() {
     const deleteButton = event.target.closest("[data-assistant-history-delete]");
     if (deleteButton) {
       deletePdfAssistantHistoryItem(deleteButton.dataset.assistantHistoryDelete);
+      return;
+    }
+
+    const itemToggleButton = event.target.closest("[data-assistant-history-toggle-item]");
+    if (itemToggleButton) {
+      const itemId = String(itemToggleButton.dataset.assistantHistoryToggleItem || "");
+      if (pdfAssistantExpandedHistoryItems.has(itemId)) {
+        pdfAssistantExpandedHistoryItems.delete(itemId);
+      } else if (itemId) {
+        pdfAssistantExpandedHistoryItems.add(itemId);
+        queuePdfAssistantScrollTarget(`[data-assistant-history-item="${escapeAssistantSelectorValue(itemId)}"]`);
+      }
+      renderPdfAssistantPanel();
+      return;
+    }
+
+    const toggleButton = event.target.closest("[data-assistant-history-toggle-page]");
+    if (toggleButton) {
+      const page = String(toggleButton.dataset.assistantHistoryTogglePage || "");
+      if (pdfAssistantExpandedHistoryPages.has(page)) {
+        pdfAssistantExpandedHistoryPages.delete(page);
+      } else if (page) {
+        pdfAssistantExpandedHistoryPages.add(page);
+      }
+      renderPdfAssistantPanel();
+      return;
     }
   });
   document.querySelectorAll(".pdf-assistant-quick").forEach((quickButton) => {
