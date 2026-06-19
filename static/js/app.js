@@ -1490,6 +1490,7 @@ function selectLetter(index) {
   });
 
   renderLetterDetail(letterData, selectedCard);
+  playLetterQueue(letterData);
 }
 
 
