@@ -1,0 +1,6953 @@
+[
+  {
+    "id": 1,
+    "korean": "책상",
+    "chinese": "书桌",
+    "pos": "延世1",
+    "source_page": 1
+  },
+  {
+    "id": 2,
+    "korean": "학생",
+    "chinese": "学生",
+    "pos": "延世1",
+    "source_page": 1
+  },
+  {
+    "id": 3,
+    "korean": "의사",
+    "chinese": "医生",
+    "pos": "延世1",
+    "source_page": 1
+  },
+  {
+    "id": 4,
+    "korean": "고분",
+    "chinese": "那位",
+    "pos": "延世1",
+    "source_page": 1
+  },
+  {
+    "id": 5,
+    "korean": "서울",
+    "chinese": "首尔",
+    "pos": "延世1",
+    "source_page": 1
+  },
+  {
+    "id": 6,
+    "korean": "의",
+    "chinese": "助词，的",
+    "pos": "延世1",
+    "source_page": 1
+  },
+  {
+    "id": 7,
+    "korean": "수도",
+    "chinese": "首都",
+    "pos": "延世1",
+    "source_page": 1
+  },
+  {
+    "id": 8,
+    "korean": "제",
+    "chinese": "我的",
+    "pos": "延世1",
+    "source_page": 1
+  },
+  {
+    "id": 9,
+    "korean": "그리고",
+    "chinese": "还有",
+    "pos": "延世1",
+    "source_page": 1
+  },
+  {
+    "id": 10,
+    "korean": "친구",
+    "chinese": "朋友",
+    "pos": "延世1",
+    "source_page": 1
+  },
+  {
+    "id": 11,
+    "korean": "어느",
+    "chinese": "哪个",
+    "pos": "延世1",
+    "source_page": 1
+  },
+  {
+    "id": 12,
+    "korean": "나라",
+    "chinese": "国家",
+    "pos": "延世1",
+    "source_page": 1
+  },
+  {
+    "id": 13,
+    "korean": "사람",
+    "chinese": "人",
+    "pos": "延世1",
+    "source_page": 2
+  },
+  {
+    "id": 14,
+    "korean": "이분",
+    "chinese": "这位",
+    "pos": "延世1",
+    "source_page": 2
+  },
+  {
+    "id": 15,
+    "korean": "여기",
+    "chinese": "这里",
+    "pos": "延世1",
+    "source_page": 2
+  },
+  {
+    "id": 16,
+    "korean": "누구",
+    "chinese": "谁",
+    "pos": "延世1",
+    "source_page": 2
+  },
+  {
+    "id": 17,
+    "korean": "그럼",
+    "chinese": "那么",
+    "pos": "延世1",
+    "source_page": 2
+  },
+  {
+    "id": 18,
+    "korean": "그런데",
+    "chinese": "但是，表转折",
+    "pos": "延世1",
+    "source_page": 2
+  },
+  {
+    "id": 19,
+    "korean": "무엇",
+    "chinese": "什么",
+    "pos": "延世1",
+    "source_page": 2
+  },
+  {
+    "id": 20,
+    "korean": "교과서",
+    "chinese": "教科书",
+    "pos": "延世1",
+    "source_page": 2
+  },
+  {
+    "id": 21,
+    "korean": "여행사",
+    "chinese": "旅行社",
+    "pos": "延世1",
+    "source_page": 2
+  },
+  {
+    "id": 22,
+    "korean": "직업",
+    "chinese": "职业",
+    "pos": "延世1",
+    "source_page": 2
+  },
+  {
+    "id": 23,
+    "korean": "회사원",
+    "chinese": "公司职员",
+    "pos": "延世1",
+    "source_page": 2
+  },
+  {
+    "id": 24,
+    "korean": "대학생",
+    "chinese": "大学生",
+    "pos": "延世1",
+    "source_page": 2
+  },
+  {
+    "id": 25,
+    "korean": "충학생",
+    "chinese": "中学生",
+    "pos": "延世1",
+    "source_page": 2
+  },
+  {
+    "id": 26,
+    "korean": "유학생",
+    "chinese": "留学生",
+    "pos": "延世1",
+    "source_page": 2
+  },
+  {
+    "id": 27,
+    "korean": "가수",
+    "chinese": "歌手",
+    "pos": "延世1",
+    "source_page": 2
+  },
+  {
+    "id": 28,
+    "korean": "의사",
+    "chinese": "医生",
+    "pos": "延世1",
+    "source_page": 3
+  },
+  {
+    "id": 29,
+    "korean": "간호사",
+    "chinese": "护士",
+    "pos": "延世1",
+    "source_page": 3
+  },
+  {
+    "id": 30,
+    "korean": "은행원",
+    "chinese": "银行职员",
+    "pos": "延世1",
+    "source_page": 3
+  },
+  {
+    "id": 31,
+    "korean": "비서",
+    "chinese": "秘书",
+    "pos": "延世1",
+    "source_page": 3
+  },
+  {
+    "id": 32,
+    "korean": "기자",
+    "chinese": "记者",
+    "pos": "延世1",
+    "source_page": 3
+  },
+  {
+    "id": 33,
+    "korean": "변호사",
+    "chinese": "律师",
+    "pos": "延世1",
+    "source_page": 3
+  },
+  {
+    "id": 34,
+    "korean": "교수",
+    "chinese": "教授",
+    "pos": "延世1",
+    "source_page": 3
+  },
+  {
+    "id": 35,
+    "korean": "직원",
+    "chinese": "职员",
+    "pos": "延世1",
+    "source_page": 3
+  },
+  {
+    "id": 36,
+    "korean": "처음",
+    "chinese": "第一次",
+    "pos": "延世1",
+    "source_page": 3
+  },
+  {
+    "id": 37,
+    "korean": "뵙겠습니다",
+    "chinese": "拜见",
+    "pos": "延世1",
+    "source_page": 3
+  },
+  {
+    "id": 38,
+    "korean": "반갑다",
+    "chinese": "认识你很高兴",
+    "pos": "延世1",
+    "source_page": 3
+  },
+  {
+    "id": 39,
+    "korean": "가다",
+    "chinese": "去",
+    "pos": "延世1",
+    "source_page": 3
+  },
+  {
+    "id": 40,
+    "korean": "오다",
+    "chinese": "来",
+    "pos": "延世1",
+    "source_page": 3
+  },
+  {
+    "id": 41,
+    "korean": "만나다",
+    "chinese": "见面",
+    "pos": "延世1",
+    "source_page": 3
+  },
+  {
+    "id": 42,
+    "korean": "자다",
+    "chinese": "睡",
+    "pos": "延世1",
+    "source_page": 3
+  },
+  {
+    "id": 43,
+    "korean": "먹다",
+    "chinese": "吃",
+    "pos": "延世1",
+    "source_page": 4
+  },
+  {
+    "id": 44,
+    "korean": "입다",
+    "chinese": "穿",
+    "pos": "延世1",
+    "source_page": 4
+  },
+  {
+    "id": 45,
+    "korean": "듣다",
+    "chinese": "听",
+    "pos": "延世1",
+    "source_page": 4
+  },
+  {
+    "id": 46,
+    "korean": "읽다",
+    "chinese": "读",
+    "pos": "延世1",
+    "source_page": 4
+  },
+  {
+    "id": 47,
+    "korean": "쓰다",
+    "chinese": "写",
+    "pos": "延世1",
+    "source_page": 4
+  },
+  {
+    "id": 48,
+    "korean": "인사하다",
+    "chinese": "打招呼",
+    "pos": "延世1",
+    "source_page": 4
+  },
+  {
+    "id": 49,
+    "korean": "합다",
+    "chinese": "做",
+    "pos": "延世1",
+    "source_page": 4
+  },
+  {
+    "id": 50,
+    "korean": "인사",
+    "chinese": "打招呼",
+    "pos": "延世1",
+    "source_page": 4
+  },
+  {
+    "id": 51,
+    "korean": "점원",
+    "chinese": "店员",
+    "pos": "延世1",
+    "source_page": 4
+  },
+  {
+    "id": 52,
+    "korean": "그렇다",
+    "chinese": "是的",
+    "pos": "延世1",
+    "source_page": 4
+  },
+  {
+    "id": 53,
+    "korean": "이것",
+    "chinese": "这个，离说话者近",
+    "pos": "延世1",
+    "source_page": 4
+  },
+  {
+    "id": 54,
+    "korean": "그것",
+    "chinese": "那个，离听话者近",
+    "pos": "延世1",
+    "source_page": 4
+  },
+  {
+    "id": 55,
+    "korean": "저것",
+    "chinese": "那个，离两者都远",
+    "pos": "延世1",
+    "source_page": 4
+  },
+  {
+    "id": 56,
+    "korean": "읽기책",
+    "chinese": "读物",
+    "pos": "延世1",
+    "source_page": 4
+  },
+  {
+    "id": 57,
+    "korean": "잡지",
+    "chinese": "杂志",
+    "pos": "延世1",
+    "source_page": 4
+  },
+  {
+    "id": 58,
+    "korean": "사전",
+    "chinese": "字典",
+    "pos": "延世1",
+    "source_page": 5
+  },
+  {
+    "id": 59,
+    "korean": "자",
+    "chinese": "尺",
+    "pos": "延世1",
+    "source_page": 5
+  },
+  {
+    "id": 60,
+    "korean": "책상",
+    "chinese": "书桌",
+    "pos": "延世1",
+    "source_page": 5
+  },
+  {
+    "id": 61,
+    "korean": "필통",
+    "chinese": "笔筒",
+    "pos": "延世1",
+    "source_page": 5
+  },
+  {
+    "id": 62,
+    "korean": "지갑",
+    "chinese": "钱包",
+    "pos": "延世1",
+    "source_page": 5
+  },
+  {
+    "id": 63,
+    "korean": "연필",
+    "chinese": "铅笔",
+    "pos": "延世1",
+    "source_page": 5
+  },
+  {
+    "id": 64,
+    "korean": "지우개",
+    "chinese": "橡皮",
+    "pos": "延世1",
+    "source_page": 5
+  },
+  {
+    "id": 65,
+    "korean": "볼펜",
+    "chinese": "笔",
+    "pos": "延世1",
+    "source_page": 5
+  },
+  {
+    "id": 66,
+    "korean": "돈",
+    "chinese": "钱",
+    "pos": "延世1",
+    "source_page": 5
+  },
+  {
+    "id": 67,
+    "korean": "카드",
+    "chinese": "卡",
+    "pos": "延世1",
+    "source_page": 5
+  },
+  {
+    "id": 68,
+    "korean": "신분증",
+    "chinese": "身份证",
+    "pos": "延世1",
+    "source_page": 5
+  },
+  {
+    "id": 69,
+    "korean": "여권",
+    "chinese": "护照",
+    "pos": "延世1",
+    "source_page": 5
+  },
+  {
+    "id": 70,
+    "korean": "가방",
+    "chinese": "包",
+    "pos": "延世1",
+    "source_page": 5
+  },
+  {
+    "id": 71,
+    "korean": "손수건",
+    "chinese": "手绢",
+    "pos": "延世1",
+    "source_page": 5
+  },
+  {
+    "id": 72,
+    "korean": "모자",
+    "chinese": "帽子",
+    "pos": "延世1",
+    "source_page": 5
+  },
+  {
+    "id": 73,
+    "korean": "열쇠",
+    "chinese": "钥匙",
+    "pos": "延世1",
+    "source_page": 6
+  },
+  {
+    "id": 74,
+    "korean": "과자",
+    "chinese": "饼干",
+    "pos": "延世1",
+    "source_page": 6
+  },
+  {
+    "id": 75,
+    "korean": "종이",
+    "chinese": "纸",
+    "pos": "延世1",
+    "source_page": 6
+  },
+  {
+    "id": 76,
+    "korean": "수첩",
+    "chinese": "手册",
+    "pos": "延世1",
+    "source_page": 6
+  },
+  {
+    "id": 77,
+    "korean": "공책",
+    "chinese": "笔记本",
+    "pos": "延世1",
+    "source_page": 6
+  },
+  {
+    "id": 78,
+    "korean": "휴지",
+    "chinese": "手纸",
+    "pos": "延世1",
+    "source_page": 6
+  },
+  {
+    "id": 79,
+    "korean": "거울",
+    "chinese": "镜子",
+    "pos": "延世1",
+    "source_page": 6
+  },
+  {
+    "id": 80,
+    "korean": "달력",
+    "chinese": "日历",
+    "pos": "延世1",
+    "source_page": 6
+  },
+  {
+    "id": 81,
+    "korean": "지도",
+    "chinese": "地图",
+    "pos": "延世1",
+    "source_page": 6
+  },
+  {
+    "id": 82,
+    "korean": "교실",
+    "chinese": "教室",
+    "pos": "延世1",
+    "source_page": 6
+  },
+  {
+    "id": 83,
+    "korean": "칠판",
+    "chinese": "黑板",
+    "pos": "延世1",
+    "source_page": 6
+  },
+  {
+    "id": 84,
+    "korean": "분필",
+    "chinese": "粉笔",
+    "pos": "延世1",
+    "source_page": 6
+  },
+  {
+    "id": 85,
+    "korean": "텔레비전",
+    "chinese": "电视机",
+    "pos": "延世1",
+    "source_page": 6
+  },
+  {
+    "id": 86,
+    "korean": "창문",
+    "chinese": "窗户",
+    "pos": "延世1",
+    "source_page": 6
+  },
+  {
+    "id": 87,
+    "korean": "문",
+    "chinese": "门",
+    "pos": "延世1",
+    "source_page": 6
+  },
+  {
+    "id": 88,
+    "korean": "그림",
+    "chinese": "画",
+    "pos": "延世1",
+    "source_page": 7
+  },
+  {
+    "id": 89,
+    "korean": "옷걸이",
+    "chinese": "晾衣架",
+    "pos": "延世1",
+    "source_page": 7
+  },
+  {
+    "id": 90,
+    "korean": "많다",
+    "chinese": "多",
+    "pos": "延世1",
+    "source_page": 7
+  },
+  {
+    "id": 91,
+    "korean": "적다",
+    "chinese": "少",
+    "pos": "延世1",
+    "source_page": 7
+  },
+  {
+    "id": 92,
+    "korean": "크다",
+    "chinese": "大",
+    "pos": "延世1",
+    "source_page": 7
+  },
+  {
+    "id": 93,
+    "korean": "작다",
+    "chinese": "小",
+    "pos": "延世1",
+    "source_page": 7
+  },
+  {
+    "id": 94,
+    "korean": "좋다",
+    "chinese": "好",
+    "pos": "延世1",
+    "source_page": 7
+  },
+  {
+    "id": 95,
+    "korean": "나쁘다",
+    "chinese": "不好",
+    "pos": "延世1",
+    "source_page": 7
+  },
+  {
+    "id": 96,
+    "korean": "산",
+    "chinese": "山",
+    "pos": "延世1",
+    "source_page": 7
+  },
+  {
+    "id": 97,
+    "korean": "바다",
+    "chinese": "大海",
+    "pos": "延世1",
+    "source_page": 7
+  },
+  {
+    "id": 98,
+    "korean": "도서관",
+    "chinese": "图书馆",
+    "pos": "延世1",
+    "source_page": 7
+  },
+  {
+    "id": 99,
+    "korean": "공부하다",
+    "chinese": "学习",
+    "pos": "延世1",
+    "source_page": 7
+  },
+  {
+    "id": 100,
+    "korean": "시계",
+    "chinese": "钟表",
+    "pos": "延世1",
+    "source_page": 7
+  },
+  {
+    "id": 101,
+    "korean": "질문",
+    "chinese": "问题",
+    "pos": "延世1",
+    "source_page": 7
+  },
+  {
+    "id": 102,
+    "korean": "장소",
+    "chinese": "场所",
+    "pos": "延世1",
+    "source_page": 7
+  },
+  {
+    "id": 103,
+    "korean": "교실",
+    "chinese": "教室",
+    "pos": "延世1",
+    "source_page": 8
+  },
+  {
+    "id": 104,
+    "korean": "화장실",
+    "chinese": "洗手间",
+    "pos": "延世1",
+    "source_page": 8
+  },
+  {
+    "id": 105,
+    "korean": "사무실",
+    "chinese": "办公室",
+    "pos": "延世1",
+    "source_page": 8
+  },
+  {
+    "id": 106,
+    "korean": "은행",
+    "chinese": "银行",
+    "pos": "延世1",
+    "source_page": 8
+  },
+  {
+    "id": 107,
+    "korean": "우체국",
+    "chinese": "邮局",
+    "pos": "延世1",
+    "source_page": 8
+  },
+  {
+    "id": 108,
+    "korean": "식당",
+    "chinese": "食堂",
+    "pos": "延世1",
+    "source_page": 8
+  },
+  {
+    "id": 109,
+    "korean": "서점",
+    "chinese": "书店",
+    "pos": "延世1",
+    "source_page": 8
+  },
+  {
+    "id": 110,
+    "korean": "학생회관",
+    "chinese": "学生会馆",
+    "pos": "延世1",
+    "source_page": 8
+  },
+  {
+    "id": 111,
+    "korean": "위치",
+    "chinese": "位置",
+    "pos": "延世1",
+    "source_page": 8
+  },
+  {
+    "id": 112,
+    "korean": "앞",
+    "chinese": "前面",
+    "pos": "延世1",
+    "source_page": 8
+  },
+  {
+    "id": 113,
+    "korean": "뒤",
+    "chinese": "后面",
+    "pos": "延世1",
+    "source_page": 8
+  },
+  {
+    "id": 114,
+    "korean": "옆",
+    "chinese": "旁边",
+    "pos": "延世1",
+    "source_page": 8
+  },
+  {
+    "id": 115,
+    "korean": "위",
+    "chinese": "上面",
+    "pos": "延世1",
+    "source_page": 8
+  },
+  {
+    "id": 116,
+    "korean": "밑/아래",
+    "chinese": "下面",
+    "pos": "延世1",
+    "source_page": 8
+  },
+  {
+    "id": 117,
+    "korean": "안",
+    "chinese": "里面",
+    "pos": "延世1",
+    "source_page": 8
+  },
+  {
+    "id": 118,
+    "korean": "밖",
+    "chinese": "外面",
+    "pos": "延世1",
+    "source_page": 9
+  },
+  {
+    "id": 119,
+    "korean": "장소",
+    "chinese": "场所",
+    "pos": "延世1",
+    "source_page": 9
+  },
+  {
+    "id": 120,
+    "korean": "백화점",
+    "chinese": "百货商店",
+    "pos": "延世1",
+    "source_page": 9
+  },
+  {
+    "id": 121,
+    "korean": "극장",
+    "chinese": "剧场",
+    "pos": "延世1",
+    "source_page": 9
+  },
+  {
+    "id": 122,
+    "korean": "집",
+    "chinese": "家",
+    "pos": "延世1",
+    "source_page": 9
+  },
+  {
+    "id": 123,
+    "korean": "근처",
+    "chinese": "附近",
+    "pos": "延世1",
+    "source_page": 9
+  },
+  {
+    "id": 124,
+    "korean": "지하철",
+    "chinese": "地铁",
+    "pos": "延世1",
+    "source_page": 9
+  },
+  {
+    "id": 125,
+    "korean": "역",
+    "chinese": "站",
+    "pos": "延世1",
+    "source_page": 9
+  },
+  {
+    "id": 126,
+    "korean": "지하철역",
+    "chinese": "地铁站",
+    "pos": "延世1",
+    "source_page": 9
+  },
+  {
+    "id": 127,
+    "korean": "병원",
+    "chinese": "医院",
+    "pos": "延世1",
+    "source_page": 9
+  },
+  {
+    "id": 128,
+    "korean": "약국",
+    "chinese": "药店",
+    "pos": "延世1",
+    "source_page": 9
+  },
+  {
+    "id": 129,
+    "korean": "회사",
+    "chinese": "公司",
+    "pos": "延世1",
+    "source_page": 9
+  },
+  {
+    "id": 130,
+    "korean": "가게",
+    "chinese": "店",
+    "pos": "延世1",
+    "source_page": 9
+  },
+  {
+    "id": 131,
+    "korean": "공원",
+    "chinese": "公园",
+    "pos": "延世1",
+    "source_page": 9
+  },
+  {
+    "id": 132,
+    "korean": "시장",
+    "chinese": "市场",
+    "pos": "延世1",
+    "source_page": 9
+  },
+  {
+    "id": 133,
+    "korean": "정류장",
+    "chinese": "车站",
+    "pos": "延世1",
+    "source_page": 10
+  },
+  {
+    "id": 134,
+    "korean": "커피숍",
+    "chinese": "咖啡店",
+    "pos": "延世1",
+    "source_page": 10
+  },
+  {
+    "id": 135,
+    "korean": "마트",
+    "chinese": "超市",
+    "pos": "延世1",
+    "source_page": 10
+  },
+  {
+    "id": 136,
+    "korean": "버스",
+    "chinese": "巴士",
+    "pos": "延世1",
+    "source_page": 10
+  },
+  {
+    "id": 137,
+    "korean": "아이",
+    "chinese": "小孩",
+    "pos": "延世1",
+    "source_page": 10
+  },
+  {
+    "id": 138,
+    "korean": "빵",
+    "chinese": "面包",
+    "pos": "延世1",
+    "source_page": 10
+  },
+  {
+    "id": 139,
+    "korean": "과자",
+    "chinese": "饼干",
+    "pos": "延世1",
+    "source_page": 10
+  },
+  {
+    "id": 140,
+    "korean": "가족",
+    "chinese": "家人",
+    "pos": "延世1",
+    "source_page": 10
+  },
+  {
+    "id": 141,
+    "korean": "사진",
+    "chinese": "照片",
+    "pos": "延世1",
+    "source_page": 10
+  },
+  {
+    "id": 142,
+    "korean": "자주",
+    "chinese": "经常",
+    "pos": "延世1",
+    "source_page": 10
+  },
+  {
+    "id": 143,
+    "korean": "가끔",
+    "chinese": "偶尔",
+    "pos": "延世1",
+    "source_page": 10
+  },
+  {
+    "id": 144,
+    "korean": "하다",
+    "chinese": "做、干",
+    "pos": "延世1",
+    "source_page": 10
+  },
+  {
+    "id": 145,
+    "korean": "보다",
+    "chinese": "看",
+    "pos": "延世1",
+    "source_page": 10
+  },
+  {
+    "id": 146,
+    "korean": "이야기",
+    "chinese": "说话",
+    "pos": "延世1",
+    "source_page": 10
+  },
+  {
+    "id": 147,
+    "korean": "일",
+    "chinese": "工作",
+    "pos": "延世1",
+    "source_page": 10
+  },
+  {
+    "id": 148,
+    "korean": "공부",
+    "chinese": "学习",
+    "pos": "延世1",
+    "source_page": 11
+  },
+  {
+    "id": 149,
+    "korean": "숙제",
+    "chinese": "作业",
+    "pos": "延世1",
+    "source_page": 11
+  },
+  {
+    "id": 150,
+    "korean": "노래",
+    "chinese": "歌曲",
+    "pos": "延世1",
+    "source_page": 11
+  },
+  {
+    "id": 151,
+    "korean": "운동",
+    "chinese": "运动",
+    "pos": "延世1",
+    "source_page": 11
+  },
+  {
+    "id": 152,
+    "korean": "산책",
+    "chinese": "散步",
+    "pos": "延世1",
+    "source_page": 11
+  },
+  {
+    "id": 153,
+    "korean": "식사",
+    "chinese": "吃饭",
+    "pos": "延世1",
+    "source_page": 11
+  },
+  {
+    "id": 154,
+    "korean": "좋아",
+    "chinese": "喜欢",
+    "pos": "延世1",
+    "source_page": 11
+  },
+  {
+    "id": 155,
+    "korean": "몇",
+    "chinese": "几，多少",
+    "pos": "延世1",
+    "source_page": 11
+  },
+  {
+    "id": 156,
+    "korean": "명",
+    "chinese": "个",
+    "pos": "延世1",
+    "source_page": 11
+  },
+  {
+    "id": 157,
+    "korean": "몇 명",
+    "chinese": "几个",
+    "pos": "延世1",
+    "source_page": 11
+  },
+  {
+    "id": 158,
+    "korean": "모두",
+    "chinese": "都，一共",
+    "pos": "延世1",
+    "source_page": 11
+  },
+  {
+    "id": 159,
+    "korean": "고향",
+    "chinese": "家乡",
+    "pos": "延世1",
+    "source_page": 11
+  },
+  {
+    "id": 160,
+    "korean": "아버지",
+    "chinese": "爸爸(成年)",
+    "pos": "延世1",
+    "source_page": 11
+  },
+  {
+    "id": 161,
+    "korean": "아빠",
+    "chinese": "爸爸(未成年)",
+    "pos": "延世1",
+    "source_page": 11
+  },
+  {
+    "id": 162,
+    "korean": "어머니",
+    "chinese": "妈妈(成年)",
+    "pos": "延世1",
+    "source_page": 11
+  },
+  {
+    "id": 163,
+    "korean": "엄마",
+    "chinese": "妈妈(未成年)",
+    "pos": "延世1",
+    "source_page": 12
+  },
+  {
+    "id": 164,
+    "korean": "부모님",
+    "chinese": "父母(敬语)",
+    "pos": "延世1",
+    "source_page": 12
+  },
+  {
+    "id": 165,
+    "korean": "부모",
+    "chinese": "父母(平语)",
+    "pos": "延世1",
+    "source_page": 12
+  },
+  {
+    "id": 166,
+    "korean": "할아버지",
+    "chinese": "爷爷",
+    "pos": "延世1",
+    "source_page": 12
+  },
+  {
+    "id": 167,
+    "korean": "할머니",
+    "chinese": "奶奶",
+    "pos": "延世1",
+    "source_page": 12
+  },
+  {
+    "id": 168,
+    "korean": "외할아버지",
+    "chinese": "外公",
+    "pos": "延世1",
+    "source_page": 12
+  },
+  {
+    "id": 169,
+    "korean": "남자",
+    "chinese": "男",
+    "pos": "延世1",
+    "source_page": 12
+  },
+  {
+    "id": 170,
+    "korean": "여자",
+    "chinese": "女",
+    "pos": "延世1",
+    "source_page": 12
+  },
+  {
+    "id": 171,
+    "korean": "나",
+    "chinese": "我",
+    "pos": "延世1",
+    "source_page": 12
+  },
+  {
+    "id": 172,
+    "korean": "형제",
+    "chinese": "兄弟",
+    "pos": "延世1",
+    "source_page": 12
+  },
+  {
+    "id": 173,
+    "korean": "형",
+    "chinese": "哥哥(男称)",
+    "pos": "延世1",
+    "source_page": 12
+  },
+  {
+    "id": 174,
+    "korean": "오빠",
+    "chinese": "哥哥(女称)",
+    "pos": "延世1",
+    "source_page": 12
+  },
+  {
+    "id": 175,
+    "korean": "누나",
+    "chinese": "姐姐(男称)",
+    "pos": "延世1",
+    "source_page": 12
+  },
+  {
+    "id": 176,
+    "korean": "언니",
+    "chinese": "姐姐(女称)",
+    "pos": "延世1",
+    "source_page": 12
+  },
+  {
+    "id": 177,
+    "korean": "동생",
+    "chinese": "弟弟或妹妹",
+    "pos": "延世1",
+    "source_page": 12
+  },
+  {
+    "id": 178,
+    "korean": "남동생",
+    "chinese": "弟弟",
+    "pos": "延世1",
+    "source_page": 13
+  },
+  {
+    "id": 179,
+    "korean": "여동생",
+    "chinese": "妹妹",
+    "pos": "延世1",
+    "source_page": 13
+  },
+  {
+    "id": 180,
+    "korean": "수",
+    "chinese": "数",
+    "pos": "延世1",
+    "source_page": 13
+  },
+  {
+    "id": 181,
+    "korean": "하나",
+    "chinese": "一",
+    "pos": "延世1",
+    "source_page": 13
+  },
+  {
+    "id": 182,
+    "korean": "둘",
+    "chinese": "二",
+    "pos": "延世1",
+    "source_page": 13
+  },
+  {
+    "id": 183,
+    "korean": "셋",
+    "chinese": "三",
+    "pos": "延世1",
+    "source_page": 13
+  },
+  {
+    "id": 184,
+    "korean": "넷",
+    "chinese": "四",
+    "pos": "延世1",
+    "source_page": 13
+  },
+  {
+    "id": 185,
+    "korean": "다섯",
+    "chinese": "五",
+    "pos": "延世1",
+    "source_page": 13
+  },
+  {
+    "id": 186,
+    "korean": "여섯",
+    "chinese": "六",
+    "pos": "延世1",
+    "source_page": 13
+  },
+  {
+    "id": 187,
+    "korean": "일곱",
+    "chinese": "七",
+    "pos": "延世1",
+    "source_page": 13
+  },
+  {
+    "id": 188,
+    "korean": "여덟",
+    "chinese": "八",
+    "pos": "延世1",
+    "source_page": 13
+  },
+  {
+    "id": 189,
+    "korean": "아홉",
+    "chinese": "九",
+    "pos": "延世1",
+    "source_page": 13
+  },
+  {
+    "id": 190,
+    "korean": "열",
+    "chinese": "十",
+    "pos": "延世1",
+    "source_page": 13
+  },
+  {
+    "id": 191,
+    "korean": "산",
+    "chinese": "山",
+    "pos": "延世1",
+    "source_page": 13
+  },
+  {
+    "id": 192,
+    "korean": "공기",
+    "chinese": "空气",
+    "pos": "延世1",
+    "source_page": 13
+  },
+  {
+    "id": 193,
+    "korean": "고",
+    "chinese": "连接词尾",
+    "pos": "延世1",
+    "source_page": 14
+  },
+  {
+    "id": 194,
+    "korean": "춥다",
+    "chinese": "冷",
+    "pos": "延世1",
+    "source_page": 14
+  },
+  {
+    "id": 195,
+    "korean": "덥다",
+    "chinese": "热",
+    "pos": "延世1",
+    "source_page": 14
+  },
+  {
+    "id": 196,
+    "korean": "시원하다",
+    "chinese": "凉快",
+    "pos": "延世1",
+    "source_page": 14
+  },
+  {
+    "id": 197,
+    "korean": "따뜻하다",
+    "chinese": "温暖",
+    "pos": "延世1",
+    "source_page": 14
+  },
+  {
+    "id": 198,
+    "korean": "예쁘다",
+    "chinese": "漂亮",
+    "pos": "延世1",
+    "source_page": 14
+  },
+  {
+    "id": 199,
+    "korean": "복잡하다",
+    "chinese": "复杂",
+    "pos": "延世1",
+    "source_page": 14
+  },
+  {
+    "id": 200,
+    "korean": "깨끗하다",
+    "chinese": "干净",
+    "pos": "延世1",
+    "source_page": 14
+  },
+  {
+    "id": 201,
+    "korean": "더럽다",
+    "chinese": "脏",
+    "pos": "延世1",
+    "source_page": 14
+  },
+  {
+    "id": 202,
+    "korean": "조용하다",
+    "chinese": "安静",
+    "pos": "延世1",
+    "source_page": 14
+  },
+  {
+    "id": 203,
+    "korean": "시끄럽다",
+    "chinese": "喧哗",
+    "pos": "延世1",
+    "source_page": 14
+  },
+  {
+    "id": 204,
+    "korean": "넓다",
+    "chinese": "宽",
+    "pos": "延世1",
+    "source_page": 14
+  },
+  {
+    "id": 205,
+    "korean": "좁다",
+    "chinese": "窄",
+    "pos": "延世1",
+    "source_page": 14
+  },
+  {
+    "id": 206,
+    "korean": "전공",
+    "chinese": "专业",
+    "pos": "延世1",
+    "source_page": 14
+  },
+  {
+    "id": 207,
+    "korean": "경제학",
+    "chinese": "经济学",
+    "pos": "延世1",
+    "source_page": 14
+  },
+  {
+    "id": 208,
+    "korean": "컴퓨터공학",
+    "chinese": "计算机工学",
+    "pos": "延世1",
+    "source_page": 15
+  },
+  {
+    "id": 209,
+    "korean": "법학",
+    "chinese": "法学",
+    "pos": "延世1",
+    "source_page": 15
+  },
+  {
+    "id": 210,
+    "korean": "생물학",
+    "chinese": "生物学",
+    "pos": "延世1",
+    "source_page": 15
+  },
+  {
+    "id": 211,
+    "korean": "경영학",
+    "chinese": "经营学",
+    "pos": "延世1",
+    "source_page": 15
+  },
+  {
+    "id": 212,
+    "korean": "역사학",
+    "chinese": "历史学",
+    "pos": "延世1",
+    "source_page": 15
+  },
+  {
+    "id": 213,
+    "korean": "정치학",
+    "chinese": "政治学",
+    "pos": "延世1",
+    "source_page": 15
+  },
+  {
+    "id": 214,
+    "korean": "의학",
+    "chinese": "医学",
+    "pos": "延世1",
+    "source_page": 15
+  },
+  {
+    "id": 215,
+    "korean": "영문학",
+    "chinese": "英国文学",
+    "pos": "延世1",
+    "source_page": 15
+  },
+  {
+    "id": 216,
+    "korean": "혼자",
+    "chinese": "一个人，独自",
+    "pos": "延世1",
+    "source_page": 15
+  },
+  {
+    "id": 217,
+    "korean": "같이",
+    "chinese": "一起",
+    "pos": "延世1",
+    "source_page": 15
+  },
+  {
+    "id": 218,
+    "korean": "그럽시다",
+    "chinese": "那样做吧",
+    "pos": "延世1",
+    "source_page": 15
+  },
+  {
+    "id": 219,
+    "korean": "나가다",
+    "chinese": "出去",
+    "pos": "延世1",
+    "source_page": 15
+  },
+  {
+    "id": 220,
+    "korean": "들어가다",
+    "chinese": "进去",
+    "pos": "延世1",
+    "source_page": 15
+  },
+  {
+    "id": 221,
+    "korean": "올라가다",
+    "chinese": "上去",
+    "pos": "延世1",
+    "source_page": 15
+  },
+  {
+    "id": 222,
+    "korean": "내려가다",
+    "chinese": "下去",
+    "pos": "延世1",
+    "source_page": 15
+  },
+  {
+    "id": 223,
+    "korean": "나오다",
+    "chinese": "出来",
+    "pos": "延世1",
+    "source_page": 16
+  },
+  {
+    "id": 224,
+    "korean": "들어오다",
+    "chinese": "进来",
+    "pos": "延世1",
+    "source_page": 16
+  },
+  {
+    "id": 225,
+    "korean": "올라오다",
+    "chinese": "上来",
+    "pos": "延世1",
+    "source_page": 16
+  },
+  {
+    "id": 226,
+    "korean": "내려오다",
+    "chinese": "下来",
+    "pos": "延世1",
+    "source_page": 16
+  },
+  {
+    "id": 227,
+    "korean": "한식집",
+    "chinese": "韩餐厅",
+    "pos": "延世1",
+    "source_page": 16
+  },
+  {
+    "id": 228,
+    "korean": "중국집",
+    "chinese": "中餐厅",
+    "pos": "延世1",
+    "source_page": 16
+  },
+  {
+    "id": 229,
+    "korean": "일식집",
+    "chinese": "日本餐厅",
+    "pos": "延世1",
+    "source_page": 16
+  },
+  {
+    "id": 230,
+    "korean": "양식집",
+    "chinese": "西餐厅",
+    "pos": "延世1",
+    "source_page": 16
+  },
+  {
+    "id": 231,
+    "korean": "비빔밥",
+    "chinese": "拌饭",
+    "pos": "延世1",
+    "source_page": 16
+  },
+  {
+    "id": 232,
+    "korean": "불고기",
+    "chinese": "烤肉",
+    "pos": "延世1",
+    "source_page": 16
+  },
+  {
+    "id": 233,
+    "korean": "내일",
+    "chinese": "明天",
+    "pos": "延世1",
+    "source_page": 16
+  },
+  {
+    "id": 234,
+    "korean": "가깝다",
+    "chinese": "近",
+    "pos": "延世1",
+    "source_page": 16
+  },
+  {
+    "id": 235,
+    "korean": "그래요",
+    "chinese": "是吗",
+    "pos": "延世1",
+    "source_page": 16
+  },
+  {
+    "id": 236,
+    "korean": "값",
+    "chinese": "价格",
+    "pos": "延世1",
+    "source_page": 16
+  },
+  {
+    "id": 237,
+    "korean": "싸다",
+    "chinese": "便宜",
+    "pos": "延世1",
+    "source_page": 16
+  },
+  {
+    "id": 238,
+    "korean": "외국인",
+    "chinese": "外国人",
+    "pos": "延世1",
+    "source_page": 17
+  },
+  {
+    "id": 239,
+    "korean": "잘",
+    "chinese": "好，副词修饰动词",
+    "pos": "延世1",
+    "source_page": 17
+  },
+  {
+    "id": 240,
+    "korean": "아주",
+    "chinese": "非常",
+    "pos": "延世1",
+    "source_page": 17
+  },
+  {
+    "id": 241,
+    "korean": "들",
+    "chinese": "们",
+    "pos": "延世1",
+    "source_page": 17
+  },
+  {
+    "id": 242,
+    "korean": "맛",
+    "chinese": "味道",
+    "pos": "延世1",
+    "source_page": 17
+  },
+  {
+    "id": 243,
+    "korean": "맛있다",
+    "chinese": "好吃",
+    "pos": "延世1",
+    "source_page": 17
+  },
+  {
+    "id": 244,
+    "korean": "맛없다",
+    "chinese": "不好吃[마덥따]",
+    "pos": "延世1",
+    "source_page": 17
+  },
+  {
+    "id": 245,
+    "korean": "맵다",
+    "chinese": "辣",
+    "pos": "延世1",
+    "source_page": 17
+  },
+  {
+    "id": 246,
+    "korean": "달다",
+    "chinese": "甜",
+    "pos": "延世1",
+    "source_page": 17
+  },
+  {
+    "id": 247,
+    "korean": "쓰다",
+    "chinese": "苦",
+    "pos": "延世1",
+    "source_page": 17
+  },
+  {
+    "id": 248,
+    "korean": "시다",
+    "chinese": "酸",
+    "pos": "延世1",
+    "source_page": 17
+  },
+  {
+    "id": 249,
+    "korean": "짜다",
+    "chinese": "咸",
+    "pos": "延世1",
+    "source_page": 17
+  },
+  {
+    "id": 250,
+    "korean": "싱겁다",
+    "chinese": "淡",
+    "pos": "延世1",
+    "source_page": 17
+  },
+  {
+    "id": 251,
+    "korean": "살다",
+    "chinese": "住，生活",
+    "pos": "延世1",
+    "source_page": 17
+  },
+  {
+    "id": 252,
+    "korean": "알다",
+    "chinese": "知道",
+    "pos": "延世1",
+    "source_page": 17
+  },
+  {
+    "id": 253,
+    "korean": "열다",
+    "chinese": "开",
+    "pos": "延世1",
+    "source_page": 18
+  },
+  {
+    "id": 254,
+    "korean": "놀다",
+    "chinese": "玩",
+    "pos": "延世1",
+    "source_page": 18
+  },
+  {
+    "id": 255,
+    "korean": "만들다",
+    "chinese": "做",
+    "pos": "延世1",
+    "source_page": 18
+  },
+  {
+    "id": 256,
+    "korean": "고 싶다",
+    "chinese": "表示意愿、愿望，\"想...\"",
+    "pos": "延世1",
+    "source_page": 18
+  },
+  {
+    "id": 257,
+    "korean": "갈비",
+    "chinese": "排骨",
+    "pos": "延世1",
+    "source_page": 18
+  },
+  {
+    "id": 258,
+    "korean": "삼겹살",
+    "chinese": "五花肉",
+    "pos": "延世1",
+    "source_page": 18
+  },
+  {
+    "id": 259,
+    "korean": "김치찌개",
+    "chinese": "泡菜汤",
+    "pos": "延世1",
+    "source_page": 18
+  },
+  {
+    "id": 260,
+    "korean": "된장찌개",
+    "chinese": "大酱汤",
+    "pos": "延世1",
+    "source_page": 18
+  },
+  {
+    "id": 261,
+    "korean": "순두부찌개",
+    "chinese": "嫩豆腐汤",
+    "pos": "延世1",
+    "source_page": 18
+  },
+  {
+    "id": 262,
+    "korean": "닭갈비",
+    "chinese": "鸡排",
+    "pos": "延世1",
+    "source_page": 18
+  },
+  {
+    "id": 263,
+    "korean": "삼계탕",
+    "chinese": "参鸡汤",
+    "pos": "延世1",
+    "source_page": 18
+  },
+  {
+    "id": 264,
+    "korean": "갈비탕",
+    "chinese": "排骨汤",
+    "pos": "延世1",
+    "source_page": 18
+  },
+  {
+    "id": 265,
+    "korean": "냉면",
+    "chinese": "冷面",
+    "pos": "延世1",
+    "source_page": 18
+  },
+  {
+    "id": 266,
+    "korean": "칼국수",
+    "chinese": "刀削面",
+    "pos": "延世1",
+    "source_page": 18
+  },
+  {
+    "id": 267,
+    "korean": "라면",
+    "chinese": "拉面",
+    "pos": "延世1",
+    "source_page": 18
+  },
+  {
+    "id": 268,
+    "korean": "김밥",
+    "chinese": "紫菜包饭",
+    "pos": "延世1",
+    "source_page": 19
+  },
+  {
+    "id": 269,
+    "korean": "떡볶이",
+    "chinese": "炒年糕",
+    "pos": "延世1",
+    "source_page": 19
+  },
+  {
+    "id": 270,
+    "korean": "잡채",
+    "chinese": "杂菜",
+    "pos": "延世1",
+    "source_page": 19
+  },
+  {
+    "id": 271,
+    "korean": "여행하다",
+    "chinese": "旅行",
+    "pos": "延世1",
+    "source_page": 19
+  },
+  {
+    "id": 272,
+    "korean": "파티",
+    "chinese": "聚会",
+    "pos": "延世1",
+    "source_page": 19
+  },
+  {
+    "id": 273,
+    "korean": "내년",
+    "chinese": "明年",
+    "pos": "延世1",
+    "source_page": 19
+  },
+  {
+    "id": 274,
+    "korean": "다시",
+    "chinese": "再，又",
+    "pos": "延世1",
+    "source_page": 19
+  },
+  {
+    "id": 275,
+    "korean": "시키다",
+    "chinese": "点菜",
+    "pos": "延世1",
+    "source_page": 19
+  },
+  {
+    "id": 276,
+    "korean": "와",
+    "chinese": "和",
+    "pos": "延世1",
+    "source_page": 19
+  },
+  {
+    "id": 277,
+    "korean": "종업원",
+    "chinese": "服务员",
+    "pos": "延世1",
+    "source_page": 19
+  },
+  {
+    "id": 278,
+    "korean": "주다",
+    "chinese": "给",
+    "pos": "延世1",
+    "source_page": 19
+  },
+  {
+    "id": 279,
+    "korean": "드리다",
+    "chinese": "给(敬语)",
+    "pos": "延世1",
+    "source_page": 19
+  },
+  {
+    "id": 280,
+    "korean": "물",
+    "chinese": "水",
+    "pos": "延世1",
+    "source_page": 19
+  },
+  {
+    "id": 281,
+    "korean": "뭘",
+    "chinese": "什么 = 무엇을",
+    "pos": "延世1",
+    "source_page": 19
+  },
+  {
+    "id": 282,
+    "korean": "일",
+    "chinese": "一",
+    "pos": "延世1",
+    "source_page": 19
+  },
+  {
+    "id": 283,
+    "korean": "이",
+    "chinese": "二",
+    "pos": "延世1",
+    "source_page": 20
+  },
+  {
+    "id": 284,
+    "korean": "삼",
+    "chinese": "三",
+    "pos": "延世1",
+    "source_page": 20
+  },
+  {
+    "id": 285,
+    "korean": "사",
+    "chinese": "四",
+    "pos": "延世1",
+    "source_page": 20
+  },
+  {
+    "id": 286,
+    "korean": "오",
+    "chinese": "五",
+    "pos": "延世1",
+    "source_page": 20
+  },
+  {
+    "id": 287,
+    "korean": "육",
+    "chinese": "六",
+    "pos": "延世1",
+    "source_page": 20
+  },
+  {
+    "id": 288,
+    "korean": "칠",
+    "chinese": "七",
+    "pos": "延世1",
+    "source_page": 20
+  },
+  {
+    "id": 289,
+    "korean": "팔",
+    "chinese": "八",
+    "pos": "延世1",
+    "source_page": 20
+  },
+  {
+    "id": 290,
+    "korean": "구",
+    "chinese": "九",
+    "pos": "延世1",
+    "source_page": 20
+  },
+  {
+    "id": 291,
+    "korean": "십",
+    "chinese": "十",
+    "pos": "延世1",
+    "source_page": 20
+  },
+  {
+    "id": 292,
+    "korean": "잔",
+    "chinese": "杯",
+    "pos": "延世1",
+    "source_page": 20
+  },
+  {
+    "id": 293,
+    "korean": "병",
+    "chinese": "瓶",
+    "pos": "延世1",
+    "source_page": 20
+  },
+  {
+    "id": 294,
+    "korean": "그릇",
+    "chinese": "碗",
+    "pos": "延世1",
+    "source_page": 20
+  },
+  {
+    "id": 295,
+    "korean": "인분",
+    "chinese": "人份",
+    "pos": "延世1",
+    "source_page": 20
+  },
+  {
+    "id": 296,
+    "korean": "사탕",
+    "chinese": "糖果",
+    "pos": "延世1",
+    "source_page": 20
+  },
+  {
+    "id": 297,
+    "korean": "맥주",
+    "chinese": "啤酒",
+    "pos": "延世1",
+    "source_page": 20
+  },
+  {
+    "id": 298,
+    "korean": "소주",
+    "chinese": "烧酒",
+    "pos": "延世1",
+    "source_page": 21
+  },
+  {
+    "id": 299,
+    "korean": "초콜릿",
+    "chinese": "巧克力",
+    "pos": "延世1",
+    "source_page": 21
+  },
+  {
+    "id": 300,
+    "korean": "다리",
+    "chinese": "腿",
+    "pos": "延世1",
+    "source_page": 21
+  },
+  {
+    "id": 301,
+    "korean": "아프다",
+    "chinese": "疼",
+    "pos": "延世1",
+    "source_page": 21
+  },
+  {
+    "id": 302,
+    "korean": "단어",
+    "chinese": "单词",
+    "pos": "延世1",
+    "source_page": 21
+  },
+  {
+    "id": 303,
+    "korean": "모르다",
+    "chinese": "不知道",
+    "pos": "延世1",
+    "source_page": 21
+  },
+  {
+    "id": 304,
+    "korean": "찾다",
+    "chinese": "找",
+    "pos": "延世1",
+    "source_page": 21
+  },
+  {
+    "id": 305,
+    "korean": "고프다",
+    "chinese": "饿",
+    "pos": "延世1",
+    "source_page": 21
+  },
+  {
+    "id": 306,
+    "korean": "오렌지",
+    "chinese": "橙子",
+    "pos": "延世1",
+    "source_page": 21
+  },
+  {
+    "id": 307,
+    "korean": "케이크",
+    "chinese": "蛋糕",
+    "pos": "延世1",
+    "source_page": 21
+  },
+  {
+    "id": 308,
+    "korean": "생일",
+    "chinese": "生日",
+    "pos": "延世1",
+    "source_page": 21
+  },
+  {
+    "id": 309,
+    "korean": "영어",
+    "chinese": "英语",
+    "pos": "延世1",
+    "source_page": 21
+  },
+  {
+    "id": 310,
+    "korean": "일어",
+    "chinese": "日语",
+    "pos": "延世1",
+    "source_page": 21
+  },
+  {
+    "id": 311,
+    "korean": "아무거니",
+    "chinese": "随便",
+    "pos": "延世1",
+    "source_page": 21
+  },
+  {
+    "id": 312,
+    "korean": "손님",
+    "chinese": "客人",
+    "pos": "延世1",
+    "source_page": 21
+  },
+  {
+    "id": 313,
+    "korean": "알겠습니다",
+    "chinese": "知道了",
+    "pos": "延世1",
+    "source_page": 22
+  },
+  {
+    "id": 314,
+    "korean": "드셔 보세요",
+    "chinese": "尝一尝吧",
+    "pos": "延世1",
+    "source_page": 22
+  },
+  {
+    "id": 315,
+    "korean": "잠시 만기다리십시오",
+    "chinese": "请你稍等一会",
+    "pos": "延世1",
+    "source_page": 22
+  },
+  {
+    "id": 316,
+    "korean": "시키다",
+    "chinese": "点菜",
+    "pos": "延世1",
+    "source_page": 22
+  },
+  {
+    "id": 317,
+    "korean": "맥주 하나요/돌이요/셋이요",
+    "chinese": "一瓶/两瓶/三瓶啤酒",
+    "pos": "延世1",
+    "source_page": 22
+  },
+  {
+    "id": 318,
+    "korean": "지금",
+    "chinese": "现在",
+    "pos": "延世1",
+    "source_page": 22
+  },
+  {
+    "id": 319,
+    "korean": "시",
+    "chinese": "点",
+    "pos": "延世1",
+    "source_page": 22
+  },
+  {
+    "id": 320,
+    "korean": "분",
+    "chinese": "分",
+    "pos": "延世1",
+    "source_page": 22
+  },
+  {
+    "id": 321,
+    "korean": "요",
+    "chinese": "非结构性结尾",
+    "pos": "延世1",
+    "source_page": 22
+  },
+  {
+    "id": 322,
+    "korean": "까지",
+    "chinese": "到",
+    "pos": "延世1",
+    "source_page": 22
+  },
+  {
+    "id": 323,
+    "korean": "십",
+    "chinese": "十",
+    "pos": "延世1",
+    "source_page": 22
+  },
+  {
+    "id": 324,
+    "korean": "이십",
+    "chinese": "二十",
+    "pos": "延世1",
+    "source_page": 22
+  },
+  {
+    "id": 325,
+    "korean": "삼십",
+    "chinese": "三十",
+    "pos": "延世1",
+    "source_page": 22
+  },
+  {
+    "id": 326,
+    "korean": "사십",
+    "chinese": "四十",
+    "pos": "延世1",
+    "source_page": 22
+  },
+  {
+    "id": 327,
+    "korean": "오십",
+    "chinese": "五十",
+    "pos": "延世1",
+    "source_page": 22
+  },
+  {
+    "id": 328,
+    "korean": "육십",
+    "chinese": "六十",
+    "pos": "延世1",
+    "source_page": 23
+  },
+  {
+    "id": 329,
+    "korean": "칠십",
+    "chinese": "七十",
+    "pos": "延世1",
+    "source_page": 23
+  },
+  {
+    "id": 330,
+    "korean": "팔십",
+    "chinese": "八十",
+    "pos": "延世1",
+    "source_page": 23
+  },
+  {
+    "id": 331,
+    "korean": "구십",
+    "chinese": "九十",
+    "pos": "延世1",
+    "source_page": 23
+  },
+  {
+    "id": 332,
+    "korean": "백",
+    "chinese": "百",
+    "pos": "延世1",
+    "source_page": 23
+  },
+  {
+    "id": 333,
+    "korean": "천",
+    "chinese": "千",
+    "pos": "延世1",
+    "source_page": 23
+  },
+  {
+    "id": 334,
+    "korean": "만",
+    "chinese": "万",
+    "pos": "延世1",
+    "source_page": 23
+  },
+  {
+    "id": 335,
+    "korean": "반",
+    "chinese": "半",
+    "pos": "延世1",
+    "source_page": 23
+  },
+  {
+    "id": 336,
+    "korean": "전",
+    "chinese": "前",
+    "pos": "延世1",
+    "source_page": 23
+  },
+  {
+    "id": 337,
+    "korean": "시간",
+    "chinese": "时间",
+    "pos": "延世1",
+    "source_page": 23
+  },
+  {
+    "id": 338,
+    "korean": "오전",
+    "chinese": "上午",
+    "pos": "延世1",
+    "source_page": 23
+  },
+  {
+    "id": 339,
+    "korean": "오후",
+    "chinese": "下午",
+    "pos": "延世1",
+    "source_page": 23
+  },
+  {
+    "id": 340,
+    "korean": "월",
+    "chinese": "月",
+    "pos": "延世1",
+    "source_page": 23
+  },
+  {
+    "id": 341,
+    "korean": "몇 월",
+    "chinese": "几月",
+    "pos": "延世1",
+    "source_page": 23
+  },
+  {
+    "id": 342,
+    "korean": "며 칠",
+    "chinese": "几号，几天",
+    "pos": "延世1",
+    "source_page": 23
+  },
+  {
+    "id": 343,
+    "korean": "일",
+    "chinese": "天",
+    "pos": "延世1",
+    "source_page": 24
+  },
+  {
+    "id": 344,
+    "korean": "내일",
+    "chinese": "明天",
+    "pos": "延世1",
+    "source_page": 24
+  },
+  {
+    "id": 345,
+    "korean": "오늘",
+    "chinese": "今天",
+    "pos": "延世1",
+    "source_page": 24
+  },
+  {
+    "id": 346,
+    "korean": "뭐",
+    "chinese": "什么=무엇",
+    "pos": "延世1",
+    "source_page": 24
+  },
+  {
+    "id": 347,
+    "korean": "글쎄요",
+    "chinese": "嗯...(不确定的语气)",
+    "pos": "延世1",
+    "source_page": 24
+  },
+  {
+    "id": 348,
+    "korean": "쉬다",
+    "chinese": "休息",
+    "pos": "延世1",
+    "source_page": 24
+  },
+  {
+    "id": 349,
+    "korean": "날짜",
+    "chinese": "日期",
+    "pos": "延世1",
+    "source_page": 24
+  },
+  {
+    "id": 350,
+    "korean": "요일",
+    "chinese": "星期",
+    "pos": "延世1",
+    "source_page": 24
+  },
+  {
+    "id": 351,
+    "korean": "일월",
+    "chinese": "1月",
+    "pos": "延世1",
+    "source_page": 24
+  },
+  {
+    "id": 352,
+    "korean": "이월",
+    "chinese": "2月",
+    "pos": "延世1",
+    "source_page": 24
+  },
+  {
+    "id": 353,
+    "korean": "삼월",
+    "chinese": "3月",
+    "pos": "延世1",
+    "source_page": 24
+  },
+  {
+    "id": 354,
+    "korean": "사월",
+    "chinese": "4月",
+    "pos": "延世1",
+    "source_page": 24
+  },
+  {
+    "id": 355,
+    "korean": "오월",
+    "chinese": "5月",
+    "pos": "延世1",
+    "source_page": 24
+  },
+  {
+    "id": 356,
+    "korean": "유월",
+    "chinese": "6月",
+    "pos": "延世1",
+    "source_page": 24
+  },
+  {
+    "id": 357,
+    "korean": "칠월",
+    "chinese": "7月",
+    "pos": "延世1",
+    "source_page": 24
+  },
+  {
+    "id": 358,
+    "korean": "팔월",
+    "chinese": "8月",
+    "pos": "延世1",
+    "source_page": 25
+  },
+  {
+    "id": 359,
+    "korean": "구월",
+    "chinese": "9月",
+    "pos": "延世1",
+    "source_page": 25
+  },
+  {
+    "id": 360,
+    "korean": "시월",
+    "chinese": "10月",
+    "pos": "延世1",
+    "source_page": 25
+  },
+  {
+    "id": 361,
+    "korean": "십일월",
+    "chinese": "11月",
+    "pos": "延世1",
+    "source_page": 25
+  },
+  {
+    "id": 362,
+    "korean": "십이월",
+    "chinese": "12月",
+    "pos": "延世1",
+    "source_page": 25
+  },
+  {
+    "id": 363,
+    "korean": "월요일",
+    "chinese": "星期一",
+    "pos": "延世1",
+    "source_page": 25
+  },
+  {
+    "id": 364,
+    "korean": "화요일",
+    "chinese": "星期二",
+    "pos": "延世1",
+    "source_page": 25
+  },
+  {
+    "id": 365,
+    "korean": "수요일",
+    "chinese": "星期三",
+    "pos": "延世1",
+    "source_page": 25
+  },
+  {
+    "id": 366,
+    "korean": "목요일",
+    "chinese": "星期四",
+    "pos": "延世1",
+    "source_page": 25
+  },
+  {
+    "id": 367,
+    "korean": "금요일",
+    "chinese": "星期五",
+    "pos": "延世1",
+    "source_page": 25
+  },
+  {
+    "id": 368,
+    "korean": "토요일",
+    "chinese": "星期六",
+    "pos": "延世1",
+    "source_page": 25
+  },
+  {
+    "id": 369,
+    "korean": "일요일",
+    "chinese": "星期天",
+    "pos": "延世1",
+    "source_page": 25
+  },
+  {
+    "id": 370,
+    "korean": "일일",
+    "chinese": "1号",
+    "pos": "延世1",
+    "source_page": 25
+  },
+  {
+    "id": 371,
+    "korean": "이일",
+    "chinese": "2号",
+    "pos": "延世1",
+    "source_page": 25
+  },
+  {
+    "id": 372,
+    "korean": "아침",
+    "chinese": "早上/早饭",
+    "pos": "延世1",
+    "source_page": 25
+  },
+  {
+    "id": 373,
+    "korean": "아침을 먹어요",
+    "chinese": "吃早饭",
+    "pos": "延世1",
+    "source_page": 26
+  },
+  {
+    "id": 374,
+    "korean": "일어나다",
+    "chinese": "起床",
+    "pos": "延世1",
+    "source_page": 26
+  },
+  {
+    "id": 375,
+    "korean": "수업",
+    "chinese": "课",
+    "pos": "延世1",
+    "source_page": 26
+  },
+  {
+    "id": 376,
+    "korean": "수업하다",
+    "chinese": "上课",
+    "pos": "延世1",
+    "source_page": 26
+  },
+  {
+    "id": 377,
+    "korean": "날마다",
+    "chinese": "每天，天天",
+    "pos": "延世1",
+    "source_page": 26
+  },
+  {
+    "id": 378,
+    "korean": "안",
+    "chinese": "否定副词，不",
+    "pos": "延世1",
+    "source_page": 26
+  },
+  {
+    "id": 379,
+    "korean": "부터",
+    "chinese": "从",
+    "pos": "延世1",
+    "source_page": 26
+  },
+  {
+    "id": 380,
+    "korean": "세수하다",
+    "chinese": "洗脸",
+    "pos": "延世1",
+    "source_page": 26
+  },
+  {
+    "id": 381,
+    "korean": "닦다",
+    "chinese": "刷，擦",
+    "pos": "延世1",
+    "source_page": 26
+  },
+  {
+    "id": 382,
+    "korean": "이",
+    "chinese": "牙齿",
+    "pos": "延世1",
+    "source_page": 26
+  },
+  {
+    "id": 383,
+    "korean": "타다",
+    "chinese": "乘坐",
+    "pos": "延世1",
+    "source_page": 26
+  },
+  {
+    "id": 384,
+    "korean": "어제",
+    "chinese": "昨天",
+    "pos": "延世1",
+    "source_page": 26
+  },
+  {
+    "id": 385,
+    "korean": "그저께",
+    "chinese": "前天",
+    "pos": "延世1",
+    "source_page": 26
+  },
+  {
+    "id": 386,
+    "korean": "모레",
+    "chinese": "后天",
+    "pos": "延世1",
+    "source_page": 26
+  },
+  {
+    "id": 387,
+    "korean": "언제",
+    "chinese": "什么时候，何时",
+    "pos": "延世1",
+    "source_page": 26
+  },
+  {
+    "id": 388,
+    "korean": "주",
+    "chinese": "周",
+    "pos": "延世1",
+    "source_page": 27
+  },
+  {
+    "id": 389,
+    "korean": "지난",
+    "chinese": "上次，上一个",
+    "pos": "延世1",
+    "source_page": 27
+  },
+  {
+    "id": 390,
+    "korean": "이번",
+    "chinese": "这次，这个",
+    "pos": "延世1",
+    "source_page": 27
+  },
+  {
+    "id": 391,
+    "korean": "다음",
+    "chinese": "下次，下一个",
+    "pos": "延世1",
+    "source_page": 27
+  },
+  {
+    "id": 392,
+    "korean": "지난 주",
+    "chinese": "上周",
+    "pos": "延世1",
+    "source_page": 27
+  },
+  {
+    "id": 393,
+    "korean": "이번 주",
+    "chinese": "这周",
+    "pos": "延世1",
+    "source_page": 27
+  },
+  {
+    "id": 394,
+    "korean": "다음 주",
+    "chinese": "下周",
+    "pos": "延世1",
+    "source_page": 27
+  },
+  {
+    "id": 395,
+    "korean": "작년",
+    "chinese": "去年",
+    "pos": "延世1",
+    "source_page": 27
+  },
+  {
+    "id": 396,
+    "korean": "올해",
+    "chinese": "今年",
+    "pos": "延世1",
+    "source_page": 27
+  },
+  {
+    "id": 397,
+    "korean": "내년",
+    "chinese": "明年",
+    "pos": "延世1",
+    "source_page": 27
+  },
+  {
+    "id": 398,
+    "korean": "지난 달",
+    "chinese": "上个月",
+    "pos": "延世1",
+    "source_page": 27
+  },
+  {
+    "id": 399,
+    "korean": "이번 달",
+    "chinese": "这个月",
+    "pos": "延世1",
+    "source_page": 27
+  },
+  {
+    "id": 400,
+    "korean": "다음 달",
+    "chinese": "下个月",
+    "pos": "延世1",
+    "source_page": 27
+  },
+  {
+    "id": 401,
+    "korean": "날",
+    "chinese": "天",
+    "pos": "延世1",
+    "source_page": 27
+  },
+  {
+    "id": 402,
+    "korean": "선물",
+    "chinese": "礼物",
+    "pos": "延世1",
+    "source_page": 27
+  },
+  {
+    "id": 403,
+    "korean": "선물을 사요",
+    "chinese": "买礼物",
+    "pos": "延世1",
+    "source_page": 28
+  },
+  {
+    "id": 404,
+    "korean": "장미꽃",
+    "chinese": "玫瑰",
+    "pos": "延世1",
+    "source_page": 28
+  },
+  {
+    "id": 405,
+    "korean": "꽃",
+    "chinese": "花",
+    "pos": "延世1",
+    "source_page": 28
+  },
+  {
+    "id": 406,
+    "korean": "꽃 가게",
+    "chinese": "花店",
+    "pos": "延世1",
+    "source_page": 28
+  },
+  {
+    "id": 407,
+    "korean": "빵집",
+    "chinese": "面包房",
+    "pos": "延世1",
+    "source_page": 28
+  },
+  {
+    "id": 408,
+    "korean": "옷 가게",
+    "chinese": "衣店",
+    "pos": "延世1",
+    "source_page": 28
+  },
+  {
+    "id": 409,
+    "korean": "빵 가게",
+    "chinese": "面包店",
+    "pos": "延世1",
+    "source_page": 28
+  },
+  {
+    "id": 410,
+    "korean": "과일 가게",
+    "chinese": "水果店",
+    "pos": "延世1",
+    "source_page": 28
+  },
+  {
+    "id": 411,
+    "korean": "문방구",
+    "chinese": "文件店",
+    "pos": "延世1",
+    "source_page": 28
+  },
+  {
+    "id": 412,
+    "korean": "편의점",
+    "chinese": "便利店",
+    "pos": "延世1",
+    "source_page": 28
+  },
+  {
+    "id": 413,
+    "korean": "디자인이 다양하나/독특하다",
+    "chinese": "设计多样/独特",
+    "pos": "延世1",
+    "source_page": 28
+  },
+  {
+    "id": 414,
+    "korean": "볼거리/먹을거리가 많다",
+    "chinese": "看的东西/吃的东西很多",
+    "pos": "延世1",
+    "source_page": 28
+  },
+  {
+    "id": 415,
+    "korean": "면세점",
+    "chinese": "免税店",
+    "pos": "延世1",
+    "source_page": 28
+  },
+  {
+    "id": 416,
+    "korean": "유명 브랜드가 많다",
+    "chinese": "名品很多",
+    "pos": "延世1",
+    "source_page": 28
+  },
+  {
+    "id": 417,
+    "korean": "글쎄요",
+    "chinese": "这个嘛",
+    "pos": "延世1",
+    "source_page": 28
+  },
+  {
+    "id": 418,
+    "korean": "그렇지만",
+    "chinese": "但是",
+    "pos": "延世1",
+    "source_page": 29
+  },
+  {
+    "id": 419,
+    "korean": "아줌마",
+    "chinese": "大婶",
+    "pos": "延世1",
+    "source_page": 29
+  },
+  {
+    "id": 420,
+    "korean": "이유",
+    "chinese": "理由",
+    "pos": "延世1",
+    "source_page": 29
+  },
+  {
+    "id": 421,
+    "korean": "비싸다",
+    "chinese": "贵",
+    "pos": "延世1",
+    "source_page": 29
+  },
+  {
+    "id": 422,
+    "korean": "주인",
+    "chinese": "主人",
+    "pos": "延世1",
+    "source_page": 29
+  },
+  {
+    "id": 423,
+    "korean": "건",
+    "chinese": "...的事情/东西",
+    "pos": "延世1",
+    "source_page": 29
+  },
+  {
+    "id": 424,
+    "korean": "치즈",
+    "chinese": "芝士",
+    "pos": "延世1",
+    "source_page": 29
+  },
+  {
+    "id": 425,
+    "korean": "좀",
+    "chinese": "有点",
+    "pos": "延世1",
+    "source_page": 29
+  },
+  {
+    "id": 426,
+    "korean": "큰",
+    "chinese": "大的",
+    "pos": "延世1",
+    "source_page": 29
+  },
+  {
+    "id": 427,
+    "korean": "어때요",
+    "chinese": "怎么样",
+    "pos": "延世1",
+    "source_page": 29
+  },
+  {
+    "id": 428,
+    "korean": "빨간색",
+    "chinese": "红色",
+    "pos": "延世1",
+    "source_page": 29
+  },
+  {
+    "id": 429,
+    "korean": "파란색",
+    "chinese": "蓝色",
+    "pos": "延世1",
+    "source_page": 29
+  },
+  {
+    "id": 430,
+    "korean": "노란색",
+    "chinese": "黄色",
+    "pos": "延世1",
+    "source_page": 29
+  },
+  {
+    "id": 431,
+    "korean": "하얀색",
+    "chinese": "白色",
+    "pos": "延世1",
+    "source_page": 29
+  },
+  {
+    "id": 432,
+    "korean": "까만색/검은색",
+    "chinese": "黑色",
+    "pos": "延世1",
+    "source_page": 29
+  },
+  {
+    "id": 433,
+    "korean": "길다",
+    "chinese": "长",
+    "pos": "延世1",
+    "source_page": 30
+  },
+  {
+    "id": 434,
+    "korean": "짧다",
+    "chinese": "短",
+    "pos": "延世1",
+    "source_page": 30
+  },
+  {
+    "id": 435,
+    "korean": "튼튼하다",
+    "chinese": "结实",
+    "pos": "延世1",
+    "source_page": 30
+  },
+  {
+    "id": 436,
+    "korean": "약하다",
+    "chinese": "虚弱",
+    "pos": "延世1",
+    "source_page": 30
+  },
+  {
+    "id": 437,
+    "korean": "두껍다",
+    "chinese": "厚",
+    "pos": "延世1",
+    "source_page": 30
+  },
+  {
+    "id": 438,
+    "korean": "엷다",
+    "chinese": "薄",
+    "pos": "延世1",
+    "source_page": 30
+  },
+  {
+    "id": 439,
+    "korean": "무겁다",
+    "chinese": "重",
+    "pos": "延世1",
+    "source_page": 30
+  },
+  {
+    "id": 440,
+    "korean": "보여 주다",
+    "chinese": "给...看",
+    "pos": "延世1",
+    "source_page": 30
+  },
+  {
+    "id": 441,
+    "korean": "구경하다",
+    "chinese": "看，观赏",
+    "pos": "延世1",
+    "source_page": 30
+  },
+  {
+    "id": 442,
+    "korean": "얼마",
+    "chinese": "多少",
+    "pos": "延世1",
+    "source_page": 30
+  },
+  {
+    "id": 443,
+    "korean": "층",
+    "chinese": "楼、层",
+    "pos": "延世1",
+    "source_page": 30
+  },
+  {
+    "id": 444,
+    "korean": "호",
+    "chinese": "号",
+    "pos": "延世1",
+    "source_page": 30
+  },
+  {
+    "id": 445,
+    "korean": "인분",
+    "chinese": "份",
+    "pos": "延世1",
+    "source_page": 30
+  },
+  {
+    "id": 446,
+    "korean": "일",
+    "chinese": "天",
+    "pos": "延世1",
+    "source_page": 30
+  },
+  {
+    "id": 447,
+    "korean": "주일",
+    "chinese": "星期",
+    "pos": "延世1",
+    "source_page": 31
+  },
+  {
+    "id": 448,
+    "korean": "년",
+    "chinese": "年",
+    "pos": "延世1",
+    "source_page": 31
+  },
+  {
+    "id": 449,
+    "korean": "대",
+    "chinese": "辆",
+    "pos": "延世1",
+    "source_page": 31
+  },
+  {
+    "id": 450,
+    "korean": "잔",
+    "chinese": "杯",
+    "pos": "延世1",
+    "source_page": 31
+  },
+  {
+    "id": 451,
+    "korean": "켤레",
+    "chinese": "双",
+    "pos": "延世1",
+    "source_page": 31
+  },
+  {
+    "id": 452,
+    "korean": "개",
+    "chinese": "个",
+    "pos": "延世1",
+    "source_page": 31
+  },
+  {
+    "id": 453,
+    "korean": "마리",
+    "chinese": "只，头，条",
+    "pos": "延世1",
+    "source_page": 31
+  },
+  {
+    "id": 454,
+    "korean": "자루",
+    "chinese": "支，把",
+    "pos": "延世1",
+    "source_page": 31
+  },
+  {
+    "id": 455,
+    "korean": "벌",
+    "chinese": "件",
+    "pos": "延世1",
+    "source_page": 31
+  },
+  {
+    "id": 456,
+    "korean": "송이",
+    "chinese": "朵",
+    "pos": "延世1",
+    "source_page": 31
+  },
+  {
+    "id": 457,
+    "korean": "권",
+    "chinese": "本",
+    "pos": "延世1",
+    "source_page": 31
+  },
+  {
+    "id": 458,
+    "korean": "사람",
+    "chinese": "人",
+    "pos": "延世1",
+    "source_page": 31
+  },
+  {
+    "id": 459,
+    "korean": "명",
+    "chinese": "名",
+    "pos": "延世1",
+    "source_page": 31
+  },
+  {
+    "id": 460,
+    "korean": "분",
+    "chinese": "位",
+    "pos": "延世1",
+    "source_page": 31
+  },
+  {
+    "id": 461,
+    "korean": "장",
+    "chinese": "张",
+    "pos": "延世1",
+    "source_page": 32
+  },
+  {
+    "id": 462,
+    "korean": "살",
+    "chinese": "岁",
+    "pos": "延世1",
+    "source_page": 32
+  },
+  {
+    "id": 463,
+    "korean": "갑",
+    "chinese": "包",
+    "pos": "延世1",
+    "source_page": 32
+  },
+  {
+    "id": 464,
+    "korean": "통",
+    "chinese": "盒/封",
+    "pos": "延世1",
+    "source_page": 32
+  },
+  {
+    "id": 465,
+    "korean": "마리",
+    "chinese": "只/头/条",
+    "pos": "延世1",
+    "source_page": 32
+  },
+  {
+    "id": 466,
+    "korean": "시간",
+    "chinese": "时间",
+    "pos": "延世1",
+    "source_page": 32
+  },
+  {
+    "id": 467,
+    "korean": "달",
+    "chinese": "个月",
+    "pos": "延世1",
+    "source_page": 32
+  },
+  {
+    "id": 468,
+    "korean": "가볍다",
+    "chinese": "轻",
+    "pos": "延世1",
+    "source_page": 32
+  },
+  {
+    "id": 469,
+    "korean": "비싸다",
+    "chinese": "贵",
+    "pos": "延世1",
+    "source_page": 32
+  },
+  {
+    "id": 470,
+    "korean": "싸다",
+    "chinese": "便宜",
+    "pos": "延世1",
+    "source_page": 32
+  },
+  {
+    "id": 471,
+    "korean": "가깝다",
+    "chinese": "近",
+    "pos": "延世1",
+    "source_page": 32
+  },
+  {
+    "id": 472,
+    "korean": "멀다",
+    "chinese": "远",
+    "pos": "延世1",
+    "source_page": 32
+  },
+  {
+    "id": 473,
+    "korean": "선물하다",
+    "chinese": "送礼物",
+    "pos": "延世1",
+    "source_page": 32
+  },
+  {
+    "id": 474,
+    "korean": "깎다",
+    "chinese": "削减",
+    "pos": "延世1",
+    "source_page": 32
+  },
+  {
+    "id": 475,
+    "korean": "에게",
+    "chinese": "给",
+    "pos": "延世1",
+    "source_page": 32
+  },
+  {
+    "id": 476,
+    "korean": "꽃다발",
+    "chinese": "花束",
+    "pos": "延世1",
+    "source_page": 33
+  },
+  {
+    "id": 477,
+    "korean": "상품권",
+    "chinese": "商品券",
+    "pos": "延世1",
+    "source_page": 33
+  },
+  {
+    "id": 478,
+    "korean": "인형",
+    "chinese": "玩偶",
+    "pos": "延世1",
+    "source_page": 33
+  },
+  {
+    "id": 479,
+    "korean": "화장품",
+    "chinese": "化妆品",
+    "pos": "延世1",
+    "source_page": 33
+  },
+  {
+    "id": 480,
+    "korean": "향수",
+    "chinese": "香水",
+    "pos": "延世1",
+    "source_page": 33
+  },
+  {
+    "id": 481,
+    "korean": "액세서리",
+    "chinese": "饰品",
+    "pos": "延世1",
+    "source_page": 33
+  },
+  {
+    "id": 482,
+    "korean": "만년필",
+    "chinese": "钢笔",
+    "pos": "延世1",
+    "source_page": 33
+  },
+  {
+    "id": 483,
+    "korean": "전화하다",
+    "chinese": "打电话",
+    "pos": "延世1",
+    "source_page": 33
+  },
+  {
+    "id": 484,
+    "korean": "주다",
+    "chinese": "给、送",
+    "pos": "延世1",
+    "source_page": 33
+  },
+  {
+    "id": 485,
+    "korean": "드리다",
+    "chinese": "给、送(敬语)",
+    "pos": "延世1",
+    "source_page": 33
+  },
+  {
+    "id": 486,
+    "korean": "에게",
+    "chinese": "给、向、对",
+    "pos": "延世1",
+    "source_page": 33
+  },
+  {
+    "id": 487,
+    "korean": "께",
+    "chinese": "给、向、对(敬语)",
+    "pos": "延世1",
+    "source_page": 33
+  },
+  {
+    "id": 488,
+    "korean": "프랑스",
+    "chinese": "法国",
+    "pos": "延世1",
+    "source_page": 33
+  },
+  {
+    "id": 489,
+    "korean": "돌아가다",
+    "chinese": "回去",
+    "pos": "延世1",
+    "source_page": 33
+  },
+  {
+    "id": 490,
+    "korean": "국적",
+    "chinese": "国籍",
+    "pos": "延世1",
+    "source_page": 33
+  },
+  {
+    "id": 491,
+    "korean": "에서",
+    "chinese": "来自",
+    "pos": "延世1",
+    "source_page": 34
+  },
+  {
+    "id": 492,
+    "korean": "왔습니다",
+    "chinese": "来",
+    "pos": "延世1",
+    "source_page": 34
+  },
+  {
+    "id": 493,
+    "korean": "주머니",
+    "chinese": "口袋",
+    "pos": "延世1",
+    "source_page": 34
+  },
+  {
+    "id": 494,
+    "korean": "우유",
+    "chinese": "牛奶",
+    "pos": "延世1",
+    "source_page": 34
+  },
+  {
+    "id": 495,
+    "korean": "침대",
+    "chinese": "床",
+    "pos": "延世1",
+    "source_page": 34
+  },
+  {
+    "id": 496,
+    "korean": "냉장고",
+    "chinese": "冰箱",
+    "pos": "延世1",
+    "source_page": 34
+  },
+  {
+    "id": 497,
+    "korean": "참",
+    "chinese": "真的",
+    "pos": "延世1",
+    "source_page": 34
+  },
+  {
+    "id": 498,
+    "korean": "밥",
+    "chinese": "饭",
+    "pos": "延世1",
+    "source_page": 34
+  },
+  {
+    "id": 499,
+    "korean": "음악",
+    "chinese": "音乐",
+    "pos": "延世1",
+    "source_page": 34
+  },
+  {
+    "id": 500,
+    "korean": "부르다",
+    "chinese": "唱、叫",
+    "pos": "延世1",
+    "source_page": 34
+  },
+  {
+    "id": 501,
+    "korean": "생선",
+    "chinese": "鱼",
+    "pos": "延世1",
+    "source_page": 34
+  },
+  {
+    "id": 502,
+    "korean": "겨울",
+    "chinese": "冬天",
+    "pos": "延世1",
+    "source_page": 34
+  },
+  {
+    "id": 503,
+    "korean": "여름",
+    "chinese": "夏天",
+    "pos": "延世1",
+    "source_page": 34
+  },
+  {
+    "id": 504,
+    "korean": "친절하다",
+    "chinese": "亲切",
+    "pos": "延世1",
+    "source_page": 34
+  },
+  {
+    "id": 505,
+    "korean": "사랑하다",
+    "chinese": "爱",
+    "pos": "延世1",
+    "source_page": 34
+  },
+  {
+    "id": 506,
+    "korean": "정문",
+    "chinese": "正门",
+    "pos": "延世1",
+    "source_page": 35
+  },
+  {
+    "id": 507,
+    "korean": "음식",
+    "chinese": "食物",
+    "pos": "延世1",
+    "source_page": 35
+  },
+  {
+    "id": 508,
+    "korean": "촘",
+    "chinese": "一点",
+    "pos": "延世1",
+    "source_page": 35
+  },
+  {
+    "id": 509,
+    "korean": "간장",
+    "chinese": "酱油",
+    "pos": "延世1",
+    "source_page": 35
+  },
+  {
+    "id": 510,
+    "korean": "고추",
+    "chinese": "辣椒",
+    "pos": "延世1",
+    "source_page": 35
+  },
+  {
+    "id": 511,
+    "korean": "식혀",
+    "chinese": "酒酿",
+    "pos": "延世1",
+    "source_page": 35
+  },
+  {
+    "id": 512,
+    "korean": "카례",
+    "chinese": "咖喱",
+    "pos": "延世1",
+    "source_page": 35
+  },
+  {
+    "id": 513,
+    "korean": "중에서",
+    "chinese": "当中",
+    "pos": "延世1",
+    "source_page": 35
+  },
+  {
+    "id": 514,
+    "korean": "보통",
+    "chinese": "一般",
+    "pos": "延世1",
+    "source_page": 35
+  },
+  {
+    "id": 515,
+    "korean": "상추",
+    "chinese": "生菜",
+    "pos": "延世1",
+    "source_page": 35
+  },
+  {
+    "id": 516,
+    "korean": "술집",
+    "chinese": "酒馆",
+    "pos": "延世1",
+    "source_page": 35
+  },
+  {
+    "id": 517,
+    "korean": "회의",
+    "chinese": "会议",
+    "pos": "延世1",
+    "source_page": 35
+  },
+  {
+    "id": 518,
+    "korean": "잠깐",
+    "chinese": "一会儿",
+    "pos": "延世1",
+    "source_page": 35
+  },
+  {
+    "id": 519,
+    "korean": "고맙다",
+    "chinese": "谢谢",
+    "pos": "延世1",
+    "source_page": 35
+  },
+  {
+    "id": 520,
+    "korean": "싶어하다",
+    "chinese": "想",
+    "pos": "延世1",
+    "source_page": 35
+  },
+  {
+    "id": 521,
+    "korean": "어서",
+    "chinese": "快",
+    "pos": "延世1",
+    "source_page": 36
+  },
+  {
+    "id": 522,
+    "korean": "이번",
+    "chinese": "这次",
+    "pos": "延世1",
+    "source_page": 36
+  },
+  {
+    "id": 523,
+    "korean": "방학",
+    "chinese": "假期",
+    "pos": "延世1",
+    "source_page": 36
+  },
+  {
+    "id": 524,
+    "korean": "시험",
+    "chinese": "考试",
+    "pos": "延世1",
+    "source_page": 36
+  },
+  {
+    "id": 525,
+    "korean": "졸업식",
+    "chinese": "毕业典礼",
+    "pos": "延世1",
+    "source_page": 36
+  },
+  {
+    "id": 526,
+    "korean": "쉽다",
+    "chinese": "简单",
+    "pos": "延世1",
+    "source_page": 36
+  },
+  {
+    "id": 527,
+    "korean": "어렵다",
+    "chinese": "难",
+    "pos": "延世1",
+    "source_page": 36
+  },
+  {
+    "id": 528,
+    "korean": "기분",
+    "chinese": "心情",
+    "pos": "延世1",
+    "source_page": 36
+  },
+  {
+    "id": 529,
+    "korean": "아줌마",
+    "chinese": "大婶",
+    "pos": "延世1",
+    "source_page": 36
+  },
+  {
+    "id": 530,
+    "korean": "이유",
+    "chinese": "理由",
+    "pos": "延世1",
+    "source_page": 36
+  },
+  {
+    "id": 531,
+    "korean": "빌리다",
+    "chinese": "借",
+    "pos": "延世1",
+    "source_page": 36
+  },
+  {
+    "id": 532,
+    "korean": "단다",
+    "chinese": "关",
+    "pos": "延世1",
+    "source_page": 36
+  },
+  {
+    "id": 533,
+    "korean": "결혼식",
+    "chinese": "结婚典礼",
+    "pos": "延世1",
+    "source_page": 36
+  },
+  {
+    "id": 534,
+    "korean": "프로그램",
+    "chinese": "节目",
+    "pos": "延世1",
+    "source_page": 36
+  },
+  {
+    "id": 535,
+    "korean": "먼저",
+    "chinese": "先",
+    "pos": "延世1",
+    "source_page": 36
+  },
+  {
+    "id": 536,
+    "korean": "피곤하다",
+    "chinese": "累",
+    "pos": "延世1",
+    "source_page": 37
+  },
+  {
+    "id": 537,
+    "korean": "여러 가지",
+    "chinese": "各种各样",
+    "pos": "延世1",
+    "source_page": 37
+  },
+  {
+    "id": 538,
+    "korean": "넥타이핀",
+    "chinese": "领带夹",
+    "pos": "延世1",
+    "source_page": 37
+  },
+  {
+    "id": 539,
+    "korean": "목걸이",
+    "chinese": "项链",
+    "pos": "延世1",
+    "source_page": 37
+  },
+  {
+    "id": 540,
+    "korean": "어깨",
+    "chinese": "肩膀",
+    "pos": "延世1",
+    "source_page": 37
+  },
+  {
+    "id": 541,
+    "korean": "묻다",
+    "chinese": "询问",
+    "pos": "延世1",
+    "source_page": 37
+  },
+  {
+    "id": 542,
+    "korean": "실례",
+    "chinese": "失礼、劳驾",
+    "pos": "延世1",
+    "source_page": 37
+  },
+  {
+    "id": 543,
+    "korean": "실례지만",
+    "chinese": "打扰一下",
+    "pos": "延世1",
+    "source_page": 37
+  },
+  {
+    "id": 544,
+    "korean": "길",
+    "chinese": "路、街",
+    "pos": "延世1",
+    "source_page": 37
+  },
+  {
+    "id": 545,
+    "korean": "길을 묻다",
+    "chinese": "问路",
+    "pos": "延世1",
+    "source_page": 37
+  },
+  {
+    "id": 546,
+    "korean": "아파트",
+    "chinese": "公寓",
+    "pos": "延世1",
+    "source_page": 37
+  },
+  {
+    "id": 547,
+    "korean": "번",
+    "chinese": "号",
+    "pos": "延世1",
+    "source_page": 37
+  },
+  {
+    "id": 548,
+    "korean": "출구",
+    "chinese": "出口",
+    "pos": "延世1",
+    "source_page": 37
+  },
+  {
+    "id": 549,
+    "korean": "6번 출구",
+    "chinese": "6号出口",
+    "pos": "延世1",
+    "source_page": 37
+  },
+  {
+    "id": 550,
+    "korean": "왼쪽",
+    "chinese": "左边",
+    "pos": "延世1",
+    "source_page": 37
+  },
+  {
+    "id": 551,
+    "korean": "오른쪽",
+    "chinese": "右边",
+    "pos": "延世1",
+    "source_page": 38
+  },
+  {
+    "id": 552,
+    "korean": "이쪽",
+    "chinese": "这边",
+    "pos": "延世1",
+    "source_page": 38
+  },
+  {
+    "id": 553,
+    "korean": "그쪽",
+    "chinese": "那边",
+    "pos": "延世1",
+    "source_page": 38
+  },
+  {
+    "id": 554,
+    "korean": "저쪽",
+    "chinese": "那边",
+    "pos": "延世1",
+    "source_page": 38
+  },
+  {
+    "id": 555,
+    "korean": "제일",
+    "chinese": "第一",
+    "pos": "延世1",
+    "source_page": 38
+  },
+  {
+    "id": 556,
+    "korean": "육교",
+    "chinese": "天桥",
+    "pos": "延世1",
+    "source_page": 38
+  },
+  {
+    "id": 557,
+    "korean": "지하도",
+    "chinese": "地下通道",
+    "pos": "延世1",
+    "source_page": 38
+  },
+  {
+    "id": 558,
+    "korean": "층",
+    "chinese": "层",
+    "pos": "延世1",
+    "source_page": 38
+  },
+  {
+    "id": 559,
+    "korean": "샌드위치",
+    "chinese": "三文治",
+    "pos": "延世1",
+    "source_page": 38
+  },
+  {
+    "id": 560,
+    "korean": "호텔",
+    "chinese": "酒店",
+    "pos": "延世1",
+    "source_page": 38
+  },
+  {
+    "id": 561,
+    "korean": "신문사",
+    "chinese": "报社",
+    "pos": "延世1",
+    "source_page": 38
+  },
+  {
+    "id": 562,
+    "korean": "미술관",
+    "chinese": "美术馆",
+    "pos": "延世1",
+    "source_page": 38
+  },
+  {
+    "id": 563,
+    "korean": "대사관",
+    "chinese": "大使馆",
+    "pos": "延世1",
+    "source_page": 38
+  },
+  {
+    "id": 564,
+    "korean": "똑바로",
+    "chinese": "直",
+    "pos": "延世1",
+    "source_page": 38
+  },
+  {
+    "id": 565,
+    "korean": "나오다",
+    "chinese": "出来",
+    "pos": "延世1",
+    "source_page": 38
+  },
+  {
+    "id": 566,
+    "korean": "동문",
+    "chinese": "东门",
+    "pos": "延世1",
+    "source_page": 39
+  },
+  {
+    "id": 567,
+    "korean": "북문",
+    "chinese": "北门",
+    "pos": "延世1",
+    "source_page": 39
+  },
+  {
+    "id": 568,
+    "korean": "시문",
+    "chinese": "西门",
+    "pos": "延世1",
+    "source_page": 39
+  },
+  {
+    "id": 569,
+    "korean": "기숙사",
+    "chinese": "宿舍",
+    "pos": "延世1",
+    "source_page": 39
+  },
+  {
+    "id": 570,
+    "korean": "오피스텔",
+    "chinese": "商务楼",
+    "pos": "延世1",
+    "source_page": 39
+  },
+  {
+    "id": 571,
+    "korean": "원룸",
+    "chinese": "套房",
+    "pos": "延世1",
+    "source_page": 39
+  },
+  {
+    "id": 572,
+    "korean": "얼마나",
+    "chinese": "多久，多少",
+    "pos": "延世1",
+    "source_page": 39
+  },
+  {
+    "id": 573,
+    "korean": "걸리다",
+    "chinese": "需要，消耗(时间)",
+    "pos": "延世1",
+    "source_page": 39
+  },
+  {
+    "id": 574,
+    "korean": "얼마나 걸려요",
+    "chinese": "需要多长时间",
+    "pos": "延世1",
+    "source_page": 39
+  },
+  {
+    "id": 575,
+    "korean": "호선",
+    "chinese": "线路",
+    "pos": "延世1",
+    "source_page": 39
+  },
+  {
+    "id": 576,
+    "korean": "몇호선",
+    "chinese": "几号线",
+    "pos": "延世1",
+    "source_page": 39
+  },
+  {
+    "id": 577,
+    "korean": "이호선",
+    "chinese": "2号线",
+    "pos": "延世1",
+    "source_page": 39
+  },
+  {
+    "id": 578,
+    "korean": "교통",
+    "chinese": "交通",
+    "pos": "延世1",
+    "source_page": 39
+  },
+  {
+    "id": 579,
+    "korean": "쯤",
+    "chinese": "左右",
+    "pos": "延世1",
+    "source_page": 39
+  },
+  {
+    "id": 580,
+    "korean": "한 시쯤",
+    "chinese": "一小时左右",
+    "pos": "延世1",
+    "source_page": 39
+  },
+  {
+    "id": 581,
+    "korean": "시내버스",
+    "chinese": "市内巴士",
+    "pos": "延世1",
+    "source_page": 40
+  },
+  {
+    "id": 582,
+    "korean": "고속버스",
+    "chinese": "高速巴士",
+    "pos": "延世1",
+    "source_page": 40
+  },
+  {
+    "id": 583,
+    "korean": "마을버스",
+    "chinese": "区间巴士",
+    "pos": "延世1",
+    "source_page": 40
+  },
+  {
+    "id": 584,
+    "korean": "택시",
+    "chinese": "的士",
+    "pos": "延世1",
+    "source_page": 40
+  },
+  {
+    "id": 585,
+    "korean": "일반택시",
+    "chinese": "普通的士",
+    "pos": "延世1",
+    "source_page": 40
+  },
+  {
+    "id": 586,
+    "korean": "모범택시",
+    "chinese": "模范的士",
+    "pos": "延世1",
+    "source_page": 40
+  },
+  {
+    "id": 587,
+    "korean": "자동차",
+    "chinese": "汽车",
+    "pos": "延世1",
+    "source_page": 40
+  },
+  {
+    "id": 588,
+    "korean": "기차",
+    "chinese": "火车",
+    "pos": "延世1",
+    "source_page": 40
+  },
+  {
+    "id": 589,
+    "korean": "자전거",
+    "chinese": "自行车",
+    "pos": "延世1",
+    "source_page": 40
+  },
+  {
+    "id": 590,
+    "korean": "비행기",
+    "chinese": "飞机",
+    "pos": "延世1",
+    "source_page": 40
+  },
+  {
+    "id": 591,
+    "korean": "배",
+    "chinese": "轮船",
+    "pos": "延世1",
+    "source_page": 40
+  },
+  {
+    "id": 592,
+    "korean": "비디오",
+    "chinese": "视频、录像机",
+    "pos": "延世1",
+    "source_page": 40
+  },
+  {
+    "id": 593,
+    "korean": "이메일",
+    "chinese": "电子邮件",
+    "pos": "延世1",
+    "source_page": 40
+  },
+  {
+    "id": 594,
+    "korean": "연락",
+    "chinese": "联系",
+    "pos": "延世1",
+    "source_page": 40
+  },
+  {
+    "id": 595,
+    "korean": "젓가락",
+    "chinese": "筷子",
+    "pos": "延世1",
+    "source_page": 40
+  },
+  {
+    "id": 596,
+    "korean": "늦다",
+    "chinese": "晚",
+    "pos": "延世1",
+    "source_page": 41
+  },
+  {
+    "id": 597,
+    "korean": "밀리다",
+    "chinese": "堵车",
+    "pos": "延世1",
+    "source_page": 41
+  },
+  {
+    "id": 598,
+    "korean": "바쁘다",
+    "chinese": "忙",
+    "pos": "延世1",
+    "source_page": 41
+  },
+  {
+    "id": 599,
+    "korean": "아르바이트",
+    "chinese": "兼职",
+    "pos": "延世1",
+    "source_page": 41
+  },
+  {
+    "id": 600,
+    "korean": "머리",
+    "chinese": "头",
+    "pos": "延世1",
+    "source_page": 41
+  },
+  {
+    "id": 601,
+    "korean": "호수",
+    "chinese": "湖水",
+    "pos": "延世1",
+    "source_page": 41
+  },
+  {
+    "id": 602,
+    "korean": "빨리",
+    "chinese": "快",
+    "pos": "延世1",
+    "source_page": 41
+  },
+  {
+    "id": 603,
+    "korean": "자리",
+    "chinese": "座位",
+    "pos": "延世1",
+    "source_page": 41
+  },
+  {
+    "id": 604,
+    "korean": "오래",
+    "chinese": "久",
+    "pos": "延世1",
+    "source_page": 41
+  },
+  {
+    "id": 605,
+    "korean": "곳",
+    "chinese": "地方",
+    "pos": "延世1",
+    "source_page": 41
+  },
+  {
+    "id": 606,
+    "korean": "교통수단",
+    "chinese": "交通工具",
+    "pos": "延世1",
+    "source_page": 41
+  },
+  {
+    "id": 607,
+    "korean": "떠나다",
+    "chinese": "离开",
+    "pos": "延世1",
+    "source_page": 41
+  },
+  {
+    "id": 608,
+    "korean": "앉다",
+    "chinese": "坐",
+    "pos": "延世1",
+    "source_page": 41
+  },
+  {
+    "id": 609,
+    "korean": "앉으세요",
+    "chinese": "坐请",
+    "pos": "延世1",
+    "source_page": 41
+  },
+  {
+    "id": 610,
+    "korean": "비켜다",
+    "chinese": "让开",
+    "pos": "延世1",
+    "source_page": 41
+  },
+  {
+    "id": 611,
+    "korean": "좀 비 주십시오",
+    "chinese": "请让一下",
+    "pos": "延世1",
+    "source_page": 42
+  },
+  {
+    "id": 612,
+    "korean": "조 심하다",
+    "chinese": "小心",
+    "pos": "延世1",
+    "source_page": 42
+  },
+  {
+    "id": 613,
+    "korean": "조심하세요",
+    "chinese": "请小心一点",
+    "pos": "延世1",
+    "source_page": 42
+  },
+  {
+    "id": 614,
+    "korean": "공항",
+    "chinese": "机场",
+    "pos": "延世1",
+    "source_page": 42
+  },
+  {
+    "id": 615,
+    "korean": "고속버스 터미널",
+    "chinese": "高速巴士站",
+    "pos": "延世1",
+    "source_page": 42
+  },
+  {
+    "id": 616,
+    "korean": "내리다",
+    "chinese": "下来",
+    "pos": "延世1",
+    "source_page": 42
+  },
+  {
+    "id": 617,
+    "korean": "갈아타다",
+    "chinese": "换乘",
+    "pos": "延世1",
+    "source_page": 42
+  },
+  {
+    "id": 618,
+    "korean": "도착하다",
+    "chinese": "到达",
+    "pos": "延世1",
+    "source_page": 42
+  },
+  {
+    "id": 619,
+    "korean": "교통편",
+    "chinese": "交通工具",
+    "pos": "延世1",
+    "source_page": 42
+  },
+  {
+    "id": 620,
+    "korean": "여관",
+    "chinese": "旅馆",
+    "pos": "延世1",
+    "source_page": 42
+  },
+  {
+    "id": 621,
+    "korean": "민박",
+    "chinese": "民宿",
+    "pos": "延世1",
+    "source_page": 42
+  },
+  {
+    "id": 622,
+    "korean": "펜션",
+    "chinese": "简易旅馆",
+    "pos": "延世1",
+    "source_page": 42
+  },
+  {
+    "id": 623,
+    "korean": "콘도",
+    "chinese": "共管式公寓",
+    "pos": "延世1",
+    "source_page": 42
+  },
+  {
+    "id": 624,
+    "korean": "회",
+    "chinese": "生鱼片",
+    "pos": "延世1",
+    "source_page": 42
+  },
+  {
+    "id": 625,
+    "korean": "만지다",
+    "chinese": "摸",
+    "pos": "延世1",
+    "source_page": 42
+  },
+  {
+    "id": 626,
+    "korean": "찍다",
+    "chinese": "拍照",
+    "pos": "延世1",
+    "source_page": 43
+  },
+  {
+    "id": 627,
+    "korean": "담배",
+    "chinese": "烟",
+    "pos": "延世1",
+    "source_page": 43
+  },
+  {
+    "id": 628,
+    "korean": "피우다",
+    "chinese": "抽",
+    "pos": "延世1",
+    "source_page": 43
+  },
+  {
+    "id": 629,
+    "korean": "주차하다",
+    "chinese": "停车",
+    "pos": "延世1",
+    "source_page": 43
+  },
+  {
+    "id": 630,
+    "korean": "떠들다",
+    "chinese": "吵闹",
+    "pos": "延世1",
+    "source_page": 43
+  },
+  {
+    "id": 631,
+    "korean": "지각하다",
+    "chinese": "迟到",
+    "pos": "延世1",
+    "source_page": 43
+  },
+  {
+    "id": 632,
+    "korean": "게임",
+    "chinese": "游戏",
+    "pos": "延世1",
+    "source_page": 43
+  },
+  {
+    "id": 633,
+    "korean": "모르다",
+    "chinese": "不知道",
+    "pos": "延世1",
+    "source_page": 43
+  },
+  {
+    "id": 634,
+    "korean": "가르치다",
+    "chinese": "教",
+    "pos": "延世1",
+    "source_page": 43
+  },
+  {
+    "id": 635,
+    "korean": "안내 방송",
+    "chinese": "广播",
+    "pos": "延世1",
+    "source_page": 43
+  },
+  {
+    "id": 636,
+    "korean": "걱정하다",
+    "chinese": "担心",
+    "pos": "延世1",
+    "source_page": 43
+  },
+  {
+    "id": 637,
+    "korean": "실례하다",
+    "chinese": "劳驾",
+    "pos": "延世1",
+    "source_page": 43
+  },
+  {
+    "id": 638,
+    "korean": "비용",
+    "chinese": "费用",
+    "pos": "延世1",
+    "source_page": 43
+  },
+  {
+    "id": 639,
+    "korean": "기타",
+    "chinese": "其它",
+    "pos": "延世1",
+    "source_page": 43
+  },
+  {
+    "id": 640,
+    "korean": "기사",
+    "chinese": "司机",
+    "pos": "延世1",
+    "source_page": 43
+  },
+  {
+    "id": 641,
+    "korean": "걸다",
+    "chinese": "走",
+    "pos": "延世1",
+    "source_page": 44
+  },
+  {
+    "id": 642,
+    "korean": "동",
+    "chinese": "栋、座",
+    "pos": "延世1",
+    "source_page": 44
+  },
+  {
+    "id": 643,
+    "korean": "세우다",
+    "chinese": "停",
+    "pos": "延世1",
+    "source_page": 44
+  },
+  {
+    "id": 644,
+    "korean": "세워 주세요",
+    "chinese": "请停车",
+    "pos": "延世1",
+    "source_page": 44
+  },
+  {
+    "id": 645,
+    "korean": "들어가다",
+    "chinese": "进去",
+    "pos": "延世1",
+    "source_page": 44
+  },
+  {
+    "id": 646,
+    "korean": "들어가세요",
+    "chinese": "请进去吧",
+    "pos": "延世1",
+    "source_page": 44
+  },
+  {
+    "id": 647,
+    "korean": "출발하다",
+    "chinese": "出发",
+    "pos": "延世1",
+    "source_page": 44
+  },
+  {
+    "id": 648,
+    "korean": "도착하다",
+    "chinese": "到达",
+    "pos": "延世1",
+    "source_page": 44
+  },
+  {
+    "id": 649,
+    "korean": "사거리",
+    "chinese": "十字路口",
+    "pos": "延世1",
+    "source_page": 44
+  },
+  {
+    "id": 650,
+    "korean": "신호등",
+    "chinese": "红绿灯",
+    "pos": "延世1",
+    "source_page": 44
+  },
+  {
+    "id": 651,
+    "korean": "직진",
+    "chinese": "直走",
+    "pos": "延世1",
+    "source_page": 44
+  },
+  {
+    "id": 652,
+    "korean": "좌회전",
+    "chinese": "左转弯",
+    "pos": "延世1",
+    "source_page": 44
+  },
+  {
+    "id": 653,
+    "korean": "우회전",
+    "chinese": "右转弯",
+    "pos": "延世1",
+    "source_page": 44
+  },
+  {
+    "id": 654,
+    "korean": "고르다",
+    "chinese": "选",
+    "pos": "延世1",
+    "source_page": 44
+  },
+  {
+    "id": 655,
+    "korean": "빠르다",
+    "chinese": "快",
+    "pos": "延世1",
+    "source_page": 44
+  },
+  {
+    "id": 656,
+    "korean": "데리다",
+    "chinese": "陪",
+    "pos": "延世1",
+    "source_page": 45
+  },
+  {
+    "id": 657,
+    "korean": "모시다",
+    "chinese": "陪(敬语)",
+    "pos": "延世1",
+    "source_page": 45
+  },
+  {
+    "id": 658,
+    "korean": "다 왔습니다",
+    "chinese": "快到了",
+    "pos": "延世1",
+    "source_page": 45
+  },
+  {
+    "id": 659,
+    "korean": "이따가",
+    "chinese": "一会",
+    "pos": "延世1",
+    "source_page": 45
+  },
+  {
+    "id": 660,
+    "korean": "이따가 봐요",
+    "chinese": "一会看",
+    "pos": "延世1",
+    "source_page": 45
+  },
+  {
+    "id": 661,
+    "korean": "전화번호",
+    "chinese": "电话号码",
+    "pos": "延世1",
+    "source_page": 45
+  },
+  {
+    "id": 662,
+    "korean": "나",
+    "chinese": "表选择",
+    "pos": "延世1",
+    "source_page": 45
+  },
+  {
+    "id": 663,
+    "korean": "가르치다",
+    "chinese": "教、告诉",
+    "pos": "延世1",
+    "source_page": 45
+  },
+  {
+    "id": 664,
+    "korean": "국제전화",
+    "chinese": "国际电话",
+    "pos": "延世1",
+    "source_page": 45
+  },
+  {
+    "id": 665,
+    "korean": "시의전화",
+    "chinese": "长途电话",
+    "pos": "延世1",
+    "source_page": 45
+  },
+  {
+    "id": 666,
+    "korean": "시내전화",
+    "chinese": "市内电话",
+    "pos": "延世1",
+    "source_page": 45
+  },
+  {
+    "id": 667,
+    "korean": "휴대전화",
+    "chinese": "手机",
+    "pos": "延世1",
+    "source_page": 45
+  },
+  {
+    "id": 668,
+    "korean": "범죄",
+    "chinese": "犯罪",
+    "pos": "延世1",
+    "source_page": 45
+  },
+  {
+    "id": 669,
+    "korean": "화재",
+    "chinese": "火灾",
+    "pos": "延世1",
+    "source_page": 45
+  },
+  {
+    "id": 670,
+    "korean": "신고",
+    "chinese": "举报、申报",
+    "pos": "延世1",
+    "source_page": 45
+  },
+  {
+    "id": 671,
+    "korean": "안내",
+    "chinese": "介绍、向导",
+    "pos": "延世1",
+    "source_page": 46
+  },
+  {
+    "id": 672,
+    "korean": "불이 나다",
+    "chinese": "着火",
+    "pos": "延世1",
+    "source_page": 46
+  },
+  {
+    "id": 673,
+    "korean": "주말",
+    "chinese": "周末",
+    "pos": "延世1",
+    "source_page": 46
+  },
+  {
+    "id": 674,
+    "korean": "나중",
+    "chinese": "以后、后来",
+    "pos": "延世1",
+    "source_page": 46
+  },
+  {
+    "id": 675,
+    "korean": "경주",
+    "chinese": "庆州",
+    "pos": "延世1",
+    "source_page": 46
+  },
+  {
+    "id": 676,
+    "korean": "고속전철",
+    "chinese": "高铁",
+    "pos": "延世1",
+    "source_page": 46
+  },
+  {
+    "id": 677,
+    "korean": "열쇠고리",
+    "chinese": "钥匙链",
+    "pos": "延世1",
+    "source_page": 46
+  },
+  {
+    "id": 678,
+    "korean": "기다리다",
+    "chinese": "等待",
+    "pos": "延世1",
+    "source_page": 46
+  },
+  {
+    "id": 679,
+    "korean": "여보세요",
+    "chinese": "喂",
+    "pos": "延世1",
+    "source_page": 46
+  },
+  {
+    "id": 680,
+    "korean": "바로",
+    "chinese": "就，马上",
+    "pos": "延世1",
+    "source_page": 46
+  },
+  {
+    "id": 681,
+    "korean": "바로 갈게요",
+    "chinese": "马上去",
+    "pos": "延世1",
+    "source_page": 46
+  },
+  {
+    "id": 682,
+    "korean": "괜찮다",
+    "chinese": "没关系",
+    "pos": "延世1",
+    "source_page": 46
+  },
+  {
+    "id": 683,
+    "korean": "괜찮아요",
+    "chinese": "没关系",
+    "pos": "延世1",
+    "source_page": 46
+  },
+  {
+    "id": 684,
+    "korean": "전화를 걸다",
+    "chinese": "打电话",
+    "pos": "延世1",
+    "source_page": 46
+  },
+  {
+    "id": 685,
+    "korean": "전화를 받다",
+    "chinese": "接电话",
+    "pos": "延世1",
+    "source_page": 46
+  },
+  {
+    "id": 686,
+    "korean": "전화벗호를 누르다",
+    "chinese": "按电话号码",
+    "pos": "延世1",
+    "source_page": 47
+  },
+  {
+    "id": 687,
+    "korean": "전화벨이 울리다",
+    "chinese": "电话响铃",
+    "pos": "延世1",
+    "source_page": 47
+  },
+  {
+    "id": 688,
+    "korean": "신호가 가다",
+    "chinese": "有信号，打通",
+    "pos": "延世1",
+    "source_page": 47
+  },
+  {
+    "id": 689,
+    "korean": "잘못",
+    "chinese": "错误",
+    "pos": "延世1",
+    "source_page": 47
+  },
+  {
+    "id": 690,
+    "korean": "잘못 걸다",
+    "chinese": "打错电话",
+    "pos": "延世1",
+    "source_page": 47
+  },
+  {
+    "id": 691,
+    "korean": "휴대전화/핸드폰",
+    "chinese": "手机",
+    "pos": "延世1",
+    "source_page": 47
+  },
+  {
+    "id": 692,
+    "korean": "휴대전화를/핸드폰을 켜다",
+    "chinese": "开手机",
+    "pos": "延世1",
+    "source_page": 47
+  },
+  {
+    "id": 693,
+    "korean": "휴대전화를/핸드폰을 끄다",
+    "chinese": "关手机",
+    "pos": "延世1",
+    "source_page": 47
+  },
+  {
+    "id": 694,
+    "korean": "문자메시지를 보내다",
+    "chinese": "发送文字短信",
+    "pos": "延世1",
+    "source_page": 47
+  },
+  {
+    "id": 695,
+    "korean": "문자메시지를 확인하다",
+    "chinese": "查看文字短信",
+    "pos": "延世1",
+    "source_page": 47
+  },
+  {
+    "id": 696,
+    "korean": "음성메시지를 남기다",
+    "chinese": "留言",
+    "pos": "延世1",
+    "source_page": 47
+  },
+  {
+    "id": 697,
+    "korean": "음성메시지를 확인하다",
+    "chinese": "听留言",
+    "pos": "延世1",
+    "source_page": 47
+  },
+  {
+    "id": 698,
+    "korean": "바꾸다",
+    "chinese": "换",
+    "pos": "延世1",
+    "source_page": 47
+  },
+  {
+    "id": 699,
+    "korean": "주소",
+    "chinese": "地址",
+    "pos": "延世1",
+    "source_page": 47
+  },
+  {
+    "id": 700,
+    "korean": "호",
+    "chinese": "号",
+    "pos": "延世1",
+    "source_page": 47
+  },
+  {
+    "id": 701,
+    "korean": "주문하다",
+    "chinese": "预订，预约",
+    "pos": "延世1",
+    "source_page": 48
+  },
+  {
+    "id": 702,
+    "korean": "오래",
+    "chinese": "久，长期",
+    "pos": "延世1",
+    "source_page": 48
+  },
+  {
+    "id": 703,
+    "korean": "배달",
+    "chinese": "送，递送",
+    "pos": "延世1",
+    "source_page": 48
+  },
+  {
+    "id": 704,
+    "korean": "늦다",
+    "chinese": "晚，迟到",
+    "pos": "延世1",
+    "source_page": 48
+  },
+  {
+    "id": 705,
+    "korean": "약속하다",
+    "chinese": "约定",
+    "pos": "延世1",
+    "source_page": 48
+  },
+  {
+    "id": 706,
+    "korean": "약속 장소",
+    "chinese": "约定场所",
+    "pos": "延世1",
+    "source_page": 48
+  },
+  {
+    "id": 707,
+    "korean": "약속 시간",
+    "chinese": "约定时间",
+    "pos": "延世1",
+    "source_page": 48
+  },
+  {
+    "id": 708,
+    "korean": "약속 시간을 바꾸다",
+    "chinese": "更换约定时间",
+    "pos": "延世1",
+    "source_page": 48
+  },
+  {
+    "id": 709,
+    "korean": "약속을 지키다",
+    "chinese": "守约",
+    "pos": "延世1",
+    "source_page": 48
+  },
+  {
+    "id": 710,
+    "korean": "약속을 어기다",
+    "chinese": "毁约",
+    "pos": "延世1",
+    "source_page": 48
+  },
+  {
+    "id": 711,
+    "korean": "아직",
+    "chinese": "还",
+    "pos": "延世1",
+    "source_page": 48
+  },
+  {
+    "id": 712,
+    "korean": "동생은 아직 안 왔세요",
+    "chinese": "弟弟还没有来",
+    "pos": "延世1",
+    "source_page": 48
+  },
+  {
+    "id": 713,
+    "korean": "아마",
+    "chinese": "也许，可能，恐怕",
+    "pos": "延世1",
+    "source_page": 48
+  },
+  {
+    "id": 714,
+    "korean": "통화하다",
+    "chinese": "通话",
+    "pos": "延世1",
+    "source_page": 48
+  },
+  {
+    "id": 715,
+    "korean": "전화를 끊다",
+    "chinese": "挂电话",
+    "pos": "延世1",
+    "source_page": 48
+  },
+  {
+    "id": 716,
+    "korean": "바꾸다",
+    "chinese": "换",
+    "pos": "延世1",
+    "source_page": 49
+  },
+  {
+    "id": 717,
+    "korean": "통화 중이다",
+    "chinese": "通话中",
+    "pos": "延世1",
+    "source_page": 49
+  },
+  {
+    "id": 718,
+    "korean": "전화를 받다",
+    "chinese": "接电话",
+    "pos": "延世1",
+    "source_page": 49
+  },
+  {
+    "id": 719,
+    "korean": "코미디",
+    "chinese": "喜剧",
+    "pos": "延世1",
+    "source_page": 49
+  },
+  {
+    "id": 720,
+    "korean": "포도",
+    "chinese": "葡萄",
+    "pos": "延世1",
+    "source_page": 49
+  },
+  {
+    "id": 721,
+    "korean": "소설책",
+    "chinese": "小说",
+    "pos": "延世1",
+    "source_page": 49
+  },
+  {
+    "id": 722,
+    "korean": "더",
+    "chinese": "副词，更加",
+    "pos": "延世1",
+    "source_page": 49
+  },
+  {
+    "id": 723,
+    "korean": "봄",
+    "chinese": "春天",
+    "pos": "延世1",
+    "source_page": 49
+  },
+  {
+    "id": 724,
+    "korean": "계절",
+    "chinese": "季节",
+    "pos": "延世1",
+    "source_page": 49
+  },
+  {
+    "id": 725,
+    "korean": "스키",
+    "chinese": "滑雪",
+    "pos": "延世1",
+    "source_page": 49
+  },
+  {
+    "id": 726,
+    "korean": "스키를 타다",
+    "chinese": "滑雪",
+    "pos": "延世1",
+    "source_page": 49
+  },
+  {
+    "id": 727,
+    "korean": "되다",
+    "chinese": "到时间，成为",
+    "pos": "延世1",
+    "source_page": 49
+  },
+  {
+    "id": 728,
+    "korean": "봄이 되면",
+    "chinese": "如果到了春天",
+    "pos": "延世1",
+    "source_page": 49
+  },
+  {
+    "id": 729,
+    "korean": "의사가 되면",
+    "chinese": "如果成为医生",
+    "pos": "延世1",
+    "source_page": 49
+  },
+  {
+    "id": 730,
+    "korean": "스키장",
+    "chinese": "滑雪场",
+    "pos": "延世1",
+    "source_page": 49
+  },
+  {
+    "id": 731,
+    "korean": "생각",
+    "chinese": "主意，想法",
+    "pos": "延世1",
+    "source_page": 50
+  },
+  {
+    "id": 732,
+    "korean": "생각하다",
+    "chinese": "觉得，认为",
+    "pos": "延世1",
+    "source_page": 50
+  },
+  {
+    "id": 733,
+    "korean": "가을",
+    "chinese": "秋天",
+    "pos": "延世1",
+    "source_page": 50
+  },
+  {
+    "id": 734,
+    "korean": "개나리",
+    "chinese": "迎春花",
+    "pos": "延世1",
+    "source_page": 50
+  },
+  {
+    "id": 735,
+    "korean": "진달래",
+    "chinese": "杜鹃花",
+    "pos": "延世1",
+    "source_page": 50
+  },
+  {
+    "id": 736,
+    "korean": "딸기",
+    "chinese": "草莓",
+    "pos": "延世1",
+    "source_page": 50
+  },
+  {
+    "id": 737,
+    "korean": "수박",
+    "chinese": "西瓜",
+    "pos": "延世1",
+    "source_page": 50
+  },
+  {
+    "id": 738,
+    "korean": "휴가",
+    "chinese": "假，休假",
+    "pos": "延世1",
+    "source_page": 50
+  },
+  {
+    "id": 739,
+    "korean": "감",
+    "chinese": "柿子",
+    "pos": "延世1",
+    "source_page": 50
+  },
+  {
+    "id": 740,
+    "korean": "단풍",
+    "chinese": "红叶",
+    "pos": "延世1",
+    "source_page": 50
+  },
+  {
+    "id": 741,
+    "korean": "귤",
+    "chinese": "橘子",
+    "pos": "延世1",
+    "source_page": 50
+  },
+  {
+    "id": 742,
+    "korean": "눈사람",
+    "chinese": "雪人",
+    "pos": "延世1",
+    "source_page": 50
+  },
+  {
+    "id": 743,
+    "korean": "하늘",
+    "chinese": "天空",
+    "pos": "延世1",
+    "source_page": 50
+  },
+  {
+    "id": 744,
+    "korean": "구름",
+    "chinese": "云，云彩",
+    "pos": "延世1",
+    "source_page": 50
+  },
+  {
+    "id": 745,
+    "korean": "끼다",
+    "chinese": "笼罩",
+    "pos": "延世1",
+    "source_page": 50
+  },
+  {
+    "id": 746,
+    "korean": "흐리다",
+    "chinese": "阴",
+    "pos": "延世1",
+    "source_page": 51
+  },
+  {
+    "id": 747,
+    "korean": "날씨가 흐리다",
+    "chinese": "阴天",
+    "pos": "延世1",
+    "source_page": 51
+  },
+  {
+    "id": 748,
+    "korean": "맑다",
+    "chinese": "晴",
+    "pos": "延世1",
+    "source_page": 51
+  },
+  {
+    "id": 749,
+    "korean": "날씨가 맑다",
+    "chinese": "晴天",
+    "pos": "延世1",
+    "source_page": 51
+  },
+  {
+    "id": 750,
+    "korean": "개다",
+    "chinese": "转晴",
+    "pos": "延世1",
+    "source_page": 51
+  },
+  {
+    "id": 751,
+    "korean": "구름이 끼다",
+    "chinese": "多云",
+    "pos": "延世1",
+    "source_page": 51
+  },
+  {
+    "id": 752,
+    "korean": "안개가 끼다",
+    "chinese": "有雾",
+    "pos": "延世1",
+    "source_page": 51
+  },
+  {
+    "id": 753,
+    "korean": "비",
+    "chinese": "雨",
+    "pos": "延世1",
+    "source_page": 51
+  },
+  {
+    "id": 754,
+    "korean": "비가 오다/내리다",
+    "chinese": "下雨",
+    "pos": "延世1",
+    "source_page": 51
+  },
+  {
+    "id": 755,
+    "korean": "바가 그치다",
+    "chinese": "雨停",
+    "pos": "延世1",
+    "source_page": 51
+  },
+  {
+    "id": 756,
+    "korean": "눈이 오다/내리다",
+    "chinese": "下雪",
+    "pos": "延世1",
+    "source_page": 51
+  },
+  {
+    "id": 757,
+    "korean": "눈이 그치다",
+    "chinese": "雪停",
+    "pos": "延世1",
+    "source_page": 51
+  },
+  {
+    "id": 758,
+    "korean": "바람이 불다",
+    "chinese": "刮风",
+    "pos": "延世1",
+    "source_page": 51
+  },
+  {
+    "id": 759,
+    "korean": "불다",
+    "chinese": "吹，挂",
+    "pos": "延世1",
+    "source_page": 51
+  },
+  {
+    "id": 760,
+    "korean": "바람이 강하다",
+    "chinese": "强风",
+    "pos": "延世1",
+    "source_page": 51
+  },
+  {
+    "id": 761,
+    "korean": "바람이 약하다",
+    "chinese": "微风",
+    "pos": "延世1",
+    "source_page": 52
+  },
+  {
+    "id": 762,
+    "korean": "신혼여행",
+    "chinese": "新婚旅行",
+    "pos": "延世1",
+    "source_page": 52
+  },
+  {
+    "id": 763,
+    "korean": "인터넷",
+    "chinese": "互联网",
+    "pos": "延世1",
+    "source_page": 52
+  },
+  {
+    "id": 764,
+    "korean": "예매",
+    "chinese": "预购",
+    "pos": "延世1",
+    "source_page": 52
+  },
+  {
+    "id": 765,
+    "korean": "후",
+    "chinese": "后",
+    "pos": "延世1",
+    "source_page": 52
+  },
+  {
+    "id": 766,
+    "korean": "양밀",
+    "chinese": "袜子",
+    "pos": "延世1",
+    "source_page": 52
+  },
+  {
+    "id": 767,
+    "korean": "신다",
+    "chinese": "穿",
+    "pos": "延世1",
+    "source_page": 52
+  },
+  {
+    "id": 768,
+    "korean": "외출하다",
+    "chinese": "外出，出门",
+    "pos": "延世1",
+    "source_page": 52
+  },
+  {
+    "id": 769,
+    "korean": "화장하다",
+    "chinese": "化妆",
+    "pos": "延世1",
+    "source_page": 52
+  },
+  {
+    "id": 770,
+    "korean": "잠옷",
+    "chinese": "睡衣",
+    "pos": "延世1",
+    "source_page": 52
+  },
+  {
+    "id": 771,
+    "korean": "밤",
+    "chinese": "夜",
+    "pos": "延世1",
+    "source_page": 52
+  },
+  {
+    "id": 772,
+    "korean": "아내",
+    "chinese": "妻子",
+    "pos": "延世1",
+    "source_page": 52
+  },
+  {
+    "id": 773,
+    "korean": "아들",
+    "chinese": "儿子",
+    "pos": "延世1",
+    "source_page": 52
+  },
+  {
+    "id": 774,
+    "korean": "딸",
+    "chinese": "女儿",
+    "pos": "延世1",
+    "source_page": 52
+  },
+  {
+    "id": 775,
+    "korean": "졸업하다",
+    "chinese": "毕业",
+    "pos": "延世1",
+    "source_page": 52
+  },
+  {
+    "id": 776,
+    "korean": "결혼하다",
+    "chinese": "结婚典礼",
+    "pos": "延世1",
+    "source_page": 53
+  },
+  {
+    "id": 777,
+    "korean": "보다",
+    "chinese": "比",
+    "pos": "延世1",
+    "source_page": 53
+  },
+  {
+    "id": 778,
+    "korean": "도",
+    "chinese": "度",
+    "pos": "延世1",
+    "source_page": 53
+  },
+  {
+    "id": 779,
+    "korean": "선선하다",
+    "chinese": "凉爽",
+    "pos": "延世1",
+    "source_page": 53
+  },
+  {
+    "id": 780,
+    "korean": "쌀쌀하다",
+    "chinese": "凉飕飕",
+    "pos": "延世1",
+    "source_page": 53
+  },
+  {
+    "id": 781,
+    "korean": "영하",
+    "chinese": "零下",
+    "pos": "延世1",
+    "source_page": 53
+  },
+  {
+    "id": 782,
+    "korean": "눈",
+    "chinese": "眼睛",
+    "pos": "延世1",
+    "source_page": 53
+  },
+  {
+    "id": 783,
+    "korean": "귀걸이",
+    "chinese": "耳环",
+    "pos": "延世1",
+    "source_page": 53
+  },
+  {
+    "id": 784,
+    "korean": "키",
+    "chinese": "身高，个子",
+    "pos": "延世1",
+    "source_page": 53
+  },
+  {
+    "id": 785,
+    "korean": "습하다",
+    "chinese": "潮湿",
+    "pos": "延世1",
+    "source_page": 53
+  },
+  {
+    "id": 786,
+    "korean": "바닷가",
+    "chinese": "海边",
+    "pos": "延世1",
+    "source_page": 53
+  },
+  {
+    "id": 787,
+    "korean": "더",
+    "chinese": "更",
+    "pos": "延世1",
+    "source_page": 53
+  },
+  {
+    "id": 788,
+    "korean": "장마철",
+    "chinese": "梅雨季",
+    "pos": "延世1",
+    "source_page": 53
+  },
+  {
+    "id": 789,
+    "korean": "눈싸움",
+    "chinese": "雪仗",
+    "pos": "延世1",
+    "source_page": 53
+  },
+  {
+    "id": 790,
+    "korean": "등산",
+    "chinese": "登山",
+    "pos": "延世1",
+    "source_page": 53
+  },
+  {
+    "id": 791,
+    "korean": "수영",
+    "chinese": "游泳",
+    "pos": "延世1",
+    "source_page": 54
+  },
+  {
+    "id": 792,
+    "korean": "소풍을 가다",
+    "chinese": "去郊游",
+    "pos": "延世1",
+    "source_page": 54
+  },
+  {
+    "id": 793,
+    "korean": "꽃구경을 가다",
+    "chinese": "去赏花",
+    "pos": "延世1",
+    "source_page": 54
+  },
+  {
+    "id": 794,
+    "korean": "피서를 가다",
+    "chinese": "去避暑",
+    "pos": "延世1",
+    "source_page": 54
+  },
+  {
+    "id": 795,
+    "korean": "해수욕장",
+    "chinese": "海水浴场",
+    "pos": "延世1",
+    "source_page": 54
+  },
+  {
+    "id": 796,
+    "korean": "야영을 하다",
+    "chinese": "去野营",
+    "pos": "延世1",
+    "source_page": 54
+  },
+  {
+    "id": 797,
+    "korean": "독서하다",
+    "chinese": "阅读",
+    "pos": "延世1",
+    "source_page": 54
+  },
+  {
+    "id": 798,
+    "korean": "단풍 구경을 가다",
+    "chinese": "去赏红叶",
+    "pos": "延世1",
+    "source_page": 54
+  },
+  {
+    "id": 799,
+    "korean": "는사람을 만들다",
+    "chinese": "堆雪人",
+    "pos": "延世1",
+    "source_page": 54
+  },
+  {
+    "id": 800,
+    "korean": "눈싸움을 하다",
+    "chinese": "打雪仗",
+    "pos": "延世1",
+    "source_page": 54
+  },
+  {
+    "id": 801,
+    "korean": "스키를 타다",
+    "chinese": "滑雪",
+    "pos": "延世1",
+    "source_page": 54
+  },
+  {
+    "id": 802,
+    "korean": "나이",
+    "chinese": "年龄",
+    "pos": "延世1",
+    "source_page": 54
+  },
+  {
+    "id": 803,
+    "korean": "무게",
+    "chinese": "重量",
+    "pos": "延世1",
+    "source_page": 54
+  },
+  {
+    "id": 804,
+    "korean": "목",
+    "chinese": "脖子",
+    "pos": "延世1",
+    "source_page": 54
+  },
+  {
+    "id": 805,
+    "korean": "길이",
+    "chinese": "长度",
+    "pos": "延世1",
+    "source_page": 54
+  },
+  {
+    "id": 806,
+    "korean": "편",
+    "chinese": "篇，部",
+    "pos": "延世1",
+    "source_page": 55
+  },
+  {
+    "id": 807,
+    "korean": "출연료",
+    "chinese": "片酬",
+    "pos": "延世1",
+    "source_page": 55
+  },
+  {
+    "id": 808,
+    "korean": "모래",
+    "chinese": "沙子",
+    "pos": "延世1",
+    "source_page": 55
+  },
+  {
+    "id": 809,
+    "korean": "짓다",
+    "chinese": "建造",
+    "pos": "延世1",
+    "source_page": 55
+  },
+  {
+    "id": 810,
+    "korean": "수상스키",
+    "chinese": "冲浪",
+    "pos": "延世1",
+    "source_page": 55
+  },
+  {
+    "id": 811,
+    "korean": "초",
+    "chinese": "初",
+    "pos": "延世1",
+    "source_page": 55
+  },
+  {
+    "id": 812,
+    "korean": "유월 초",
+    "chinese": "6月初",
+    "pos": "延世1",
+    "source_page": 55
+  },
+  {
+    "id": 813,
+    "korean": "끝나다",
+    "chinese": "结束",
+    "pos": "延世1",
+    "source_page": 55
+  },
+  {
+    "id": 814,
+    "korean": "수업이 끝났어요",
+    "chinese": "下课",
+    "pos": "延世1",
+    "source_page": 55
+  },
+  {
+    "id": 815,
+    "korean": "찍다",
+    "chinese": "拍",
+    "pos": "延世1",
+    "source_page": 55
+  },
+  {
+    "id": 816,
+    "korean": "사진을 찍다",
+    "chinese": "拍照片",
+    "pos": "延世1",
+    "source_page": 55
+  },
+  {
+    "id": 817,
+    "korean": "휴일",
+    "chinese": "假日，休息日",
+    "pos": "延世1",
+    "source_page": 55
+  },
+  {
+    "id": 818,
+    "korean": "공휴일",
+    "chinese": "公休日",
+    "pos": "延世1",
+    "source_page": 55
+  },
+  {
+    "id": 819,
+    "korean": "기념일",
+    "chinese": "纪念日",
+    "pos": "延世1",
+    "source_page": 55
+  },
+  {
+    "id": 820,
+    "korean": "연휴",
+    "chinese": "连休",
+    "pos": "延世1",
+    "source_page": 55
+  },
+  {
+    "id": 821,
+    "korean": "봄방학",
+    "chinese": "春假",
+    "pos": "延世1",
+    "source_page": 56
+  },
+  {
+    "id": 822,
+    "korean": "여름방학",
+    "chinese": "暑假",
+    "pos": "延世1",
+    "source_page": 56
+  },
+  {
+    "id": 823,
+    "korean": "겨울방학",
+    "chinese": "寒假",
+    "pos": "延世1",
+    "source_page": 56
+  },
+  {
+    "id": 824,
+    "korean": "휴가",
+    "chinese": "假",
+    "pos": "延世1",
+    "source_page": 56
+  },
+  {
+    "id": 825,
+    "korean": "계획",
+    "chinese": "计划",
+    "pos": "延世1",
+    "source_page": 56
+  },
+  {
+    "id": 826,
+    "korean": "계획을 세우다",
+    "chinese": "订计划",
+    "pos": "延世1",
+    "source_page": 56
+  },
+  {
+    "id": 827,
+    "korean": "계획을 있/없다",
+    "chinese": "有计划/无计划",
+    "pos": "延世1",
+    "source_page": 56
+  },
+  {
+    "id": 828,
+    "korean": "이제",
+    "chinese": "现在",
+    "pos": "延世1",
+    "source_page": 56
+  },
+  {
+    "id": 829,
+    "korean": "설날",
+    "chinese": "春节",
+    "pos": "延世1",
+    "source_page": 56
+  },
+  {
+    "id": 830,
+    "korean": "사귀다",
+    "chinese": "结交，交往",
+    "pos": "延世1",
+    "source_page": 56
+  },
+  {
+    "id": 831,
+    "korean": "되다",
+    "chinese": "成为",
+    "pos": "延世1",
+    "source_page": 56
+  },
+  {
+    "id": 832,
+    "korean": "비자",
+    "chinese": "签证",
+    "pos": "延世1",
+    "source_page": 56
+  },
+  {
+    "id": 833,
+    "korean": "필요하다",
+    "chinese": "需要",
+    "pos": "延世1",
+    "source_page": 56
+  },
+  {
+    "id": 834,
+    "korean": "동안",
+    "chinese": "期间",
+    "pos": "延世1",
+    "source_page": 56
+  },
+  {
+    "id": 835,
+    "korean": "학기",
+    "chinese": "学期",
+    "pos": "延世1",
+    "source_page": 56
+  },
+  {
+    "id": 836,
+    "korean": "숙박",
+    "chinese": "住宿",
+    "pos": "延世1",
+    "source_page": 57
+  },
+  {
+    "id": 837,
+    "korean": "준비물",
+    "chinese": "准备物品",
+    "pos": "延世1",
+    "source_page": 57
+  },
+  {
+    "id": 838,
+    "korean": "등산화",
+    "chinese": "登山鞋",
+    "pos": "延世1",
+    "source_page": 57
+  },
+  {
+    "id": 839,
+    "korean": "밀리다",
+    "chinese": "堆积",
+    "pos": "延世1",
+    "source_page": 57
+  },
+  {
+    "id": 840,
+    "korean": "이곳저곳",
+    "chinese": "到处，各处",
+    "pos": "延世1",
+    "source_page": 57
+  },
+  {
+    "id": 841,
+    "korean": "틈틈이",
+    "chinese": "一点点",
+    "pos": "延世1",
+    "source_page": 57
+  },
+  {
+    "id": 842,
+    "korean": "휴가철",
+    "chinese": "假期",
+    "pos": "延世1",
+    "source_page": 57
+  },
+  {
+    "id": 843,
+    "korean": "방문",
+    "chinese": "访问",
+    "pos": "延世1",
+    "source_page": 57
+  },
+  {
+    "id": 844,
+    "korean": "그러니까",
+    "chinese": "所以，那么",
+    "pos": "延世1",
+    "source_page": 57
+  },
+  {
+    "id": 845,
+    "korean": "아니면",
+    "chinese": "或者",
+    "pos": "延世1",
+    "source_page": 57
+  },
+  {
+    "id": 846,
+    "korean": "주로",
+    "chinese": "主要",
+    "pos": "延世1",
+    "source_page": 57
+  },
+  {
+    "id": 847,
+    "korean": "중",
+    "chinese": "当中",
+    "pos": "延世1",
+    "source_page": 57
+  },
+  {
+    "id": 848,
+    "korean": "제일",
+    "chinese": "最",
+    "pos": "延世1",
+    "source_page": 57
+  },
+  {
+    "id": 849,
+    "korean": "제일 좋아요",
+    "chinese": "最好",
+    "pos": "延世1",
+    "source_page": 57
+  },
+  {
+    "id": 850,
+    "korean": "저를 제일 좋아하는 음식은 불고기예요",
+    "chinese": "我最喜欢的菜是烤肉",
+    "pos": "延世1",
+    "source_page": 57
+  },
+  {
+    "id": 851,
+    "korean": "이 것은 제일이에요",
+    "chinese": "这个是最好的",
+    "pos": "延世1",
+    "source_page": 58
+  },
+  {
+    "id": 852,
+    "korean": "취미",
+    "chinese": "爱好",
+    "pos": "延世1",
+    "source_page": 58
+  },
+  {
+    "id": 853,
+    "korean": "기",
+    "chinese": "谓词/体词谓词形后，使其具有名词",
+    "pos": "延世1",
+    "source_page": 58
+  },
+  {
+    "id": 854,
+    "korean": "는 것",
+    "chinese": "动词后，使其具有名词性质",
+    "pos": "延世1",
+    "source_page": 58
+  },
+  {
+    "id": 855,
+    "korean": "영화 보기/감상",
+    "chinese": "看电影/电影欣赏",
+    "pos": "延世1",
+    "source_page": 58
+  },
+  {
+    "id": 856,
+    "korean": "음악 듣기/감상",
+    "chinese": "听音乐/音乐欣赏",
+    "pos": "延世1",
+    "source_page": 58
+  },
+  {
+    "id": 857,
+    "korean": "책 읽기/독서",
+    "chinese": "读书/阅读",
+    "pos": "延世1",
+    "source_page": 58
+  },
+  {
+    "id": 858,
+    "korean": "사진 찍기",
+    "chinese": "照相",
+    "pos": "延世1",
+    "source_page": 58
+  },
+  {
+    "id": 859,
+    "korean": "그림 그리기",
+    "chinese": "画画",
+    "pos": "延世1",
+    "source_page": 58
+  },
+  {
+    "id": 860,
+    "korean": "노래 부르기",
+    "chinese": "唱歌",
+    "pos": "延世1",
+    "source_page": 58
+  },
+  {
+    "id": 861,
+    "korean": "춤 추기",
+    "chinese": "跳舞",
+    "pos": "延世1",
+    "source_page": 58
+  },
+  {
+    "id": 862,
+    "korean": "낚시",
+    "chinese": "钓鱼",
+    "pos": "延世1",
+    "source_page": 58
+  },
+  {
+    "id": 863,
+    "korean": "바둑",
+    "chinese": "围棋",
+    "pos": "延世1",
+    "source_page": 58
+  },
+  {
+    "id": 864,
+    "korean": "요리",
+    "chinese": "料理",
+    "pos": "延世1",
+    "source_page": 58
+  },
+  {
+    "id": 865,
+    "korean": "컴퓨터 게임",
+    "chinese": "电脑游戏",
+    "pos": "延世1",
+    "source_page": 58
+  },
+  {
+    "id": 866,
+    "korean": "쓰다",
+    "chinese": "使用",
+    "pos": "延世1",
+    "source_page": 59
+  },
+  {
+    "id": 867,
+    "korean": "슬프다",
+    "chinese": "悲伤",
+    "pos": "延世1",
+    "source_page": 59
+  },
+  {
+    "id": 868,
+    "korean": "슬픈 영화",
+    "chinese": "悲伤电影",
+    "pos": "延世1",
+    "source_page": 59
+  },
+  {
+    "id": 869,
+    "korean": "어렵다",
+    "chinese": "难",
+    "pos": "延世1",
+    "source_page": 59
+  },
+  {
+    "id": 870,
+    "korean": "예매하다",
+    "chinese": "预购",
+    "pos": "延世1",
+    "source_page": 59
+  },
+  {
+    "id": 871,
+    "korean": "영화표를 예매하다",
+    "chinese": "预购电影票",
+    "pos": "延世1",
+    "source_page": 59
+  },
+  {
+    "id": 872,
+    "korean": "편하다",
+    "chinese": "方便，舒服",
+    "pos": "延世1",
+    "source_page": 59
+  },
+  {
+    "id": 873,
+    "korean": "편한 신발",
+    "chinese": "舒服的鞋子",
+    "pos": "延世1",
+    "source_page": 59
+  },
+  {
+    "id": 874,
+    "korean": "못",
+    "chinese": "表示否定",
+    "pos": "延世1",
+    "source_page": 59
+  },
+  {
+    "id": 875,
+    "korean": "공포 영화",
+    "chinese": "恐怖片",
+    "pos": "延世1",
+    "source_page": 59
+  },
+  {
+    "id": 876,
+    "korean": "액션 영화",
+    "chinese": "动作片",
+    "pos": "延世1",
+    "source_page": 59
+  },
+  {
+    "id": 877,
+    "korean": "코미디 영화",
+    "chinese": "喜剧片",
+    "pos": "延世1",
+    "source_page": 59
+  },
+  {
+    "id": 878,
+    "korean": "전쟁 영화",
+    "chinese": "战争片",
+    "pos": "延世1",
+    "source_page": 59
+  },
+  {
+    "id": 879,
+    "korean": "만화 영화",
+    "chinese": "动画片",
+    "pos": "延世1",
+    "source_page": 59
+  },
+  {
+    "id": 880,
+    "korean": "멜로 영화",
+    "chinese": "爱情片",
+    "pos": "延世1",
+    "source_page": 59
+  },
+  {
+    "id": 881,
+    "korean": "공상 과학 영화",
+    "chinese": "科幻片",
+    "pos": "延世1",
+    "source_page": 60
+  },
+  {
+    "id": 882,
+    "korean": "가족 영화",
+    "chinese": "家庭片",
+    "pos": "延世1",
+    "source_page": 60
+  },
+  {
+    "id": 883,
+    "korean": "무섭다",
+    "chinese": "害怕",
+    "pos": "延世1",
+    "source_page": 60
+  },
+  {
+    "id": 884,
+    "korean": "너무",
+    "chinese": "过于，太",
+    "pos": "延世1",
+    "source_page": 60
+  },
+  {
+    "id": 885,
+    "korean": "귀엽다",
+    "chinese": "可爱",
+    "pos": "延世1",
+    "source_page": 60
+  },
+  {
+    "id": 886,
+    "korean": "로봇",
+    "chinese": "机器人",
+    "pos": "延世1",
+    "source_page": 60
+  },
+  {
+    "id": 887,
+    "korean": "세상",
+    "chinese": "世上，世界",
+    "pos": "延世1",
+    "source_page": 60
+  },
+  {
+    "id": 888,
+    "korean": "총",
+    "chinese": "枪",
+    "pos": "延世1",
+    "source_page": 60
+  },
+  {
+    "id": 889,
+    "korean": "칼",
+    "chinese": "刀",
+    "pos": "延世1",
+    "source_page": 60
+  },
+  {
+    "id": 890,
+    "korean": "주인공",
+    "chinese": "主人公",
+    "pos": "延世1",
+    "source_page": 60
+  },
+  {
+    "id": 891,
+    "korean": "예약하다",
+    "chinese": "预约，预订",
+    "pos": "延世1",
+    "source_page": 60
+  },
+  {
+    "id": 892,
+    "korean": "음악회",
+    "chinese": "音乐会",
+    "pos": "延世1",
+    "source_page": 60
+  },
+  {
+    "id": 893,
+    "korean": "축구",
+    "chinese": "足球",
+    "pos": "延世1",
+    "source_page": 60
+  },
+  {
+    "id": 894,
+    "korean": "경기",
+    "chinese": "比赛",
+    "pos": "延世1",
+    "source_page": 60
+  },
+  {
+    "id": 895,
+    "korean": "하루",
+    "chinese": "一天",
+    "pos": "延世1",
+    "source_page": 60
+  },
+  {
+    "id": 896,
+    "korean": "외식",
+    "chinese": "外面用餐",
+    "pos": "延世1",
+    "source_page": 61
+  },
+  {
+    "id": 897,
+    "korean": "감동적",
+    "chinese": "令人感动",
+    "pos": "延世1",
+    "source_page": 61
+  },
+  {
+    "id": 898,
+    "korean": "병",
+    "chinese": "病",
+    "pos": "延世1",
+    "source_page": 61
+  },
+  {
+    "id": 899,
+    "korean": "때문에",
+    "chinese": "因为",
+    "pos": "延世1",
+    "source_page": 61
+  },
+  {
+    "id": 900,
+    "korean": "병에 걸리다",
+    "chinese": "生病",
+    "pos": "延世1",
+    "source_page": 61
+  },
+  {
+    "id": 901,
+    "korean": "죽다",
+    "chinese": "去世，死",
+    "pos": "延世1",
+    "source_page": 61
+  },
+  {
+    "id": 902,
+    "korean": "꼭",
+    "chinese": "一定",
+    "pos": "延世1",
+    "source_page": 61
+  },
+  {
+    "id": 903,
+    "korean": "울다",
+    "chinese": "哭",
+    "pos": "延世1",
+    "source_page": 61
+  },
+  {
+    "id": 904,
+    "korean": "탁구를",
+    "chinese": "乒乓球",
+    "pos": "延世1",
+    "source_page": 61
+  },
+  {
+    "id": 905,
+    "korean": "탁구를 치다",
+    "chinese": "打乒乓球",
+    "pos": "延世1",
+    "source_page": 61
+  },
+  {
+    "id": 906,
+    "korean": "피아노를 치다",
+    "chinese": "弹钢琴",
+    "pos": "延世1",
+    "source_page": 61
+  },
+  {
+    "id": 907,
+    "korean": "마다",
+    "chinese": "每",
+    "pos": "延世1",
+    "source_page": 61
+  },
+  {
+    "id": 908,
+    "korean": "계절마다",
+    "chinese": "每个季节",
+    "pos": "延世1",
+    "source_page": 61
+  },
+  {
+    "id": 909,
+    "korean": "배우다",
+    "chinese": "学习",
+    "pos": "延世1",
+    "source_page": 61
+  },
+  {
+    "id": 910,
+    "korean": "별로",
+    "chinese": "不太，不怎么",
+    "pos": "延世1",
+    "source_page": 61
+  },
+  {
+    "id": 911,
+    "korean": "별로 좋지 않아요",
+    "chinese": "不太好",
+    "pos": "延世1",
+    "source_page": 62
+  },
+  {
+    "id": 912,
+    "korean": "야구",
+    "chinese": "棒球",
+    "pos": "延世1",
+    "source_page": 62
+  },
+  {
+    "id": 913,
+    "korean": "야구하다",
+    "chinese": "打棒球",
+    "pos": "延世1",
+    "source_page": 62
+  },
+  {
+    "id": 914,
+    "korean": "농구",
+    "chinese": "篮球",
+    "pos": "延世1",
+    "source_page": 62
+  },
+  {
+    "id": 915,
+    "korean": "농구하다",
+    "chinese": "打篮球",
+    "pos": "延世1",
+    "source_page": 62
+  },
+  {
+    "id": 916,
+    "korean": "축구",
+    "chinese": "足球",
+    "pos": "延世1",
+    "source_page": 62
+  },
+  {
+    "id": 917,
+    "korean": "축구하다",
+    "chinese": "踢足球",
+    "pos": "延世1",
+    "source_page": 62
+  },
+  {
+    "id": 918,
+    "korean": "배구",
+    "chinese": "排球",
+    "pos": "延世1",
+    "source_page": 62
+  },
+  {
+    "id": 919,
+    "korean": "태권도",
+    "chinese": "跆拳道",
+    "pos": "延世1",
+    "source_page": 62
+  },
+  {
+    "id": 920,
+    "korean": "치다",
+    "chinese": "打，击",
+    "pos": "延世1",
+    "source_page": 62
+  },
+  {
+    "id": 921,
+    "korean": "골프",
+    "chinese": "高尔夫",
+    "pos": "延世1",
+    "source_page": 62
+  },
+  {
+    "id": 922,
+    "korean": "골프를 치다",
+    "chinese": "打高尔夫",
+    "pos": "延世1",
+    "source_page": 62
+  },
+  {
+    "id": 923,
+    "korean": "테니스",
+    "chinese": "网球",
+    "pos": "延世1",
+    "source_page": 62
+  },
+  {
+    "id": 924,
+    "korean": "테니스를 치다",
+    "chinese": "打网球",
+    "pos": "延世1",
+    "source_page": 62
+  },
+  {
+    "id": 925,
+    "korean": "탁구",
+    "chinese": "乒乓球",
+    "pos": "延世1",
+    "source_page": 62
+  },
+  {
+    "id": 926,
+    "korean": "탁구를 치다",
+    "chinese": "打乒乓球",
+    "pos": "延世1",
+    "source_page": 63
+  },
+  {
+    "id": 927,
+    "korean": "당구",
+    "chinese": "台球",
+    "pos": "延世1",
+    "source_page": 63
+  },
+  {
+    "id": 928,
+    "korean": "당구를 치다",
+    "chinese": "打台球",
+    "pos": "延世1",
+    "source_page": 63
+  },
+  {
+    "id": 929,
+    "korean": "배드민턴",
+    "chinese": "羽毛球",
+    "pos": "延世1",
+    "source_page": 63
+  },
+  {
+    "id": 930,
+    "korean": "배드민턴을 치다",
+    "chinese": "打羽毛球",
+    "pos": "延世1",
+    "source_page": 63
+  },
+  {
+    "id": 931,
+    "korean": "스케이트",
+    "chinese": "滑雪",
+    "pos": "延世1",
+    "source_page": 63
+  },
+  {
+    "id": 932,
+    "korean": "스케이트 타다",
+    "chinese": "滑雪",
+    "pos": "延世1",
+    "source_page": 63
+  },
+  {
+    "id": 933,
+    "korean": "스노보드",
+    "chinese": "滑冰",
+    "pos": "延世1",
+    "source_page": 63
+  },
+  {
+    "id": 934,
+    "korean": "스노보드 타다",
+    "chinese": "滑冰",
+    "pos": "延世1",
+    "source_page": 63
+  },
+  {
+    "id": 935,
+    "korean": "공",
+    "chinese": "球",
+    "pos": "延世1",
+    "source_page": 63
+  },
+  {
+    "id": 936,
+    "korean": "사용하다",
+    "chinese": "使用",
+    "pos": "延世1",
+    "source_page": 63
+  },
+  {
+    "id": 937,
+    "korean": "팀",
+    "chinese": "组，队",
+    "pos": "延世1",
+    "source_page": 63
+  },
+  {
+    "id": 938,
+    "korean": "샤워를 하다",
+    "chinese": "洗澡",
+    "pos": "延世1",
+    "source_page": 63
+  },
+  {
+    "id": 939,
+    "korean": "머리를 감다",
+    "chinese": "洗头发",
+    "pos": "延世1",
+    "source_page": 63
+  },
+  {
+    "id": 940,
+    "korean": "모니터",
+    "chinese": "监视器，显示器",
+    "pos": "延世1",
+    "source_page": 63
+  },
+  {
+    "id": 941,
+    "korean": "탁구를",
+    "chinese": "乒乓球",
+    "pos": "延世1",
+    "source_page": 64
+  },
+  {
+    "id": 942,
+    "korean": "탁구를 치다",
+    "chinese": "打乒乓球",
+    "pos": "延世1",
+    "source_page": 64
+  },
+  {
+    "id": 943,
+    "korean": "피아노를 치다",
+    "chinese": "弹钢琴",
+    "pos": "延世1",
+    "source_page": 64
+  },
+  {
+    "id": 944,
+    "korean": "마다",
+    "chinese": "每",
+    "pos": "延世1",
+    "source_page": 64
+  },
+  {
+    "id": 945,
+    "korean": "계절마다",
+    "chinese": "每个季节",
+    "pos": "延世1",
+    "source_page": 64
+  },
+  {
+    "id": 946,
+    "korean": "배우다",
+    "chinese": "学习",
+    "pos": "延世1",
+    "source_page": 64
+  },
+  {
+    "id": 947,
+    "korean": "별로",
+    "chinese": "不太，不怎么",
+    "pos": "延世1",
+    "source_page": 64
+  },
+  {
+    "id": 948,
+    "korean": "별로 좋지 않아요",
+    "chinese": "不太好",
+    "pos": "延世1",
+    "source_page": 64
+  },
+  {
+    "id": 949,
+    "korean": "야구",
+    "chinese": "棒球",
+    "pos": "延世1",
+    "source_page": 64
+  },
+  {
+    "id": 950,
+    "korean": "야구하다",
+    "chinese": "打棒球",
+    "pos": "延世1",
+    "source_page": 64
+  },
+  {
+    "id": 951,
+    "korean": "농구",
+    "chinese": "篮球",
+    "pos": "延世1",
+    "source_page": 64
+  },
+  {
+    "id": 952,
+    "korean": "농구하다",
+    "chinese": "打篮球",
+    "pos": "延世1",
+    "source_page": 64
+  },
+  {
+    "id": 953,
+    "korean": "축구",
+    "chinese": "足球",
+    "pos": "延世1",
+    "source_page": 64
+  },
+  {
+    "id": 954,
+    "korean": "축구하다",
+    "chinese": "踢足球",
+    "pos": "延世1",
+    "source_page": 64
+  },
+  {
+    "id": 955,
+    "korean": "배구",
+    "chinese": "排球",
+    "pos": "延世1",
+    "source_page": 64
+  },
+  {
+    "id": 956,
+    "korean": "태권도",
+    "chinese": "跆拳道",
+    "pos": "延世1",
+    "source_page": 65
+  },
+  {
+    "id": 957,
+    "korean": "치다",
+    "chinese": "打，击",
+    "pos": "延世1",
+    "source_page": 65
+  },
+  {
+    "id": 958,
+    "korean": "골프",
+    "chinese": "高尔夫",
+    "pos": "延世1",
+    "source_page": 65
+  },
+  {
+    "id": 959,
+    "korean": "골프를 치다",
+    "chinese": "打高尔夫",
+    "pos": "延世1",
+    "source_page": 65
+  },
+  {
+    "id": 960,
+    "korean": "테니스",
+    "chinese": "网球",
+    "pos": "延世1",
+    "source_page": 65
+  },
+  {
+    "id": 961,
+    "korean": "테니스를 치다",
+    "chinese": "打网球",
+    "pos": "延世1",
+    "source_page": 65
+  },
+  {
+    "id": 962,
+    "korean": "탁구",
+    "chinese": "乒乓球",
+    "pos": "延世1",
+    "source_page": 65
+  },
+  {
+    "id": 963,
+    "korean": "탁구를 치다",
+    "chinese": "打乒乓球",
+    "pos": "延世1",
+    "source_page": 65
+  },
+  {
+    "id": 964,
+    "korean": "당구",
+    "chinese": "台球",
+    "pos": "延世1",
+    "source_page": 65
+  },
+  {
+    "id": 965,
+    "korean": "당구를 치다",
+    "chinese": "打台球",
+    "pos": "延世1",
+    "source_page": 65
+  },
+  {
+    "id": 966,
+    "korean": "배드민턴",
+    "chinese": "羽毛球",
+    "pos": "延世1",
+    "source_page": 65
+  },
+  {
+    "id": 967,
+    "korean": "배드민턴을 치다",
+    "chinese": "打羽毛球",
+    "pos": "延世1",
+    "source_page": 65
+  },
+  {
+    "id": 968,
+    "korean": "스케이트",
+    "chinese": "滑雪",
+    "pos": "延世1",
+    "source_page": 65
+  },
+  {
+    "id": 969,
+    "korean": "스케이트 타다",
+    "chinese": "滑雪",
+    "pos": "延世1",
+    "source_page": 65
+  },
+  {
+    "id": 970,
+    "korean": "스노보드",
+    "chinese": "滑冰",
+    "pos": "延世1",
+    "source_page": 65
+  },
+  {
+    "id": 971,
+    "korean": "스노보드 타다",
+    "chinese": "滑冰",
+    "pos": "延世1",
+    "source_page": 66
+  },
+  {
+    "id": 972,
+    "korean": "공",
+    "chinese": "球",
+    "pos": "延世1",
+    "source_page": 66
+  },
+  {
+    "id": 973,
+    "korean": "사용하다",
+    "chinese": "使用",
+    "pos": "延世1",
+    "source_page": 66
+  },
+  {
+    "id": 974,
+    "korean": "팀",
+    "chinese": "组，队",
+    "pos": "延世1",
+    "source_page": 66
+  },
+  {
+    "id": 975,
+    "korean": "샤워를 하다",
+    "chinese": "洗澡",
+    "pos": "延世1",
+    "source_page": 66
+  },
+  {
+    "id": 976,
+    "korean": "머리를 감다",
+    "chinese": "洗头发",
+    "pos": "延世1",
+    "source_page": 66
+  },
+  {
+    "id": 977,
+    "korean": "모니터",
+    "chinese": "监视器，显示器",
+    "pos": "延世1",
+    "source_page": 66
+  },
+  {
+    "id": 978,
+    "korean": "거나",
+    "chinese": "或者",
+    "pos": "延世1",
+    "source_page": 66
+  },
+  {
+    "id": 979,
+    "korean": "조사",
+    "chinese": "调查",
+    "pos": "延世1",
+    "source_page": 66
+  },
+  {
+    "id": 980,
+    "korean": "활동",
+    "chinese": "活动",
+    "pos": "延世1",
+    "source_page": 66
+  },
+  {
+    "id": 981,
+    "korean": "보내다",
+    "chinese": "过时间",
+    "pos": "延世1",
+    "source_page": 66
+  },
+  {
+    "id": 982,
+    "korean": "휴일을 보내다",
+    "chinese": "过休息日",
+    "pos": "延世1",
+    "source_page": 66
+  },
+  {
+    "id": 983,
+    "korean": "주말을 보내다",
+    "chinese": "过周末",
+    "pos": "延世1",
+    "source_page": 66
+  },
+  {
+    "id": 984,
+    "korean": "방법",
+    "chinese": "方法",
+    "pos": "延世1",
+    "source_page": 66
+  },
+  {
+    "id": 985,
+    "korean": "집안일",
+    "chinese": "家务",
+    "pos": "延世1",
+    "source_page": 66
+  },
+  {
+    "id": 986,
+    "korean": "스포츠",
+    "chinese": "运动",
+    "pos": "延世1",
+    "source_page": 67
+  },
+  {
+    "id": 987,
+    "korean": "관광지",
+    "chinese": "旅游胜地",
+    "pos": "延世1",
+    "source_page": 67
+  },
+  {
+    "id": 988,
+    "korean": "놀이 공원",
+    "chinese": "游乐园",
+    "pos": "延世1",
+    "source_page": 67
+  },
+  {
+    "id": 989,
+    "korean": "온천",
+    "chinese": "温泉",
+    "pos": "延世1",
+    "source_page": 67
+  },
+  {
+    "id": 990,
+    "korean": "미역국",
+    "chinese": "海带汤",
+    "pos": "延世1",
+    "source_page": 67
+  },
+  {
+    "id": 991,
+    "korean": "와이셔츠",
+    "chinese": "衬衫",
+    "pos": "延世1",
+    "source_page": 67
+  },
+  {
+    "id": 992,
+    "korean": "드라마",
+    "chinese": "电视剧",
+    "pos": "延世1",
+    "source_page": 67
+  },
+  {
+    "id": 993,
+    "korean": "시집",
+    "chinese": "诗集",
+    "pos": "延世1",
+    "source_page": 67
+  }
+]

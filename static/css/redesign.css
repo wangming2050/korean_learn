@@ -1,0 +1,431 @@
+/* ============================================================
+   redesign.css — 新视觉风格（全站套用）
+   1) 首页居中格言 + 学习路线图
+   2) AT UIKIT 风格：扁平、通透、Manrope 字体
+   叠加在 style.css 之上，用 !important 覆盖旧的玻璃质感。
+   ============================================================ */
+
+/* ───────────────────────────────────────────
+   一、首页：居中格言 + 学习路线图
+   ─────────────────────────────────────────── */
+body[data-active-page="guide"] main {
+  min-height: calc(100vh - 132px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(40px, 7vh, 84px);
+  padding: 32px 0 8px;
+}
+
+.home-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.home-logo {
+  display: grid;
+  place-items: center;
+  width: clamp(96px, 11vw, 132px);
+  height: clamp(96px, 11vw, 132px);
+  border-radius: clamp(24px, 3vw, 34px);
+  color: #fff;
+  font-size: clamp(52px, 6vw, 72px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.home-motto {
+  margin: clamp(28px, 4vh, 44px) 0 0;
+  font-size: clamp(40px, 6.4vw, 78px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -1.5px;
+  color: var(--ink);
+}
+
+.home-motto-cn {
+  margin: clamp(14px, 1.8vh, 20px) 0 0;
+  font-size: clamp(16px, 1.5vw, 19px);
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: var(--muted);
+}
+
+.roadmap {
+  --node: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 1080px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  position: relative;
+}
+
+.roadmap::before {
+  content: "";
+  position: absolute;
+  top: calc(28px + var(--node) / 2);
+  left: 12.5%;
+  right: 12.5%;
+  height: 2px;
+  z-index: 0;
+}
+
+.roadmap-step {
+  position: relative;
+  z-index: 1;
+  display: flex;
+}
+
+.roadmap-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 28px 20px 20px;
+  border-radius: 16px;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    transform 0.18s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.roadmap-node {
+  display: grid;
+  place-items: center;
+  width: var(--node);
+  height: var(--node);
+  margin: 0 0 8px;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.roadmap-ko {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.3px;
+  color: var(--ink);
+}
+
+.roadmap-name {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: var(--brand-strong);
+}
+
+.roadmap-go {
+  margin-top: 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--brand);
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.roadmap-card:hover .roadmap-go {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 840px) {
+  body[data-active-page="guide"] main { min-height: 0; }
+  .roadmap {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+  .roadmap::before { display: none; }
+}
+
+@media (max-width: 520px) {
+  .roadmap { grid-template-columns: 1fr; }
+  .home-motto { font-size: clamp(34px, 11vw, 48px); }
+}
+
+/* ───────────────────────────────────────────
+   二、AT UIKIT 风格：扁平、通透、Manrope
+   ─────────────────────────────────────────── */
+
+/* 全站扁平化：重定义玻璃/阴影令牌，所有模块自动继承 */
+:root {
+  --glass:        #ffffff;
+  --glass-strong: #ffffff;
+  --glass-muted:  #f3f6fb;
+  --glass-border: #e3e9f3;
+  --glass-shine:  0 0 #0000;
+  --shadow:       0 0 #0000;
+  --shadow-soft:  0 0 #0000;
+}
+body[data-theme="dark"] {
+  --glass:        var(--surface);
+  --glass-strong: var(--surface-raised);
+  --glass-muted:  oklch(0.21 0.02 258);
+  --glass-border: var(--line);
+  --glass-shine:  0 0 #0000;
+  --shadow:       0 0 #0000;
+  --shadow-soft:  0 0 #0000;
+}
+
+/* 去掉一切毛玻璃模糊，彻底平面 */
+* {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* 字体 */
+body {
+  font-family: "Manrope", "Noto Sans KR", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Microsoft YaHei", system-ui, sans-serif;
+}
+.home-motto, [lang="ko"] {
+  font-family: "Noto Sans KR", "Manrope", system-ui, sans-serif;
+}
+
+/* 更通透、近乎纯白的背景 */
+body {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, #eef3fc 0%, transparent 60%),
+    #f6f8fc !important;
+}
+body[data-theme="dark"] {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, #11203a 0%, transparent 60%),
+    #0c1322 !important;
+}
+
+/* 顶栏：去玻璃，扁平透明 */
+.topbar {
+  width: min(1180px, calc(100% - 48px)) !important;
+  margin: 8px auto 0 !important;
+  padding: 18px 4px !important;
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  top: 0 !important;
+  transition:
+    background 0.24s ease,
+    border-color 0.24s ease,
+    box-shadow 0.24s ease,
+    backdrop-filter 0.24s ease,
+    -webkit-backdrop-filter 0.24s ease,
+    padding 0.24s ease,
+    border-radius 0.24s ease !important;
+}
+
+.topbar.is-scrolled {
+  padding: 10px 14px !important;
+  border: 1px solid rgba(185 215 255 / 0.58) !important;
+  border-radius: 20px !important;
+  background: rgba(255 255 255 / 0.78) !important;
+  box-shadow:
+    0 8px 28px oklch(0.3 0.04 258 / 0.1),
+    inset 0 1px 0 rgba(255 255 255 / 0.76) !important;
+  backdrop-filter: blur(22px) saturate(155%) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(155%) !important;
+}
+
+body[data-theme="dark"] .topbar.is-scrolled {
+  border-color: rgba(140 180 255 / 0.18) !important;
+  background: rgba(22 32 52 / 0.72) !important;
+  box-shadow:
+    0 10px 30px rgba(0 0 0 / 0.22),
+    inset 0 1px 0 rgba(255 255 255 / 0.08) !important;
+}
+
+body:has(#materials.active.reader-open) .topbar {
+  display: none !important;
+}
+
+body:has(#materials.active.reader-open) main {
+  padding-top: 18px !important;
+}
+
+.brand-mark {
+  border-radius: 10px !important;
+  background: #ffffff !important;
+  color: var(--brand) !important;
+  border: 1.5px solid #e3e9f3 !important;
+  box-shadow: none !important;
+}
+body[data-theme="dark"] .brand-mark {
+  background: var(--surface) !important;
+  border-color: var(--line-strong) !important;
+}
+.brand-title { font-size: 16px !important; font-weight: 600 !important; letter-spacing: 0.02em; color: var(--muted) !important; white-space: nowrap !important; margin-left: 2px; }
+
+/* 导航：纯文字，无 pill */
+.tabs {
+  gap: 36px !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+.tab {
+  padding: 4px 2px !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: var(--muted) !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+}
+.tab.active {
+  background: transparent !important;
+  box-shadow: none !important;
+  color: var(--brand) !important;
+}
+.tab:hover:not(.active) {
+  background: transparent !important;
+  color: var(--ink) !important;
+}
+/* 主题切换：描边方块 */
+.theme-toggle {
+  width: auto !important;
+  height: auto !important;
+  padding: 8px 12px !important;
+  border-radius: 8px !important;
+  border: 1.5px solid var(--line-strong) !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* 大标语 */
+.home-motto {
+  color: oklch(0.32 0.04 265) !important;
+  letter-spacing: -1px !important;
+}
+body[data-theme="dark"] .home-motto { color: oklch(0.92 0.02 255) !important; }
+.home-motto-cn { letter-spacing: 3px !important; font-weight: 500 !important; }
+
+/* 大 logo：白底蓝字，纯扁平 */
+.home-logo {
+  background: #ffffff !important;
+  color: var(--brand) !important;
+  border: 2px solid #e3e9f3 !important;
+  box-shadow: none !important;
+}
+body[data-theme="dark"] .home-logo {
+  background: var(--surface) !important;
+  border-color: var(--line-strong) !important;
+}
+
+/* 路线图卡片：扁平白卡 */
+.roadmap::before {
+  background: linear-gradient(90deg,
+    rgba(47,122,245,0.12),
+    rgba(47,122,245,0.45) 50%,
+    rgba(47,122,245,0.12)) !important;
+}
+.roadmap-card {
+  gap: 10px !important;
+  padding: 30px 22px 26px !important;
+  border: 1px solid #e3e9f3 !important;
+  border-radius: 16px !important;
+  background: #ffffff !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+}
+.roadmap-card:hover {
+  transform: translateY(-2px) !important;
+  border-color: var(--brand) !important;
+  box-shadow: none !important;
+  background: #ffffff !important;
+}
+body[data-theme="dark"] .roadmap-card {
+  border-color: var(--line) !important;
+  background: var(--surface) !important;
+  box-shadow: none !important;
+}
+.roadmap-node {
+  background: #ffffff !important;
+  color: var(--brand) !important;
+  border: 1.5px solid var(--brand) !important;
+  box-shadow: 0 0 0 6px #f6f8fc !important;
+}
+body[data-theme="dark"] .roadmap-node {
+  background: var(--surface) !important;
+  box-shadow: 0 0 0 6px var(--bg) !important;
+}
+.roadmap-ko { font-size: 24px !important; font-weight: 800 !important; }
+.roadmap-name { letter-spacing: 0.2em !important; }
+.roadmap-go { margin-top: 10px !important; }
+
+/* ───────────────────────────────────────────
+   三、한步 品牌标志（韩文 한 + 汉字 步）
+   ─────────────────────────────────────────── */
+
+/* 概念 01 · 双色分立：한 品牌蓝，步 近黑墨色，扁平无容器，两字紧排 */
+.brand-mark {
+  display: inline-flex !important;
+  align-items: baseline !important;
+  white-space: nowrap !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  font-family: "Noto Sans KR", "Manrope", system-ui, sans-serif !important;
+  font-size: 22px !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.05em !important;
+}
+body[data-theme="dark"] .brand-mark {
+  background: transparent !important;
+  border: none !important;
+}
+.brand-title [lang="ko"] {
+  font-family: "Noto Sans KR", "Manrope", system-ui, sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+}
+
+/* 한 = 品牌蓝主角，步 = 墨色压住右侧（深色模式下转为浅墨） */
+.lg-han { color: var(--brand) !important; }
+.lg-bu  { color: var(--ink) !important; margin-left: 0.02em; }
+
+/* 首页大 logo：同款双色字标，纯扁平无方块 */
+.home-logo {
+  display: inline-flex !important;
+  align-items: baseline !important;
+  white-space: nowrap !important;
+  background: transparent !important;
+  color: inherit !important;
+  border: none !important;
+  box-shadow: none !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 0 !important;
+  font-family: "Noto Sans KR", "Manrope", system-ui, sans-serif !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.06em !important;
+  font-size: clamp(56px, 7vw, 92px) !important;
+}
+body[data-theme="dark"] .home-logo {
+  background: transparent !important;
+  border: none !important;
+}

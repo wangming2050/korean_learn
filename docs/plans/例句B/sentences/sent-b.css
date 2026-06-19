@@ -1,0 +1,167 @@
+/* 例句 · 方案B — 目录式首页 + 左侧情景导航栏（主从布局）
+   复用 sent.css 的令牌、顶栏、例句行、图标按钮等；这里只加 B 专属布局 */
+
+/* ════════ 目录式首页 ════════ */
+.dir {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--paper);
+  overflow: hidden;
+}
+.dir-row {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  width: 100%;
+  text-align: left;
+  padding: 22px 26px;
+  border: none;
+  border-top: 1px solid var(--line);
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+  transition: background 0.14s;
+}
+.dir-row:first-child { border-top: none; }
+.dir-row:hover { background: var(--hover); }
+.dir-row .idx {
+  font-size: 15px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  color: oklch(0.58 0.13 var(--h));
+  width: 34px;
+  flex: none;
+}
+.dir-row .bar {
+  width: 4px;
+  align-self: stretch;
+  border-radius: 4px;
+  background: oklch(0.58 0.13 var(--h));
+  opacity: 0.28;
+  flex: none;
+  transition: opacity 0.14s;
+}
+.dir-row:hover .bar { opacity: 1; }
+.dir-row .body { flex: 1; min-width: 0; }
+.dir-row .name-line { display: flex; align-items: baseline; gap: 12px; }
+.dir-row .name {
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+.dir-row .en {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+.dir-row .sits {
+  margin-top: 7px;
+  font-size: 13.5px;
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.dir-row .sits .sep { color: var(--line); margin: 0 8px; }
+.dir-row .count {
+  flex: none;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+}
+.dir-row .count b { font-weight: 800; font-size: 17px; }
+.dir-row .chev {
+  flex: none;
+  color: var(--faint);
+  display: inline-flex;
+  transition: transform 0.14s, color 0.14s;
+}
+.dir-row:hover .chev { color: oklch(0.58 0.13 var(--h)); transform: translateX(3px); }
+.dir-row .chev svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; }
+
+/* ════════ 主从详情：左侧情景栏 + 右侧例句 ════════ */
+.md {
+  display: grid;
+  grid-template-columns: 232px 1fr;
+  gap: 38px;
+  align-items: start;
+}
+.md-rail {
+  position: sticky;
+  top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.md-rail .rail-cap {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--faint);
+  padding: 0 14px 12px;
+}
+.rail-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  text-align: left;
+  padding: 11px 14px;
+  border: none;
+  background: transparent;
+  border-radius: 11px;
+  font: inherit;
+  cursor: pointer;
+  color: var(--ink-2);
+  transition: background 0.13s, color 0.13s;
+}
+.rail-item:hover { background: var(--hover); }
+.rail-item .rnum {
+  font-size: 12px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--faint);
+  width: 18px;
+  flex: none;
+}
+.rail-item .rlabel { font-size: 15px; font-weight: 600; flex: 1; }
+.rail-item .rn {
+  font-size: 12px;
+  color: var(--faint);
+  font-variant-numeric: tabular-nums;
+}
+.rail-item.on {
+  background: var(--brand-soft);
+  color: var(--brand);
+}
+.rail-item.on .rnum, .rail-item.on .rn { color: var(--brand); }
+.rail-item.on .rlabel { font-weight: 700; }
+
+.md-main { min-width: 0; }
+.md-main .sit { margin-top: 30px; }
+.md-main .sit:first-child { margin-top: 0; }
+
+@media (max-width: 760px) {
+  .md { grid-template-columns: 1fr; gap: 8px; }
+  .md-rail {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .md-rail .rail-cap { display: none; }
+  .rail-item {
+    width: auto;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 8px 14px;
+  }
+  .rail-item .rnum { display: none; }
+  .rail-item.on { border-color: transparent; }
+}

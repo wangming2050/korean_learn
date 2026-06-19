@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>한步 · 韩语练习</title>
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/static/css/redesign.css">
+  <link rel="stylesheet" href="/static/css/vocab.css">
+  <link rel="stylesheet" href="/static/css/scene.css">
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body data-active-page="guide">
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="한步 韩语练习台首页">
+      <span class="brand-mark" lang="ko" aria-hidden="true"><span class="lg-han">한</span><span class="lg-bu">步</span></span>
+    </a>
+
+    <nav class="tabs" aria-label="学习模块">
+      <button class="tab active" data-page="guide">首页</button>
+      <button class="tab" data-page="letters">音标</button>
+      <button class="tab" data-page="vocabulary">词汇</button>
+      <button class="tab" data-page="scenes">句子</button>
+      <button class="tab" data-page="materials">教材</button>
+      <button class="theme-toggle" type="button" aria-label="切换明暗背景" title="切换明暗背景">
+        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2.4M12 19.6V22M4.93 4.93l1.7 1.7M17.37 17.37l1.7 1.7M2 12h2.4M19.6 12H22M4.93 19.07l1.7-1.7M17.37 6.63l1.7-1.7"></path>
+        </svg>
+        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M19.4 14.2A7.8 7.8 0 0 1 9.8 4.6 8 8 0 1 0 19.4 14.2Z"></path>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============================================================
+         学习路径（首页） — 居中格言 + 学习路线图
+         ============================================================ -->
+    <section id="guide" class="page guide-page active" data-screen-label="首页">
+      <div class="home">
+        <div class="home-hero">
+          <span class="home-logo" lang="ko" aria-hidden="true"><span class="lg-han">한</span><span class="lg-bu">步</span></span>
+          <h1 class="home-motto" lang="ko">시작이 반이다</h1>
+          <p class="home-motto-cn">好的开始是成功的一半</p>
+        </div>
+
+        <ol class="roadmap" aria-label="学习路线图">
+          <li class="roadmap-step">
+            <button class="roadmap-card" type="button" data-open-page="letters">
+              <span class="roadmap-node">01</span>
+              <span class="roadmap-ko" lang="ko">발음</span>
+              <span class="roadmap-name">音标</span>
+              <span class="roadmap-go">进入 →</span>
+            </button>
+          </li>
+          <li class="roadmap-step">
+            <button class="roadmap-card" type="button" data-open-page="vocabulary">
+              <span class="roadmap-node">02</span>
+              <span class="roadmap-ko" lang="ko">단어</span>
+              <span class="roadmap-name">词汇</span>
+              <span class="roadmap-go">进入 →</span>
+            </button>
+          </li>
+          <li class="roadmap-step">
+            <button class="roadmap-card" type="button" data-open-page="scenes">
+              <span class="roadmap-node">03</span>
+              <span class="roadmap-ko" lang="ko">문장</span>
+              <span class="roadmap-name">句子</span>
+              <span class="roadmap-go">进入 →</span>
+            </button>
+          </li>
+          <li class="roadmap-step">
+            <button class="roadmap-card" type="button" data-open-page="materials">
+              <span class="roadmap-node">04</span>
+              <span class="roadmap-ko" lang="ko">교재</span>
+              <span class="roadmap-name">教材</span>
+              <span class="roadmap-go">进入 →</span>
+            </button>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 全站唯一的音频播放器，所有播放按钮复用它（app.js / React 应用共用） -->
+    <audio id="player"></audio>
+
+    <!-- ============================================================
+         音标（Letters） — 保留原有功能，由 app.js 动态渲染
+         ============================================================ -->
+    <section id="letters" class="page" data-screen-label="音标">
+      <div class="letter-controls" aria-label="音标朗读设置">
+        <label><input type="checkbox" id="playLetterSound" checked> 音标</label>
+        <label><input type="checkbox" id="playExampleWords"> 示例单词</label>
+        <label class="repeat-control">
+          播放次数
+          <input id="letterRepeatCount" type="number" min="1" step="1" value="1" inputmode="numeric">
+        </label>
+      </div>
+      <div id="letterGrid" class="letter-groups"></div>
+      <section id="letterDetail" class="letter-detail" hidden></section>
+    </section>
+
+    <!-- ============================================================
+         词汇（Vocabulary） — React 应用，接 /api/vocabulary
+         ============================================================ -->
+    <section id="vocabulary" class="page" data-screen-label="词汇">
+      <div id="vocab-root"></div>
+    </section>
+
+    <!-- ============================================================
+         句子（Scenes） — React 应用，接 /api/scenes + /api/sentences
+         ============================================================ -->
+    <section id="scenes" class="page" data-screen-label="句子">
+      <div id="scene-root"></div>
+    </section>
+
+    <!-- ============================================================
+         教材（Materials） — 保留原有阅读器 + AI 助教，仅套用新视觉风格
+         ============================================================ -->
+    <section id="materials" class="page" data-screen-label="教材">
+      <div id="textbookLibrary" class="textbook-library"></div>
+      <div id="textbookReader" class="textbook-reader-page" hidden>
+        <div class="reader-header">
+          <aside class="reader-tools" aria-label="教材阅读工具">
+            <button id="textbookBackButton" class="reader-tool-button" type="button" aria-label="返回教材" title="返回教材">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M15 18l-6-6 6-6"></path>
+                <path d="M20 12H9"></path>
+              </svg>
+            </button>
+            <div class="chapter-menu">
+              <button id="chapterMenuButton" class="reader-tool-button" type="button" aria-expanded="false" aria-label="选择章节" title="选择章节">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 6h14"></path>
+                  <path d="M5 12h14"></path>
+                  <path d="M5 18h14"></path>
+                </svg>
+              </button>
+              <div id="chapterMenuPanel" class="chapter-menu-panel" hidden></div>
+            </div>
+            <button id="readerFocusButton" class="reader-tool-button" type="button" aria-label="放大阅读" title="放大阅读">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 3H3v5"></path>
+                <path d="M16 3h5v5"></path>
+                <path d="M21 16v5h-5"></path>
+                <path d="M3 16v5h5"></path>
+              </svg>
+            </button>
+          </aside>
+          <div class="page-jump">
+            <label for="materialPageInput">页码</label>
+            <span class="page-prefix">第</span>
+            <input id="materialPageInput" type="number" min="1" value="1" inputmode="numeric">
+            <span id="materialPageLabel">/ 1 页</span>
+          </div>
+          <div class="reader-header-spacer" aria-hidden="true"></div>
+        </div>
+
+        <div class="reader-body">
+          <div class="pdf-reader-surface">
+            <button id="materialPrevPage" class="page-arrow page-arrow-left" type="button" aria-label="上一页">‹</button>
+            <div class="pdf-stage">
+              <div id="materialPageSkeleton" class="material-page-skeleton" aria-live="polite">
+                <strong id="materialPageSkeletonLabel">第 1 页</strong>
+                <span id="materialPageSkeletonStatus">加载中……</span>
+              </div>
+              <img id="materialPagePreview" class="material-page-preview" alt="教材页面预览" hidden>
+            </div>
+            <button id="materialNextPage" class="page-arrow page-arrow-right" type="button" aria-label="下一页">›</button>
+          </div>
+
+          <aside class="reader-assistant-panel">
+            <section class="pdf-assistant" aria-label="AI 助教问答">
+              <div class="pdf-assistant-head">
+                <div class="pdf-assistant-title-row">
+                  <span class="pdf-assistant-spark" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M12 2.5l2.1 5.6 5.9 1.9-5.9 1.9L12 17.5 9.9 11.9 4 10l5.9-1.9L12 2.5z"></path>
+                      <path d="M19 15l0.9 2.4 2.4 0.9-2.4 0.9L19 21.6l-0.9-2.4-2.4-0.9 2.4-0.9L19 15z"></path>
+                    </svg>
+                  </span>
+                  <h3>AI 助教</h3>
+                  <span id="pdfAssistantPageChip" class="pdf-assistant-page-chip">正在参考 第 1 页</span>
+                  <button id="pdfAssistantExpandButton" class="pdf-assistant-expand-button" type="button" aria-pressed="false">
+                    <svg class="pdf-assistant-fab-icon" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M12 2.5l2.1 5.6 5.9 1.9-5.9 1.9L12 17.5 9.9 11.9 4 10l5.9-1.9L12 2.5z"></path>
+                      <path d="M19 15l0.9 2.4 2.4 0.9-2.4 0.9L19 21.6l-0.9-2.4-2.4-0.9 2.4-0.9L19 15z"></path>
+                    </svg>
+                    <span class="pdf-assistant-collapse-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24"><path d="M13 17l5-5-5-5"></path><path d="M6 17l5-5-5-5"></path></svg>
+                    </span>
+                    <span class="pdf-assistant-expand-label">收起</span>
+                  </button>
+                </div>
+                <p id="pdfAssistantStatus">会参考当前页和相邻页内容回答。</p>
+              </div>
+              <div id="pdfAssistantMessages" class="pdf-assistant-messages" aria-live="polite"></div>
+              <div class="pdf-assistant-quickrow" aria-label="快捷提问">
+                <button type="button" class="pdf-assistant-quick" data-prompt="讲解本页的语法点">讲解本页语法点</button>
+                <button type="button" class="pdf-assistant-quick" data-prompt="解释本页的生词">生词解释</button>
+                <button type="button" class="pdf-assistant-quick" data-prompt="根据本页内容出几道练习题">根据本页出练习题</button>
+              </div>
+              <form id="pdfAssistantForm" class="pdf-assistant-form">
+                <textarea id="pdfAssistantQuestion" rows="1" placeholder="问问当前页哪里不懂…"></textarea>
+                <button id="pdfAssistantSendButton" class="pdf-assistant-send" type="submit" aria-label="提问" title="提问">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2 11 13"></path><path d="M22 2 15 22l-4-9-9-4 20-7z"></path></svg>
+                </button>
+              </form>
+              <p class="pdf-assistant-privacy">提问时会把当前页附近的文字发送给 AI；文字太少时会附带当前页截图。</p>
+            </section>
+          </aside>
+        </div>
+
+        <button id="readerFocusExitButton" class="reader-focus-exit" type="button" aria-label="退出放大阅读" title="退出放大阅读" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M18 6 6 18"></path>
+            <path d="m6 6 12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- 原生 JS：页面切换、音标、教材阅读器、AI 助教、音频播放 -->
+  <script src="/static/js/word-audio-map.js"></script>
+  <script src="/static/js/app.js"></script>
+
+  <!-- 词汇页 React 应用（接 /api/vocabulary） -->
+  <script type="text/babel" src="/static/js/vocab-app.jsx"></script>
+  <!-- 句子页 React 应用（接 /api/scenes + /api/sentences） -->
+  <script type="text/babel" src="/static/js/sentence-app.jsx"></script>
+</body>
+</html>

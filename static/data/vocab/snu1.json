@@ -1,0 +1,2662 @@
+[
+  {
+    "id": "snu1-0001",
+    "korean": "과",
+    "chinese": "课",
+    "source_page": 1,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0002",
+    "korean": "이것",
+    "chinese": "这，这个",
+    "source_page": 1,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0003",
+    "korean": "은",
+    "chinese": "添意词尾，表示陈述的主体",
+    "source_page": 1,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0004",
+    "korean": "무엇",
+    "chinese": "什么",
+    "source_page": 1,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0005",
+    "korean": "책상",
+    "chinese": "桌子",
+    "source_page": 1,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0006",
+    "korean": "저것",
+    "chinese": "那，那个（一般指离听话者和说话者都远的事物）",
+    "source_page": 1,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0007",
+    "korean": "의자",
+    "chinese": "椅子",
+    "source_page": 1,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0008",
+    "korean": "발음",
+    "chinese": "发音",
+    "source_page": 1,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0009",
+    "korean": "문법",
+    "chinese": "语法",
+    "source_page": 1,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0010",
+    "korean": "창문",
+    "chinese": "窗户",
+    "source_page": 1,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0011",
+    "korean": "볼펜",
+    "chinese": "圆珠笔",
+    "source_page": 1,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0012",
+    "korean": "문",
+    "chinese": "门",
+    "source_page": 2,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0013",
+    "korean": "연필",
+    "chinese": "铅笔",
+    "source_page": 2,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0014",
+    "korean": "시계",
+    "chinese": "手表",
+    "source_page": 2,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0015",
+    "korean": "네",
+    "chinese": "（感）是，是的（回答呼唤或要求时的敬语）",
+    "source_page": 2,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0016",
+    "korean": "구두",
+    "chinese": "皮鞋",
+    "source_page": 2,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0017",
+    "korean": "아니오",
+    "chinese": "不，不是",
+    "source_page": 2,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0018",
+    "korean": "아닙니다",
+    "chinese": "不，不是（尊敬阶）",
+    "source_page": 2,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0019",
+    "korean": "가",
+    "chinese": "主格词尾(用于开音节单词后)",
+    "source_page": 2,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0020",
+    "korean": "그것",
+    "chinese": "那，那个",
+    "source_page": 2,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0021",
+    "korean": "운동화",
+    "chinese": "运动鞋",
+    "source_page": 2,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0022",
+    "korean": "꽃",
+    "chinese": "花",
+    "source_page": 2,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0023",
+    "korean": "이",
+    "chinese": "主格词尾（用于闭音节单词后）",
+    "source_page": 2,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0024",
+    "korean": "공책",
+    "chinese": "笔记本",
+    "source_page": 2,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0025",
+    "korean": "나무",
+    "chinese": "树",
+    "source_page": 2,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0026",
+    "korean": "가방",
+    "chinese": "书包",
+    "source_page": 2,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0027",
+    "korean": "제",
+    "chinese": "我，我的",
+    "source_page": 3,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0028",
+    "korean": "이름",
+    "chinese": "名字",
+    "source_page": 3,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0029",
+    "korean": "반갑습니다",
+    "chinese": "很高兴（见到你）",
+    "source_page": 3,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0030",
+    "korean": "씨",
+    "chinese": "氏",
+    "source_page": 3,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0031",
+    "korean": "저",
+    "chinese": "我（谦称）",
+    "source_page": 3,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0032",
+    "korean": "는",
+    "chinese": "添意词尾，表示陈述的主体，用在开音节单词后。",
+    "source_page": 3,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0033",
+    "korean": "영국",
+    "chinese": "英国",
+    "source_page": 3,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0034",
+    "korean": "사람",
+    "chinese": "人",
+    "source_page": 3,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0035",
+    "korean": "한국어",
+    "chinese": "韩国语",
+    "source_page": 3,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0036",
+    "korean": "를",
+    "chinese": "宾格词尾（用于开音节单词后）",
+    "source_page": 3,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0037",
+    "korean": "공부합니다.",
+    "chinese": "学习",
+    "source_page": 3,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0038",
+    "korean": "한국",
+    "chinese": "韩国",
+    "source_page": 3,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0039",
+    "korean": "을",
+    "chinese": "宾格词尾（用于闭音节单词后）",
+    "source_page": 3,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0040",
+    "korean": "밥",
+    "chinese": "饭",
+    "source_page": 3,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0041",
+    "korean": "먹다",
+    "chinese": "吃",
+    "source_page": 3,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0042",
+    "korean": "어휘",
+    "chinese": "单词，词汇",
+    "source_page": 4,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0043",
+    "korean": "표현",
+    "chinese": "表现",
+    "source_page": 4,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0044",
+    "korean": "일본어",
+    "chinese": "日语",
+    "source_page": 4,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0045",
+    "korean": "중국",
+    "chinese": "中国",
+    "source_page": 4,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0046",
+    "korean": "중국어",
+    "chinese": "汉语",
+    "source_page": 4,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0047",
+    "korean": "영어",
+    "chinese": "英国",
+    "source_page": 4,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0048",
+    "korean": "미국",
+    "chinese": "美国",
+    "source_page": 4,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0049",
+    "korean": "선생님",
+    "chinese": "先生，老师，医生",
+    "source_page": 4,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0050",
+    "korean": "여기",
+    "chinese": "这，这里",
+    "source_page": 4,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0051",
+    "korean": "어디",
+    "chinese": "哪里",
+    "source_page": 4,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0052",
+    "korean": "서울대학교",
+    "chinese": "首尔大学",
+    "source_page": 4,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0053",
+    "korean": "우리",
+    "chinese": "我们",
+    "source_page": 4,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0054",
+    "korean": "외국",
+    "chinese": "外国",
+    "source_page": 4,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0055",
+    "korean": "학생",
+    "chinese": "学生",
+    "source_page": 4,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0056",
+    "korean": "에서",
+    "chinese": "表示处所的格词尾",
+    "source_page": 4,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0057",
+    "korean": "배웁니다",
+    "chinese": "学习",
+    "source_page": 5,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0058",
+    "korean": "하십니까",
+    "chinese": "做......吗？",
+    "source_page": 5,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0059",
+    "korean": "나/저",
+    "chinese": "我",
+    "source_page": 5,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0060",
+    "korean": "가르치다",
+    "chinese": "教",
+    "source_page": 5,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0061",
+    "korean": "서울",
+    "chinese": "汉城",
+    "source_page": 5,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0062",
+    "korean": "교실",
+    "chinese": "教室",
+    "source_page": 5,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0063",
+    "korean": "대학교",
+    "chinese": "大学",
+    "source_page": 5,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0064",
+    "korean": "읽다",
+    "chinese": "...",
+    "source_page": 5,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0065",
+    "korean": "학교",
+    "chinese": "学校",
+    "source_page": 5,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0066",
+    "korean": "집",
+    "chinese": "家",
+    "source_page": 5,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0067",
+    "korean": "식당",
+    "chinese": "餐厅",
+    "source_page": 5,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0068",
+    "korean": "에",
+    "chinese": "表示趋向",
+    "source_page": 5,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0069",
+    "korean": "갑니다.",
+    "chinese": "去",
+    "source_page": 5,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0070",
+    "korean": "가십니까",
+    "chinese": "去",
+    "source_page": 5,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0071",
+    "korean": "도서관",
+    "chinese": "图书馆",
+    "source_page": 5,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0072",
+    "korean": "도",
+    "chinese": "也",
+    "source_page": 6,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0073",
+    "korean": "같이",
+    "chinese": "一起",
+    "source_page": 6,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0074",
+    "korean": "오다",
+    "chinese": "来",
+    "source_page": 6,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0075",
+    "korean": "혼자",
+    "chinese": "独自",
+    "source_page": 6,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0076",
+    "korean": "시장",
+    "chinese": "市场",
+    "source_page": 6,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0077",
+    "korean": "다방",
+    "chinese": "茶馆",
+    "source_page": 6,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0078",
+    "korean": "대답하세요",
+    "chinese": "请回答",
+    "source_page": 6,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0079",
+    "korean": "오늘",
+    "chinese": "今天",
+    "source_page": 6,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0080",
+    "korean": "날씨",
+    "chinese": "天气",
+    "source_page": 6,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0081",
+    "korean": "어떻다",
+    "chinese": "怎么，怎么样",
+    "source_page": 6,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0082",
+    "korean": "좋다",
+    "chinese": "好",
+    "source_page": 6,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0083",
+    "korean": "덥다",
+    "chinese": "热",
+    "source_page": 6,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0084",
+    "korean": "춥다",
+    "chinese": "冷",
+    "source_page": 6,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0085",
+    "korean": "따뜻하다",
+    "chinese": "温暖，暖和",
+    "source_page": 6,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0086",
+    "korean": "요즘",
+    "chinese": "最近，现在",
+    "source_page": 6,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0087",
+    "korean": "나쁘다",
+    "chinese": "坏",
+    "source_page": 7,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0088",
+    "korean": "비",
+    "chinese": "雨",
+    "source_page": 7,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0089",
+    "korean": "눈",
+    "chinese": "雪",
+    "source_page": 7,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0090",
+    "korean": "잘",
+    "chinese": "好",
+    "source_page": 7,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0091",
+    "korean": "맞다",
+    "chinese": "对",
+    "source_page": 7,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0092",
+    "korean": "그림",
+    "chinese": "图，图画",
+    "source_page": 7,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0093",
+    "korean": "고르다",
+    "chinese": "选，挑选",
+    "source_page": 7,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0094",
+    "korean": "무슨",
+    "chinese": "什么，",
+    "source_page": 7,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0095",
+    "korean": "요일",
+    "chinese": "星期",
+    "source_page": 7,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0096",
+    "korean": "목요일",
+    "chinese": "星期四",
+    "source_page": 7,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0097",
+    "korean": "내일",
+    "chinese": "明天",
+    "source_page": 7,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0098",
+    "korean": "토요일",
+    "chinese": "星期六",
+    "source_page": 7,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0099",
+    "korean": "와/과",
+    "chinese": "和",
+    "source_page": 7,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0100",
+    "korean": "일요일",
+    "chinese": "星期日",
+    "source_page": 7,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0101",
+    "korean": "주말",
+    "chinese": "周末",
+    "source_page": 7,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0102",
+    "korean": "쉬다",
+    "chinese": "休息",
+    "source_page": 8,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0103",
+    "korean": "텔레비전",
+    "chinese": "电视",
+    "source_page": 8,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0104",
+    "korean": "보다",
+    "chinese": "看",
+    "source_page": 8,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0105",
+    "korean": "월요일",
+    "chinese": "星期一",
+    "source_page": 8,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0106",
+    "korean": "화요일",
+    "chinese": "星期二2",
+    "source_page": 8,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0107",
+    "korean": "수요일",
+    "chinese": "星期三",
+    "source_page": 8,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0108",
+    "korean": "금요일",
+    "chinese": "星期五",
+    "source_page": 8,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0109",
+    "korean": "장미",
+    "chinese": "玫瑰",
+    "source_page": 8,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0110",
+    "korean": "공원",
+    "chinese": "公园",
+    "source_page": 8,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0111",
+    "korean": "친구",
+    "chinese": "朋友",
+    "source_page": 8,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0112",
+    "korean": "영화",
+    "chinese": "电影",
+    "source_page": 8,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0113",
+    "korean": "수첩",
+    "chinese": "手册",
+    "source_page": 8,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0114",
+    "korean": "쓰다",
+    "chinese": "写",
+    "source_page": 8,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0115",
+    "korean": "연결하다",
+    "chinese": "连接",
+    "source_page": 8,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0116",
+    "korean": "틀리다",
+    "chinese": "错，错误",
+    "source_page": 8,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0117",
+    "korean": "내",
+    "chinese": "我，我的",
+    "source_page": 9,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0118",
+    "korean": "방",
+    "chinese": "房间",
+    "source_page": 9,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0119",
+    "korean": "층",
+    "chinese": "层，楼",
+    "source_page": 9,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0120",
+    "korean": "있다",
+    "chinese": "有",
+    "source_page": 9,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0121",
+    "korean": "침대",
+    "chinese": "床",
+    "source_page": 9,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0122",
+    "korean": "옆",
+    "chinese": "旁边",
+    "source_page": 9,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0123",
+    "korean": "냉장고",
+    "chinese": "电冰箱",
+    "source_page": 9,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0124",
+    "korean": "없다",
+    "chinese": "没有",
+    "source_page": 9,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0125",
+    "korean": "아래층",
+    "chinese": "楼下，下楼",
+    "source_page": 9,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0126",
+    "korean": "바지",
+    "chinese": "裤子",
+    "source_page": 9,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0127",
+    "korean": "위",
+    "chinese": "上面",
+    "source_page": 9,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0128",
+    "korean": "몇",
+    "chinese": "几，几个",
+    "source_page": 9,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0129",
+    "korean": "일하다",
+    "chinese": "工作",
+    "source_page": 9,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0130",
+    "korean": "아래",
+    "chinese": "下面",
+    "source_page": 9,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0131",
+    "korean": "앞",
+    "chinese": "前面",
+    "source_page": 9,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0132",
+    "korean": "모자",
+    "chinese": "帽子",
+    "source_page": 10,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0133",
+    "korean": "위",
+    "chinese": "(上面)",
+    "source_page": 10,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0134",
+    "korean": "옆",
+    "chinese": "(旁边)",
+    "source_page": 10,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0135",
+    "korean": "아래",
+    "chinese": "(下面)",
+    "source_page": 10,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0136",
+    "korean": "앞",
+    "chinese": "(前面)",
+    "source_page": 10,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0137",
+    "korean": "뒤",
+    "chinese": "(后面)",
+    "source_page": 10,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0138",
+    "korean": "안",
+    "chinese": "(里面)...",
+    "source_page": 10,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0139",
+    "korean": "어제",
+    "chinese": "昨天",
+    "source_page": 10,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0140",
+    "korean": "시내",
+    "chinese": "市里",
+    "source_page": 10,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0141",
+    "korean": "만나다",
+    "chinese": "见面",
+    "source_page": 10,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0142",
+    "korean": "그리고",
+    "chinese": "而且，又。连接两个句子的连接副词，表示顺接关系。",
+    "source_page": 10,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0143",
+    "korean": "차",
+    "chinese": "茶",
+    "source_page": 10,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0144",
+    "korean": "마시다",
+    "chinese": "喝",
+    "source_page": 10,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0145",
+    "korean": "극장",
+    "chinese": "剧场",
+    "source_page": 10,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0146",
+    "korean": "편지",
+    "chinese": "信",
+    "source_page": 11,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0147",
+    "korean": "음악",
+    "chinese": "音乐",
+    "source_page": 11,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0148",
+    "korean": "아주",
+    "chinese": "非常",
+    "source_page": 11,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0149",
+    "korean": "공부",
+    "chinese": "学习",
+    "source_page": 11,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0150",
+    "korean": "커피",
+    "chinese": "咖啡",
+    "source_page": 11,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0151",
+    "korean": "물",
+    "chinese": "水",
+    "source_page": 11,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0152",
+    "korean": "재미있다",
+    "chinese": "有趣",
+    "source_page": 11,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0153",
+    "korean": "운동하다",
+    "chinese": "运动",
+    "source_page": 11,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0154",
+    "korean": "주스",
+    "chinese": "果汁",
+    "source_page": 11,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0155",
+    "korean": "에서",
+    "chinese": "表示处所",
+    "source_page": 11,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0156",
+    "korean": "프랑스",
+    "chinese": "法国",
+    "source_page": 11,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0157",
+    "korean": "언제",
+    "chinese": "什么时候",
+    "source_page": 11,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0158",
+    "korean": "월",
+    "chinese": "月",
+    "source_page": 11,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0159",
+    "korean": "일",
+    "chinese": "日",
+    "source_page": 11,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0160",
+    "korean": "어렵다",
+    "chinese": "难，困难",
+    "source_page": 11,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0161",
+    "korean": "쉽다",
+    "chinese": "容易",
+    "source_page": 12,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0162",
+    "korean": "맵다",
+    "chinese": "辣",
+    "source_page": 12,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0163",
+    "korean": "며칠",
+    "chinese": "几天",
+    "source_page": 12,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0164",
+    "korean": "유월",
+    "chinese": "六月",
+    "source_page": 12,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0165",
+    "korean": "시월",
+    "chinese": "十月",
+    "source_page": 12,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0166",
+    "korean": "구",
+    "chinese": "九",
+    "source_page": 12,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0167",
+    "korean": "십",
+    "chinese": "十",
+    "source_page": 12,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0168",
+    "korean": "호주",
+    "chinese": "澳洲",
+    "source_page": 12,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0169",
+    "korean": "제주도",
+    "chinese": "济州岛",
+    "source_page": 12,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0170",
+    "korean": "거기",
+    "chinese": "那里，表示离说话者和听话者都远的地方。",
+    "source_page": 12,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0171",
+    "korean": "댁",
+    "chinese": "宅，府，家",
+    "source_page": 12,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0172",
+    "korean": "여보세요",
+    "chinese": "喂",
+    "source_page": 12,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0173",
+    "korean": "아주머니",
+    "chinese": "大妈",
+    "source_page": 12,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0174",
+    "korean": "그렇다",
+    "chinese": "那样，那么",
+    "source_page": 13,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0175",
+    "korean": "실례지만",
+    "chinese": "对不起，失礼了",
+    "source_page": 13,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0176",
+    "korean": "누구",
+    "chinese": "谁",
+    "source_page": 13,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0177",
+    "korean": "세요",
+    "chinese": "命令式终结词尾",
+    "source_page": 13,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0178",
+    "korean": "의",
+    "chinese": "的",
+    "source_page": 13,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0179",
+    "korean": "계시다",
+    "chinese": "在",
+    "source_page": 13,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0180",
+    "korean": "지금",
+    "chinese": "现在",
+    "source_page": 13,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0181",
+    "korean": "안",
+    "chinese": "不",
+    "source_page": 13,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0182",
+    "korean": "아",
+    "chinese": "叹语词，啊",
+    "source_page": 13,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0183",
+    "korean": "그러면",
+    "chinese": "那么，表示顺接。表示上文是下文的前提或条件。在口语中多用\"그럼\"这一形式。",
+    "source_page": 13,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0184",
+    "korean": "다시",
+    "chinese": "重新，再",
+    "source_page": 13,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0185",
+    "korean": "전화하다",
+    "chinese": "打电话",
+    "source_page": 13,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0186",
+    "korean": "안녕히",
+    "chinese": "安宁的，安心的，好好的",
+    "source_page": 13,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0187",
+    "korean": "에게",
+    "chinese": "表示动作涉及的对象",
+    "source_page": 13,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0188",
+    "korean": "누가",
+    "chinese": "谁",
+    "source_page": 14,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0189",
+    "korean": "그래요",
+    "chinese": "是吗？",
+    "source_page": 14,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0190",
+    "korean": "이",
+    "chinese": "这，这个",
+    "source_page": 14,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0191",
+    "korean": "사과",
+    "chinese": "苹果",
+    "source_page": 14,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0192",
+    "korean": "한",
+    "chinese": "一个",
+    "source_page": 14,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0193",
+    "korean": "개",
+    "chinese": "个",
+    "source_page": 14,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0194",
+    "korean": "에",
+    "chinese": "表示基准",
+    "source_page": 14,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0195",
+    "korean": "얼마",
+    "chinese": "多少",
+    "source_page": 14,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0196",
+    "korean": "아저씨",
+    "chinese": "大叔，叔叔",
+    "source_page": 14,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0197",
+    "korean": "어서",
+    "chinese": "快",
+    "source_page": 14,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0198",
+    "korean": "좀",
+    "chinese": "一点，稍微",
+    "source_page": 14,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0199",
+    "korean": "주다",
+    "chinese": "给",
+    "source_page": 14,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0200",
+    "korean": "백",
+    "chinese": "百",
+    "source_page": 14,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0201",
+    "korean": "원",
+    "chinese": "元",
+    "source_page": 14,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0202",
+    "korean": "네",
+    "chinese": "是",
+    "source_page": 14,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0203",
+    "korean": "-(으)십시오",
+    "chinese": "陈述式终结词尾，表示尊敬。",
+    "source_page": 15,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0204",
+    "korean": "맥주",
+    "chinese": "啤酒",
+    "source_page": 15,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0205",
+    "korean": "셋",
+    "chinese": "三",
+    "source_page": 15,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0206",
+    "korean": "병",
+    "chinese": "瓶",
+    "source_page": 15,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0207",
+    "korean": "모두",
+    "chinese": "全部，都",
+    "source_page": 15,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0208",
+    "korean": "천",
+    "chinese": "千",
+    "source_page": 15,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0209",
+    "korean": "그",
+    "chinese": "那，那个（表示离说话者远，离听话者近的事物）",
+    "source_page": 15,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0210",
+    "korean": "저",
+    "chinese": "那，那个（表示离说话者和听话者都远的事物）",
+    "source_page": 15,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0211",
+    "korean": "이거",
+    "chinese": "这个",
+    "source_page": 15,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0212",
+    "korean": "저거",
+    "chinese": "那个",
+    "source_page": 15,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0213",
+    "korean": "두",
+    "chinese": "两个",
+    "source_page": 15,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0214",
+    "korean": "다섯",
+    "chinese": "五个",
+    "source_page": 15,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0215",
+    "korean": "바나나",
+    "chinese": "香蕉",
+    "source_page": 15,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0216",
+    "korean": "만",
+    "chinese": "万",
+    "source_page": 15,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0217",
+    "korean": "콜라",
+    "chinese": "可乐",
+    "source_page": 16,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0218",
+    "korean": "가게",
+    "chinese": "店铺，商店",
+    "source_page": 16,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0219",
+    "korean": "뭘(무엇을)",
+    "chinese": "什么",
+    "source_page": 16,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0220",
+    "korean": "드리다",
+    "chinese": "给",
+    "source_page": 16,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0221",
+    "korean": "--(으)ㄹ까요?",
+    "chinese": "疑问式终结词尾",
+    "source_page": 16,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0222",
+    "korean": "앉다",
+    "chinese": "坐",
+    "source_page": 16,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0223",
+    "korean": "메뉴",
+    "chinese": "菜单，菜谱",
+    "source_page": 16,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0224",
+    "korean": "불고기",
+    "chinese": "烤肉",
+    "source_page": 16,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0225",
+    "korean": "--(으)ㅂ시다",
+    "chinese": "共动式终结词尾",
+    "source_page": 16,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0226",
+    "korean": "냉면",
+    "chinese": "冷面",
+    "source_page": 16,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0227",
+    "korean": "하고",
+    "chinese": "和",
+    "source_page": 16,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0228",
+    "korean": "그릇",
+    "chinese": "碗",
+    "source_page": 16,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0229",
+    "korean": "누굴(누구를)",
+    "chinese": "谁",
+    "source_page": 16,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0230",
+    "korean": "뭐(무엇)",
+    "chinese": "什么",
+    "source_page": 16,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0231",
+    "korean": "잔",
+    "chinese": "杯",
+    "source_page": 17,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0232",
+    "korean": "우유",
+    "chinese": "牛奶",
+    "source_page": 17,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0233",
+    "korean": "께",
+    "chinese": "에게的尊敬形式",
+    "source_page": 17,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0234",
+    "korean": "좋아요.",
+    "chinese": "好",
+    "source_page": 17,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0235",
+    "korean": "시간",
+    "chinese": "时间",
+    "source_page": 17,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0236",
+    "korean": "어떻게",
+    "chinese": "怎么，怎么办",
+    "source_page": 17,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0237",
+    "korean": "길",
+    "chinese": "路",
+    "source_page": 17,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0238",
+    "korean": "복잡하다",
+    "chinese": "复杂",
+    "source_page": 17,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0239",
+    "korean": "--(으)니까",
+    "chinese": "表示原因",
+    "source_page": 17,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0240",
+    "korean": "지하철",
+    "chinese": "地铁",
+    "source_page": 17,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0241",
+    "korean": "타다",
+    "chinese": "乘，乘坐",
+    "source_page": 17,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0242",
+    "korean": "빠르다",
+    "chinese": "快",
+    "source_page": 17,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0243",
+    "korean": "내리다",
+    "chinese": "下，下车",
+    "source_page": 17,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0244",
+    "korean": "사당역",
+    "chinese": "寺堂站",
+    "source_page": 18,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0245",
+    "korean": "아야/어야 하다",
+    "chinese": "应该---",
+    "source_page": 18,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0246",
+    "korean": "택시",
+    "chinese": "出租车",
+    "source_page": 18,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0247",
+    "korean": "기차",
+    "chinese": "火车",
+    "source_page": 18,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0248",
+    "korean": "버스",
+    "chinese": "公共汽车",
+    "source_page": 18,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0249",
+    "korean": "전철",
+    "chinese": "电车",
+    "source_page": 18,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0250",
+    "korean": "서울역",
+    "chinese": "汉城站",
+    "source_page": 18,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0251",
+    "korean": "수영하다",
+    "chinese": "游泳",
+    "source_page": 18,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0252",
+    "korean": "비싸다",
+    "chinese": "贵",
+    "source_page": 18,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0253",
+    "korean": "사당동",
+    "chinese": "寺堂洞",
+    "source_page": 18,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0254",
+    "korean": "동대문운동장",
+    "chinese": "东大门运动场",
+    "source_page": 18,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0255",
+    "korean": "호선",
+    "chinese": "-号线",
+    "source_page": 18,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0256",
+    "korean": "정류장",
+    "chinese": "站点，停车点",
+    "source_page": 18,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0257",
+    "korean": "(으)로",
+    "chinese": "表示方向",
+    "source_page": 18,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0258",
+    "korean": "그들",
+    "chinese": "他们",
+    "source_page": 19,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0259",
+    "korean": "카드",
+    "chinese": "卡",
+    "source_page": 19,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0260",
+    "korean": "장",
+    "chinese": "张",
+    "source_page": 19,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0261",
+    "korean": "사다",
+    "chinese": "买",
+    "source_page": 19,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0262",
+    "korean": "번",
+    "chinese": "号，次，路",
+    "source_page": 19,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0263",
+    "korean": "빨리",
+    "chinese": "快",
+    "source_page": 19,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0264",
+    "korean": "입구",
+    "chinese": "入口",
+    "source_page": 19,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0265",
+    "korean": "종로",
+    "chinese": "钟路",
+    "source_page": 19,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0266",
+    "korean": "백화점",
+    "chinese": "百货店",
+    "source_page": 19,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0267",
+    "korean": "표",
+    "chinese": "票",
+    "source_page": 19,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0268",
+    "korean": "많이",
+    "chinese": "很多",
+    "source_page": 19,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0269",
+    "korean": "종이",
+    "chinese": "纸",
+    "source_page": 19,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0270",
+    "korean": "연습",
+    "chinese": "练习",
+    "source_page": 19,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0271",
+    "korean": "옷",
+    "chinese": "衣服",
+    "source_page": 19,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0272",
+    "korean": "남대문",
+    "chinese": "南大门",
+    "source_page": 19,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0273",
+    "korean": "그러니까",
+    "chinese": "但是，表示转折",
+    "source_page": 20,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0274",
+    "korean": "서울대입구역",
+    "chinese": "首尔大学入口站",
+    "source_page": 20,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0275",
+    "korean": "서울역",
+    "chinese": "首尔站",
+    "source_page": 20,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0276",
+    "korean": "저녁",
+    "chinese": "晚上",
+    "source_page": 20,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0277",
+    "korean": "바쁘다",
+    "chinese": "忙",
+    "source_page": 20,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0278",
+    "korean": "아서/어서",
+    "chinese": "表示原因、方式或时间的先后关系",
+    "source_page": 20,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0279",
+    "korean": "식사하다",
+    "chinese": "吃饭",
+    "source_page": 20,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0280",
+    "korean": "함께",
+    "chinese": "一起",
+    "source_page": 20,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0281",
+    "korean": "시",
+    "chinese": "点",
+    "source_page": 20,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0282",
+    "korean": "일곱",
+    "chinese": "七",
+    "source_page": 20,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0283",
+    "korean": "쯤",
+    "chinese": "左右",
+    "source_page": 20,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0284",
+    "korean": "그러지요",
+    "chinese": "是的",
+    "source_page": 20,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0285",
+    "korean": "고맙다",
+    "chinese": "谢谢",
+    "source_page": 20,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0286",
+    "korean": "분",
+    "chinese": "分",
+    "source_page": 20,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0287",
+    "korean": "반",
+    "chinese": "半",
+    "source_page": 20,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0288",
+    "korean": "아침",
+    "chinese": "早上",
+    "source_page": 21,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0289",
+    "korean": "점심",
+    "chinese": "中午",
+    "source_page": 21,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0290",
+    "korean": "여섯",
+    "chinese": "六",
+    "source_page": 21,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0291",
+    "korean": "여덟",
+    "chinese": "八",
+    "source_page": 21,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0292",
+    "korean": "아홉",
+    "chinese": "九",
+    "source_page": 21,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0293",
+    "korean": "열",
+    "chinese": "十",
+    "source_page": 21,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0294",
+    "korean": "열한",
+    "chinese": "十一",
+    "source_page": 21,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0295",
+    "korean": "열두",
+    "chinese": "十二",
+    "source_page": 21,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0296",
+    "korean": "일어나다",
+    "chinese": "起来，起床",
+    "source_page": 21,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0297",
+    "korean": "자다",
+    "chinese": "睡觉",
+    "source_page": 21,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0298",
+    "korean": "가족",
+    "chinese": "家庭，家族，家人",
+    "source_page": 21,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0299",
+    "korean": "명",
+    "chinese": "名",
+    "source_page": 21,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0300",
+    "korean": "넷",
+    "chinese": "四",
+    "source_page": 21,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0301",
+    "korean": "아버지",
+    "chinese": "爸爸",
+    "source_page": 21,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0302",
+    "korean": "어머니",
+    "chinese": "妈妈",
+    "source_page": 22,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0303",
+    "korean": "형",
+    "chinese": "哥哥（男的称呼）",
+    "source_page": 22,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0304",
+    "korean": "하나",
+    "chinese": "一",
+    "source_page": 22,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0305",
+    "korean": "님",
+    "chinese": "表示尊敬",
+    "source_page": 22,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0306",
+    "korean": "회사",
+    "chinese": "公司",
+    "source_page": 22,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0307",
+    "korean": "다니다",
+    "chinese": "来回",
+    "source_page": 22,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0308",
+    "korean": "대학생",
+    "chinese": "大学生",
+    "source_page": 22,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0309",
+    "korean": "지요?",
+    "chinese": "疑问式终结词尾",
+    "source_page": 22,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0310",
+    "korean": "어느",
+    "chinese": "哪，哪个",
+    "source_page": 22,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0311",
+    "korean": "둘",
+    "chinese": "两",
+    "source_page": 22,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0312",
+    "korean": "분",
+    "chinese": "位",
+    "source_page": 22,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0313",
+    "korean": "동생",
+    "chinese": "弟弟妹妹",
+    "source_page": 22,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0314",
+    "korean": "사진",
+    "chinese": "相片",
+    "source_page": 22,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0315",
+    "korean": "회사원",
+    "chinese": "公司职员",
+    "source_page": 22,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0316",
+    "korean": "부모",
+    "chinese": "父母",
+    "source_page": 23,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0317",
+    "korean": "아버님",
+    "chinese": "爸爸（尊称）",
+    "source_page": 23,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0318",
+    "korean": "어머님",
+    "chinese": "妈妈（尊称）",
+    "source_page": 23,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0319",
+    "korean": "누나",
+    "chinese": "姐姐（男的称呼）",
+    "source_page": 23,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0320",
+    "korean": "은행",
+    "chinese": "银行",
+    "source_page": 23,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0321",
+    "korean": "우리",
+    "chinese": "我们，我们的",
+    "source_page": 23,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0322",
+    "korean": "숫자",
+    "chinese": "数字",
+    "source_page": 23,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0323",
+    "korean": "야구",
+    "chinese": "棒球",
+    "source_page": 23,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0324",
+    "korean": "좋아하다",
+    "chinese": "喜欢",
+    "source_page": 23,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0325",
+    "korean": "참",
+    "chinese": "真，真是的",
+    "source_page": 23,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0326",
+    "korean": "그럼",
+    "chinese": "那么",
+    "source_page": 23,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0327",
+    "korean": "구경",
+    "chinese": "观光，观看",
+    "source_page": 23,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0328",
+    "korean": "미안하지만",
+    "chinese": "对不起但是",
+    "source_page": 23,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0329",
+    "korean": "못",
+    "chinese": "不，不能",
+    "source_page": 23,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0330",
+    "korean": "왜",
+    "chinese": "为什么",
+    "source_page": 23,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0331",
+    "korean": "시험",
+    "chinese": "考试",
+    "source_page": 24,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0332",
+    "korean": "아서/어서",
+    "chinese": "表示原因的连接词尾",
+    "source_page": 24,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0333",
+    "korean": "다음",
+    "chinese": "下，",
+    "source_page": 24,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0334",
+    "korean": "시험보다",
+    "chinese": "考试",
+    "source_page": 24,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0335",
+    "korean": "한국말",
+    "chinese": "韩国话",
+    "source_page": 24,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0336",
+    "korean": "김치",
+    "chinese": "泡菜",
+    "source_page": 24,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0337",
+    "korean": "어젯밤",
+    "chinese": "昨夜",
+    "source_page": 24,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0338",
+    "korean": "싫어하다",
+    "chinese": "讨厌，不喜欢",
+    "source_page": 24,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0339",
+    "korean": "과일",
+    "chinese": "水果",
+    "source_page": 24,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0340",
+    "korean": "수영장",
+    "chinese": "游泳场",
+    "source_page": 24,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0341",
+    "korean": "돈",
+    "chinese": "钱",
+    "source_page": 24,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0342",
+    "korean": "야구장",
+    "chinese": "棒球场",
+    "source_page": 24,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0343",
+    "korean": "음식",
+    "chinese": "饮食",
+    "source_page": 24,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0344",
+    "korean": "자주",
+    "chinese": "常常，经常",
+    "source_page": 24,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0345",
+    "korean": "그렇지만",
+    "chinese": "但是",
+    "source_page": 24,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0346",
+    "korean": "생일",
+    "chinese": "生日",
+    "source_page": 25,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0347",
+    "korean": "그래서",
+    "chinese": "所以",
+    "source_page": 25,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0348",
+    "korean": "들",
+    "chinese": "们",
+    "source_page": 25,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0349",
+    "korean": "듣다",
+    "chinese": "听",
+    "source_page": 25,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0350",
+    "korean": "--(으)면서",
+    "chinese": "表示动作的同时进行",
+    "source_page": 25,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0351",
+    "korean": "술",
+    "chinese": "酒",
+    "source_page": 25,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0352",
+    "korean": "노래하다",
+    "chinese": "唱歌",
+    "source_page": 25,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0353",
+    "korean": "뉴스",
+    "chinese": "新闻",
+    "source_page": 25,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0354",
+    "korean": "초대하다",
+    "chinese": "招待，接待",
+    "source_page": 25,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0355",
+    "korean": "지난",
+    "chinese": "过去，上",
+    "source_page": 25,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0356",
+    "korean": "순서",
+    "chinese": "顺序",
+    "source_page": 25,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0357",
+    "korean": "만들다",
+    "chinese": "制造，做",
+    "source_page": 25,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0358",
+    "korean": "이야기하다",
+    "chinese": "聊天，谈话",
+    "source_page": 25,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0359",
+    "korean": "축하하다",
+    "chinese": "祝贺",
+    "source_page": 25,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0360",
+    "korean": "사랑하다",
+    "chinese": "爱",
+    "source_page": 25,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0361",
+    "korean": "여행",
+    "chinese": "旅游，旅行",
+    "source_page": 26,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0362",
+    "korean": "경주",
+    "chinese": "庆州",
+    "source_page": 26,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0363",
+    "korean": "떠나다",
+    "chinese": "离开",
+    "source_page": 26,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0364",
+    "korean": "출발하다",
+    "chinese": "出发",
+    "source_page": 26,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0365",
+    "korean": "오후",
+    "chinese": "下午",
+    "source_page": 26,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0366",
+    "korean": "도착하다",
+    "chinese": "到达",
+    "source_page": 26,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0367",
+    "korean": "매우",
+    "chinese": "非常",
+    "source_page": 26,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0368",
+    "korean": "많다",
+    "chinese": "多",
+    "source_page": 26,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0369",
+    "korean": "창",
+    "chinese": "窗",
+    "source_page": 26,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0370",
+    "korean": "밖",
+    "chinese": "外面",
+    "source_page": 26,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0371",
+    "korean": "산",
+    "chinese": "山",
+    "source_page": 26,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0372",
+    "korean": "아름답다",
+    "chinese": "美丽",
+    "source_page": 26,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0373",
+    "korean": "즐겁다",
+    "chinese": "愉快，快乐",
+    "source_page": 26,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0374",
+    "korean": "공항",
+    "chinese": "机场",
+    "source_page": 26,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0375",
+    "korean": "부산",
+    "chinese": "釜山",
+    "source_page": 27,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0376",
+    "korean": "비행기",
+    "chinese": "飞机",
+    "source_page": 27,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0377",
+    "korean": "김포공항",
+    "chinese": "金浦机场",
+    "source_page": 27,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0378",
+    "korean": "도착",
+    "chinese": "到达",
+    "source_page": 27,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0379",
+    "korean": "오전",
+    "chinese": "上午",
+    "source_page": 27,
+    "source_book": "首尔大学韩国语第一册"
+  },
+  {
+    "id": "snu1-0380",
+    "korean": "여행하다",
+    "chinese": "旅行，旅游",
+    "source_page": 27,
+    "source_book": "首尔大学韩国语第一册"
+  }
+]

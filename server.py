@@ -96,8 +96,13 @@ class KoreanLearnHandler(BaseHTTPRequestHandler):
                 self.redirect("/admin/login")
             return
 
+        # 旧后台教材管理入口不再开放，保留跳转避免历史链接打开空白页。
+        if method == "GET" and path == "/admin/material":
+            self.redirect("/admin/scene" if self.is_admin_logged_in() else "/admin/login")
+            return
+
         # 后台页面：只有登录后才能访问；未登录自动跳转登录页。
-        if method == "GET" and path in ("/admin/scene", "/admin/sentence", "/admin/material"):
+        if method == "GET" and path in ("/admin/scene", "/admin/sentence"):
             if not self.is_admin_logged_in():
                 self.redirect("/admin/login")
                 return
@@ -139,7 +144,14 @@ class KoreanLearnHandler(BaseHTTPRequestHandler):
         # 数据写入接口只允许后台登录后调用。
         # 用户端只需要 GET 查询；新增、编辑、删除都属于后台管理行为。
         if path.startswith("/api/") and method in ("POST", "PUT", "DELETE"):
-            if path not in ("/api/admin/login", "/api/admin/logout") and not self.is_admin_logged_in():
+            public_post_paths = (
+                "/api/admin/login",
+                "/api/admin/logout",
+                "/api/pdf-assistant/chat",
+                "/api/pdf-assistant/extract-toc",
+                "/api/tts/synthesize",
+            )
+            if path not in public_post_paths and not self.is_admin_logged_in():
                 self.send_json({"error": "请先登录后台"}, status=401)
                 return
 
@@ -288,7 +300,7 @@ class KoreanLearnHandler(BaseHTTPRequestHandler):
 
 def run():
     """启动 HTTP 服务。"""
-    host = os.getenv("HOST", "127.0.0.8")
+    host = os.getenv("HOST", "127.0.0.1")
     port = int(os.getenv("PORT", "8000"))
     server = HTTPServer((host, port), KoreanLearnHandler)
     print(f"韩语学习网站已启动：http://{host}:{port}")

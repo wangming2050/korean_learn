@@ -1,0 +1,6064 @@
+[
+  {
+    "id": "topik1-0001",
+    "korean": "가게",
+    "chinese": "店铺",
+    "source_page": 1,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0002",
+    "korean": "가격",
+    "chinese": "价格",
+    "source_page": 1,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0003",
+    "korean": "가구",
+    "chinese": "家具",
+    "source_page": 1,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0004",
+    "korean": "가깝다",
+    "chinese": "近, 不远",
+    "source_page": 1,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0005",
+    "korean": "가끔",
+    "chinese": "偶尔、有时，表示时间和空间上有一定间隔。",
+    "source_page": 1,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0006",
+    "korean": "가다",
+    "chinese": "去",
+    "source_page": 1,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0007",
+    "korean": "가르치다",
+    "chinese": "教",
+    "source_page": 1,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0008",
+    "korean": "가방",
+    "chinese": "包",
+    "source_page": 1,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0009",
+    "korean": "가볍다",
+    "chinese": "轻",
+    "source_page": 1,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0010",
+    "korean": "가수",
+    "chinese": "歌手",
+    "source_page": 1,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0011",
+    "korean": "가운데",
+    "chinese": "当中、中间、中",
+    "source_page": 1,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0012",
+    "korean": "가을",
+    "chinese": "秋天",
+    "source_page": 2,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0013",
+    "korean": "가재",
+    "chinese": "小龙虾",
+    "source_page": 2,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0014",
+    "korean": "가족",
+    "chinese": "家庭成员, 家族",
+    "source_page": 2,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0015",
+    "korean": "가죽 장갑",
+    "chinese": "皮手套",
+    "source_page": 2,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0016",
+    "korean": "간단하다",
+    "chinese": "简单",
+    "source_page": 2,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0017",
+    "korean": "간호사",
+    "chinese": "护士",
+    "source_page": 2,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0018",
+    "korean": "갈비",
+    "chinese": "排骨",
+    "source_page": 2,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0019",
+    "korean": "갈아타다",
+    "chinese": "换乘",
+    "source_page": 2,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0020",
+    "korean": "감기",
+    "chinese": "感冒",
+    "source_page": 2,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0021",
+    "korean": "감사",
+    "chinese": "感谢",
+    "source_page": 2,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0022",
+    "korean": "감자튀김",
+    "chinese": "炸薯条",
+    "source_page": 2,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0023",
+    "korean": "갑자기",
+    "chinese": "突然",
+    "source_page": 2,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0024",
+    "korean": "값",
+    "chinese": "价格",
+    "source_page": 2,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0025",
+    "korean": "갔다오다",
+    "chinese": "去过",
+    "source_page": 2,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0026",
+    "korean": "강",
+    "chinese": "江, 河",
+    "source_page": 2,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0027",
+    "korean": "강아지",
+    "chinese": "小狗",
+    "source_page": 3,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0028",
+    "korean": "같다",
+    "chinese": "一样",
+    "source_page": 3,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0029",
+    "korean": "개",
+    "chinese": "狗、个（数）",
+    "source_page": 3,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0030",
+    "korean": "개최",
+    "chinese": "举行, 举办",
+    "source_page": 3,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0031",
+    "korean": "거울",
+    "chinese": "镜子",
+    "source_page": 3,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0032",
+    "korean": "걱정",
+    "chinese": "担心、操心、忧虑",
+    "source_page": 3,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0033",
+    "korean": "건강",
+    "chinese": "健康",
+    "source_page": 3,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0034",
+    "korean": "걸다",
+    "chinese": "挂上, 打电话",
+    "source_page": 3,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0035",
+    "korean": "걸리다",
+    "chinese": "花费(时间)",
+    "source_page": 3,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0036",
+    "korean": "게으르다",
+    "chinese": "懒惰",
+    "source_page": 3,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0037",
+    "korean": "겨울",
+    "chinese": "冬天",
+    "source_page": 3,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0038",
+    "korean": "결석",
+    "chinese": "缺席",
+    "source_page": 3,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0039",
+    "korean": "결혼",
+    "chinese": "结婚",
+    "source_page": 3,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0040",
+    "korean": "경제",
+    "chinese": "经济",
+    "source_page": 3,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0041",
+    "korean": "경주",
+    "chinese": "庆州，韩国城市",
+    "source_page": 3,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0042",
+    "korean": "경찰서",
+    "chinese": "警察署",
+    "source_page": 4,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0043",
+    "korean": "경험",
+    "chinese": "经验",
+    "source_page": 4,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0044",
+    "korean": "계단",
+    "chinese": "楼梯",
+    "source_page": 4,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0045",
+    "korean": "계속",
+    "chinese": "继续, 一直",
+    "source_page": 4,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0046",
+    "korean": "계절",
+    "chinese": "季节",
+    "source_page": 4,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0047",
+    "korean": "계획",
+    "chinese": "计划",
+    "source_page": 4,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0048",
+    "korean": "고기",
+    "chinese": "肉",
+    "source_page": 4,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0049",
+    "korean": "고등학교",
+    "chinese": "高中",
+    "source_page": 4,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0050",
+    "korean": "고맙습니다",
+    "chinese": "谢谢",
+    "source_page": 4,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0051",
+    "korean": "고민",
+    "chinese": "苦恼",
+    "source_page": 4,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0052",
+    "korean": "고속버스",
+    "chinese": "高速公交车",
+    "source_page": 4,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0053",
+    "korean": "고을",
+    "chinese": "古时的州、府、郡、县的统称",
+    "source_page": 4,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0054",
+    "korean": "고프다",
+    "chinese": "饿",
+    "source_page": 4,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0055",
+    "korean": "고향",
+    "chinese": "故乡",
+    "source_page": 4,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0056",
+    "korean": "곳",
+    "chinese": "地方，地点",
+    "source_page": 4,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0057",
+    "korean": "공기",
+    "chinese": "空气",
+    "source_page": 5,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0058",
+    "korean": "공기밥",
+    "chinese": "(放在小碗里的)米饭",
+    "source_page": 5,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0059",
+    "korean": "공사",
+    "chinese": "(韩国的)国有企业，施工",
+    "source_page": 5,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0060",
+    "korean": "공연",
+    "chinese": "演出",
+    "source_page": 5,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0061",
+    "korean": "공원",
+    "chinese": "公园",
+    "source_page": 5,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0062",
+    "korean": "공책",
+    "chinese": "记事本，笔记本",
+    "source_page": 5,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0063",
+    "korean": "공항",
+    "chinese": "机场",
+    "source_page": 5,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0064",
+    "korean": "과일",
+    "chinese": "水果",
+    "source_page": 5,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0065",
+    "korean": "과자",
+    "chinese": "饼干，点心",
+    "source_page": 5,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0066",
+    "korean": "관광",
+    "chinese": "观光",
+    "source_page": 5,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0067",
+    "korean": "관심",
+    "chinese": "关心",
+    "source_page": 5,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0068",
+    "korean": "광고",
+    "chinese": "广告",
+    "source_page": 5,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0069",
+    "korean": "괜찮다",
+    "chinese": "不错，没关系",
+    "source_page": 5,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0070",
+    "korean": "교실",
+    "chinese": "教室",
+    "source_page": 5,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0071",
+    "korean": "교통",
+    "chinese": "交通",
+    "source_page": 5,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0072",
+    "korean": "구간",
+    "chinese": "区间",
+    "source_page": 6,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0073",
+    "korean": "구경",
+    "chinese": "观看",
+    "source_page": 6,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0074",
+    "korean": "구두",
+    "chinese": "皮鞋",
+    "source_page": 6,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0075",
+    "korean": "구입",
+    "chinese": "购入",
+    "source_page": 6,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0076",
+    "korean": "구하다",
+    "chinese": "拯救",
+    "source_page": 6,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0077",
+    "korean": "국내",
+    "chinese": "国内",
+    "source_page": 6,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0078",
+    "korean": "군",
+    "chinese": "郡，是一个行政单位",
+    "source_page": 6,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0079",
+    "korean": "굽",
+    "chinese": "鞋根",
+    "source_page": 6,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0080",
+    "korean": "권",
+    "chinese": "(书的量词)册",
+    "source_page": 6,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0081",
+    "korean": "그 동안",
+    "chinese": "在那期间",
+    "source_page": 6,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0082",
+    "korean": "그냥",
+    "chinese": "仍旧",
+    "source_page": 6,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0083",
+    "korean": "그래서",
+    "chinese": "因此，所以",
+    "source_page": 6,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0084",
+    "korean": "그러니까",
+    "chinese": "所以",
+    "source_page": 6,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0085",
+    "korean": "그러면",
+    "chinese": "那么(then), 既然...就(if so, in thatcase)",
+    "source_page": 6,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0086",
+    "korean": "그런",
+    "chinese": "那样的(such, like that)",
+    "source_page": 6,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0087",
+    "korean": "그런데",
+    "chinese": "但是",
+    "source_page": 7,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0088",
+    "korean": "그럼",
+    "chinese": "那么",
+    "source_page": 7,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0089",
+    "korean": "그렇지만",
+    "chinese": "但是",
+    "source_page": 7,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0090",
+    "korean": "그릇",
+    "chinese": "盘子",
+    "source_page": 7,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0091",
+    "korean": "그리고",
+    "chinese": "还， 然后",
+    "source_page": 7,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0092",
+    "korean": "그리다",
+    "chinese": "画画",
+    "source_page": 7,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0093",
+    "korean": "그저께",
+    "chinese": "前天",
+    "source_page": 7,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0094",
+    "korean": "그치다",
+    "chinese": "停止",
+    "source_page": 7,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0095",
+    "korean": "극장",
+    "chinese": "剧场",
+    "source_page": 7,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0096",
+    "korean": "근처",
+    "chinese": "附近",
+    "source_page": 7,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0097",
+    "korean": "글",
+    "chinese": "文字",
+    "source_page": 7,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0098",
+    "korean": "금년",
+    "chinese": "今年",
+    "source_page": 7,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0099",
+    "korean": "금방",
+    "chinese": "刚刚",
+    "source_page": 7,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0100",
+    "korean": "금액",
+    "chinese": "金额",
+    "source_page": 7,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0101",
+    "korean": "금요일",
+    "chinese": "星期五",
+    "source_page": 7,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0102",
+    "korean": "금지",
+    "chinese": "禁止",
+    "source_page": 8,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0103",
+    "korean": "급하다",
+    "chinese": "急",
+    "source_page": 8,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0104",
+    "korean": "기간",
+    "chinese": "期间",
+    "source_page": 8,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0105",
+    "korean": "기념품",
+    "chinese": "纪念品",
+    "source_page": 8,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0106",
+    "korean": "기대",
+    "chinese": "期待",
+    "source_page": 8,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0107",
+    "korean": "기본",
+    "chinese": "基本",
+    "source_page": 8,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0108",
+    "korean": "기분",
+    "chinese": "心情，气氛",
+    "source_page": 8,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0109",
+    "korean": "기뻐하다",
+    "chinese": "开心",
+    "source_page": 8,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0110",
+    "korean": "기숙사",
+    "chinese": "宿舍",
+    "source_page": 8,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0111",
+    "korean": "기억",
+    "chinese": "记忆",
+    "source_page": 8,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0112",
+    "korean": "기온",
+    "chinese": "气温",
+    "source_page": 8,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0113",
+    "korean": "기차",
+    "chinese": "火车",
+    "source_page": 8,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0114",
+    "korean": "기침",
+    "chinese": "咳嗽",
+    "source_page": 8,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0115",
+    "korean": "길",
+    "chinese": "路",
+    "source_page": 8,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0116",
+    "korean": "길다",
+    "chinese": "长",
+    "source_page": 8,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0117",
+    "korean": "김밥",
+    "chinese": "紫菜饭",
+    "source_page": 9,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0118",
+    "korean": "김치",
+    "chinese": "泡菜",
+    "source_page": 9,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0119",
+    "korean": "깊다",
+    "chinese": "深",
+    "source_page": 9,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0120",
+    "korean": "까만색",
+    "chinese": "黑色",
+    "source_page": 9,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0121",
+    "korean": "깜짝 놀라다",
+    "chinese": "吓一跳",
+    "source_page": 9,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0122",
+    "korean": "깨끗하다",
+    "chinese": "干净",
+    "source_page": 9,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0123",
+    "korean": "꼬리",
+    "chinese": "尾巴",
+    "source_page": 9,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0124",
+    "korean": "꼭",
+    "chinese": "一定",
+    "source_page": 9,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0125",
+    "korean": "꽃",
+    "chinese": "花",
+    "source_page": 9,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0126",
+    "korean": "끄다",
+    "chinese": "关(灯, 蜡烛等)",
+    "source_page": 9,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0127",
+    "korean": "끝나다",
+    "chinese": "结束",
+    "source_page": 9,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0128",
+    "korean": "끼다",
+    "chinese": "笼罩，弥漫",
+    "source_page": 9,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0129",
+    "korean": "나",
+    "chinese": "我",
+    "source_page": 9,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0130",
+    "korean": "나라",
+    "chinese": "国家",
+    "source_page": 9,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0131",
+    "korean": "나무",
+    "chinese": "树木",
+    "source_page": 9,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0132",
+    "korean": "나빠요",
+    "chinese": "坏，不好",
+    "source_page": 10,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0133",
+    "korean": "나쁘다",
+    "chinese": "不好、坏",
+    "source_page": 10,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0134",
+    "korean": "나오다",
+    "chinese": "出来",
+    "source_page": 10,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0135",
+    "korean": "나이",
+    "chinese": "年龄",
+    "source_page": 10,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0136",
+    "korean": "나중에",
+    "chinese": "最后",
+    "source_page": 10,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0137",
+    "korean": "낚시",
+    "chinese": "钓钩",
+    "source_page": 10,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0138",
+    "korean": "날마다",
+    "chinese": "日复一日",
+    "source_page": 10,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0139",
+    "korean": "날씨",
+    "chinese": "天气",
+    "source_page": 10,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0140",
+    "korean": "날짜",
+    "chinese": "日子、日期",
+    "source_page": 10,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0141",
+    "korean": "남",
+    "chinese": "男",
+    "source_page": 10,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0142",
+    "korean": "남대문",
+    "chinese": "南大门",
+    "source_page": 10,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0143",
+    "korean": "남동생",
+    "chinese": "弟弟",
+    "source_page": 10,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0144",
+    "korean": "남산",
+    "chinese": "南山",
+    "source_page": 10,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0145",
+    "korean": "남성복",
+    "chinese": "男装",
+    "source_page": 10,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0146",
+    "korean": "남자",
+    "chinese": "男性、男人",
+    "source_page": 10,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0147",
+    "korean": "남쪽",
+    "chinese": "南边",
+    "source_page": 11,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0148",
+    "korean": "남해",
+    "chinese": "南海",
+    "source_page": 11,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0149",
+    "korean": "낮",
+    "chinese": "白天",
+    "source_page": 11,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0150",
+    "korean": "내년",
+    "chinese": "明年",
+    "source_page": 11,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0151",
+    "korean": "내리다",
+    "chinese": "下(雨)",
+    "source_page": 11,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0152",
+    "korean": "내용",
+    "chinese": "内容",
+    "source_page": 11,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0153",
+    "korean": "내일",
+    "chinese": "明天",
+    "source_page": 11,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0154",
+    "korean": "냉면",
+    "chinese": "冷面",
+    "source_page": 11,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0155",
+    "korean": "냉장고",
+    "chinese": "冰箱",
+    "source_page": 11,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0156",
+    "korean": "너무",
+    "chinese": "太(too)",
+    "source_page": 11,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0157",
+    "korean": "넓다",
+    "chinese": "宽",
+    "source_page": 11,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0158",
+    "korean": "네",
+    "chinese": "(回答的时候) 是",
+    "source_page": 11,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0159",
+    "korean": "년",
+    "chinese": "年",
+    "source_page": 11,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0160",
+    "korean": "노란색",
+    "chinese": "黄色",
+    "source_page": 11,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0161",
+    "korean": "노래",
+    "chinese": "歌曲",
+    "source_page": 11,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0162",
+    "korean": "노인",
+    "chinese": "老人",
+    "source_page": 12,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0163",
+    "korean": "놀라다",
+    "chinese": "惊讶",
+    "source_page": 12,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0164",
+    "korean": "농구",
+    "chinese": "篮球",
+    "source_page": 12,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0165",
+    "korean": "농원",
+    "chinese": "农场",
+    "source_page": 12,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0166",
+    "korean": "높다",
+    "chinese": "高",
+    "source_page": 12,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0167",
+    "korean": "놓다",
+    "chinese": "放下",
+    "source_page": 12,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0168",
+    "korean": "누구",
+    "chinese": "谁(who)",
+    "source_page": 12,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0169",
+    "korean": "누나",
+    "chinese": "姐姐（男称女）",
+    "source_page": 12,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0170",
+    "korean": "눈",
+    "chinese": "雪，眼睛",
+    "source_page": 12,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0171",
+    "korean": "눈물",
+    "chinese": "眼泪",
+    "source_page": 12,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0172",
+    "korean": "눈사람",
+    "chinese": "雪人",
+    "source_page": 12,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0173",
+    "korean": "느낌",
+    "chinese": "感觉",
+    "source_page": 12,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0174",
+    "korean": "늦다",
+    "chinese": "晚",
+    "source_page": 12,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0175",
+    "korean": "다르다",
+    "chinese": "不同",
+    "source_page": 12,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0176",
+    "korean": "다리",
+    "chinese": "桥, 腿",
+    "source_page": 12,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0177",
+    "korean": "다시",
+    "chinese": "再，重新",
+    "source_page": 13,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0178",
+    "korean": "다양하다",
+    "chinese": "多种多样的",
+    "source_page": 13,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0179",
+    "korean": "다음",
+    "chinese": "然后",
+    "source_page": 13,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0180",
+    "korean": "단가",
+    "chinese": "单价",
+    "source_page": 13,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0181",
+    "korean": "단어",
+    "chinese": "单词",
+    "source_page": 13,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0182",
+    "korean": "단풍",
+    "chinese": "枫叶",
+    "source_page": 13,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0183",
+    "korean": "닫다",
+    "chinese": "关",
+    "source_page": 13,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0184",
+    "korean": "달",
+    "chinese": "月亮",
+    "source_page": 13,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0185",
+    "korean": "달라요",
+    "chinese": "不同",
+    "source_page": 13,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0186",
+    "korean": "달력",
+    "chinese": "月历",
+    "source_page": 13,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0187",
+    "korean": "달아요",
+    "chinese": "甜",
+    "source_page": 13,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0188",
+    "korean": "닮다",
+    "chinese": "(长得)像",
+    "source_page": 13,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0189",
+    "korean": "담배",
+    "chinese": "(香)烟",
+    "source_page": 13,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0190",
+    "korean": "답장",
+    "chinese": "回信",
+    "source_page": 13,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0191",
+    "korean": "대리",
+    "chinese": "代理(韩企里的一种职位头衔，一般工作经验2年就可以自动成为代理，是比新职员高一级的职位)",
+    "source_page": 14,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0192",
+    "korean": "대사관",
+    "chinese": "大使馆",
+    "source_page": 14,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0193",
+    "korean": "대표",
+    "chinese": "代表",
+    "source_page": 14,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0194",
+    "korean": "대학 생활",
+    "chinese": "大学生活",
+    "source_page": 14,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0195",
+    "korean": "대학교",
+    "chinese": "大学",
+    "source_page": 14,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0196",
+    "korean": "대화",
+    "chinese": "对话",
+    "source_page": 14,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0197",
+    "korean": "덥다",
+    "chinese": "热",
+    "source_page": 14,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0198",
+    "korean": "도",
+    "chinese": "道，朝鲜半岛由8个道组成，类似于中国的省",
+    "source_page": 14,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0199",
+    "korean": "도서관",
+    "chinese": "图书馆",
+    "source_page": 14,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0200",
+    "korean": "도시",
+    "chinese": "城市",
+    "source_page": 14,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0201",
+    "korean": "도와주다",
+    "chinese": "帮忙，指帮别人",
+    "source_page": 14,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0202",
+    "korean": "도착",
+    "chinese": "到达",
+    "source_page": 14,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0203",
+    "korean": "돈",
+    "chinese": "钱",
+    "source_page": 14,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0204",
+    "korean": "돌",
+    "chinese": "石头",
+    "source_page": 14,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0205",
+    "korean": "돌려주다",
+    "chinese": "退还",
+    "source_page": 15,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0206",
+    "korean": "돌아오다",
+    "chinese": "回来",
+    "source_page": 15,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0207",
+    "korean": "동대문 시장",
+    "chinese": "东大门市场",
+    "source_page": 15,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0208",
+    "korean": "동물",
+    "chinese": "动物",
+    "source_page": 15,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0209",
+    "korean": "동생",
+    "chinese": "弟弟（남동생）、妹妹(여동생)",
+    "source_page": 15,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0210",
+    "korean": "동안",
+    "chinese": "期间",
+    "source_page": 15,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0211",
+    "korean": "된장찌개",
+    "chinese": "大酱汤",
+    "source_page": 15,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0212",
+    "korean": "두시",
+    "chinese": "两点",
+    "source_page": 15,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0213",
+    "korean": "둘째",
+    "chinese": "第二",
+    "source_page": 15,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0214",
+    "korean": "뒤",
+    "chinese": "后面",
+    "source_page": 15,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0215",
+    "korean": "드라마",
+    "chinese": "电视剧",
+    "source_page": 15,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0216",
+    "korean": "드라이",
+    "chinese": "烘干",
+    "source_page": 15,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0217",
+    "korean": "듣다",
+    "chinese": "听",
+    "source_page": 15,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0218",
+    "korean": "들어가다",
+    "chinese": "进去",
+    "source_page": 15,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0219",
+    "korean": "등산",
+    "chinese": "登山",
+    "source_page": 15,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0220",
+    "korean": "따뜻하다",
+    "chinese": "暖和",
+    "source_page": 16,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0221",
+    "korean": "딸",
+    "chinese": "女儿",
+    "source_page": 16,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0222",
+    "korean": "땅",
+    "chinese": "地, 土地",
+    "source_page": 16,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0223",
+    "korean": "때때로",
+    "chinese": "间或、有时",
+    "source_page": 16,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0224",
+    "korean": "떡",
+    "chinese": "糕点",
+    "source_page": 16,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0225",
+    "korean": "똑바로",
+    "chinese": "端正地",
+    "source_page": 16,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0226",
+    "korean": "뛰다",
+    "chinese": "跑",
+    "source_page": 16,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0227",
+    "korean": "뜻",
+    "chinese": "意思",
+    "source_page": 16,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0228",
+    "korean": "라디오",
+    "chinese": "收音机",
+    "source_page": 16,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0229",
+    "korean": "러시아",
+    "chinese": "俄罗斯",
+    "source_page": 16,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0230",
+    "korean": "마리",
+    "chinese": "(动物量词)只, 可以用在绝大多数动物上(包括鸟类、鱼类和昆虫)",
+    "source_page": 16,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0231",
+    "korean": "마시다",
+    "chinese": "喝",
+    "source_page": 16,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0232",
+    "korean": "마음",
+    "chinese": "心灵，心情",
+    "source_page": 16,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0233",
+    "korean": "마이클",
+    "chinese": "迈克",
+    "source_page": 16,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0234",
+    "korean": "마침내",
+    "chinese": "终于",
+    "source_page": 16,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0235",
+    "korean": "만 원",
+    "chinese": "1万元；韩语中的\"一\"往往省略",
+    "source_page": 17,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0236",
+    "korean": "만나다",
+    "chinese": "见面",
+    "source_page": 17,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0237",
+    "korean": "만들다",
+    "chinese": "制造",
+    "source_page": 17,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0238",
+    "korean": "만화",
+    "chinese": "漫画",
+    "source_page": 17,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0239",
+    "korean": "많다",
+    "chinese": "多",
+    "source_page": 17,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0240",
+    "korean": "말씀",
+    "chinese": "话, 言语. (注:这个单词是\"말\"的敬语)",
+    "source_page": 17,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0241",
+    "korean": "맑다",
+    "chinese": "(天气)晴朗，(水)清澈",
+    "source_page": 17,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0242",
+    "korean": "맛",
+    "chinese": "味道",
+    "source_page": 17,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0243",
+    "korean": "맛없다",
+    "chinese": "不好吃",
+    "source_page": 17,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0244",
+    "korean": "맛있다",
+    "chinese": "好吃",
+    "source_page": 17,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0245",
+    "korean": "맞습니다",
+    "chinese": "对",
+    "source_page": 17,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0246",
+    "korean": "맞은편",
+    "chinese": "对面",
+    "source_page": 17,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0247",
+    "korean": "매우",
+    "chinese": "非常, 十分",
+    "source_page": 17,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0248",
+    "korean": "매워요",
+    "chinese": "辣",
+    "source_page": 17,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0249",
+    "korean": "매월",
+    "chinese": "每月",
+    "source_page": 17,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0250",
+    "korean": "매일",
+    "chinese": "每天",
+    "source_page": 18,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0251",
+    "korean": "매장",
+    "chinese": "售货柜台、埋葬、每张",
+    "source_page": 18,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0252",
+    "korean": "매주",
+    "chinese": "每周",
+    "source_page": 18,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0253",
+    "korean": "맨발",
+    "chinese": "赤脚",
+    "source_page": 18,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0254",
+    "korean": "머리",
+    "chinese": "头，头发",
+    "source_page": 18,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0255",
+    "korean": "먹다",
+    "chinese": "吃",
+    "source_page": 18,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0256",
+    "korean": "먼저",
+    "chinese": "先(first), 表示顺序",
+    "source_page": 18,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0257",
+    "korean": "먼지",
+    "chinese": "尘土、灰尘",
+    "source_page": 18,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0258",
+    "korean": "멀다",
+    "chinese": "远",
+    "source_page": 18,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0259",
+    "korean": "멋있다",
+    "chinese": "帅气、潇洒",
+    "source_page": 18,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0260",
+    "korean": "메뉴",
+    "chinese": "菜单",
+    "source_page": 18,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0261",
+    "korean": "며칠",
+    "chinese": "几天",
+    "source_page": 18,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0262",
+    "korean": "명동",
+    "chinese": "明洞，首尔的一个繁华地区",
+    "source_page": 18,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0263",
+    "korean": "몇",
+    "chinese": "几(后接量词)",
+    "source_page": 18,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0264",
+    "korean": "모기",
+    "chinese": "蚊子",
+    "source_page": 18,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0265",
+    "korean": "모두",
+    "chinese": "全部",
+    "source_page": 19,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0266",
+    "korean": "모레",
+    "chinese": "后天",
+    "source_page": 19,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0267",
+    "korean": "모르다",
+    "chinese": "不知道",
+    "source_page": 19,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0268",
+    "korean": "모습",
+    "chinese": "样子",
+    "source_page": 19,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0269",
+    "korean": "모이다",
+    "chinese": "聚集, 收集",
+    "source_page": 19,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0270",
+    "korean": "모자",
+    "chinese": "帽子",
+    "source_page": 19,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0271",
+    "korean": "목",
+    "chinese": "脖子",
+    "source_page": 19,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0272",
+    "korean": "목요일",
+    "chinese": "星期四",
+    "source_page": 19,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0273",
+    "korean": "목욕",
+    "chinese": "洗澡",
+    "source_page": 19,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0274",
+    "korean": "몰라요",
+    "chinese": "不知道",
+    "source_page": 19,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0275",
+    "korean": "몸",
+    "chinese": "身体",
+    "source_page": 19,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0276",
+    "korean": "못하다",
+    "chinese": "不能、不及(cannot, be unable to)",
+    "source_page": 19,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0277",
+    "korean": "무게",
+    "chinese": "重量",
+    "source_page": 19,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0278",
+    "korean": "무궁화",
+    "chinese": "无穷花，木槿；无穷花是韩国国花",
+    "source_page": 19,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0279",
+    "korean": "무료",
+    "chinese": "免费",
+    "source_page": 19,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0280",
+    "korean": "무섭다",
+    "chinese": "可怕, 恐怖",
+    "source_page": 20,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0281",
+    "korean": "무슨",
+    "chinese": "什么",
+    "source_page": 20,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0282",
+    "korean": "무엇",
+    "chinese": "什么(what)",
+    "source_page": 20,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0283",
+    "korean": "문",
+    "chinese": "门",
+    "source_page": 20,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0284",
+    "korean": "문구점",
+    "chinese": "文具店",
+    "source_page": 20,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0285",
+    "korean": "문의",
+    "chinese": "问询",
+    "source_page": 20,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0286",
+    "korean": "문화",
+    "chinese": "文化",
+    "source_page": 20,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0287",
+    "korean": "물",
+    "chinese": "水",
+    "source_page": 20,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0288",
+    "korean": "물건",
+    "chinese": "东西, 物",
+    "source_page": 20,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0289",
+    "korean": "물음",
+    "chinese": "提问",
+    "source_page": 20,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0290",
+    "korean": "뭐든지",
+    "chinese": "无论什么",
+    "source_page": 20,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0291",
+    "korean": "뭘",
+    "chinese": "什么，무엇을的缩写",
+    "source_page": 20,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0292",
+    "korean": "미국",
+    "chinese": "美国",
+    "source_page": 20,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0293",
+    "korean": "미리",
+    "chinese": "事先, 预先",
+    "source_page": 20,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0294",
+    "korean": "미술관",
+    "chinese": "美术馆",
+    "source_page": 20,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0295",
+    "korean": "미안합니다",
+    "chinese": "对不起",
+    "source_page": 21,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0296",
+    "korean": "미용실",
+    "chinese": "美容室",
+    "source_page": 21,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0297",
+    "korean": "밑",
+    "chinese": "底",
+    "source_page": 21,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0298",
+    "korean": "바나나",
+    "chinese": "香蕉",
+    "source_page": 21,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0299",
+    "korean": "바다",
+    "chinese": "大海",
+    "source_page": 21,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0300",
+    "korean": "바닥",
+    "chinese": "底板，底部",
+    "source_page": 21,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0301",
+    "korean": "바람",
+    "chinese": "风",
+    "source_page": 21,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0302",
+    "korean": "바로",
+    "chinese": "正好",
+    "source_page": 21,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0303",
+    "korean": "바쁘다",
+    "chinese": "忙",
+    "source_page": 21,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0304",
+    "korean": "바지",
+    "chinese": "裤子",
+    "source_page": 21,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0305",
+    "korean": "박물관",
+    "chinese": "博物馆",
+    "source_page": 21,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0306",
+    "korean": "밖",
+    "chinese": "外",
+    "source_page": 21,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0307",
+    "korean": "반갑습니다",
+    "chinese": "(见到你)很高兴",
+    "source_page": 21,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0308",
+    "korean": "받다",
+    "chinese": "收，接收",
+    "source_page": 21,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0309",
+    "korean": "발",
+    "chinese": "脚",
+    "source_page": 21,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0310",
+    "korean": "밝다",
+    "chinese": "(天)亮的",
+    "source_page": 22,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0311",
+    "korean": "밤",
+    "chinese": "夜",
+    "source_page": 22,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0312",
+    "korean": "밥",
+    "chinese": "饭",
+    "source_page": 22,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0313",
+    "korean": "방",
+    "chinese": "房间",
+    "source_page": 22,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0314",
+    "korean": "방금",
+    "chinese": "刚才",
+    "source_page": 22,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0315",
+    "korean": "방법",
+    "chinese": "方法",
+    "source_page": 22,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0316",
+    "korean": "방송",
+    "chinese": "广播，播放",
+    "source_page": 22,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0317",
+    "korean": "방학",
+    "chinese": "假期, 放假",
+    "source_page": 22,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0318",
+    "korean": "배",
+    "chinese": "肚子, 梨",
+    "source_page": 22,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0319",
+    "korean": "배달",
+    "chinese": "配送，发送",
+    "source_page": 22,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0320",
+    "korean": "배우다",
+    "chinese": "学习",
+    "source_page": 22,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0321",
+    "korean": "백화점",
+    "chinese": "百货店",
+    "source_page": 22,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0322",
+    "korean": "버스",
+    "chinese": "大客车, 公交车",
+    "source_page": 22,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0323",
+    "korean": "번역",
+    "chinese": "翻译",
+    "source_page": 22,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0324",
+    "korean": "번호",
+    "chinese": "号码",
+    "source_page": 22,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0325",
+    "korean": "벌써",
+    "chinese": "早就、已经",
+    "source_page": 23,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0326",
+    "korean": "벗다",
+    "chinese": "脱",
+    "source_page": 23,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0327",
+    "korean": "별로",
+    "chinese": "不怎么、不很",
+    "source_page": 23,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0328",
+    "korean": "병원",
+    "chinese": "医院",
+    "source_page": 23,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0329",
+    "korean": "보내다",
+    "chinese": "送、派、递",
+    "source_page": 23,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0330",
+    "korean": "보세요",
+    "chinese": "请看",
+    "source_page": 23,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0331",
+    "korean": "보여주다",
+    "chinese": "给...看",
+    "source_page": 23,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0332",
+    "korean": "보통",
+    "chinese": "普通地，通常",
+    "source_page": 23,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0333",
+    "korean": "복",
+    "chinese": "福",
+    "source_page": 23,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0334",
+    "korean": "복습",
+    "chinese": "复习",
+    "source_page": 23,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0335",
+    "korean": "볼펜",
+    "chinese": "圆珠笔",
+    "source_page": 23,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0336",
+    "korean": "봄",
+    "chinese": "春天",
+    "source_page": 23,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0337",
+    "korean": "봉투",
+    "chinese": "信封",
+    "source_page": 23,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0338",
+    "korean": "봤어요",
+    "chinese": "看过了",
+    "source_page": 23,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0339",
+    "korean": "부르다",
+    "chinese": "唱，喊",
+    "source_page": 23,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0340",
+    "korean": "부모님",
+    "chinese": "父母",
+    "source_page": 24,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0341",
+    "korean": "부부",
+    "chinese": "夫妇",
+    "source_page": 24,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0342",
+    "korean": "부산",
+    "chinese": "釜山，釜山是韩国第二大城市，是港口城市",
+    "source_page": 24,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0343",
+    "korean": "부엌",
+    "chinese": "厨房",
+    "source_page": 24,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0344",
+    "korean": "부지런하다",
+    "chinese": "勤奋",
+    "source_page": 24,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0345",
+    "korean": "부치다",
+    "chinese": "邮寄",
+    "source_page": 24,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0346",
+    "korean": "부탁",
+    "chinese": "嘱托",
+    "source_page": 24,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0347",
+    "korean": "불",
+    "chinese": "火",
+    "source_page": 24,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0348",
+    "korean": "불고기",
+    "chinese": "烧烤, 烤肉",
+    "source_page": 24,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0349",
+    "korean": "불다",
+    "chinese": "吹",
+    "source_page": 24,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0350",
+    "korean": "불편하다",
+    "chinese": "不方便",
+    "source_page": 24,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0351",
+    "korean": "붙이다",
+    "chinese": "粘贴",
+    "source_page": 24,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0352",
+    "korean": "브라질",
+    "chinese": "巴西，Brazil",
+    "source_page": 24,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0353",
+    "korean": "비",
+    "chinese": "雨",
+    "source_page": 24,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0354",
+    "korean": "비누",
+    "chinese": "肥皂",
+    "source_page": 24,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0355",
+    "korean": "비디오",
+    "chinese": "录像带",
+    "source_page": 25,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0356",
+    "korean": "비빔밥",
+    "chinese": "拌饭",
+    "source_page": 25,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0357",
+    "korean": "비슷하다",
+    "chinese": "相似",
+    "source_page": 25,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0358",
+    "korean": "비싸다",
+    "chinese": "(价格)贵",
+    "source_page": 25,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0359",
+    "korean": "비행기",
+    "chinese": "飞机",
+    "source_page": 25,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0360",
+    "korean": "빌딩",
+    "chinese": "大厦",
+    "source_page": 25,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0361",
+    "korean": "빌리다",
+    "chinese": "借，从别人处借来",
+    "source_page": 25,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0362",
+    "korean": "빨간 색",
+    "chinese": "红色",
+    "source_page": 25,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0363",
+    "korean": "빨래",
+    "chinese": "(需要洗的)脏衣服",
+    "source_page": 25,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0364",
+    "korean": "빨리",
+    "chinese": "快地",
+    "source_page": 25,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0365",
+    "korean": "빵집",
+    "chinese": "面包店",
+    "source_page": 25,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0366",
+    "korean": "뿔",
+    "chinese": "(动物的)角",
+    "source_page": 25,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0367",
+    "korean": "사계절",
+    "chinese": "四季",
+    "source_page": 25,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0368",
+    "korean": "사고",
+    "chinese": "事故，思考",
+    "source_page": 25,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0369",
+    "korean": "사과",
+    "chinese": "道歉，苹果",
+    "source_page": 25,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0370",
+    "korean": "사귀다",
+    "chinese": "结交",
+    "source_page": 26,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0371",
+    "korean": "사다",
+    "chinese": "购买",
+    "source_page": 26,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0372",
+    "korean": "사람",
+    "chinese": "人",
+    "source_page": 26,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0373",
+    "korean": "사람들",
+    "chinese": "人们",
+    "source_page": 26,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0374",
+    "korean": "사랑하다",
+    "chinese": "爱",
+    "source_page": 26,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0375",
+    "korean": "사무실",
+    "chinese": "办公室",
+    "source_page": 26,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0376",
+    "korean": "사이",
+    "chinese": "中间、间隔",
+    "source_page": 26,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0377",
+    "korean": "사장(님)",
+    "chinese": "社长，老板",
+    "source_page": 26,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0378",
+    "korean": "사전",
+    "chinese": "词典",
+    "source_page": 26,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0379",
+    "korean": "사진",
+    "chinese": "照片",
+    "source_page": 26,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0380",
+    "korean": "사회학과",
+    "chinese": "社会学科",
+    "source_page": 26,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0381",
+    "korean": "산",
+    "chinese": "山",
+    "source_page": 26,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0382",
+    "korean": "산책",
+    "chinese": "散步",
+    "source_page": 26,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0383",
+    "korean": "삼",
+    "chinese": "三",
+    "source_page": 26,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0384",
+    "korean": "삼계탕",
+    "chinese": "参鸡汤",
+    "source_page": 26,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0385",
+    "korean": "상품",
+    "chinese": "商品",
+    "source_page": 27,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0386",
+    "korean": "새",
+    "chinese": "新",
+    "source_page": 27,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0387",
+    "korean": "새롭다",
+    "chinese": "新颖",
+    "source_page": 27,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0388",
+    "korean": "새해",
+    "chinese": "新年",
+    "source_page": 27,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0389",
+    "korean": "색",
+    "chinese": "颜色",
+    "source_page": 27,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0390",
+    "korean": "색깔",
+    "chinese": "色彩",
+    "source_page": 27,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0391",
+    "korean": "생각",
+    "chinese": "想法",
+    "source_page": 27,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0392",
+    "korean": "생기다",
+    "chinese": "产生",
+    "source_page": 27,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0393",
+    "korean": "생선",
+    "chinese": "海鲜，新鲜的鱼",
+    "source_page": 27,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0394",
+    "korean": "생일",
+    "chinese": "生日",
+    "source_page": 27,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0395",
+    "korean": "생일 초대 메모",
+    "chinese": "生日邀请便笺",
+    "source_page": 27,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0396",
+    "korean": "생활",
+    "chinese": "生活",
+    "source_page": 27,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0397",
+    "korean": "서리",
+    "chinese": "霜，",
+    "source_page": 27,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0398",
+    "korean": "서부",
+    "chinese": "西部",
+    "source_page": 27,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0399",
+    "korean": "서울",
+    "chinese": "首尔",
+    "source_page": 27,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0400",
+    "korean": "서점",
+    "chinese": "书店",
+    "source_page": 28,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0401",
+    "korean": "선물",
+    "chinese": "礼物",
+    "source_page": 28,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0402",
+    "korean": "선배",
+    "chinese": "前辈",
+    "source_page": 28,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0403",
+    "korean": "선생님",
+    "chinese": "老师",
+    "source_page": 28,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0404",
+    "korean": "선풍기",
+    "chinese": "电风扇",
+    "source_page": 28,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0405",
+    "korean": "설거지",
+    "chinese": "洗碗, 指饭后收拾饭桌",
+    "source_page": 28,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0406",
+    "korean": "설날",
+    "chinese": "新年，元旦",
+    "source_page": 28,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0407",
+    "korean": "설렁탕",
+    "chinese": "杂烩汤，牛杂汤",
+    "source_page": 28,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0408",
+    "korean": "설악산",
+    "chinese": "雪岳山(韩国名山)，在江原道，是金刚山的延续。海拔1708米，主峰白青峰。",
+    "source_page": 28,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0409",
+    "korean": "설탕",
+    "chinese": "白糖",
+    "source_page": 28,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0410",
+    "korean": "성격",
+    "chinese": "性格",
+    "source_page": 28,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0411",
+    "korean": "성인",
+    "chinese": "成年人",
+    "source_page": 28,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0412",
+    "korean": "세",
+    "chinese": "三(用于量词前), 岁(年龄)",
+    "source_page": 28,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0413",
+    "korean": "세상",
+    "chinese": "世界, 天下",
+    "source_page": 28,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0414",
+    "korean": "세우다",
+    "chinese": "建立",
+    "source_page": 29,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0415",
+    "korean": "세탁",
+    "chinese": "洗涤",
+    "source_page": 29,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0416",
+    "korean": "소개",
+    "chinese": "介绍",
+    "source_page": 29,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0417",
+    "korean": "소금",
+    "chinese": "盐",
+    "source_page": 29,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0418",
+    "korean": "소설책",
+    "chinese": "小说(指书, 不指小说本身)",
+    "source_page": 29,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0419",
+    "korean": "소식",
+    "chinese": "消息",
+    "source_page": 29,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0420",
+    "korean": "소포",
+    "chinese": "包裹",
+    "source_page": 29,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0421",
+    "korean": "소풍",
+    "chinese": "兜风，散步",
+    "source_page": 29,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0422",
+    "korean": "손님",
+    "chinese": "客人",
+    "source_page": 29,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0423",
+    "korean": "손자",
+    "chinese": "孙子",
+    "source_page": 29,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0424",
+    "korean": "솜씨",
+    "chinese": "才艺, 能力",
+    "source_page": 29,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0425",
+    "korean": "쇼핑",
+    "chinese": "购物",
+    "source_page": 29,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0426",
+    "korean": "수량",
+    "chinese": "数量",
+    "source_page": 29,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0427",
+    "korean": "수업",
+    "chinese": "上课",
+    "source_page": 29,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0428",
+    "korean": "수영",
+    "chinese": "游泳",
+    "source_page": 29,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0429",
+    "korean": "수요일",
+    "chinese": "星期三",
+    "source_page": 30,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0430",
+    "korean": "수집",
+    "chinese": "收集, 收藏",
+    "source_page": 30,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0431",
+    "korean": "수첩",
+    "chinese": "手册",
+    "source_page": 30,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0432",
+    "korean": "숙이다",
+    "chinese": "(把头)低下",
+    "source_page": 30,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0433",
+    "korean": "숟가락",
+    "chinese": "勺子",
+    "source_page": 30,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0434",
+    "korean": "술",
+    "chinese": "酒",
+    "source_page": 30,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0435",
+    "korean": "쉬다",
+    "chinese": "休息",
+    "source_page": 30,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0436",
+    "korean": "쉬워요",
+    "chinese": "容易",
+    "source_page": 30,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0437",
+    "korean": "슈퍼마켓",
+    "chinese": "超市",
+    "source_page": 30,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0438",
+    "korean": "스물세 살",
+    "chinese": "23岁",
+    "source_page": 30,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0439",
+    "korean": "스키장",
+    "chinese": "滑雪场",
+    "source_page": 30,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0440",
+    "korean": "스트레스",
+    "chinese": "(工作或生活带来的精神上的)压力",
+    "source_page": 30,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0441",
+    "korean": "스포츠 용품",
+    "chinese": "体育用品",
+    "source_page": 30,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0442",
+    "korean": "슬프다",
+    "chinese": "悲伤、悲哀、悲痛",
+    "source_page": 30,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0443",
+    "korean": "슬픈 영화",
+    "chinese": "悲伤的电影",
+    "source_page": 30,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0444",
+    "korean": "시간",
+    "chinese": "时间",
+    "source_page": 31,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0445",
+    "korean": "시계",
+    "chinese": "表",
+    "source_page": 31,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0446",
+    "korean": "시골",
+    "chinese": "乡下, 农村",
+    "source_page": 31,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0447",
+    "korean": "시끄럽다",
+    "chinese": "吵闹的",
+    "source_page": 31,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0448",
+    "korean": "시내",
+    "chinese": "市内(繁华地段)",
+    "source_page": 31,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0449",
+    "korean": "시원하다",
+    "chinese": "凉爽",
+    "source_page": 31,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0450",
+    "korean": "시작",
+    "chinese": "开始",
+    "source_page": 31,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0451",
+    "korean": "시장",
+    "chinese": "市场, 市长",
+    "source_page": 31,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0452",
+    "korean": "시청",
+    "chinese": "市政府",
+    "source_page": 31,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0453",
+    "korean": "시험",
+    "chinese": "考试",
+    "source_page": 31,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0454",
+    "korean": "식당",
+    "chinese": "食堂、餐厅",
+    "source_page": 31,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0455",
+    "korean": "식물",
+    "chinese": "植物",
+    "source_page": 31,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0456",
+    "korean": "식사",
+    "chinese": "吃饭",
+    "source_page": 31,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0457",
+    "korean": "식탁",
+    "chinese": "餐桌",
+    "source_page": 31,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0458",
+    "korean": "신다",
+    "chinese": "穿(鞋)",
+    "source_page": 31,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0459",
+    "korean": "신문",
+    "chinese": "报纸",
+    "source_page": 32,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0460",
+    "korean": "신발",
+    "chinese": "鞋",
+    "source_page": 32,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0461",
+    "korean": "실례",
+    "chinese": "失礼",
+    "source_page": 32,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0462",
+    "korean": "실수",
+    "chinese": "失误",
+    "source_page": 32,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0463",
+    "korean": "싫어하다",
+    "chinese": "不喜欢",
+    "source_page": 32,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0464",
+    "korean": "심심하다",
+    "chinese": "无聊",
+    "source_page": 32,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0465",
+    "korean": "싱거워요",
+    "chinese": "淡(与咸对应)，(人的行为)浅薄唐突",
+    "source_page": 32,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0466",
+    "korean": "싸다",
+    "chinese": "便宜",
+    "source_page": 32,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0467",
+    "korean": "쓰다",
+    "chinese": "写",
+    "source_page": 32,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0468",
+    "korean": "쓸쓸하다",
+    "chinese": "孤独的，凄凉的",
+    "source_page": 32,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0469",
+    "korean": "아까",
+    "chinese": "刚才",
+    "source_page": 32,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0470",
+    "korean": "아내",
+    "chinese": "妻子",
+    "source_page": 32,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0471",
+    "korean": "아니다",
+    "chinese": "不是",
+    "source_page": 32,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0472",
+    "korean": "아동복",
+    "chinese": "童装",
+    "source_page": 32,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0473",
+    "korean": "아들",
+    "chinese": "儿子",
+    "source_page": 32,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0474",
+    "korean": "아래",
+    "chinese": "下面",
+    "source_page": 33,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0475",
+    "korean": "아르바이트",
+    "chinese": "兼职打工",
+    "source_page": 33,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0476",
+    "korean": "아름다운 추억",
+    "chinese": "美丽的回忆",
+    "source_page": 33,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0477",
+    "korean": "아름답다",
+    "chinese": "美丽",
+    "source_page": 33,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0478",
+    "korean": "아리랑",
+    "chinese": "阿里郎(著名民谣)，有些人说阿里郎之语源是为\"我离郎\"，也有人说这是座山的名字，但并未被证实。",
+    "source_page": 33,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0479",
+    "korean": "아마",
+    "chinese": "可能",
+    "source_page": 33,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0480",
+    "korean": "아버지",
+    "chinese": "爸爸",
+    "source_page": 33,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0481",
+    "korean": "아이",
+    "chinese": "孩子",
+    "source_page": 33,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0482",
+    "korean": "아이스크림",
+    "chinese": "冰淇淋",
+    "source_page": 33,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0483",
+    "korean": "아저씨",
+    "chinese": "大叔",
+    "source_page": 33,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0484",
+    "korean": "아주",
+    "chinese": "非常",
+    "source_page": 33,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0485",
+    "korean": "아주머니",
+    "chinese": "大妈",
+    "source_page": 33,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0486",
+    "korean": "아첨",
+    "chinese": "阿谀奉承、拍马屁",
+    "source_page": 33,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0487",
+    "korean": "아침",
+    "chinese": "早晨",
+    "source_page": 33,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0488",
+    "korean": "아파트",
+    "chinese": "小区，公寓",
+    "source_page": 34,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0489",
+    "korean": "아프다",
+    "chinese": "疼",
+    "source_page": 34,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0490",
+    "korean": "안",
+    "chinese": "内",
+    "source_page": 34,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0491",
+    "korean": "안개",
+    "chinese": "雾",
+    "source_page": 34,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0492",
+    "korean": "안경",
+    "chinese": "眼镜",
+    "source_page": 34,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0493",
+    "korean": "안내",
+    "chinese": "带路、引导、向导、介绍、指南、服务、查询、陪同",
+    "source_page": 34,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0494",
+    "korean": "안내대",
+    "chinese": "接待部",
+    "source_page": 34,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0495",
+    "korean": "안녕히",
+    "chinese": "再见",
+    "source_page": 34,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0496",
+    "korean": "안녕히 계세요",
+    "chinese": "再见(客人对主人说的)",
+    "source_page": 34,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0497",
+    "korean": "앉아요",
+    "chinese": "坐吧",
+    "source_page": 34,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0498",
+    "korean": "알아요",
+    "chinese": "知道了",
+    "source_page": 34,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0499",
+    "korean": "앞",
+    "chinese": "前",
+    "source_page": 34,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0500",
+    "korean": "앞으로",
+    "chinese": "往后,从今往后",
+    "source_page": 34,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0501",
+    "korean": "야외",
+    "chinese": "野外",
+    "source_page": 34,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0502",
+    "korean": "야자",
+    "chinese": "椰子",
+    "source_page": 34,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0503",
+    "korean": "약",
+    "chinese": "药",
+    "source_page": 35,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0504",
+    "korean": "약간",
+    "chinese": "稍微",
+    "source_page": 35,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0505",
+    "korean": "약국",
+    "chinese": "药店",
+    "source_page": 35,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0506",
+    "korean": "약사",
+    "chinese": "药剂师",
+    "source_page": 35,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0507",
+    "korean": "약속",
+    "chinese": "约定, 约会",
+    "source_page": 35,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0508",
+    "korean": "약하게",
+    "chinese": "轻轻地",
+    "source_page": 35,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0509",
+    "korean": "양말",
+    "chinese": "袜子",
+    "source_page": 35,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0510",
+    "korean": "양식당",
+    "chinese": "西餐厅",
+    "source_page": 35,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0511",
+    "korean": "얘기",
+    "chinese": "聊天, 故事",
+    "source_page": 35,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0512",
+    "korean": "어느 나라",
+    "chinese": "哪个国家",
+    "source_page": 35,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0513",
+    "korean": "어둡다",
+    "chinese": "昏暗",
+    "source_page": 35,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0514",
+    "korean": "어디",
+    "chinese": "哪儿",
+    "source_page": 35,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0515",
+    "korean": "어떻게",
+    "chinese": "怎么",
+    "source_page": 35,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0516",
+    "korean": "어렵다",
+    "chinese": "困难",
+    "source_page": 35,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0517",
+    "korean": "어른",
+    "chinese": "大人",
+    "source_page": 35,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0518",
+    "korean": "어리다",
+    "chinese": "年纪小, 不成熟",
+    "source_page": 36,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0519",
+    "korean": "어린이날",
+    "chinese": "儿童节",
+    "source_page": 36,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0520",
+    "korean": "어머니",
+    "chinese": "妈妈",
+    "source_page": 36,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0521",
+    "korean": "어제",
+    "chinese": "昨天",
+    "source_page": 36,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0522",
+    "korean": "언니",
+    "chinese": "姐姐(女性称呼女性)",
+    "source_page": 36,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0523",
+    "korean": "언제",
+    "chinese": "什么时候",
+    "source_page": 36,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0524",
+    "korean": "언제나",
+    "chinese": "总是, 习惯性地(always)",
+    "source_page": 36,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0525",
+    "korean": "얹어요",
+    "chinese": "放上去吧",
+    "source_page": 36,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0526",
+    "korean": "얼굴",
+    "chinese": "脸",
+    "source_page": 36,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0527",
+    "korean": "얼마",
+    "chinese": "多少、若干",
+    "source_page": 36,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0528",
+    "korean": "엄마",
+    "chinese": "妈妈",
+    "source_page": 36,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0529",
+    "korean": "없다",
+    "chinese": "没有",
+    "source_page": 36,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0530",
+    "korean": "에어컨",
+    "chinese": "空调",
+    "source_page": 36,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0531",
+    "korean": "엘리베이터",
+    "chinese": "电梯",
+    "source_page": 36,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0532",
+    "korean": "여",
+    "chinese": "女",
+    "source_page": 36,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0533",
+    "korean": "여기",
+    "chinese": "这里",
+    "source_page": 37,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0534",
+    "korean": "여덟",
+    "chinese": "八",
+    "source_page": 37,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0535",
+    "korean": "여동생",
+    "chinese": "妹妹",
+    "source_page": 37,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0536",
+    "korean": "여러 가지",
+    "chinese": "各种各样",
+    "source_page": 37,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0537",
+    "korean": "여러분",
+    "chinese": "各位",
+    "source_page": 37,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0538",
+    "korean": "여름",
+    "chinese": "夏天",
+    "source_page": 37,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0539",
+    "korean": "여보세요.",
+    "chinese": "喂-(打电话时用做\"你好\")",
+    "source_page": 37,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0540",
+    "korean": "여섯",
+    "chinese": "六",
+    "source_page": 37,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0541",
+    "korean": "여성복",
+    "chinese": "女装",
+    "source_page": 37,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0542",
+    "korean": "여우",
+    "chinese": "狐狸",
+    "source_page": 37,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0543",
+    "korean": "여유",
+    "chinese": "闲暇",
+    "source_page": 37,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0544",
+    "korean": "여자",
+    "chinese": "女子",
+    "source_page": 37,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0545",
+    "korean": "여자 친구",
+    "chinese": "女朋友",
+    "source_page": 37,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0546",
+    "korean": "여행",
+    "chinese": "旅行",
+    "source_page": 37,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0547",
+    "korean": "역사",
+    "chinese": "历史",
+    "source_page": 37,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0548",
+    "korean": "연락",
+    "chinese": "联络",
+    "source_page": 38,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0549",
+    "korean": "연락처",
+    "chinese": "联络处",
+    "source_page": 38,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0550",
+    "korean": "연필",
+    "chinese": "铅笔",
+    "source_page": 38,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0551",
+    "korean": "열다",
+    "chinese": "打开",
+    "source_page": 38,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0552",
+    "korean": "열람실",
+    "chinese": "阅览室",
+    "source_page": 38,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0553",
+    "korean": "열심히",
+    "chinese": "认真地",
+    "source_page": 38,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0554",
+    "korean": "열차",
+    "chinese": "列车",
+    "source_page": 38,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0555",
+    "korean": "엽서",
+    "chinese": "明信片",
+    "source_page": 38,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0556",
+    "korean": "영국",
+    "chinese": "英国",
+    "source_page": 38,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0557",
+    "korean": "영상",
+    "chinese": "零上",
+    "source_page": 38,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0558",
+    "korean": "영어",
+    "chinese": "英语",
+    "source_page": 38,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0559",
+    "korean": "영업",
+    "chinese": "营业，销售",
+    "source_page": 38,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0560",
+    "korean": "영화",
+    "chinese": "电影",
+    "source_page": 38,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0561",
+    "korean": "옆",
+    "chinese": "旁边",
+    "source_page": 38,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0562",
+    "korean": "예금",
+    "chinese": "订金, 预存款",
+    "source_page": 38,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0563",
+    "korean": "예매",
+    "chinese": "预售",
+    "source_page": 39,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0564",
+    "korean": "예쁘다",
+    "chinese": "漂亮",
+    "source_page": 39,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0565",
+    "korean": "예술",
+    "chinese": "艺术",
+    "source_page": 39,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0566",
+    "korean": "예습",
+    "chinese": "预习",
+    "source_page": 39,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0567",
+    "korean": "예약",
+    "chinese": "预约",
+    "source_page": 39,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0568",
+    "korean": "옛날",
+    "chinese": "很久以前",
+    "source_page": 39,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0569",
+    "korean": "오늘",
+    "chinese": "今天",
+    "source_page": 39,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0570",
+    "korean": "오래",
+    "chinese": "久地",
+    "source_page": 39,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0571",
+    "korean": "오랜만",
+    "chinese": "隔很长时间",
+    "source_page": 39,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0572",
+    "korean": "오른쪽",
+    "chinese": "右边",
+    "source_page": 39,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0573",
+    "korean": "오리",
+    "chinese": "鸭子",
+    "source_page": 39,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0574",
+    "korean": "오빠",
+    "chinese": "哥哥(女性称呼男性)",
+    "source_page": 39,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0575",
+    "korean": "오세요",
+    "chinese": "来吧",
+    "source_page": 39,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0576",
+    "korean": "오이",
+    "chinese": "黄瓜",
+    "source_page": 39,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0577",
+    "korean": "오전",
+    "chinese": "上午",
+    "source_page": 39,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0578",
+    "korean": "오후",
+    "chinese": "下午",
+    "source_page": 40,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0579",
+    "korean": "올라가다",
+    "chinese": "上去",
+    "source_page": 40,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0580",
+    "korean": "올림픽 경기장",
+    "chinese": "奥运竞技场",
+    "source_page": 40,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0581",
+    "korean": "올해",
+    "chinese": "今年",
+    "source_page": 40,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0582",
+    "korean": "옷",
+    "chinese": "衣服",
+    "source_page": 40,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0583",
+    "korean": "왜",
+    "chinese": "为什么",
+    "source_page": 40,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0584",
+    "korean": "왜냐하면",
+    "chinese": "之所以",
+    "source_page": 40,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0585",
+    "korean": "외국",
+    "chinese": "外国",
+    "source_page": 40,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0586",
+    "korean": "외출",
+    "chinese": "外出",
+    "source_page": 40,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0587",
+    "korean": "외할머니",
+    "chinese": "外婆",
+    "source_page": 40,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0588",
+    "korean": "왼쪽",
+    "chinese": "左边",
+    "source_page": 40,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0589",
+    "korean": "요금",
+    "chinese": "费用",
+    "source_page": 40,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0590",
+    "korean": "요리",
+    "chinese": "料理",
+    "source_page": 40,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0591",
+    "korean": "요리사",
+    "chinese": "厨师",
+    "source_page": 40,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0592",
+    "korean": "요일",
+    "chinese": "星期",
+    "source_page": 40,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0593",
+    "korean": "요즘",
+    "chinese": "最近",
+    "source_page": 41,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0594",
+    "korean": "우리",
+    "chinese": "我们",
+    "source_page": 41,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0595",
+    "korean": "우산",
+    "chinese": "雨伞",
+    "source_page": 41,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0596",
+    "korean": "우유",
+    "chinese": "牛奶",
+    "source_page": 41,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0597",
+    "korean": "우체국",
+    "chinese": "邮局",
+    "source_page": 41,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0598",
+    "korean": "우표",
+    "chinese": "邮票",
+    "source_page": 41,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0599",
+    "korean": "운동",
+    "chinese": "运动",
+    "source_page": 41,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0600",
+    "korean": "운임",
+    "chinese": "运输",
+    "source_page": 41,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0601",
+    "korean": "운전",
+    "chinese": "驾驶",
+    "source_page": 41,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0602",
+    "korean": "운항",
+    "chinese": "来自\"运航\"",
+    "source_page": 41,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0603",
+    "korean": "웃다",
+    "chinese": "笑",
+    "source_page": 41,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0604",
+    "korean": "월급",
+    "chinese": "月薪",
+    "source_page": 41,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0605",
+    "korean": "월요일",
+    "chinese": "星期一",
+    "source_page": 41,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0606",
+    "korean": "위",
+    "chinese": "上面",
+    "source_page": 41,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0607",
+    "korean": "위치",
+    "chinese": "位置",
+    "source_page": 41,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0608",
+    "korean": "위험",
+    "chinese": "危险",
+    "source_page": 42,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0609",
+    "korean": "유명하다",
+    "chinese": "著名的",
+    "source_page": 42,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0610",
+    "korean": "유월",
+    "chinese": "六月",
+    "source_page": 42,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0611",
+    "korean": "유지",
+    "chinese": "维持",
+    "source_page": 42,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0612",
+    "korean": "유학",
+    "chinese": "留学",
+    "source_page": 42,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0613",
+    "korean": "은행",
+    "chinese": "银行",
+    "source_page": 42,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0614",
+    "korean": "음료수",
+    "chinese": "饮料",
+    "source_page": 42,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0615",
+    "korean": "음식",
+    "chinese": "食物",
+    "source_page": 42,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0616",
+    "korean": "음악",
+    "chinese": "音乐",
+    "source_page": 42,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0617",
+    "korean": "의사",
+    "chinese": "医生",
+    "source_page": 42,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0618",
+    "korean": "의자",
+    "chinese": "椅子",
+    "source_page": 42,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0619",
+    "korean": "이것",
+    "chinese": "这个",
+    "source_page": 42,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0620",
+    "korean": "이것저것",
+    "chinese": "这个那个",
+    "source_page": 42,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0621",
+    "korean": "이따가",
+    "chinese": "过一会儿、以后",
+    "source_page": 42,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0622",
+    "korean": "이름",
+    "chinese": "姓名",
+    "source_page": 42,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0623",
+    "korean": "이메일",
+    "chinese": "电子邮件，E-mail",
+    "source_page": 43,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0624",
+    "korean": "이모",
+    "chinese": "姨妈",
+    "source_page": 43,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0625",
+    "korean": "이모부",
+    "chinese": "姨夫",
+    "source_page": 43,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0626",
+    "korean": "이번",
+    "chinese": "这次",
+    "source_page": 43,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0627",
+    "korean": "이사",
+    "chinese": "搬家",
+    "source_page": 43,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0628",
+    "korean": "이상",
+    "chinese": "以上",
+    "source_page": 43,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0629",
+    "korean": "이야기",
+    "chinese": "故事",
+    "source_page": 43,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0630",
+    "korean": "이용",
+    "chinese": "利用",
+    "source_page": 43,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0631",
+    "korean": "이웃",
+    "chinese": "邻居",
+    "source_page": 43,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0632",
+    "korean": "이유",
+    "chinese": "理由",
+    "source_page": 43,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0633",
+    "korean": "이인분",
+    "chinese": "两份",
+    "source_page": 43,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0634",
+    "korean": "이자",
+    "chinese": "利息",
+    "source_page": 43,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0635",
+    "korean": "이전",
+    "chinese": "以前",
+    "source_page": 43,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0636",
+    "korean": "이제부터",
+    "chinese": "从今开始",
+    "source_page": 43,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0637",
+    "korean": "이틀",
+    "chinese": "两天",
+    "source_page": 43,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0638",
+    "korean": "이해",
+    "chinese": "理解",
+    "source_page": 44,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0639",
+    "korean": "인기",
+    "chinese": "人气",
+    "source_page": 44,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0640",
+    "korean": "인사",
+    "chinese": "问候",
+    "source_page": 44,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0641",
+    "korean": "인삼",
+    "chinese": "人参",
+    "source_page": 44,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0642",
+    "korean": "인천",
+    "chinese": "仁川(地名)",
+    "source_page": 44,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0643",
+    "korean": "인터넷",
+    "chinese": "因特网",
+    "source_page": 44,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0644",
+    "korean": "인형",
+    "chinese": "洋娃娃, 玩偶",
+    "source_page": 44,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0645",
+    "korean": "일",
+    "chinese": "事情",
+    "source_page": 44,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0646",
+    "korean": "일곱",
+    "chinese": "七",
+    "source_page": 44,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0647",
+    "korean": "일기예보",
+    "chinese": "天气预报",
+    "source_page": 44,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0648",
+    "korean": "일본",
+    "chinese": "日本",
+    "source_page": 44,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0649",
+    "korean": "일요일",
+    "chinese": "星期日",
+    "source_page": 44,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0650",
+    "korean": "일주일",
+    "chinese": "一周",
+    "source_page": 44,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0651",
+    "korean": "일찍",
+    "chinese": "早地",
+    "source_page": 44,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0652",
+    "korean": "읽다",
+    "chinese": "阅读(书或报纸等)",
+    "source_page": 44,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0653",
+    "korean": "잃어버리다",
+    "chinese": "丢失",
+    "source_page": 45,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0654",
+    "korean": "입원",
+    "chinese": "住院",
+    "source_page": 45,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0655",
+    "korean": "입장료",
+    "chinese": "入场费，门票",
+    "source_page": 45,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0656",
+    "korean": "자기",
+    "chinese": "自己",
+    "source_page": 45,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0657",
+    "korean": "자다",
+    "chinese": "睡觉",
+    "source_page": 45,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0658",
+    "korean": "자동차",
+    "chinese": "汽车",
+    "source_page": 45,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0659",
+    "korean": "자료",
+    "chinese": "资料",
+    "source_page": 45,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0660",
+    "korean": "자리",
+    "chinese": "座位, 位置",
+    "source_page": 45,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0661",
+    "korean": "자전거",
+    "chinese": "自行车",
+    "source_page": 45,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0662",
+    "korean": "자주",
+    "chinese": "经常",
+    "source_page": 45,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0663",
+    "korean": "작년",
+    "chinese": "去年",
+    "source_page": 45,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0664",
+    "korean": "작다",
+    "chinese": "小",
+    "source_page": 45,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0665",
+    "korean": "작품",
+    "chinese": "作品",
+    "source_page": 45,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0666",
+    "korean": "잘못했어요",
+    "chinese": "(我)错了",
+    "source_page": 45,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0667",
+    "korean": "잘했습니다",
+    "chinese": "做得好",
+    "source_page": 45,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0668",
+    "korean": "잠",
+    "chinese": "觉(sleep)",
+    "source_page": 46,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0669",
+    "korean": "잠깐만",
+    "chinese": "片刻",
+    "source_page": 46,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0670",
+    "korean": "잡수다",
+    "chinese": "吃(敬语)",
+    "source_page": 46,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0671",
+    "korean": "잡지",
+    "chinese": "杂志",
+    "source_page": 46,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0672",
+    "korean": "장갑",
+    "chinese": "手套",
+    "source_page": 46,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0673",
+    "korean": "장마철",
+    "chinese": "雨季",
+    "source_page": 46,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0674",
+    "korean": "장미꽃",
+    "chinese": "玫瑰",
+    "source_page": 46,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0675",
+    "korean": "장소",
+    "chinese": "场所",
+    "source_page": 46,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0676",
+    "korean": "재미있다",
+    "chinese": "有趣、有意思",
+    "source_page": 46,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0677",
+    "korean": "저",
+    "chinese": "我",
+    "source_page": 46,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0678",
+    "korean": "저녁",
+    "chinese": "晚上",
+    "source_page": 46,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0679",
+    "korean": "저희",
+    "chinese": "我们",
+    "source_page": 46,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0680",
+    "korean": "적다",
+    "chinese": "少",
+    "source_page": 46,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0681",
+    "korean": "전공",
+    "chinese": "(大学)专业",
+    "source_page": 46,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0682",
+    "korean": "전기 요금 청구서",
+    "chinese": "电费通知单",
+    "source_page": 46,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0683",
+    "korean": "전자 사전",
+    "chinese": "电子词典",
+    "source_page": 47,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0684",
+    "korean": "전통 놀이",
+    "chinese": "传统游戏",
+    "source_page": 47,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0685",
+    "korean": "전화",
+    "chinese": "电话",
+    "source_page": 47,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0686",
+    "korean": "전화기",
+    "chinese": "电话机",
+    "source_page": 47,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0687",
+    "korean": "전화번호",
+    "chinese": "电话号码",
+    "source_page": 47,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0688",
+    "korean": "전후",
+    "chinese": "前后",
+    "source_page": 47,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0689",
+    "korean": "점심",
+    "chinese": "中午",
+    "source_page": 47,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0690",
+    "korean": "젓가락",
+    "chinese": "筷子",
+    "source_page": 47,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0691",
+    "korean": "정보",
+    "chinese": "信息, 情报",
+    "source_page": 47,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0692",
+    "korean": "정식",
+    "chinese": "正餐",
+    "source_page": 47,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0693",
+    "korean": "제일",
+    "chinese": "最..., 第一",
+    "source_page": 47,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0694",
+    "korean": "제주도",
+    "chinese": "济州岛",
+    "source_page": 47,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0695",
+    "korean": "조심",
+    "chinese": "小心",
+    "source_page": 47,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0696",
+    "korean": "조용하다",
+    "chinese": "安静",
+    "source_page": 47,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0697",
+    "korean": "조카",
+    "chinese": "侄子",
+    "source_page": 47,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0698",
+    "korean": "졸업",
+    "chinese": "毕业",
+    "source_page": 48,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0699",
+    "korean": "좀",
+    "chinese": "稍微",
+    "source_page": 48,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0700",
+    "korean": "좁다",
+    "chinese": "窄",
+    "source_page": 48,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0701",
+    "korean": "종로",
+    "chinese": "钟路",
+    "source_page": 48,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0702",
+    "korean": "좋다",
+    "chinese": "好",
+    "source_page": 48,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0703",
+    "korean": "좌석",
+    "chinese": "座位",
+    "source_page": 48,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0704",
+    "korean": "죄송합니다",
+    "chinese": "对不起",
+    "source_page": 48,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0705",
+    "korean": "주",
+    "chinese": "周(一周)",
+    "source_page": 48,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0706",
+    "korean": "주로",
+    "chinese": "主要",
+    "source_page": 48,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0707",
+    "korean": "주문",
+    "chinese": "订阅, 预订",
+    "source_page": 48,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0708",
+    "korean": "주소",
+    "chinese": "地址",
+    "source_page": 48,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0709",
+    "korean": "주스",
+    "chinese": "果汁",
+    "source_page": 48,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0710",
+    "korean": "주식회사",
+    "chinese": "股份公司",
+    "source_page": 48,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0711",
+    "korean": "주유소",
+    "chinese": "加油站",
+    "source_page": 48,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0712",
+    "korean": "주의 사항",
+    "chinese": "注意事项",
+    "source_page": 48,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0713",
+    "korean": "주인",
+    "chinese": "主人",
+    "source_page": 49,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0714",
+    "korean": "주차",
+    "chinese": "停车",
+    "source_page": 49,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0715",
+    "korean": "준비",
+    "chinese": "准备",
+    "source_page": 49,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0716",
+    "korean": "중국",
+    "chinese": "中国",
+    "source_page": 49,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0717",
+    "korean": "중심 내용",
+    "chinese": "中心内容",
+    "source_page": 49,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0718",
+    "korean": "중요하다",
+    "chinese": "重要",
+    "source_page": 49,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0719",
+    "korean": "줬어요",
+    "chinese": "给过了(过去式)",
+    "source_page": 49,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0720",
+    "korean": "즐겁다",
+    "chinese": "愉快",
+    "source_page": 49,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0721",
+    "korean": "지각",
+    "chinese": "迟到",
+    "source_page": 49,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0722",
+    "korean": "지갑",
+    "chinese": "钱包",
+    "source_page": 49,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0723",
+    "korean": "지금",
+    "chinese": "现在",
+    "source_page": 49,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0724",
+    "korean": "지난해",
+    "chinese": "去年",
+    "source_page": 49,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0725",
+    "korean": "지도",
+    "chinese": "地图",
+    "source_page": 49,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0726",
+    "korean": "지하철",
+    "chinese": "地铁",
+    "source_page": 49,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0727",
+    "korean": "직업",
+    "chinese": "职业",
+    "source_page": 49,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0728",
+    "korean": "직장",
+    "chinese": "职场",
+    "source_page": 50,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0729",
+    "korean": "직장인",
+    "chinese": "上班族",
+    "source_page": 50,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0730",
+    "korean": "진심",
+    "chinese": "真心",
+    "source_page": 50,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0731",
+    "korean": "질문",
+    "chinese": "提问, 质问",
+    "source_page": 50,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0732",
+    "korean": "짐",
+    "chinese": "行李",
+    "source_page": 50,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0733",
+    "korean": "집",
+    "chinese": "家",
+    "source_page": 50,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0734",
+    "korean": "집안일",
+    "chinese": "家务事",
+    "source_page": 50,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0735",
+    "korean": "짜다",
+    "chinese": "咸",
+    "source_page": 50,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0736",
+    "korean": "짧다",
+    "chinese": "短",
+    "source_page": 50,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0737",
+    "korean": "찍다",
+    "chinese": "拍(照), (用刀或斧子)砍",
+    "source_page": 50,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0738",
+    "korean": "차",
+    "chinese": "车, 茶",
+    "source_page": 50,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0739",
+    "korean": "차다",
+    "chinese": "凉",
+    "source_page": 50,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0740",
+    "korean": "참",
+    "chinese": "真是地",
+    "source_page": 50,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0741",
+    "korean": "참가비",
+    "chinese": "参加费",
+    "source_page": 50,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0742",
+    "korean": "창문",
+    "chinese": "窗户",
+    "source_page": 50,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0743",
+    "korean": "찾다",
+    "chinese": "寻找",
+    "source_page": 51,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0744",
+    "korean": "책",
+    "chinese": "书",
+    "source_page": 51,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0745",
+    "korean": "처음",
+    "chinese": "初次, 第一次",
+    "source_page": 51,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0746",
+    "korean": "천",
+    "chinese": "千(数量词)",
+    "source_page": 51,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0747",
+    "korean": "천원",
+    "chinese": "(一)千元",
+    "source_page": 51,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0748",
+    "korean": "천천히",
+    "chinese": "慢慢地",
+    "source_page": 51,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0749",
+    "korean": "첫째",
+    "chinese": "第一",
+    "source_page": 51,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0750",
+    "korean": "청소",
+    "chinese": "打扫",
+    "source_page": 51,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0751",
+    "korean": "초대",
+    "chinese": "招待",
+    "source_page": 51,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0752",
+    "korean": "초록 버스",
+    "chinese": "绿色公交车",
+    "source_page": 51,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0753",
+    "korean": "최저",
+    "chinese": "最低",
+    "source_page": 51,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0754",
+    "korean": "축구",
+    "chinese": "足球",
+    "source_page": 51,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0755",
+    "korean": "축제",
+    "chinese": "庆祝仪式",
+    "source_page": 51,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0756",
+    "korean": "축하",
+    "chinese": "祝贺",
+    "source_page": 51,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0757",
+    "korean": "춘천역",
+    "chinese": "春川站，春川是一个地名",
+    "source_page": 51,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0758",
+    "korean": "출근",
+    "chinese": "上班",
+    "source_page": 52,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0759",
+    "korean": "출발",
+    "chinese": "出发",
+    "source_page": 52,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0760",
+    "korean": "출장",
+    "chinese": "出差",
+    "source_page": 52,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0761",
+    "korean": "춤",
+    "chinese": "舞蹈",
+    "source_page": 52,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0762",
+    "korean": "취미",
+    "chinese": "兴趣",
+    "source_page": 52,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0763",
+    "korean": "취소",
+    "chinese": "取消",
+    "source_page": 52,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0764",
+    "korean": "취직",
+    "chinese": "就业",
+    "source_page": 52,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0765",
+    "korean": "층",
+    "chinese": "层",
+    "source_page": 52,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0766",
+    "korean": "치마",
+    "chinese": "裙子",
+    "source_page": 52,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0767",
+    "korean": "친구",
+    "chinese": "朋友",
+    "source_page": 52,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0768",
+    "korean": "친절하다",
+    "chinese": "和蔼的，亲切的",
+    "source_page": 52,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0769",
+    "korean": "친척",
+    "chinese": "亲戚",
+    "source_page": 52,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0770",
+    "korean": "친하다",
+    "chinese": "亲密的",
+    "source_page": 52,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0771",
+    "korean": "칠판",
+    "chinese": "黑板",
+    "source_page": 52,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0772",
+    "korean": "침대",
+    "chinese": "床",
+    "source_page": 52,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0773",
+    "korean": "칫솔",
+    "chinese": "牙刷",
+    "source_page": 53,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0774",
+    "korean": "카드",
+    "chinese": "卡片",
+    "source_page": 53,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0775",
+    "korean": "카메라",
+    "chinese": "照相机，摄影机",
+    "source_page": 53,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0776",
+    "korean": "캐나다",
+    "chinese": "加拿大",
+    "source_page": 53,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0777",
+    "korean": "캠프",
+    "chinese": "野炊",
+    "source_page": 53,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0778",
+    "korean": "커요",
+    "chinese": "大",
+    "source_page": 53,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0779",
+    "korean": "커피",
+    "chinese": "咖啡",
+    "source_page": 53,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0780",
+    "korean": "컴퓨터",
+    "chinese": "电脑",
+    "source_page": 53,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0781",
+    "korean": "컵",
+    "chinese": "杯子",
+    "source_page": 53,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0782",
+    "korean": "케이크",
+    "chinese": "蛋糕",
+    "source_page": 53,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0783",
+    "korean": "켜다",
+    "chinese": "开, 启动",
+    "source_page": 53,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0784",
+    "korean": "코트",
+    "chinese": "外套",
+    "source_page": 53,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0785",
+    "korean": "콜라",
+    "chinese": "可乐",
+    "source_page": 53,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0786",
+    "korean": "콧물",
+    "chinese": "鼻涕",
+    "source_page": 53,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0787",
+    "korean": "크다",
+    "chinese": "大",
+    "source_page": 53,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0788",
+    "korean": "키",
+    "chinese": "身高，钥匙",
+    "source_page": 54,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0789",
+    "korean": "킬로그램",
+    "chinese": "公斤",
+    "source_page": 54,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0790",
+    "korean": "타워",
+    "chinese": "塔",
+    "source_page": 54,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0791",
+    "korean": "탁자",
+    "chinese": "桌子",
+    "source_page": 54,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0792",
+    "korean": "탈",
+    "chinese": "面具",
+    "source_page": 54,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0793",
+    "korean": "태권도",
+    "chinese": "跆拳道",
+    "source_page": 54,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0794",
+    "korean": "택시",
+    "chinese": "出租车",
+    "source_page": 54,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0795",
+    "korean": "터미널",
+    "chinese": "始发站",
+    "source_page": 54,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0796",
+    "korean": "털",
+    "chinese": "毛",
+    "source_page": 54,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0797",
+    "korean": "테니스",
+    "chinese": "网球",
+    "source_page": 54,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0798",
+    "korean": "토요일",
+    "chinese": "星期六",
+    "source_page": 54,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0799",
+    "korean": "통화 중",
+    "chinese": "通话中、占线",
+    "source_page": 54,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0800",
+    "korean": "퇴원",
+    "chinese": "出院",
+    "source_page": 54,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0801",
+    "korean": "특별히",
+    "chinese": "特别地",
+    "source_page": 54,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0802",
+    "korean": "티셔츠",
+    "chinese": "T恤",
+    "source_page": 54,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0803",
+    "korean": "파란색",
+    "chinese": "蓝色",
+    "source_page": 55,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0804",
+    "korean": "파랑 버스",
+    "chinese": "蓝色公交车",
+    "source_page": 55,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0805",
+    "korean": "파랗다",
+    "chinese": "蓝的",
+    "source_page": 55,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0806",
+    "korean": "파티",
+    "chinese": "聚会",
+    "source_page": 55,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0807",
+    "korean": "판매",
+    "chinese": "销售",
+    "source_page": 55,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0808",
+    "korean": "팔",
+    "chinese": "胳膊, 八(数字)",
+    "source_page": 55,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0809",
+    "korean": "팔 년 전",
+    "chinese": "八年前",
+    "source_page": 55,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0810",
+    "korean": "팔다",
+    "chinese": "卖",
+    "source_page": 55,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0811",
+    "korean": "편리하다",
+    "chinese": "方便",
+    "source_page": 55,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0812",
+    "korean": "편안",
+    "chinese": "舒服",
+    "source_page": 55,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0813",
+    "korean": "편지",
+    "chinese": "信件",
+    "source_page": 55,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0814",
+    "korean": "포도",
+    "chinese": "葡萄",
+    "source_page": 55,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0815",
+    "korean": "표",
+    "chinese": "票，各种票据",
+    "source_page": 55,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0816",
+    "korean": "푹",
+    "chinese": "充分地",
+    "source_page": 55,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0817",
+    "korean": "풀",
+    "chinese": "草",
+    "source_page": 55,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0818",
+    "korean": "프랑스",
+    "chinese": "法国",
+    "source_page": 56,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0819",
+    "korean": "프로그램",
+    "chinese": "电脑程序",
+    "source_page": 56,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0820",
+    "korean": "피곤",
+    "chinese": "疲劳，疲倦",
+    "source_page": 56,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0821",
+    "korean": "피아노",
+    "chinese": "钢琴",
+    "source_page": 56,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0822",
+    "korean": "필요",
+    "chinese": "必要",
+    "source_page": 56,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0823",
+    "korean": "하늘",
+    "chinese": "天空",
+    "source_page": 56,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0824",
+    "korean": "하루",
+    "chinese": "一天",
+    "source_page": 56,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0825",
+    "korean": "하세요",
+    "chinese": "请做",
+    "source_page": 56,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0826",
+    "korean": "하숙집",
+    "chinese": "租房(租赁的房子)",
+    "source_page": 56,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0827",
+    "korean": "하지만",
+    "chinese": "可是",
+    "source_page": 56,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0828",
+    "korean": "학교",
+    "chinese": "学校",
+    "source_page": 56,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0829",
+    "korean": "학생",
+    "chinese": "学生",
+    "source_page": 56,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0830",
+    "korean": "한강 공원",
+    "chinese": "汉江公园",
+    "source_page": 56,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0831",
+    "korean": "한국",
+    "chinese": "韩国",
+    "source_page": 56,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0832",
+    "korean": "한라산",
+    "chinese": "韩拿山(也叫汉孥山)，在济州岛中部",
+    "source_page": 56,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0833",
+    "korean": "한복",
+    "chinese": "韩服",
+    "source_page": 57,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0834",
+    "korean": "한식당",
+    "chinese": "韩食馆",
+    "source_page": 57,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0835",
+    "korean": "한식집",
+    "chinese": "韩餐馆",
+    "source_page": 57,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0836",
+    "korean": "할머니",
+    "chinese": "奶奶",
+    "source_page": 57,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0837",
+    "korean": "할인",
+    "chinese": "折扣",
+    "source_page": 57,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0838",
+    "korean": "함께",
+    "chinese": "一起",
+    "source_page": 57,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0839",
+    "korean": "항상",
+    "chinese": "向来, 常常",
+    "source_page": 57,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0840",
+    "korean": "햄버거",
+    "chinese": "汉堡包",
+    "source_page": 57,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0841",
+    "korean": "행복",
+    "chinese": "幸福",
+    "source_page": 57,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0842",
+    "korean": "행사",
+    "chinese": "活动，一般指公开的活动",
+    "source_page": 57,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0843",
+    "korean": "형제",
+    "chinese": "兄弟姐妹",
+    "source_page": 57,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0844",
+    "korean": "호수",
+    "chinese": "湖",
+    "source_page": 57,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0845",
+    "korean": "호주",
+    "chinese": "澳洲",
+    "source_page": 57,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0846",
+    "korean": "호텔",
+    "chinese": "宾馆",
+    "source_page": 57,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0847",
+    "korean": "혼자",
+    "chinese": "单独地、独自地",
+    "source_page": 57,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0848",
+    "korean": "홍콩",
+    "chinese": "香港",
+    "source_page": 58,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0849",
+    "korean": "화장실",
+    "chinese": "洗手间, 厕所",
+    "source_page": 58,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0850",
+    "korean": "화장품",
+    "chinese": "化妆品",
+    "source_page": 58,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0851",
+    "korean": "환자",
+    "chinese": "患者",
+    "source_page": 58,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0852",
+    "korean": "회관",
+    "chinese": "会馆",
+    "source_page": 58,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0853",
+    "korean": "회사",
+    "chinese": "公司",
+    "source_page": 58,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0854",
+    "korean": "회사원",
+    "chinese": "公司职员",
+    "source_page": 58,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0855",
+    "korean": "회원",
+    "chinese": "会员",
+    "source_page": 58,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0856",
+    "korean": "회의",
+    "chinese": "会议",
+    "source_page": 58,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0857",
+    "korean": "후식",
+    "chinese": "甜点",
+    "source_page": 58,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0858",
+    "korean": "훨씬",
+    "chinese": "(程度)更",
+    "source_page": 58,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0859",
+    "korean": "휴가",
+    "chinese": "休假",
+    "source_page": 58,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0860",
+    "korean": "휴대전화",
+    "chinese": "手机",
+    "source_page": 58,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0861",
+    "korean": "휴일",
+    "chinese": "休息日",
+    "source_page": 58,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0862",
+    "korean": "휴지",
+    "chinese": "废纸",
+    "source_page": 58,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0863",
+    "korean": "흐렸다",
+    "chinese": "(天气)阴, (水质)浑浊",
+    "source_page": 59,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0864",
+    "korean": "희망",
+    "chinese": "希望",
+    "source_page": 59,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0865",
+    "korean": "흰색",
+    "chinese": "白色",
+    "source_page": 59,
+    "source_book": "TOPIK 1 初级词汇"
+  },
+  {
+    "id": "topik1-0866",
+    "korean": "힘",
+    "chinese": "力气, 力量",
+    "source_page": 59,
+    "source_book": "TOPIK 1 初级词汇"
+  }
+]
