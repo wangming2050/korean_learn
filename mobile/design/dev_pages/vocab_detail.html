@@ -1,0 +1,490 @@
+<meta charset="utf-8">
+
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;user-select:none;}
+body{font-family:-apple-system,'PingFang SC','Noto Sans SC',sans-serif;}
+
+.outer{
+  display:flex;gap:20px;align-items:flex-start;justify-content:center;
+  padding:16px 8px;
+}
+
+.phone{
+  width:320px;height:680px;
+  background:#F2FAF6;
+  border-radius:40px;
+  border:1.5px solid #C8E8D8;
+  overflow:hidden;
+  position:relative;
+  flex-shrink:0;
+}
+
+.screen{
+  width:100%;height:100%;
+  position:relative;overflow:hidden;
+}
+
+.page{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;
+  transition:transform 0.32s cubic-bezier(.4,0,.2,1),opacity 0.28s;
+}
+
+.page.vocab-page{ background:#F2FAF6; }
+.page.sent-page{ background:#F2FAF6; }
+
+.page.slide-left{ transform:translateX(-100%); }
+.page.slide-right{ transform:translateX(100%); }
+.page.slide-up{ transform:translateY(-60px);opacity:0; }
+.page.slide-down{ transform:translateY(60px);opacity:0; }
+
+.topbar{
+  height:52px;padding:0 20px;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-shrink:0;
+}
+.tb-back{
+  width:32px;height:32px;border-radius:10px;
+  background:rgba(255,255,255,0.7);border:1px solid #C8E8D8;
+  display:flex;align-items:center;justify-content:center;cursor:pointer;
+}
+.tb-counter{
+  font-size:14px;font-weight:600;color:#0F6E56;
+  background:rgba(255,255,255,0.7);border:1px solid #C8E8D8;
+  padding:5px 14px;border-radius:20px;
+}
+.tb-action{
+  width:32px;height:32px;border-radius:10px;
+  background:rgba(255,255,255,0.7);border:1px solid #C8E8D8;
+  display:flex;align-items:center;justify-content:center;cursor:pointer;
+}
+
+.content-area{
+  flex:1;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  padding:0 28px 16px;
+  cursor:pointer;
+}
+
+.source-tag{
+  font-size:12px;color:#0F6E56;
+  background:#E1F5EE;border:1px solid #9FE1CB;
+  padding:4px 12px;border-radius:20px;
+  margin-bottom:28px;
+}
+
+.word-kr{
+  font-size:64px;font-weight:700;color:#0A3D2B;
+  font-family:'Apple SD Gothic Neo','Noto Sans KR','Malgun Gothic',sans-serif;
+  line-height:1;text-align:center;margin-bottom:16px;
+  letter-spacing:-2px;
+}
+
+.word-zh{
+  font-size:22px;font-weight:600;color:#1A2C24;
+  text-align:center;margin-bottom:6px;
+}
+.word-roman{
+  font-size:14px;color:#5A8A72;text-align:center;
+  margin-bottom:28px;letter-spacing:0.3px;
+}
+
+.wave-area{
+  width:100%;display:flex;align-items:center;justify-content:center;
+  gap:3px;height:44px;margin-bottom:10px;
+}
+.wave-bar{
+  width:3px;border-radius:2px;background:#9FE1CB;
+  transition:height 0.3s;
+}
+.wave-bar.played{background:#1D9E75;}
+
+.wave-hint{font-size:11px;color:#90A89C;text-align:center;margin-bottom:0;}
+
+.bottom-actions{
+  height:76px;padding:0 20px 16px;
+  display:flex;align-items:center;gap:8px;
+  flex-shrink:0;
+}
+.act-btn{
+  flex:1;height:44px;border-radius:13px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:600;cursor:pointer;
+  border:1px solid #C8E8D8;
+  background:rgba(255,255,255,0.7);
+  color:#0F6E56;
+  transition:all 0.15s;
+}
+.act-btn.primary{
+  background:#1D9E75;color:#fff;border-color:#1D9E75;flex:1.2;
+  gap:6px;
+}
+.act-btn:active{transform:scale(0.97);}
+
+.sent-kr{
+  font-size:26px;font-weight:700;color:#0A3D2B;
+  font-family:'Apple SD Gothic Neo','Noto Sans KR','Malgun Gothic',sans-serif;
+  line-height:1.4;text-align:center;margin-bottom:16px;
+  letter-spacing:-0.5px;
+}
+.sent-zh{
+  font-size:16px;color:#3A6654;text-align:center;
+  line-height:1.6;margin-bottom:28px;
+}
+
+.gesture-hint{
+  position:absolute;bottom:88px;left:50%;transform:translateX(-50%);
+  background:#0A3D2B;color:#fff;
+  font-size:12px;padding:8px 18px;border-radius:20px;
+  white-space:nowrap;opacity:0;
+  transition:opacity 0.3s;pointer-events:none;
+}
+.gesture-hint.show{opacity:1;}
+
+.nav-dots{
+  position:absolute;right:14px;top:50%;transform:translateY(-50%);
+  display:flex;flex-direction:column;gap:5px;align-items:center;
+}
+.dot{
+  width:4px;border-radius:2px;background:#C8E8D8;transition:all 0.2s;
+}
+.dot.active{height:14px;background:#1D9E75;}
+.dot:not(.active){height:4px;}
+
+.swipe-guide{
+  width:180px;
+  display:flex;flex-direction:column;gap:14px;
+  padding-top:20px;
+}
+.guide-item{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 12px;border-radius:12px;
+  background:rgba(255,255,255,0.6);border:1px solid #D9EFDF;
+}
+.guide-icon{
+  width:32px;height:32px;border-radius:9px;
+  background:#E1F5EE;display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;color:#0F6E56;font-size:16px;
+}
+.guide-text{font-size:12px;color:#3A6654;line-height:1.4;}
+.guide-text strong{font-weight:600;color:#0F6E56;display:block;margin-bottom:1px;font-size:13px;}
+
+.page-label{
+  position:absolute;top:14px;left:50%;transform:translateX(-50%);
+  font-size:10px;color:#90A89C;letter-spacing:0.5px;
+  white-space:nowrap;
+}
+</style>
+
+<div class="outer">
+  <div class="phone" id="phone">
+    <div class="screen" id="screen">
+
+      <div class="page vocab-page" id="vocabPage">
+        <div class="topbar">
+          <div class="tb-back" onclick="goBack()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+          </div>
+          <div class="tb-counter" id="vocabCounter">64 / 898</div>
+          <div class="tb-action" id="starBtn" onclick="toggleStar()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="2" stroke-linecap="round" id="starIcon"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+        </div>
+
+        <div class="content-area" onclick="replayAudio()" id="vocabContent">
+          <div class="source-tag" id="vocabSource">延世韩国语 1 · p.5</div>
+          <div class="word-kr" id="wordKr">학교</div>
+          <div class="word-zh" id="wordZh">学校</div>
+          <div class="word-roman" id="wordRoman">hak-gyo</div>
+
+          <div class="wave-area" id="vocabWave"></div>
+          <div class="wave-hint">进入自动播放 · 点击任意位置重播</div>
+        </div>
+
+        <div class="nav-dots" id="vocabDots"></div>
+
+        <div class="bottom-actions">
+          <div class="act-btn" onclick="markLater()">稍后复习</div>
+          <div class="act-btn primary" onclick="startReading()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg>
+            开始跟读
+          </div>
+          <div class="act-btn" onclick="markKnown()">认识了</div>
+        </div>
+
+        <div class="gesture-hint" id="vocabHint"></div>
+      </div>
+
+      <div class="page sent-page slide-right" id="sentPage">
+        <div class="topbar">
+          <div class="tb-back" onclick="backToVocab()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+          </div>
+          <div class="tb-counter" id="sentCounter">例句 1 / 6</div>
+          <div class="tb-action">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+        </div>
+
+        <div class="content-area" onclick="replayAudio()">
+          <div class="source-tag" id="sentTag">关联词：학교</div>
+          <div class="sent-kr" id="sentKr">저는 학교에 가요.</div>
+          <div class="sent-zh" id="sentZh">我去学校。</div>
+
+          <div class="wave-area" id="sentWave"></div>
+          <div class="wave-hint">进入自动播放 · 点击任意位置重播</div>
+        </div>
+
+        <div class="nav-dots" id="sentDots"></div>
+
+        <div class="bottom-actions">
+          <div class="act-btn primary" onclick="startReading()" style="flex:1;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg>
+            开始跟读
+          </div>
+        </div>
+
+        <div class="gesture-hint" id="sentHint"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="swipe-guide">
+    <div style="font-size:11px;color:#90A89C;font-weight:600;letter-spacing:0.5px;padding-left:2px;">手势说明</div>
+    <div class="guide-item" onclick="swipeLeft()" style="cursor:pointer;">
+      <div class="guide-icon">←</div>
+      <div class="guide-text"><strong>左滑</strong>查看关联例句</div>
+    </div>
+    <div class="guide-item" onclick="swipeRight()" style="cursor:pointer;">
+      <div class="guide-icon">→</div>
+      <div class="guide-text"><strong>右滑</strong>返回词汇页</div>
+    </div>
+    <div class="guide-item" onclick="swipeUp()" style="cursor:pointer;">
+      <div class="guide-icon">↑</div>
+      <div class="guide-text"><strong>上滑</strong>下一个词/例句</div>
+    </div>
+    <div class="guide-item" onclick="swipeDown()" style="cursor:pointer;">
+      <div class="guide-icon">↓</div>
+      <div class="guide-text"><strong>下滑</strong>上一个词/例句</div>
+    </div>
+    <div style="font-size:11px;color:#B0C8BC;text-align:center;line-height:1.5;padding-top:4px;">点击右侧按钮<br>或直接在手机上滑动</div>
+  </div>
+</div>
+
+<script>
+const words = [
+  { kr:'학교', zh:'学校', roman:'hak-gyo', source:'延世韩国语 1 · p.5', idx:64,
+    sents:[
+      { kr:'저는 학교에 가요.', zh:'我去学校。' },
+      { kr:'학교가 어디에 있어요?', zh:'学校在哪里？' },
+      { kr:'학교에서 공부해요.', zh:'在学校学习。' },
+      { kr:'우리 학교는 커요.', zh:'我们的学校很大。' },
+      { kr:'학교 생활이 즐거워요.', zh:'学校生活很愉快。' },
+      { kr:'학교 앞에서 만나요.', zh:'在学校前面见面吧。' },
+    ]
+  },
+  { kr:'선생님', zh:'老师', roman:'seon-saeng-nim', source:'延世韩国语 1 · p.8', idx:65,
+    sents:[
+      { kr:'선생님, 안녕하세요.', zh:'老师，您好。' },
+      { kr:'선생님이 친절해요.', zh:'老师很亲切。' },
+      { kr:'선생님께 질문해요.', zh:'向老师提问。' },
+    ]
+  },
+  { kr:'친구', zh:'朋友', roman:'chin-gu', source:'延世韩国语 1 · p.12', idx:66,
+    sents:[
+      { kr:'친구를 만나요.', zh:'见朋友。' },
+      { kr:'친구가 많아요.', zh:'朋友很多。' },
+      { kr:'친구와 같이 가요.', zh:'和朋友一起去。' },
+      { kr:'친구한테 전화해요.', zh:'给朋友打电话。' },
+    ]
+  },
+  { kr:'공부', zh:'学习/用功', roman:'gong-bu', source:'延世韩国语 1 · p.15', idx:67,
+    sents:[
+      { kr:'한국어를 공부해요.', zh:'学习韩语。' },
+      { kr:'열심히 공부해요.', zh:'努力学习。' },
+      { kr:'공부가 재미있어요.', zh:'学习很有趣。' },
+    ]
+  },
+];
+
+let wIdx = 0;
+let sIdx = 0;
+let onVocab = true;
+let starred = false;
+let animating = false;
+
+function buildWave(el, count, playedFrac) {
+  el.innerHTML = '';
+  const heights = [];
+  for (let i=0;i<count;i++) heights.push(8 + Math.abs(Math.sin(i*0.5+wIdx*1.3+sIdx*0.7))*26);
+  const played = Math.floor(count * playedFrac);
+  heights.forEach((h,i)=>{
+    const b = document.createElement('div');
+    b.className = 'wave-bar' + (i<played?' played':'');
+    b.style.height = h+'px';
+    el.appendChild(b);
+  });
+}
+
+function buildDots(el, total, active) {
+  el.innerHTML = '';
+  const show = Math.min(total, 5);
+  for (let i=0;i<show;i++) {
+    const d = document.createElement('div');
+    d.className = 'dot' + (i===Math.min(active,show-1)?' active':'');
+    el.appendChild(d);
+  }
+}
+
+function renderVocab() {
+  const w = words[wIdx];
+  document.getElementById('wordKr').textContent = w.kr;
+  document.getElementById('wordZh').textContent = w.zh;
+  document.getElementById('wordRoman').textContent = w.roman;
+  document.getElementById('vocabSource').textContent = w.source;
+  document.getElementById('vocabCounter').textContent = w.idx + ' / 898';
+  buildWave(document.getElementById('vocabWave'), 38, 0.45);
+  buildDots(document.getElementById('vocabDots'), words.length, wIdx);
+}
+
+function renderSent() {
+  const w = words[wIdx];
+  const s = w.sents[sIdx];
+  document.getElementById('sentTag').textContent = '关联词：' + w.kr;
+  document.getElementById('sentKr').textContent = s.kr;
+  document.getElementById('sentZh').textContent = s.zh;
+  document.getElementById('sentCounter').textContent = '例句 ' + (sIdx+1) + ' / ' + w.sents.length;
+  buildWave(document.getElementById('sentWave'), 38, 0.3);
+  buildDots(document.getElementById('sentDots'), w.sents.length, sIdx);
+}
+
+function showHint(elId, text) {
+  const el = document.getElementById(elId);
+  el.textContent = text;
+  el.classList.add('show');
+  setTimeout(()=>el.classList.remove('show'), 1800);
+}
+
+function animateSwitch(direction, after) {
+  if (animating) return;
+  animating = true;
+  const vp = document.getElementById('vocabPage');
+  const sp = document.getElementById('sentPage');
+  if (direction === 'left') {
+    vp.style.transition = 'transform 0.3s cubic-bezier(.4,0,.2,1)';
+    sp.style.transition = 'transform 0.3s cubic-bezier(.4,0,.2,1)';
+    vp.style.transform = 'translateX(-100%)';
+    sp.style.transform = 'translateX(0)';
+  } else if (direction === 'right') {
+    vp.style.transition = 'transform 0.3s cubic-bezier(.4,0,.2,1)';
+    sp.style.transition = 'transform 0.3s cubic-bezier(.4,0,.2,1)';
+    vp.style.transform = 'translateX(0)';
+    sp.style.transform = 'translateX(100%)';
+  } else if (direction === 'up' || direction === 'down') {
+    const page = onVocab ? vp : sp;
+    const ty = direction === 'up' ? '-50px' : '50px';
+    page.style.transition = 'transform 0.18s ease-in, opacity 0.18s';
+    page.style.transform = 'translateY('+ty+')';
+    page.style.opacity = '0';
+    setTimeout(()=>{
+      after && after();
+      page.style.transition = 'none';
+      page.style.transform = 'translateY('+(direction==='up'?'50px':'-50px')+')';
+      setTimeout(()=>{
+        page.style.transition = 'transform 0.2s ease-out, opacity 0.2s';
+        page.style.transform = 'translateY(0)';
+        page.style.opacity = '1';
+        setTimeout(()=>animating=false, 220);
+      }, 30);
+    }, 190);
+    return;
+  }
+  setTimeout(()=>{
+    after && after();
+    animating = false;
+  }, 320);
+}
+
+function swipeLeft() {
+  if (!onVocab) { showHint('sentHint','已在例句页'); return; }
+  sIdx = 0;
+  renderSent();
+  animateSwitch('left', ()=>{ onVocab = false; });
+}
+
+function swipeRight() {
+  if (onVocab) { showHint('vocabHint','已在词汇页'); return; }
+  animateSwitch('right', ()=>{ onVocab = true; });
+}
+
+function backToVocab() { swipeRight(); }
+function goBack() { showHint(onVocab?'vocabHint':'sentHint','返回词汇列表'); }
+
+function swipeUp() {
+  if (onVocab) {
+    if (wIdx < words.length-1) {
+      animateSwitch('up', ()=>{ wIdx++; renderVocab(); });
+    } else {
+      showHint('vocabHint','已是最后一个词');
+      animating = false;
+    }
+  } else {
+    const w = words[wIdx];
+    if (sIdx < w.sents.length-1) {
+      animateSwitch('up', ()=>{ sIdx++; renderSent(); });
+    } else {
+      showHint('sentHint','已是最后一句');
+      animating = false;
+    }
+  }
+}
+
+function swipeDown() {
+  if (onVocab) {
+    if (wIdx > 0) {
+      animateSwitch('down', ()=>{ wIdx--; renderVocab(); });
+    } else {
+      showHint('vocabHint','已是第一个词');
+      animating = false;
+    }
+  } else {
+    if (sIdx > 0) {
+      animateSwitch('down', ()=>{ sIdx--; renderSent(); });
+    } else {
+      showHint('sentHint','已是第一句');
+      animating = false;
+    }
+  }
+}
+
+function toggleStar() {
+  starred = !starred;
+  const icon = document.getElementById('starIcon');
+  icon.setAttribute('fill', starred ? '#1D9E75' : 'none');
+}
+function markLater() { showHint('vocabHint','已加入复习队列'); }
+function markKnown() {
+  showHint('vocabHint','已标记为认识');
+  setTimeout(()=>swipeUp(), 600);
+}
+function startReading() { showHint(onVocab?'vocabHint':'sentHint','开始跟读...'); }
+function replayAudio() {}
+
+let touchStartX=0, touchStartY=0;
+const screen = document.getElementById('screen');
+screen.addEventListener('touchstart', e=>{ touchStartX=e.touches[0].clientX; touchStartY=e.touches[0].clientY; }, {passive:true});
+screen.addEventListener('touchend', e=>{
+  const dx = e.changedTouches[0].clientX - touchStartX;
+  const dy = e.changedTouches[0].clientY - touchStartY;
+  if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+    dx < 0 ? swipeLeft() : swipeRight();
+  } else if (Math.abs(dy) > Math.abs(dx) && Math.abs(dy) > 40) {
+    dy < 0 ? swipeUp() : swipeDown();
+  }
+}, {passive:true});
+
+renderVocab();
+</script>
+

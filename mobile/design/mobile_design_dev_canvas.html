@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>移动端设计稿无限画布</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    :root {
+      --s: 0.72;
+      --phone-s: 0.84375; /* 0.72 * 375 / 320 */
+      --canvas-gap: 34px;
+    }
+
+    html {
+      min-width: max-content;
+      background:
+        linear-gradient(rgba(24, 139, 96, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(24, 139, 96, 0.035) 1px, transparent 1px),
+        #eef6f1;
+      background-size: 32px 32px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      width: max-content;
+      min-width: 100vw;
+      min-height: 100vh;
+      overflow: visible;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", sans-serif;
+      color: #17392e;
+    }
+
+    .canvas {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--canvas-gap);
+      width: max-content;
+      padding: 22px 30px 34px;
+      overflow: visible;
+    }
+
+    .artboard {
+      flex: 0 0 auto;
+      overflow: visible;
+      scroll-margin-left: 30px;
+    }
+
+    .artboard-title {
+      height: 24px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      font-size: 16px;
+      line-height: 1;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .artboard-title span {
+      color: #16865f;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+    }
+
+    .frame-box {
+      position: relative;
+      overflow: hidden;
+    }
+
+    iframe {
+      position: absolute;
+      display: block;
+      border: 0;
+      background: transparent;
+      transform-origin: top left;
+    }
+
+    /* 375 x 812 pages that already draw the phone at the document origin. */
+    .frame-shell-plain {
+      width: calc(375px * var(--s));
+      height: calc(812px * var(--s));
+      border-radius: calc(44px * var(--s));
+    }
+
+    .frame-shell-plain iframe {
+      left: 0;
+      top: 0;
+      width: 375px;
+      height: 812px;
+      transform: scale(var(--s));
+    }
+
+    /*
+      Some standalone drafts include a preview-only page padding
+      around the phone. Crop that padding so the canvas shows the
+      actual mobile screen, not the gray browser-preview backdrop.
+    */
+    .frame-shell-padded {
+      width: calc(375px * var(--s));
+      height: calc(812px * var(--s));
+      border-radius: calc(44px * var(--s));
+    }
+
+    .frame-shell-padded iframe {
+      left: calc(-12px * var(--s));
+      top: calc(-20px * var(--s));
+      width: 399px;
+      height: 852px;
+      transform: scale(var(--s));
+    }
+
+    /* 320 x 680 pages are normalized to the same 375-wide visual scale. */
+    .frame-phone {
+      width: calc(320px * var(--phone-s));
+      height: calc(680px * var(--phone-s));
+      border-radius: calc(40px * var(--phone-s));
+    }
+
+    .frame-phone iframe {
+      left: calc(-8px * var(--phone-s));
+      top: calc(-16px * var(--phone-s));
+      width: 336px;
+      height: 712px;
+      transform: scale(var(--phone-s));
+    }
+
+    .frame-phone-guide-phonetic {
+      width: calc(495px * var(--phone-s));
+      height: calc(680px * var(--phone-s));
+      border-radius: 0;
+    }
+
+    .frame-phone-guide-phonetic iframe {
+      left: calc(-8px * var(--phone-s));
+      top: calc(-16px * var(--phone-s));
+      width: 511px;
+      height: 712px;
+      transform: scale(var(--phone-s));
+    }
+
+    .frame-phone-guide-vocab {
+      width: calc(520px * var(--phone-s));
+      height: calc(680px * var(--phone-s));
+      border-radius: 0;
+    }
+
+    .frame-phone-guide-vocab iframe {
+      left: calc(-8px * var(--phone-s));
+      top: calc(-16px * var(--phone-s));
+      width: 536px;
+      height: 712px;
+      transform: scale(var(--phone-s));
+    }
+  </style>
+</head>
+<body>
+  <main class="canvas" aria-label="移动端设计稿无限画布">
+    <section class="artboard" id="phonetic-home">
+      <div class="artboard-title"><span>01</span>音标首页</div>
+      <div class="frame-box frame-shell-padded">
+        <iframe title="音标首页" src="dev_pages/phonetic_home.html" scrolling="no"></iframe>
+      </div>
+    </section>
+
+    <section class="artboard" id="phonetic-overview">
+      <div class="artboard-title"><span>02</span>音标总表</div>
+      <div class="frame-box frame-phone">
+        <iframe title="音标总表" src="dev_pages/phonetic_overview.html" scrolling="no"></iframe>
+      </div>
+    </section>
+
+    <section class="artboard" id="phonetic-detail">
+      <div class="artboard-title"><span>03</span>音标详情</div>
+      <div class="frame-box frame-phone-guide-phonetic">
+        <iframe title="音标详情" src="dev_pages/phonetic_detail.html" scrolling="no"></iframe>
+      </div>
+    </section>
+
+    <section class="artboard" id="vocab-home">
+      <div class="artboard-title"><span>04</span>词汇首页</div>
+      <div class="frame-box frame-shell-plain">
+        <iframe title="词汇首页" src="dev_pages/vocab_home.html" scrolling="no"></iframe>
+      </div>
+    </section>
+
+    <section class="artboard" id="vocab-library">
+      <div class="artboard-title"><span>05</span>词汇库</div>
+      <div class="frame-box frame-shell-padded">
+        <iframe title="词汇库" src="dev_pages/vocab_library.html" scrolling="no"></iframe>
+      </div>
+    </section>
+
+    <section class="artboard" id="vocab-detail">
+      <div class="artboard-title"><span>06</span>词汇详情</div>
+      <div class="frame-box frame-phone-guide-vocab">
+        <iframe title="词汇详情" src="dev_pages/vocab_detail.html" scrolling="no"></iframe>
+      </div>
+    </section>
+
+    <section class="artboard" id="textbook-home">
+      <div class="artboard-title"><span>07</span>教材库</div>
+      <div class="frame-box frame-shell-plain">
+        <iframe title="教材库" src="dev_pages/textbook_home.html" scrolling="no"></iframe>
+      </div>
+    </section>
+
+    <section class="artboard" id="textbook-detail">
+      <div class="artboard-title"><span>08</span>教材详情</div>
+      <div class="frame-box frame-shell-plain">
+        <iframe title="教材详情" src="dev_pages/textbook_detail.html" scrolling="no"></iframe>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

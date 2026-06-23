@@ -1,5 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
-import { Audio } from "expo-av";
+import { createAudioPlayer, setAudioModeAsync } from "expo-audio";
 import * as DocumentPicker from "expo-document-picker";
 import * as Speech from "expo-speech";
 import { StatusBar } from "expo-status-bar";
@@ -20,12 +20,12 @@ import {
 import { SafeAreaProvider, SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 import { Chip } from "./src/components/Chip";
 import { SectionCard } from "./src/components/SectionCard";
-import { fetchWebLearningData, getFallbackLearningData, WebLearningData } from "./src/api/webData";
+import { fetchWebLearningData, getApiBaseUrl, getFallbackLearningData, WebLearningData } from "./src/api/webData";
 import { LetterExample, LetterItem, LearningTab } from "./src/data/learning";
 import { colors, radius, shadow, spacing } from "./src/theme/tokens";
 
 type RecordingState = {
-  recording: Audio.Recording | null;
+  recording: any | null;
   uri: string;
   activeSentenceId: string;
 };
@@ -47,11 +47,15 @@ type UploadedPdf = {
   uri: string;
 };
 
+type LetterCategory = "辅音" | "元音" | "收音" | "双元音";
+
+async function loadExpoAudio(): Promise<any | null> {
+  return null;
+}
+
 const tabs: Array<{ id: LearningTab; label: string; icon: keyof typeof Ionicons.glyphMap }> = [
-  { id: "today", label: "今日", icon: "sunny-outline" },
   { id: "letters", label: "音标", icon: "grid-outline" },
-  { id: "scenes", label: "练习", icon: "mic-outline" },
-  { id: "review", label: "复习", icon: "albums-outline" },
+  { id: "review", label: "词汇", icon: "chatbubble-ellipses-outline" },
   { id: "textbook", label: "教材", icon: "book-outline" }
 ];
 
@@ -61,9 +65,11 @@ export default function App() {
   const fallbackData = useMemo(() => getFallbackLearningData(), []);
   const [learningData, setLearningData] = useState<WebLearningData>(fallbackData);
   const [dataSource, setDataSource] = useState<"web" | "offline">("offline");
-  const [activeTab, setActiveTab] = useState<LearningTab>("today");
-  const [selectedLetter, setSelectedLetter] = useState<LetterItem | null>(null);
-  const [repeatCount, setRepeatCount] = useState(2);
+  const [activeTab, setActiveTab] = useState<LearningTab>("letters");
+  const [selectedLetter, setSelectedLetter] = useState<LetterItem | null>(
+    fallbackData.letterSections[0]?.groups[0]?.letters[0] || null
+  );
+  const [repeatCount, setRepeatCount] = useState(1);
   const [savedItems, setSavedItems] = useState<string[]>([]);
   const [selectedPageId, setSelectedPageId] = useState("");
   const [recordingState, setRecordingState] = useState<RecordingState>({
@@ -71,7 +77,8 @@ export default function App() {
     uri: "",
     activeSentenceId: ""
   });
-  const practiceSoundRef = useRef<Audio.Sound | null>(null);
+  const practiceSoundRef = useRef<any | null>(null);
+  const ttsRequestCacheRef = useRef<Map<string, Promise<string>>>(new Map());
 
   const selectedPage = useMemo(
     () => learningData.textbookPages.find((page) => page.id === selectedPageId) || learningData.textbookPages[0] || null,
@@ -97,7 +104,7 @@ export default function App() {
         }
         setLearningData(fallbackData);
         setDataSource("offline");
-        setSelectedLetter(null);
+        setSelectedLetter(fallbackData.letterSections[0]?.groups[0]?.letters[0] || null);
         setSelectedPageId("");
       });
 
@@ -113,7 +120,7 @@ export default function App() {
   };
 
   useEffect(() => () => {
-    practiceSoundRef.current?.unloadAsync();
+    practiceSoundRef.current?.remove?.();
   }, []);
 
   const speak = (text: string, rate = 0.78) => {
@@ -131,75 +138,148 @@ export default function App() {
     }
     try {
       Speech.stop();
-      await Audio.setAudioModeAsync({
-        allowsRecordingIOS: false,
-        playsInSilentModeIOS: true
+      await setAudioModeAsync({
+        allowsRecording: false,
+        playsInSilentMode: true
       });
-      await practiceSoundRef.current?.unloadAsync();
-      const { sound } = await Audio.Sound.createAsync({ uri: url }, { shouldPlay: true });
-      practiceSoundRef.current = sound;
-      await new Promise<void>((resolve) => {
-        sound.setOnPlaybackStatusUpdate((status) => {
-          if (status.isLoaded && status.didJustFinish) {
-            resolve();
+      practiceSoundRef.current?.remove?.();
+
+      const player = createAudioPlayer(url, { updateInterval: 120 });
+      practiceSoundRef.current = player;
+
+      const played = await new Promise<boolean>((resolve) => {
+        let settled = false;
+        const finish = (success: boolean) => {
+          if (settled) {
+            return;
+          }
+          settled = true;
+          subscription?.remove?.();
+          resolve(success);
+        };
+        const subscription = (player as any).addListener?.("playbackStatusUpdate", (status: any) => {
+          if (status?.didJustFinish) {
+            finish(true);
+          }
+          if (status?.error) {
+            finish(false);
           }
         });
+
+        player.play();
+        setTimeout(() => {
+          if (player.duration > 0 && player.currentTime >= player.duration) {
+            finish(true);
+          }
+        }, Math.max(1500, (player.duration || 0) * 1000 + 500));
+        setTimeout(() => finish(false), 20000);
       });
-      await sound.unloadAsync();
-      if (practiceSoundRef.current === sound) {
+
+      player.remove();
+      if (practiceSoundRef.current === player) {
         practiceSoundRef.current = null;
       }
-      return true;
+      return played;
     } catch {
       return false;
     }
   };
 
-  const playKoreanUnit = async (text: string, audioUrl = "", rate = 0.74) => {
-    if (audioUrl && await playAudioOnce(audioUrl)) {
-      await wait(420);
-      return;
+  const synthesizeKoreanSpeech = async (text: string, slow = false) => {
+    const normalizedText = String(text || "").trim();
+    if (!normalizedText) {
+      return "";
     }
+
+    const cacheKey = JSON.stringify({ text: normalizedText, slow });
+    if (!ttsRequestCacheRef.current.has(cacheKey)) {
+      ttsRequestCacheRef.current.set(cacheKey, (async () => {
+        const response = await fetch(`${getApiBaseUrl()}/api/tts/synthesize`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            text: normalizedText,
+            slow,
+            speakingRate: slow ? 0.75 : 1
+          })
+        });
+        const payload = await response.json();
+        if (!response.ok) {
+          throw new Error(payload.error || "TTS 生成失败");
+        }
+        const audioUrl = payload.audioUrl || "";
+        return audioUrl.startsWith("/") ? `${getApiBaseUrl()}${audioUrl}` : audioUrl;
+      })());
+    }
+
+    return ttsRequestCacheRef.current.get(cacheKey) || "";
+  };
+
+  const playTtsUnit = async (text: string, rate = 0.74, slow = false) => {
+    try {
+      const audioUrl = await synthesizeKoreanSpeech(text, slow);
+      if (audioUrl && await playAudioOnce(audioUrl)) {
+        await wait(420);
+        return;
+      }
+    } catch {
+      // Fall back to device speech below.
+    }
+
     speak(text, rate);
     await wait(Math.max(820, text.length * 180));
   };
 
+  const playLetterUnit = async (letter: LetterItem) => {
+    const text = letter.playbackText || letter.sound || letter.name || letter.letter;
+    if (letter.letterAudioUrl && await playAudioOnce(letter.letterAudioUrl)) {
+      await wait(420);
+      return;
+    }
+
+    await playTtsUnit(text, 0.72, false);
+  };
+
+  const playWordUnit = async (word: string) => {
+    await playTtsUnit(word, 0.74, false);
+  };
+
   const playLetterPractice = async (letter: LetterItem) => {
-    await practiceSoundRef.current?.unloadAsync();
+    practiceSoundRef.current?.remove?.();
     Speech.stop();
     for (let index = 0; index < repeatCount; index += 1) {
-      await playKoreanUnit(letter.playbackText || letter.sound || letter.name, letter.letterAudioUrl, 0.72);
-    }
-    for (const example of letter.examples) {
-      for (let index = 0; index < repeatCount; index += 1) {
-        await playKoreanUnit(example.word, example.audioUrl, 0.74);
-      }
-      await wait(360);
+      await playLetterUnit(letter);
     }
   };
 
   const playLetterExample = async (example: LetterExample) => {
-    await practiceSoundRef.current?.unloadAsync();
+    practiceSoundRef.current?.remove?.();
     Speech.stop();
     for (let index = 0; index < repeatCount; index += 1) {
-      await playKoreanUnit(example.word, example.audioUrl, 0.74);
+      await playWordUnit(example.word);
     }
   };
 
   const startRecording = async (sentenceId: string) => {
     try {
-      const permission = await Audio.requestPermissionsAsync();
+      const AudioModule = await loadExpoAudio();
+      if (!AudioModule) {
+        Alert.alert("录音暂不可用", "当前 Expo Go 没有加载音频原生模块，可以先查看页面内容。");
+        return;
+      }
+
+      const permission = await AudioModule.requestPermissionsAsync();
       if (!permission.granted) {
         Alert.alert("需要麦克风权限", "允许录音后才能进行跟读回放。");
         return;
       }
 
-      await Audio.setAudioModeAsync({
+      await AudioModule.setAudioModeAsync({
         allowsRecordingIOS: true,
         playsInSilentModeIOS: true
       });
-      const recording = new Audio.Recording();
-      await recording.prepareToRecordAsync(Audio.RecordingOptionsPresets.HIGH_QUALITY);
+      const recording = new AudioModule.Recording();
+      await recording.prepareToRecordAsync(AudioModule.RecordingOptionsPresets.HIGH_QUALITY);
       await recording.startAsync();
       setRecordingState({ recording, uri: "", activeSentenceId: sentenceId });
     } catch {
@@ -223,53 +303,39 @@ export default function App() {
       return;
     }
 
-    const { sound } = await Audio.Sound.createAsync({ uri: recordingState.uri });
+    const AudioModule = await loadExpoAudio();
+    if (!AudioModule) {
+      Alert.alert("回放暂不可用", "当前 Expo Go 没有加载音频原生模块。");
+      return;
+    }
+
+    const { sound } = await AudioModule.Sound.createAsync({ uri: recordingState.uri });
     await sound.playAsync();
   };
 
-  const content = (
+  const content = activeTab === "letters" ? (
+    <LettersScreen
+      letterSections={learningData.letterSections}
+      selectedLetter={selectedLetter}
+      repeatCount={repeatCount}
+      onRepeatChange={setRepeatCount}
+      onSelectLetter={setSelectedLetter}
+      onPlay={playLetterPractice}
+      onPlayExample={playLetterExample}
+      onSave={toggleSavedItem}
+      savedItems={savedItems}
+      isTablet={isTablet}
+    />
+  ) : (
     <ScrollView
       style={styles.contentScroll}
       contentContainerStyle={[styles.content, isTablet && styles.contentTablet]}
     >
-      {activeTab === "today" && (
-        <TodayScreen
-          isTablet={isTablet}
-          savedCount={savedItems.length}
-          dataSource={dataSource}
-          learningData={learningData}
-          onOpenTab={setActiveTab}
-        />
-      )}
-      {activeTab === "letters" && (
-        <LettersScreen
-          letterSections={learningData.letterSections}
-          selectedLetter={selectedLetter}
-          repeatCount={repeatCount}
-          onRepeatChange={setRepeatCount}
-          onSelectLetter={setSelectedLetter}
-          onPlay={playLetterPractice}
-          onPlayExample={playLetterExample}
-          onSave={toggleSavedItem}
-          savedItems={savedItems}
-          isTablet={isTablet}
-        />
-      )}
       {activeTab === "review" && (
         <ReviewScreen
           vocabularyItems={learningData.vocabularyItems}
           savedItems={savedItems}
           onSave={toggleSavedItem}
-        />
-      )}
-      {activeTab === "scenes" && (
-        <ScenesScreen
-          scenes={learningData.scenePractices}
-          recordingState={recordingState}
-          onSpeak={speak}
-          onStartRecording={startRecording}
-          onStopRecording={stopRecording}
-          onPlayRecording={playRecording}
         />
       )}
       {activeTab === "textbook" && (
@@ -307,7 +373,7 @@ function BottomTabBar({
   const insets = useSafeAreaInsets();
 
   return (
-    <View style={[styles.tabBar, { paddingBottom: Math.max(insets.bottom, spacing.sm) }]}>
+    <View style={[styles.tabBar, { paddingBottom: Math.max(insets.bottom, 8) }]}>
       {tabs.map((tab) => {
         const active = tab.id === activeTab;
         return (
@@ -320,7 +386,7 @@ function BottomTabBar({
           >
             <Ionicons
               name={active ? selectedIcon(tab.icon) : tab.icon}
-              size={23}
+              size={22}
               color={active ? colors.tint : colors.faint}
             />
             <Text style={[styles.tabText, active && styles.tabTextActive]}>{tab.label}</Text>
@@ -435,93 +501,345 @@ function LettersScreen({
   savedItems: string[];
   isTablet: boolean;
 }) {
-  if (!selectedLetter) {
-    return (
-      <EmptyState
-        title="还没有读取到音标数据"
-        detail="请先启动本地服务。"
-      />
-    );
-  }
+  const { width } = useWindowDimensions();
+  const pageWidth = Math.min(width, 430);
+  const horizontalInset = width < 360 ? 18 : width < 390 ? 22 : 28;
+  const gridGap = width < 360 ? 8 : 10;
+  const gridWidth = pageWidth - horizontalInset * 2;
+  const minCellSize = width < 360 ? 50 : 54;
+  const maxCellSize = 64;
+  const gridColumns = Math.max(4, Math.floor((gridWidth + gridGap) / (minCellSize + gridGap)));
+  const letterCellSize = Math.floor((gridWidth - gridGap * (gridColumns - 1)) / gridColumns);
+  const clampedLetterCellSize = Math.min(maxCellSize, letterCellSize);
+  const sectionFrameStyle = {
+    width: pageWidth,
+    alignSelf: "center" as const,
+    paddingHorizontal: horizontalInset
+  };
+  const cardFrameStyle = {
+    width: pageWidth - horizontalInset * 2,
+    alignSelf: "center" as const
+  };
 
-  const detail = (
-    <LetterDetail
-      letter={selectedLetter}
-      onPlay={() => onPlay(selectedLetter)}
-      onPlayExample={onPlayExample}
-      onSave={onSave}
-      savedItems={savedItems}
-    />
-  );
+  void repeatCount;
+  void onRepeatChange;
+  void isTablet;
 
-  const letterGrid = (
-    <SectionCard title="音标发音训练" subtitle="先选音，再听示范词。">
-      <View style={styles.repeatRow}>
-        <Chip label="音标" active />
-        <Chip label="示范词" active />
-        <View style={styles.repeatControl}>
-          <Text style={styles.smallLabel}>次数</Text>
-          <TextInput
-            keyboardType="number-pad"
-            value={String(repeatCount)}
-            onChangeText={(value) => onRepeatChange(Math.max(1, Number(value) || 1))}
-            style={styles.repeatInput}
-          />
-        </View>
-      </View>
-      {letterSections.map((section) => (
-        <View key={section.id} style={styles.letterSection}>
-          <View style={styles.letterSectionHeader}>
-            <Text style={styles.sectionTitle}>{section.title}</Text>
-            <Text style={styles.groupDescription}>{section.description}</Text>
-          </View>
-          {section.groups.map((group) => (
-            <View key={group.id} style={styles.letterGroup}>
-              {group.categoryLabel ? (
-                <View style={styles.categoryNote}>
-                  <Text style={styles.categoryLabel}>{group.categoryLabel}</Text>
-                  <Text style={styles.groupDescription}>{group.categoryNote}</Text>
-                </View>
-              ) : null}
-              <View>
-                <Text style={styles.groupTitle}>{group.title}</Text>
-                <Text style={styles.groupDescription}>{group.description}</Text>
-              </View>
-              <View style={styles.letterGrid}>
-                {group.letters.map((letter) => (
-                  <Pressable
-                    key={letter.id}
-                    accessibilityRole="button"
-                    accessibilityLabel={`${letter.letter} ${letter.sound}`}
-                    onPress={() => {
-                      onSelectLetter(letter);
-                      onPlay(letter);
-                    }}
-                    style={[
-                      styles.letterButton,
-                      selectedLetter.id === letter.id && styles.letterButtonActive
-                    ]}
-                  >
-                    <Text style={[styles.letterGlyph, letter.type === "rule" && styles.ruleGlyph]}>{letter.letter}</Text>
-                  </Pressable>
-                ))}
-              </View>
-              {!isTablet && group.letters.some((letter) => letter.id === selectedLetter.id) ? (
-                <View style={styles.inlineLetterDetail}>
-                  {detail}
-                </View>
-              ) : null}
-            </View>
-          ))}
-        </View>
-      ))}
-    </SectionCard>
-  );
+  // 音标详情页面状态
+  const [showDetail, setShowDetail] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  // 音标分类 tabs
+  const [activeCategory, setActiveCategory] = useState<LetterCategory>("辅音");
+  const categoryTabs: LetterCategory[] = ["辅音", "元音", "收音", "双元音"];
+
+  // 获取当前分类下的所有字母
+  const currentLetters = useMemo(() => {
+    const letters: LetterItem[] = [];
+    letterSections.forEach(section => {
+      section.groups.forEach(group => {
+        const groupId = group.id.toLowerCase();
+        const isDoubleVowelGroup = groupId.includes("double-vowel") || group.title.includes("双元音");
+
+        if (activeCategory === "辅音" && !group.letters.some(letter => letter.kind === "consonant")) {
+          return;
+        }
+        if (activeCategory === "元音" && (!group.letters.some(letter => letter.kind === "vowel") || isDoubleVowelGroup)) {
+          return;
+        }
+        if (activeCategory === "双元音" && !isDoubleVowelGroup) {
+          return;
+        }
+        if (activeCategory === "收音" && !group.letters.some(letter => letter.kind === "batchim")) {
+          return;
+        }
+
+        letters.push(...group.letters.filter((letter) => {
+          if (activeCategory === "辅音") return letter.kind === "consonant";
+          if (activeCategory === "元音") return letter.kind === "vowel";
+          if (activeCategory === "双元音") return letter.kind === "vowel";
+          return letter.kind === "batchim";
+        }));
+      });
+    });
+    return letters;
+  }, [letterSections, activeCategory]);
+
+  // 获取音标类型标签
+  const getLetterTypeTag = (letter: LetterItem): string => {
+    if (letter.kind === "vowel") {
+      return letter.group.includes("双") ? "双元音" : "单元音";
+    }
+    if (letter.kind === "batchim") {
+      return "收音";
+    }
+    // 辅音分类
+    if (letter.group.includes("松")) return "松音";
+    if (letter.group.includes("紧")) return "紧音";
+    if (letter.group.includes("送")) return "送气音";
+    if (letter.kind === "consonant") return "辅音";
+    return letter.group;
+  };
+
+  // 打开音标详情页面
+  const openLetterDetail = (letter: LetterItem) => {
+    onSelectLetter(letter);
+    setIsFavorite(savedItems.includes(letter.letter));
+    setShowDetail(true);
+  };
+
+  // 关闭音标详情页面
+  const closeLetterDetail = () => {
+    setShowDetail(false);
+  };
+
+  // 处理收藏
+  const toggleFavorite = () => {
+    setIsFavorite(!isFavorite);
+    if (selectedLetter) {
+      onSave(selectedLetter.letter);
+    }
+  };
+
+  // 获取所有字母的索引
+  const allLetters = useMemo(() => {
+    const letters: LetterItem[] = [];
+    letterSections.forEach(section => {
+      section.groups.forEach(group => {
+        group.letters.forEach(letter => {
+          letters.push(letter);
+        });
+      });
+    });
+    return letters;
+  }, [letterSections]);
+
+  const currentIndex = useMemo(() => {
+    if (!selectedLetter) return 0;
+    return allLetters.findIndex(l => l.id === selectedLetter.id);
+  }, [selectedLetter, allLetters]);
+
+  const totalCount = allLetters.length;
 
   return (
-    <View style={[styles.responsiveGrid, isTablet && styles.responsiveGridTablet]}>
-      <View style={isTablet ? styles.letterGridPane : undefined}>{letterGrid}</View>
-      {isTablet ? <View style={styles.letterDetailPane}>{detail}</View> : null}
+    <View style={styles.lettersContainer}>
+      {/* Header */}
+      <View style={[styles.lettersHeader, sectionFrameStyle]}>
+        <View>
+          <View style={styles.lettersHeaderBadge}>
+            <View style={styles.lettersBadgeDot} />
+            <Text style={styles.lettersBadgeText}>Korean AI Learn</Text>
+          </View>
+          <Text style={styles.lettersTitle}>韩语音标</Text>
+          <Text style={styles.lettersSubtitle}>掌握韩文字母和发音规则</Text>
+        </View>
+        <Pressable style={styles.lettersAiBtn}>
+          <Ionicons name="sparkles-outline" size={20} color={colors.tint} />
+        </Pressable>
+      </View>
+
+      {/* Divider */}
+      <View style={[styles.lettersDivider, cardFrameStyle]} />
+
+      {/* Scroll Content */}
+      <ScrollView style={styles.lettersScroll} contentContainerStyle={styles.lettersScrollContent}>
+        {/* 当前音标卡片 */}
+        {selectedLetter && (
+          <View style={[styles.currentCard, cardFrameStyle]}>
+            <View style={styles.currentCardHead}>
+              <Text style={styles.currentLabel}>当前音标</Text>
+            </View>
+            <View style={styles.currentMain}>
+              <Pressable
+                style={styles.letterBox}
+                onPress={() => onPlay(selectedLetter)}
+              >
+                <Text style={styles.letterBoxText}>{selectedLetter.letter}</Text>
+              </Pressable>
+              <View style={styles.currentInfo}>
+                <Text style={styles.phoneticName}>
+                  {selectedLetter.letter} <Text style={styles.phoneticNameSpan}>| {selectedLetter.name}</Text>
+                </Text>
+                <View style={styles.phoneticTag}>
+                  <Text style={styles.phoneticTagText}>{getLetterTypeTag(selectedLetter)}</Text>
+                </View>
+                {selectedLetter.tips.length > 0 && (
+                  <>
+                    <Text style={styles.tipTitle}>发音提示</Text>
+                    <Text style={styles.tipText}>{selectedLetter.tips[0]}</Text>
+                  </>
+                )}
+              </View>
+            </View>
+            <Pressable
+              style={styles.actionBtnPrimary}
+              onPress={() => onPlay(selectedLetter)}
+            >
+              <Ionicons name="volume-high-outline" size={15} color="#fff" />
+              <Text style={styles.actionBtnPrimaryText}>开始跟读</Text>
+            </Pressable>
+            <Text style={styles.listenHint}>点击音标或当前卡片可试听</Text>
+          </View>
+        )}
+
+        {/* 音标分类 Tabs */}
+        <View style={[styles.categorySection, sectionFrameStyle]}>
+          <Text style={styles.sectionLabel}>音标分类</Text>
+          <View style={styles.categoryTabs}>
+            {categoryTabs.map((tab) => (
+              <Pressable
+                key={tab}
+                style={[styles.categoryTab, activeCategory === tab && styles.categoryTabActive]}
+                onPress={() => setActiveCategory(tab)}
+              >
+                <Text style={[styles.categoryTabText, activeCategory === tab && styles.categoryTabTextActive]}>
+                  {tab}
+                </Text>
+              </Pressable>
+            ))}
+          </View>
+        </View>
+
+        {/* 字母网格 */}
+        <View style={[styles.letterGridSection, sectionFrameStyle]}>
+          <View style={styles.groupTitleRow}>
+            <Text style={styles.groupTitleStrong}>{activeCategory}</Text>
+            <Text style={styles.groupTitleSpan}>点击音标查看详情</Text>
+          </View>
+          <View style={[styles.letterGrid, { gap: gridGap }]}>
+            {currentLetters.map((letter) => (
+              <Pressable
+                key={letter.id}
+                style={[
+                  styles.letterCell,
+                  { width: clampedLetterCellSize, height: clampedLetterCellSize },
+                  selectedLetter?.id === letter.id && styles.letterCellActive
+                ]}
+                onPress={() => openLetterDetail(letter)}
+              >
+                <Text style={[
+                  styles.letterCellText,
+                  selectedLetter?.id === letter.id && styles.letterCellTextActive
+                ]}>
+                  {letter.letter}
+                </Text>
+                {selectedLetter?.id === letter.id && <View style={styles.letterCellDot} />}
+              </Pressable>
+            ))}
+          </View>
+
+          {/* 查看全部按钮 */}
+          <Pressable style={styles.fullTableBtn}>
+            <View style={styles.fullTableLeft}>
+              <View style={styles.fullTableIcon}>
+                <Ionicons name="grid-outline" size={17} color={colors.tint} />
+              </View>
+              <Text style={styles.fullTableText}>查看全部音标表</Text>
+            </View>
+            <Ionicons name="chevron-forward" size={14} color={colors.tint} />
+          </Pressable>
+        </View>
+      </ScrollView>
+
+      {/* 音标详情页面覆盖层 */}
+      {showDetail && selectedLetter && (
+        <View style={styles.detailOverlay}>
+          {/* 顶部栏 */}
+          <View style={styles.detailTopbar}>
+            <Pressable style={styles.detailTopBtn} onPress={closeLetterDetail}>
+              <Ionicons name="chevron-back" size={14} color={colors.tint} />
+            </Pressable>
+            <View style={styles.detailCounter}>
+              <Text style={styles.detailCounterText}>{currentIndex + 1} / {totalCount}</Text>
+            </View>
+            <Pressable style={styles.detailTopBtn} onPress={toggleFavorite}>
+              <Ionicons
+                name={isFavorite ? "bookmark" : "bookmark-outline"}
+                size={15}
+                color={isFavorite ? colors.tint : colors.tint}
+              />
+            </Pressable>
+          </View>
+
+          {/* 内容区域 */}
+          <ScrollView style={styles.detailContent} contentContainerStyle={styles.detailContentInner}>
+            {/* 大字音标 */}
+            <View style={styles.detailGlyphArea}>
+              <Pressable
+                style={styles.detailGlyph}
+                onPress={() => onPlay(selectedLetter)}
+              >
+                <Text style={styles.detailGlyphText}>{selectedLetter.letter}</Text>
+              </Pressable>
+
+              {/* 名称行 */}
+              <View style={styles.detailNameRow}>
+                <Text style={styles.detailRoman}>{selectedLetter.name}</Text>
+                <View style={styles.detailTags}>
+                  <View style={styles.detailTag}>
+                    <Text style={styles.detailTagText}>{getLetterTypeTag(selectedLetter)}</Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+
+            {/* 发音技巧提示 */}
+            {selectedLetter.tips.length > 0 && (
+              <View style={styles.detailTipBlock}>
+                <View style={styles.detailTipRow}>
+                  <View style={styles.detailTipIcon}>
+                    <Ionicons name="information-circle-outline" size={14} color={colors.tint} />
+                  </View>
+                  <View style={styles.detailTipCopy}>
+                    <Text style={styles.detailTipStrong}>发音技巧</Text>
+                    <Text style={styles.detailTipText}>{selectedLetter.tips[0]}</Text>
+                  </View>
+                </View>
+              </View>
+            )}
+
+            {/* 示例词汇 */}
+            {selectedLetter.examples.length > 0 && (
+              <View style={styles.detailExamples}>
+                <Text style={styles.detailExampleTitle}>示例词汇</Text>
+                <View style={styles.detailExampleList}>
+                  {selectedLetter.examples.slice(0, 4).map((example, index) => (
+                    <Pressable
+                      key={`${selectedLetter.id}-ex-${index}`}
+                      style={styles.detailExampleItem}
+                      onPress={() => onPlayExample(example)}
+                    >
+                      <Text style={styles.detailExampleKorean}>{example.word}</Text>
+                      <Text style={styles.detailExampleChinese}>{example.meaning}</Text>
+                    </Pressable>
+                  ))}
+                </View>
+              </View>
+            )}
+
+            {/* 位置说明 */}
+            {selectedLetter.positionNotes.length > 0 && (
+              <View style={styles.detailPositionBlock}>
+                <Text style={styles.detailPositionStrong}>位置说明</Text>
+                {selectedLetter.positionNotes.map((note, index) => (
+                  <Text key={index} style={styles.detailPositionText}>{note}</Text>
+                ))}
+              </View>
+            )}
+          </ScrollView>
+
+          {/* 底部按钮 */}
+          <View style={styles.detailBottom}>
+            <Pressable
+              style={styles.detailReadBtn}
+              onPress={() => onPlay(selectedLetter)}
+            >
+              <Ionicons name="mic-outline" size={15} color="#fff" />
+              <Text style={styles.detailReadBtnText}>开始跟读</Text>
+            </Pressable>
+          </View>
+        </View>
+      )}
     </View>
   );
 }
@@ -715,7 +1033,7 @@ function TextbookScreen({
   const [uploadedPdfs, setUploadedPdfs] = useState<UploadedPdf[]>([]);
   const [activeAudioId, setActiveAudioId] = useState("");
   const [canvasSize, setCanvasSize] = useState({ width: 1, height: 1 });
-  const textbookSoundRef = useRef<Audio.Sound | null>(null);
+  const textbookSoundRef = useRef<any | null>(null);
 
   useEffect(() => {
     if (selectedPage) {
@@ -819,10 +1137,16 @@ function TextbookScreen({
     }
 
     await textbookSoundRef.current?.unloadAsync();
-    const { sound } = await Audio.Sound.createAsync({ uri: url }, { shouldPlay: true });
+    const AudioModule = await loadExpoAudio();
+    if (!AudioModule) {
+      Alert.alert("音频暂不可用", "当前 Expo Go 没有加载音频原生模块，可以先查看教材内容。");
+      return;
+    }
+
+    const { sound } = await AudioModule.Sound.createAsync({ uri: url }, { shouldPlay: true });
     textbookSoundRef.current = sound;
     setActiveAudioId(audioId);
-    sound.setOnPlaybackStatusUpdate((status) => {
+    sound.setOnPlaybackStatusUpdate((status: any) => {
       if (status.isLoaded && status.didJustFinish) {
         setActiveAudioId("");
         sound.unloadAsync();
@@ -1138,10 +1462,8 @@ function wait(ms: number) {
 
 function selectedIcon(icon: keyof typeof Ionicons.glyphMap): keyof typeof Ionicons.glyphMap {
   const map: Partial<Record<keyof typeof Ionicons.glyphMap, keyof typeof Ionicons.glyphMap>> = {
-    "sunny-outline": "sunny",
     "grid-outline": "grid",
-    "mic-outline": "mic",
-    "albums-outline": "albums",
+    "chatbubble-ellipses-outline": "chatbubble-ellipses",
     "book-outline": "book"
   };
 
@@ -1165,12 +1487,11 @@ const styles = StyleSheet.create({
     textTransform: "uppercase"
   },
   tabBar: {
-    minHeight: 64,
+    minHeight: 74,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    paddingTop: spacing.sm,
-    paddingHorizontal: spacing.sm,
+    paddingTop: 4,
     borderTopWidth: 1,
     borderTopColor: colors.line,
     backgroundColor: colors.panelRaised
@@ -1180,12 +1501,12 @@ const styles = StyleSheet.create({
     minHeight: 48,
     alignItems: "center",
     justifyContent: "center",
-    gap: 3
+    gap: 4
   },
   tabText: {
     color: colors.faint,
     fontSize: 11,
-    fontWeight: "700"
+    fontWeight: "500"
   },
   tabTextActive: {
     color: colors.tint
@@ -1195,7 +1516,7 @@ const styles = StyleSheet.create({
   },
   content: {
     gap: spacing.lg,
-    padding: spacing.lg,
+    padding: 28,
     paddingBottom: 92
   },
   contentTablet: {
@@ -1433,11 +1754,6 @@ const styles = StyleSheet.create({
   groupDescription: {
     color: colors.muted,
     fontSize: 13
-  },
-  letterGrid: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: spacing.sm
   },
   letterButton: {
     width: 58,
@@ -1689,5 +2005,491 @@ const styles = StyleSheet.create({
     color: colors.ink,
     fontSize: 15,
     lineHeight: 24
+  },
+  // === 音标首页新样式 ===
+  lettersContainer: {
+    flex: 1,
+    backgroundColor: colors.page
+  },
+  lettersHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "flex-start",
+    paddingHorizontal: 28,
+    paddingTop: 6
+  },
+  lettersHeaderBadge: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 5,
+    marginBottom: 3
+  },
+  lettersBadgeDot: {
+    width: 6,
+    height: 6,
+    backgroundColor: colors.tint,
+    borderRadius: 3
+  },
+  lettersBadgeText: {
+    fontSize: 12,
+    color: colors.tint,
+    fontWeight: "500"
+  },
+  lettersTitle: {
+    fontSize: 26,
+    fontWeight: "700",
+    color: colors.ink,
+    letterSpacing: -0.5
+  },
+  lettersSubtitle: {
+    fontSize: 13,
+    color: colors.faint,
+    marginTop: 2
+  },
+  lettersAiBtn: {
+    width: 40,
+    height: 40,
+    backgroundColor: colors.brandSoft,
+    borderRadius: 13,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 4
+  },
+  lettersDivider: {
+    height: 1,
+    backgroundColor: colors.line,
+    marginTop: 16
+  },
+  lettersScroll: {
+    flex: 1
+  },
+  lettersScrollContent: {
+    paddingBottom: 14
+  },
+  currentCard: {
+    marginTop: 16,
+    backgroundColor: colors.panelRaised,
+    borderWidth: 1,
+    borderColor: colors.line,
+    borderRadius: 18,
+    padding: 15
+  },
+  currentCardHead: {
+    marginBottom: 14
+  },
+  currentLabel: {
+    fontSize: 13,
+    fontWeight: "700",
+    color: colors.tint
+  },
+  currentMain: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 14
+  },
+  letterBox: {
+    width: 76,
+    height: 76,
+    borderRadius: 18,
+    backgroundColor: colors.panel,
+    borderWidth: 1,
+    borderColor: colors.line,
+    alignItems: "center",
+    justifyContent: "center",
+    shadowColor: colors.tint,
+    shadowOffset: { width: 0, height: -8 },
+    shadowOpacity: 0.04,
+    shadowRadius: 20,
+    elevation: 0
+  },
+  letterBoxText: {
+    fontSize: 42,
+    fontWeight: "700",
+    color: colors.ink
+  },
+  currentInfo: {
+    flex: 1
+  },
+  phoneticName: {
+    fontSize: 20,
+    fontWeight: "700",
+    color: colors.ink
+  },
+  phoneticNameSpan: {
+    fontSize: 13,
+    color: colors.faint,
+    fontWeight: "500"
+  },
+  phoneticTag: {
+    flexDirection: "row",
+    alignSelf: "flex-start",
+    paddingHorizontal: 8,
+    paddingVertical: 3,
+    backgroundColor: colors.brandSoft,
+    borderRadius: 8,
+    marginTop: 6
+  },
+  phoneticTagText: {
+    fontSize: 11,
+    fontWeight: "600",
+    color: colors.tint
+  },
+  tipTitle: {
+    fontSize: 12,
+    color: "#4A7A62",
+    fontWeight: "600",
+    marginTop: 8
+  },
+  tipText: {
+    fontSize: 12,
+    color: "#6F897D",
+    lineHeight: 18,
+    marginTop: 2
+  },
+  actionBtnPrimary: {
+    height: 38,
+    borderRadius: 12,
+    backgroundColor: colors.tint,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 7,
+    marginTop: 14
+  },
+  actionBtnPrimaryText: {
+    fontSize: 13,
+    fontWeight: "600",
+    color: colors.panelRaised
+  },
+  listenHint: {
+    textAlign: "center",
+    fontSize: 12,
+    color: colors.faint,
+    marginTop: 10
+  },
+  categorySection: {
+    paddingHorizontal: 28,
+    paddingTop: 16
+  },
+  sectionLabel: {
+    fontSize: 11,
+    fontWeight: "600",
+    color: colors.faint,
+    letterSpacing: 0.8,
+    textTransform: "uppercase",
+    marginBottom: 10
+  },
+  categoryTabs: {
+    flexDirection: "row",
+    gap: 10
+  },
+  categoryTab: {
+    flex: 1,
+    height: 44,
+    borderRadius: 14,
+    borderWidth: 1,
+    borderColor: colors.line,
+    backgroundColor: colors.panelRaised,
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  categoryTabActive: {
+    backgroundColor: colors.tint,
+    borderColor: colors.tint
+  },
+  categoryTabText: {
+    fontSize: 13,
+    fontWeight: "600",
+    color: "#4A7A62"
+  },
+  categoryTabTextActive: {
+    color: colors.panelRaised
+  },
+  letterGridSection: {
+    paddingHorizontal: 28,
+    paddingTop: 16
+  },
+  groupTitleRow: {
+    flexDirection: "row",
+    alignItems: "baseline",
+    gap: 7,
+    marginBottom: 10
+  },
+  groupTitleStrong: {
+    fontSize: 15,
+    fontWeight: "700",
+    color: colors.ink
+  },
+  groupTitleSpan: {
+    fontSize: 12,
+    color: colors.faint
+  },
+  letterGrid: {
+    flexDirection: "row",
+    flexWrap: "wrap"
+  },
+  letterCell: {
+    height: 54,
+    borderRadius: 14,
+    backgroundColor: colors.panelRaised,
+    borderWidth: 1,
+    borderColor: colors.line,
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  letterCellActive: {
+    borderColor: colors.tint,
+    backgroundColor: "#F2FBF7"
+  },
+  letterCellText: {
+    fontSize: 26,
+    fontWeight: "700",
+    color: colors.ink
+  },
+  letterCellTextActive: {
+    color: colors.tint
+  },
+  letterCellDot: {
+    position: "absolute",
+    bottom: 7,
+    width: 5,
+    height: 5,
+    borderRadius: 2.5,
+    backgroundColor: colors.tint
+  },
+  fullTableBtn: {
+    marginTop: 14,
+    height: 52,
+    borderRadius: 16,
+    backgroundColor: colors.panelRaised,
+    borderWidth: 1,
+    borderColor: colors.line,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingHorizontal: 16
+  },
+  fullTableLeft: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10
+  },
+  fullTableIcon: {
+    width: 32,
+    height: 32,
+    borderRadius: 10,
+    backgroundColor: colors.brandSoft,
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  fullTableText: {
+    fontSize: 14,
+    fontWeight: "600",
+    color: colors.tint
+  },
+  // === 音标详情页面样式 ===
+  detailOverlay: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: colors.page,
+    zIndex: 100
+  },
+  detailTopbar: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    height: 52,
+    paddingHorizontal: 20
+  },
+  detailTopBtn: {
+    width: 32,
+    height: 32,
+    alignItems: "center",
+    justifyContent: "center",
+    borderWidth: 1,
+    borderColor: colors.line,
+    borderRadius: 10,
+    backgroundColor: colors.panelRaised
+  },
+  detailCounter: {
+    paddingHorizontal: 14,
+    paddingVertical: 5,
+    borderWidth: 1,
+    borderColor: colors.line,
+    borderRadius: 20,
+    backgroundColor: colors.panelRaised
+  },
+  detailCounterText: {
+    fontSize: 14,
+    fontWeight: "800",
+    color: colors.tint
+  },
+  detailContent: {
+    flex: 1
+  },
+  detailContentInner: {
+    paddingHorizontal: 28,
+    paddingBottom: 12
+  },
+  detailGlyphArea: {
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 20,
+    marginBottom: 16
+  },
+  detailGlyph: {
+    marginBottom: 16
+  },
+  detailGlyphText: {
+    fontSize: 104,
+    fontWeight: "300",
+    color: colors.ink,
+    letterSpacing: -3,
+    textAlign: "center"
+  },
+  detailNameRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    flexWrap: "wrap",
+    gap: 10,
+    marginBottom: 14
+  },
+  detailRoman: {
+    fontSize: 20,
+    fontWeight: "800",
+    color: colors.ink,
+    letterSpacing: 0.5
+  },
+  detailTags: {
+    flexDirection: "row",
+    gap: 6
+  },
+  detailTag: {
+    paddingHorizontal: 10,
+    paddingVertical: 3,
+    borderWidth: 1,
+    borderColor: colors.line,
+    borderRadius: 20,
+    backgroundColor: colors.brandSoft
+  },
+  detailTagText: {
+    fontSize: 11,
+    fontWeight: "700",
+    color: colors.tint
+  },
+  detailTipBlock: {
+    width: "100%",
+    padding: 14,
+    borderWidth: 1,
+    borderColor: colors.line,
+    borderRadius: 14,
+    backgroundColor: colors.panel
+  },
+  detailTipRow: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    gap: 10
+  },
+  detailTipIcon: {
+    width: 28,
+    height: 28,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 8,
+    backgroundColor: colors.brandSoft
+  },
+  detailTipCopy: {
+    flex: 1,
+    gap: 5
+  },
+  detailTipStrong: {
+    fontSize: 12,
+    fontWeight: "800",
+    color: colors.ink
+  },
+  detailTipText: {
+    fontSize: 13,
+    color: colors.muted,
+    lineHeight: 21
+  },
+  detailExamples: {
+    marginTop: 20
+  },
+  detailExampleTitle: {
+    fontSize: 13,
+    fontWeight: "700",
+    color: colors.ink,
+    marginBottom: 10
+  },
+  detailExampleList: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 8
+  },
+  detailExampleItem: {
+    paddingHorizontal: 14,
+    paddingVertical: 10,
+    borderWidth: 1,
+    borderColor: colors.line,
+    borderRadius: 14,
+    backgroundColor: colors.panelRaised,
+    minWidth: 80,
+    alignItems: "center"
+  },
+  detailExampleKorean: {
+    fontSize: 16,
+    fontWeight: "700",
+    color: colors.ink,
+    marginBottom: 4
+  },
+  detailExampleChinese: {
+    fontSize: 12,
+    color: colors.faint
+  },
+  detailPositionBlock: {
+    marginTop: 20,
+    padding: 14,
+    borderWidth: 1,
+    borderColor: colors.line,
+    borderRadius: 14,
+    backgroundColor: colors.panel
+  },
+  detailPositionStrong: {
+    fontSize: 12,
+    fontWeight: "800",
+    color: colors.ink,
+    marginBottom: 5
+  },
+  detailPositionText: {
+    fontSize: 13,
+    color: colors.muted,
+    lineHeight: 21
+  },
+  detailBottom: {
+    alignItems: "center",
+    height: 72,
+    paddingHorizontal: 20,
+    paddingBottom: 14,
+    justifyContent: "flex-end"
+  },
+  detailReadBtn: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 7,
+    width: "100%",
+    height: 46,
+    borderWidth: 0,
+    borderRadius: 13,
+    backgroundColor: colors.tint
+  },
+  detailReadBtnText: {
+    fontSize: 14,
+    fontWeight: "800",
+    color: colors.panelRaised
   }
 });

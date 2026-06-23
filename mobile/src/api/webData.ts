@@ -9,6 +9,8 @@ import {
   VocabularyItem
 } from "../data/learning";
 
+import Constants from "expo-constants";
+
 declare const process: {
   env?: {
     EXPO_PUBLIC_API_BASE_URL?: string;
@@ -330,17 +332,23 @@ export async function fetchWebLearningData(): Promise<WebLearningData> {
 }
 
 export function getFallbackLearningData(): WebLearningData {
+  const letterSections = buildLetterSections([], DEFAULT_API_BASE_URL);
+
   return {
-    letterSections: [],
-    letterGroups: [],
+    letterSections,
+    letterGroups: flattenLetterSections(letterSections),
     vocabularyItems: [],
     scenePractices: [],
     textbookPages: []
   };
 }
 
-function getApiBaseUrl() {
-  return (process.env?.EXPO_PUBLIC_API_BASE_URL || DEFAULT_API_BASE_URL).replace(/\/$/, "");
+export function getApiBaseUrl() {
+  // Try env variable first, then app.json extra config, then default
+  const envUrl = process.env?.EXPO_PUBLIC_API_BASE_URL;
+  const extraUrl = Constants.expoConfig?.extra?.apiBaseUrl;
+  const url = envUrl || extraUrl || DEFAULT_API_BASE_URL;
+  return url.replace(/\/$/, "");
 }
 
 async function fetchJson<T>(url: string): Promise<T> {

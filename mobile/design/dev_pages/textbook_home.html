@@ -1,0 +1,288 @@
+<meta charset="utf-8">
+
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+.shell{
+  width:375px;height:812px;min-height:812px;background:#F4FAF7;
+  border-radius:44px;overflow:hidden;border:1.5px solid #C8E8D8;
+  margin:0 auto;display:flex;flex-direction:column;
+  font-family:-apple-system,'PingFang SC','Noto Sans SC',sans-serif;color:#1A2C24;
+}
+.status{height:50px;padding:16px 28px 0;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;}
+.status-time{font-size:15px;font-weight:600;color:#1A2C24;}
+.status-icons{font-size:12px;color:#1A2C24;letter-spacing:2px;}
+
+.header{padding:6px 28px 0;display:flex;justify-content:space-between;align-items:flex-start;flex-shrink:0;}
+.header-badge{display:flex;align-items:center;gap:5px;font-size:12px;color:#1D9E75;font-weight:500;margin-bottom:3px;}
+.badge-dot{width:6px;height:6px;background:#1D9E75;border-radius:50%;}
+.header-title{font-size:26px;font-weight:700;color:#1A2C24;letter-spacing:-0.5px;}
+.header-sub{font-size:13px;color:#90A89C;margin-top:2px;}
+.upload-btn{
+  display:flex;align-items:center;gap:6px;margin-top:8px;
+  padding:7px 14px;border-radius:20px;
+  border:1.5px solid #1D9E75;background:transparent;
+  font-size:13px;font-weight:600;color:#1D9E75;cursor:pointer;flex-shrink:0;
+}
+
+.scroll{flex:1;overflow-y:auto;padding:0 28px 16px;scrollbar-width:none;}
+.scroll::-webkit-scrollbar{display:none;}
+
+.library-banner{
+  margin-top:16px;
+  background:#fff;border-radius:16px;border:1px solid #D9EFDF;
+  padding:16px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.lib-left{}
+.lib-eyebrow{font-size:11px;color:#90A89C;font-weight:500;letter-spacing:0.5px;margin-bottom:4px;}
+.lib-title{font-size:17px;font-weight:700;color:#1A2C24;}
+.lib-count{font-size:13px;color:#1D9E75;margin-top:3px;font-weight:500;}
+.lib-icon-wrap{
+  width:56px;height:56px;background:#E1F5EE;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+}
+
+.section-header{
+  display:flex;align-items:baseline;justify-content:space-between;
+  margin-top:22px;margin-bottom:12px;
+}
+.section-title{font-size:15px;font-weight:700;color:#1A2C24;}
+.section-hint{font-size:12px;color:#90A89C;}
+
+.book-item{
+  background:#fff;border-radius:16px;border:1px solid #D9EFDF;
+  margin-bottom:10px;overflow:hidden;
+}
+.book-main{display:flex;gap:14px;padding:16px 16px 14px;}
+.cover{
+  width:52px;height:68px;border-radius:8px;
+  flex-shrink:0;position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+}
+.cover-text{
+  color:rgba(255,255,255,0.9);font-size:7.5px;font-weight:700;
+  line-height:1.3;text-align:center;position:relative;z-index:1;
+}
+.cover::after{
+  content:'';position:absolute;right:-8px;bottom:-8px;
+  width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,0.12);
+}
+.cover-1{background:#0B2E86;}
+.cover-2{background:#0F5C3A;}
+
+.book-info{flex:1;min-width:0;}
+.book-name-row{display:flex;align-items:center;gap:7px;margin-bottom:3px;}
+.book-name{font-size:16px;font-weight:700;color:#1A2C24;}
+.book-tag{
+  font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px;
+  flex-shrink:0;
+}
+.tag-main{background:#E1F5EE;color:#0F6E56;}
+.tag-adv{background:#FEF3E2;color:#854F0B;}
+.book-meta{font-size:12px;color:#90A89C;margin-bottom:12px;}
+.progress-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
+.progress-label{font-size:11px;color:#90A89C;}
+.progress-pct{font-size:12px;font-weight:600;color:#1D9E75;}
+.progress-pct-low{color:#E5924A;}
+.progress-track{width:100%;height:4px;background:#E1F5EE;border-radius:2px;overflow:hidden;}
+.progress-fill{height:4px;border-radius:2px;background:#1D9E75;}
+.progress-fill-low{background:#E5924A;}
+
+.book-more{
+  width:28px;height:28px;border-radius:8px;background:#F4FAF7;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;cursor:pointer;
+  margin-top:2px;
+}
+
+.book-action{
+  border-top:1px solid #EEF7F2;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:11px 16px;cursor:pointer;
+}
+.book-action-text{font-size:14px;font-weight:600;color:#1D9E75;}
+.book-action-text.start{color:#E5924A;}
+.book-action-arrow{
+  width:24px;height:24px;border-radius:7px;
+  background:#E1F5EE;display:flex;align-items:center;justify-content:center;
+}
+.book-action-arrow.start-arr{background:#FEF3E2;}
+
+.ai-bar{
+  margin-top:4px;
+  background:#fff;border-radius:14px;border:1px solid #D9EFDF;
+  padding:13px 16px;
+  display:flex;align-items:center;justify-content:space-between;
+  cursor:pointer;
+}
+.ai-left{display:flex;align-items:center;gap:10px;}
+.ai-dot{
+  width:32px;height:32px;border-radius:10px;background:#E1F5EE;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.ai-text-title{font-size:13px;font-weight:600;color:#1D9E75;}
+.ai-text-sub{font-size:11px;color:#90A89C;margin-top:2px;line-height:1.4;}
+.ai-arrow{
+  width:28px;height:28px;border-radius:8px;background:#E1F5EE;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+
+.bottom-nav{
+  margin-top:auto;
+  height:74px;
+  min-height:74px;
+  background:#fff;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border-top:1px solid #D9EFDF;
+  flex-shrink:0;
+}
+.nav-item{
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:4px;
+  color:#90A89C;
+  cursor:pointer;
+}
+.nav-item.active{color:#1D9E75;}
+.nav-item svg,
+.nav-item svg *{stroke:currentColor!important;}
+.nav-label{font-size:11px;line-height:1;color:currentColor;font-weight:500;}
+</style>
+
+<div class="shell">
+  <div class="status">
+    <span class="status-time">16:32</span>
+    <span class="status-icons">▋▋▋ ᯤ ▐</span>
+  </div>
+
+  <div class="header">
+    <div>
+      <div class="header-badge"><span class="badge-dot"></span>Korean AI Learn</div>
+      <div class="header-title">教材</div>
+      <div class="header-sub">系统学习，循序渐进</div>
+    </div>
+    <div class="upload-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+      上传 PDF
+    </div>
+  </div>
+
+  <div class="scroll">
+
+    <div class="library-banner">
+      <div class="lib-left">
+        <div class="lib-eyebrow">MY LIBRARY</div>
+        <div class="lib-title">我的教材库</div>
+        <div class="lib-count">共 2 本教材</div>
+      </div>
+      <div class="lib-icon-wrap">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="1.8" stroke-linecap="round">
+          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <span class="section-title">教材列表</span>
+      <span class="section-hint">点击继续阅读</span>
+    </div>
+
+    <div class="book-item">
+      <div class="book-main">
+        <div class="cover cover-1">
+          <div class="cover-text">延世<br>韩国语<br>1</div>
+        </div>
+        <div class="book-info">
+          <div class="book-name-row">
+            <span class="book-name">延世韩国语 1</span>
+            <span class="book-tag tag-main">主教材</span>
+          </div>
+          <div class="book-meta">20–443 页 · 10 个章节</div>
+          <div class="progress-row">
+            <span class="progress-label">学习进度</span>
+            <span class="progress-pct">35%</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" style="width:35%;"></div>
+          </div>
+        </div>
+        <div class="book-more">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#90A89C" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="5" r="1" fill="#90A89C"/><circle cx="12" cy="12" r="1" fill="#90A89C"/><circle cx="12" cy="19" r="1" fill="#90A89C"/></svg>
+        </div>
+      </div>
+      <div class="book-action">
+        <span class="book-action-text">继续阅读</span>
+        <div class="book-action-arrow">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="book-item">
+      <div class="book-main">
+        <div class="cover cover-2">
+          <div class="cover-text">延世<br>韩国语<br>2</div>
+        </div>
+        <div class="book-info">
+          <div class="book-name-row">
+            <span class="book-name">延世韩国语 2</span>
+            <span class="book-tag tag-adv">进阶教材</span>
+          </div>
+          <div class="book-meta">18–420 页 · 10 个章节</div>
+          <div class="progress-row">
+            <span class="progress-label">学习进度</span>
+            <span class="progress-pct progress-pct-low">12%</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill progress-fill-low" style="width:12%;"></div>
+          </div>
+        </div>
+        <div class="book-more">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#90A89C" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="5" r="1" fill="#90A89C"/><circle cx="12" cy="12" r="1" fill="#90A89C"/><circle cx="12" cy="19" r="1" fill="#90A89C"/></svg>
+        </div>
+      </div>
+      <div class="book-action">
+        <span class="book-action-text start">开始学习</span>
+        <div class="book-action-arrow start-arr">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#854F0B" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="ai-bar">
+      <div class="ai-left">
+        <div class="ai-dot">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M8 9.5c0-1.1.9-2 2-2h4a2 2 0 0 1 0 4h-4v3"/><circle cx="12" cy="17.5" r=".5" fill="#1D9E75"/></svg>
+        </div>
+        <div>
+          <div class="ai-text-title">AI 学习助手</div>
+          <div class="ai-text-sub">智能分析学习进度，推荐合适的教材与练习</div>
+        </div>
+      </div>
+      <div class="ai-arrow">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="bottom-nav">
+    <div class="nav-item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#90A89C" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+      <span class="nav-label">音标</span>
+    </div>
+    <div class="nav-item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#90A89C" stroke-width="1.8" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span class="nav-label">词汇</span>
+    </div>
+    <div class="nav-item active">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="1.8" stroke-linecap="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      <span class="nav-label">教材</span>
+    </div>
+  </div>
+</div>

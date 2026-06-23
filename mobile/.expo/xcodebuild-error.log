@@ -1,7 +1,0 @@
-** BUILD FAILED **
-
-
-The following build commands failed:
-	CompileC /Users/king/Library/Developer/Xcode/DerivedData/KoreanLearn-dihbnxndnmmxvxgrqrdtsyyjaiyo/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/fmt.build/Objects-normal/arm64/format.o /Users/king/Documents/Codex/2026-05-07/korean_learn/mobile/ios/Pods/fmt/src/format.cc normal arm64 c++ com.apple.compilers.llvm.clang.1_0.compiler (in target 'fmt' from project 'Pods')
-	Building workspace KoreanLearn with scheme KoreanLearn and configuration Debug
-(2 failures)

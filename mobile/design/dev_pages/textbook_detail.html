@@ -1,0 +1,397 @@
+<meta charset="utf-8">
+
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+body{background:transparent;}
+.shell{
+  width:375px;height:812px;min-height:812px;background:#F4FAF7;
+  border-radius:44px;overflow:hidden;border:1.5px solid #ddd;
+  margin:0 auto;display:flex;flex-direction:column;
+  font-family:-apple-system,'PingFang SC','Noto Sans SC',sans-serif;color:#1A2C24;
+}
+.status{height:50px;padding:16px 28px 0;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;}
+.status-time{font-size:15px;font-weight:600;color:#1A2C24;}
+.status-icons{font-size:12px;color:#1A2C24;letter-spacing:2px;}
+
+.header{padding:6px 28px 0;display:flex;justify-content:space-between;align-items:flex-start;flex-shrink:0;}
+.header-badge{display:flex;align-items:center;gap:5px;font-size:12px;color:#1D9E75;font-weight:500;margin-bottom:3px;}
+.badge-dot{width:6px;height:6px;background:#1D9E75;border-radius:50%;}
+.header-title{font-size:21px;font-weight:700;color:#1A2C24;letter-spacing:-0.3px;}
+.header-sub{font-size:13px;color:#90A89C;margin-top:2px;}
+.lib-btn{
+  display:flex;align-items:center;gap:6px;margin-top:4px;
+  padding:7px 14px;border-radius:20px;
+  border:1px solid #D9EFDF;background:#fff;
+  font-size:13px;font-weight:600;color:#1D9E75;cursor:pointer;flex-shrink:0;
+}
+
+.divider{height:1px;background:#D9EFDF;margin:14px 28px 0;flex-shrink:0;}
+
+.scroll{flex:1;overflow-y:auto;padding:0 28px 16px;scrollbar-width:none;}
+.scroll::-webkit-scrollbar{display:none;}
+
+.nav-row{
+  display:flex;gap:10px;margin-top:16px;
+}
+.nav-pill{
+  flex:1;display:flex;align-items:center;justify-content:center;gap:6px;
+  height:38px;border-radius:20px;border:1px solid #D9EFDF;background:#fff;
+  font-size:13px;font-weight:600;color:#1D9E75;cursor:pointer;
+}
+.nav-pill.disabled{color:#C0D8CC;border-color:#E8F4EE;background:#F8FCF9;}
+.page-indicator{
+  display:flex;align-items:center;justify-content:center;
+  min-width:60px;font-size:18px;font-weight:700;color:#1A2C24;
+}
+
+.tool-row{
+  display:flex;gap:8px;margin-top:12px;overflow-x:auto;scrollbar-width:none;
+  padding-bottom:2px;
+}
+.tool-row::-webkit-scrollbar{display:none;}
+.tool-pill{
+  display:flex;align-items:center;gap:5px;flex-shrink:0;
+  padding:8px 14px;border-radius:20px;border:1px solid #D9EFDF;background:#fff;
+  font-size:13px;font-weight:600;color:#5C7A6E;cursor:pointer;
+}
+.tool-pill.on{background:#E1F5EE;color:#0F6E56;border-color:#1D9E75;}
+.tool-pill.more{color:#90A89C;}
+
+.color-row{
+  display:none;gap:8px;margin-top:10px;align-items:center;
+}
+.color-row.show{display:flex;}
+.color-label{font-size:11px;color:#90A89C;margin-right:2px;}
+.color-dot{
+  width:24px;height:24px;border-radius:50%;cursor:pointer;border:2px solid transparent;
+}
+.color-dot.sel{border-color:#1A2C24;}
+
+.more-panel{
+  display:none;margin-top:10px;background:#fff;border:1px solid #D9EFDF;border-radius:14px;
+  padding:10px;gap:8px;
+}
+.more-panel.show{display:flex;}
+.more-item{
+  flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;
+  padding:8px 4px;border-radius:10px;cursor:pointer;font-size:11px;color:#5C7A6E;font-weight:600;
+}
+.more-item:active{background:#F4FAF7;}
+
+.page-stage{
+  margin-top:14px;background:#fff;border-radius:16px;border:1px solid #D9EFDF;
+  overflow:hidden;position:relative;
+}
+.page-img-wrap{
+  position:relative;width:100%;aspect-ratio:1320 / 1998;
+  background:#F8FAF9;cursor:crosshair;overflow:hidden;
+}
+.page-placeholder{
+  position:absolute;inset:0;display:grid;place-items:center;
+  background:
+    linear-gradient(135deg, rgba(29,158,117,0.06), rgba(244,250,247,0.92)),
+    repeating-linear-gradient(0deg, transparent 0 31px, rgba(144,168,156,0.10) 32px);
+  color:#6F8D80;text-align:center;
+}
+.placeholder-inner{
+  display:grid;justify-items:center;gap:8px;padding:24px;
+}
+.placeholder-icon{
+  width:46px;height:46px;border-radius:16px;
+  display:grid;place-items:center;background:#E1F5EE;
+  border:1px solid #BFE8D7;color:#0F6E56;
+}
+.placeholder-inner strong{
+  font-size:15px;font-weight:800;color:#315C4C;line-height:1.3;
+}
+.placeholder-inner span{
+  font-size:12px;font-weight:600;color:#90A89C;line-height:1.45;
+}
+.markup-layer{
+  position:absolute;top:0;left:0;width:100%;height:100%;
+}
+.mark-box{
+  position:absolute;border-radius:3px;cursor:pointer;
+}
+.mark-box.yellow{background:rgba(255,224,90,0.42);}
+.mark-box.green{background:rgba(80,220,170,0.38);}
+.mark-box.pink{background:rgba(255,140,170,0.38);}
+.pin{
+  position:absolute;width:26px;height:26px;background:#1D9E75;border-radius:50% 50% 50% 0;
+  transform:rotate(-45deg);display:flex;align-items:center;justify-content:center;cursor:pointer;
+  border:2px solid #fff;
+}
+.pin-dot{width:7px;height:7px;background:#fff;border-radius:50%;transform:rotate(45deg);}
+.pin-popup{
+  display:none;position:absolute;background:#fff;border:1px solid #D9EFDF;border-radius:12px;
+  padding:11px;width:180px;z-index:30;box-shadow:0 4px 14px rgba(26,44,36,0.10);
+}
+.pin-popup.show{display:block;}
+.pin-popup-label{font-size:11px;font-weight:700;color:#90A89C;margin-bottom:7px;}
+.pin-popup-ta{
+  width:100%;height:54px;border:1px solid #D9EFDF;border-radius:8px;
+  padding:6px 8px;font-size:12px;background:#F4FAF7;color:#1A2C24;resize:none;font-family:inherit;
+}
+.pin-popup-btns{display:flex;gap:6px;margin-top:8px;}
+.pp-btn{flex:1;padding:5px;border-radius:8px;font-size:12px;font-weight:600;border:none;cursor:pointer;}
+.pp-btn.sv{background:#1D9E75;color:#fff;}
+.pp-btn.cl{background:#F4FAF7;color:#5C7A6E;}
+
+.hint-banner{
+  margin-top:10px;background:#FFFBEC;border:1px solid #F5E3A8;border-radius:12px;
+  padding:9px 12px;font-size:11px;color:#854F0B;line-height:1.5;
+}
+</style>
+
+<h2 style="position:absolute;left:-9999px">延世韩国语1教材详情页，展示教材页占位区域，支持翻页、高亮、手写、图钉批注</h2>
+
+<div class="shell">
+  <div class="status">
+    <span class="status-time">22:17</span>
+    <span class="status-icons">▋▋▋ ᯤ ▐</span>
+  </div>
+
+  <div class="header">
+    <div>
+      <div class="header-badge"><span class="badge-dot"></span>Korean AI Learn</div>
+      <div class="header-title">연세 한국어 1</div>
+      <div class="header-sub" id="pageSub">封面 · 延世韩国语 1</div>
+    </div>
+    <div class="lib-btn" onclick="sendPrompt('返回教材库')">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2.2" stroke-linecap="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      教材库
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="scroll">
+
+    <div class="nav-row">
+      <button class="nav-pill disabled" id="btnPrev" onclick="changePage(-1)">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+        上一页
+      </button>
+      <div class="page-indicator" id="pageIndicator">封面</div>
+      <button class="nav-pill" id="btnNext" onclick="changePage(1)">
+        下一页
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+
+    <div class="tool-row">
+      <button class="tool-pill" id="tp-hl" onclick="setTool('hl')">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        高亮
+      </button>
+      <button class="tool-pill" id="tp-ul" onclick="setTool('ul')">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        手写
+      </button>
+      <button class="tool-pill" id="tp-pin" onclick="setTool('pin')">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        批注
+      </button>
+      <button class="tool-pill" onclick="sendPrompt('帮我解析这一页的教材内容')">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        AI解析
+      </button>
+      <button class="tool-pill more" id="tp-more" onclick="toggleMore()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="5" cy="12" r="1.2" fill="currentColor"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/><circle cx="19" cy="12" r="1.2" fill="currentColor"/></svg>
+        更多
+      </button>
+    </div>
+
+    <div class="color-row" id="colorRow">
+      <span class="color-label">颜色</span>
+      <div class="color-dot sel" style="background:#FFE05A;" onclick="setColor(this,'yellow')"></div>
+      <div class="color-dot" style="background:#50DCAA;" onclick="setColor(this,'green')"></div>
+      <div class="color-dot" style="background:#FF8CAA;" onclick="setColor(this,'pink')"></div>
+    </div>
+
+    <div class="more-panel" id="morePanel">
+      <div class="more-item" onclick="undoLast()">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#5C7A6E" stroke-width="2" stroke-linecap="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/></svg>
+        撤销
+      </div>
+      <div class="more-item" onclick="clearPage()">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#5C7A6E" stroke-width="2" stroke-linecap="round"><path d="M3 6h18"/><path d="M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg>
+        清除本页
+      </div>
+      <div class="more-item" onclick="sendPrompt('显示这本教材的目录')">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#5C7A6E" stroke-width="2" stroke-linecap="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+        目录
+      </div>
+    </div>
+
+    <div class="hint-banner" id="toolHint" style="display:none;"></div>
+
+    <div class="page-stage" id="pageStage">
+      <div class="page-img-wrap" id="imgWrap" onclick="onImgClick(event)" aria-label="教材页图片或 PDF 渲染占位">
+        <div class="page-placeholder">
+          <div class="placeholder-inner">
+            <div class="placeholder-icon">
+              <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7z"/>
+                <path d="M14 2v5h5"/>
+                <path d="M8.5 13h7"/>
+                <path d="M8.5 17h5"/>
+              </svg>
+            </div>
+            <strong>教材页预览区域</strong>
+            <span>后续接入图片或 PDF 渲染页</span>
+          </div>
+        </div>
+        <div class="markup-layer" id="markupLayer"></div>
+      </div>
+    </div>
+
+    <div class="pin-popup" id="pinPopup">
+      <div class="pin-popup-label">添加批注</div>
+      <textarea class="pin-popup-ta" id="pinTa" placeholder="写下你的理解…"></textarea>
+      <div class="pin-popup-btns">
+        <button class="pp-btn cl" onclick="closePin()">取消</button>
+        <button class="pp-btn sv" onclick="savePin()">保存</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+let tool=null;
+let color='yellow';
+let curPage=0;
+let pinTarget=null;
+let history=[];
+
+const pages=[
+  {label:'封面',sub:'封面 · 延世韩国语 1'},
+  {label:'第21页',sub:'第 21 页 · 第1课 인사'},
+  {label:'第22页',sub:'第 22 页 · 第1课 인사'},
+];
+
+function setTool(t){
+  tool=(tool===t)?null:t;
+  ['hl','ul','pin'].forEach(x=>document.getElementById('tp-'+x).classList.toggle('on',tool===x));
+  document.getElementById('colorRow').classList.toggle('show', tool==='hl'||tool==='ul');
+  const hint=document.getElementById('toolHint');
+  if(tool==='hl'){hint.style.display='block';hint.textContent='高亮模式：在图片上点击要标记的区域';}
+  else if(tool==='ul'){hint.style.display='block';hint.textContent='手写模式：用手指或触控笔在图片上书写批注';}
+  else if(tool==='pin'){hint.style.display='block';hint.textContent='批注模式：点击图片任意位置添加文字批注';}
+  else{hint.style.display='none';}
+  closePin();
+  document.getElementById('morePanel').classList.remove('show');
+}
+
+function toggleMore(){
+  document.getElementById('morePanel').classList.toggle('show');
+}
+
+function setColor(el,c){
+  color=c;
+  document.querySelectorAll('.color-dot').forEach(d=>d.classList.remove('sel'));
+  el.classList.add('sel');
+}
+
+function onImgClick(e){
+  if(!tool) return;
+  const wrap=document.getElementById('imgWrap');
+  const rect=wrap.getBoundingClientRect();
+  const x=((e.clientX-rect.left)/rect.width)*100;
+  const y=((e.clientY-rect.top)/rect.height)*100;
+
+  if(tool==='hl'){
+    const box=document.createElement('div');
+    box.className='mark-box '+color;
+    box.style.left=(x-8)+'%';
+    box.style.top=(y-2.5)+'%';
+    box.style.width='16%';
+    box.style.height='5%';
+    box.onclick=function(ev){ev.stopPropagation();this.remove();};
+    document.getElementById('markupLayer').appendChild(box);
+    history.push(box);
+  } else if(tool==='ul'){
+    const box=document.createElement('div');
+    box.className='mark-box '+color;
+    box.style.left=(x-10)+'%';
+    box.style.top=y+'%';
+    box.style.width='20%';
+    box.style.height='1.6%';
+    box.onclick=function(ev){ev.stopPropagation();this.remove();};
+    document.getElementById('markupLayer').appendChild(box);
+    history.push(box);
+  } else if(tool==='pin'){
+    showPinPopup(x,y,e);
+  }
+}
+
+function showPinPopup(x,y,e){
+  const popup=document.getElementById('pinPopup');
+  const stage=document.getElementById('pageStage');
+  const wrap=document.getElementById('imgWrap');
+  const wrapRect=wrap.getBoundingClientRect();
+  const stageRect=stage.getBoundingClientRect();
+  let top=(wrapRect.top-stageRect.top)+(y/100)*wrapRect.height+10;
+  let left=(wrapRect.left-stageRect.left)+(x/100)*wrapRect.width;
+  if(left+190>stage.offsetWidth) left=stage.offsetWidth-195;
+  popup.style.top=top+'px';
+  popup.style.left=left+'px';
+  popup.classList.add('show');
+  document.getElementById('pinTa').value='';
+  document.getElementById('pinTa').focus();
+  pinTarget={x:x,y:y};
+}
+
+function closePin(){
+  document.getElementById('pinPopup').classList.remove('show');
+  pinTarget=null;
+}
+
+function savePin(){
+  if(pinTarget){
+    const pin=document.createElement('div');
+    pin.className='pin';
+    pin.style.left=pinTarget.x+'%';
+    pin.style.top=pinTarget.y+'%';
+    pin.title=document.getElementById('pinTa').value;
+    pin.innerHTML='<div class="pin-dot"></div>';
+    pin.onclick=function(ev){ev.stopPropagation();this.remove();};
+    document.getElementById('markupLayer').appendChild(pin);
+    history.push(pin);
+  }
+  closePin();
+}
+
+function undoLast(){
+  const last=history.pop();
+  if(last) last.remove();
+  document.getElementById('morePanel').classList.remove('show');
+}
+
+function clearPage(){
+  document.getElementById('markupLayer').innerHTML='';
+  history=[];
+  document.getElementById('morePanel').classList.remove('show');
+}
+
+function changePage(dir){
+  const np=curPage+dir;
+  if(np<0||np>=pages.length) return;
+  curPage=np;
+  const p=pages[curPage];
+  document.getElementById('pageIndicator').textContent=p.label;
+  document.getElementById('pageSub').textContent=p.sub;
+  document.getElementById('btnPrev').classList.toggle('disabled', curPage===0);
+  document.getElementById('btnNext').classList.toggle('disabled', curPage===pages.length-1);
+  clearPage();
+}
+
+document.getElementById('pageStage').addEventListener('click',function(e){
+  const popup=document.getElementById('pinPopup');
+  if(popup.classList.contains('show') && !popup.contains(e.target) && !e.target.closest('#imgWrap')){
+    closePin();
+  }
+});
+</script>
