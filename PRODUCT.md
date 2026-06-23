@@ -6,11 +6,15 @@ product
 
 ## Users
 
-Chinese-speaking Korean beginners who want a simple practice tool for pronunciation, starter words, sentence reading, vocabulary, and textbook audio timelines. They usually need a small, focused practice session rather than a large content library.
+Korean beginners who want a simple practice tool for pronunciation, starter words, sentence reading, vocabulary, and textbook learning. The current version focuses on Chinese-speaking learners as the first validation group, but the long-term product is intended for global learners with different native languages.
+
+Future international versions should let users learn Korean through their own native language, including UI copy, pronunciation explanations, vocabulary meanings, sentence translations, textbook AI answers, and speech feedback.
 
 ## Product Purpose
 
-korean_learn helps learners practice Korean in compact loops: recognize, listen, repeat, compare, and review. Success means the interface guides a learner toward one small unit of practice instead of overwhelming them with more material.
+korean_learn helps learners practice Korean in compact loops: recognize, listen, repeat, compare, ask, save, and review. Success means the interface guides a learner toward one small unit of practice instead of overwhelming them with more material.
+
+The Chinese version is the first product validation stage. After the core loop is stable, the product should expand into a multilingual Korean learning platform.
 
 ## Brand Personality
 
@@ -27,6 +31,7 @@ Avoid landing-page hero theatrics, gamified clutter, large decorative gradients,
 3. Standard controls, low friction: keep playback, repeat, slow mode, search, and switching predictable.
 4. Calm hierarchy: prioritize Korean text and audio actions over explanation.
 5. Progressive depth: keep beginner surfaces simple while allowing deeper sentence, vocabulary, and material practice.
+6. International by design: avoid hard-coding the product around one native language. Explanations, meanings, AI answers, and feedback should eventually support multiple learner languages.
 
 ## Accessibility & Inclusion
 

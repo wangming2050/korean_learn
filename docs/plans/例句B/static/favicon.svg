@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <rect x="1" y="1" width="62" height="62" rx="15" fill="#ffffff" stroke="#e3e9f3" stroke-width="2"></rect>
-  <text x="32" y="35" text-anchor="middle" dominant-baseline="central" font-family="&#39;Noto Sans KR&#39;,&#39;PingFang SC&#39;,&#39;Microsoft YaHei&#39;,sans-serif" font-size="32" font-weight="900" letter-spacing="-3.5">
-    <tspan fill="#2f6df0">한</tspan><tspan fill="#141a24">步</tspan>
-  </text>
-</svg>

@@ -9,3 +9,15 @@ __pycache__/
 .venv/
 node_modules/
 mobile/node_modules/
+
+# Local editor / assistant state
+.idea/
+.claude/
+
+# Expo / native build artifacts
+mobile/.expo/
+mobile/ios/Pods/
+mobile/ios/build/
+
+# Runtime logs
+*.log
