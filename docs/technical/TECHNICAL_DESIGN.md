@@ -870,7 +870,71 @@ AI 回答可能存在：
 - 建立教材、笔记、批注、收藏同步模型。
 - Web 和移动端统一调用同步 API。
 
-### 9.4 第四阶段：iPad 教材工作台
+### 9.4 第四阶段：用户私人学习资料库
+
+目标：
+
+支持用户导入自己的音标关联词汇、词汇资料和例句资料，由系统生成对应语音，并在 Web、iPhone、iPad 三端维护私人词汇库和私人例句库。
+
+建议技术方向：
+
+- 平台内容和用户内容分表或至少通过 `owner_type` / `user_id` 明确区分。
+- 用户导入内容必须先进入“待确认”状态，允许用户编辑韩语文本、释义、分类和关联关系后再入库。
+- TTS 生成音频应有独立资源表，记录生成参数、归属用户、源文本和文件地址。
+- 音标关联词汇不应只支持平台示范词，也要支持用户私有词汇关联。
+- 用户从教材页保存句子时，应写入用户例句库，并可选择生成语音。
+- Web 和移动端都通过同一组用户内容 API 读写私人库，避免端上各自维护。
+
+建议数据模型方向：
+
+```text
+user_vocabulary
+  id
+  user_id
+  korean
+  meaning
+  source_type        # manual/imported/textbook/ai
+  status             # draft/confirmed/archived
+  audio_resource_id
+
+user_sentence
+  id
+  user_id
+  korean
+  translation
+  source_type        # manual/imported/textbook/ai
+  textbook_id
+  textbook_page
+  audio_resource_id
+
+user_letter_vocabulary
+  user_id
+  letter
+  vocabulary_id
+
+user_vocabulary_sentence
+  user_id
+  vocabulary_id
+  sentence_id
+
+user_audio_resource
+  id
+  user_id
+  source_text
+  source_kind        # vocabulary/sentence/textbook
+  provider
+  voice
+  speed
+  audio_url
+```
+
+需要避免：
+
+- 用户导入内容直接污染平台公共词库和例句库。
+- 只保存文本，不保存语音生成状态，导致私人库无法进入听读训练。
+- Web、iPhone、iPad 分别生成和存储同一条语音，造成成本和数据不一致。
+
+### 9.5 第五阶段：iPad 教材工作台
 
 优先任务：
 
@@ -881,7 +945,7 @@ AI 回答可能存在：
 - 音频和课文联动。
 - 生词收藏和复习联动。
 
-### 9.5 第五阶段：高质量音频和跟读
+### 9.6 第六阶段：高质量音频和跟读
 
 优先任务：
 
@@ -891,7 +955,7 @@ AI 回答可能存在：
 - 跟读录音。
 - 语音识别和反馈。
 
-### 9.6 第六阶段：国际化和多语言架构
+### 9.7 第七阶段：国际化和多语言架构
 
 目标：
 

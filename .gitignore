@@ -21,3 +21,13 @@ mobile/ios/build/
 
 # Runtime logs
 *.log
+
+# Local release artifacts
+releases/mobile/*.apk
+releases/mobile/*.aab
+releases/mobile/*.ipa
+releases/mobile/*.tar.gz
+mobile/releases/*.apk
+mobile/releases/*.aab
+mobile/releases/*.ipa
+mobile/releases/*.tar.gz

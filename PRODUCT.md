@@ -16,6 +16,8 @@ korean_learn helps learners practice Korean in compact loops: recognize, listen,
 
 The Chinese version is the first product validation stage. After the core loop is stable, the product should expand into a multilingual Korean learning platform.
 
+The product should also support learner-owned content. Beyond platform-provided sounds, words, examples, and textbook flows, users should eventually be able to import their own phonetic-linked words, vocabulary lists, and example sentences. The system should help generate Korean audio for those imported items and let users maintain private vocabulary and sentence libraries across Web, iPhone, and iPad.
+
 ## Brand Personality
 
 Calm, focused, encouraging. The product should feel like a quiet practice desk, not a content portal or course marketplace.
@@ -32,6 +34,7 @@ Avoid landing-page hero theatrics, gamified clutter, large decorative gradients,
 4. Calm hierarchy: prioritize Korean text and audio actions over explanation.
 5. Progressive depth: keep beginner surfaces simple while allowing deeper sentence, vocabulary, and material practice.
 6. International by design: avoid hard-coding the product around one native language. Explanations, meanings, AI answers, and feedback should eventually support multiple learner languages.
+7. User-owned libraries: distinguish platform content from private user content, but let both enter the same listening, speaking, reviewing, and AI-assisted practice flows.
 
 ## Accessibility & Inclusion
 
