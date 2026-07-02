@@ -12,6 +12,11 @@
     "ipad": "NODE_OPTIONS=--require=./scripts/expo-node-polyfill.cjs expo start --ios --go --localhost",
     "android": "NODE_OPTIONS=--require=./scripts/expo-node-polyfill.cjs expo start --android",
     "web": "NODE_OPTIONS=--require=./scripts/expo-node-polyfill.cjs expo start --web",
+    "build:android:apk": "npx eas-cli build -p android --profile preview",
+    "build:android:aab": "npx eas-cli build -p android --profile production",
+    "build:ios:preview": "npx eas-cli build -p ios --profile preview",
+    "build:ios:simulator": "npx eas-cli build -p ios --profile preview-simulator",
+    "build:ios:production": "npx eas-cli build -p ios --profile production",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -28,7 +33,7 @@
     "react-native-safe-area-context": "~5.7.0"
   },
   "devDependencies": {
-    "@types/react": "~18.3.12",
-    "typescript": "~5.3.3"
+    "@types/react": "~19.2.0",
+    "typescript": "~5.9.2"
   }
 }

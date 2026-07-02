@@ -31,6 +31,37 @@ For iPad testing, choose an iPad simulator from Expo/Xcode. The same app adapts 
 - iPhone: single-column task flow.
 - iPad: split learning workspace.
 
+## Build Release Packages
+
+Release build config is in:
+
+```text
+app.config.js
+eas.json
+docs/MOBILE_BUILD.md
+```
+
+Android APK for direct testing:
+
+```bash
+npm run build:android:apk
+```
+
+Android AAB for Google Play:
+
+```bash
+npm run build:android:aab
+```
+
+iOS preview / production builds:
+
+```bash
+npm run build:ios:preview
+npm run build:ios:production
+```
+
+iOS real-device packages require Apple Developer Program. The same iOS app supports both iPhone and iPad.
+
 ## Current Prototype
 
 - Today training dashboard.
